@@ -1,0 +1,76 @@
+version: "1.0"
+root:
+  id: neuruh
+  name: Neuruh
+  kind: organism
+  public_role: Intelligence, orchestration, evidence, governance, memory, and execution ecosystem.
+
+organs:
+  - id: archive-refinery
+    name: Archive Refinery / Local AI Estate
+    relationship: memory_supply
+    truth_boundary: Architecture is canonical; current estate counts require a dated audit.
+  - id: neural-core
+    name: Jeramie Neural Core
+    relationship: memory_context
+    truth_boundary: Engineering architecture; not proof of a trained or deployed monolithic model.
+  - id: galaxy
+    name: Cockpit / Galaxy
+    relationship: observability
+    truth_boundary: Interface and architecture are observed; production connectivity is not proven.
+  - id: adaptive-intelligence
+    name: Adaptive Intelligence
+    relationship: learning
+    truth_boundary: Claim lifecycle is architecture; emergence remains outside the guaranteed loop.
+  - id: founder-command
+    name: Founder Command
+    relationship: executive_control
+    truth_boundary: Human authority remains the irreversible-action boundary.
+  - id: execution-platform
+    name: Execution Platform
+    relationship: foundation
+    truth_boundary: Public route exposes architecture only, not a live command surface.
+  - id: laric
+    name: LARIC
+    relationship: interface
+    truth_boundary: Conceptual public role; no live public backend claim.
+  - id: field-scout
+    name: Field Scout
+    relationship: sensing
+    truth_boundary: Observed prototype family; runtime status requires evidence.
+
+worlds:
+  - id: deedsonar
+    name: DeedSonar
+    thesis: Evidence-backed property intelligence and governed acquisition decisions.
+    commercialization: product_and_partner_route
+  - id: find-sell-profit
+    name: Find Sell Profit
+    thesis: One intake, many exit paths, one optimized asset outcome.
+    commercialization: two_sided_market_and_orchestration
+  - id: lead-recipe-os
+    name: Lead Recipe OS
+    thesis: Signals compiled into governed, reusable lead products.
+    commercialization: licensed_recipe_and_output_system
+  - id: datum
+    name: DATUM
+    thesis: Deterministic and probabilistic valuation and decision architecture.
+    commercialization: api_report_and_white_label_engine
+  - id: factory-visual-cortex
+    name: Factory / Visual Cortex
+    thesis: Governed production, rendering, packaging, and asset-emission systems.
+    commercialization: production_and_licensing_surface
+
+research:
+  - id: lcde-case-zero
+    name: Latent Cross-Domain Emergence / Case Zero
+    status: HYPOTHESIS
+  - id: polarity-phase-space
+    name: Polarity Phase Space
+    status: CONCEPTUAL
+  - id: multi-resolution-knowledge
+    name: Multi-Resolution Knowledge
+    status: ARCHITECTURE
+  - id: emergence-instrument-panel
+    name: Emergence Instrument Panel
+    status: PROPOSED_IMPLEMENTATION

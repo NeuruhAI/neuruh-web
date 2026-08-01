@@ -1,0 +1,155 @@
+version: "1.0"
+name: neuruh-living-organism
+
+states:
+  DORMANT:
+    meaning: No fresh public state has been loaded.
+    visual:
+      energy: minimal
+      membranes: opaque_quiet
+      channels: unlit
+    allowed_transition:
+      - SENSING
+      - DEGRADED
+
+  SENSING:
+    meaning: Public truth snapshot and events are being validated.
+    visual:
+      energy: localized
+      membranes: scanning
+      channels: intermittent
+    allowed_transition:
+      - INTEGRATING
+      - CONTRADICTING
+      - DEGRADED
+
+  INTEGRATING:
+    meaning: Verified sources are being assembled into a coherent public state.
+    visual:
+      energy: directional
+      membranes: transparent_at_verified_regions
+      channels: source_to_core
+    allowed_transition:
+      - STABLE
+      - CONTRADICTING
+      - GOVERNING
+
+  CONTRADICTING:
+    meaning: Sources disagree or evidence is incomplete.
+    visual:
+      energy: opposing
+      membranes: tension_asymmetry
+      channels: bidirectional_conflict
+    required_ui:
+      - contradiction_label
+      - supporting_sources
+      - opposing_sources
+      - unresolved_status
+    allowed_transition:
+      - GOVERNING
+      - QUARANTINED
+      - STABLE
+
+  GOVERNING:
+    meaning: Authority, reversibility, consequence, or evidence threshold is being evaluated.
+    visual:
+      energy: compressed
+      membranes: gate_contraction
+      channels: halted_at_boundary
+    allowed_transition:
+      - EXECUTING
+      - BLOCKED
+      - QUARANTINED
+
+  EXECUTING:
+    meaning: A sandbox or verified real action has been authorized.
+    visual:
+      energy: directed_emission
+      membranes: open_named_channel
+      channels: action_path
+    required_ui:
+      - truth_mode
+      - authority
+      - reversibility
+      - source
+    allowed_transition:
+      - RECEIVING
+      - BLOCKED
+
+  RECEIVING:
+    meaning: A result or receipt has returned.
+    visual:
+      energy: return_wave
+      membranes: receipt_propagation
+      channels: action_to_core
+    allowed_transition:
+      - LEARNING
+      - STABLE
+      - CONTRADICTING
+
+  LEARNING:
+    meaning: A reviewed result changes a public model, status, or architecture record.
+    visual:
+      energy: structural_reorganization
+      membranes: revised_topology
+      channels: new_stable_path
+    required_ui:
+      - before_state
+      - after_state
+      - decision_receipt
+      - validation_status
+    allowed_transition:
+      - STABLE
+
+  STABLE:
+    meaning: Current verified public state.
+    visual:
+      energy: slow_breath
+      membranes: live_transmission
+      channels: only_verified_paths
+    allowed_transition:
+      - SENSING
+      - CONTRADICTING
+      - DEGRADED
+
+  BLOCKED:
+    meaning: A required dependency, authority, or evidence threshold is unavailable.
+    visual:
+      energy: contained
+      membranes: closed
+      channels: visibly_interrupted
+    allowed_transition:
+      - SENSING
+      - GOVERNING
+
+  QUARANTINED:
+    meaning: State or claim is retained but excluded from canonical/public operation.
+    visual:
+      energy: isolated
+      membranes: double_boundary
+      channels: disconnected
+    allowed_transition:
+      - SENSING
+      - GOVERNING
+
+  DEGRADED:
+    meaning: Public truth feed or scene runtime is stale, unavailable, or incomplete.
+    visual:
+      energy: low
+      membranes: reduced_fidelity
+      channels: stale_markers
+    required_ui:
+      - last_verified_at
+      - limitation
+      - fallback
+    allowed_transition:
+      - SENSING
+      - STABLE
+
+rules:
+  - no_random_state_transitions
+  - no_success_animation_without_receipt
+  - no_green_without_verified_source
+  - no_contradiction_hidden_for_composition
+  - reduced_motion_preserves_state_semantics
+  - tier_zero_preserves_all_copy_and_truth_labels

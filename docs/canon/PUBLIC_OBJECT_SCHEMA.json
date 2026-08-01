@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://neuruh.com/schemas/public-object.schema.json",
+  "title": "Neuruh public object",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id", "kind", "name", "summary", "truth_mode", "claim_class", "maturity",
+    "status", "last_verified_at", "source", "evidence_summary", "public_route", "limitations"
+  ],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{2,79}$" },
+    "kind": { "type": "string", "enum": ["organism", "organ", "world", "research", "proof", "system"] },
+    "name": { "type": "string", "minLength": 1, "maxLength": 120 },
+    "summary": { "type": "string", "minLength": 1, "maxLength": 500 },
+    "truth_mode": { "$ref": "#/$defs/truthMode" },
+    "claim_class": { "$ref": "#/$defs/claimClass" },
+    "maturity": { "type": "string", "enum": ["SURFACE_ONLY", "PROTOTYPE_FAMILY", "SYSTEM_COMPONENT", "ENGINE_SURFACE", "SHIP_CANDIDATE", "STAGING", "LIVE", "ARCHIVED", "RESEARCH"] },
+    "status": { "type": "string", "enum": ["DORMANT", "SENSING", "INTEGRATING", "CONTRADICTING", "GOVERNING", "EXECUTING", "RECEIVING", "LEARNING", "STABLE", "BLOCKED", "QUARANTINED", "DEGRADED", "PLANNED", "UNKNOWN"] },
+    "last_verified_at": { "type": "string", "format": "date-time" },
+    "source": { "$ref": "#/$defs/source" },
+    "evidence_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "statement", "source_refs"],
+      "properties": {
+        "status": { "type": "string", "enum": ["MISSING", "PARTIAL", "SUFFICIENT", "CONFLICTED", "STALE", "QUARANTINED"] },
+        "statement": { "type": "string", "minLength": 1 },
+        "source_refs": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 }, "uniqueItems": true }
+      }
+    },
+    "public_route": { "type": "string", "pattern": "^/" },
+    "relationships": { "type": "array", "items": { "$ref": "#/$defs/relationshipRef" } },
+    "contradictions": { "type": "array", "items": { "$ref": "#/$defs/contradiction" } },
+    "receipts": { "type": "array", "items": { "$ref": "#/$defs/receipt" } },
+    "metrics": { "type": "array", "items": { "$ref": "#/$defs/classifiedNumber" } },
+    "next_public_milestone": { "type": "string", "minLength": 1 },
+    "limitations": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+  },
+  "$defs": {
+    "truthMode": { "type": "string", "enum": ["LIVE", "VERIFIED_SNAPSHOT", "SANDBOX", "CONCEPTUAL", "PLANNED", "BLOCKED", "UNKNOWN"] },
+    "claimClass": { "type": "string", "enum": ["THREAD_CONFIRMED", "OBSERVED", "ARCHITECTURE", "PROPOSED_IMPLEMENTATION", "HYPOTHESIS", "UNVALIDATED_CLAIM"] },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ref", "class", "title", "path_or_uri", "public_safe"],
+      "properties": {
+        "ref": { "type": "string", "minLength": 1 },
+        "class": { "type": "string", "enum": ["signed_manifest", "git_release", "deployment_receipt", "health_endpoint", "benchmark", "decision_receipt", "canonical_document", "public_research_record", "curated_snapshot"] },
+        "title": { "type": "string", "minLength": 1 },
+        "path_or_uri": { "type": "string", "minLength": 1 },
+        "public_safe": { "const": true }
+      }
+    },
+    "relationshipRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "target_id", "direction"],
+      "properties": {
+        "type": { "type": "string" },
+        "target_id": { "type": "string" },
+        "direction": { "type": "string", "enum": ["OUTBOUND", "INBOUND", "BIDIRECTIONAL"] }
+      }
+    },
+    "contradiction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "field", "status", "summary", "supporting_sources", "opposing_sources"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "field": { "type": "string", "minLength": 1 },
+        "status": { "const": "UNRESOLVED" },
+        "summary": { "type": "string", "minLength": 1 },
+        "supporting_sources": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "opposing_sources": { "type": "array", "minItems": 1, "items": { "type": "string" } }
+      }
+    },
+    "receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "kind", "occurred_at", "source_ref", "public_summary"],
+      "properties": {
+        "id": { "type": "string" },
+        "kind": { "type": "string" },
+        "occurred_at": { "type": "string", "format": "date-time" },
+        "source_ref": { "type": "string" },
+        "public_summary": { "type": "string" }
+      }
+    },
+    "classifiedNumber": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "value", "classification", "unit", "as_of", "source_ref"],
+      "properties": {
+        "name": { "type": "string" },
+        "value": { "type": "number" },
+        "classification": { "type": "string", "enum": ["MEASURED", "OBSERVED", "DERIVED", "BUDGET", "HISTORICAL"] },
+        "unit": { "type": "string", "minLength": 1 },
+        "as_of": { "type": "string", "format": "date-time" },
+        "source_ref": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}
+

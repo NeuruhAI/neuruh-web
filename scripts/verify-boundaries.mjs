@@ -1,7 +1,7 @@
 import { readFile, readdir, stat } from 'node:fs/promises'
 import path from 'node:path'
 
-const forbiddenRoots = ['apps/neuruh-web/app', 'packages/spatial-runtime/boundary', 'packages/evidence', 'packages/motion', 'packages/accessibility']
+const forbiddenRoots = ['apps/neuruh-web/app', 'apps/neuruh-web/components', 'packages/public-truth', 'packages/spatial-runtime/boundary', 'packages/evidence', 'packages/motion', 'packages/accessibility']
 const failures = []
 async function walk(dir) {
   for (const name of await readdir(dir)) {

@@ -1,0 +1,39 @@
+version: "1.0"
+name: neuruh-relationship-ontology
+required_fields: [id, type, source_id, target_id, direction, truth_mode, observed_at, source]
+types:
+  dependency:
+    meaning: Source cannot reach its declared state without target.
+  data_flow:
+    meaning: Typed information moves from source to target.
+  control:
+    meaning: Source may govern or gate target within named authority.
+  evidence_supply:
+    meaning: Source supplies evidence used by target.
+  memory_supply:
+    meaning: Source supplies attributable context or memory.
+  tool_use:
+    meaning: Source invokes a bounded target capability.
+  governance:
+    meaning: Target evaluates authority, consequence, or reversibility for source.
+  execution:
+    meaning: Source authorizes a named target action.
+  receipt_return:
+    meaning: A target outcome returns to source with provenance.
+  productization:
+    meaning: Source capability is packaged as target world or offer.
+  commercialization:
+    meaning: Source supports a target revenue or licensing route.
+  research_support:
+    meaning: Source evidence supports but does not prove a research target.
+  supersedes:
+    meaning: Source replaces target while preserving target history.
+  blocked_by:
+    meaning: Source progression is blocked by target.
+rules:
+  - every_edge_is_directed
+  - every_edge_is_source_bearing
+  - selection_reveals_type_direction_and_truth_mode
+  - unlabeled_visual_edges_forbidden
+  - relationships_do_not_imply_runtime_connectivity
+

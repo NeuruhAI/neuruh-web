@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "phase": "P1_SEMANTIC_TRUTH_LAYER",
+  "verified_at": "2026-08-01T23:30:00.000Z",
+  "status": "PASS",
+  "baseline_commit": "16dba6d8991fe3ee0d62cf6766139aec95c7f845",
+  "checks": {
+    "public_truth_deterministic": true,
+    "public_objects": 14,
+    "public_events": 2,
+    "unit_contract_tests_passed": 24,
+    "production_artifact_tests_passed": 5,
+    "typescript": "PASS",
+    "production_build": "PASS",
+    "static_routes_generated": 19,
+    "upstream_provenance_verified": 68,
+    "webgl_boundary": "PASS",
+    "tier_zero_scene_bytes": 0,
+    "tier_zero_transfer_estimate_kb_gzip": 170.4,
+    "tier_zero_budget_kb": 180
+  },
+  "browser_runtime": {
+    "status": "BLOCKED_ENVIRONMENT",
+    "server_error": "listen EPERM 127.0.0.1:4311",
+    "chromium_error": "MachPortRendezvousServer permission denied",
+    "interpretation": "Infrastructure launch restriction; no browser assertion was reported as passing. Production-artifact parity tests passed separately."
+  },
+  "gates": {
+    "P0_TECHNICAL_FOUNDATION": "PASS",
+    "P1_SEMANTIC_TRUTH_LAYER": "PASS",
+    "G1_DEVICE_VALIDATION": "BLOCKED_EXTERNAL_DEVICES",
+    "G2_RENDERER_CERTIFICATION": "NOT_CERTIFIED",
+    "DEPLOYMENT": "NOT_AUTHORIZED"
+  }
+}
+

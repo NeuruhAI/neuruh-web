@@ -1,0 +1,71 @@
+version: "1.0"
+name: neuruh-living-organism
+initial_state: DORMANT
+deterministic: true
+random_transitions: forbidden
+
+states:
+  DORMANT:
+    meaning: No fresh public state has been loaded.
+    allowed_transition: [SENSING, DEGRADED]
+  SENSING:
+    meaning: Public snapshot and events are being validated.
+    allowed_transition: [INTEGRATING, CONTRADICTING, DEGRADED]
+  INTEGRATING:
+    meaning: Verified sources are assembled without discarding provenance.
+    allowed_transition: [STABLE, CONTRADICTING, GOVERNING]
+  CONTRADICTING:
+    meaning: Sources disagree or evidence is incomplete.
+    required_ui: [contradiction_label, supporting_sources, opposing_sources, unresolved_status]
+    allowed_transition: [GOVERNING, QUARANTINED, STABLE]
+  GOVERNING:
+    meaning: Authority, reversibility, consequence, and evidence thresholds are evaluated.
+    allowed_transition: [EXECUTING, BLOCKED, QUARANTINED]
+  EXECUTING:
+    meaning: A named sandbox or evidenced real action has been authorized.
+    required_ui: [truth_mode, authority, reversibility, source]
+    allowed_transition: [RECEIVING, BLOCKED]
+  RECEIVING:
+    meaning: A result or receipt has returned.
+    allowed_transition: [LEARNING, STABLE, CONTRADICTING]
+  LEARNING:
+    meaning: A reviewed result changes a public model or status record.
+    required_ui: [before_state, after_state, decision_receipt, validation_status]
+    allowed_transition: [STABLE]
+  STABLE:
+    meaning: Current verified public state.
+    allowed_transition: [SENSING, CONTRADICTING, DEGRADED]
+  BLOCKED:
+    meaning: A dependency, authority, or evidence threshold is unavailable.
+    allowed_transition: [SENSING, GOVERNING]
+  QUARANTINED:
+    meaning: Retained state is excluded from canonical public operation.
+    allowed_transition: [SENSING, GOVERNING]
+  DEGRADED:
+    meaning: The public snapshot or scene runtime is stale, unavailable, or incomplete.
+    required_ui: [last_verified_at, limitation, fallback]
+    allowed_transition: [SENSING, STABLE]
+
+visual_adapter:
+  purpose: Bind semantic state to the existing eight-state renderer without expanding G2 scope.
+  DORMANT: dormant
+  SENSING: awakening
+  INTEGRATING: metabolism
+  CONTRADICTING: metabolism
+  GOVERNING: gating
+  EXECUTING: gating
+  RECEIVING: receipt
+  LEARNING: receipt
+  STABLE: entry
+  BLOCKED: fragmented
+  QUARANTINED: fragmented
+  DEGRADED: dormant
+
+rules:
+  - no_success_animation_without_receipt
+  - no_green_without_verified_source
+  - no_contradiction_hidden_for_composition
+  - no_live_state_for_snapshot_or_sandbox_data
+  - reduced_motion_preserves_state_semantics
+  - tier_zero_preserves_copy_truth_and_relationships
+

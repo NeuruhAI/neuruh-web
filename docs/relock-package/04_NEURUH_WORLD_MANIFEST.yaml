@@ -1,0 +1,102 @@
+version: "1.0"
+root:
+  id: neuruh
+  name: Neuruh
+  kind: organism
+  public_role: >
+    Intelligence, orchestration, evidence, governance, memory, and execution ecosystem.
+
+organs:
+  - id: execution-platform
+    name: Execution Platform
+    public_role: Shared governed runtime and product foundation.
+    relationship: foundation
+
+  - id: galaxy
+    name: Cockpit / Galaxy
+    public_role: Portfolio self-model, observability, navigation, evidence, and command.
+    relationship: observability
+
+  - id: founder-command
+    name: Founder Command
+    public_role: Decision compression, authority, consequence, delegation, and receipts.
+    relationship: executive_control
+
+  - id: adaptive-intelligence
+    name: Adaptive Intelligence
+    public_role: Claim lifecycle, contradiction, learning, promotion, calibration, and rollback.
+    relationship: learning
+
+  - id: neural-core
+    name: Jeramie Neural Core
+    public_role: Compound memory, retrieval, context compilation, tools, adapters, and evaluation.
+    relationship: memory_context
+
+  - id: archive-refinery
+    name: Archive Refinery / Local AI Estate
+    public_role: Recovery, custody, identity, canonicalization, and productization of the software estate.
+    relationship: memory_supply
+
+  - id: laric
+    name: LARIC
+    public_role: Contextual conversation, synthesis, proposals, and governed interaction.
+    relationship: interface
+
+  - id: field-scout
+    name: Field Scout
+    public_role: Physical-world evidence capture, geospatial context, and offline field workflow.
+    relationship: sensing
+
+worlds:
+  - id: deedsonar
+    name: DeedSonar
+    thesis: Evidence-backed property intelligence and executable acquisition decisions.
+    relationship: real_estate_world
+
+  - id: find-sell-profit
+    name: Find Sell Profit
+    thesis: One intake, many exit paths, one optimized asset outcome.
+    relationship: asset_world
+
+  - id: lead-recipe-os
+    name: Lead Recipe OS
+    thesis: Signals compiled into governed, reusable lead products.
+    relationship: recipe_world
+
+  - id: datum
+    name: DATUM
+    thesis: Deterministic and probabilistic valuation and decision architecture.
+    relationship: valuation_engine
+
+  - id: factory-visual-cortex
+    name: Factory / Visual Cortex
+    thesis: Production, rendering, packaging, and asset-emission systems.
+    relationship: creation_world
+
+research:
+  - id: lcde-case-zero
+    name: Latent Cross-Domain Emergence / Case Zero
+    status: hypothesis_and_protocol
+  - id: polarity-phase-space
+    name: Polarity Phase Space
+    status: conceptual_model
+  - id: multi-resolution-knowledge
+    name: Multi-Resolution Knowledge
+    status: architecture
+  - id: emergence-instrument-panel
+    name: Emergence Instrument Panel
+    status: proposed_measurement_system
+
+relationship_types:
+  - dependency
+  - data_flow
+  - control
+  - evidence_supply
+  - memory_supply
+  - tool_use
+  - governance
+  - execution
+  - receipt_return
+  - productization
+  - commercialization
+  - research_support

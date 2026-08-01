@@ -1,7 +1,7 @@
 export const KEYBOARD_MAP = {
   Enter: 'trace focused channel',
   Space: 'trace focused channel',
-  T: 'jump to chapter 4 and trace',
+  T: 'jump to the governed-execution sandbox trace',
   R: 'reset trace',
   ArrowDown: 'next chapter',
   ArrowUp: 'previous chapter',

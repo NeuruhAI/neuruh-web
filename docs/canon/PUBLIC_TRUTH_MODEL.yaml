@@ -1,0 +1,78 @@
+version: "1.0"
+name: neuruh-public-truth
+posture: read_only
+default_visibility: deny
+live_private_connectivity: false
+
+truth_modes:
+  - LIVE
+  - VERIFIED_SNAPSHOT
+  - SANDBOX
+  - CONCEPTUAL
+  - PLANNED
+  - BLOCKED
+  - UNKNOWN
+
+claim_classes:
+  - THREAD_CONFIRMED
+  - OBSERVED
+  - ARCHITECTURE
+  - PROPOSED_IMPLEMENTATION
+  - HYPOTHESIS
+  - UNVALIDATED_CLAIM
+
+source_classes:
+  - signed_manifest
+  - git_release
+  - deployment_receipt
+  - health_endpoint
+  - benchmark
+  - decision_receipt
+  - canonical_document
+  - public_research_record
+  - curated_snapshot
+
+compiler:
+  input: packages/public-truth/fixtures/verified-snapshot.input.json
+  outputs:
+    snapshot: public/truth/snapshot.json
+    events: public/truth/events.jsonl
+    signature: public/truth/signature.json
+  rules:
+    - allowlist_fields
+    - strip_forbidden_private_fields
+    - reject_residual_private_references
+    - require_truth_mode
+    - require_timestamp
+    - require_source
+    - reject_unclassified_numbers
+    - reject_stale_snapshot
+    - preserve_contradictions
+    - sort_all_public_collections
+    - serialize_canonical_json
+    - emit_sha256_checksums
+    - fail_closed
+
+number_contract:
+  required_sibling_fields:
+    - classification
+    - unit
+    - as_of
+    - source_ref
+  classifications:
+    - MEASURED
+    - OBSERVED
+    - DERIVED
+    - BUDGET
+    - HISTORICAL
+
+freshness:
+  policy: input_declares_stale_after
+  stale_behavior: compilation_fails
+  silent_refresh: forbidden
+
+signature:
+  algorithm: SHA-256
+  kind: CHECKSUM_ONLY_NOT_IDENTITY_SIGNATURE
+  limitation: No signing key or production trust service is connected in P1.
+

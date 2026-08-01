@@ -292,6 +292,119 @@ body {
   margin-top: var(--space-5);
 }
 
+/* ── ALIVE SEMANTIC LAYER ─────────────────────────────────────────────── */
+.global-skip { position: fixed; }
+.site-header {
+  position: fixed;
+  z-index: 40;
+  inset: 0 0 auto;
+  min-height: 3.5rem;
+  padding: var(--space-3) var(--space-5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  border-bottom: var(--edge-hairline);
+  background: rgba(3, 4, 7, 0.92);
+}
+.wordmark {
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+}
+.site-header nav { display: flex; flex-wrap: wrap; gap: var(--space-4); }
+.site-header nav a, .text-link { color: var(--text-illuminated); text-decoration: none; }
+.site-header a:focus-visible, .text-link:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+
+.chapter-meta, .truth-object__head, .world-entry > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+.alive-chapter h1 { color: var(--text-primary); margin-block: var(--space-4); }
+.truth-badge {
+  display: inline-flex;
+  width: max-content;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-xs);
+  padding: 0.2rem 0.5rem;
+  color: var(--text-muted);
+  font: var(--type-data-sm);
+  letter-spacing: 0.04em;
+}
+.truth-badge[data-truth-mode='VERIFIED_SNAPSHOT'] { color: var(--status-verified); border-color: var(--status-verified); }
+.truth-badge[data-truth-mode='SANDBOX'] { color: var(--text-illuminated); border-style: dashed; }
+.truth-badge[data-truth-mode='CONCEPTUAL'], .truth-badge[data-truth-mode='PLANNED'] { color: var(--text-muted); }
+.claim-boundary, .boundary-note {
+  border-left: 2px solid var(--border-illuminated);
+  padding-left: var(--space-3);
+  color: var(--text-muted);
+}
+.truth-panel, .contradiction-object, .semantic-section, .truth-object, .world-entry, .galaxy-node {
+  border: var(--edge-hairline);
+  border-radius: var(--radius-md);
+  background: var(--material-scrim-bg);
+}
+.truth-panel, .contradiction-object { margin-top: var(--space-5); padding: var(--space-5); }
+.truth-panel dl, .contradiction-object dl, .proof-status dl { display: grid; grid-template-columns: minmax(8rem, auto) 1fr; gap: var(--space-2) var(--space-4); }
+.truth-panel dt, .contradiction-object dt, .proof-status dt { color: var(--text-faint); font: var(--type-data-sm); }
+.truth-panel dd, .contradiction-object dd, .proof-status dd { margin: 0; overflow-wrap: anywhere; }
+.contradiction-object { border-color: var(--status-contradiction); }
+.source-line, .last-verified { color: var(--text-faint); font: var(--type-data-sm); overflow-wrap: anywhere; }
+
+.semantic-page {
+  position: relative;
+  z-index: 2;
+  max-width: 76rem;
+  min-height: 100vh;
+  margin-inline: auto;
+  padding: calc(var(--space-9) + 3.5rem) var(--space-5) var(--space-9);
+}
+.semantic-hero { max-width: 52rem; margin-bottom: var(--space-8); }
+.semantic-hero h1 { color: var(--text-primary); font: var(--type-display-2); margin-block: var(--space-4); }
+.semantic-section { margin-block: var(--space-7); padding: var(--space-5); }
+.semantic-section h2, .galaxy-ledger h2 { color: var(--text-primary); }
+.object-ledger { display: grid; gap: var(--space-5); }
+.truth-object { padding: var(--space-5); }
+.truth-object h2, .world-entry h2 { color: var(--text-primary); }
+.fact-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-3); }
+.fact-row > div { border-top: var(--edge-hairline); padding-top: var(--space-3); }
+.fact-row dt { color: var(--text-faint); font: var(--type-data-sm); }
+.fact-row dd { margin: var(--space-1) 0 0; }
+.evidence-disclosure { margin-block: var(--space-4); }
+.evidence-disclosure summary, .galaxy-node summary { cursor: pointer; color: var(--text-illuminated); }
+.evidence-disclosure summary:focus-visible, .galaxy-node summary:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+
+.galaxy-node-list { display: grid; gap: var(--space-3); margin-block: var(--space-5) var(--space-8); }
+.galaxy-node { padding: var(--space-4); }
+.galaxy-node summary { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); }
+.relationship-list { list-style: none; padding: 0; display: grid; gap: var(--space-3); }
+.relationship-list li { display: grid; grid-template-columns: 1fr auto 1fr auto; align-items: center; gap: var(--space-3); border-left: 2px solid var(--border-illuminated); padding: var(--space-3); }
+.relationship-list strong { color: var(--text-illuminated); font: var(--type-data-sm); }
+.relationship-list small { grid-column: 1 / -1; color: var(--text-faint); }
+
+.world-stream { display: grid; gap: var(--space-6); }
+.world-entry { padding: var(--space-6); max-width: 54rem; }
+.world-entry--1 { margin-left: auto; border-left: 3px solid var(--border-illuminated); }
+.world-entry--2 { margin-inline: auto; max-width: 44rem; border-top: 3px solid var(--status-review); }
+.claim-lifecycle { display: flex; flex-wrap: wrap; gap: var(--space-3); padding: 0; list-style: none; }
+.claim-lifecycle li { border: var(--edge-hairline); padding: var(--space-3); }
+.founder-close { color: var(--text-primary); font: var(--type-display-3); margin: var(--space-8) 0; }
+.gate-ledger p { font: var(--type-data-sm); }
+
+@media (max-width: 48rem) {
+  .site-header { position: absolute; align-items: flex-start; }
+  .site-header nav { justify-content: flex-end; gap: var(--space-2) var(--space-3); font-size: 0.8rem; }
+  .semantic-page { padding-top: calc(var(--space-9) + 5rem); }
+  .fact-row, .relationship-list li { grid-template-columns: 1fr; }
+  .relationship-list small { grid-column: auto; }
+  .truth-panel dl, .contradiction-object dl, .proof-status dl { grid-template-columns: 1fr; }
+  .world-entry--1 { margin-left: 0; }
+}
+
 /* The degradation explanation belongs only to the authored tier-0 route. It
    must never claim that WebGL was ruled out while a live tier is visible. */
 .tier0-note {

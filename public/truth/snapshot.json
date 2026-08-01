@@ -1,0 +1,700 @@
+{
+  "dataset": {
+    "generated_at": "2026-08-01T22:00:00.000Z",
+    "id": "neuruh-public-snapshot-2026-08-01",
+    "label": "Founder-reviewed semantic foundation snapshot",
+    "last_verified_at": "2026-08-01T22:00:00.000Z",
+    "limitation": "Dated local snapshot compiled from canon and repository receipts; no private or production connector is attached.",
+    "live_connectivity": false,
+    "source": {
+      "class": "canonical_document",
+      "path_or_uri": "docs/relock-package/01_NEURUH_ALIVE_CANONICAL_RULING.md",
+      "public_safe": true,
+      "ref": "src-alive-ruling",
+      "title": "Neuruh Alive Canonical Product Ruling"
+    },
+    "stale": false,
+    "stale_after": "2026-08-31T22:00:00.000Z",
+    "truth_mode": "VERIFIED_SNAPSHOT"
+  },
+  "living_state": "CONTRADICTING",
+  "objects": [
+    {
+      "claim_class": "ARCHITECTURE",
+      "evidence_summary": {
+        "source_refs": [
+          "src-adaptive-atlas"
+        ],
+        "statement": "The claim lifecycle and visual requirements are documented; public runtime learning is not proven.",
+        "status": "PARTIAL"
+      },
+      "id": "adaptive-intelligence",
+      "kind": "organ",
+      "last_verified_at": "2026-08-01T22:00:00.000Z",
+      "limitations": [
+        "Emergence is outside the guaranteed learning loop.",
+        "No live training or promotion connector is exposed."
+      ],
+      "maturity": "RESEARCH",
+      "name": "Adaptive Intelligence",
+      "public_route": "/research/adaptive-intelligence",
+      "source": {
+        "class": "canonical_document",
+        "path_or_uri": "docs/source-canon/06_Adaptive_Intelligence_Visual_Atlas_v1.0.pdf",
+        "public_safe": true,
+        "ref": "src-adaptive-atlas",
+        "title": "Adaptive Intelligence Visual Atlas v1.0"
+      },
+      "status": "CONTRADICTING",
+      "summary": "Claim lifecycle, contradiction, reviewed learning, calibration, promotion, quarantine, and rollback architecture.",
+      "truth_mode": "VERIFIED_SNAPSHOT"
+    },
+    {
+      "claim_class": "ARCHITECTURE",
+      "evidence_summary": {
+        "source_refs": [
+          "src-estate-canon"
+        ],
+        "statement": "The custody model and observed fragmentation are canonical; final estate census counts are not public truth.",
+        "status": "PARTIAL"
+      },
+      "id": "archive-refinery",
+      "kind": "organ",
+      "last_verified_at": "2026-08-01T22:00:00.000Z",
+      "limitations": [
+        "No local paths, private inventory, or remembered counts are exposed."
+      ],
+      "maturity": "SYSTEM_COMPONENT",
+      "name": "Archive Refinery / Local AI Estate",
+      "public_route": "/organism",
+      "source": {
+        "class": "canonical_document",
+        "path_or_uri": "docs/source-canon/01_NEURUH_LOCAL_AI_ESTATE_MASTER_CANONICAL_CODEX.pdf",
+        "public_safe": true,
+        "ref": "src-estate-canon",
+        "title": "Neuruh Local AI Estate Master Canonical Codex"
+      },
+      "status": "INTEGRATING",
+      "summary": "Recovery, custody, identity, canonicalization, provenance, and productization architecture for a fragmented software estate.",
+      "truth_mode": "VERIFIED_SNAPSHOT"
+    },
+    {
+      "claim_class": "ARCHITECTURE",
+      "evidence_summary": {
+        "source_refs": [
+          "src-estate-canon"
+        ],
+        "statement": "Engine and surface architecture are documented; a public live valuation service is not claimed.",
+        "status": "PARTIAL"
+      },
+      "id": "datum",
+      "kind": "world",
+      "last_verified_at": "2026-08-01T22:00:00.000Z",
+      "limitations": [
+        "No valuation output on Neuruh.com is live or financial advice."
+      ],
+      "maturity": "ENGINE_SURFACE",
+      "name": "DATUM",
+      "public_route": "/worlds/datum",
+      "source": {
+        "class": "canonical_document",
+        "path_or_uri": "docs/source-canon/01_NEURUH_LOCAL_AI_ESTATE_MASTER_CANONICAL_CODEX.pdf",
+        "public_safe": true,
+        "ref": "src-estate-canon",
+        "title": "Neuruh Local AI Estate Master Canonical Codex"
+      },
+      "status": "GOVERNING",
+      "summary": "Evidence-bearing deterministic and probabilistic valuation and decision architecture.",
+      "truth_mode": "VERIFIED_SNAPSHOT"
+    },
+    {
+      "claim_class": "OBSERVED",
+      "evidence_summary": {
+        "source_refs": [
+          "src-estate-canon"
+        ],
+        "statement": "Multiple observed surfaces exist; canonical production lineage and live runtime status remain gated.",
+        "status": "PARTIAL"
+      },
+      "id": "deedsonar",
+      "kind": "world",
+      "last_verified_at": "2026-08-01T22:00:00.000Z",
+      "limitations": [
+        "Observed interface evidence does not prove a production backend."
+      ],
+      "maturity": "PROTOTYPE_FAMILY",
+      "name": "DeedSonar",
+      "public_route": "/worlds/deedsonar",
+      "source": {
+        "class": "canonical_document",
+        "path_or_uri": "docs/source-canon/01_NEURUH_LOCAL_AI_ESTATE_MASTER_CANONICAL_CODEX.pdf",
+        "public_safe": true,
+        "ref": "src-estate-canon",
+        "title": "Neuruh Local AI Estate Master Canonical Codex"
+      },
+      "status": "INTEGRATING",
+      "summary": "Evidence-backed property intelligence and governed acquisition-decision world.",
+      "truth_mode": "VERIFIED_SNAPSHOT"
+    },
+    {
+      "claim_class": "ARCHITECTURE",
+      "evidence_summary": {
+        "source_refs": [
+          "src-galaxy-canon"
+        ],
+        "statement": "The platform role and dependency model are documented; this public site has no command authority.",
+        "status": "PARTIAL"
+      },
+      "id": "execution-platform",
+      "kind": "organ",
+      "last_verified_at": "2026-08-01T22:00:00.000Z",
+      "limitations": [
+        "Public surface is read-only."
+      ],
+      "maturity": "SYSTEM_COMPONENT",
+      "name": "Execution Platform",
+      "public_route": "/organism",
+      "source": {
+        "class": "canonical_document",
+        "path_or_uri": "docs/source-canon/Neuruh_Galaxy_Canonical_Codex_v1.0.pdf",
+        "public_safe": true,
+        "ref": "src-galaxy-canon",
+        "title": "Neuruh Galaxy Canonical Codex v1.0"
+      },
+      "status": "GOVERNING",
+      "summary": "Shared governed runtime and foundation beneath independent Neuruh worlds.",
+      "truth_mode": "VERIFIED_SNAPSHOT"
+    },
+    {
+      "claim_class": "OBSERVED",
+      "evidence_summary": {
+        "source_refs": [
+          "src-estate-canon"
+        ],
+        "statement": "Observed local surfaces support the concept; active production engines are not proven.",
+        "status": "PARTIAL"
+      },
+      "id": "factory-visual-cortex",
+      "kind": "world",
+      "last_verified_at": "2026-08-01T22:00:00.000Z",
+      "limitations": [
+        "No public connector builds or publishes assets."
+      ],
+      "maturity": "SURFACE_ONLY",
+      "name": "Factory / Visual Cortex",
+      "public_route": "/worlds/factory-visual-cortex",
+      "source": {
+        "class": "canonical_document",
+        "path_or_uri": "docs/source-canon/01_NEURUH_LOCAL_AI_ESTATE_MASTER_CANONICAL_CODEX.pdf",
+        "public_safe": true,
+        "ref": "src-estate-canon",
+        "title": "Neuruh Local AI Estate Master Canonical Codex"
+      },
+      "status": "PLANNED",
+      "summary": "Governed production, rendering, packaging, and asset-emission world.",
+      "truth_mode": "VERIFIED_SNAPSHOT"
+    },
+    {
+      "claim_class": "THREAD_CONFIRMED",
+      "evidence_summary": {
+        "source_refs": [
+          "src-fsp-canon"
+        ],
+        "statement": "Category, doctrine, and operating architecture are canonical; transactions and revenue are not asserted.",
+        "status": "PARTIAL"
+      },
+      "id": "find-sell-profit",
+      "kind": "world",
+      "last_verified_at": "2026-08-01T22:00:00.000Z",
+      "limitations": [
+        "Score formulas and commercial assumptions remain uncalibrated until measured outcomes exist."
+      ],
+      "maturity": "PROTOTYPE_FAMILY",
+      "name": "Find Sell Profit",
+      "public_route": "/worlds/find-sell-profit",
+      "source": {
+        "class": "canonical_document",
+        "path_or_uri": "docs/source-canon/00_FindSell_Profit_Neuruh_Master_Codex_v1.pdf",
+        "public_safe": true,
+        "ref": "src-fsp-canon",
+        "title": "Find Sell Profit and Neuruh Master Codex v1.0"
+      },
+      "status": "INTEGRATING",
+      "summary": "A private-to-commercial asset market and orchestration world: one intake, many exit paths, one optimized outcome.",
+      "truth_mode": "VERIFIED_SNAPSHOT"
+    },
+    {
+      "claim_class": "THREAD_CONFIRMED",
+      "evidence_summary": {
+        "source_refs": [
+          "src-founder"
+        ],
+        "statement": "Years of fragmented work, rebuilding, persistence, and the coherence thesis are founder-grounded.",
+        "status": "SUFFICIENT"
+      },
+      "id": "founder-architecture",
+      "kind": "proof",
+      "last_verified_at": "2026-08-01T22:00:00.000Z",
+      "limitations": [
+        "No invented counts, investment totals, critics, or completeness claims."
+      ],
+      "maturity": "ARCHIVED",
+      "name": "Founder architecture and persistence",
+      "public_route": "/founder",
+      "source": {
+        "class": "canonical_document",
+        "path_or_uri": "docs/source-canon/Neuruh_Founder_Grind_and_Persistence_Narrative_v1.0.pdf",
+        "public_safe": true,
+        "ref": "src-founder",
+        "title": "Neuruh Founder Grind and Persistence Narrative v1.0"
+      },
+      "status": "STABLE",
+      "summary": "The persistence narrative explains why coherence, governance, and a durable self-model became architectural requirements.",
+      "truth_mode": "VERIFIED_SNAPSHOT"
+    },
+    {
+      "claim_class": "OBSERVED",
+      "contradictions": [
+        {
+          "field": "production_connectivity",
+          "id": "galaxy-connectivity-boundary",
+          "opposing_sources": [
+            "src-alive-ruling"
+          ],
+          "status": "UNRESOLVED",
+          "summary": "Screens show operational status fields, while available evidence does not prove those fields are connected to current production sources.",
+          "supporting_sources": [
+            "src-galaxy-canon"
+          ]
+        }
+      ],
+      "evidence_summary": {
+        "source_refs": [
+          "src-galaxy-canon",
+          "src-alive-ruling"
+        ],
+        "statement": "The interface and intended operating model are evidenced; current production connectivity is not.",
+        "status": "CONFLICTED"
+      },
+      "id": "galaxy",
+      "kind": "organ",
+      "last_verified_at": "2026-08-01T22:00:00.000Z",
+      "limitations": [
+        "Displayed relationships are from this curated manifest, not a live graph connector."
+      ],
+      "maturity": "SURFACE_ONLY",
+      "name": "Cockpit / Galaxy",
+      "public_route": "/galaxy",
+      "source": {
+        "class": "canonical_document",
+        "path_or_uri": "docs/source-canon/Neuruh_Galaxy_Canonical_Codex_v1.0.pdf",
+        "public_safe": true,
+        "ref": "src-galaxy-canon",
+        "title": "Neuruh Galaxy Canonical Codex v1.0"
+      },
+      "status": "CONTRADICTING",
+      "summary": "Portfolio self-model for products, dependencies, evidence, status, ownership, time, and governed next actions.",
+      "truth_mode": "VERIFIED_SNAPSHOT"
+    },
+    {
+      "claim_class": "HYPOTHESIS",
+      "evidence_summary": {
+        "source_refs": [
+          "src-lcde"
+        ],
+        "statement": "The protocol and competing hypotheses are specified; no completed Case Zero result is claimed.",
+        "status": "MISSING"
+      },
+      "id": "lcde-case-zero",
+      "kind": "research",
+      "last_verified_at": "2026-08-01T22:00:00.000Z",
+      "limitations": [
+        "Not empirical proof, clinical guidance, or a universal law."
+      ],
+      "maturity": "RESEARCH",
+      "name": "Latent Cross-Domain Emergence / Case Zero",
+      "public_route": "/research/case-zero",
+      "source": {
+        "class": "public_research_record",
+        "path_or_uri": "docs/source-canon/03_Latent_Cross_Domain_Emergence_and_Case_Zero_v1.0.pdf",
+        "public_safe": true,
+        "ref": "src-lcde",
+        "title": "Latent Cross-Domain Emergence and Case Zero v1.0"
+      },
+      "status": "PLANNED",
+      "summary": "A falsifiable research hypothesis and blinded protocol about cross-domain structural transfer.",
+      "truth_mode": "CONCEPTUAL"
+    },
+    {
+      "claim_class": "ARCHITECTURE",
+      "evidence_summary": {
+        "source_refs": [
+          "src-fsp-canon"
+        ],
+        "statement": "Recipe architecture is documented; the historical ingredient inventory is explicitly unresolved.",
+        "status": "PARTIAL"
+      },
+      "id": "lead-recipe-os",
+      "kind": "world",
+      "last_verified_at": "2026-08-01T22:00:00.000Z",
+      "limitations": [
+        "The unresolved historical ingredient list is not reconstructed or claimed."
+      ],
+      "maturity": "SYSTEM_COMPONENT",
+      "name": "Lead Recipe OS",
+      "public_route": "/worlds/lead-recipe-os",
+      "source": {
+        "class": "canonical_document",
+        "path_or_uri": "docs/source-canon/00_FindSell_Profit_Neuruh_Master_Codex_v1.pdf",
+        "public_safe": true,
+        "ref": "src-fsp-canon",
+        "title": "Find Sell Profit and Neuruh Master Codex v1.0"
+      },
+      "status": "PLANNED",
+      "summary": "Signals compiled into governed, reusable lead products through typed recipes and outcome receipts.",
+      "truth_mode": "PLANNED"
+    },
+    {
+      "claim_class": "ARCHITECTURE",
+      "evidence_summary": {
+        "source_refs": [
+          "src-neural-core"
+        ],
+        "statement": "The compound architecture and build sequence are specified; a deployed personal model is not claimed.",
+        "status": "PARTIAL"
+      },
+      "id": "neural-core",
+      "kind": "organ",
+      "last_verified_at": "2026-08-01T22:00:00.000Z",
+      "limitations": [
+        "Architecture is not runtime proof."
+      ],
+      "maturity": "RESEARCH",
+      "name": "Jeramie Neural Core",
+      "public_route": "/organism",
+      "source": {
+        "class": "canonical_document",
+        "path_or_uri": "docs/source-canon/04_Jeramie_Neural_Core_Architecture_v1.0.pdf",
+        "public_safe": true,
+        "ref": "src-neural-core",
+        "title": "Jeramie Neural Core Architecture v1.0"
+      },
+      "status": "PLANNED",
+      "summary": "Compound memory, hybrid retrieval, context compilation, adapters, deterministic tools, evaluation, and governed updates.",
+      "truth_mode": "VERIFIED_SNAPSHOT"
+    },
+    {
+      "claim_class": "ARCHITECTURE",
+      "evidence_summary": {
+        "source_refs": [
+          "src-alive-ruling",
+          "src-p0-commit"
+        ],
+        "statement": "The public self-model is now data-defined and inspectable; the snapshot is not a live operating feed.",
+        "status": "PARTIAL"
+      },
+      "id": "neuruh",
+      "kind": "organism",
+      "last_verified_at": "2026-08-01T22:00:00.000Z",
+      "limitations": [
+        "Read-only verified snapshot.",
+        "G1 device validation remains external-device blocked.",
+        "G2 renderer certification is not certified."
+      ],
+      "maturity": "SYSTEM_COMPONENT",
+      "name": "Neuruh",
+      "public_route": "/",
+      "source": {
+        "class": "canonical_document",
+        "path_or_uri": "docs/relock-package/01_NEURUH_ALIVE_CANONICAL_RULING.md",
+        "public_safe": true,
+        "ref": "src-alive-ruling",
+        "title": "Neuruh Alive Canonical Product Ruling"
+      },
+      "status": "CONTRADICTING",
+      "summary": "A modulated organization of independent worlds sharing intelligence, evidence, memory, governance, and execution contracts.",
+      "truth_mode": "VERIFIED_SNAPSHOT"
+    },
+    {
+      "claim_class": "OBSERVED",
+      "evidence_summary": {
+        "source_refs": [
+          "src-p0-benchmark",
+          "src-p0-commit"
+        ],
+        "statement": "The recorded P0 local checks passed; this is not G1 device validation or G2 certification.",
+        "status": "SUFFICIENT"
+      },
+      "id": "p0-foundation",
+      "kind": "proof",
+      "last_verified_at": "2026-08-01T22:00:00.000Z",
+      "limitations": [
+        "Material policy remains provisional pending G1."
+      ],
+      "maturity": "SHIP_CANDIDATE",
+      "metrics": [
+        {
+          "as_of": "2026-08-01T22:00:00.000Z",
+          "classification": "MEASURED",
+          "name": "tier_zero_transfer",
+          "source_ref": "src-p0-benchmark",
+          "unit": "KB",
+          "value": 167.3
+        },
+        {
+          "as_of": "2026-08-01T22:00:00.000Z",
+          "classification": "BUDGET",
+          "name": "tier_three_live_membranes",
+          "source_ref": "src-p0-benchmark",
+          "unit": "membranes",
+          "value": 2
+        },
+        {
+          "as_of": "2026-08-01T22:00:00.000Z",
+          "classification": "BUDGET",
+          "name": "transmission_resolution_scale",
+          "source_ref": "src-p0-benchmark",
+          "unit": "ratio",
+          "value": 0.75
+        }
+      ],
+      "name": "P0 green technical foundation",
+      "public_route": "/proof",
+      "source": {
+        "class": "benchmark",
+        "path_or_uri": "benchmarks/P0_RESULTS.json",
+        "public_safe": true,
+        "ref": "src-p0-benchmark",
+        "title": "P0 green foundation results"
+      },
+      "status": "STABLE",
+      "summary": "Locally verified TypeScript, build, contract, budget, smoke, provenance, and scene-boundary foundation.",
+      "truth_mode": "VERIFIED_SNAPSHOT"
+    }
+  ],
+  "relationships": [
+    {
+      "direction": "OUTBOUND",
+      "id": "rel-adaptive-neuruh",
+      "limitations": [
+        "Architecture relationship; not live data flow."
+      ],
+      "observed_at": "2026-08-01T22:00:00.000Z",
+      "source_id": "adaptive-intelligence",
+      "source_ref": "src-adaptive-atlas",
+      "target_id": "neuruh",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "type": "evidence_supply"
+    },
+    {
+      "direction": "OUTBOUND",
+      "id": "rel-archive-neural",
+      "limitations": [
+        "Architecture relationship; no private archive is exposed."
+      ],
+      "observed_at": "2026-08-01T22:00:00.000Z",
+      "source_id": "archive-refinery",
+      "source_ref": "src-estate-canon",
+      "target_id": "neural-core",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "type": "memory_supply"
+    },
+    {
+      "direction": "OUTBOUND",
+      "id": "rel-datum-deedsonar",
+      "limitations": [
+        "Architectural fit, not verified public invocation."
+      ],
+      "observed_at": "2026-08-01T22:00:00.000Z",
+      "source_id": "deedsonar",
+      "source_ref": "src-estate-canon",
+      "target_id": "datum",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "type": "tool_use"
+    },
+    {
+      "direction": "OUTBOUND",
+      "id": "rel-deedsonar-platform",
+      "limitations": [
+        "Curated manifest relationship."
+      ],
+      "observed_at": "2026-08-01T22:00:00.000Z",
+      "source_id": "deedsonar",
+      "source_ref": "src-galaxy-canon",
+      "target_id": "execution-platform",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "type": "dependency"
+    },
+    {
+      "direction": "OUTBOUND",
+      "id": "rel-factory-neuruh",
+      "limitations": [
+        "No public write or deployment authority."
+      ],
+      "observed_at": "2026-08-01T22:00:00.000Z",
+      "source_id": "factory-visual-cortex",
+      "source_ref": "src-estate-canon",
+      "target_id": "neuruh",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "type": "productization"
+    },
+    {
+      "direction": "OUTBOUND",
+      "id": "rel-fsp-platform",
+      "limitations": [
+        "Architecture relationship."
+      ],
+      "observed_at": "2026-08-01T22:00:00.000Z",
+      "source_id": "find-sell-profit",
+      "source_ref": "src-fsp-canon",
+      "target_id": "execution-platform",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "type": "dependency"
+    },
+    {
+      "direction": "BIDIRECTIONAL",
+      "id": "rel-galaxy-neuruh",
+      "limitations": [
+        "Snapshot manifest, not production graph connectivity."
+      ],
+      "observed_at": "2026-08-01T22:00:00.000Z",
+      "source_id": "galaxy",
+      "source_ref": "src-galaxy-canon",
+      "target_id": "neuruh",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "type": "evidence_supply"
+    },
+    {
+      "direction": "OUTBOUND",
+      "id": "rel-lcde-adaptive",
+      "limitations": [
+        "Hypothesis only."
+      ],
+      "observed_at": "2026-08-01T22:00:00.000Z",
+      "source_id": "lcde-case-zero",
+      "source_ref": "src-lcde",
+      "target_id": "adaptive-intelligence",
+      "truth_mode": "CONCEPTUAL",
+      "type": "research_support"
+    },
+    {
+      "direction": "OUTBOUND",
+      "id": "rel-lead-platform",
+      "limitations": [
+        "Planned relationship."
+      ],
+      "observed_at": "2026-08-01T22:00:00.000Z",
+      "source_id": "lead-recipe-os",
+      "source_ref": "src-fsp-canon",
+      "target_id": "execution-platform",
+      "truth_mode": "PLANNED",
+      "type": "dependency"
+    },
+    {
+      "direction": "OUTBOUND",
+      "id": "rel-neural-neuruh",
+      "limitations": [
+        "Architecture relationship; not a live model claim."
+      ],
+      "observed_at": "2026-08-01T22:00:00.000Z",
+      "source_id": "neural-core",
+      "source_ref": "src-neural-core",
+      "target_id": "neuruh",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "type": "memory_supply"
+    },
+    {
+      "direction": "BIDIRECTIONAL",
+      "id": "rel-platform-neuruh",
+      "limitations": [
+        "Public projection has no execution authority."
+      ],
+      "observed_at": "2026-08-01T22:00:00.000Z",
+      "source_id": "execution-platform",
+      "source_ref": "src-galaxy-canon",
+      "target_id": "neuruh",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "type": "execution"
+    }
+  ],
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "class": "canonical_document",
+      "path_or_uri": "docs/source-canon/06_Adaptive_Intelligence_Visual_Atlas_v1.0.pdf",
+      "public_safe": true,
+      "ref": "src-adaptive-atlas",
+      "title": "Adaptive Intelligence Visual Atlas v1.0"
+    },
+    {
+      "class": "canonical_document",
+      "path_or_uri": "docs/relock-package/01_NEURUH_ALIVE_CANONICAL_RULING.md",
+      "public_safe": true,
+      "ref": "src-alive-ruling",
+      "title": "Neuruh Alive Canonical Product Ruling"
+    },
+    {
+      "class": "canonical_document",
+      "path_or_uri": "docs/source-canon/01_NEURUH_LOCAL_AI_ESTATE_MASTER_CANONICAL_CODEX.pdf",
+      "public_safe": true,
+      "ref": "src-estate-canon",
+      "title": "Neuruh Local AI Estate Master Canonical Codex"
+    },
+    {
+      "class": "canonical_document",
+      "path_or_uri": "docs/source-canon/Neuruh_Founder_Grind_and_Persistence_Narrative_v1.0.pdf",
+      "public_safe": true,
+      "ref": "src-founder",
+      "title": "Neuruh Founder Grind and Persistence Narrative v1.0"
+    },
+    {
+      "class": "canonical_document",
+      "path_or_uri": "docs/source-canon/00_FindSell_Profit_Neuruh_Master_Codex_v1.pdf",
+      "public_safe": true,
+      "ref": "src-fsp-canon",
+      "title": "Find Sell Profit and Neuruh Master Codex v1.0"
+    },
+    {
+      "class": "canonical_document",
+      "path_or_uri": "docs/source-canon/Neuruh_Galaxy_Canonical_Codex_v1.0.pdf",
+      "public_safe": true,
+      "ref": "src-galaxy-canon",
+      "title": "Neuruh Galaxy Canonical Codex v1.0"
+    },
+    {
+      "class": "public_research_record",
+      "path_or_uri": "docs/source-canon/03_Latent_Cross_Domain_Emergence_and_Case_Zero_v1.0.pdf",
+      "public_safe": true,
+      "ref": "src-lcde",
+      "title": "Latent Cross-Domain Emergence and Case Zero v1.0"
+    },
+    {
+      "class": "canonical_document",
+      "path_or_uri": "docs/source-canon/04_Jeramie_Neural_Core_Architecture_v1.0.pdf",
+      "public_safe": true,
+      "ref": "src-neural-core",
+      "title": "Jeramie Neural Core Architecture v1.0"
+    },
+    {
+      "class": "benchmark",
+      "path_or_uri": "benchmarks/P0_RESULTS.json",
+      "public_safe": true,
+      "ref": "src-p0-benchmark",
+      "title": "P0 green foundation results"
+    },
+    {
+      "class": "git_release",
+      "path_or_uri": "git:16dba6d8991fe3ee0d62cf6766139aec95c7f845",
+      "public_safe": true,
+      "ref": "src-p0-commit",
+      "title": "P0 green foundation commit"
+    },
+    {
+      "class": "signed_manifest",
+      "path_or_uri": "docs/canon/WORLD_MANIFEST.yaml",
+      "public_safe": true,
+      "ref": "src-world-manifest",
+      "title": "Neuruh World Manifest"
+    }
+  ]
+}

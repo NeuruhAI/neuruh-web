@@ -1,0 +1,138 @@
+version: "1.0"
+name: neuruh-public-truth
+
+purpose:
+  description: >
+    Compile private internal state into a minimal, signed, privacy-safe public projection
+    used by Neuruh.com. The website never reads arbitrary internal systems directly.
+  posture: read_only
+  default_visibility: deny
+
+classes:
+  truth_mode:
+    - LIVE
+    - VERIFIED_SNAPSHOT
+    - SANDBOX
+    - CONCEPTUAL
+    - PLANNED
+    - BLOCKED
+    - UNKNOWN
+  maturity:
+    - SURFACE_ONLY
+    - PROTOTYPE_FAMILY
+    - SYSTEM_COMPONENT
+    - ENGINE_SURFACE
+    - SHIP_CANDIDATE
+    - STAGING
+    - LIVE
+    - ARCHIVED
+  evidence_status:
+    - MISSING
+    - PARTIAL
+    - SUFFICIENT
+    - CONFLICTED
+    - STALE
+    - QUARANTINED
+
+public_object:
+  required:
+    - id
+    - kind
+    - name
+    - summary
+    - truth_mode
+    - maturity
+    - status
+    - last_verified_at
+    - source_class
+    - evidence_summary
+    - public_route
+  optional:
+    - commissioned_at
+    - owner_role
+    - domain
+    - dependencies
+    - supplied_by
+    - supports
+    - evidence_coverage
+    - confidence
+    - contradictions
+    - receipts
+    - releases
+    - metrics
+    - next_public_milestone
+
+source_classes:
+  - signed_manifest
+  - git_release
+  - deployment_receipt
+  - health_endpoint
+  - benchmark
+  - decision_receipt
+  - canonical_document
+  - public_research_record
+  - curated_snapshot
+
+event_types:
+  - source.registered
+  - asset.recovered
+  - world.created
+  - world.status_changed
+  - evidence.attached
+  - evidence.staled
+  - claim.extracted
+  - claim.corroborated
+  - claim.contradicted
+  - claim.promoted
+  - claim.quarantined
+  - scenario.compiled
+  - decision.gated
+  - decision.approved
+  - action.executed
+  - action.blocked
+  - receipt.recorded
+  - memory.promoted
+  - release.published
+  - rollback.recorded
+
+event:
+  required:
+    - event_id
+    - event_type
+    - occurred_at
+    - truth_mode
+    - subject_id
+    - public_summary
+    - source_ref
+    - checksum
+  forbidden:
+    - secrets
+    - private_paths
+    - personal_sensitive_data
+    - customer_data
+    - unreviewed_claims
+
+compiler:
+  inputs:
+    - product_registry
+    - estate_registry
+    - git_manifests
+    - deployment_receipts
+    - benchmark_receipts
+    - evidence_manifests
+    - curated_research
+    - founder_approved_public_records
+  output:
+    snapshot: public/truth/snapshot.json
+    events: public/truth/events.jsonl
+    signature: public/truth/signature.json
+  rules:
+    - strip_private_fields
+    - enforce_allowlist
+    - require_timestamp
+    - require_source
+    - require_truth_mode
+    - reject_unclassified_numbers
+    - reject_unresolved_private_references
+    - produce_deterministic_output
+    - support_offline_fixture

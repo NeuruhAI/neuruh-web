@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://neuruh.com/schemas/public-truth-event.schema.json",
+  "title": "Neuruh public truth event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["event_id", "event_type", "occurred_at", "truth_mode", "subject_id", "public_summary", "source", "checksum"],
+  "properties": {
+    "event_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{2,99}$" },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "source.registered", "asset.recovered", "world.created", "world.status_changed",
+        "evidence.attached", "evidence.staled", "claim.extracted", "claim.corroborated",
+        "claim.contradicted", "claim.promoted", "claim.quarantined", "scenario.compiled",
+        "decision.gated", "decision.approved", "action.executed", "action.blocked",
+        "receipt.recorded", "memory.promoted", "release.published", "rollback.recorded"
+      ]
+    },
+    "occurred_at": { "type": "string", "format": "date-time" },
+    "truth_mode": { "type": "string", "enum": ["LIVE", "VERIFIED_SNAPSHOT", "SANDBOX", "CONCEPTUAL", "PLANNED", "BLOCKED", "UNKNOWN"] },
+    "subject_id": { "type": "string", "minLength": 1 },
+    "public_summary": { "type": "string", "minLength": 1, "maxLength": 500 },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ref", "class", "title", "path_or_uri", "public_safe"],
+      "properties": {
+        "ref": { "type": "string", "minLength": 1 },
+        "class": { "type": "string", "enum": ["signed_manifest", "git_release", "deployment_receipt", "health_endpoint", "benchmark", "decision_receipt", "canonical_document", "public_research_record", "curated_snapshot"] },
+        "title": { "type": "string", "minLength": 1 },
+        "path_or_uri": { "type": "string", "minLength": 1 },
+        "public_safe": { "const": true }
+      }
+    },
+    "checksum": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "authority": { "type": "string", "enum": ["READ_ONLY", "HUMAN_APPROVED_SANDBOX", "NOT_APPLICABLE"] },
+    "reversibility": { "type": "string", "enum": ["REVERSIBLE", "NOT_EXECUTED", "NOT_APPLICABLE"] },
+    "receipt_ref": { "type": "string", "minLength": 1 },
+    "limitations": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+  }
+}
+
