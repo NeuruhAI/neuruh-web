@@ -1,0 +1,118 @@
+{
+  "_comment": "Realistic fixture data for Neuruh.com and Field Scout surfaces. SYNTHETIC — every consumer must render these behind a .bb-fixture badge in Blackbox, and must never present them as live. Shapes mirror the real internal.parcel@7 schema.",
+  "_schema": "internal.parcel@7",
+  "_generated": "2026-07-31T21:44:12Z",
+  "_fixture": true,
+
+  "run": {
+    "run_id": "01K9F2M7Q4",
+    "parent_run_id": "01K9F1X8B0",
+    "started": "2026-07-31T21:44:08.112Z",
+    "completed": "2026-07-31T21:44:12.118Z",
+    "duration_ms": 4006,
+    "sources": [
+      { "id": "travis_cnty_bulk", "kind": "bulk_export", "fetched": "2026-07-28T04:12:00Z", "status": "verified", "rows": 4182 },
+      { "id": "gis_v4", "kind": "api", "fetched": "2026-07-28T04:19:00Z", "status": "verified" },
+      { "id": "fema_flood", "kind": "api", "fetched": null, "status": "unavailable", "last_ok": "2026-07-30T22:14:00Z", "retry_in_s": 300 },
+      { "id": "lien_history", "kind": "api", "status": "unsupported", "counties_supported": ["travis"], "note": "no source configured for williamson; no retry scheduled" }
+    ]
+  },
+
+  "authority": {
+    "grant_id": "0x8C21",
+    "granted_by": "Jeramie Hicks",
+    "authority": "scoped",
+    "scope": "read + enrich",
+    "outbound_contact": false,
+    "expires": "2026-08-14T00:00:00Z",
+    "reason": "Outbound contact requires a separate grant."
+  },
+
+  "parcels": [
+    {
+      "parcel_id": "0x4A9E17",
+      "county": "travis",
+      "owner_status": "owner_occupied",
+      "state": "verified",
+      "confidence": { "point": 0.86, "interval": [0.79, 0.91] },
+      "acreage": { "value": 0.38, "state": "verified", "sources": ["gis_v4", "plat_bk_82"] },
+      "provenance": [
+        { "kind": "signal", "value": "County recorder bulk export, weekly", "meta": "ingest_id=0x4A9E17 · 2026-07-28T04:12Z", "state": "verified" },
+        { "kind": "evidence", "value": "Deed transfer recorded, grantor matches owner of record", "meta": "match=exact · 2 corroborating sources", "state": "verified" },
+        { "kind": "claim", "value": "Parcel is owner-occupied and not currently listed", "meta": "rcpt_01K9F2M7Q4", "state": "verified" }
+      ]
+    },
+    {
+      "parcel_id": "0x4A9E22",
+      "county": "travis",
+      "owner_status": "absentee_probable",
+      "state": "review",
+      "confidence": { "point": 0.58, "interval": [0.31, 0.78] },
+      "acreage": { "value": 0.51, "state": "partial", "sources": ["gis_v4"] },
+      "review_reason": "Single source. Corroboration required before the claim is usable.",
+      "queued_h": 6,
+      "provenance": [
+        { "kind": "signal", "value": "Assessment roll, 2025", "meta": "roll_2025 · age 14mo", "state": "stale" },
+        { "kind": "evidence", "value": "Mailing address differs from situs address", "meta": "1 of 3 sources", "state": "partial" },
+        { "kind": "claim", "value": "Owner probably does not occupy", "meta": "awaiting human confirmation", "state": "review" }
+      ]
+    },
+    {
+      "parcel_id": "0x4A9F03",
+      "county": "travis",
+      "owner_status": "disputed",
+      "state": "contradiction",
+      "confidence": null,
+      "contradiction": {
+        "field": "acreage",
+        "a": { "value": 0.42, "unit": "acres", "source": "gis_v4", "recorded": "2026-07-28" },
+        "b": { "value": 0.51, "unit": "acres", "source": "plat_bk_82", "recorded": "1998-03-11" },
+        "resolution": null,
+        "held_since": "2026-07-31T21:44:11.002Z",
+        "gated_recipes": ["outreach_v3", "valuation_v2"],
+        "note": "Both values preserved. Neither discarded. Downstream recipes gated until a human resolves this or a third source corroborates."
+      }
+    },
+    {
+      "parcel_id": "0x4AA118",
+      "county": "travis",
+      "owner_status": "unknown",
+      "state": "unavailable",
+      "confidence": null,
+      "unavailable": { "capability": "flood_zone", "service": "fema_flood", "last_ok": "2026-07-30T22:14:00Z", "retry_in_s": 300 }
+    },
+    {
+      "parcel_id": "0x4AA204",
+      "county": "williamson",
+      "owner_status": "not_sourced",
+      "state": "unsupported",
+      "confidence": null,
+      "unsupported": { "capability": "lien_history", "reason": "No source configured for Williamson County.", "retry_scheduled": false }
+    }
+  ],
+
+  "receipts": [
+    {
+      "receipt_id": "rcpt_01K9F2M7Q4",
+      "action": "recipe.execute",
+      "recipe": "outreach_v3",
+      "authority": "granted",
+      "grant_id": "0x8C21",
+      "scope": ["0x4A9E17", "0x4A9E22", "0x4A9F03"],
+      "result": { "delivered": 2, "deferred": 1, "deferred_reason": "contradiction hold on 0x4A9F03" },
+      "duration_ms": 4120,
+      "sha256": "9f2c8a1b4e7d3f60a2c5b8e1d4f70a3c6b9e2d5f8a1c4b7e0d3f6a9c2b5e8a41e",
+      "chain": "verified",
+      "ts": "2026-07-31T21:44:12.118Z"
+    }
+  ],
+
+  "health": {
+    "frame_p95_ms": 14.2,
+    "frame_budget_ms": 16.7,
+    "payload_kb": 163,
+    "payload_budget_kb": 180,
+    "single_source_rate_delta_pp": 0.4,
+    "adaptation_queued": true
+  }
+}

@@ -1,0 +1,103 @@
+/* NEURUH MASTER — COLOR PRIMITIVES
+   Raw material only. Product code must never reference these directly;
+   use the semantic aliases in color-semantics.css.
+
+   Four material families, each carrying a fixed meaning:
+     OBSIDIAN  depth, authority, the dark spine
+     BONE      evidence, explanation, editorial contrast, the light spine
+     BRASS     precision, earned value, illumination, approval
+     SIGNALS   spectral green / amber / crimson — system truth states
+
+   Mineral accents exist ONLY for product verticals. The flagship world and
+   the master brand do not use them. */
+
+:root {
+  /* ── OBSIDIAN ─────────────────────────────────────────────────────────
+     A mineral near-black with a cool blue-violet cast. Never pure #000:
+     pure black kills the material read and flattens depth. */
+  --obsidian-1000: #030407;
+  --obsidian-950: #07080c;
+  --obsidian-900: #0b0d12; /* canonical Neuruh obsidian */
+  --obsidian-850: #101319;
+  --obsidian-800: #161a22;
+  --obsidian-700: #1e2430;
+  --obsidian-600: #2a3140;
+  --obsidian-500: #3a4354;
+  --obsidian-400: #556075;
+  --obsidian-300: #6f7b92;
+  --obsidian-250: #7b8799; /* faint text floor — 5.11:1 on --obsidian-850 */
+  --obsidian-200: #98a2b6;
+  --obsidian-100: #c3cad8;
+  --obsidian-050: #e4e8ef;
+
+  /* ── BONE ─────────────────────────────────────────────────────────────
+     Warm paper. The editorial spine. Never pure #fff for large fields —
+     paper has a temperature; screens that don't feel synthetic. */
+  --bone-000: #ffffff;
+  --bone-050: #faf9f6;
+  --bone-100: #f3f1ec;
+  --bone-200: #e8e5dd;
+  --bone-300: #d6d2c7;
+  --bone-400: #b3ae9f;
+  --bone-500: #8c8879;
+
+  /* ── BRASS ────────────────────────────────────────────────────────────
+     Illumination, not decoration. Brass appears where something has been
+     earned: verified precision, approved authority, the light that reveals
+     structure. It is never a background gradient. */
+  --brass-100: #f6e9c8;
+  --brass-200: #ecd49a;
+  --brass-300: #ddba6a; /* primary illumination on obsidian */
+  --brass-400: #c9a049;
+  --brass-500: #b08535; /* core brass */
+  --brass-600: #8d6828; /* primary illumination on bone */
+  --brass-700: #6b4e1d;
+
+  /* ── SPECTRAL GREEN — verified life, successful operation, execution ── */
+  --spectral-200: #b8f7dd;
+  --spectral-300: #7df0c0;
+  --spectral-400: #3ddca0;
+  --spectral-500: #16b981;
+  --spectral-600: #0d8e63;
+  --spectral-650: #0a7a55; /* bone-spine text floor — 4.94:1 on --bone-050 */
+  --spectral-700: #07684a;
+
+  /* ── AMBER — uncertainty, review, waiting, material caution ─────────── */
+  --amber-200: #fdeab6;
+  --amber-300: #fcd77a;
+  --amber-400: #f5b83d;
+  --amber-500: #d99420;
+  --amber-600: #a86f14;
+  --amber-650: #90600f; /* bone-spine text floor — 5.01:1 on --bone-050 */
+  --amber-700: #7d520c;
+
+  /* ── CRIMSON — contradiction, danger, blocked, failed ───────────────── */
+  --crimson-200: #ffc9c3;
+  --crimson-300: #ff9d95;
+  --crimson-400: #f6685c;
+  --crimson-500: #dc4436;
+  --crimson-600: #a92f24;
+  --crimson-700: #7b1e16;
+
+  /* ── MINERAL ACCENTS — product verticals only ───────────────────────── */
+  --mineral-cyan-400: #4fc3d9; /* signal ingestion / sensing products */
+  --mineral-indigo-400: #7b8cf0; /* reasoning / synthesis products */
+  --mineral-violet-400: #a97cf0; /* discovery / research products */
+  --mineral-clay-400: #d98b62; /* physical-world / field products */
+
+  /* ── ALPHA UTILITIES — hairlines, scrims, washes ────────────────────── */
+  --alpha-bone-04: rgba(250, 249, 246, 0.04);
+  --alpha-bone-08: rgba(250, 249, 246, 0.08);
+  --alpha-bone-14: rgba(250, 249, 246, 0.14);
+  --alpha-bone-24: rgba(250, 249, 246, 0.24);
+  --alpha-obsidian-06: rgba(3, 4, 7, 0.06);
+  --alpha-obsidian-12: rgba(3, 4, 7, 0.12);
+  --alpha-obsidian-40: rgba(3, 4, 7, 0.4);
+  --alpha-obsidian-72: rgba(3, 4, 7, 0.72);
+  --alpha-brass-12: rgba(221, 186, 106, 0.12);
+  --alpha-brass-24: rgba(221, 186, 106, 0.24);
+  --alpha-brass-40: rgba(221, 186, 106, 0.4);
+  --alpha-spectral-14: rgba(61, 220, 160, 0.14);
+  --alpha-amber-14: rgba(245, 184, 61, 0.14);
+  --alpha-crimson-14: rgba(246, 104, 92, 0.14);
+}

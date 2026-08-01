@@ -1,0 +1,69 @@
+/* NEURUH MASTER — DEPTH AND MATERIALS
+
+   Master visual rule 3: depth expresses hierarchy, systems, worlds, or
+   causality. Depth is never atmosphere for its own sake. Every elevation step
+   below has a stated meaning; if a surface cannot name its meaning, it is
+   flat.
+
+   Master visual rule 2: light reveals meaning. Glow is emitted BY something
+   that has earned it (verified evidence, granted authority, an executing
+   action) and is never applied to a container because the container is
+   important.
+
+   THE GLASS RULE. "Glass cards everywhere" is a forbidden default. Backdrop
+   blur is permitted in exactly one situation: a layer that must remain
+   legible while a spatial scene moves behind it. That is --material-scrim.
+   Everything else is opaque mineral. */
+
+:root {
+  /* ── ELEVATION LADDER ─────────────────────────────────────────────────
+     0  flush     part of the substrate                    no shadow
+     1  seated    grouped content, still in-plane          hairline + faint
+     2  raised    an object you could pick up              real cast shadow
+     3  floating  transient, tied to a trigger             separated
+     4  overlay   owns the viewport until dismissed        scrim + deep cast */
+  --shadow-none: none; /* @kind shadow */
+  --shadow-1: 0 1px 2px rgba(3, 4, 7, 0.08), 0 0 0 1px rgba(3, 4, 7, 0.04); /* @kind shadow */
+  --shadow-2: 0 2px 4px rgba(3, 4, 7, 0.12), 0 4px 12px rgba(3, 4, 7, 0.1); /* @kind shadow */
+  --shadow-3: 0 6px 16px rgba(3, 4, 7, 0.18), 0 2px 4px rgba(3, 4, 7, 0.12); /* @kind shadow */
+  --shadow-4: 0 18px 48px rgba(3, 4, 7, 0.4), 0 4px 12px rgba(3, 4, 7, 0.24); /* @kind shadow */
+
+  /* ── FOCUS RINGS — 2px offset ring, never a colour swap ─────────────── */
+  --ring-focus-dark: 0 0 0 2px var(--obsidian-900), 0 0 0 4px var(--brass-300); /* @kind shadow */
+  --ring-focus-light: 0 0 0 2px var(--bone-050), 0 0 0 4px var(--brass-600); /* @kind shadow */
+
+  /* ── EARNED ILLUMINATION ──────────────────────────────────────────────
+     Emitted glow. Permitted ONLY on: verified evidence, granted authority,
+     an actively executing operation, and the flagship hero object. */
+  --glow-illuminated: 0 0 0 1px var(--alpha-brass-40), 0 0 24px -4px var(--alpha-brass-24); /* @kind shadow */
+  --glow-verified: 0 0 0 1px rgba(61, 220, 160, 0.4), 0 0 20px -4px rgba(61, 220, 160, 0.24); /* @kind shadow */
+  --glow-contradiction: 0 0 0 1px rgba(246, 104, 92, 0.4), 0 0 20px -4px rgba(246, 104, 92, 0.24); /* @kind shadow */
+
+  /* ── MATERIAL SURFACES ────────────────────────────────────────────────
+     Named materials, not ad-hoc backgrounds. */
+  --material-mineral: var(--bg-surface); /* default opaque solid */
+  --material-inset: var(--bg-inset); /* recessed well: inputs, code, evidence */
+  --material-scrim-blur: saturate(1.4) blur(20px); /* the ONE blur exception */
+  --material-scrim-bg: var(--alpha-obsidian-72);
+
+  /* Hairline that reads as a machined edge rather than a CSS border */
+  --edge-hairline: 1px solid var(--border-default);
+  --edge-hairline-strong: 1px solid var(--border-strong);
+}
+
+/* Scene-adjacent layer: the only sanctioned use of backdrop-filter. */
+.material-scrim {
+  background: var(--material-scrim-bg);
+  backdrop-filter: var(--material-scrim-blur);
+  -webkit-backdrop-filter: var(--material-scrim-blur);
+}
+@supports not (backdrop-filter: blur(1px)) {
+  .material-scrim { background: var(--obsidian-900); }
+}
+
+/* Elevation utilities carry their meaning in the class name. */
+.elev-flush { box-shadow: var(--shadow-none); }
+.elev-seated { box-shadow: var(--elevation-card); border: var(--edge-hairline); }
+.elev-raised { box-shadow: var(--elevation-raised); }
+.elev-floating { box-shadow: var(--shadow-3); }
+.elev-overlay { box-shadow: var(--elevation-overlay); }

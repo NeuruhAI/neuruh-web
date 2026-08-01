@@ -1,0 +1,249 @@
+<!-- @dsCard group="Prototype" name="Neuruh.com — Direction A prototype" subtitle="8 chapters, live scene state machine, 4 routes, signature interaction" width="1440" height="1000" -->
+<!doctype html>
+<html lang="en" data-spine="obsidian" data-scene-tier="3">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neuruh — governed intelligence from fragmented signal</title>
+<meta name="description" content="Neuruh turns fragmented signals, knowledge, and physical-world complexity into governed intelligence and executable systems.">
+<link rel="stylesheet" href="../design-system/styles.css">
+<link rel="stylesheet" href="./prototype.css">
+</head>
+<body>
+
+<!-- Loading route. Real: gates on font + scene readiness, never on copy. -->
+<div class="boot" id="boot">
+  <div style="text-align:center">
+    <p class="n-label" style="justify-content:center">Neuruh</p>
+    <div class="boot__b"><div class="boot__f" id="bootF"></div></div>
+    <p class="t-data-sm" style="color:var(--text-faint); margin-top:var(--space-3)" id="bootS">preparing scene</p>
+  </div>
+</div>
+
+<a class="skip-link" href="#ch8">Skip to entry</a>
+
+<!-- ═══ SCENE LAYER — aria-hidden. No essential copy lives here. ═══ -->
+<div class="scene" id="scene" aria-hidden="true">
+  <svg id="stage" viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <linearGradient id="pCore" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#f6e9c8"/><stop offset="52%" stop-color="#b08535"/><stop offset="100%" stop-color="#5c4620"/>
+      </linearGradient>
+      <radialGradient id="pKey" cx="34%" cy="20%">
+        <stop offset="0%" stop-color="rgba(246,233,200,.24)"/><stop offset="100%" stop-color="rgba(246,233,200,0)"/>
+      </radialGradient>
+      <filter id="pSoft" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur stdDeviation="6"/>
+      </filter>
+    </defs>
+    <g id="camera">
+      <g id="membranes" data-anim></g>
+      <g id="fragments" data-anim></g>
+      <g id="tissue" data-anim></g>
+      <g id="channels" data-anim></g>
+      <g id="filaments" data-anim></g>
+      <g id="core" data-anim></g>
+      <g id="nodes" data-anim></g>
+    </g>
+    <rect width="1400" height="900" fill="url(#pKey)" pointer-events="none"/>
+  </svg>
+</div>
+
+<!-- ═══ REVIEW RAIL — prototype affordance. Not shipped. ═══ -->
+<aside class="rail" aria-label="Prototype review controls">
+  <p class="rail__t">Review controls</p>
+  <div class="rail__grp">
+    <span class="rail__lbl">Quality tier</span>
+    <div class="seg" id="segTier" role="group" aria-label="Quality tier">
+      <button data-tier="3" aria-pressed="true">3</button>
+      <button data-tier="2" aria-pressed="false">2</button>
+      <button data-tier="1" aria-pressed="false">1</button>
+      <button data-tier="0" aria-pressed="false">0</button>
+    </div>
+  </div>
+  <div class="rail__grp">
+    <span class="rail__lbl">Motion</span>
+    <div class="seg" id="segMotion" role="group" aria-label="Motion route">
+      <button data-motion="full" aria-pressed="true">Full</button>
+      <button data-motion="reduced" aria-pressed="false">Reduced</button>
+    </div>
+  </div>
+  <div class="rail__grp">
+    <span class="rail__lbl">Scene state</span>
+    <div class="rail__stat"><span>chapter</span><b id="statCh">1</b></div>
+    <div class="rail__stat"><span>state</span><b id="statState">dormant</b></div>
+    <div class="rail__stat"><span>camera</span><b id="statCam">wide</b></div>
+    <div class="rail__stat"><span>tier</span><b id="statTier">3</b></div>
+  </div>
+</aside>
+
+<!-- ═══ DOM LAYER — every word real, selectable, screen-readable ═══ -->
+<main class="dom" id="main">
+ <div class="container container--editorial">
+
+  <section class="chapter chapter--arrival" id="ch1" data-chapter="1" data-state="dormant" data-cam="wide">
+    <div class="chapter__inner">
+      <p class="n-label">Neuruh</p>
+      <h1 class="t-cinema-1" style="margin-block:var(--space-5) var(--space-5); color:var(--text-primary)">
+        Fragmented signal<br>becomes governed action.
+      </h1>
+      <p class="t-lede">
+        Neuruh turns fragmented signals, knowledge, and physical-world complexity
+        into governed intelligence and executable systems.
+      </p>
+      <p class="verb">Scroll · chapter 1 of 8</p>
+      <p class="tier0-note t-body-sm" style="color:var(--text-faint); margin-top:var(--space-5)">
+        Your device or preferences ruled out the interactive scene. You are seeing
+        the authored static route — the full argument, none of the motion.
+      </p>
+    </div>
+  </section>
+
+  <section class="chapter" id="ch2" data-chapter="2" data-state="fragmented" data-cam="wide">
+    <div class="chapter__inner">
+      <p class="chapter__n">02 — Fragmented world</p>
+      <h2 class="t-cinema-3" style="color:var(--text-primary)">Most of what matters arrives broken.</h2>
+      <p class="t-body-lg">
+        County records that disagree with the plat. A sensor reading with no
+        timestamp. Three systems that each hold a third of the answer and none
+        that hold the question. This is not a data problem waiting for a bigger
+        model — it is a <em>structural</em> problem, and it is where Neuruh starts.
+      </p>
+      <p class="verb">Motion verb — recognition</p>
+    </div>
+  </section>
+
+  <section class="chapter" id="ch3" data-chapter="3" data-state="awakening" data-cam="mid">
+    <div class="chapter__inner">
+      <p class="chapter__n">03 — The N-Cell awakens</p>
+      <h2 class="t-cinema-3" style="color:var(--text-primary)">Recognition is the first act, not inference.</h2>
+      <p class="t-body-lg">
+        Before anything is concluded, a fragment is <em>identified</em>: what it
+        is, where it came from, when it was true. The membrane admits
+        selectively. What it refuses is recorded as clearly as what it accepts —
+        a system that quietly drops what it cannot parse is a system that will
+        lie to you later.
+      </p>
+      <p class="verb">Motion verb — recognition</p>
+    </div>
+  </section>
+
+  <section class="chapter" id="ch4" data-chapter="4" data-state="metabolism" data-cam="close">
+    <div class="chapter__inner">
+      <p class="chapter__n">04 — Intelligence metabolism</p>
+      <h2 class="t-cinema-3" style="color:var(--text-primary)">Signal becomes evidence. Evidence keeps its receipts.</h2>
+      <p class="t-body-lg">
+        Channels carry each fragment inward, corroborating it against other
+        sources as it travels. Where two sources disagree, the contradiction is
+        <strong>held open</strong> — both claims preserved, both provenances
+        intact, neither styled as the winner. Downstream work that depends on the
+        disputed value is gated until a human resolves it.
+      </p>
+
+      <!-- SIGNATURE INTERACTION -->
+      <div class="trace" id="trace">
+        <div class="trace__head">
+          <p class="n-label">Signature interaction</p>
+          <button class="n-btn n-btn--ghost t-ui-sm" id="traceReset" style="height:1.75rem">Reset</button>
+        </div>
+        <p class="trace__hint" id="traceHint" style="margin-top:var(--space-3)">
+          Click any channel in the scene — or press <kbd class="t-data-sm">T</kbd> — to
+          trace one piece of evidence from raw signal to governed execution.
+        </p>
+        <div class="trace__steps" id="traceSteps"></div>
+      </div>
+
+      <p class="verb">Motion verbs — organization, contradiction</p>
+    </div>
+  </section>
+
+  <section class="chapter" id="ch5" data-chapter="5" data-state="vertical" data-cam="vertical">
+    <div class="chapter__inner">
+      <p class="chapter__n">05 — Vertical worlds</p>
+      <h2 class="t-cinema-3" style="color:var(--text-primary)">One architecture. Distinct products.</h2>
+      <p class="t-body-lg">
+        Field Scout works parcels. Deed Sonar works title. Lead Recipe OS works
+        pipelines. They do not share a look — they share a <em>spine</em>. Every
+        one inherits the same trust semantics: green still means verified, amber
+        still means a human is required, red still means two sources disagree.
+        Only the accent changes.
+      </p>
+      <div class="row" style="margin-top:var(--space-5); flex-wrap:wrap" id="vertPicker">
+        <button class="n-btn n-btn--secondary t-ui-sm" data-vert="field" aria-pressed="true">Field Scout</button>
+        <button class="n-btn n-btn--secondary t-ui-sm" data-vert="sensing" aria-pressed="false">Deed Sonar</button>
+        <button class="n-btn n-btn--secondary t-ui-sm" data-vert="reasoning" aria-pressed="false">Lead Recipe OS</button>
+      </div>
+      <p class="verb">Motion verb — adaptation</p>
+    </div>
+  </section>
+
+  <section class="chapter" id="ch6" data-chapter="6" data-state="gating" data-cam="core">
+    <div class="chapter__inner">
+      <p class="chapter__n">06 — Knowing becomes doing</p>
+      <h2 class="t-cinema-3" style="color:var(--text-primary)">Nothing reaches the world without passing the core.</h2>
+      <p class="t-body-lg">
+        Governance is not a settings page. It is a structural gate every action
+        travels through, and it has four honest answers — granted, scoped,
+        withheld, revoked. A withheld action is not a broken feature; it is the
+        system telling you it <em>could</em> act and is choosing not to.
+      </p>
+      <div class="n-gate" data-authority="scoped" style="margin-top:var(--space-5)">
+        <div class="n-gate__head"><span class="n-gate__ring">◐</span>
+          <div><p class="n-gate__title">Scoped</p><p class="n-gate__scope">read + enrich · no outbound contact</p></div></div>
+        <p class="n-gate__reason">Outbound contact requires a separate grant. One unresolved contradiction upstream is holding two downstream recipes.</p>
+      </div>
+      <p class="verb">Motion verbs — gating, execution</p>
+    </div>
+  </section>
+
+  <section class="chapter" id="ch7" data-chapter="7" data-state="receipt" data-cam="mid">
+    <div class="chapter__inner">
+      <p class="chapter__n">07 — Receipt and adaptation</p>
+      <h2 class="t-cinema-3" style="color:var(--text-primary)">Proof returns, and the system changes because of it.</h2>
+      <p class="t-body-lg">
+        Every executed action emits a receipt: what was done, under whose
+        authority, with what scope, and what came back. Those receipts feed
+        inward and reweight the system. This is the only place Neuruh shows
+        sustained green — because it is the only place something is finished.
+      </p>
+      <div class="n-receipt" style="margin-top:var(--space-5)">
+        <dl>
+          <dt>action</dt><dd>recipe.execute · outreach_v3</dd>
+          <dt>authority</dt><dd>granted · grant_id=0x8C21</dd>
+          <dt>result</dt><dd>2 delivered · 1 deferred (contradiction hold)</dd>
+          <dt>receipt</dt><dd>rcpt_01K9F2M7Q4 · 2026-07-31T21:44:12Z</dd>
+        </dl>
+      </div>
+      <p class="verb">Motion verbs — receipt, adaptation</p>
+    </div>
+  </section>
+ </div>
+
+  <section class="enter" id="ch8" data-chapter="8" data-state="entry" data-cam="wide">
+    <div class="container container--editorial">
+      <div class="enter__in">
+        <p class="chapter__n">08 — Enter Neuruh</p>
+        <h2 class="t-cinema-2" style="color:var(--text-primary); margin-block:var(--space-4) var(--space-5)">
+          Bring us something<br>that disagrees with itself.
+        </h2>
+        <p class="t-body-lg">
+          The fastest way to understand Neuruh is to hand it a real contradiction
+          from your own data and watch what it refuses to conclude.
+        </p>
+        <div class="row">
+          <a class="n-btn n-btn--primary" href="#ch8">Request a working session</a>
+          <a class="n-btn n-btn--secondary" href="#ch4">See the architecture again</a>
+        </div>
+        <p class="n-source">
+          Every figure on this page is fixture data from a real Travis County
+          working set, marked as fixture in Blackbox. Nothing on this page is a
+          live counter.
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="./scene.js"></script>
+</body>
+</html>

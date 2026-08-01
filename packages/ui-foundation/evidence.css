@@ -1,0 +1,146 @@
+/* NEURUH LAYER 4 — EVIDENCE AND TRUST
+   Master visual rule 8: raw truth remains available behind evidence and
+   diagnostic inspectors. These components are the doorway to it.
+
+   Every one of them refuses to render a claim without a provenance path. */
+
+/* ── EVIDENCE CHIP ────────────────────────────────────────────────────
+   The atom. A claim plus where it came from. Never a claim alone. */
+.n-evidence {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--_edge);
+  border-radius: var(--radius-xs);
+  background: var(--_bg);
+  font: var(--type-data-sm);
+  color: var(--_fg);
+  cursor: pointer;
+  transition: var(--motion-recognition);
+}
+.n-evidence__source { color: var(--text-faint); }
+.n-evidence__source::before { content: "◇ "; }
+.n-evidence:hover { border-color: var(--border-illuminated); }
+
+/* ── PROVENANCE TRAIL ─────────────────────────────────────────────────
+   Signal → evidence → claim. Each hop is inspectable. The trail is the
+   answer to "how do you know that?" and must never be collapsed to a
+   confidence percentage alone. */
+.n-trail { display: flex; flex-direction: column; gap: 0; }
+.n-trail__hop {
+  display: grid;
+  grid-template-columns: 1.25rem 1fr;
+  gap: var(--space-3);
+  padding-block: var(--space-2);
+  position: relative;
+}
+.n-trail__hop::before {
+  content: "";
+  grid-column: 1;
+  justify-self: center;
+  width: 7px; height: 7px;
+  margin-top: 0.42em;
+  border-radius: var(--radius-round);
+  background: var(--_fg);
+  box-shadow: 0 0 0 3px var(--bg-surface);
+  z-index: 1;
+}
+.n-trail__hop:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 0.625rem;
+  top: 1.1em;
+  bottom: -0.4em;
+  width: 1px;
+  background: var(--border-strong);
+}
+.n-trail__label { font: var(--type-label); letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--text-faint); }
+.n-trail__value { font: var(--type-body-sm); color: var(--text-body); }
+.n-trail__meta { font: var(--type-data-sm); color: var(--text-faint); }
+
+/* ── CONFIDENCE METER ─────────────────────────────────────────────────
+   Shows the interval, not a single number. A meter that renders 0.87 as a
+   solid bar implies precision the system does not have. The lighter band is
+   the uncertainty range and is never optional. */
+.n-confidence { display: flex; flex-direction: column; gap: var(--space-2); }
+/* The state glow belongs to the meter, not to the wrapper — an outer ring
+   reads as a container border and obscures the interval it is describing. */
+.n-confidence[data-state] { box-shadow: none; }
+.n-confidence__track {
+  position: relative;
+  height: 6px;
+  border-radius: var(--radius-xs);
+  background: var(--bg-inset);
+  overflow: hidden;
+}
+.n-confidence__range {
+  position: absolute; inset-block: 0;
+  background: var(--_bg);
+  border-inline: 1px solid var(--_fg);
+}
+.n-confidence__point {
+  position: absolute; inset-block: 0;
+  width: 2px;
+  background: var(--_fg);
+}
+.n-confidence__legend { display: flex; justify-content: space-between; font: var(--type-data-sm); color: var(--text-faint); }
+
+/* ── CONTRADICTION PAIR ───────────────────────────────────────────────
+   The brief is explicit that contradiction is PRESERVED, not resolved away.
+   Both claims stay on screen, both keep their provenance, and neither is
+   styled as the winner. */
+.n-contradiction {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border: 1px solid var(--status-contradiction);
+  border-radius: var(--radius-md);
+  background: var(--status-contradiction-wash);
+}
+@media (min-width: 40rem) {
+  .n-contradiction { grid-template-columns: 1fr auto 1fr; align-items: start; }
+}
+.n-contradiction__claim {
+  display: flex; flex-direction: column; gap: var(--space-2);
+  padding: var(--space-3);
+  background: var(--bg-surface);
+  border: var(--edge-hairline);
+  border-radius: var(--radius-sm);
+}
+.n-contradiction__pivot {
+  align-self: center;
+  font: var(--type-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--status-contradiction);
+  text-align: center;
+}
+.n-contradiction__note { grid-column: 1 / -1; font: var(--type-body-sm); color: var(--text-muted); }
+
+/* ── RECEIPT BLOCK ────────────────────────────────────────────────────
+   What actually happened, in machine voice. Mono is licensed here because
+   this IS machine evidence (master visual rule 5). */
+.n-receipt {
+  background: var(--bg-inset);
+  border: var(--edge-hairline);
+  border-left: 2px solid var(--status-verified);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-4);
+  font: var(--type-receipt);
+  color: var(--text-body);
+}
+.n-receipt dl { display: grid; grid-template-columns: max-content 1fr; gap: var(--space-1) var(--space-4); margin: 0; }
+.n-receipt dt { color: var(--text-faint); }
+.n-receipt dd { margin: 0; color: var(--text-primary); }
+
+/* ── SOURCE FOOTNOTE ──────────────────────────────────────────────────
+   Attaches to any editorial claim on the flagship. Keeps marketing copy
+   accountable to system truth (constitution rule 8). */
+.n-source {
+  font: var(--type-data-sm);
+  color: var(--text-faint);
+  border-top: 1px solid var(--border-subtle);
+  padding-top: var(--space-2);
+}
+.n-source a { color: var(--text-muted); }

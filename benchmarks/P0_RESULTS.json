@@ -1,0 +1,47 @@
+{
+  "measuredAt": "2026-08-01T22:44:29Z",
+  "environment": {
+    "host": "Apple M1, 8-core integrated GPU",
+    "node": "26.5.0",
+    "next": "16.2.12",
+    "playwright": "1.62.1"
+  },
+  "build": {
+    "status": "pass",
+    "compileMs": 1793,
+    "routes": ["/", "/accessible", "/no-webgl", "/reduced-motion"],
+    "staticRoutes": 4
+  },
+  "verification": {
+    "typecheck": "pass",
+    "unitTests": { "passed": 7, "failed": 0 },
+    "browserTests": { "passed": 4, "failed": 0 },
+    "provenanceArtifacts": 68,
+    "boundaryViolations": 0,
+    "visualMatrixCasesPrepared": 192
+  },
+  "tier0": {
+    "transferKb": 167.3,
+    "budgetKb": 180,
+    "webglSceneBytes": 0,
+    "chapterCount": 8,
+    "copyParity": "pass"
+  },
+  "budgetCanary": {
+    "validFixture": "accepted",
+    "decodedAssetRegressionMb": 108,
+    "decodedAssetBudgetMb": 80,
+    "deliberateRegression": "rejected as expected"
+  },
+  "securityAudit": {
+    "critical": 0,
+    "high": 4,
+    "moderate": 0,
+    "note": "Advisories are in Next build dependencies postcss/sharp and glTF-Transform CLI via sharp; no force downgrade was applied."
+  },
+  "gateStatus": {
+    "P0": "local pass",
+    "G1": "blocked: required external devices unavailable",
+    "G2": "not certified because G1 is open"
+  }
+}

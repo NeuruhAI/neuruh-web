@@ -1,0 +1,80 @@
+/* NEURUH — BASE
+   Document substrate. Spine-aware, so the same reset serves obsidian and
+   bone without a second stylesheet. */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg-canvas);
+  color: var(--text-body);
+  font: var(--type-body);
+  letter-spacing: var(--tracking-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-synthesis-weight: none;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 { margin: 0; color: var(--text-primary); }
+p { margin: 0; }
+a { color: var(--text-illuminated); text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+img, svg, canvas { display: block; max-width: 100%; }
+button, input, select, textarea { font: inherit; color: inherit; }
+
+/* Focus is a ring, never a colour swap — the ring survives high-contrast
+   modes and forced-colors where a background change does not. */
+:focus-visible {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: var(--focus-ring);
+  border-radius: var(--radius-sm);
+}
+:focus:not(:focus-visible) { outline: none; }
+
+@media (forced-colors: active) {
+  :focus-visible { outline: 2px solid CanvasText; box-shadow: none; }
+  [data-state] { forced-color-adjust: none; }
+}
+
+/* Skip link — every flagship and product surface must ship one. */
+.skip-link {
+  position: absolute;
+  left: var(--space-4);
+  top: var(--space-4);
+  z-index: 100;
+  transform: translateY(-200%);
+  padding: var(--space-2) var(--space-4);
+  background: var(--illum-solid);
+  color: var(--text-on-illuminated);
+  border-radius: var(--radius-sm);
+  font: var(--type-ui);
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+.skip-link:focus { transform: translateY(0); }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Layout primitives */
+.container { width: 100%; max-width: var(--container-product); margin-inline: auto; padding-inline: var(--grid-margin); }
+.container--editorial { max-width: var(--container-editorial); }
+.container--prose { max-width: var(--container-prose); }
+.grid { display: grid; grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr)); gap: var(--grid-gutter); }
+.stack { display: flex; flex-direction: column; gap: var(--density-gap); }
+.row { display: flex; align-items: center; gap: var(--density-gap); }
+.spacer { flex: 1 1 auto; }
+
+@media (max-width: 48rem) {
+  .grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}

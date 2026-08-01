@@ -1,0 +1,28 @@
+/* NEURUH MASTER DESIGN SYSTEM — single entry point.
+
+   Layer order is load-bearing: primitives, then semantics, then material,
+   then components. Never reorder. */
+
+/* Layer 1 — Master Brand foundations */
+@import url("./tokens/color-primitives.css");
+@import url("./tokens/color-semantics.css");
+@import url("./tokens/fonts.css");
+@import url("./tokens/typography.css");
+@import url("./tokens/space.css");
+@import url("./tokens/material.css");
+@import url("./tokens/motion.css");
+@import url("./tokens/state.css");
+
+/* Layer 2 — Flagship World (spatial contract) */
+@import url("./tokens/scene.css");
+
+/* Layer 3 — Product Interface Foundation */
+@import url("./css/base.css");
+@import url("./css/core.css");
+
+/* Layer 4 — Evidence and Trust */
+@import url("./css/evidence.css");
+@import url("./css/authority.css");
+
+/* Layer 5 — Blackbox Diagnostics */
+@import url("./css/blackbox.css");

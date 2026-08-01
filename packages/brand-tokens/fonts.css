@@ -1,0 +1,44 @@
+/* NEURUH MASTER — TYPEFACES
+
+   PROVENANCE NOTE. No proprietary foundry binaries were supplied with the
+   source package. The three variable TTFs below were carried forward from the
+   earlier "Neuruh Design System" Claude Design project (5cb7e4d9) rather than
+   re-sourced, so the v0 rendering stays byte-identical. All three are
+   SIL Open Font License 1.1 from google/fonts and are redistributable.
+
+     Archivo          cinematic display voice — tight, high-contrast grotesque
+                      that holds structure at 120px
+     Inter            interface and editorial body
+     JetBrains Mono   machine evidence ONLY (see master visual rule 5)
+
+   If Neuruh licenses a proprietary display face, swap --font-display here and
+   nothing else changes. */
+
+@font-face {
+  font-family: "Archivo";
+  src: url("../assets/fonts/Archivo-Variable.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter-Variable.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("../assets/fonts/JetBrainsMono-Variable.ttf") format("truetype-variations");
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* @kind font */ --font-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  /* @kind font */ --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  /* @kind font */ --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", monospace;
+}

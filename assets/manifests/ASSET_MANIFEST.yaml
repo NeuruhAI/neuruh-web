@@ -1,0 +1,146 @@
+# Neuruh.com — Direction A · Asset Manifest
+#
+# STATUS: specification, not inventory. No asset in this file has been authored
+# or measured yet. Every byte figure is a BUDGET the asset must come in under,
+# not a recorded size. Stage 4 does not produce production art.
+
+version: 1.0
+direction: A — Biological-Architectural
+authored_in: Blender 4.x
+delivery: glTF 2.0 (.glb), Draco geometry compression, KTX2/BasisU textures
+loading: manifest-driven, progressive, per-chapter
+
+budgets:
+  initial_payload_kb: 180        # before ANY scene asset loads
+  first_meaningful_ms: 1200
+  scene_memory_mb: 220
+  draw_calls_max: 120
+  frame_ms_desktop: 16.7
+  frame_ms_mobile: 22
+
+# ── GEOMETRY ────────────────────────────────────────────────────────────────
+geometry:
+  - id: tissue_block
+    role: hero — hexagonally packed engineered tissue
+    chapters: [1, 2, 3, 4, 5, 6, 7, 8]
+    authored_tris: 180000
+    lods:
+      - { level: 0, tris: 180000, tiers: [3] }
+      - { level: 1, tris: 74000,  tiers: [2] }
+      - { level: 2, tris: 22000,  tiers: [1] }
+    instancing: REQUIRED — individual hex cells are one InstancedMesh
+    budget_kb: 420
+    notes: >
+      Instancing is not an optimisation here, it is a correctness requirement.
+      Per-cell state (dormant/verified/review/contradiction) rides in an
+      instanced attribute, so the eleven-state system is expressed on the GPU
+      rather than as separate meshes.
+
+  - id: governance_core
+    role: faceted machined governance block
+    chapters: [3, 4, 5, 6, 7, 8]
+    authored_tris: 9000
+    lods:
+      - { level: 0, tris: 9000, tiers: [3, 2] }
+      - { level: 1, tris: 3200, tiers: [1] }
+    budget_kb: 60
+    notes: >
+      Hard-edged and machined by design. It must remain visually opposite to
+      everything around it — a smooth or glowing core is a direction violation,
+      not a style choice.
+
+  - id: membrane_sheets
+    role: selective admission surfaces; also the chapter-transition mechanism
+    chapters: [1, 2, 3, 4]
+    count: 4
+    authored_tris: 4800   # per sheet, subdivided plane
+    generation: procedural displacement at runtime, not baked geometry
+    budget_kb: 0          # generated
+    notes: Only 2 sheets carry live transmission at tier 3. See materials.
+
+  - id: channel_network
+    role: evidence transport; the interactive surface
+    chapters: [3, 4, 5, 6, 7]
+    count: 7
+    authored_tris: 2400   # per channel, swept tube
+    instancing: yes
+    budget_kb: 48
+
+  - id: receipt_filaments
+    role: inbound proof
+    chapters: [7, 8]
+    count: 5
+    generation: procedural curve at runtime
+    budget_kb: 0
+
+# ── MATERIALS ───────────────────────────────────────────────────────────────
+materials:
+  - id: mat_membrane
+    type: MeshPhysicalMaterial
+    transmission: 0.72
+    thickness: 0.40
+    ior: 1.36
+    roughness: 0.18
+    tier_policy:
+      3: live transmission, max 2 stacked layers
+      2: baked thickness + normal map, no transmission
+      1: baked thickness + normal map, no transmission
+    risk: HIGHEST — see TECHNICAL_SPIKE_PLAN.md spike 1
+
+  - id: mat_tissue
+    type: MeshStandardMaterial
+    roughness: 0.68
+    metalness: 0.05
+    maps: [albedo, normal, roughness, ao]
+    resolution: { 3: 2048, 2: 1024, 1: 512 }
+    budget_kb: 380   # KTX2, all maps, tier 3
+
+  - id: mat_brass
+    type: MeshStandardMaterial
+    roughness: 0.32
+    metalness: 0.95
+    maps: [albedo, normal, roughness]
+    resolution: { 3: 1024, 2: 1024, 1: 512 }
+    budget_kb: 140
+
+  - id: mat_channel
+    type: MeshStandardMaterial
+    roughness: 0.24
+    metalness: 0.10
+    notes: wet dielectric sheen; emissive ONLY when the state system licenses it
+
+emissive_law: >
+  Scene emissive colours are bound to the same semantics as the DOM.
+  --scene-emissive-verified is the same green as --status-verified. An emissive
+  value that does not correspond to a state token is forbidden.
+
+# ── ENVIRONMENT ─────────────────────────────────────────────────────────────
+environment:
+  - id: hdri_interior
+    role: interior fluid chamber IBL
+    resolution: { 3: "2k", 2: "1k", 1: "512" }
+    format: KTX2
+    budget_kb: 260
+
+lighting_rig:
+  key:  { color: "#e8c98a", intensity: 2.4, motivated_by: "the cell's own recognition event" }
+  fill: { color: "#4a5570", intensity: 0.5 }
+  rim:  { color: "#cfe6ff", intensity: 1.1 }
+  ambient: 0.18
+  source: tokens/scene.css — art direction must not be hard-coded in shaders
+
+# ── TOTALS ──────────────────────────────────────────────────────────────────
+totals:
+  tier_3_scene_kb: 1308
+  tier_2_scene_kb: 720
+  tier_1_scene_kb: 340
+  tier_0_scene_kb: 0
+  initial_dom_payload_kb: 180   # hard ceiling, independent of tier
+
+open_questions:
+  - Does 2 stacked transmissive layers hold 16.7ms at DPR 2 on a mid-range
+    discrete GPU? If not, tier 3 drops to 1 transmissive layer. Spike 1.
+  - Is a real DoF pass affordable at tier 3, or does rack-focus become a
+    material/opacity effect? Spike 2.
+  - Can per-instance state attributes drive emissive without a custom shader,
+    or is a shader material required? Spike 3.

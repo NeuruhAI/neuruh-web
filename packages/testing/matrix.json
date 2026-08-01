@@ -1,0 +1,180 @@
+[
+  {
+    "id": "A-phys-L0-dpr2",
+    "group": "A · layer sweep, DPR 2",
+    "note": "0 live transmissive layer(s) at the tier-3 DPR",
+    "params": { "tier": 3, "seed": 20260731, "state": "metabolism", "cam": "close", "dpr": 2, "mat": "physical", "layers": 0 },
+    "shot": "spike1-physical-L0-dpr2"
+  },
+  {
+    "id": "A-phys-L1-dpr2",
+    "group": "A · layer sweep, DPR 2",
+    "note": "1 live transmissive layer(s) at the tier-3 DPR",
+    "params": { "tier": 3, "seed": 20260731, "state": "metabolism", "cam": "close", "dpr": 2, "mat": "physical", "layers": 1 },
+    "shot": "spike1-physical-L1-dpr2"
+  },
+  {
+    "id": "A-phys-L2-dpr2",
+    "group": "A · layer sweep, DPR 2",
+    "note": "2 live transmissive layer(s) at the tier-3 DPR",
+    "params": { "tier": 3, "seed": 20260731, "state": "metabolism", "cam": "close", "dpr": 2, "mat": "physical", "layers": 2 },
+    "shot": "spike1-physical-L2-dpr2"
+  },
+  {
+    "id": "A-phys-L3-dpr2",
+    "group": "A · layer sweep, DPR 2",
+    "note": "3 live transmissive layer(s) at the tier-3 DPR",
+    "params": { "tier": 3, "seed": 20260731, "state": "metabolism", "cam": "close", "dpr": 2, "mat": "physical", "layers": 3 },
+    "shot": "spike1-physical-L3-dpr2"
+  },
+  {
+    "id": "A-phys-L4-dpr2",
+    "group": "A · layer sweep, DPR 2",
+    "note": "4 live transmissive layer(s) at the tier-3 DPR",
+    "params": { "tier": 3, "seed": 20260731, "state": "metabolism", "cam": "close", "dpr": 2, "mat": "physical", "layers": 4 },
+    "shot": "spike1-physical-L4-dpr2"
+  },
+  {
+    "id": "B-phys-L0-dpr1.5",
+    "group": "B · layer sweep, DPR 1.5",
+    "note": "0 live layer(s) at the tier-2 DPR",
+    "params": { "tier": 2, "seed": 20260731, "state": "metabolism", "cam": "close", "dpr": 1.5, "mat": "physical", "layers": 0 }
+  },
+  {
+    "id": "B-phys-L1-dpr1.5",
+    "group": "B · layer sweep, DPR 1.5",
+    "note": "1 live layer(s) at the tier-2 DPR",
+    "params": { "tier": 2, "seed": 20260731, "state": "metabolism", "cam": "close", "dpr": 1.5, "mat": "physical", "layers": 1 }
+  },
+  {
+    "id": "B-phys-L2-dpr1.5",
+    "group": "B · layer sweep, DPR 1.5",
+    "note": "2 live layer(s) at the tier-2 DPR",
+    "params": { "tier": 2, "seed": 20260731, "state": "metabolism", "cam": "close", "dpr": 1.5, "mat": "physical", "layers": 2 }
+  },
+  {
+    "id": "B-phys-L4-dpr1.5",
+    "group": "B · layer sweep, DPR 1.5",
+    "note": "4 live layer(s) at the tier-2 DPR",
+    "params": { "tier": 2, "seed": 20260731, "state": "metabolism", "cam": "close", "dpr": 1.5, "mat": "physical", "layers": 4 }
+  },
+  {
+    "id": "B-phys-L0-dpr1",
+    "group": "B · layer sweep, DPR 1",
+    "note": "0 live layer(s) at the tier-1 DPR",
+    "params": { "tier": 1, "seed": 20260731, "state": "metabolism", "cam": "close", "dpr": 1, "mat": "physical", "layers": 0 }
+  },
+  {
+    "id": "B-phys-L2-dpr1",
+    "group": "B · layer sweep, DPR 1",
+    "note": "2 live layer(s) at the tier-1 DPR",
+    "params": { "tier": 1, "seed": 20260731, "state": "metabolism", "cam": "close", "dpr": 1, "mat": "physical", "layers": 2 }
+  },
+  {
+    "id": "B-phys-L4-dpr1",
+    "group": "B · layer sweep, DPR 1",
+    "note": "4 live layer(s) at the tier-1 DPR",
+    "params": { "tier": 1, "seed": 20260731, "state": "metabolism", "cam": "close", "dpr": 1, "mat": "physical", "layers": 4 }
+  },
+  {
+    "id": "C-ssr-L2-dpr2",
+    "group": "C · approach comparison, 2 layers, DPR 2",
+    "note": "ssr at the same layer count and DPR as A-phys-L2-dpr2",
+    "params": { "tier": 3, "seed": 20260731, "state": "metabolism", "cam": "close", "dpr": 2, "mat": "ssr", "layers": 2 },
+    "shot": "spike1-ssr-L2-dpr2"
+  },
+  {
+    "id": "C-fresnel-L2-dpr2",
+    "group": "C · approach comparison, 2 layers, DPR 2",
+    "note": "fresnel at the same layer count and DPR as A-phys-L2-dpr2",
+    "params": { "tier": 3, "seed": 20260731, "state": "metabolism", "cam": "close", "dpr": 2, "mat": "fresnel", "layers": 2 },
+    "shot": "spike1-fresnel-L2-dpr2"
+  },
+  {
+    "id": "C-baked-L2-dpr2",
+    "group": "C · approach comparison, 2 layers, DPR 2",
+    "note": "baked at the same layer count and DPR as A-phys-L2-dpr2",
+    "params": { "tier": 3, "seed": 20260731, "state": "metabolism", "cam": "close", "dpr": 2, "mat": "baked", "layers": 2 },
+    "shot": "spike1-baked-L2-dpr2"
+  },
+  {
+    "id": "D-ssr-L1-dpr2",
+    "group": "D · screen-space refraction scaling",
+    "note": "drei MeshTransmissionMaterial, 1 layer(s) — one own frame buffer per material",
+    "params": { "tier": 3, "seed": 20260731, "state": "metabolism", "cam": "close", "dpr": 2, "mat": "ssr", "layers": 1 }
+  },
+  {
+    "id": "D-ssr-L4-dpr2",
+    "group": "D · screen-space refraction scaling",
+    "note": "drei MeshTransmissionMaterial, 4 layer(s) — one own frame buffer per material",
+    "params": { "tier": 3, "seed": 20260731, "state": "metabolism", "cam": "close", "dpr": 2, "mat": "ssr", "layers": 4 }
+  },
+  {
+    "id": "E-phys-L2-trs0.75",
+    "group": "E · transmission render-target scale",
+    "note": "2 live layers, transmissionResolutionScale=0.75",
+    "params": { "tier": 3, "seed": 20260731, "state": "metabolism", "cam": "close", "dpr": 2, "mat": "physical", "layers": 2, "trs": 0.75 },
+    "shot": "spike1-physical-L2-trs075"
+  },
+  {
+    "id": "E-phys-L2-trs0.5",
+    "group": "E · transmission render-target scale",
+    "note": "2 live layers, transmissionResolutionScale=0.5",
+    "params": { "tier": 3, "seed": 20260731, "state": "metabolism", "cam": "close", "dpr": 2, "mat": "physical", "layers": 2, "trs": 0.5 },
+    "shot": "spike1-physical-L2-trs05"
+  },
+  {
+    "id": "E-phys-L2-trs0.25",
+    "group": "E · transmission render-target scale",
+    "note": "2 live layers, transmissionResolutionScale=0.25",
+    "params": { "tier": 3, "seed": 20260731, "state": "metabolism", "cam": "close", "dpr": 2, "mat": "physical", "layers": 2, "trs": 0.25 },
+    "shot": "spike1-physical-L2-trs025"
+  },
+  {
+    "id": "F-phys-L2-doubleSided",
+    "group": "F · worst cases",
+    "note": "Double-sided membranes. WEBGL_multisampled_render_to_texture is absent here, so three renders each double-sided transmissive object a second time into the target (WebGLRenderer.js).",
+    "params": { "tier": 3, "seed": 20260731, "state": "metabolism", "cam": "close", "dpr": 2, "mat": "physical", "layers": 2, "ds": 1 }
+  },
+  {
+    "id": "F-phys-L2-maxMembrane",
+    "group": "F · worst cases",
+    "note": "Synthetic envelope, not a shipped binding: the `fragmented` state has the highest membrane presence (0.55) and the `core` camera gives the membrane its largest screen coverage.",
+    "params": { "tier": 3, "seed": 20260731, "dpr": 2, "mat": "physical", "layers": 2, "state": "fragmented", "cam": "core" },
+    "shot": "spike1-physical-L2-worstcase"
+  },
+  {
+    "id": "F-phys-L4-maxMembrane",
+    "group": "F · worst cases",
+    "note": "The manifest's full 4-sheet stack under the same envelope.",
+    "params": { "tier": 3, "seed": 20260731, "dpr": 2, "mat": "physical", "layers": 4, "state": "fragmented", "cam": "core" }
+  },
+  {
+    "id": "G-tier3-shipping",
+    "group": "G · per-tier shipping candidate",
+    "note": "Tier 3 as ASSET_MANIFEST.yaml specifies it: max 2 live transmissive sheets. Identical config to A-phys-L2-dpr2 in a separate page load — an independent-load corroboration of that row.",
+    "params": { "tier": 3, "seed": 20260731, "state": "metabolism", "cam": "close", "dpr": 2, "mat": "physical", "layers": 2 },
+    "shot": "spike1-tier3-shipping"
+  },
+  {
+    "id": "G-tier2-shipping",
+    "group": "G · per-tier shipping candidate",
+    "note": "Tier 2 as the manifest specifies: baked thickness + normal, no transmission.",
+    "params": { "tier": 2, "seed": 20260731, "state": "metabolism", "cam": "close", "dpr": 1.5, "mat": "baked", "layers": 4 },
+    "shot": "spike1-tier2-shipping"
+  },
+  {
+    "id": "G-tier1-shipping",
+    "group": "G · per-tier shipping candidate",
+    "note": "Tier 1 as the manifest specifies: baked, 3 sheets, mobile density.",
+    "params": { "tier": 1, "seed": 20260731, "state": "metabolism", "cam": "close", "dpr": 1, "mat": "baked", "layers": 3 },
+    "shot": "spike1-tier1-shipping"
+  },
+  {
+    "id": "G-tier3-reduced-motion",
+    "group": "G · per-tier shipping candidate",
+    "note": "Tier 3 on the reduced-motion route. A route, not disabled animation.",
+    "params": { "tier": 3, "seed": 20260731, "state": "metabolism", "cam": "close", "dpr": 2, "mat": "physical", "layers": 2, "motion": "reduced" },
+    "shot": "spike1-tier3-reduced-motion"
+  }
+]

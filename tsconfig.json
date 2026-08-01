@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["dom", "dom.iterable", "ES2022"],
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "incremental": true,
+    "plugins": [{ "name": "next" }],
+    "baseUrl": ".",
+    "paths": {
+      "@/components/scene/*": ["packages/spatial-runtime/scene/*"],
+      "@/components/dom/SceneBoundary": ["packages/spatial-runtime/boundary/SceneBoundary.tsx"],
+      "@/components/dom/Tier0": ["packages/spatial-runtime/boundary/Tier0.tsx"],
+      "@/components/dom/TierRail": ["apps/neuruh-web/components/TierRail.tsx"],
+      "@/lib/capability": ["packages/spatial-runtime/boundary/capability.ts"],
+      "@/lib/metrics": ["packages/spatial-runtime/harness/metrics.ts"],
+      "@/lib/*": ["packages/spatial-runtime/lib/*"],
+      "@/app/*": ["apps/neuruh-web/app/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "apps/**/*.ts", "apps/**/*.tsx", "packages/**/*.ts", "packages/**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules", "receipts", "benchmarks", "packages/spatial-runtime/lib/metrics.ts"]
+}

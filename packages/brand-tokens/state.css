@@ -1,0 +1,93 @@
+/* NEURUH MASTER — STATE SYSTEM
+
+   Master visual rule 9: no visual state may imply a capability the system does
+   not possess. This file exists so that "we don't know yet" and "we checked
+   and it's fine" cannot render identically.
+
+   ELEVEN STATES. Every data-bearing component must be able to render all of
+   the ones that apply to it. A component with only default + loading is
+   incomplete.
+
+     dormant        exists, not yet activated
+     loading        work in progress, outcome unknown
+     partial        some evidence present, some still arriving
+     verified       checked against a source; provenance available
+     review         needs a human; the system is waiting ON PURPOSE
+     contradiction  two sources disagree; BOTH are preserved
+     stale          was true; freshness window has expired
+     unavailable    the capability exists but the data path is down
+     unsupported    the capability does not exist here (NOT an error)
+     blocked        governance withheld authority
+     failed         attempted and did not succeed
+
+   The distinction between `unavailable`, `unsupported` and `failed` is a brand
+   commitment. Collapsing them into one grey "error" state is exactly the
+   "fake confidence" the seed forbids. */
+
+:root {
+  --state-dormant-fg: var(--text-faint);
+  --state-dormant-bg: transparent;
+  --state-dormant-edge: var(--border-subtle);
+
+  --state-loading-fg: var(--text-muted);
+  --state-loading-bg: var(--status-inert-wash);
+  --state-loading-edge: var(--border-default);
+
+  --state-partial-fg: var(--text-body);
+  --state-partial-bg: var(--illum-wash);
+  --state-partial-edge: var(--alpha-brass-24);
+
+  --state-verified-fg: var(--status-verified);
+  --state-verified-bg: var(--status-verified-wash);
+  --state-verified-edge: var(--status-verified);
+
+  --state-review-fg: var(--status-review);
+  --state-review-bg: var(--status-review-wash);
+  --state-review-edge: var(--status-review);
+
+  --state-contradiction-fg: var(--status-contradiction);
+  --state-contradiction-bg: var(--status-contradiction-wash);
+  --state-contradiction-edge: var(--status-contradiction);
+
+  --state-stale-fg: var(--text-muted);
+  --state-stale-bg: var(--status-inert-wash);
+  --state-stale-edge: var(--border-default);
+
+  --state-unavailable-fg: var(--text-faint);
+  --state-unavailable-bg: transparent;
+  --state-unavailable-edge: var(--border-default);
+
+  --state-unsupported-fg: var(--text-faint);
+  --state-unsupported-bg: transparent;
+  --state-unsupported-edge: transparent;
+
+  --state-blocked-fg: var(--authority-withheld);
+  --state-blocked-bg: var(--status-inert-wash);
+  --state-blocked-edge: var(--border-strong);
+
+  --state-failed-fg: var(--status-contradiction);
+  --state-failed-bg: var(--status-contradiction-wash);
+  --state-failed-edge: var(--status-contradiction);
+}
+
+/* Every state carries a non-colour cue as well as a colour cue: a glyph, a
+   border treatment, or a texture. Colour alone never encodes state. */
+[data-state] { --_fg: var(--text-body); --_bg: transparent; --_edge: var(--border-default); }
+[data-state="dormant"] { --_fg: var(--state-dormant-fg); --_bg: var(--state-dormant-bg); --_edge: var(--state-dormant-edge); }
+[data-state="loading"] { --_fg: var(--state-loading-fg); --_bg: var(--state-loading-bg); --_edge: var(--state-loading-edge); }
+[data-state="partial"] { --_fg: var(--state-partial-fg); --_bg: var(--state-partial-bg); --_edge: var(--state-partial-edge); }
+[data-state="verified"] { --_fg: var(--state-verified-fg); --_bg: var(--state-verified-bg); --_edge: var(--state-verified-edge); }
+[data-state="review"] { --_fg: var(--state-review-fg); --_bg: var(--state-review-bg); --_edge: var(--state-review-edge); }
+[data-state="contradiction"] { --_fg: var(--state-contradiction-fg); --_bg: var(--state-contradiction-bg); --_edge: var(--state-contradiction-edge); }
+[data-state="stale"] { --_fg: var(--state-stale-fg); --_bg: var(--state-stale-bg); --_edge: var(--state-stale-edge); }
+[data-state="unavailable"] { --_fg: var(--state-unavailable-fg); --_bg: var(--state-unavailable-bg); --_edge: var(--state-unavailable-edge); }
+[data-state="unsupported"] { --_fg: var(--state-unsupported-fg); --_bg: var(--state-unsupported-bg); --_edge: var(--state-unsupported-edge); }
+[data-state="blocked"] { --_fg: var(--state-blocked-fg); --_bg: var(--state-blocked-bg); --_edge: var(--state-blocked-edge); }
+[data-state="failed"] { --_fg: var(--state-failed-fg); --_bg: var(--state-failed-bg); --_edge: var(--state-failed-edge); }
+
+/* Non-colour cues */
+[data-state="stale"] { border-style: dashed; }
+[data-state="unavailable"] { border-style: dotted; }
+[data-state="contradiction"] { box-shadow: var(--glow-contradiction); }
+[data-state="verified"] { box-shadow: var(--glow-verified); }
+[data-state="blocked"] { opacity: 0.72; }

@@ -1,0 +1,89 @@
+/* NEURUH LAYER 5 — BLACKBOX DIAGNOSTICS
+
+   SCOPE BOUNDARY. This layer is where the dark monospace console aesthetic is
+   CORRECT. The brand seed is explicit: "the current dark monospace dashboards
+   belong to Blackbox. They are not the universal visual identity."
+
+   Everything in this file is namespaced under [data-layer="blackbox"] so it
+   cannot leak into flagship or product surfaces. If you find yourself wanting
+   .bb-* on a client-facing screen, the answer is an evidence component from
+   layer 4, not a console. */
+
+[data-layer="blackbox"] {
+  --density-row: 1.75rem;
+  --density-pad-x: var(--space-3);
+  --density-pad-y: var(--space-1);
+  background: var(--obsidian-1000);
+  color: var(--obsidian-100);
+  font: var(--type-data);
+  font-variant-numeric: tabular-nums;
+}
+
+[data-layer="blackbox"] .bb-bar {
+  display: flex; align-items: center; gap: var(--space-4);
+  height: 1.75rem;
+  padding-inline: var(--space-3);
+  background: var(--obsidian-950);
+  border-bottom: 1px solid var(--alpha-bone-08);
+  font: var(--type-data-sm);
+  color: var(--obsidian-300);
+}
+
+/* Log line. Severity is a left rule plus a glyph — never colour alone. */
+[data-layer="blackbox"] .bb-line {
+  display: grid;
+  grid-template-columns: 5.5rem 4.5rem 1fr;
+  gap: var(--space-3);
+  padding: 2px var(--space-3);
+  border-left: 2px solid transparent;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+[data-layer="blackbox"] .bb-line:hover { background: var(--alpha-bone-04); }
+[data-layer="blackbox"] .bb-line__ts { color: var(--obsidian-400); }
+[data-layer="blackbox"] .bb-line__lvl { text-transform: uppercase; letter-spacing: 0.08em; }
+
+[data-layer="blackbox"] .bb-line[data-lvl="ok"] { border-left-color: var(--spectral-500); }
+[data-layer="blackbox"] .bb-line[data-lvl="ok"] .bb-line__lvl { color: var(--spectral-400); }
+[data-layer="blackbox"] .bb-line[data-lvl="warn"] { border-left-color: var(--amber-500); }
+[data-layer="blackbox"] .bb-line[data-lvl="warn"] .bb-line__lvl { color: var(--amber-400); }
+[data-layer="blackbox"] .bb-line[data-lvl="err"] { border-left-color: var(--crimson-500); }
+[data-layer="blackbox"] .bb-line[data-lvl="err"] .bb-line__lvl { color: var(--crimson-400); }
+[data-layer="blackbox"] .bb-line[data-lvl="dbg"] { border-left-color: var(--obsidian-600); }
+[data-layer="blackbox"] .bb-line[data-lvl="dbg"] .bb-line__lvl { color: var(--obsidian-400); }
+
+/* Fixture badge. Blackbox is the only layer permitted to display synthetic
+   data, and it must always be marked as synthetic. */
+[data-layer="blackbox"] .bb-fixture {
+  display: inline-flex; align-items: center; gap: var(--space-1);
+  padding: 0 var(--space-1);
+  border: 1px dashed var(--amber-600);
+  border-radius: var(--radius-xs);
+  color: var(--amber-400);
+  font: var(--type-data-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Lineage / trace table */
+[data-layer="blackbox"] .bb-kv {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 2px var(--space-4);
+}
+[data-layer="blackbox"] .bb-kv dt { color: var(--obsidian-400); }
+[data-layer="blackbox"] .bb-kv dd { margin: 0; color: var(--obsidian-050); }
+
+/* Health strip — sparkline substrate */
+[data-layer="blackbox"] .bb-health {
+  display: flex; align-items: flex-end; gap: 1px;
+  height: 1.5rem;
+}
+[data-layer="blackbox"] .bb-health i {
+  display: block;
+  width: 3px;
+  background: var(--obsidian-500);
+}
+[data-layer="blackbox"] .bb-health i[data-ok] { background: var(--spectral-600); }
+[data-layer="blackbox"] .bb-health i[data-warn] { background: var(--amber-500); }
+[data-layer="blackbox"] .bb-health i[data-err] { background: var(--crimson-500); }

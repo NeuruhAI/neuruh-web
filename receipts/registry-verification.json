@@ -1,0 +1,17 @@
+{
+  "verifiedAt": "2026-08-01",
+  "registry": "https://registry.npmjs.org",
+  "packages": [
+    { "name": "next", "version": "16.2.12", "license": "MIT" },
+    { "name": "react", "version": "19.2.8", "license": "MIT" },
+    { "name": "react-dom", "version": "19.2.8", "license": "MIT" },
+    { "name": "three", "version": "0.185.1", "license": "MIT" },
+    { "name": "@react-three/fiber", "version": "9.7.0", "license": "MIT" },
+    { "name": "@react-three/drei", "version": "10.7.7", "license": "MIT" },
+    { "name": "@gltf-transform/cli", "version": "4.4.2", "license": "MIT" },
+    { "name": "@gltf-transform/core", "version": "4.4.2", "license": "MIT" },
+    { "name": "@playwright/test", "version": "1.62.1", "license": "Apache-2.0" },
+    { "name": "typescript", "version": "5.9.3", "license": "Apache-2.0" }
+  ],
+  "audit": { "critical": 0, "high": 4, "moderate": 0, "low": 0 }
+}

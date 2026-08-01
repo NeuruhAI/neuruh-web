@@ -1,0 +1,83 @@
+/* NEURUH LAYER 4b — AUTHORITY AND GOVERNANCE
+   Brand property: "powerful without hiding authority boundaries."
+
+   These components make the edge of the system's permission VISIBLE. A
+   Neuruh surface should never leave a user guessing whether the machine
+   could have acted and chose not to, or simply cannot. */
+
+/* ── AUTHORITY GATE ───────────────────────────────────────────────────
+   Sits between a proposed action and its execution. Four states, all
+   legitimate; `granted` is not the "success" state, it is one of four. */
+.n-gate {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-default);
+  background: var(--bg-surface);
+  transition: var(--motion-gating);
+}
+.n-gate__head { display: flex; align-items: center; gap: var(--space-3); }
+.n-gate__ring {
+  width: 1.75rem; height: 1.75rem;
+  flex: none;
+  border-radius: var(--radius-round);
+  border: 2px solid currentColor;
+  display: grid; place-items: center;
+  font: var(--type-data-sm);
+  font-weight: 700;
+}
+.n-gate__title { font: var(--type-h4); color: var(--text-primary); }
+.n-gate__scope { font: var(--type-data-sm); color: var(--text-faint); }
+.n-gate__reason { font: var(--type-body-sm); color: var(--text-body); }
+
+.n-gate[data-authority="granted"] { border-color: var(--authority-granted); color: var(--authority-granted); }
+.n-gate[data-authority="scoped"] { border-color: var(--authority-scoped); color: var(--authority-scoped); }
+.n-gate[data-authority="withheld"] { border-color: var(--border-strong); color: var(--authority-withheld); border-style: dashed; }
+.n-gate[data-authority="revoked"] { border-color: var(--authority-revoked); color: var(--authority-revoked); }
+
+/* Granted authority is the one place a gate emits light — it has been
+   earned, which is precisely what brass means. */
+.n-gate[data-authority="granted"] { box-shadow: var(--glow-verified); }
+
+/* ── CAPABILITY BOUNDARY ──────────────────────────────────────────────
+   Master visual rule 9. Renders the honest difference between "not built",
+   "not permitted here", and "temporarily down". Never a generic error. */
+.n-boundary {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1px dashed var(--border-strong);
+  background: transparent;
+  color: var(--text-muted);
+  font: var(--type-body-sm);
+}
+.n-boundary__kind {
+  font: var(--type-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--text-faint);
+  flex: none;
+}
+.n-boundary[data-kind="unavailable"] { border-style: dotted; }
+.n-boundary[data-kind="unsupported"] { border-color: var(--border-default); }
+.n-boundary[data-kind="blocked"] { border-color: var(--authority-withheld); }
+
+/* ── SCOPE STRIP ──────────────────────────────────────────────────────
+   A persistent, low-noise band declaring what the current view is allowed
+   to touch. Present on every operational product surface. */
+.n-scope {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--density-pad-x);
+  background: var(--bg-sunken);
+  border-bottom: var(--edge-hairline);
+  font: var(--type-data-sm);
+  color: var(--text-muted);
+}
+.n-scope__key { color: var(--text-faint); text-transform: uppercase; letter-spacing: var(--tracking-label); }
+.n-scope__value { color: var(--text-body); }
+.n-scope__sep { color: var(--border-strong); }

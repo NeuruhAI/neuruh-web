@@ -1,0 +1,77 @@
+/* NEURUH MASTER — SPACING, GRID, RADIUS
+
+   4px base. Controlled negative space is a stated brand property: the studio
+   brief asks for "fewer objects, better authored", which is a spacing
+   instruction as much as a composition one. */
+
+:root {
+  --space-0: 0;
+  --space-1: 0.25rem; /* 4 */
+  --space-2: 0.5rem; /* 8 */
+  --space-3: 0.75rem; /* 12 */
+  --space-4: 1rem; /* 16 */
+  --space-5: 1.5rem; /* 24 */
+  --space-6: 2rem; /* 32 */
+  --space-7: 3rem; /* 48 */
+  --space-8: 4rem; /* 64 */
+  --space-9: 6rem; /* 96 */
+  --space-10: 8rem; /* 128 */
+  --space-11: 12rem; /* 192 — chapter separation, flagship only */
+
+  /* Density modes. Operational products shift the whole interface with one
+     attribute rather than re-specifying every component. */
+  --density-row: 2.5rem;
+  --density-pad-x: var(--space-4);
+  --density-pad-y: var(--space-3);
+  --density-gap: var(--space-3);
+
+  /* Grid. 12 columns operational, 12 columns editorial with a wider gutter. */
+  --grid-columns: 12;
+  --grid-gutter: var(--space-5);
+  --grid-margin: var(--space-6);
+
+  /* Container ceilings */
+  --container-editorial: 76rem;
+  --container-product: 96rem;
+  --container-prose: 44rem;
+  --container-full: 120rem;
+
+  /* Rails — persistent regions */
+  --rail-nav: 15rem;
+  --rail-nav-collapsed: 3.5rem;
+  --rail-inspector: 22rem;
+  --bar-top: 3.5rem;
+
+  /* Radius. Mineral, machined — small radii on everything operational.
+     Flagship surfaces may go to --radius-lg but never to a pill. */
+  --radius-none: 0;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-xl: 16px;
+  --radius-round: 999px; /* status dots and avatars ONLY */
+}
+
+[data-density="compact"] {
+  --density-row: 2rem;
+  --density-pad-x: var(--space-3);
+  --density-pad-y: var(--space-2);
+  --density-gap: var(--space-2);
+}
+[data-density="comfortable"] {
+  --density-row: 3rem;
+  --density-pad-x: var(--space-5);
+  --density-pad-y: var(--space-4);
+  --density-gap: var(--space-4);
+}
+
+@media (max-width: 48rem) {
+  :root {
+    --grid-margin: var(--space-4);
+    --grid-gutter: var(--space-4);
+    --space-9: 4rem;
+    --space-10: 5rem;
+    --space-11: 6rem;
+  }
+}

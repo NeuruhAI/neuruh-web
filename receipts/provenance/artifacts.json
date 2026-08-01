@@ -1,0 +1,825 @@
+{
+  "generatedAt": "2026-08-01T22:47:18.224Z",
+  "upstreamDesignStudio": {
+    "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-design-studio",
+    "revision": "708a99680e07b86f20d5d2405c6e8594689ce245"
+  },
+  "artifacts": [
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "exports/design-system/tokens/color-primitives.css"
+      },
+      "destination": "packages/brand-tokens/color-primitives.css",
+      "mode": "byte-identical",
+      "sourceSha256": "6bd266df392c0b2a14d57849da3219b2abc8dbaaccd9ca352031ec2847d48850",
+      "destinationSha256": "6bd266df392c0b2a14d57849da3219b2abc8dbaaccd9ca352031ec2847d48850",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "exports/design-system/tokens/color-semantics.css"
+      },
+      "destination": "packages/brand-tokens/color-semantics.css",
+      "mode": "byte-identical",
+      "sourceSha256": "6f106a609d9ac87bdd58f7590d987d8e64699029d55744534fd9fa07b8bbce17",
+      "destinationSha256": "6f106a609d9ac87bdd58f7590d987d8e64699029d55744534fd9fa07b8bbce17",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "exports/design-system/tokens/fonts.css"
+      },
+      "destination": "packages/brand-tokens/fonts.css",
+      "mode": "byte-identical",
+      "sourceSha256": "bd303d2df72e8b84019a4c4b26c614773b510496c2f48f0074b555f61a136281",
+      "destinationSha256": "bd303d2df72e8b84019a4c4b26c614773b510496c2f48f0074b555f61a136281",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "exports/design-system/tokens/material.css"
+      },
+      "destination": "packages/brand-tokens/material.css",
+      "mode": "byte-identical",
+      "sourceSha256": "ded14d64f9993a35ec6fffe9d99a597fba1d4f1e6fd975e093c973244aec0663",
+      "destinationSha256": "ded14d64f9993a35ec6fffe9d99a597fba1d4f1e6fd975e093c973244aec0663",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "exports/design-system/tokens/motion.css"
+      },
+      "destination": "packages/brand-tokens/motion.css",
+      "mode": "byte-identical",
+      "sourceSha256": "864c897a1380c7c01f032889dd02b4b6e419fe8a692f8cacae7299eda474164d",
+      "destinationSha256": "864c897a1380c7c01f032889dd02b4b6e419fe8a692f8cacae7299eda474164d",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "exports/design-system/tokens/scene.css"
+      },
+      "destination": "packages/brand-tokens/scene.css",
+      "mode": "byte-identical",
+      "sourceSha256": "45c528517c1af16702cd59aa4963516557618b3b42b0aac3e5377d1e72ae15e8",
+      "destinationSha256": "45c528517c1af16702cd59aa4963516557618b3b42b0aac3e5377d1e72ae15e8",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "exports/design-system/tokens/space.css"
+      },
+      "destination": "packages/brand-tokens/space.css",
+      "mode": "byte-identical",
+      "sourceSha256": "6847301af2ca8cd84784c5ae87ae8a772f38617c4adb8716aa132f109cbd6d14",
+      "destinationSha256": "6847301af2ca8cd84784c5ae87ae8a772f38617c4adb8716aa132f109cbd6d14",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "exports/design-system/tokens/state.css"
+      },
+      "destination": "packages/brand-tokens/state.css",
+      "mode": "byte-identical",
+      "sourceSha256": "c8cb68942d118164d91ee596d90ead88c1f697fa665526e2fa49114e30c4058d",
+      "destinationSha256": "c8cb68942d118164d91ee596d90ead88c1f697fa665526e2fa49114e30c4058d",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "exports/design-system/tokens/typography.css"
+      },
+      "destination": "packages/brand-tokens/typography.css",
+      "mode": "byte-identical",
+      "sourceSha256": "95b9a2ecabdcb13e4d6d3fc99d110d684054f73724c9209dc73f28455ce4ff04",
+      "destinationSha256": "95b9a2ecabdcb13e4d6d3fc99d110d684054f73724c9209dc73f28455ce4ff04",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "exports/design-system/css/authority.css"
+      },
+      "destination": "packages/ui-foundation/authority.css",
+      "mode": "byte-identical",
+      "sourceSha256": "7c99995bd9026cc0e45c0f19668a2120aa49573f393b3939a726919d96292005",
+      "destinationSha256": "7c99995bd9026cc0e45c0f19668a2120aa49573f393b3939a726919d96292005",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "exports/design-system/css/base.css"
+      },
+      "destination": "packages/ui-foundation/base.css",
+      "mode": "byte-identical",
+      "sourceSha256": "99db4c418d56b68f429f9144fb3790e9d472008516c8e15c0989a7e759453393",
+      "destinationSha256": "99db4c418d56b68f429f9144fb3790e9d472008516c8e15c0989a7e759453393",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "exports/design-system/css/blackbox.css"
+      },
+      "destination": "packages/ui-foundation/blackbox.css",
+      "mode": "byte-identical",
+      "sourceSha256": "e1ea1c5ef18c76d9ef9847c8d79583fb5b9e6efaeebc091b8a12e177d4eb297a",
+      "destinationSha256": "e1ea1c5ef18c76d9ef9847c8d79583fb5b9e6efaeebc091b8a12e177d4eb297a",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "exports/design-system/css/core.css"
+      },
+      "destination": "packages/ui-foundation/core.css",
+      "mode": "byte-identical",
+      "sourceSha256": "431c7fcad65345abbfc008059919544a01235fb5bff9414ebac820ae5c648fc9",
+      "destinationSha256": "431c7fcad65345abbfc008059919544a01235fb5bff9414ebac820ae5c648fc9",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "exports/design-system/css/evidence.css"
+      },
+      "destination": "packages/ui-foundation/evidence.css",
+      "mode": "byte-identical",
+      "sourceSha256": "fb89c8803395736aa10623789c8ff54221630b99b5c13b3bd49fe41f7e5c529f",
+      "destinationSha256": "fb89c8803395736aa10623789c8ff54221630b99b5c13b3bd49fe41f7e5c529f",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "exports/design-system/styles.css"
+      },
+      "destination": "packages/ui-foundation/styles.css",
+      "mode": "byte-identical",
+      "sourceSha256": "dabc5d00d641c08f84a616f700a832cad7a3f24834db65efecf9e9fb342ebfec",
+      "destinationSha256": "dabc5d00d641c08f84a616f700a832cad7a3f24834db65efecf9e9fb342ebfec",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "components/dom/SceneBoundary.tsx"
+      },
+      "destination": "packages/spatial-runtime/boundary/SceneBoundary.tsx",
+      "mode": "ported",
+      "sourceSha256": "9ee9d166b0b0d4132bb30688354a01a05ee38658959a96618a45ba3e18fd6a26",
+      "destinationSha256": "1dfdd36f28017f50f15ff6d62f8c6fb97085c446d7d67af601e21004cdd146db",
+      "adaptation": "Production path/import adaptation or locked trs=0.75 policy; source remains unchanged."
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "components/dom/Tier0.tsx"
+      },
+      "destination": "packages/spatial-runtime/boundary/Tier0.tsx",
+      "mode": "byte-identical",
+      "sourceSha256": "096d7dfddfa1049fdd85ef98209bdce2f24cfb604ca6288eb74dc3b0b1bb4e50",
+      "destinationSha256": "096d7dfddfa1049fdd85ef98209bdce2f24cfb604ca6288eb74dc3b0b1bb4e50",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "lib/capability.ts"
+      },
+      "destination": "packages/spatial-runtime/boundary/capability.ts",
+      "mode": "byte-identical",
+      "sourceSha256": "309e43a75d813da50ac69a3396b4fb093d38e16dd7df738d9638abaf03040ac7",
+      "destinationSha256": "309e43a75d813da50ac69a3396b4fb093d38e16dd7df738d9638abaf03040ac7",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "lib/sceneStates.ts"
+      },
+      "destination": "packages/spatial-runtime/contract/sceneStates.ts",
+      "mode": "byte-identical",
+      "sourceSha256": "1f9bdd7aa8841dd3dbacfdb7ab641090b02b8aa9ca61b5a548294c19192e7896",
+      "destinationSha256": "1f9bdd7aa8841dd3dbacfdb7ab641090b02b8aa9ca61b5a548294c19192e7896",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "lib/sceneStates.ts"
+      },
+      "destination": "packages/spatial-runtime/contract/cameraPoses.ts",
+      "mode": "byte-identical",
+      "sourceSha256": "1f9bdd7aa8841dd3dbacfdb7ab641090b02b8aa9ca61b5a548294c19192e7896",
+      "destinationSha256": "1f9bdd7aa8841dd3dbacfdb7ab641090b02b8aa9ca61b5a548294c19192e7896",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "lib/metrics.ts"
+      },
+      "destination": "packages/spatial-runtime/harness/metrics.ts",
+      "mode": "byte-identical",
+      "sourceSha256": "f0b3826266ca6180bde06c2535c4a4bfd3aeec29946affd939f1506afc5d09ae",
+      "destinationSha256": "f0b3826266ca6180bde06c2535c4a4bfd3aeec29946affd939f1506afc5d09ae",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "lib/capability.ts"
+      },
+      "destination": "packages/spatial-runtime/lib/capability.ts",
+      "mode": "byte-identical",
+      "sourceSha256": "309e43a75d813da50ac69a3396b4fb093d38e16dd7df738d9638abaf03040ac7",
+      "destinationSha256": "309e43a75d813da50ac69a3396b4fb093d38e16dd7df738d9638abaf03040ac7",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "lib/membraneApproaches.ts"
+      },
+      "destination": "packages/spatial-runtime/lib/membraneApproaches.ts",
+      "mode": "byte-identical",
+      "sourceSha256": "484d6350ab0c563f7f875a2f4ffec8449b825383624d29b4eb1184b50d7e2210",
+      "destinationSha256": "484d6350ab0c563f7f875a2f4ffec8449b825383624d29b4eb1184b50d7e2210",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "lib/membraneMaterials.ts"
+      },
+      "destination": "packages/spatial-runtime/lib/membraneMaterials.ts",
+      "mode": "byte-identical",
+      "sourceSha256": "3e07a0b1e443b1734bc46896dc50a39eacb098d5271ff3afd0dd005da09605ac",
+      "destinationSha256": "3e07a0b1e443b1734bc46896dc50a39eacb098d5271ff3afd0dd005da09605ac",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "lib/metrics.ts"
+      },
+      "destination": "packages/spatial-runtime/lib/metrics.ts",
+      "mode": "byte-identical",
+      "sourceSha256": "f0b3826266ca6180bde06c2535c4a4bfd3aeec29946affd939f1506afc5d09ae",
+      "destinationSha256": "f0b3826266ca6180bde06c2535c4a4bfd3aeec29946affd939f1506afc5d09ae",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "lib/rng.ts"
+      },
+      "destination": "packages/spatial-runtime/lib/rng.ts",
+      "mode": "byte-identical",
+      "sourceSha256": "4b5a0dc17dd9ee8b0ca019dd533cdffd121d60efb310c04ebd2d5787abf6dc7d",
+      "destinationSha256": "4b5a0dc17dd9ee8b0ca019dd533cdffd121d60efb310c04ebd2d5787abf6dc7d",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "lib/sceneStates.ts"
+      },
+      "destination": "packages/spatial-runtime/lib/sceneStates.ts",
+      "mode": "byte-identical",
+      "sourceSha256": "1f9bdd7aa8841dd3dbacfdb7ab641090b02b8aa9ca61b5a548294c19192e7896",
+      "destinationSha256": "1f9bdd7aa8841dd3dbacfdb7ab641090b02b8aa9ca61b5a548294c19192e7896",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "lib/sceneTokens.ts"
+      },
+      "destination": "packages/spatial-runtime/lib/sceneTokens.ts",
+      "mode": "byte-identical",
+      "sourceSha256": "a0285e146147ca70ca6db6336c4729232cfa977fce767cfeb727e6abc9c5dbaa",
+      "destinationSha256": "a0285e146147ca70ca6db6336c4729232cfa977fce767cfeb727e6abc9c5dbaa",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "lib/spike1Config.ts"
+      },
+      "destination": "packages/spatial-runtime/lib/spike1Config.ts",
+      "mode": "byte-identical",
+      "sourceSha256": "5865a07db1f01cc27a615246eab1235d45c5fe72e437b9663d5026144530c617",
+      "destinationSha256": "5865a07db1f01cc27a615246eab1235d45c5fe72e437b9663d5026144530c617",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "lib/tissue.ts"
+      },
+      "destination": "packages/spatial-runtime/lib/tissue.ts",
+      "mode": "byte-identical",
+      "sourceSha256": "094f83bde8a7d14c80168533f21eff7dd8d9698786f77fc8c79ed58306c875af",
+      "destinationSha256": "094f83bde8a7d14c80168533f21eff7dd8d9698786f77fc8c79ed58306c875af",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "lib/tissueMaterial.ts"
+      },
+      "destination": "packages/spatial-runtime/lib/tissueMaterial.ts",
+      "mode": "byte-identical",
+      "sourceSha256": "c6e34dd5dbb0e5a1d1380b3795af580376735e596a977b4c38e31e1b6ed767b1",
+      "destinationSha256": "c6e34dd5dbb0e5a1d1380b3795af580376735e596a977b4c38e31e1b6ed767b1",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "lib/useTrace.ts"
+      },
+      "destination": "packages/spatial-runtime/lib/useTrace.ts",
+      "mode": "byte-identical",
+      "sourceSha256": "cce371b48f256bd3c1727323090724691a0e8f6fc5edf680a853dbaeb18d9b01",
+      "destinationSha256": "cce371b48f256bd3c1727323090724691a0e8f6fc5edf680a853dbaeb18d9b01",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "components/scene/CameraRig.tsx"
+      },
+      "destination": "packages/spatial-runtime/scene/CameraRig.tsx",
+      "mode": "ported",
+      "sourceSha256": "03ba3817cada8b75efe907b32fc1c7a727799aab473913ea58da36651c6dc02e",
+      "destinationSha256": "03ba3817cada8b75efe907b32fc1c7a727799aab473913ea58da36651c6dc02e",
+      "adaptation": "Production path/import adaptation or locked trs=0.75 policy; source remains unchanged."
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "components/scene/Channels.tsx"
+      },
+      "destination": "packages/spatial-runtime/scene/Channels.tsx",
+      "mode": "ported",
+      "sourceSha256": "24b28678297a645bc224d1ac5258e0cb82fb91c4940bcb5d88a42b05229d85b9",
+      "destinationSha256": "24b28678297a645bc224d1ac5258e0cb82fb91c4940bcb5d88a42b05229d85b9",
+      "adaptation": "Production path/import adaptation or locked trs=0.75 policy; source remains unchanged."
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "components/scene/Fragments.tsx"
+      },
+      "destination": "packages/spatial-runtime/scene/Fragments.tsx",
+      "mode": "ported",
+      "sourceSha256": "b0e4c0e7c710fc311a1a8a1c1c01a1affea3f23b6a123cd61311315f8154df74",
+      "destinationSha256": "b0e4c0e7c710fc311a1a8a1c1c01a1affea3f23b6a123cd61311315f8154df74",
+      "adaptation": "Production path/import adaptation or locked trs=0.75 policy; source remains unchanged."
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "components/scene/GovernanceCore.tsx"
+      },
+      "destination": "packages/spatial-runtime/scene/GovernanceCore.tsx",
+      "mode": "ported",
+      "sourceSha256": "8d086871064ba6d65ef1f3e20c4d9203ac738f181ef1a66121ee36184b85d41e",
+      "destinationSha256": "8d086871064ba6d65ef1f3e20c4d9203ac738f181ef1a66121ee36184b85d41e",
+      "adaptation": "Production path/import adaptation or locked trs=0.75 policy; source remains unchanged."
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "components/scene/Harness.tsx"
+      },
+      "destination": "packages/spatial-runtime/scene/Harness.tsx",
+      "mode": "ported",
+      "sourceSha256": "132df89a080407de4fa6d3146efaac3221da9d998221f443582a04da752499cc",
+      "destinationSha256": "132df89a080407de4fa6d3146efaac3221da9d998221f443582a04da752499cc",
+      "adaptation": "Production path/import adaptation or locked trs=0.75 policy; source remains unchanged."
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "components/scene/LightRig.tsx"
+      },
+      "destination": "packages/spatial-runtime/scene/LightRig.tsx",
+      "mode": "ported",
+      "sourceSha256": "b24b60a8a4c2a5635b304f4bba04e4bdea812e544f0c55152db9d4ef611f1d49",
+      "destinationSha256": "b24b60a8a4c2a5635b304f4bba04e4bdea812e544f0c55152db9d4ef611f1d49",
+      "adaptation": "Production path/import adaptation or locked trs=0.75 policy; source remains unchanged."
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "components/scene/Membranes.tsx"
+      },
+      "destination": "packages/spatial-runtime/scene/Membranes.tsx",
+      "mode": "ported",
+      "sourceSha256": "58b9e54c93ef3a14312325ef3d6e8dd173c17fcc25666fb86dec59c96dd610c1",
+      "destinationSha256": "58b9e54c93ef3a14312325ef3d6e8dd173c17fcc25666fb86dec59c96dd610c1",
+      "adaptation": "Production path/import adaptation or locked trs=0.75 policy; source remains unchanged."
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "components/scene/NCellScene.tsx"
+      },
+      "destination": "packages/spatial-runtime/scene/NCellScene.tsx",
+      "mode": "ported",
+      "sourceSha256": "0c673e1095e50c5d8050b3bf6442024c0c82d55bd0ecb3d92d791c612eefb92e",
+      "destinationSha256": "0c673e1095e50c5d8050b3bf6442024c0c82d55bd0ecb3d92d791c612eefb92e",
+      "adaptation": "Production path/import adaptation or locked trs=0.75 policy; source remains unchanged."
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "components/scene/SceneErrorBoundary.tsx"
+      },
+      "destination": "packages/spatial-runtime/scene/SceneErrorBoundary.tsx",
+      "mode": "ported",
+      "sourceSha256": "561d594695dd3610a30920cc590669d01f7000d9986d496f1e947af044f9514e",
+      "destinationSha256": "561d594695dd3610a30920cc590669d01f7000d9986d496f1e947af044f9514e",
+      "adaptation": "Production path/import adaptation or locked trs=0.75 policy; source remains unchanged."
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "components/scene/SceneShell.tsx"
+      },
+      "destination": "packages/spatial-runtime/scene/SceneShell.tsx",
+      "mode": "ported",
+      "sourceSha256": "9cf0b1db617b1697a66015de644a0c5c04b495cbeb789249013f5ba39fb5a2e8",
+      "destinationSha256": "4f16b8025bfdb0e2caef020b04c6400c8d9cac0db67de4c4eef1e26779c03a94",
+      "adaptation": "Production path/import adaptation or locked trs=0.75 policy; source remains unchanged."
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "components/scene/Spike0Scene.tsx"
+      },
+      "destination": "packages/spatial-runtime/scene/Spike0Scene.tsx",
+      "mode": "ported",
+      "sourceSha256": "72e6d57578d04c57687427dfb88a4b6b1c214dd5185eca5858d6dfd64a6add5c",
+      "destinationSha256": "72e6d57578d04c57687427dfb88a4b6b1c214dd5185eca5858d6dfd64a6add5c",
+      "adaptation": "Production path/import adaptation or locked trs=0.75 policy; source remains unchanged."
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "components/scene/Spike1Scene.tsx"
+      },
+      "destination": "packages/spatial-runtime/scene/Spike1Scene.tsx",
+      "mode": "ported",
+      "sourceSha256": "8078c3d0ee8953fb19a172ac96c6af2ef646084ef84f3ca3cbdcb81cad359f99",
+      "destinationSha256": "8078c3d0ee8953fb19a172ac96c6af2ef646084ef84f3ca3cbdcb81cad359f99",
+      "adaptation": "Production path/import adaptation or locked trs=0.75 policy; source remains unchanged."
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "components/scene/Tissue.tsx"
+      },
+      "destination": "packages/spatial-runtime/scene/Tissue.tsx",
+      "mode": "ported",
+      "sourceSha256": "db7980e906b3f5c1f15e5587a87876f09a2fc1d989cbccc16562baf793ead430",
+      "destinationSha256": "db7980e906b3f5c1f15e5587a87876f09a2fc1d989cbccc16562baf793ead430",
+      "adaptation": "Production path/import adaptation or locked trs=0.75 policy; source remains unchanged."
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "tests/measure.ts"
+      },
+      "destination": "packages/testing/measure.ts",
+      "mode": "ported",
+      "sourceSha256": "294de6489a2db1a1ff65acc6907ab22aee2d9bc648ef19f7b53479c59ef43e2d",
+      "destinationSha256": "939c5e739735abf5b8c5ad6cc682b294f0123217a5f1b91f11aaf7360c8e3446",
+      "adaptation": "Production path/import adaptation or locked trs=0.75 policy; source remains unchanged."
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "tests/spike1.matrix.json"
+      },
+      "destination": "packages/testing/matrix.json",
+      "mode": "byte-identical",
+      "sourceSha256": "66ab69795af95898e5e8030df8f7d5da3e5055cda92691e6eea2ee7ef6d375bb",
+      "destinationSha256": "66ab69795af95898e5e8030df8f7d5da3e5055cda92691e6eea2ee7ef6d375bb",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "scripts/run-spike1-resumable.sh"
+      },
+      "destination": "packages/testing/run-resumable.sh",
+      "mode": "byte-identical",
+      "sourceSha256": "1d1326f42a44eb808c65d1fa6b8ab36f013804aea87623fac612421ce90ad617",
+      "destinationSha256": "1d1326f42a44eb808c65d1fa6b8ab36f013804aea87623fac612421ce90ad617",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "scripts/aggregate-spike1.mjs"
+      },
+      "destination": "packages/testing/aggregate.mjs",
+      "mode": "byte-identical",
+      "sourceSha256": "3542d4cb2886d9a1fdeac79e45010e3239aceebfc0dc409a0e5c65e62f0b731a",
+      "destinationSha256": "3542d4cb2886d9a1fdeac79e45010e3239aceebfc0dc409a0e5c65e62f0b731a",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "tests/spike0.smoke.spec.ts"
+      },
+      "destination": "apps/neuruh-web/tests/spike0.smoke.spec.ts",
+      "mode": "byte-identical",
+      "sourceSha256": "7023ed54f5f0ed1acbf5fd2b61bbd963b8d13df022d75efcb9f24d36e184dc75",
+      "destinationSha256": "7023ed54f5f0ed1acbf5fd2b61bbd963b8d13df022d75efcb9f24d36e184dc75",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "tests/spike0.baseline.spec.ts"
+      },
+      "destination": "apps/neuruh-web/tests/spike0.baseline.spec.ts",
+      "mode": "byte-identical",
+      "sourceSha256": "a6a529627b992fe4ddc767ab859323dee3a50ac057c8130aea4b4dab81ae6d6e",
+      "destinationSha256": "a6a529627b992fe4ddc767ab859323dee3a50ac057c8130aea4b4dab81ae6d6e",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "tests/spike1.material.spec.ts"
+      },
+      "destination": "apps/neuruh-web/tests/spike1.material.spec.ts",
+      "mode": "byte-identical",
+      "sourceSha256": "11205300c111e35bbe8e591005d1612f4b61130ffa8a7e428410cd0da60adeab",
+      "destinationSha256": "11205300c111e35bbe8e591005d1612f4b61130ffa8a7e428410cd0da60adeab",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "tests/spike1.matrix.json"
+      },
+      "destination": "apps/neuruh-web/tests/spike1.matrix.json",
+      "mode": "byte-identical",
+      "sourceSha256": "66ab69795af95898e5e8030df8f7d5da3e5055cda92691e6eea2ee7ef6d375bb",
+      "destinationSha256": "66ab69795af95898e5e8030df8f7d5da3e5055cda92691e6eea2ee7ef6d375bb",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "tests/run-spike1-resumable.test.sh"
+      },
+      "destination": "packages/testing/run-resumable.test.sh",
+      "mode": "byte-identical",
+      "sourceSha256": "d354c8e1c5b4d195b2e5380bc3125b602eb5f7fc2e2d0d44e697348770f106e2",
+      "destinationSha256": "d354c8e1c5b4d195b2e5380bc3125b602eb5f7fc2e2d0d44e697348770f106e2",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "app/spike1/Spike1Client.tsx"
+      },
+      "destination": "apps/neuruh-web/components/NeuruhExperience.tsx",
+      "mode": "ported",
+      "sourceSha256": "6a14642fc0faa4c625497659fcb7e6e338f79acefdeeef5ef957a7b2da5f2ff7",
+      "destinationSha256": "0f9de9cd44159b64d5803d98b84a8eb4c7dc7f0047066aaeef755ca2c7a18717",
+      "adaptation": "Production path/import adaptation or locked trs=0.75 policy; source remains unchanged."
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "app/globals.css"
+      },
+      "destination": "apps/neuruh-web/app/globals.css",
+      "mode": "ported",
+      "sourceSha256": "e4a38d8cf635679a5f01ba7781312629a08412ec778e08529d8147a99f527528",
+      "destinationSha256": "c4e08308dbce891122ef3f8f84677b71434d8e74d294c171d89d06bea007f600",
+      "adaptation": "Production path/import adaptation or locked trs=0.75 policy; source remains unchanged."
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "app/icon.svg"
+      },
+      "destination": "apps/neuruh-web/app/icon.svg",
+      "mode": "byte-identical",
+      "sourceSha256": "fb2992638b47e3fad0fb63b2fd632a452b8e95072c967ec3b99c306165d17df4",
+      "destinationSha256": "fb2992638b47e3fad0fb63b2fd632a452b8e95072c967ec3b99c306165d17df4",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "exports/prototype/ASSET_MANIFEST.yaml"
+      },
+      "destination": "assets/manifests/ASSET_MANIFEST.yaml",
+      "mode": "byte-identical",
+      "sourceSha256": "ab6e355713bf2a05285d660ae8d6240e086534a066e62d696665a1f0ea584047",
+      "destinationSha256": "ab6e355713bf2a05285d660ae8d6240e086534a066e62d696665a1f0ea584047",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "exports/prototype/index.html"
+      },
+      "destination": "content/architecture/locked-prototype.html",
+      "mode": "byte-identical",
+      "sourceSha256": "118bf7c91dfb7f8a77f8d54d06ac8cc876d5b29724ade5759dc49d613c05c665",
+      "destinationSha256": "118bf7c91dfb7f8a77f8d54d06ac8cc876d5b29724ade5759dc49d613c05c665",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "exports/handoff/COMPONENT_CONTRACTS.md"
+      },
+      "destination": "packages/evidence/COMPONENT_CONTRACTS.md",
+      "mode": "byte-identical",
+      "sourceSha256": "03b8ce9af5752fb8ec685bc0ba79ca5d92b711687e43cc7aeebe574a3d8023c0",
+      "destinationSha256": "03b8ce9af5752fb8ec685bc0ba79ca5d92b711687e43cc7aeebe574a3d8023c0",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "exports/handoff/fixtures/working-set.json"
+      },
+      "destination": "content/proof/working-set.fixture.json",
+      "mode": "byte-identical",
+      "sourceSha256": "5260d799e76cf414369d8e7a9410e9a452d80a9b46d301abfd1b29d3609f24bb",
+      "destinationSha256": "5260d799e76cf414369d8e7a9410e9a452d80a9b46d301abfd1b29d3609f24bb",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "docs/SCENE_CONTRACT.md"
+      },
+      "destination": "packages/spatial-runtime/contract/SCENE_CONTRACT.md",
+      "mode": "byte-identical",
+      "sourceSha256": "0fd290fd11034800b257ee42fe8d74f247a194c02fc7e84794f67d736f54fd8e",
+      "destinationSha256": "0fd290fd11034800b257ee42fe8d74f247a194c02fc7e84794f67d736f54fd8e",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "docs/DESIGN_LOCK.md"
+      },
+      "destination": "decisions/DESIGN_LOCK.md",
+      "mode": "byte-identical",
+      "sourceSha256": "9ea4bdb1dbd15abf4fb1040a0934e7c43504f4c8e3e373aec1a65d6301e58ff0",
+      "destinationSha256": "9ea4bdb1dbd15abf4fb1040a0934e7c43504f4c8e3e373aec1a65d6301e58ff0",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "ca508953f5bae771c99b88bc865eff09688d3438",
+        "path": "PRODUCTION_PERFORMANCE_BUDGETS.md"
+      },
+      "destination": "decisions/PRODUCTION_PERFORMANCE_BUDGETS.md",
+      "mode": "byte-identical",
+      "sourceSha256": "6b4ccb62410b60e065f4991549343363822cb5e0b0719a5ca718dcbb0df75d00",
+      "destinationSha256": "6b4ccb62410b60e065f4991549343363822cb5e0b0719a5ca718dcbb0df75d00",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "receipts/stage4-accept-01-arrival.png"
+      },
+      "destination": "receipts/references/stage4-accept-01-arrival.png",
+      "mode": "byte-identical",
+      "sourceSha256": "f658c10a51c87f9b0363b65014ca52d6e8781e4edbb35414a5a6d74dbfd1863e",
+      "destinationSha256": "f658c10a51c87f9b0363b65014ca52d6e8781e4edbb35414a5a6d74dbfd1863e",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "receipts/stage4-accept-04-signature-trace.png"
+      },
+      "destination": "receipts/references/stage4-accept-04-signature-trace.png",
+      "mode": "byte-identical",
+      "sourceSha256": "8f522c0b17abc12bd7fed4306538c2d3b502a201edfb32c65e4654a449c20e7f",
+      "destinationSha256": "8f522c0b17abc12bd7fed4306538c2d3b502a201edfb32c65e4654a449c20e7f",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "receipts/stage4-accept-06-governance-gating.png"
+      },
+      "destination": "receipts/references/stage4-accept-06-governance-gating.png",
+      "mode": "byte-identical",
+      "sourceSha256": "1279005e772261898a7cbab49fb70cd8ec16a7def11b41f4c1b21da4057773c5",
+      "destinationSha256": "1279005e772261898a7cbab49fb70cd8ec16a7def11b41f4c1b21da4057773c5",
+      "adaptation": null
+    },
+    {
+      "source": {
+        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
+        "path": "receipts/stage4-accept-tier0-no-webgl.png"
+      },
+      "destination": "receipts/references/stage4-accept-tier0-no-webgl.png",
+      "mode": "byte-identical",
+      "sourceSha256": "4b77b7eab694b6b6453eda6b450006ff61c5e8f6cd18deef3d585eea681477f9",
+      "destinationSha256": "4b77b7eab694b6b6453eda6b450006ff61c5e8f6cd18deef3d585eea681477f9",
+      "adaptation": null
+    }
+  ]
+}

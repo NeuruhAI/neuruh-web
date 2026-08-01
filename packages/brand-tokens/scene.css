@@ -1,0 +1,90 @@
+/* NEURUH FLAGSHIP WORLD — SPATIAL SCENE TOKENS
+
+   Layer 2 only. Product interfaces and Blackbox never import this file.
+
+   These are the contract between the design system and the 3D runtime. The
+   scene reads them at init so that art direction lives in ONE place instead of
+   being hard-coded into shader files (Reference Architecture, responsibility
+   split: "product data and marketing content are not hard-coded into
+   shader/scene files" — the same applies to art direction).
+
+   Engineering non-negotiable: no essential copy lives inside WebGL. These
+   tokens govern light, material, and camera — never text. */
+
+:root {
+  /* ── SCENE CANVAS ─────────────────────────────────────────────────── */
+  --scene-void: var(--obsidian-1000);
+  --scene-fog-near: 8; /* @kind other — world units */
+  --scene-fog-far: 46; /* @kind other */
+  --scene-fog-color: #05060a; /* @kind color */
+
+  /* ── LIGHTING RIG ─────────────────────────────────────────────────────
+     Three-light rig. Key is brass because illumination IS the brand accent —
+     the same semantic that governs the DOM governs the scene. */
+  --scene-key-color: #e8c98a; /* @kind color — brass key */
+  --scene-key-intensity: 2.4; /* @kind other */
+  --scene-fill-color: #4a5570; /* @kind color — cool mineral bounce */
+  --scene-fill-intensity: 0.5; /* @kind other */
+  --scene-rim-color: #cfe6ff; /* @kind color — cold separation edge */
+  --scene-rim-intensity: 1.1; /* @kind other */
+  --scene-ambient: 0.18; /* @kind other */
+
+  /* ── EMISSIVE SEMANTICS — same law as --status-* ──────────────────── */
+  --scene-emissive-verified: #3ddca0; /* @kind color */
+  --scene-emissive-review: #f5b83d; /* @kind color */
+  --scene-emissive-contradiction: #f6685c; /* @kind color */
+  --scene-emissive-illuminated: #ddba6a; /* @kind color */
+  --scene-emissive-dormant: #2a3140; /* @kind color */
+
+  /* ── MATERIAL DEFAULTS — physically plausible, per the underwrite ──── */
+  --scene-mat-metal-roughness: 0.32; /* @kind other */
+  --scene-mat-metal-metalness: 0.95; /* @kind other */
+  --scene-mat-mineral-roughness: 0.68; /* @kind other */
+  --scene-mat-mineral-metalness: 0.05; /* @kind other */
+  --scene-mat-membrane-transmission: 0.72; /* @kind other */
+  --scene-mat-membrane-thickness: 0.4; /* @kind other */
+  --scene-mat-membrane-ior: 1.36; /* @kind other */
+
+  /* ── CAMERA ───────────────────────────────────────────────────────── */
+  --scene-fov-desktop: 38; /* @kind other — long lens; wide FOV reads as a game */
+  --scene-fov-mobile: 52; /* @kind other */
+  --scene-camera-damping: 0.06; /* @kind other */
+  --scene-chapter-duration: 1400; /* @kind other — ms, matches --dur-camera */
+
+  /* ── QUALITY TIERS ────────────────────────────────────────────────────
+     Selected by capability detection AND user preference, never by
+     user-agent sniffing. Tier 0 is the no-WebGL route and is a real
+     designed experience, not a blank div. */
+  --scene-tier-3-dpr: 2; /* @kind other — desktop discrete GPU */
+  --scene-tier-2-dpr: 1.5; /* @kind other — desktop integrated */
+  --scene-tier-1-dpr: 1; /* @kind other — mobile */
+
+  /* ── PERFORMANCE BUDGETS — design constraints, not aspirations ─────── */
+  --budget-frame-ms: 16.7; /* @kind other — tier 3 */
+  --budget-frame-ms-mobile: 22; /* @kind other — tier 1, ~45fps floor */
+  --budget-scene-memory-mb: 220; /* @kind other */
+  --budget-initial-payload-kb: 180; /* @kind other — before any scene asset */
+  --budget-first-meaningful-ms: 1200; /* @kind other */
+  --budget-draw-calls: 120; /* @kind other */
+}
+
+/* The DOM layer that sits above the scene. Semantic content lives here. */
+.scene-dom-layer {
+  position: relative;
+  z-index: 2;
+  color: var(--text-primary);
+}
+.scene-canvas-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  background: var(--scene-void);
+}
+
+/* Tier 0 — no WebGL. An authored static composition, not a fallback message. */
+[data-scene-tier="0"] .scene-canvas-layer {
+  background:
+    radial-gradient(120% 90% at 50% 8%, rgba(221, 186, 106, 0.14), transparent 62%),
+    radial-gradient(80% 60% at 78% 76%, rgba(74, 85, 112, 0.22), transparent 70%),
+    var(--obsidian-1000);
+}

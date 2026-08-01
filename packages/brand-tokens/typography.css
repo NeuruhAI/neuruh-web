@@ -1,0 +1,90 @@
+/* NEURUH MASTER — TYPOGRAPHIC ROLES
+
+   Roles, not sizes. A role names the JOB the text is doing, which is what
+   makes the monospace law enforceable: you cannot reach for mono without
+   naming the evidence role that justifies it.
+
+   ROLE FAMILIES
+     cinema-*   flagship world only. Set large or not at all.
+     display-*  editorial headlines on either spine.
+     heading-*  operational product hierarchy.
+     body-*     prose. Inter. Never mono.
+     ui-*       controls, table cells, labels-in-place.
+     data-*     MACHINE EVIDENCE. Mono. Gated — see master visual rule 5.
+     label      the uppercase mono eyebrow: the Neuruh signature mark. */
+
+:root {
+  /* ── CINEMA — flagship world ──────────────────────────────────────── */
+  --type-cinema-1: 800 clamp(3.25rem, 7.6vw, 8rem) / 0.9 var(--font-display);
+  --type-cinema-2: 700 clamp(2.25rem, 4.8vw, 4.5rem) / 0.96 var(--font-display);
+  --type-cinema-3: 600 clamp(1.5rem, 2.6vw, 2.375rem) / 1.1 var(--font-display);
+
+  /* ── DISPLAY — editorial ──────────────────────────────────────────── */
+  --type-display-1: 700 clamp(2rem, 3.2vw, 3rem) / 1.06 var(--font-display);
+  --type-display-2: 700 clamp(1.5rem, 2.2vw, 2rem) / 1.14 var(--font-display);
+
+  /* ── HEADING — operational ────────────────────────────────────────── */
+  --type-h1: 700 1.75rem/1.2 var(--font-display);
+  --type-h2: 700 1.375rem/1.25 var(--font-display);
+  --type-h3: 600 1.125rem/1.32 var(--font-sans);
+  --type-h4: 600 0.9375rem/1.36 var(--font-sans);
+
+  /* ── BODY — Inter, always ─────────────────────────────────────────── */
+  --type-lede: 400 clamp(1.0625rem, 1.35vw, 1.375rem) / 1.55 var(--font-sans);
+  --type-body-lg: 400 1.0625rem/1.62 var(--font-sans);
+  --type-body: 400 0.9375rem/1.58 var(--font-sans);
+  --type-body-sm: 400 0.8125rem/1.5 var(--font-sans);
+
+  /* ── UI ───────────────────────────────────────────────────────────── */
+  --type-ui: 500 0.875rem/1.2 var(--font-sans);
+  --type-ui-sm: 500 0.8125rem/1.2 var(--font-sans);
+
+  /* ── DATA — mono, gated to machine evidence ───────────────────────── */
+  --type-data: 500 0.8125rem/1.48 var(--font-mono);
+  --type-data-sm: 450 0.6875rem/1.42 var(--font-mono);
+  --type-numeral: 600 clamp(2rem, 3.6vw, 3.25rem) / 1 var(--font-mono);
+  --type-receipt: 450 0.75rem/1.6 var(--font-mono);
+
+  /* ── LABEL — the Neuruh signature eyebrow ─────────────────────────── */
+  --type-label: 500 0.6875rem/1.2 var(--font-mono);
+
+  /* ── TRACKING ─────────────────────────────────────────────────────── */
+  --tracking-cinema: -0.035em;
+  --tracking-display: -0.022em;
+  --tracking-tight: -0.012em;
+  --tracking-normal: 0;
+  --tracking-label: 0.15em;
+
+  /* ── MEASURE — comprehension is a brand property ──────────────────── */
+  --measure-editorial: 68ch;
+  --measure-body: 74ch;
+  --measure-narrow: 46ch;
+}
+
+/* Role utilities. Every one sets tracking with the font so a role can never
+   be half-applied. */
+.t-cinema-1 { font: var(--type-cinema-1); letter-spacing: var(--tracking-cinema); }
+.t-cinema-2 { font: var(--type-cinema-2); letter-spacing: var(--tracking-cinema); }
+.t-cinema-3 { font: var(--type-cinema-3); letter-spacing: var(--tracking-display); }
+.t-display-1 { font: var(--type-display-1); letter-spacing: var(--tracking-display); }
+.t-display-2 { font: var(--type-display-2); letter-spacing: var(--tracking-display); }
+.t-h1 { font: var(--type-h1); letter-spacing: var(--tracking-tight); }
+.t-h2 { font: var(--type-h2); letter-spacing: var(--tracking-tight); }
+.t-h3 { font: var(--type-h3); }
+.t-h4 { font: var(--type-h4); }
+.t-lede { font: var(--type-lede); max-width: var(--measure-editorial); }
+.t-body-lg { font: var(--type-body-lg); max-width: var(--measure-body); }
+.t-body { font: var(--type-body); max-width: var(--measure-body); }
+.t-body-sm { font: var(--type-body-sm); }
+.t-ui { font: var(--type-ui); }
+.t-ui-sm { font: var(--type-ui-sm); }
+.t-data { font: var(--type-data); font-variant-numeric: tabular-nums; }
+.t-data-sm { font: var(--type-data-sm); font-variant-numeric: tabular-nums; }
+.t-numeral { font: var(--type-numeral); font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+.t-receipt { font: var(--type-receipt); font-variant-numeric: tabular-nums; }
+.t-label {
+  font: var(--type-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}

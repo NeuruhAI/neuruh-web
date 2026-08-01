@@ -1,0 +1,149 @@
+/* NEURUH LAYER 3 — PRODUCT INTERFACE FOUNDATION
+   Operational components. Efficient, dense, legible. The flagship may be
+   cinematic; these remain workmanlike (master visual rule 7). */
+
+/* ── SYSTEM LABEL — the Neuruh signature eyebrow ────────────────────── */
+.n-label {
+  font: var(--type-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.n-label::before {
+  content: "";
+  width: 12px; height: 1px;
+  background: var(--illum-solid);
+  flex: none;
+}
+
+/* ── BUTTON ─────────────────────────────────────────────────────────── */
+.n-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  height: var(--density-row);
+  padding-inline: var(--space-4);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-body);
+  font: var(--type-ui);
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: var(--transition-interactive);
+}
+.n-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+.n-btn--primary {
+  background: var(--illum-solid);
+  color: var(--text-on-illuminated);
+  font-weight: 600;
+}
+.n-btn--primary:hover:not(:disabled) { background: var(--illum-solid-hover); }
+.n-btn--primary:active:not(:disabled) { background: var(--illum-solid-active); }
+
+.n-btn--secondary {
+  background: var(--bg-surface-raised);
+  border-color: var(--border-default);
+  color: var(--text-primary);
+}
+.n-btn--secondary:hover:not(:disabled) { background: var(--bg-surface-hover); border-color: var(--border-strong); }
+
+.n-btn--ghost { color: var(--text-muted); }
+.n-btn--ghost:hover:not(:disabled) { background: var(--bg-surface-hover); color: var(--text-primary); }
+
+/* An action the system cannot currently perform renders as blocked, not as a
+   greyed-out primary — the visual difference is the honesty. */
+.n-btn[data-state="blocked"] {
+  background: transparent;
+  border: 1px dashed var(--border-strong);
+  color: var(--authority-withheld);
+  cursor: not-allowed;
+}
+
+/* ── CARD ───────────────────────────────────────────────────────────── */
+.n-card {
+  background: var(--bg-surface);
+  border: var(--edge-hairline);
+  border-radius: var(--radius-md);
+  box-shadow: var(--elevation-card), var(--edge-highlight);
+  padding: var(--space-5);
+}
+.n-card__head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-4); margin-bottom: var(--space-4); }
+.n-card__title { font: var(--type-h3); color: var(--text-primary); }
+
+/* ── BADGE ──────────────────────────────────────────────────────────── */
+.n-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  height: 1.375rem;
+  padding-inline: var(--space-2);
+  border: 1px solid var(--_edge);
+  border-radius: var(--radius-xs);
+  background: var(--_bg);
+  color: var(--_fg);
+  font: var(--type-data-sm);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+/* Glyph cue so the badge does not rely on colour alone. */
+.n-badge::before { content: attr(data-glyph); font-weight: 700; }
+
+/* ── FIELD ──────────────────────────────────────────────────────────── */
+.n-field { display: flex; flex-direction: column; gap: var(--space-2); }
+.n-field__label { font: var(--type-ui-sm); color: var(--text-muted); }
+.n-input {
+  height: var(--density-row);
+  padding-inline: var(--density-pad-x);
+  background: var(--bg-inset);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  transition: var(--transition-interactive);
+}
+.n-input:hover { border-color: var(--border-strong); }
+.n-input::placeholder { color: var(--text-faint); }
+
+/* ── TABLE ──────────────────────────────────────────────────────────── */
+.n-table { width: 100%; border-collapse: collapse; }
+.n-table th {
+  text-align: left;
+  font: var(--type-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--text-faint);
+  padding: var(--space-2) var(--density-pad-x);
+  border-bottom: var(--edge-hairline);
+}
+.n-table td {
+  padding: var(--density-pad-y) var(--density-pad-x);
+  border-bottom: 1px solid var(--border-subtle);
+  font: var(--type-body-sm);
+  color: var(--text-body);
+}
+.n-table td.is-numeric { font: var(--type-data); text-align: right; font-variant-numeric: tabular-nums; }
+.n-table tbody tr:hover { background: var(--bg-surface-hover); }
+
+/* ── NAV ────────────────────────────────────────────────────────────── */
+.n-nav-item {
+  display: flex; align-items: center; gap: var(--space-3);
+  height: var(--density-row);
+  padding-inline: var(--density-pad-x);
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  font: var(--type-ui);
+  text-decoration: none;
+  transition: var(--transition-interactive);
+}
+.n-nav-item:hover { background: var(--bg-surface-hover); color: var(--text-primary); }
+.n-nav-item[aria-current] {
+  background: var(--bg-surface-raised);
+  color: var(--text-primary);
+  box-shadow: inset 2px 0 0 0 var(--vertical-accent);
+}

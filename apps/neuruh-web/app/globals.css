@@ -1,0 +1,302 @@
+/* Neuruh.com spike — page CSS.
+   The design system is the source of every colour, space, type and motion
+   value below. Nothing here introduces a new token. */
+
+@import url('../../../packages/brand-tokens/color-primitives.css');
+@import url('../../../packages/brand-tokens/color-semantics.css');
+@import url('../../../packages/brand-tokens/typography.css');
+@import url('../../../packages/brand-tokens/space.css');
+@import url('../../../packages/brand-tokens/material.css');
+@import url('../../../packages/brand-tokens/motion.css');
+@import url('../../../packages/brand-tokens/state.css');
+@import url('../../../packages/brand-tokens/scene.css');
+@import url('../../../packages/ui-foundation/base.css');
+@import url('../../../packages/ui-foundation/core.css');
+@import url('../../../packages/ui-foundation/evidence.css');
+@import url('../../../packages/ui-foundation/authority.css');
+@import url('../../../packages/ui-foundation/blackbox.css');
+
+/* The canonical exported fonts.css is vendored byte-identical, but its three
+   TTF payloads are absent from both source repositories. This explicit system
+   fallback prevents a fabricated production-font claim until licensed WOFF2
+   subsets are supplied. */
+:root {
+  --font-sans: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: Archivo, Inter, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+
+/* ── SCENE / DOM LAYERING ─────────────────────────────────────────────────
+   scene.css already defines .scene-canvas-layer and .scene-dom-layer and the
+   authored tier-0 composition. Only spike-specific layout lives here. */
+
+html,
+body {
+  background: var(--bg-void);
+  color: var(--text-body);
+  font-family: var(--font-sans);
+  margin: 0;
+  min-height: 100%;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  padding: var(--space-3) var(--space-4);
+  border: var(--edge-hairline-strong);
+}
+.skip-link:focus {
+  left: var(--space-4);
+  top: var(--space-4);
+  box-shadow: var(--focus-ring);
+}
+
+.dom {
+  position: relative;
+  z-index: 2;
+}
+
+/* Editorial scrim — the design system sanctions a scrim for exactly this case:
+   a DOM layer that must stay legible while a spatial scene moves behind it.
+   Directional and opaque rather than a backdrop-filter: cheaper, and it costs
+   no compositing pass per scroll frame (studio decision D004-4). The scene
+   stays visible on the right where the hero object lives. */
+.dom::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(
+    100deg,
+    rgba(3, 4, 7, 0.94) 0%,
+    rgba(3, 4, 7, 0.88) 26%,
+    rgba(3, 4, 7, 0.62) 46%,
+    rgba(3, 4, 7, 0.18) 64%,
+    rgba(3, 4, 7, 0) 78%
+  );
+}
+@media (max-width: 48rem) {
+  .dom::before {
+    background: linear-gradient(180deg, rgba(3, 4, 7, 0.9) 0%, rgba(3, 4, 7, 0.82) 60%, rgba(3, 4, 7, 0.9) 100%);
+  }
+}
+
+.container {
+  margin-inline: auto;
+  padding-inline: var(--space-5);
+}
+.container--editorial {
+  max-width: 76rem;
+}
+
+.chapter {
+  min-height: 100vh;
+  display: grid;
+  align-content: center;
+  padding-block: var(--space-9);
+}
+.chapter__inner {
+  max-width: 40rem;
+}
+.chapter__n {
+  font: var(--type-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--text-illuminated);
+  margin-bottom: var(--space-4);
+}
+.verb {
+  font: var(--type-data-sm);
+  color: var(--text-faint);
+  margin-top: var(--space-5);
+}
+
+/* ── SPIKE INSTRUMENT RAIL ────────────────────────────────────────────────
+   A spike affordance. Like the prototype's review rail this is NOT shipped;
+   it exists so a human can drive the same matrix the benchmark drives. */
+.rail {
+  position: fixed;
+  right: var(--space-4);
+  top: var(--space-4);
+  z-index: 30;
+  width: 17.5rem;
+  max-height: calc(100vh - var(--space-8));
+  overflow-y: auto;
+  padding: var(--space-4);
+  background: var(--material-scrim-bg);
+  backdrop-filter: var(--material-scrim-blur);
+  -webkit-backdrop-filter: var(--material-scrim-blur);
+  border: var(--edge-hairline);
+  border-radius: var(--radius-md);
+  display: grid;
+  gap: var(--space-3);
+}
+@supports not (backdrop-filter: blur(1px)) {
+  .rail {
+    background: var(--obsidian-900);
+  }
+}
+@media (max-width: 62rem) {
+  .rail {
+    display: none;
+  }
+}
+.rail__t {
+  font: var(--type-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin: 0;
+}
+.rail__grp {
+  display: grid;
+  gap: var(--space-2);
+}
+.rail__lbl {
+  font: var(--type-data-sm);
+  color: var(--text-muted);
+}
+.rail__stat {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  font: var(--type-data-sm);
+  color: var(--text-muted);
+}
+.rail__stat b {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+.seg {
+  display: flex;
+  gap: 2px;
+}
+.seg button {
+  flex: 1;
+  min-height: 1.75rem;
+  border: 1px solid var(--border-default);
+  background: transparent;
+  color: var(--text-muted);
+  font: var(--type-data-sm);
+  cursor: pointer;
+  border-radius: var(--radius-xs);
+  padding-inline: var(--space-2);
+}
+.seg button[aria-pressed='true'] {
+  border-color: var(--border-illuminated);
+  color: var(--text-illuminated);
+  background: var(--illum-wash);
+}
+.seg button:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+/* ── SIGNATURE INTERACTION ────────────────────────────────────────────── */
+.trace {
+  margin-top: var(--space-6);
+  border: var(--edge-hairline);
+  border-radius: var(--radius-md);
+  background: var(--material-scrim-bg);
+  backdrop-filter: var(--material-scrim-blur);
+  -webkit-backdrop-filter: var(--material-scrim-blur);
+  padding: var(--space-5);
+}
+@supports not (backdrop-filter: blur(1px)) {
+  .trace {
+    background: var(--obsidian-900);
+  }
+}
+.trace__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+.trace__steps {
+  margin-top: var(--space-4);
+  display: grid;
+  gap: var(--space-1);
+}
+.trace__step {
+  display: grid;
+  grid-template-columns: 1.75rem 1fr;
+  gap: var(--space-3);
+  padding: var(--space-2) 0;
+  opacity: 0.3;
+  transition: opacity var(--dur-base) var(--ease-out);
+}
+.trace__step.is-on {
+  opacity: 1;
+}
+.trace__s {
+  font: var(--type-data-sm);
+  color: var(--text-illuminated);
+  padding-top: 0.15em;
+}
+.trace__claim {
+  font: var(--type-body-sm);
+  color: var(--text-body);
+  margin: 0;
+}
+.trace__prov {
+  font: var(--type-data-sm);
+  color: var(--text-faint);
+  margin: 0.25rem 0 0;
+  word-break: break-word;
+}
+.trace__step.is-receipt .trace__claim {
+  color: var(--status-verified);
+}
+
+.row {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+  flex-wrap: wrap;
+}
+
+/* Fixture badge — realistic fixture data that is not marked as fixture is how
+   fake live activity gets shipped by accident (studio decision D004-5). */
+.fixture-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font: var(--type-data-sm);
+  color: var(--text-faint);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-xs);
+  padding: 0.15rem 0.5rem;
+}
+
+.spike-index {
+  min-height: 100vh;
+  display: grid;
+  align-content: center;
+  gap: var(--space-5);
+}
+.spike-index a {
+  color: var(--text-illuminated);
+}
+
+.measure-note {
+  font: var(--type-data-sm);
+  color: var(--text-faint);
+  border-left: 2px solid var(--border-illuminated);
+  padding-left: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+/* The degradation explanation belongs only to the authored tier-0 route. It
+   must never claim that WebGL was ruled out while a live tier is visible. */
+.tier0-note {
+  display: none;
+}
+html[data-scene-tier='0'] .tier0-note {
+  display: block;
+}
