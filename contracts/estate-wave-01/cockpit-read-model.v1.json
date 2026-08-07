@@ -1,0 +1,17 @@
+{
+  "authority_effect": "none",
+  "contract_id": "neuruh.wave01.cockpit-read-model.v1",
+  "deployment_authorized": false,
+  "estate_work_item": "W1-COCKPIT-READ-MODEL",
+  "invariants": [
+    "cockpit_presents_state_only",
+    "no_new_canonical_writer"
+  ],
+  "mode": "read-only",
+  "production_mutation_allowed": false,
+  "publication_authorized": false,
+  "repository": "NeuruhAI/neuruh-web",
+  "version": 1,
+  "visibility_change_authorized": false,
+  "write_capabilities": []
+}
