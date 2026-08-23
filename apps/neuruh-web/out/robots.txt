@@ -1,4 +1,0 @@
-User-Agent: *
-Allow: /
-
-Sitemap: https://neuruh.com/sitemap.xml
