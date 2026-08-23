@@ -76,7 +76,7 @@ test('semantic routes render Neuruh truth without canvas or fake LIVE state', as
 
 test('keyboard navigation reaches a semantic route', async ({ page }) => {
   await page.goto('/?tier=0')
-  const link = page.getByRole('link', { name: 'Organism', exact: true })
+  const link = page.locator('header.site-header').getByRole('link', { name: 'Organism', exact: true })
   await link.focus()
   await page.keyboard.press('Enter')
   await expect(page).toHaveURL(/\/organism$/)

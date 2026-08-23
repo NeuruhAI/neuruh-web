@@ -11,7 +11,7 @@ test('source provenance resolves for objects, evidence, relationships, and event
   const sources = new Map(snapshot.sources.map((source) => [source.ref, source]))
   for (const source of snapshot.sources) {
     assert.equal(source.public_safe, true)
-    if (!source.path_or_uri.startsWith('git:')) await access(source.path_or_uri)
+    if (!source.path_or_uri.startsWith('git:') && !source.path_or_uri.startsWith('https://')) await access(source.path_or_uri)
   }
   for (const object of snapshot.objects) {
     assert.ok(sources.has(object.source.ref))

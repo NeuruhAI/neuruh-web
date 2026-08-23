@@ -4,9 +4,11 @@ const links = [
   ['Organism', '/organism'],
   ['Galaxy', '/galaxy'],
   ['Worlds', '/worlds'],
-  ['Research', '/research/adaptive-intelligence'],
-  ['Founder', '/founder'],
+  ['Products', '/products'],
   ['Proof', '/proof'],
+  ['Refusals', '/refusals'],
+  ['Founder', '/founder'],
+  ['Contact', '/contact'],
 ] as const
 
 export function SiteNav() {
@@ -19,4 +21,3 @@ export function SiteNav() {
     </header>
   )
 }
-

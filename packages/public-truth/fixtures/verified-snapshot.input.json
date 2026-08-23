@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0",
   "dataset": {
-    "id": "neuruh-public-snapshot-2026-08-01",
-    "label": "Founder-reviewed semantic foundation snapshot",
+    "id": "neuruh-public-snapshot-2026-08-23",
+    "label": "Public launch snapshot — founder-authorized go-live",
     "truth_mode": "VERIFIED_SNAPSHOT",
-    "generated_at": "2026-08-01T22:00:00.000Z",
-    "last_verified_at": "2026-08-01T22:00:00.000Z",
-    "stale_after": "2026-08-31T22:00:00.000Z",
+    "generated_at": "2026-08-23T17:30:00.000Z",
+    "last_verified_at": "2026-08-23T17:30:00.000Z",
+    "stale_after": "2026-09-30T22:00:00.000Z",
     "source_ref": "src-alive-ruling",
     "live_connectivity": false,
     "limitation": "Dated local snapshot compiled from canon and repository receipts; no private or production connector is attached."
@@ -27,10 +27,52 @@
       "public_safe": true
     },
     {
+      "ref": "src-bookeit-receipt",
+      "class": "decision_receipt",
+      "title": "Bookeit release court and custody receipts (Jeramie-Hicks/bookeit@83905326)",
+      "path_or_uri": "docs/receipts-external/bookeit/RELEASE_COURT.md",
+      "public_safe": true
+    },
+    {
+      "ref": "src-commons-audit",
+      "class": "curated_snapshot",
+      "title": "Public commons audit T40 receipt (2026-08-20)",
+      "path_or_uri": "docs/receipts-external/commons-audit-t40.attestation.md",
+      "public_safe": true
+    },
+    {
+      "ref": "src-commons-org",
+      "class": "git_release",
+      "title": "NeuruhAI public GitHub organization",
+      "path_or_uri": "https://github.com/NeuruhAI",
+      "public_safe": true
+    },
+    {
+      "ref": "src-curbclaim-receipt",
+      "class": "decision_receipt",
+      "title": "CurbClaim recovery courts and custody receipts (NeuruhAI/curbclaim@c73d5aca)",
+      "path_or_uri": "docs/receipts-external/curbclaim/GITHUB_CUSTODY_RECEIPT.json",
+      "public_safe": true
+    },
+    {
+      "ref": "src-deedsonar-surface",
+      "class": "health_endpoint",
+      "title": "DeedSonar production surface",
+      "path_or_uri": "https://app.deedsonar.com",
+      "public_safe": true
+    },
+    {
       "ref": "src-estate-canon",
       "class": "canonical_document",
       "title": "Neuruh Local AI Estate Master Canonical Codex",
       "path_or_uri": "docs/source-canon/01_NEURUH_LOCAL_AI_ESTATE_MASTER_CANONICAL_CODEX.pdf",
+      "public_safe": true
+    },
+    {
+      "ref": "src-factory-receipt",
+      "class": "decision_receipt",
+      "title": "Autonomous Venture Factory test and custody receipts (NeuruhAI/neuruh-factory, 2026-08-22)",
+      "path_or_uri": "docs/receipts-external/venture-factory/TEST_RECEIPT.json",
       "public_safe": true
     },
     {
@@ -48,10 +90,24 @@
       "public_safe": true
     },
     {
+      "ref": "src-fsp-receipt",
+      "class": "decision_receipt",
+      "title": "FindSellProfit custody and court receipts, 229/229 tests (NeuruhAI/findsellprofit@771527a7)",
+      "path_or_uri": "docs/receipts-external/findsellprofit/GITHUB_CUSTODY_RECEIPT.json",
+      "public_safe": true
+    },
+    {
       "ref": "src-galaxy-canon",
       "class": "canonical_document",
       "title": "Neuruh Galaxy Canonical Codex v1.0",
       "path_or_uri": "docs/source-canon/Neuruh_Galaxy_Canonical_Codex_v1.0.pdf",
+      "public_safe": true
+    },
+    {
+      "ref": "src-launch-constitution",
+      "class": "decision_receipt",
+      "title": "Founder public-launch constitution (2026-08-23)",
+      "path_or_uri": "docs/receipts-external/public-launch-constitution-20260823.attestation.md",
       "public_safe": true
     },
     {
@@ -69,6 +125,13 @@
       "public_safe": true
     },
     {
+      "ref": "src-organism-census",
+      "class": "curated_snapshot",
+      "title": "Neuruh organism census (2026-08-23)",
+      "path_or_uri": "docs/receipts-external/organism-census-20260823.attestation.md",
+      "public_safe": true
+    },
+    {
       "ref": "src-p0-benchmark",
       "class": "benchmark",
       "title": "P0 green foundation results",
@@ -80,6 +143,13 @@
       "class": "git_release",
       "title": "P0 green foundation commit",
       "path_or_uri": "git:16dba6d8991fe3ee0d62cf6766139aec95c7f845",
+      "public_safe": true
+    },
+    {
+      "ref": "src-proofos-receipt",
+      "class": "decision_receipt",
+      "title": "ProofOS court receipts, 14 courts (NeuruhAI/neuruh-proof-os@c53cc3fc)",
+      "path_or_uri": "docs/receipts-external/proofos-courts",
       "public_safe": true
     },
     {
@@ -105,10 +175,15 @@
       "evidence_summary": {
         "status": "PARTIAL",
         "statement": "The claim lifecycle and visual requirements are documented; public runtime learning is not proven.",
-        "source_refs": ["src-adaptive-atlas"]
+        "source_refs": [
+          "src-adaptive-atlas"
+        ]
       },
       "public_route": "/research/adaptive-intelligence",
-      "limitations": ["Emergence is outside the guaranteed learning loop.", "No live training or promotion connector is exposed."]
+      "limitations": [
+        "Emergence is outside the guaranteed learning loop.",
+        "No live training or promotion connector is exposed."
+      ]
     },
     {
       "id": "archive-refinery",
@@ -124,10 +199,114 @@
       "evidence_summary": {
         "status": "PARTIAL",
         "statement": "The custody model and observed fragmentation are canonical; final estate census counts are not public truth.",
-        "source_refs": ["src-estate-canon"]
+        "source_refs": [
+          "src-estate-canon"
+        ]
       },
       "public_route": "/organism",
-      "limitations": ["No local paths, private inventory, or remembered counts are exposed."]
+      "limitations": [
+        "No local paths, private inventory, or remembered counts are exposed."
+      ]
+    },
+    {
+      "id": "bookeit",
+      "kind": "world",
+      "name": "Bookeit",
+      "summary": "Agentic local commerce: real-world intent becomes a bookable capability, an authorized transaction, fulfillment, and an outcome — engine, REST surface, and browser walked end to end by an eighteen-step transaction court.",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "claim_class": "OBSERVED",
+      "maturity": "SHIP_CANDIDATE",
+      "status": "STABLE",
+      "last_verified_at": "2026-08-23T17:30:00.000Z",
+      "source_ref": "src-bookeit-receipt",
+      "evidence_summary": {
+        "status": "SUFFICIENT",
+        "statement": "Release-court receipts from 2026-08-22 attest the unit, E2E, accessibility, responsive, and visual courts, with custody verified against the remote head.",
+        "source_refs": [
+          "src-bookeit-receipt"
+        ]
+      },
+      "public_route": "/worlds/bookeit",
+      "metrics": [
+        {
+          "name": "unit_and_integration_tests",
+          "value": 161,
+          "classification": "MEASURED",
+          "unit": "tests",
+          "as_of": "2026-08-22T00:00:00.000Z",
+          "source_ref": "src-bookeit-receipt"
+        },
+        {
+          "name": "e2e_assertions",
+          "value": 133,
+          "classification": "MEASURED",
+          "unit": "assertions",
+          "as_of": "2026-08-22T00:00:00.000Z",
+          "source_ref": "src-bookeit-receipt"
+        },
+        {
+          "name": "production_build_routes",
+          "value": 51,
+          "classification": "OBSERVED",
+          "unit": "routes",
+          "as_of": "2026-08-22T00:00:00.000Z",
+          "source_ref": "src-bookeit-receipt"
+        }
+      ],
+      "limitations": [
+        "Fixture-backed candidate: supply is synthetic, payment is synthetic, and no authentication or public deployment exists.",
+        "The responsive court covers 25 of the 51 production-build routes."
+      ]
+    },
+    {
+      "id": "curbclaim",
+      "kind": "world",
+      "name": "CurbClaim",
+      "summary": "Physical-asset routing: decides the highest-value next destination for unwanted physical things, with zero-crossing economics carried through tests and real-browser accessibility courts.",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "claim_class": "OBSERVED",
+      "maturity": "SHIP_CANDIDATE",
+      "status": "STABLE",
+      "last_verified_at": "2026-08-23T17:30:00.000Z",
+      "source_ref": "src-curbclaim-receipt",
+      "evidence_summary": {
+        "status": "SUFFICIENT",
+        "statement": "Custody and court receipts from 2026-08-22 attest the test, accessibility, contrast, responsive, and secret-scan courts, with the remote head verified.",
+        "source_refs": [
+          "src-curbclaim-receipt"
+        ]
+      },
+      "public_route": "/worlds/curbclaim",
+      "metrics": [
+        {
+          "name": "tests",
+          "value": 202,
+          "classification": "MEASURED",
+          "unit": "tests",
+          "as_of": "2026-08-22T00:00:00.000Z",
+          "source_ref": "src-curbclaim-receipt"
+        },
+        {
+          "name": "real_browser_axe_audits",
+          "value": 40,
+          "classification": "MEASURED",
+          "unit": "audits",
+          "as_of": "2026-08-22T00:00:00.000Z",
+          "source_ref": "src-curbclaim-receipt"
+        },
+        {
+          "name": "contrast_assertions",
+          "value": 47,
+          "classification": "MEASURED",
+          "unit": "assertions",
+          "as_of": "2026-08-22T00:00:00.000Z",
+          "source_ref": "src-curbclaim-receipt"
+        }
+      ],
+      "limitations": [
+        "Every valuation is a labeled local fixture; claimants, pickups, and receipts carry explicit synthetic markers.",
+        "No persistence, no authentication, a single pilot market model; not publicly deployed."
+      ]
     },
     {
       "id": "datum",
@@ -143,29 +322,38 @@
       "evidence_summary": {
         "status": "PARTIAL",
         "statement": "Engine and surface architecture are documented; a public live valuation service is not claimed.",
-        "source_refs": ["src-estate-canon"]
+        "source_refs": [
+          "src-estate-canon"
+        ]
       },
       "public_route": "/worlds/datum",
-      "limitations": ["No valuation output on Neuruh.com is live or financial advice."]
+      "limitations": [
+        "No valuation output on Neuruh.com is live or financial advice."
+      ]
     },
     {
       "id": "deedsonar",
       "kind": "world",
       "name": "DeedSonar",
-      "summary": "Evidence-backed property intelligence and governed acquisition-decision world.",
+      "summary": "Evidence-backed property intelligence and governed acquisition-decision world, operating on county public records where a wrong answer is checkable at a courthouse.",
       "truth_mode": "VERIFIED_SNAPSHOT",
       "claim_class": "OBSERVED",
-      "maturity": "PROTOTYPE_FAMILY",
+      "maturity": "OPERATING_PRODUCT",
       "status": "INTEGRATING",
-      "last_verified_at": "2026-08-01T22:00:00.000Z",
+      "last_verified_at": "2026-08-23T17:30:00.000Z",
       "source_ref": "src-estate-canon",
       "evidence_summary": {
         "status": "PARTIAL",
-        "statement": "Multiple observed surfaces exist; canonical production lineage and live runtime status remain gated.",
-        "source_refs": ["src-estate-canon"]
+        "statement": "Multiple observed surfaces exist and a production surface serves at app.deedsonar.com (observed 2026-08-23); this snapshot does not attest the running build's identity.",
+        "source_refs": [
+          "src-estate-canon",
+          "src-deedsonar-surface"
+        ]
       },
       "public_route": "/worlds/deedsonar",
-      "limitations": ["Observed interface evidence does not prove a production backend."]
+      "limitations": [
+        "Observed surface evidence does not attest the production build identity or a public test count."
+      ]
     },
     {
       "id": "execution-platform",
@@ -181,10 +369,14 @@
       "evidence_summary": {
         "status": "PARTIAL",
         "statement": "The platform role and dependency model are documented; this public site has no command authority.",
-        "source_refs": ["src-galaxy-canon"]
+        "source_refs": [
+          "src-galaxy-canon"
+        ]
       },
       "public_route": "/organism",
-      "limitations": ["Public surface is read-only."]
+      "limitations": [
+        "Public surface is read-only."
+      ]
     },
     {
       "id": "factory-visual-cortex",
@@ -200,29 +392,49 @@
       "evidence_summary": {
         "status": "PARTIAL",
         "statement": "Observed local surfaces support the concept; active production engines are not proven.",
-        "source_refs": ["src-estate-canon"]
+        "source_refs": [
+          "src-estate-canon"
+        ]
       },
       "public_route": "/worlds/factory-visual-cortex",
-      "limitations": ["No public connector builds or publishes assets."]
+      "limitations": [
+        "No public connector builds or publishes assets."
+      ]
     },
     {
       "id": "find-sell-profit",
       "kind": "world",
       "name": "Find Sell Profit",
-      "summary": "A private-to-commercial asset market and orchestration world: one intake, many exit paths, one optimized outcome.",
+      "summary": "Autonomous merchant OS: photos, URLs, UPCs, or whole lots become evidence-backed economics, a target buy, an absolute maximum buy, and a disposition decision.",
       "truth_mode": "VERIFIED_SNAPSHOT",
-      "claim_class": "THREAD_CONFIRMED",
-      "maturity": "PROTOTYPE_FAMILY",
-      "status": "INTEGRATING",
-      "last_verified_at": "2026-08-01T22:00:00.000Z",
-      "source_ref": "src-fsp-canon",
+      "claim_class": "OBSERVED",
+      "maturity": "SHIP_CANDIDATE",
+      "status": "STABLE",
+      "last_verified_at": "2026-08-23T17:30:00.000Z",
+      "source_ref": "src-fsp-receipt",
       "evidence_summary": {
-        "status": "PARTIAL",
-        "statement": "Category, doctrine, and operating architecture are canonical; transactions and revenue are not asserted.",
-        "source_refs": ["src-fsp-canon"]
+        "status": "SUFFICIENT",
+        "statement": "Category and doctrine are canonical, and custody receipts from 2026-08-22 attest 229 passing tests with build, accessibility, visual, and secret courts; transactions and revenue are not asserted.",
+        "source_refs": [
+          "src-fsp-canon",
+          "src-fsp-receipt"
+        ]
       },
       "public_route": "/worlds/find-sell-profit",
-      "limitations": ["Score formulas and commercial assumptions remain uncalibrated until measured outcomes exist."]
+      "metrics": [
+        {
+          "name": "tests",
+          "value": 229,
+          "classification": "MEASURED",
+          "unit": "tests",
+          "as_of": "2026-08-22T00:00:00.000Z",
+          "source_ref": "src-fsp-receipt"
+        }
+      ],
+      "limitations": [
+        "Comparable-sales data in the product is a deterministic labeled fixture; score formulas remain uncalibrated until measured outcomes exist.",
+        "Not publicly deployed."
+      ]
     },
     {
       "id": "founder-architecture",
@@ -238,10 +450,14 @@
       "evidence_summary": {
         "status": "SUFFICIENT",
         "statement": "Years of fragmented work, rebuilding, persistence, and the coherence thesis are founder-grounded.",
-        "source_refs": ["src-founder"]
+        "source_refs": [
+          "src-founder"
+        ]
       },
       "public_route": "/founder",
-      "limitations": ["No invented counts, investment totals, critics, or completeness claims."]
+      "limitations": [
+        "No invented counts, investment totals, critics, or completeness claims."
+      ]
     },
     {
       "id": "galaxy",
@@ -257,7 +473,10 @@
       "evidence_summary": {
         "status": "CONFLICTED",
         "statement": "The interface and intended operating model are evidenced; current production connectivity is not.",
-        "source_refs": ["src-galaxy-canon", "src-alive-ruling"]
+        "source_refs": [
+          "src-galaxy-canon",
+          "src-alive-ruling"
+        ]
       },
       "public_route": "/galaxy",
       "contradictions": [
@@ -266,11 +485,17 @@
           "field": "production_connectivity",
           "status": "UNRESOLVED",
           "summary": "Screens show operational status fields, while available evidence does not prove those fields are connected to current production sources.",
-          "supporting_sources": ["src-galaxy-canon"],
-          "opposing_sources": ["src-alive-ruling"]
+          "supporting_sources": [
+            "src-galaxy-canon"
+          ],
+          "opposing_sources": [
+            "src-alive-ruling"
+          ]
         }
       ],
-      "limitations": ["Displayed relationships are from this curated manifest, not a live graph connector."]
+      "limitations": [
+        "Displayed relationships are from this curated manifest, not a live graph connector."
+      ]
     },
     {
       "id": "lcde-case-zero",
@@ -286,10 +511,14 @@
       "evidence_summary": {
         "status": "MISSING",
         "statement": "The protocol and competing hypotheses are specified; no completed Case Zero result is claimed.",
-        "source_refs": ["src-lcde"]
+        "source_refs": [
+          "src-lcde"
+        ]
       },
       "public_route": "/research/case-zero",
-      "limitations": ["Not empirical proof, clinical guidance, or a universal law."]
+      "limitations": [
+        "Not empirical proof, clinical guidance, or a universal law."
+      ]
     },
     {
       "id": "lead-recipe-os",
@@ -305,10 +534,14 @@
       "evidence_summary": {
         "status": "PARTIAL",
         "statement": "Recipe architecture is documented; the historical ingredient inventory is explicitly unresolved.",
-        "source_refs": ["src-fsp-canon"]
+        "source_refs": [
+          "src-fsp-canon"
+        ]
       },
       "public_route": "/worlds/lead-recipe-os",
-      "limitations": ["The unresolved historical ingredient list is not reconstructed or claimed."]
+      "limitations": [
+        "The unresolved historical ingredient list is not reconstructed or claimed."
+      ]
     },
     {
       "id": "neural-core",
@@ -324,10 +557,14 @@
       "evidence_summary": {
         "status": "PARTIAL",
         "statement": "The compound architecture and build sequence are specified; a deployed personal model is not claimed.",
-        "source_refs": ["src-neural-core"]
+        "source_refs": [
+          "src-neural-core"
+        ]
       },
       "public_route": "/organism",
-      "limitations": ["Architecture is not runtime proof."]
+      "limitations": [
+        "Architecture is not runtime proof."
+      ]
     },
     {
       "id": "neuruh",
@@ -338,15 +575,73 @@
       "claim_class": "ARCHITECTURE",
       "maturity": "SYSTEM_COMPONENT",
       "status": "CONTRADICTING",
-      "last_verified_at": "2026-08-01T22:00:00.000Z",
+      "last_verified_at": "2026-08-23T17:30:00.000Z",
       "source_ref": "src-alive-ruling",
       "evidence_summary": {
         "status": "PARTIAL",
-        "statement": "The public self-model is now data-defined and inspectable; the snapshot is not a live operating feed.",
-        "source_refs": ["src-alive-ruling", "src-p0-commit"]
+        "statement": "The public self-model is data-defined and inspectable; the snapshot is not a live operating feed. Public launch and indexing were authorized by the founder constitution on 2026-08-23.",
+        "source_refs": [
+          "src-alive-ruling",
+          "src-p0-commit",
+          "src-launch-constitution"
+        ]
       },
       "public_route": "/",
-      "limitations": ["Read-only verified snapshot.", "G1 device validation remains external-device blocked.", "G2 renderer certification is not certified."]
+      "limitations": [
+        "Read-only verified snapshot.",
+        "G1 device validation remains external-device blocked.",
+        "G2 renderer certification is not certified."
+      ]
+    },
+    {
+      "id": "organism-census",
+      "kind": "proof",
+      "name": "Operating estate census",
+      "summary": "A dated census of the operating estate: live attributed organism services, repositories under custody, and worktrees, counted under published rules.",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "claim_class": "OBSERVED",
+      "maturity": "SYSTEM_COMPONENT",
+      "status": "STABLE",
+      "last_verified_at": "2026-08-23T17:30:00.000Z",
+      "source_ref": "src-organism-census",
+      "evidence_summary": {
+        "status": "SUFFICIENT",
+        "statement": "The census file publishes its own counting rules, retires prior marketing counts as non-authoritative, and lists its unknowns explicitly.",
+        "source_refs": [
+          "src-organism-census"
+        ]
+      },
+      "public_route": "/proof",
+      "metrics": [
+        {
+          "name": "canonical_active_runtimes",
+          "value": 18,
+          "classification": "OBSERVED",
+          "unit": "services",
+          "as_of": "2026-08-23T16:39:29.000Z",
+          "source_ref": "src-organism-census"
+        },
+        {
+          "name": "repositories_under_custody",
+          "value": 169,
+          "classification": "OBSERVED",
+          "unit": "repositories",
+          "as_of": "2026-08-23T16:39:29.000Z",
+          "source_ref": "src-organism-census"
+        },
+        {
+          "name": "git_worktrees",
+          "value": 102,
+          "classification": "OBSERVED",
+          "unit": "worktrees",
+          "as_of": "2026-08-23T16:39:29.000Z",
+          "source_ref": "src-organism-census"
+        }
+      ],
+      "limitations": [
+        "A point-in-time census of a single host, not a service-level agreement.",
+        "The runtime count excludes candidate services and infrastructure databases by rule."
+      ]
     },
     {
       "id": "p0-foundation",
@@ -362,7 +657,10 @@
       "evidence_summary": {
         "status": "SUFFICIENT",
         "statement": "The recorded P0 local checks passed; this is not G1 device validation or G2 certification.",
-        "source_refs": ["src-p0-benchmark", "src-p0-commit"]
+        "source_refs": [
+          "src-p0-benchmark",
+          "src-p0-commit"
+        ]
       },
       "public_route": "/proof",
       "metrics": [
@@ -391,21 +689,376 @@
           "source_ref": "src-p0-benchmark"
         }
       ],
-      "limitations": ["Material policy remains provisional pending G1."]
+      "limitations": [
+        "Material policy remains provisional pending G1."
+      ]
+    },
+    {
+      "id": "proof-os",
+      "kind": "world",
+      "name": "ProofOS",
+      "summary": "Turns system claims into structured evidence and proof surfaces; each of its fourteen courts writes a machine-readable receipt, and every fact carries a class.",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "claim_class": "OBSERVED",
+      "maturity": "SHIP_CANDIDATE",
+      "status": "STABLE",
+      "last_verified_at": "2026-08-23T17:30:00.000Z",
+      "source_ref": "src-proofos-receipt",
+      "evidence_summary": {
+        "status": "SUFFICIENT",
+        "statement": "Fourteen machine-written court receipts from 2026-08-22 each read PASS, covering schema, typecheck, tests, secrets, evidence, fact classes, adversarial probes, and outbound boundaries.",
+        "source_refs": [
+          "src-proofos-receipt"
+        ]
+      },
+      "public_route": "/worlds/proof-os",
+      "metrics": [
+        {
+          "name": "courts",
+          "value": 14,
+          "classification": "MEASURED",
+          "unit": "courts",
+          "as_of": "2026-08-22T00:00:00.000Z",
+          "source_ref": "src-proofos-receipt"
+        },
+        {
+          "name": "e2e_scenarios",
+          "value": 10,
+          "classification": "MEASURED",
+          "unit": "scenarios",
+          "as_of": "2026-08-22T00:00:00.000Z",
+          "source_ref": "src-proofos-receipt"
+        },
+        {
+          "name": "differentiation_dimensions",
+          "value": 15,
+          "classification": "MEASURED",
+          "unit": "dimensions",
+          "as_of": "2026-08-22T00:00:00.000Z",
+          "source_ref": "src-proofos-receipt"
+        }
+      ],
+      "limitations": [
+        "Fixture accounts built from public evidence; outbound authority, production write authority, and deployment authority are all NONE by contract.",
+        "Pricing is a hypothesis; the factory adapter is unbound."
+      ]
+    },
+    {
+      "id": "public-commons",
+      "kind": "proof",
+      "name": "Public open-source commons",
+      "summary": "Governance primitives, receipts, connectors, and sovereign-agent infrastructure published under Apache-2.0 with per-repository test evidence.",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "claim_class": "OBSERVED",
+      "maturity": "SHIP_CANDIDATE",
+      "status": "STABLE",
+      "last_verified_at": "2026-08-23T17:30:00.000Z",
+      "source_ref": "src-commons-audit",
+      "evidence_summary": {
+        "status": "SUFFICIENT",
+        "statement": "The 2026-08-20 audit receipt carries a per-repository test table, license census, secret scan, and a live index verification against GitHub.",
+        "source_refs": [
+          "src-commons-audit",
+          "src-commons-org"
+        ]
+      },
+      "public_route": "/open-source",
+      "metrics": [
+        {
+          "name": "public_code_repositories",
+          "value": 36,
+          "classification": "OBSERVED",
+          "unit": "repositories",
+          "as_of": "2026-08-20T00:00:00.000Z",
+          "source_ref": "src-commons-audit"
+        },
+        {
+          "name": "passing_tests",
+          "value": 1285,
+          "classification": "MEASURED",
+          "unit": "tests",
+          "as_of": "2026-08-20T00:00:00.000Z",
+          "source_ref": "src-commons-audit"
+        },
+        {
+          "name": "zero_dependency_packages",
+          "value": 32,
+          "classification": "OBSERVED",
+          "unit": "packages",
+          "as_of": "2026-08-20T00:00:00.000Z",
+          "source_ref": "src-commons-audit"
+        },
+        {
+          "name": "secret_scan_hits",
+          "value": 0,
+          "classification": "MEASURED",
+          "unit": "hits",
+          "as_of": "2026-08-20T00:00:00.000Z",
+          "source_ref": "src-commons-audit"
+        }
+      ],
+      "limitations": [
+        "One published repository (nimdp-validator) has a known-broken README, left pending founder-gated republication.",
+        "Counts are from the dated 2026-08-20 audit; the live organization may have moved since."
+      ]
+    },
+    {
+      "id": "venture-factory",
+      "kind": "organ",
+      "name": "Autonomous Venture Factory",
+      "summary": "Compiles venture specifications into deterministic plans, governed execution stages, sealed packages, preview proofs, and drift-checked handoffs.",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "claim_class": "OBSERVED",
+      "maturity": "SYSTEM_COMPONENT",
+      "status": "STABLE",
+      "last_verified_at": "2026-08-23T17:30:00.000Z",
+      "source_ref": "src-factory-receipt",
+      "evidence_summary": {
+        "status": "SUFFICIENT",
+        "statement": "Receipts from 2026-08-22 attest 98 passing tests, a byte-identical repeated plan compile, a sealed-package preview proof, and receipt-to-output drift checks.",
+        "source_refs": [
+          "src-factory-receipt"
+        ]
+      },
+      "public_route": "/products",
+      "metrics": [
+        {
+          "name": "tests",
+          "value": 98,
+          "classification": "MEASURED",
+          "unit": "tests",
+          "as_of": "2026-08-22T00:00:00.000Z",
+          "source_ref": "src-factory-receipt"
+        }
+      ],
+      "limitations": [
+        "Control-plane binding is a local deterministic adapter; no isolated external preview exists.",
+        "Pricing is a hypothesis."
+      ]
     }
   ],
   "relationships": [
-    { "id": "rel-adaptive-neuruh", "type": "evidence_supply", "source_id": "adaptive-intelligence", "target_id": "neuruh", "direction": "OUTBOUND", "truth_mode": "VERIFIED_SNAPSHOT", "observed_at": "2026-08-01T22:00:00.000Z", "source_ref": "src-adaptive-atlas", "limitations": ["Architecture relationship; not live data flow."] },
-    { "id": "rel-archive-neural", "type": "memory_supply", "source_id": "archive-refinery", "target_id": "neural-core", "direction": "OUTBOUND", "truth_mode": "VERIFIED_SNAPSHOT", "observed_at": "2026-08-01T22:00:00.000Z", "source_ref": "src-estate-canon", "limitations": ["Architecture relationship; no private archive is exposed."] },
-    { "id": "rel-datum-deedsonar", "type": "tool_use", "source_id": "deedsonar", "target_id": "datum", "direction": "OUTBOUND", "truth_mode": "VERIFIED_SNAPSHOT", "observed_at": "2026-08-01T22:00:00.000Z", "source_ref": "src-estate-canon", "limitations": ["Architectural fit, not verified public invocation."] },
-    { "id": "rel-deedsonar-platform", "type": "dependency", "source_id": "deedsonar", "target_id": "execution-platform", "direction": "OUTBOUND", "truth_mode": "VERIFIED_SNAPSHOT", "observed_at": "2026-08-01T22:00:00.000Z", "source_ref": "src-galaxy-canon", "limitations": ["Curated manifest relationship."] },
-    { "id": "rel-factory-neuruh", "type": "productization", "source_id": "factory-visual-cortex", "target_id": "neuruh", "direction": "OUTBOUND", "truth_mode": "VERIFIED_SNAPSHOT", "observed_at": "2026-08-01T22:00:00.000Z", "source_ref": "src-estate-canon", "limitations": ["No public write or deployment authority."] },
-    { "id": "rel-fsp-platform", "type": "dependency", "source_id": "find-sell-profit", "target_id": "execution-platform", "direction": "OUTBOUND", "truth_mode": "VERIFIED_SNAPSHOT", "observed_at": "2026-08-01T22:00:00.000Z", "source_ref": "src-fsp-canon", "limitations": ["Architecture relationship."] },
-    { "id": "rel-galaxy-neuruh", "type": "evidence_supply", "source_id": "galaxy", "target_id": "neuruh", "direction": "BIDIRECTIONAL", "truth_mode": "VERIFIED_SNAPSHOT", "observed_at": "2026-08-01T22:00:00.000Z", "source_ref": "src-galaxy-canon", "limitations": ["Snapshot manifest, not production graph connectivity."] },
-    { "id": "rel-lcde-adaptive", "type": "research_support", "source_id": "lcde-case-zero", "target_id": "adaptive-intelligence", "direction": "OUTBOUND", "truth_mode": "CONCEPTUAL", "observed_at": "2026-08-01T22:00:00.000Z", "source_ref": "src-lcde", "limitations": ["Hypothesis only."] },
-    { "id": "rel-lead-platform", "type": "dependency", "source_id": "lead-recipe-os", "target_id": "execution-platform", "direction": "OUTBOUND", "truth_mode": "PLANNED", "observed_at": "2026-08-01T22:00:00.000Z", "source_ref": "src-fsp-canon", "limitations": ["Planned relationship."] },
-    { "id": "rel-neural-neuruh", "type": "memory_supply", "source_id": "neural-core", "target_id": "neuruh", "direction": "OUTBOUND", "truth_mode": "VERIFIED_SNAPSHOT", "observed_at": "2026-08-01T22:00:00.000Z", "source_ref": "src-neural-core", "limitations": ["Architecture relationship; not a live model claim."] },
-    { "id": "rel-platform-neuruh", "type": "execution", "source_id": "execution-platform", "target_id": "neuruh", "direction": "BIDIRECTIONAL", "truth_mode": "VERIFIED_SNAPSHOT", "observed_at": "2026-08-01T22:00:00.000Z", "source_ref": "src-galaxy-canon", "limitations": ["Public projection has no execution authority."] }
+    {
+      "id": "rel-adaptive-neuruh",
+      "type": "evidence_supply",
+      "source_id": "adaptive-intelligence",
+      "target_id": "neuruh",
+      "direction": "OUTBOUND",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "observed_at": "2026-08-01T22:00:00.000Z",
+      "source_ref": "src-adaptive-atlas",
+      "limitations": [
+        "Architecture relationship; not live data flow."
+      ]
+    },
+    {
+      "id": "rel-archive-neural",
+      "type": "memory_supply",
+      "source_id": "archive-refinery",
+      "target_id": "neural-core",
+      "direction": "OUTBOUND",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "observed_at": "2026-08-01T22:00:00.000Z",
+      "source_ref": "src-estate-canon",
+      "limitations": [
+        "Architecture relationship; no private archive is exposed."
+      ]
+    },
+    {
+      "id": "rel-bookeit-platform",
+      "type": "dependency",
+      "source_id": "bookeit",
+      "target_id": "execution-platform",
+      "direction": "OUTBOUND",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "observed_at": "2026-08-22T00:00:00.000Z",
+      "source_ref": "src-bookeit-receipt",
+      "limitations": [
+        "Architecture relationship; the shared platform contract is inherited, not a live integration claim."
+      ]
+    },
+    {
+      "id": "rel-census-neuruh",
+      "type": "evidence_supply",
+      "source_id": "organism-census",
+      "target_id": "neuruh",
+      "direction": "OUTBOUND",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "observed_at": "2026-08-23T16:39:29.000Z",
+      "source_ref": "src-organism-census",
+      "limitations": [
+        "Dated census supply; not a live telemetry feed."
+      ]
+    },
+    {
+      "id": "rel-commons-neuruh",
+      "type": "evidence_supply",
+      "source_id": "public-commons",
+      "target_id": "neuruh",
+      "direction": "OUTBOUND",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "observed_at": "2026-08-20T00:00:00.000Z",
+      "source_ref": "src-commons-audit",
+      "limitations": [
+        "Dated audit supply; the public organization is the live surface."
+      ]
+    },
+    {
+      "id": "rel-curbclaim-platform",
+      "type": "dependency",
+      "source_id": "curbclaim",
+      "target_id": "execution-platform",
+      "direction": "OUTBOUND",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "observed_at": "2026-08-22T00:00:00.000Z",
+      "source_ref": "src-curbclaim-receipt",
+      "limitations": [
+        "Architecture relationship; the shared platform contract is inherited, not a live integration claim."
+      ]
+    },
+    {
+      "id": "rel-datum-deedsonar",
+      "type": "tool_use",
+      "source_id": "deedsonar",
+      "target_id": "datum",
+      "direction": "OUTBOUND",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "observed_at": "2026-08-01T22:00:00.000Z",
+      "source_ref": "src-estate-canon",
+      "limitations": [
+        "Architectural fit, not verified public invocation."
+      ]
+    },
+    {
+      "id": "rel-deedsonar-platform",
+      "type": "dependency",
+      "source_id": "deedsonar",
+      "target_id": "execution-platform",
+      "direction": "OUTBOUND",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "observed_at": "2026-08-01T22:00:00.000Z",
+      "source_ref": "src-galaxy-canon",
+      "limitations": [
+        "Curated manifest relationship."
+      ]
+    },
+    {
+      "id": "rel-factory-neuruh",
+      "type": "productization",
+      "source_id": "factory-visual-cortex",
+      "target_id": "neuruh",
+      "direction": "OUTBOUND",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "observed_at": "2026-08-01T22:00:00.000Z",
+      "source_ref": "src-estate-canon",
+      "limitations": [
+        "No public write or deployment authority."
+      ]
+    },
+    {
+      "id": "rel-fsp-platform",
+      "type": "dependency",
+      "source_id": "find-sell-profit",
+      "target_id": "execution-platform",
+      "direction": "OUTBOUND",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "observed_at": "2026-08-01T22:00:00.000Z",
+      "source_ref": "src-fsp-canon",
+      "limitations": [
+        "Architecture relationship."
+      ]
+    },
+    {
+      "id": "rel-galaxy-neuruh",
+      "type": "evidence_supply",
+      "source_id": "galaxy",
+      "target_id": "neuruh",
+      "direction": "BIDIRECTIONAL",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "observed_at": "2026-08-01T22:00:00.000Z",
+      "source_ref": "src-galaxy-canon",
+      "limitations": [
+        "Snapshot manifest, not production graph connectivity."
+      ]
+    },
+    {
+      "id": "rel-lcde-adaptive",
+      "type": "research_support",
+      "source_id": "lcde-case-zero",
+      "target_id": "adaptive-intelligence",
+      "direction": "OUTBOUND",
+      "truth_mode": "CONCEPTUAL",
+      "observed_at": "2026-08-01T22:00:00.000Z",
+      "source_ref": "src-lcde",
+      "limitations": [
+        "Hypothesis only."
+      ]
+    },
+    {
+      "id": "rel-lead-platform",
+      "type": "dependency",
+      "source_id": "lead-recipe-os",
+      "target_id": "execution-platform",
+      "direction": "OUTBOUND",
+      "truth_mode": "PLANNED",
+      "observed_at": "2026-08-01T22:00:00.000Z",
+      "source_ref": "src-fsp-canon",
+      "limitations": [
+        "Planned relationship."
+      ]
+    },
+    {
+      "id": "rel-neural-neuruh",
+      "type": "memory_supply",
+      "source_id": "neural-core",
+      "target_id": "neuruh",
+      "direction": "OUTBOUND",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "observed_at": "2026-08-01T22:00:00.000Z",
+      "source_ref": "src-neural-core",
+      "limitations": [
+        "Architecture relationship; not a live model claim."
+      ]
+    },
+    {
+      "id": "rel-platform-neuruh",
+      "type": "execution",
+      "source_id": "execution-platform",
+      "target_id": "neuruh",
+      "direction": "BIDIRECTIONAL",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "observed_at": "2026-08-01T22:00:00.000Z",
+      "source_ref": "src-galaxy-canon",
+      "limitations": [
+        "Public projection has no execution authority."
+      ]
+    },
+    {
+      "id": "rel-proofos-platform",
+      "type": "dependency",
+      "source_id": "proof-os",
+      "target_id": "execution-platform",
+      "direction": "OUTBOUND",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "observed_at": "2026-08-22T00:00:00.000Z",
+      "source_ref": "src-proofos-receipt",
+      "limitations": [
+        "Architecture relationship; the shared platform contract is inherited, not a live integration claim."
+      ]
+    },
+    {
+      "id": "rel-venturefactory-neuruh",
+      "type": "productization",
+      "source_id": "venture-factory",
+      "target_id": "neuruh",
+      "direction": "OUTBOUND",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "observed_at": "2026-08-22T00:00:00.000Z",
+      "source_ref": "src-factory-receipt",
+      "limitations": [
+        "Local deterministic adapter only; no live control-plane binding is claimed."
+      ]
+    }
   ],
   "events": [
     {
@@ -418,7 +1071,9 @@
       "source_ref": "src-p0-commit",
       "authority": "NOT_APPLICABLE",
       "reversibility": "NOT_APPLICABLE",
-      "limitations": ["Does not certify G1 or G2."]
+      "limitations": [
+        "Does not certify G1 or G2."
+      ]
     },
     {
       "event_id": "evt-galaxy-contradiction-preserved",
@@ -430,7 +1085,37 @@
       "source_ref": "src-galaxy-canon",
       "authority": "NOT_APPLICABLE",
       "reversibility": "NOT_APPLICABLE",
-      "limitations": ["No source was promoted to live status."]
+      "limitations": [
+        "No source was promoted to live status."
+      ]
+    },
+    {
+      "event_id": "evt-organism-census-registered",
+      "event_type": "source.registered",
+      "occurred_at": "2026-08-23T16:39:29.000Z",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "subject_id": "organism-census",
+      "public_summary": "A same-day census of the operating estate was registered, publishing its counting rules and retiring prior marketing counts as non-authoritative.",
+      "source_ref": "src-organism-census",
+      "authority": "NOT_APPLICABLE",
+      "reversibility": "NOT_APPLICABLE",
+      "limitations": [
+        "Point-in-time census of a single host."
+      ]
+    },
+    {
+      "event_id": "evt-public-launch-authorized",
+      "event_type": "authority.granted",
+      "occurred_at": "2026-08-23T17:00:00.000Z",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "subject_id": "neuruh",
+      "public_summary": "The founder authorized taking Neuruh.com live and indexing it, superseding the prior deployment refusal; G1 device validation and G2 renderer certification remain open and disclosed.",
+      "source_ref": "src-launch-constitution",
+      "authority": "FOUNDER",
+      "reversibility": "REVERSIBLE",
+      "limitations": [
+        "Authorization covers this public site only; no product production system was modified."
+      ]
     }
   ]
 }

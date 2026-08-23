@@ -1,0 +1,84 @@
+{
+  "schema": "curbclaim.github-custody-receipt.v1",
+  "recordedAt": "2026-08-22T13:23:25Z",
+  "workspace": "/Users/jeramiehicks/neuruh-workspaces/curbclaim-hyperlocal-recovery-20260821",
+  "repository": "NeuruhAI/curbclaim",
+  "repositoryUrl": "https://github.com/NeuruhAI/curbclaim",
+  "visibility": "PRIVATE",
+  "created": true,
+  "createdReason": "No repository named curbclaim existed under NeuruhAI or Jeramie-Hicks. Verified by exact name lookup on four candidate names and by listing all repositories in both owners.",
+  "branch": "codex/hyperlocal-recovery-20260821",
+  "localHead": "c73d5acae61ef98f719f930935fdf193255552ce",
+  "remoteHead": "c73d5acae61ef98f719f930935fdf193255552ce",
+  "remoteHeadVerified": true,
+  "verificationMethods": [
+    "git rev-parse HEAD",
+    "git ls-remote origin refs/heads/codex/hyperlocal-recovery-20260821",
+    "gh api repos/NeuruhAI/curbclaim/git/ref/heads/codex/hyperlocal-recovery-20260821"
+  ],
+  "remoteBranches": [
+    "refs/heads/codex/hyperlocal-recovery-20260821"
+  ],
+  "commits": [
+    {
+      "sha": "c8991af",
+      "subject": "checkpoint: seal CurbClaim recovery court"
+    },
+    {
+      "sha": "9856a1f",
+      "subject": "feat(domain): TransferOpportunity core with zero-crossing route economics"
+    },
+    {
+      "sha": "7e650b0",
+      "subject": "feat(ui): mobile-first surfaces that make the zero crossing legible"
+    },
+    {
+      "sha": "4e70d8f",
+      "subject": "feat(deploy): dependency-free static server and GoDaddy release artifacts"
+    },
+    {
+      "sha": "b480cb5",
+      "subject": "docs: seal handoff, custody receipt and README at the pushed SHA"
+    },
+    {
+      "sha": "c73d5ac",
+      "subject": "fix(a11y): correct contrast a real browser caught and jsdom could not"
+    }
+  ],
+  "gates": {
+    "TYPECHECK": "PASS",
+    "LINT": "PASS",
+    "TESTS": "PASS",
+    "TEST_COUNT": 202,
+    "BUILD": "PASS",
+    "SECRET_SCAN": "PASS",
+    "GIT_DIFF_CHECK": "PASS",
+    "GITHUB_PUSH": "PASS",
+    "REMOTE_HEAD_VERIFIED": "PASS"
+  },
+  "constraints": {
+    "mainModified": false,
+    "mainMerged": false,
+    "forcePushUsed": false,
+    "remoteHistoryRewritten": false,
+    "repositoryMadePublic": false,
+    "duplicateRepositoryCreated": false,
+    "externalReposModified": false,
+    "productionWrites": false,
+    "productionDnsChanged": false,
+    "outboundContact": false,
+    "purchases": false,
+    "realPickups": false
+  },
+  "secretScan": {
+    "committedEnvFiles": 0,
+    "buildTimeEnvReads": 0,
+    "runtimeEnvVars": [
+      "PORT",
+      "HOST",
+      "CURBCLAIM_STATIC_ROOT"
+    ],
+    "preCommitHook": "gitleaks reported no leaks on every commit"
+  },
+  "note": "A custody receipt necessarily lags its own commit by one: writing the SHA in changes the SHA. The values above are the head at the moment of the last push before this receipt was updated. Any reader can confirm the true current head with the verification methods listed, which is the point of recording them rather than a frozen number."
+}

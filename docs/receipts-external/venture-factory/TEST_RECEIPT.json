@@ -1,0 +1,162 @@
+{
+  "schema": "neuruh.factory.test-receipt.v1",
+  "captured_at": "2026-08-22T12:52:00Z",
+  "status": "PASS",
+  "final_gates": {
+    "unit_and_integration": {
+      "command": "PYTHONPATH=src python3 -m unittest discover -s tests -v",
+      "tests": 98,
+      "failures": 0,
+      "errors": 0,
+      "status": "PASS"
+    },
+    "typecheck": {
+      "command": ".venv/bin/python -m mypy src",
+      "files": 25,
+      "status": "PASS"
+    },
+    "lint": {
+      "command": "ruff check src tests scripts",
+      "status": "PASS"
+    },
+    "javascript_syntax": {
+      "command": "node --check ventures/transition-intelligence/web/app.js",
+      "status": "PASS"
+    },
+    "secret_scan": {
+      "tool": "gitleaks",
+      "leaks": 0,
+      "status": "PASS"
+    },
+    "visual_responsive": {
+      "browser": "Playwright Chromium",
+      "baseline_images": 25,
+      "white_label_images": 1,
+      "status": "PASS"
+    },
+    "venture_plan_compiler": {
+      "command": "PYTHONPATH=src python3 -m unittest discover -s tests -p test_factory_venture_plan.py",
+      "covers": [
+        "byte-identical repeated compile",
+        "missing capability blocks plan and run",
+        "absent provider artifact is a capability gap",
+        "unsupported and invalid specifications are refused",
+        "materially different specs produce materially different plans",
+        "mission package_paths must cover the plan",
+        "every stage receipt binds the frozen plan digest"
+      ],
+      "status": "PASS"
+    },
+    "control_plane_port": {
+      "command": "PYTHONPATH=src python3 -m unittest discover -s tests -p test_control_plane_port.py",
+      "covers": [
+        "ALLOW",
+        "DENY",
+        "UNKNOWN (no grant, unregistered principal, unregistered session)",
+        "unavailable (absent, malformed, self-reported offline, fail-open fixture)",
+        "CONFLICT (conflicting writer lease, conflicting grants, lease required, authority-reference mismatch)",
+        "workspace out of scope",
+        "denied stage stops the run and is receipted",
+        "packaging requires its own authority"
+      ],
+      "status": "PASS"
+    },
+    "receipt_output_drift": {
+      "command": "PYTHONPATH=src python3 -m unittest discover -s tests -p test_receipt_drift.py",
+      "covers": [
+        "artifact changed after verification",
+        "receipt references a missing output",
+        "package differs from verified output",
+        "package archive tampered",
+        "handoff points at an obsolete artifact",
+        "handoff pins a superseded package receipt",
+        "unproven preview is reported, not assumed"
+      ],
+      "status": "PASS"
+    },
+    "preview_proof": {
+      "command": "PYTHONPATH=src python3 -m unittest discover -s tests -p test_preview_proof.py",
+      "covers": [
+        "package extracted and launched with an allowlisted argv",
+        "health, identity and representative interaction probes",
+        "captured identifier spent on a later probe",
+        "identity mismatch fails the preview",
+        "a bare HTTP 200 does not satisfy an interaction probe",
+        "preview requires its own Control Plane authority",
+        "traversing archive member cannot escape the preview tree"
+      ],
+      "status": "PASS"
+    },
+    "transition_intelligence_proof": {
+      "command": "PYTHONPATH=src python3 -m unittest discover -s tests -p test_transition_proof.py",
+      "covers": [
+        "the real venture spec compiles to a READY deterministic plan",
+        "product capabilities are derived from the specification",
+        "every committed receipt names the same artifact digest",
+        "every stage recorded an explicit Control Plane ALLOW",
+        "every reused capability resolves to an exact blob"
+      ],
+      "status": "PASS"
+    },
+    "handoff_validation": {
+      "command": "python3 scripts/validate_handoff.py",
+      "status": "PASS"
+    },
+    "source_reconciliation": {
+      "command": "python3 scripts/source_reconciliation.py --check",
+      "records": 9,
+      "blobs_resolved": 26,
+      "status": "PASS"
+    }
+  },
+  "failure_history": [
+    {
+      "gate": "CONVERGENCE_UPSTREAM_TEST",
+      "first_result": "4 failures and 2 errors from inherited global Git signing/hooks",
+      "fix": "Reran the disposable exact-SHA export with GIT_CONFIG_GLOBAL=/dev/null",
+      "final_result": "159/159 PASS"
+    },
+    {
+      "gate": "PRODUCT_API_TEST",
+      "first_result": "2 loopback-bind PermissionErrors under the filesystem sandbox",
+      "fix": "Reran with explicit bounded loopback permission",
+      "final_result": "PASS"
+    },
+    {
+      "gate": "LINT",
+      "first_result": "3 unused imports",
+      "fix": "Removed the unused imports",
+      "final_result": "PASS"
+    },
+    {
+      "gate": "TYPECHECK",
+      "first_result": "6 typing errors plus two no-redefinition follow-ups",
+      "fix": "Narrowed dataclass/optional values, decoded byte host values, and separated typed result names",
+      "final_result": "PASS"
+    },
+    {
+      "gate": "BROWSER_CONSOLE",
+      "first_result": "Missing favicon produced one 404",
+      "fix": "Added a same-origin SVG favicon",
+      "final_result": "0 console, page, or request errors across the capture sweep"
+    },
+    {
+      "gate": "CONTROL_PLANE_CAPABILITY_MATCH",
+      "first_result": "Every stage refused with UNKNOWN/NO_MATCHING_GRANT; the grant scope 'factory.stage_*' did not match 'factory.stage_discover'",
+      "fix": "Generalized scope matching from a '.*' namespace rule to an explicit trailing-'*' prefix rule for both capability and target scopes",
+      "final_result": "PASS"
+    },
+    {
+      "gate": "PACKAGE_AND_PREVIEW_TAMPER_TESTS",
+      "first_result": "Tests expected the package/preview-specific refusal, but run verification refused first with IntegrityError",
+      "fix": "Asserted the outer refusal that actually fires and kept the inner digest check as defense in depth",
+      "final_result": "PASS"
+    },
+    {
+      "gate": "SOURCE_PROVENANCE_LEDGER",
+      "first_result": "public-commons record was PARTIAL: the pinned 'registry' path does not exist at 3faabcfbb43f",
+      "fix": "Removed the unresolvable claim from SOURCE_PINS.json rather than substituting a plausible replacement",
+      "final_result": "PASS_EXACT_PROVENANCE_RECORDED"
+    }
+  ]
+}

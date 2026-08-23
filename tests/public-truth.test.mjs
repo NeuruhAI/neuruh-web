@@ -57,7 +57,7 @@ test('unclassified number fails closed', () => {
 })
 
 test('stale snapshot fails closed using injected evaluation time', () => {
-  assert.throws(() => compileTruth(clone(), { evaluationTime: '2026-09-01T00:00:00.000Z' }), /stale snapshot rejected/)
+  assert.throws(() => compileTruth(clone(), { evaluationTime: '2026-10-15T00:00:00.000Z' }), /stale snapshot rejected/)
 })
 
 test('output is byte deterministic', () => {

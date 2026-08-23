@@ -1,0 +1,85 @@
+{
+  "court": "personalization",
+  "status": "PASS",
+  "checked_at": "2026-08-22T13:00:31.868Z",
+  "duration_ms": 2,
+  "checks": [
+    {
+      "pair": [
+        "forestar",
+        "first-american"
+      ],
+      "dimensions_checked": 15,
+      "dimensions_different": [
+        "identity",
+        "current_workflows",
+        "cost_model",
+        "capability_matches",
+        "future_state",
+        "transformation_map",
+        "value_assumptions",
+        "proof_experience",
+        "terminology",
+        "operator_workflow",
+        "record_shape",
+        "pilot_scope",
+        "trust_surface",
+        "connectors",
+        "commercial_recommendation"
+      ]
+    },
+    {
+      "pair": [
+        "forestar",
+        "invitation-homes"
+      ],
+      "dimensions_checked": 15,
+      "dimensions_different": [
+        "identity",
+        "current_workflows",
+        "cost_model",
+        "capability_matches",
+        "future_state",
+        "transformation_map",
+        "value_assumptions",
+        "proof_experience",
+        "terminology",
+        "operator_workflow",
+        "record_shape",
+        "pilot_scope",
+        "trust_surface",
+        "connectors",
+        "commercial_recommendation"
+      ]
+    },
+    {
+      "pair": [
+        "first-american",
+        "invitation-homes"
+      ],
+      "dimensions_checked": 15,
+      "dimensions_different": [
+        "identity",
+        "current_workflows",
+        "cost_model",
+        "capability_matches",
+        "future_state",
+        "transformation_map",
+        "value_assumptions",
+        "proof_experience",
+        "terminology",
+        "operator_workflow",
+        "record_shape",
+        "pilot_scope",
+        "trust_surface",
+        "connectors",
+        "commercial_recommendation"
+      ]
+    }
+  ],
+  "failures": [],
+  "implementation": {
+    "runner": "scripts/run-court.ts",
+    "runner_sha256": "1ddc4d32799c46cc1e41fc7177084960b5449771c13c2f42d4d073dc9ed3e8a2"
+  }
+}

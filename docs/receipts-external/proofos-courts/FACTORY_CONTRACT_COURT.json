@@ -1,0 +1,80 @@
+{
+  "court": "factory-contract",
+  "status": "PASS",
+  "checked_at": "2026-08-22T13:00:32.184Z",
+  "duration_ms": 1,
+  "checks": [
+    {
+      "boundary": "FACTORY_PROOFOS_CONTRACT",
+      "posture_lines": 7
+    },
+    {
+      "condition": "clean source-pinned evidence-backed manifest",
+      "expected": "ACCEPTED",
+      "status": "ACCEPTED"
+    },
+    {
+      "condition": "wire schema invalid",
+      "expected": "BLOCKED",
+      "status": "BLOCKED"
+    },
+    {
+      "condition": "source dirty",
+      "expected": "BLOCKED",
+      "status": "BLOCKED"
+    },
+    {
+      "condition": "commit missing",
+      "expected": "BLOCKED",
+      "status": "BLOCKED"
+    },
+    {
+      "condition": "evidence reference missing",
+      "expected": "BLOCKED",
+      "status": "BLOCKED"
+    },
+    {
+      "condition": "manifest requests execution authority",
+      "expected": "BLOCKED",
+      "status": "BLOCKED"
+    },
+    {
+      "condition": "capability claims authority",
+      "expected": "BLOCKED",
+      "status": "BLOCKED"
+    },
+    {
+      "condition": "capability registry unavailable",
+      "expected": "UNKNOWN",
+      "status": "UNKNOWN"
+    },
+    {
+      "condition": "control plane unavailable",
+      "expected": "UNKNOWN",
+      "status": "UNKNOWN"
+    },
+    {
+      "condition": "transport or parse error",
+      "expected": "UNKNOWN",
+      "status": "UNKNOWN"
+    },
+    {
+      "condition": "capability operation undeclared",
+      "expected": "UNKNOWN",
+      "status": "UNKNOWN"
+    },
+    {
+      "condition": "provisional or partial capability",
+      "expected": "REVIEW_REQUIRED",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "product_manifest_projection": "NOT_PROJECTABLE"
+    }
+  ],
+  "failures": [],
+  "implementation": {
+    "runner": "scripts/run-court.ts",
+    "runner_sha256": "1ddc4d32799c46cc1e41fc7177084960b5449771c13c2f42d4d073dc9ed3e8a2"
+  }
+}

@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-08-01T23:24:18.492Z",
+  "generatedAt": "2026-08-23T17:47:21.130Z",
   "upstreamDesignStudio": {
-    "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-design-studio",
+    "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-design-studio",
     "revision": "708a99680e07b86f20d5d2405c6e8594689ce245"
   },
   "artifacts": [
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "exports/design-system/tokens/color-primitives.css"
       },
@@ -19,7 +19,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "exports/design-system/tokens/color-semantics.css"
       },
@@ -31,7 +31,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "exports/design-system/tokens/fonts.css"
       },
@@ -43,7 +43,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "exports/design-system/tokens/material.css"
       },
@@ -55,7 +55,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "exports/design-system/tokens/motion.css"
       },
@@ -67,7 +67,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "exports/design-system/tokens/scene.css"
       },
@@ -79,7 +79,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "exports/design-system/tokens/space.css"
       },
@@ -91,7 +91,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "exports/design-system/tokens/state.css"
       },
@@ -103,7 +103,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "exports/design-system/tokens/typography.css"
       },
@@ -115,7 +115,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "exports/design-system/css/authority.css"
       },
@@ -127,7 +127,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "exports/design-system/css/base.css"
       },
@@ -139,7 +139,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "exports/design-system/css/blackbox.css"
       },
@@ -151,7 +151,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "exports/design-system/css/core.css"
       },
@@ -163,7 +163,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "exports/design-system/css/evidence.css"
       },
@@ -175,7 +175,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "exports/design-system/styles.css"
       },
@@ -187,7 +187,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "components/dom/SceneBoundary.tsx"
       },
@@ -199,7 +199,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "components/dom/Tier0.tsx"
       },
@@ -211,7 +211,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "lib/capability.ts"
       },
@@ -223,7 +223,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "lib/sceneStates.ts"
       },
@@ -235,7 +235,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "lib/sceneStates.ts"
       },
@@ -247,7 +247,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "lib/metrics.ts"
       },
@@ -259,7 +259,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "lib/capability.ts"
       },
@@ -271,7 +271,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "lib/membraneApproaches.ts"
       },
@@ -283,7 +283,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "lib/membraneMaterials.ts"
       },
@@ -295,7 +295,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "lib/metrics.ts"
       },
@@ -307,7 +307,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "lib/rng.ts"
       },
@@ -319,7 +319,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "lib/sceneStates.ts"
       },
@@ -331,7 +331,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "lib/sceneTokens.ts"
       },
@@ -343,7 +343,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "lib/spike1Config.ts"
       },
@@ -355,7 +355,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "lib/tissue.ts"
       },
@@ -367,7 +367,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "lib/tissueMaterial.ts"
       },
@@ -379,7 +379,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "lib/useTrace.ts"
       },
@@ -391,7 +391,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "components/scene/CameraRig.tsx"
       },
@@ -403,7 +403,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "components/scene/Channels.tsx"
       },
@@ -415,7 +415,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "components/scene/Fragments.tsx"
       },
@@ -427,7 +427,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "components/scene/GovernanceCore.tsx"
       },
@@ -439,7 +439,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "components/scene/Harness.tsx"
       },
@@ -451,7 +451,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "components/scene/LightRig.tsx"
       },
@@ -463,7 +463,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "components/scene/Membranes.tsx"
       },
@@ -475,7 +475,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "components/scene/NCellScene.tsx"
       },
@@ -487,7 +487,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "components/scene/SceneErrorBoundary.tsx"
       },
@@ -499,7 +499,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "components/scene/SceneShell.tsx"
       },
@@ -511,7 +511,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "components/scene/Spike0Scene.tsx"
       },
@@ -523,7 +523,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "components/scene/Spike1Scene.tsx"
       },
@@ -535,7 +535,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "components/scene/Tissue.tsx"
       },
@@ -547,7 +547,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "tests/measure.ts"
       },
@@ -559,7 +559,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "tests/spike1.matrix.json"
       },
@@ -571,7 +571,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "scripts/run-spike1-resumable.sh"
       },
@@ -583,7 +583,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "scripts/aggregate-spike1.mjs"
       },
@@ -595,7 +595,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "tests/spike0.smoke.spec.ts"
       },
@@ -607,7 +607,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "tests/spike0.baseline.spec.ts"
       },
@@ -619,7 +619,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "tests/spike1.material.spec.ts"
       },
@@ -631,7 +631,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "tests/spike1.matrix.json"
       },
@@ -643,7 +643,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "tests/run-spike1-resumable.test.sh"
       },
@@ -655,31 +655,31 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "app/spike1/Spike1Client.tsx"
       },
       "destination": "apps/neuruh-web/components/NeuruhExperience.tsx",
       "mode": "ported",
       "sourceSha256": "6a14642fc0faa4c625497659fcb7e6e338f79acefdeeef5ef957a7b2da5f2ff7",
-      "destinationSha256": "d16e6f04741c0ff9970b93a331ebd2e78d428aeb829d1e03b3ad3ed942c1e151",
+      "destinationSha256": "b59e32add84db29df6950027d9557e97ebe638f7b26ac7a68dca9aa739834465",
       "adaptation": "Production path/import adaptation or locked trs=0.75 policy; source remains unchanged."
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "app/globals.css"
       },
       "destination": "apps/neuruh-web/app/globals.css",
       "mode": "ported",
       "sourceSha256": "e4a38d8cf635679a5f01ba7781312629a08412ec778e08529d8147a99f527528",
-      "destinationSha256": "4a3e1e5c162ded757c39b740181b2fb75503bfb73b2a547fe8810c0280027039",
+      "destinationSha256": "2081631b387c9f0bb38db6d04c5b0575ae3607ade3ac42e13f8391c24a9bbf28",
       "adaptation": "Production path/import adaptation or locked trs=0.75 policy; source remains unchanged."
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "app/icon.svg"
       },
@@ -691,7 +691,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "exports/prototype/ASSET_MANIFEST.yaml"
       },
@@ -703,7 +703,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "exports/prototype/index.html"
       },
@@ -715,7 +715,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "exports/handoff/COMPONENT_CONTRACTS.md"
       },
@@ -727,7 +727,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "exports/handoff/fixtures/working-set.json"
       },
@@ -739,7 +739,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "docs/SCENE_CONTRACT.md"
       },
@@ -751,7 +751,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "docs/DESIGN_LOCK.md"
       },
@@ -763,7 +763,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "ca508953f5bae771c99b88bc865eff09688d3438",
         "path": "PRODUCTION_PERFORMANCE_BUDGETS.md"
       },
@@ -775,7 +775,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "receipts/stage4-accept-01-arrival.png"
       },
@@ -787,7 +787,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "receipts/stage4-accept-04-signature-trace.png"
       },
@@ -799,7 +799,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "receipts/stage4-accept-06-governance-gating.png"
       },
@@ -811,7 +811,7 @@
     },
     {
       "source": {
-        "repository": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-com-spike",
+        "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-com-spike",
         "revision": "a391f3daa312465cece69c40988c7a21ba4869c7",
         "path": "receipts/stage4-accept-tier0-no-webgl.png"
       },

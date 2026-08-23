@@ -208,9 +208,10 @@ export function NeuruhExperience({
 
                 {item.feature === 'entry' && (
                   <div className="row">
-                    <Link className="n-btn n-btn--primary" href="/galaxy">Explore the Galaxy</Link>
+                    <Link className="n-btn n-btn--primary" href="/products">See the products</Link>
                     <Link className="n-btn n-btn--secondary" href="/proof">Inspect proof</Link>
-                    <Link className="n-btn n-btn--ghost" href="/worlds">See the worlds</Link>
+                    <Link className="n-btn n-btn--secondary" href="/refusals">Read the refusals</Link>
+                    <Link className="n-btn n-btn--ghost" href="/contact">Work with Neuruh</Link>
                   </div>
                 )}
 

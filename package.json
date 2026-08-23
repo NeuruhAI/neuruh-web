@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "license": "UNLICENSED",
-  "engines": { "node": ">=20.9.0" },
+  "engines": {
+    "node": ">=20.9.0"
+  },
   "scripts": {
     "dev": "next dev apps/neuruh-web -p 4311",
     "build": "next build apps/neuruh-web",
@@ -13,7 +15,7 @@
     "test:smoke": "playwright test apps/neuruh-web/tests/production.smoke.spec.ts",
     "test:artifacts": "node --test tests/artifacts/*.test.mjs",
     "test:canary": "node --test tests/budget-canary.test.mjs",
-    "compile:truth": "node packages/public-truth/src/cli.mjs --as-of=2026-08-01T22:00:00.000Z",
+    "compile:truth": "node packages/public-truth/src/cli.mjs --as-of=2026-08-23T17:30:00.000Z",
     "verify:truth": "node scripts/verify-public-truth.mjs",
     "verify:provenance": "node scripts/verify-provenance.mjs",
     "verify:boundaries": "node scripts/verify-boundaries.mjs",
@@ -30,6 +32,7 @@
     "three": "0.185.1"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
     "@gltf-transform/cli": "4.4.2",
     "@gltf-transform/core": "4.4.2",
     "@gltf-transform/extensions": "4.4.2",

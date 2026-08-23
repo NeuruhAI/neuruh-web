@@ -7,6 +7,13 @@ export function generateStaticParams() {
   return WORLD_IDS.map((slug) => ({ slug }))
 }
 
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const world = getPublicObject(slug)
+  if (!world) return {}
+  return { title: world.name, description: world.summary }
+}
+
 export default async function WorldPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   if (!WORLD_IDS.includes(slug as (typeof WORLD_IDS)[number])) notFound()

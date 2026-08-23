@@ -2,12 +2,12 @@
   "config": {
     "argv": [
       "/opt/homebrew/Cellar/node/26.5.0/bin/node",
-      "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-web/node_modules/.bin/playwright",
+      "/Users/jeramiehicks/neuruh-worktrees/neuruh-public-launch-20260823/node_modules/.bin/playwright",
       "test",
       "apps/neuruh-web/tests/production.smoke.spec.ts"
     ],
-    "configFile": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-web/playwright.config.ts",
-    "rootDir": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-web/apps/neuruh-web/tests",
+    "configFile": "/Users/jeramiehicks/neuruh-worktrees/neuruh-public-launch-20260823/playwright.config.ts",
+    "rootDir": "/Users/jeramiehicks/neuruh-worktrees/neuruh-public-launch-20260823/apps/neuruh-web/tests",
     "failOnFlakyTests": false,
     "forbidOnly": false,
     "fullyParallel": false,
@@ -23,7 +23,7 @@
     "preserveOutput": "always",
     "projects": [
       {
-        "outputDir": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-web/test-results",
+        "outputDir": "/Users/jeramiehicks/neuruh-worktrees/neuruh-public-launch-20260823/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
@@ -31,7 +31,7 @@
         },
         "id": "",
         "name": "",
-        "testDir": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-web/apps/neuruh-web/tests",
+        "testDir": "/Users/jeramiehicks/neuruh-worktrees/neuruh-public-launch-20260823/apps/neuruh-web/tests",
         "testIgnore": [],
         "testMatch": [
           "production.smoke.spec.ts"
@@ -77,7 +77,7 @@
       "line": 0,
       "specs": [
         {
-          "title": "accessible and no-WebGL routes carry all eight chapters with no canvas",
+          "title": "accessible and no-WebGL routes carry the complete Alive map with no canvas",
           "ok": true,
           "tags": [],
           "tests": [
@@ -92,12 +92,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1434,
+                  "duration": 332,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-08-01T22:44:29.098Z",
+                  "startTime": "2026-08-23T17:52:04.581Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -105,7 +105,7 @@
               "status": "expected"
             }
           ],
-          "id": "0d367ca54919ce748ffe-b80c7e2ebcb55e9d4441",
+          "id": "0d367ca54919ce748ffe-d6ebe197e56b82d87d81",
           "file": "production.smoke.spec.ts",
           "line": 3,
           "column": 5
@@ -126,16 +126,16 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 927,
+                  "duration": 688,
                   "errors": [],
                   "stdout": [
                     {
-                      "text": "tier0 transfer: 167.3 KB\n"
+                      "text": "tier0 encoded body: 314.2 KB\n"
                     }
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-08-01T22:44:34.129Z",
+                  "startTime": "2026-08-23T17:52:05.109Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -149,7 +149,7 @@
           "column": 5
         },
         {
-          "title": "reduced-motion route selects reduced route and preserves eight states",
+          "title": "reduced-motion route preserves truth and semantic state parity",
           "ok": true,
           "tags": [],
           "tests": [
@@ -164,12 +164,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 404,
+                  "duration": 198,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-08-01T22:44:35.077Z",
+                  "startTime": "2026-08-23T17:52:05.805Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -177,9 +177,9 @@
               "status": "expected"
             }
           ],
-          "id": "0d367ca54919ce748ffe-838a80ba3074ebdecb15",
+          "id": "0d367ca54919ce748ffe-5053a3d171910dcb9964",
           "file": "production.smoke.spec.ts",
-          "line": 37,
+          "line": 38,
           "column": 5
         },
         {
@@ -198,12 +198,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1734,
+                  "duration": 1553,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-08-01T22:44:35.495Z",
+                  "startTime": "2026-08-23T17:52:06.013Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -213,7 +213,109 @@
           ],
           "id": "0d367ca54919ce748ffe-8c8968bd88182ae3d891",
           "file": "production.smoke.spec.ts",
-          "line": 45,
+          "line": 56,
+          "column": 5
+        },
+        {
+          "title": "semantic routes render Neuruh truth without canvas or fake LIVE state",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 377,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-08-23T17:52:07.576Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0d367ca54919ce748ffe-a1fdf496c215e591e7f4",
+          "file": "production.smoke.spec.ts",
+          "line": 64,
+          "column": 5
+        },
+        {
+          "title": "keyboard navigation reaches a semantic route",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 156,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-08-23T17:52:07.961Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0d367ca54919ce748ffe-81591d04037125129482",
+          "file": "production.smoke.spec.ts",
+          "line": 77,
+          "column": 5
+        },
+        {
+          "title": "Galaxy exposes sourced relationships and preserves contradiction",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 111,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-08-23T17:52:08.122Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0d367ca54919ce748ffe-f2e2d6353f042a876ad0",
+          "file": "production.smoke.spec.ts",
+          "line": 86,
           "column": 5
         }
       ]
@@ -221,9 +323,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-08-01T22:44:28.163Z",
-    "duration": 9186.518,
-    "expected": 4,
+    "startTime": "2026-08-23T17:52:04.320Z",
+    "duration": 3944.3509999999997,
+    "expected": 7,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
