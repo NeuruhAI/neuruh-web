@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[36980,["/_next/static/chunks/1503kv41vpcb2.js","/_next/static/chunks/1vsgfzi1-4ieh.js","/_next/static/chunks/1kw_mhznjvy0k.js","/_next/static/chunks/0b9rekqta22iz.js"],"NeuruhExperience"]
+3:I[48865,["/_next/static/chunks/1503kv41vpcb2.js","/_next/static/chunks/1vsgfzi1-4ieh.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"truth":{"truthMode":"VERIFIED_SNAPSHOT","lastVerifiedAt":"2026-08-23T17:30:00.000Z","limitation":"Dated local snapshot compiled from canon and repository receipts; no private or production connector is attached.","livingState":"CONTRADICTING","liveConnectivity":false,"sourceRef":"neuruh-public-snapshot-2026-08-23"}}],[["$","script","script-0",{"src":"/_next/static/chunks/1kw_mhznjvy0k.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/0b9rekqta22iz.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"P1xtFHU6VH1nyCHnQ_bHk"}
+5:null

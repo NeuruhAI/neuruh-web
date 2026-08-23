@@ -1,6 +1,8 @@
 import type { MetadataRoute } from 'next'
 import { WORLD_IDS, getPublicSnapshot } from '../../../packages/public-truth/client'
 
+export const dynamic = 'force-static'
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date(getPublicSnapshot().dataset.last_verified_at)
   const routes = [

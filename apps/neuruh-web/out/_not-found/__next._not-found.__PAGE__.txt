@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[60397,["/_next/static/chunks/1503kv41vpcb2.js","/_next/static/chunks/1vsgfzi1-4ieh.js"],""]
+3:I[48865,["/_next/static/chunks/1503kv41vpcb2.js","/_next/static/chunks/1vsgfzi1-4ieh.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"semantic-page","id":"main","children":[["$","header",null,{"className":"semantic-hero","children":[["$","p",null,{"className":"n-label","children":"404 · No object at this route"}],["$","h1",null,{"children":"This route resolves to nothing — and we say so."}],["$","p",null,{"className":"t-lede","children":"The public truth snapshot has no object here. That is a recorded absence, not an error page pretending otherwise."}]]}],["$","section",null,{"className":"semantic-section","children":["$","div",null,{"className":"row","children":[["$","$L2",null,{"className":"n-btn n-btn--primary","href":"/","children":"Back to the organism"}],["$","$L2",null,{"className":"n-btn n-btn--secondary","href":"/products","children":"See the products"}],["$","$L2",null,{"className":"n-btn n-btn--ghost","href":"/proof","children":"Inspect proof"}]]}]}]]}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"P1xtFHU6VH1nyCHnQ_bHk"}
+5:null
