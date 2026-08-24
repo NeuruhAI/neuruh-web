@@ -15,7 +15,7 @@ import { readSeed } from '@/lib/rng'
 import { useTrace } from '@/lib/useTrace'
 import { getHarness } from '@/lib/metrics'
 
-const Spike1Scene = dynamic(() => import('@/components/scene/Spike1Scene'), { ssr: false })
+const Spike1Scene = dynamic(() => import('@/components/scene/ResetSceneEntry'), { ssr: false })
 
 export interface TruthSummary {
   truthMode: TruthMode

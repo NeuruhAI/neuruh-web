@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-24T11:29:00.944Z",
+  "generatedAt": "2026-08-24T12:11:42.172Z",
   "upstreamDesignStudio": {
     "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-design-studio",
     "revision": "708a99680e07b86f20d5d2405c6e8594689ce245"
@@ -662,7 +662,7 @@
       "destination": "apps/neuruh-web/components/NeuruhExperience.tsx",
       "mode": "ported",
       "sourceSha256": "6a14642fc0faa4c625497659fcb7e6e338f79acefdeeef5ef957a7b2da5f2ff7",
-      "destinationSha256": "c9a43dc66631444329c85664f02097196a15ba097926323ff36a0ed31192cceb",
+      "destinationSha256": "5e21383b5d0975fde7e799ae68af2f236fbb3ca6a73d5a5717447b2069741752",
       "adaptation": "Production path/import adaptation or locked trs=0.75 policy; source remains unchanged."
     },
     {
@@ -674,7 +674,7 @@
       "destination": "apps/neuruh-web/app/globals.css",
       "mode": "ported",
       "sourceSha256": "e4a38d8cf635679a5f01ba7781312629a08412ec778e08529d8147a99f527528",
-      "destinationSha256": "d9675d8351bea14e48442b6057db285c426cf67cd51a10dc777d38e13bf91170",
+      "destinationSha256": "ee7c5c81e3390fb4314ba28cbbf36ceee746c5b0701e46fa8d0eff6518b507be",
       "adaptation": "Production path/import adaptation or locked trs=0.75 policy; source remains unchanged."
     },
     {

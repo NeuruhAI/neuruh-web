@@ -74,16 +74,16 @@ body {
   pointer-events: none;
   background: linear-gradient(
     100deg,
-    rgba(3, 4, 7, 0.94) 0%,
-    rgba(3, 4, 7, 0.88) 26%,
-    rgba(3, 4, 7, 0.62) 46%,
-    rgba(3, 4, 7, 0.18) 64%,
-    rgba(3, 4, 7, 0) 78%
+    rgba(6, 9, 14, 0.94) 0%,
+    rgba(6, 9, 14, 0.88) 26%,
+    rgba(6, 9, 14, 0.62) 46%,
+    rgba(6, 9, 14, 0.18) 64%,
+    rgba(6, 9, 14, 0) 78%
   );
 }
 @media (max-width: 48rem) {
   .dom::before {
-    background: linear-gradient(180deg, rgba(3, 4, 7, 0.9) 0%, rgba(3, 4, 7, 0.82) 60%, rgba(3, 4, 7, 0.9) 100%);
+    background: linear-gradient(180deg, rgba(6, 9, 14, 0.9) 0%, rgba(6, 9, 14, 0.82) 60%, rgba(6, 9, 14, 0.9) 100%);
   }
 }
 
@@ -578,3 +578,40 @@ html[data-scene-tier='0'] .tier0-note {
 /* Keep every hero text line clear of the scene zone at desktop widths. */
 .hero-signal { max-width: 33rem; line-height: 1.55; }
 .hero-domains { max-width: 33rem; line-height: 1.7; }
+
+/* ── VISUAL RESET (2026-08-24): CARBON · STEEL · ICE, one brass seam ────
+   Scene light rig re-tuned for the machined reset scene via the runtime
+   token bridge (byte-locked token files untouched). */
+:root {
+  --scene-key-color: #dfe8f2;
+  --scene-key-intensity: 2.3;
+  --scene-fill-color: #31435c;
+  --scene-fill-intensity: 0.78;
+  --scene-rim-color: #9fc8ea;
+  --scene-rim-intensity: 1.85;
+  --scene-ambient: 0.3;
+  --scene-fog-color: #0a0f16;
+}
+
+/* DOM palette joins the reset: cool silver/ice signal family; brass survives
+   ONLY on the primary CTA and micro-seams. Literal values are existing
+   obsidian/mineral-family primitives, applied by selector so the token files
+   and the status-badge semantics stay untouched. */
+.site-header nav a { color: #c3cad8; }
+.site-header nav a:hover { color: #e4e8ef; }
+.text-link { color: #8fc3e0; }
+.text-link:hover { color: #cfe6f7; }
+.chapter__n { color: #98a2b6; }
+.hero-signal { color: #8fc3e0; }
+.metric-strip__value { color: #9fc8ea; }
+.site-footer__line a { color: #c3cad8; }
+.site-footer nav a:hover { color: #9fc8ea; }
+.trace__s { color: #8fc3e0; }
+.n-btn--secondary { border-color: #31404f; color: #c3cad8; }
+.n-btn--secondary:hover { border-color: #5b7ca3; color: #e4e8ef; }
+.truth-panel, .contradiction-object, .semantic-section, .truth-object, .world-entry, .galaxy-node {
+  background: rgba(13, 19, 27, 0.72);
+  border-color: #223041;
+}
+.site-footer { border-top-color: #223041; }
+.zeros-ledger dd { color: #9fc8ea; }
