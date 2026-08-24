@@ -173,7 +173,10 @@ export function Membranes({
   if (layers === 0) return null
 
   return (
-    <group ref={group} position={[0, 0.06, 0]}>
+    // Founder visual acceptance 2026-08-24: the dome canopy previously drifted
+    // into the headline zone as a low-contrast smudge. Tucked right, down, and
+    // back — opening still faces the camera so the tissue reads inside it.
+    <group ref={group} position={[0.3, -0.08, -0.15]}>
       {sheets.map(({ geometry, index }) =>
         approach === 'ssr' ? (
           <mesh key={index} geometry={geometry} renderOrder={10 - index}>

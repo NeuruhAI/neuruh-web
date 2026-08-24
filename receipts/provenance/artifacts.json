@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T17:47:21.130Z",
+  "generatedAt": "2026-08-24T11:29:00.944Z",
   "upstreamDesignStudio": {
     "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-design-studio",
     "revision": "708a99680e07b86f20d5d2405c6e8594689ce245"
@@ -422,7 +422,7 @@
       "destination": "packages/spatial-runtime/scene/Fragments.tsx",
       "mode": "ported",
       "sourceSha256": "b0e4c0e7c710fc311a1a8a1c1c01a1affea3f23b6a123cd61311315f8154df74",
-      "destinationSha256": "b0e4c0e7c710fc311a1a8a1c1c01a1affea3f23b6a123cd61311315f8154df74",
+      "destinationSha256": "3d9e76d89057ea0ed02feb4ef21ffd3fe0cc857dab2e7ef73510c864647c552a",
       "adaptation": "Production path/import adaptation or locked trs=0.75 policy; source remains unchanged."
     },
     {
@@ -470,7 +470,7 @@
       "destination": "packages/spatial-runtime/scene/Membranes.tsx",
       "mode": "ported",
       "sourceSha256": "58b9e54c93ef3a14312325ef3d6e8dd173c17fcc25666fb86dec59c96dd610c1",
-      "destinationSha256": "58b9e54c93ef3a14312325ef3d6e8dd173c17fcc25666fb86dec59c96dd610c1",
+      "destinationSha256": "ba03075f41e4e201e5ef8cbef53344c92f163cb669617cf20e86bc1862c912e1",
       "adaptation": "Production path/import adaptation or locked trs=0.75 policy; source remains unchanged."
     },
     {
@@ -482,7 +482,7 @@
       "destination": "packages/spatial-runtime/scene/NCellScene.tsx",
       "mode": "ported",
       "sourceSha256": "0c673e1095e50c5d8050b3bf6442024c0c82d55bd0ecb3d92d791c612eefb92e",
-      "destinationSha256": "0c673e1095e50c5d8050b3bf6442024c0c82d55bd0ecb3d92d791c612eefb92e",
+      "destinationSha256": "d218aed38958c10cb271c48fe6f72a34823e4aeb28470bf9cddbeec80e1f77da",
       "adaptation": "Production path/import adaptation or locked trs=0.75 policy; source remains unchanged."
     },
     {
@@ -662,7 +662,7 @@
       "destination": "apps/neuruh-web/components/NeuruhExperience.tsx",
       "mode": "ported",
       "sourceSha256": "6a14642fc0faa4c625497659fcb7e6e338f79acefdeeef5ef957a7b2da5f2ff7",
-      "destinationSha256": "b59e32add84db29df6950027d9557e97ebe638f7b26ac7a68dca9aa739834465",
+      "destinationSha256": "c9a43dc66631444329c85664f02097196a15ba097926323ff36a0ed31192cceb",
       "adaptation": "Production path/import adaptation or locked trs=0.75 policy; source remains unchanged."
     },
     {
@@ -674,7 +674,7 @@
       "destination": "apps/neuruh-web/app/globals.css",
       "mode": "ported",
       "sourceSha256": "e4a38d8cf635679a5f01ba7781312629a08412ec778e08529d8147a99f527528",
-      "destinationSha256": "2081631b387c9f0bb38db6d04c5b0575ae3607ade3ac42e13f8391c24a9bbf28",
+      "destinationSha256": "d9675d8351bea14e48442b6057db285c426cf67cd51a10dc777d38e13bf91170",
       "adaptation": "Production path/import adaptation or locked trs=0.75 policy; source remains unchanged."
     },
     {

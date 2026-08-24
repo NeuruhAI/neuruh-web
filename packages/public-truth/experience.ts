@@ -19,8 +19,8 @@ export const ALIVE_CHAPTERS: readonly AliveChapter[] = [
   {
     id: 'presence',
     label: 'Presence',
-    title: 'Nothing acts without authority. Everything leaves a receipt.',
-    body: 'Neuruh builds governed execution infrastructure for AI systems that do real work: fragmented information becomes evidence, evidence becomes a decision, a checked authority gate decides what is allowed, and what happens — including what the system refuses — is recorded so you can verify it without trusting us.',
+    title: 'AI systems that do real work — and prove it.',
+    body: 'Neuruh builds governed infrastructure and products that turn messy real-world information into evidence, decisions, authorized action, and outcomes you can verify. Nothing acts without checked authority. Everything leaves a receipt.',
     href: '/',
     truthMode: 'VERIFIED_SNAPSHOT',
     claimBoundary: 'No private or production connector is attached.',

@@ -121,7 +121,9 @@ export function NCellScene({
         cut={paused}
       />
 
-      {/* Internal structural layer. */}
+      {/* Internal structural layer. Founder visual acceptance 2026-08-24: raise
+          accent-cell emissive presence so the organism reads as organized
+          intelligence rather than unlit geometry at hero distance. */}
       <Tissue
         profile={profile}
         seed={seed}
@@ -130,6 +132,7 @@ export function NCellScene({
         traceProgress={traceProgress}
         paused={paused}
         pinnedTime={pinnedFrame !== null ? pinnedFrame / 60 : null}
+        emissiveGain={1.3}
       />
 
       <GovernanceCore tokens={tokens} presence={eased.core} lit={eased.coreLit} paused={paused} />
