@@ -1,0 +1,311 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* UNCERTAIN reconstruction: compiled CSS recovered from cache 010. Tokens and custom classes are from :root / utility output, not the original source file. */
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-bone: var(--bone);
+  --color-bone-2: var(--bone-2);
+  --color-copper: var(--copper);
+  --color-copper-ink: var(--copper-ink);
+  --color-survey: var(--survey);
+  --color-survey-2: var(--survey-2);
+  --color-signal: var(--signal);
+  --color-paper: var(--paper);
+  --color-receipt: var(--receipt);
+  --color-live: var(--live);
+  --color-built: var(--built);
+  --color-proven: var(--proven);
+  --color-proposed: var(--proposed);
+  --color-danger: var(--danger);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "Cascadia Code", monospace;
+  --font-heading: var(--font-instrument), ui-serif, "Times New Roman", serif;
+  --shadow-desk: var(--elevation-desk);
+  --radius-sm: var(--radius);
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+}
+
+:root {
+  --ink: #f4f6f8;
+  --ink-2: #e8ecf0;
+  --ink-3: #dce3ea;
+  --bone: #14181c;
+  --bone-2: #5a6570;
+  --copper: #2c5d86;
+  --copper-ink: #1e4566;
+  --survey: #4a6670;
+  --survey-2: #3a525c;
+  --signal: #3d6a88;
+  --paper: #fff;
+  --receipt: #efe6d3;
+  --live: #1a7a4c;
+  --built: #5a6570;
+  --proven: #2c5d86;
+  --proposed: #8a94a0;
+  --danger: #b42318;
+  --radius: 0.25rem;
+  --elevation-hair: 0 0 0 1px #14181c1a;
+  --elevation-desk: 0 18px 40px #14181c14;
+  --elevation-lift: 0 1px 0 #fffc, 0 12px 32px #14181c14;
+  --measure: 72rem;
+  --measure-narrow: 40rem;
+  --gutter: 1.25rem;
+  --section: 6.5rem;
+  --duration-move: 0.42s;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --background: var(--ink);
+  --foreground: var(--bone);
+  --card: var(--paper);
+  --card-foreground: var(--bone);
+  --popover: var(--paper);
+  --popover-foreground: var(--bone);
+  --primary: var(--copper);
+  --primary-foreground: #f7f9fb;
+  --secondary: var(--ink-2);
+  --secondary-foreground: var(--bone);
+  --muted: var(--ink-2);
+  --muted-foreground: var(--bone-2);
+  --accent: #e4eaf0;
+  --accent-foreground: var(--bone);
+  --destructive: var(--danger);
+  --border: #14181c1f;
+  --input: #14181c24;
+  --ring: var(--copper);
+  --chart-1: var(--copper);
+  --chart-2: var(--survey);
+  --chart-3: var(--signal);
+  --chart-4: var(--built);
+  --chart-5: var(--bone-2);
+  --sidebar: var(--paper);
+  --sidebar-foreground: var(--bone);
+  --sidebar-primary: var(--copper);
+  --sidebar-primary-foreground: #f7f9fb;
+  --sidebar-accent: var(--ink-2);
+  --sidebar-accent-foreground: var(--bone);
+  --sidebar-border: #14181c1a;
+  --sidebar-ring: var(--copper);
+}
+
+[data-surface="paper"] {
+  --background: var(--paper);
+  --foreground: var(--bone);
+  --card: var(--paper);
+  --card-foreground: var(--bone);
+  --popover: var(--paper);
+  --popover-foreground: var(--bone);
+  --primary: var(--copper);
+  --primary-foreground: #f7f9fb;
+  --secondary: var(--ink-2);
+  --secondary-foreground: var(--bone);
+  --muted: var(--ink-2);
+  --muted-foreground: var(--bone-2);
+  --accent: #e4eaf0;
+  --accent-foreground: var(--bone);
+  --border: #14181c1f;
+  --input: #14181c24;
+  --ring: var(--copper);
+  --elevation-hair: 0 0 0 1px #14181c14;
+  --elevation-desk: 0 16px 36px #14181c14;
+  color: var(--foreground);
+  background: var(--background);
+}
+
+[data-surface="night"] {
+  color: var(--bone);
+  background: var(--ink);
+}
+
+[data-surface="desk"] {
+  --background: #eef2f4;
+  --foreground: #21272d;
+  --card: #fcfdfd;
+  --card-foreground: #21272d;
+  --muted: #e6ebef;
+  --muted-foreground: #4c5761;
+  --primary: #256e96;
+  --primary-foreground: #f4fbfd;
+  --border: #d5dbe0;
+  --ring: #256e96;
+  --copper: #bc6a38;
+  color: var(--foreground);
+  background: var(--background);
+}
+
+[data-surface="receipt"] {
+  --ink: #1c1814;
+  --bone: #1c1814;
+  --copper: #8c4e28;
+  --copper-ink: #6b3a1e;
+  --background: var(--receipt);
+  --foreground: #1c1814;
+  --card: #f7f0df;
+  --muted-foreground: #5a5348;
+  --border: #1c181429;
+  color: var(--foreground);
+  background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 27px,
+      #1c18140a 28px
+    ),
+    var(--receipt);
+}
+
+@media (max-width: 640px) {
+  :root {
+    --gutter: 1rem;
+    --section: 4.5rem;
+  }
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+    outline-color: var(--ring);
+  }
+
+  html {
+    font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+    scroll-behavior: smooth;
+    background: var(--ink);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "ss01" on, "cv11" on;
+    text-rendering: optimizelegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  .font-heading {
+    font-family: var(--font-heading);
+    letter-spacing: -0.022em;
+    font-weight: 400;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  svg animate {
+    display: none !important;
+  }
+
+  *,
+  :before,
+  :after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+.measure {
+  width: min(var(--measure), calc(100% - (var(--gutter) * 2)));
+  margin-inline: auto;
+}
+
+.measure-narrow {
+  width: min(var(--measure-narrow), calc(100% - (var(--gutter) * 2)));
+  margin-inline: auto;
+}
+
+.type-kicker,
+.type-machine {
+  font-family: var(--font-mono);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.6875rem;
+  font-weight: 500;
+}
+
+.type-proof {
+  font-family: var(--font-mono);
+  letter-spacing: 0.02em;
+  font-size: 0.625rem;
+}
+
+.type-whisper {
+  color: var(--bone-2);
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+.plat-grid {
+  background-image: linear-gradient(#14181c0e 1px, #0000 1px),
+    linear-gradient(90deg, #14181c0e 1px, #0000 1px);
+  background-size: 48px 48px;
+}
+
+.plat-grid-paper {
+  background-image: linear-gradient(#0c10140b 1px, #0000 1px),
+    linear-gradient(90deg, #0c10140b 1px, #0000 1px);
+  background-size: 40px 40px;
+}
+
+.twin-whisper {
+  text-shadow: 0 1px #ffffffb8, 0 0 14px #d8e0e6f2;
+}
+
+.annot-chip {
+  text-align: left;
+  max-width: 12rem;
+  color: var(--bone);
+  white-space: nowrap;
+  text-shadow: 0 1px #ffffffb8, 0 0 12px #d8e0e6e6;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 0;
+  display: block;
+}
+
+.annot-chip:hover .type-machine {
+  color: var(--copper);
+}
+
+@keyframes monument {
+  0%,
+  65% {
+    opacity: 0.78;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.monument-enter {
+  animation: 2.4s forwards monument;
+}
