@@ -2,7 +2,7 @@
 
 BASE_SHA=`d717ab8f2b34308eb03d3a2127c3b5df46e3c9af`
 RECOVERY_BRANCH=`recovery/neuruh-tract-cache-20260825`
-RECOVERY_SHA=`PENDING_THIS_COMMIT`
+RECOVERY_SHA=`9efb7e659ef84322c6d1de51bc62921617bae18d`
 
 CACHE_EVIDENCE_ROOT=`.recovery/tract-cache/`
 CACHE_AUTHORITY=`.recovery/tract-cache/extracted/`
