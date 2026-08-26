@@ -77,7 +77,7 @@
       "line": 0,
       "specs": [
         {
-          "title": "accessible and no-WebGL routes carry the complete Alive map with no canvas",
+          "title": "accessible and no-WebGL routes carry the complete homepage story with no canvas",
           "ok": true,
           "tags": [],
           "tests": [
@@ -92,12 +92,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 459,
+                  "duration": 465,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-08-24T12:11:54.666Z",
+                  "startTime": "2026-08-26T15:57:45.855Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -105,13 +105,13 @@
               "status": "expected"
             }
           ],
-          "id": "0d367ca54919ce748ffe-d6ebe197e56b82d87d81",
+          "id": "0d367ca54919ce748ffe-566bbe177f6ce83da33b",
           "file": "production.smoke.spec.ts",
           "line": 3,
           "column": 5
         },
         {
-          "title": "tier 0 fetches zero WebGL scene bytes and retains semantic copy",
+          "title": "homepage fetches zero WebGL scene bytes and retains the full story",
           "ok": true,
           "tags": [],
           "tests": [
@@ -126,16 +126,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 709,
+                  "duration": 883,
                   "errors": [],
-                  "stdout": [
-                    {
-                      "text": "tier0 encoded body: 314.9 KB\n"
-                    }
-                  ],
+                  "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-08-24T12:11:55.729Z",
+                  "startTime": "2026-08-26T15:57:48.567Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -143,13 +139,13 @@
               "status": "expected"
             }
           ],
-          "id": "0d367ca54919ce748ffe-13ec21255d632151314b",
+          "id": "0d367ca54919ce748ffe-6b12c62df5c172de5c8d",
           "file": "production.smoke.spec.ts",
           "line": 15,
           "column": 5
         },
         {
-          "title": "reduced-motion route preserves truth and semantic state parity",
+          "title": "reduced-motion route preserves the identical story and marks the route",
           "ok": true,
           "tags": [],
           "tests": [
@@ -164,12 +160,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 212,
+                  "duration": 333,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-08-24T12:11:56.446Z",
+                  "startTime": "2026-08-26T15:57:49.460Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -177,13 +173,13 @@
               "status": "expected"
             }
           ],
-          "id": "0d367ca54919ce748ffe-5053a3d171910dcb9964",
+          "id": "0d367ca54919ce748ffe-cce6c0754370670f4544",
           "file": "production.smoke.spec.ts",
-          "line": 38,
+          "line": 30,
           "column": 5
         },
         {
-          "title": "keyboard trace is reachable on the semantic DOM layer",
+          "title": "the governed trace runs and resets from the keyboard",
           "ok": true,
           "tags": [],
           "tests": [
@@ -198,12 +194,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1553,
+                  "duration": 4194,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-08-24T12:11:56.666Z",
+                  "startTime": "2026-08-26T15:57:49.802Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -211,13 +207,13 @@
               "status": "expected"
             }
           ],
-          "id": "0d367ca54919ce748ffe-8c8968bd88182ae3d891",
+          "id": "0d367ca54919ce748ffe-a7d48ab576235fe446e0",
           "file": "production.smoke.spec.ts",
-          "line": 56,
+          "line": 39,
           "column": 5
         },
         {
-          "title": "semantic routes render Neuruh truth without canvas or fake LIVE state",
+          "title": "primary routes render truthfully without fake LIVE state",
           "ok": true,
           "tags": [],
           "tests": [
@@ -232,12 +228,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 478,
+                  "duration": 1016,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-08-24T12:11:58.227Z",
+                  "startTime": "2026-08-26T15:57:54.010Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -245,13 +241,13 @@
               "status": "expected"
             }
           ],
-          "id": "0d367ca54919ce748ffe-a1fdf496c215e591e7f4",
+          "id": "0d367ca54919ce748ffe-fe23d10fc8e0311395cb",
           "file": "production.smoke.spec.ts",
-          "line": 64,
+          "line": 47,
           "column": 5
         },
         {
-          "title": "keyboard navigation reaches a semantic route",
+          "title": "keyboard navigation reaches Products from the header",
           "ok": true,
           "tags": [],
           "tests": [
@@ -266,12 +262,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 187,
+                  "duration": 272,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-08-24T12:11:58.714Z",
+                  "startTime": "2026-08-26T15:57:55.040Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -279,13 +275,13 @@
               "status": "expected"
             }
           ],
-          "id": "0d367ca54919ce748ffe-81591d04037125129482",
+          "id": "0d367ca54919ce748ffe-acc42fe50a97722706dd",
           "file": "production.smoke.spec.ts",
-          "line": 77,
+          "line": 61,
           "column": 5
         },
         {
-          "title": "Galaxy exposes sourced relationships and preserves contradiction",
+          "title": "Galaxy exposes sourced relationships, preserves contradiction, and hosts the only scene",
           "ok": true,
           "tags": [],
           "tests": [
@@ -300,12 +296,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 114,
+                  "duration": 226,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-08-24T12:11:58.907Z",
+                  "startTime": "2026-08-26T15:57:55.330Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -313,9 +309,9 @@
               "status": "expected"
             }
           ],
-          "id": "0d367ca54919ce748ffe-f2e2d6353f042a876ad0",
+          "id": "0d367ca54919ce748ffe-7300dd5242a535621b85",
           "file": "production.smoke.spec.ts",
-          "line": 86,
+          "line": 70,
           "column": 5
         }
       ]
@@ -323,8 +319,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-08-24T12:11:54.383Z",
-    "duration": 4786.54,
+    "startTime": "2026-08-26T15:57:45.329Z",
+    "duration": 10287.885999999999,
     "expected": 7,
     "skipped": 0,
     "unexpected": 0,

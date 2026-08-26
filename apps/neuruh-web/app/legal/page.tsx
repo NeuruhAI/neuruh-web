@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/legal' },
   title: 'Legal',
   description: 'Privacy and terms for Neuruh.com: a static, read-only site with no accounts, no cookies, and no analytics.',
 }

@@ -4,6 +4,7 @@ import { getPublicObject } from '../../../../packages/public-truth/client'
 import { SemanticPage } from '../../components/SemanticPage'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/open-source' },
   title: 'Open source',
   description:
     'The Neuruh public commons: governance primitives, receipts, connectors, and sovereign-agent infrastructure published under Apache-2.0 with per-repository test evidence.',

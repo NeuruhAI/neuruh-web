@@ -1,6 +1,9 @@
+import type { Metadata } from 'next'
 import { getPublicObject } from '../../../../../packages/public-truth/client'
 import { TruthModeBadge } from '../../../components/TruthPrimitives'
 import { SemanticPage } from '../../../components/SemanticPage'
+
+export const metadata: Metadata = { alternates: { canonical: '/research/case-zero' } }
 
 export default function CaseZeroPage() {
   const object = getPublicObject('lcde-case-zero')!

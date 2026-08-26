@@ -5,7 +5,7 @@ import { readFile } from 'node:fs/promises'
 const states = await readFile('packages/spatial-runtime/contract/sceneStates.ts', 'utf8')
 const camera = await readFile('packages/spatial-runtime/scene/CameraRig.tsx', 'utf8')
 const shell = await readFile('packages/spatial-runtime/scene/SceneShell.tsx', 'utf8')
-const experience = await readFile('apps/neuruh-web/components/NeuruhExperience.tsx', 'utf8')
+const experience = await readFile('apps/neuruh-web/components/GalaxyImmersive.tsx', 'utf8')
 const pkg = JSON.parse(await readFile('package.json', 'utf8'))
 
 test('eight locked states and eight chapter bindings remain transcribed', () => {

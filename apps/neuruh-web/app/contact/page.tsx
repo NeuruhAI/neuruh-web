@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/contact' },
   title: 'Contact',
   description:
     'Work with Neuruh: pilots on governed execution and evidence systems, real-estate intelligence, and custom domain engines. Direct line to the founder.',

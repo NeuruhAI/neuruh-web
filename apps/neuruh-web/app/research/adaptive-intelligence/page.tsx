@@ -1,7 +1,10 @@
+import type { Metadata } from 'next'
 import { getPublicObject } from '../../../../../packages/public-truth/client'
 import { SemanticPage } from '../../../components/SemanticPage'
 
 const lifecycle = ['raw', 'extracted', 'candidate', 'hypothesis', 'tested', 'canonical / rejected / superseded / quarantined']
+
+export const metadata: Metadata = { alternates: { canonical: '/research/adaptive-intelligence' } }
 
 export default function AdaptiveIntelligencePage() {
   const object = getPublicObject('adaptive-intelligence')!

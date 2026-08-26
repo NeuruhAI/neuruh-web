@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
+<style>
+  .stage { position: relative; width: 100vw; height: 100vh; background:
+    radial-gradient(1200px 700px at 74% 30%, rgba(110,159,197,0.075), transparent 62%),
+    radial-gradient(900px 600px at 20% 85%, rgba(96,125,152,0.05), transparent 60%),
+    linear-gradient(180deg, #080b10 0%, var(--bg-0) 55%, #05070a 100%);
+  }
+  .stage::before { content:''; position:absolute; inset:0;
+    background-image: linear-gradient(rgba(96,125,152,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(96,125,152,0.05) 1px, transparent 1px);
+    background-size: 72px 72px; mask-image: radial-gradient(900px 620px at 68% 42%, #000 30%, transparent 75%);
+  }
+  .nav { position: absolute; top: 0; left: 0; right: 0; display: flex; align-items: center; gap: 30px;
+    padding: 22px 54px; z-index: 40; background: linear-gradient(180deg, rgba(7,9,13,0.85), rgba(7,9,13,0)); }
+  .brand { font-family: var(--font-display); font-weight: 700; font-size: 21px; letter-spacing: 0.005em; }
+  .nav-links { margin-left: auto; display: flex; gap: 30px; font-size: 15px; color: var(--silver); }
+  .nav-links span.active { color: var(--text); }
+  .nav-cta { font-size: 14px; color: var(--ice); border: 1px solid var(--line-2); padding: 8px 14px; border-radius: 6px; }
+
+  .copy { position: absolute; left: 54px; top: 50%; transform: translateY(-52%); width: 560px; z-index: 30; }
+  .copy .headline { font-size: 66px; margin: 22px 0 20px; }
+  .copy .support { font-size: 18px; max-width: 30rem; margin-bottom: 30px; }
+  .copy .cta-row { margin-bottom: 26px; }
+  .copy .proofline { border-top: 1px solid var(--line-1); padding-top: 16px; max-width: 30rem; line-height: 1.8; }
+
+  /* FOUNDRY: input chips -> understanding panels -> gate -> receipt */
+  .foundry { position: absolute; right: -36px; top: 47%; transform: translateY(-50%); width: 1180px; height: 860px; z-index: 10; perspective: 1600px; transform-origin: right center; }
+  @media (max-width: 1720px) { .foundry { transform: translateY(-50%) scale(0.76); right: -60px; } }
+  @media (max-width: 1200px) { .foundry { transform: translateY(-50%) scale(0.6); right: -120px; } }
+  .flow { position: absolute; inset: 0; z-index: 5; pointer-events: none; }
+  .inputs { position: absolute; left: 12px; top: 200px; display: grid; gap: 14px; z-index: 8; }
+  .inputs .chip { transform: rotate(-1.2deg); }
+  .inputs .chip:nth-child(2) { transform: rotate(0.8deg) translateX(10px); }
+  .inputs .chip:nth-child(3) { transform: rotate(-0.5deg) translateX(3px); }
+
+  .p-back { position: absolute; left: 150px; top: 58px; width: 560px; transform: rotateY(-14deg) rotateX(3deg) scale(0.96); opacity: 0.6; filter: saturate(0.85) brightness(0.82); z-index: 6; }
+  .p-main { position: absolute; left: 235px; top: 148px; width: 640px; transform: rotateY(-9deg) rotateX(1.6deg); z-index: 12; }
+  .p-front { position: absolute; left: 700px; top: 420px; width: 430px; transform: rotateY(-6deg); z-index: 20; }
+
+  .gate { position: absolute; left: 906px; top: 300px; z-index: 22; width: 158px; text-align: center; }
+  .gate .ring { width: 74px; height: 74px; margin: 0 auto 10px; border-radius: 999px; border: 1.5px solid var(--brass);
+    box-shadow: 0 0 0 5px rgba(170,135,69,0.09), 0 0 34px rgba(170,135,69,0.25), inset 0 0 18px rgba(170,135,69,0.12);
+    display: flex; align-items: center; justify-content: center; background: rgba(11,16,22,0.85); }
+  .gate .ring::after { content:''; width: 26px; height: 26px; border-radius: 3px; border: 1.5px solid var(--brass-hi); transform: rotate(45deg); }
+  .gate .lbl { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.22em; color: var(--brass-hi); }
+  .gate .sub { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.12em; color: var(--steel); margin-top: 4px; }
+
+  .receipt { position: absolute; left: 962px; top: 520px; width: 300px; z-index: 24; background: linear-gradient(180deg, #101822, #0d141d);
+    border: 1px solid var(--line-2); border-left: 3px solid var(--ok); border-radius: 8px; padding: 16px 18px; box-shadow: var(--shadow-panel); }
+  .receipt .rt { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.2em; color: #7fd8c8; margin-bottom: 10px; }
+  .receipt .rl { display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 11px; color: var(--muted); padding: 4px 0; }
+  .receipt .rl b { color: var(--silver); font-weight: 500; }
+  .receipt .sha { color: var(--steel); font-size: 10px; letter-spacing: 0.04em; margin-top: 10px; border-top: 1px dashed var(--line-2); padding-top: 10px; }
+
+  svg .path { stroke: var(--blue); stroke-width: 1.3; fill: none; opacity: 0.55; }
+  svg .path-out { stroke: #57b7a8; }
+  svg .node { fill: var(--ice); }
+  @media (max-width: 900px) {
+    .nav { padding: 18px 22px; } .nav-links { display: none; }
+    .copy { left: 22px; right: 22px; width: auto; top: 12%; transform: none; }
+    .copy .headline { font-size: 40px; }
+    .foundry { right: -240px; top: auto; bottom: -230px; transform: scale(0.52); transform-origin: bottom right; }
+    .inputs, .p-back { display: none; }
+    .copy .proofline { background: rgba(7,9,13,0.72); }
+  }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="nav">
+    <div class="brand">Neuruh</div>
+    <div class="nav-links"><span class="active">Products</span><span>How it works</span><span>Proof</span><span>Founder</span><span>Contact</span><span style="color:var(--steel)">Explore ▾</span></div>
+    <div class="nav-cta">Work with Neuruh</div>
+  </div>
+
+  <div class="copy">
+    <div class="eyebrow">Neuruh</div>
+    <h1 class="headline">AI systems that do real work — and prove it.</h1>
+    <p class="support">Neuruh turns messy real-world information into evidence, governed decisions, workflows, and measurable outcomes. Every action is checked. Every result leaves a receipt.</p>
+    <div class="cta-row">
+      <a class="cta cta-primary">Explore the systems</a>
+      <a class="cta cta-secondary">See the proof</a>
+    </div>
+    <p class="proofline"><b>1</b> product in production · <b>5</b> sealed candidates · <b>18</b> live services · <b>36</b> open-source repos<br><span style="color:#5d6d7e">receipts on /proof · as of 2026-08-24</span></p>
+  </div>
+
+  <div class="foundry">
+    <svg class="flow" viewBox="0 0 1180 860">
+      <path class="path" d="M 96 224 C 190 224, 200 260, 260 300" />
+      <path class="path" d="M 100 288 C 190 292, 210 320, 262 350" />
+      <path class="path" d="M 96 352 C 180 360, 214 380, 258 400" />
+      <path class="path" d="M 868 380 C 900 372, 912 360, 928 348" />
+      <path class="path path-out" d="M 986 412 C 1000 450, 1000 480, 1006 516" />
+      <circle class="node" cx="260" cy="300" r="2.4"/><circle class="node" cx="262" cy="350" r="2.4"/><circle class="node" cx="258" cy="400" r="2.4"/>
+      <circle class="node" cx="928" cy="348" r="2.4" fill="#c9a557"/>
+    </svg>
+
+    <div class="inputs">
+      <div class="chip"><span class="k">REC</span> County deed record</div>
+      <div class="chip"><span class="k">MAP</span> Parcel geometry</div>
+      <div class="chip"><span class="k">SIG</span> Distress signal</div>
+    </div>
+
+    <div class="panel p-back"><div class="panel-bar"><span class="dot"></span><span class="name">DeedSonar · Reports</span><span class="tag tag-demo">SAMPLE DATA</span></div><img src="../apps/neuruh-web/public/media/products/deedsonar-reports.png"></div>
+    <div class="panel p-main"><div class="panel-bar"><span class="dot"></span><span class="name">DeedSonar · Acquisition desk</span><span class="tag tag-live">IN PRODUCTION</span></div><img src="../apps/neuruh-web/public/media/products/deedsonar-dashboard.png"></div>
+    <div class="panel p-front"><div class="panel-bar"><span class="dot"></span><span class="name">Neuruh Liquidity · Outcomes</span><span class="tag tag-demo">SYNTHETIC</span></div><img src="../apps/neuruh-web/public/media/products/liquidity-outcomes.png"></div>
+
+    <div class="gate">
+      <div class="ring"></div>
+      <div class="lbl">AUTHORITY</div>
+      <div class="sub">CHECKED · 2026-08-24</div>
+    </div>
+
+    <div class="receipt">
+      <div class="rt">RECEIPT · VERIFIED</div>
+      <div class="rl"><span>action</span><b>offer.prepared</b></div>
+      <div class="rl"><span>authority</span><b>granted · scoped</b></div>
+      <div class="rl"><span>outcome</span><b>recorded</b></div>
+      <div class="sha">sha e2b71fa · court 1,510 green</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

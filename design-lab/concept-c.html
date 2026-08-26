@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
+<style>
+  .stage { position:relative; width:100vw; height:100vh; overflow:hidden;
+    background: linear-gradient(180deg, #080b10, var(--bg-0) 58%, #05070a); }
+  .nav { position:absolute; top:0; left:0; right:0; display:flex; gap:30px; align-items:center; padding:22px 54px; z-index:40; }
+  .brand { font-family:var(--font-display); font-weight:700; font-size:21px; }
+  .nav-links { margin-left:auto; display:flex; gap:28px; font-size:15px; color:var(--silver); }
+  .copy { position:absolute; left:54px; top:12%; width:760px; z-index:30; text-align:left; }
+  .copy .headline { font-size:60px; margin:20px 0 16px; }
+  .copy .support { font-size:17.5px; max-width:34rem; margin-bottom:24px; }
+  /* cutaway machine */
+  .machine { position:absolute; left:54px; right:54px; bottom:70px; height:360px; display:grid;
+    grid-template-columns: 1fr 1.25fr 1fr 0.7fr 1fr; gap:2px; z-index:10;
+    border:1px solid var(--line-2); border-radius:14px; overflow:hidden; box-shadow: var(--shadow-panel);
+    background: var(--line-1); }
+  .bay { background: linear-gradient(180deg, #101823, #0c1219); padding:18px; position:relative; }
+  .bay .bt { font-family:var(--font-mono); font-size:10px; letter-spacing:0.22em; color:var(--steel); margin-bottom:12px; }
+  .bay .art { display:grid; gap:10px; }
+  .bay img { width:100%; border-radius:6px; border:1px solid var(--line-2); }
+  .bay-auth { background: linear-gradient(180deg, #16130c, #0e0c08); }
+  .bay-auth .bt { color: var(--brass-hi); }
+  .conveyor { position:absolute; left:54px; right:54px; bottom:236px; height:2px; z-index:12;
+    background: linear-gradient(90deg, transparent, var(--blue) 12%, var(--blue) 60%, var(--brass) 66%, #57b7a8 80%, transparent); opacity:0.7; }
+  .gate-ring { width:56px; height:56px; margin:6px auto; border-radius:999px; border:1.5px solid var(--brass);
+    display:flex; align-items:center; justify-content:center; box-shadow: 0 0 26px rgba(170,135,69,0.25); }
+  .gate-ring::after { content:''; width:20px; height:20px; border:1.5px solid var(--brass-hi); transform:rotate(45deg); border-radius:2px; }
+  .r-card { background:#0d141d; border:1px solid var(--line-2); border-left:3px solid var(--ok); border-radius:6px; padding:10px 12px;
+    font-family:var(--font-mono); font-size:10.5px; color:var(--muted); }
+  .r-card b { color:var(--silver); }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="nav"><div class="brand">Neuruh</div><div class="nav-links"><span>Products</span><span>How it works</span><span>Proof</span><span>Founder</span><span>Contact</span></div></div>
+  <div class="copy">
+    <div class="eyebrow">Neuruh</div>
+    <h1 class="headline">Inside the machine that does the work.</h1>
+    <p class="support">A cutaway of the Neuruh engine: signals become evidence, evidence becomes a decision, authority is checked, and every action leaves a receipt.</p>
+    <div class="cta-row"><a class="cta cta-primary">Explore the systems</a><a class="cta cta-secondary">See the proof</a></div>
+  </div>
+  <div class="conveyor"></div>
+  <div class="machine">
+    <div class="bay"><div class="bt">01 · SIGNALS</div><div class="art">
+      <div class="chip"><span class="k">REC</span> County record</div>
+      <div class="chip"><span class="k">MAP</span> Parcel geometry</div>
+      <div class="chip"><span class="k">IMG</span> Field photo</div></div></div>
+    <div class="bay"><div class="bt">02 · EVIDENCE</div><div class="art">
+      <img src="../apps/neuruh-web/public/media/products/deedsonar-dashboard.png"></div></div>
+    <div class="bay"><div class="bt">03 · DECISION</div><div class="art">
+      <img src="../apps/neuruh-web/public/media/products/fsp-home.png"></div></div>
+    <div class="bay bay-auth"><div class="bt">04 · AUTHORITY</div><div class="gate-ring"></div>
+      <div style="text-align:center" class="bt">CHECKED</div></div>
+    <div class="bay"><div class="bt">05 · RECEIPTS</div><div class="art">
+      <div class="r-card">action <b>offer.prepared</b><br>authority <b>granted</b><br>sha <b>e2b71fa</b></div>
+      <img src="../apps/neuruh-web/public/media/products/liquidity-outcomes.png"></div></div>
+  </div>
+</div>
+</body>
+</html>

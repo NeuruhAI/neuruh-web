@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params
   const world = getPublicObject(slug)
   if (!world) return {}
-  return { title: world.name, description: world.summary }
+  return { title: world.name, description: world.summary, alternates: { canonical: `/worlds/${slug}` } }
 }
 
 export default async function WorldPage({ params }: { params: Promise<{ slug: string }> }) {

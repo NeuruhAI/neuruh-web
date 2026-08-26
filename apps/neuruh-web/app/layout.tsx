@@ -17,7 +17,6 @@ export const metadata: Metadata = {
   description:
     'Neuruh builds governed execution infrastructure for AI systems: nothing acts without checked authority, everything leaves a verifiable receipt, and what the system refuses is recorded as carefully as what it does.',
   robots: { index: true, follow: true },
-  alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
     url: 'https://neuruh.com',

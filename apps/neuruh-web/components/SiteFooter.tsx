@@ -6,6 +6,7 @@ const columns: ReadonlyArray<readonly [string, ReadonlyArray<readonly [string, s
     ['Organism', '/organism'],
     ['Galaxy', '/galaxy'],
     ['Worlds', '/worlds'],
+    ['How it works', '/how-it-works'],
     ['Research', '/research/adaptive-intelligence'],
   ]],
   ['Company', [
@@ -16,7 +17,7 @@ const columns: ReadonlyArray<readonly [string, ReadonlyArray<readonly [string, s
   ]],
   ['Truth', [
     ['Proof', '/proof'],
-    ['Refusals', '/refusals'],
+    ['Boundaries', '/refusals'],
     ['Open source', '/open-source'],
     ['Accessible route', '/accessible'],
   ]],

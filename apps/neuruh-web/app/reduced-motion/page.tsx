@@ -1,6 +1,14 @@
-import { NeuruhExperience } from '../../components/NeuruhExperience'
-import { getTruthSummary } from '../../../../packages/public-truth/client'
+import type { Metadata } from 'next'
+import { HomeV2 } from '../../components/HomeV2'
+import { MotionRoute } from '../../components/MotionRoute'
+
+export const metadata: Metadata = { alternates: { canonical: '/' } }
 
 export default function ReducedMotionPage() {
-  return <NeuruhExperience forceMotion="reduced" truth={getTruthSummary()} />
+  return (
+    <>
+      <MotionRoute mode="reduced" />
+      <HomeV2 />
+    </>
+  )
 }

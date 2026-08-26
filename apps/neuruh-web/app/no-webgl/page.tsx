@@ -1,6 +1,8 @@
-import { NeuruhExperience } from '../../components/NeuruhExperience'
-import { getTruthSummary } from '../../../../packages/public-truth/client'
+import type { Metadata } from 'next'
+import { HomeV2 } from '../../components/HomeV2'
 
-export default function NoWebGLPage() {
-  return <NeuruhExperience forceTier={0} truth={getTruthSummary()} />
+export const metadata: Metadata = { alternates: { canonical: '/' } }
+
+export default function NoWebglPage() {
+  return <HomeV2 />
 }
