@@ -813,10 +813,8 @@ body { background: var(--v2-bg-0); }
 .prod-card .pc-media { border-bottom: 1px solid var(--v2-line-1); background: var(--v2-surf-2); }
 .prod-card .pc-media img { display: block; width: 100%; height: 200px; object-fit: cover; object-position: top; }
 .prod-card .pc-body { padding: 18px 20px 20px; display: grid; gap: 8px; }
-.prod-card h2, .prod-card h3 { font-family: var(--font-display); font-size: 1.15rem; color: var(--v2-text); margin: 0; }
+.prod-card h3 { font-family: var(--font-display); font-size: 1.15rem; color: var(--v2-text); margin: 0; }
 .prod-card .pc-line { color: var(--v2-muted); font-size: 0.94rem; line-height: 1.55; }
-.offer-price { font-family: var(--font-mono); font-size: 1.6rem; color: var(--v2-ice); letter-spacing: 0.02em; margin: 0; }
-.prod-card .v2-btn { margin-top: 10px; width: fit-content; }
 .pc-status { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.14em; padding: 3px 8px; border-radius: 3px; width: fit-content; }
 .pc-span-6 { grid-column: span 6; } .pc-span-4 { grid-column: span 4; } .pc-span-8 { grid-column: span 8; }
 @media (max-width: 64rem) { .flagship { grid-template-columns: 1fr; } .pc-span-6, .pc-span-4, .pc-span-8 { grid-column: span 12; } }

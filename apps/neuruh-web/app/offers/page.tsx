@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { PUBLIC_OFFERS } from '../../lib/publicOffers'
+import { OffersGrid } from '../../components/OffersGrid'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/offers' },
@@ -20,30 +20,7 @@ export default function OffersPage() {
           <p className="sec-sub">
             Each card is a live checkout. Pick the offer that matches the work you need done.
           </p>
-          <div className="prod-grid" data-testid="offers-grid">
-            {PUBLIC_OFFERS.map((offer) => (
-              <article
-                key={offer.id}
-                className="prod-card pc-span-4"
-                data-offer-id={offer.id}
-                data-testid={`offer-${offer.id}`}
-              >
-                <div className="pc-body">
-                  <p className="offer-price">{offer.price}</p>
-                  <h2>{offer.name}</h2>
-                  <p className="pc-line">{offer.promise}</p>
-                  <a
-                    className="v2-btn v2-btn-primary"
-                    href={offer.href}
-                    rel="noopener noreferrer"
-                    data-testid={`offer-cta-${offer.id}`}
-                  >
-                    {offer.cta}
-                  </a>
-                </div>
-              </article>
-            ))}
-          </div>
+          <OffersGrid />
         </div>
       </section>
     </main>

@@ -10,13 +10,16 @@ const EXPECTED = [
 
 test('public offers catalog carries the three live cashier URLs and prices', async () => {
   const catalog = await readFile('apps/neuruh-web/lib/publicOffers.ts', 'utf8')
+  const grid = await readFile('apps/neuruh-web/components/OffersGrid.tsx', 'utf8')
   const page = await readFile('apps/neuruh-web/app/offers/page.tsx', 'utf8')
-  assert.match(page, /from ['\"]\.\.\/\.\.\/lib\/publicOffers['\"]/)
+  assert.match(page, /from ['\"]\.\.\/\.\.\/components\/OffersGrid['\"]/)
+  assert.match(grid, /from ['\"]\.\.\/lib\/publicOffers['\"]/)
   for (const [id, price, href] of EXPECTED) {
     assert.match(catalog, new RegExp(`id: '${id}'`))
     assert.match(catalog, new RegExp(`price: '${price.replace('$', '\\$')}'`))
     assert.equal([...catalog.matchAll(new RegExp(href.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'))].length, 1)
   }
   assert.doesNotMatch(catalog, /recipe|weight|scoring|ledger|Mother|AXON|IAR/i)
+  assert.doesNotMatch(grid, /recipe|weight|scoring|ledger|Mother|AXON|IAR/i)
   assert.doesNotMatch(page, /recipe|weight|scoring|ledger|Mother|AXON|IAR/i)
 })
