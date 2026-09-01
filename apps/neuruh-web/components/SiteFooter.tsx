@@ -10,6 +10,7 @@ const columns: ReadonlyArray<readonly [string, ReadonlyArray<readonly [string, s
     ['Research', '/research/adaptive-intelligence'],
   ]],
   ['Company', [
+    ['Offers', '/offers'],
     ['Products', '/products'],
     ['Founder', '/founder'],
     ['Contact', '/contact'],

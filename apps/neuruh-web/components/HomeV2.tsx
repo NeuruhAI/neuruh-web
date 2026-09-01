@@ -62,7 +62,8 @@ export function HomeV2() {
             outcomes. Every action is checked. Every result leaves a receipt.
           </p>
           <div className="hero-ctas">
-            <Link className="v2-btn v2-btn-primary" href="/products">Explore the systems</Link>
+            <Link className="v2-btn v2-btn-primary" href="/offers">See offers</Link>
+            <Link className="v2-btn v2-btn-secondary" href="/products">Explore the systems</Link>
             <Link className="v2-btn v2-btn-secondary" href="/proof">See the proof</Link>
           </div>
           <p className="hero-proofline">

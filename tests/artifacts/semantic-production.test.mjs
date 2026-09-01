@@ -8,7 +8,7 @@ const appRoot = 'apps/neuruh-web/.next/server/app'
 const routes = [
   'index', 'accessible', 'no-webgl', 'reduced-motion', 'organism', 'galaxy', 'worlds',
   'worlds/deedsonar', 'worlds/liquidity-engine', 'research/adaptive-intelligence',
-  'research/case-zero', 'founder', 'proof', 'products', 'how-it-works', 'refusals',
+  'research/case-zero', 'founder', 'proof', 'products', 'how-it-works', 'refusals', 'offers',
 ]
 
 async function html(route) {
