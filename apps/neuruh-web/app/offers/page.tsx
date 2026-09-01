@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { OFFERS_WHAT_HAPPENS_NEXT } from '../../lib/publicOffers'
 import { OffersGrid } from '../../components/OffersGrid'
 
 export const metadata: Metadata = {
@@ -21,6 +22,9 @@ export default function OffersPage() {
             Each card is a live checkout. Pick the offer that matches the work you need done.
           </p>
           <OffersGrid />
+          <p className="sec-sub" data-testid="offers-next">
+            <strong>What happens next:</strong> {OFFERS_WHAT_HAPPENS_NEXT}
+          </p>
         </div>
       </section>
     </main>

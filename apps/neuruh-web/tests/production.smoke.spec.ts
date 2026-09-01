@@ -75,8 +75,12 @@ test('offers page shows three live cashier prices and exact Stripe hrefs', async
   ] as const
   await page.goto('/offers')
   await expect(page.locator('[data-testid="offers-grid"] [data-offer-id]')).toHaveCount(3)
+  await expect(page.getByTestId('offers-next')).toContainText('one business day')
   for (const offer of expected) {
-    await expect(page.getByTestId(`offer-${offer.id}`)).toContainText(offer.price)
+    const card = page.getByTestId(`offer-${offer.id}`)
+    await expect(card).toContainText(offer.price)
+    await expect(card).toContainText('You provide:')
+    await expect(card).toContainText('You receive:')
     await expect(page.getByTestId(`offer-cta-${offer.id}`)).toHaveAttribute('href', offer.href)
   }
 })

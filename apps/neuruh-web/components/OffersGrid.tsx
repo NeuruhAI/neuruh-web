@@ -14,6 +14,8 @@ export function OffersGrid() {
             <p className="metric-strip__value">{offer.price}</p>
             <h3>{offer.name}</h3>
             <p className="pc-line">{offer.promise}</p>
+            <p className="pc-line"><strong>You provide:</strong> {offer.provide}</p>
+            <p className="pc-line"><strong>You receive:</strong> {offer.receive}</p>
             <a
               className="v2-btn v2-btn-primary"
               href={offer.href}
