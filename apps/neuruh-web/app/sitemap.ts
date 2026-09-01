@@ -7,6 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date(getPublicSnapshot().dataset.last_verified_at)
   const routes = [
     '/',
+    '/offers',
     '/products',
     '/how-it-works',
     '/proof',
@@ -27,6 +28,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `https://neuruh.com${route}`,
     lastModified,
     changeFrequency: route === '/' ? 'weekly' : 'monthly',
-    priority: route === '/' ? 1 : route === '/products' || route === '/proof' || route === '/refusals' ? 0.8 : 0.6,
+    priority: route === '/' ? 1 : route === '/offers' || route === '/products' || route === '/proof' || route === '/refusals' ? 0.8 : 0.6,
   }))
 }

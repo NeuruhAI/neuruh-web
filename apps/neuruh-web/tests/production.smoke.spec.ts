@@ -67,6 +67,20 @@ test('keyboard navigation reaches Products from the header', async ({ page }) =>
   await expect(page.getByRole('heading', { level: 1 })).toContainText('Real systems')
 })
 
+test('offers page shows three live cashier prices and exact Stripe hrefs', async ({ page }) => {
+  const expected = [
+    { id: 'O01', price: '$299', href: 'https://book.stripe.com/bJe5kDagndYugJlaow2cg04' },
+    { id: 'O02', price: '$499', href: 'https://book.stripe.com/8x2cN574b1bIakXgMU2cg05' },
+    { id: 'O05', price: '$1250', href: 'https://book.stripe.com/7sY00j1JRf2y2Sv4082cg06' },
+  ] as const
+  await page.goto('/offers')
+  await expect(page.locator('[data-testid="offers-grid"] [data-offer-id]')).toHaveCount(3)
+  for (const offer of expected) {
+    await expect(page.getByTestId(`offer-${offer.id}`)).toContainText(offer.price)
+    await expect(page.getByTestId(`offer-cta-${offer.id}`)).toHaveAttribute('href', offer.href)
+  }
+})
+
 test('Galaxy exposes sourced relationships, preserves contradiction, and hosts the only scene', async ({ page }) => {
   await page.goto('/galaxy')
   await expect(page.locator('main#main > [data-contradiction-id="galaxy-connectivity-boundary"]')).toBeVisible()

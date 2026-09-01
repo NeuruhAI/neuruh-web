@@ -1,6 +1,7 @@
 import Link from 'next/link'
 
 const primary = [
+  ['Offers', '/offers'],
   ['Products', '/products'],
   ['How it works', '/how-it-works'],
   ['Proof', '/proof'],
