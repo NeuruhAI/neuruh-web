@@ -1,12 +1,11 @@
 import type { Metadata } from 'next'
-import { OFFERS_WHAT_HAPPENS_NEXT } from '../../lib/publicOffers'
 import { OffersGrid } from '../../components/OffersGrid'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/offers' },
   title: 'Offers',
   description:
-    'Buy a Neuruh offer: Data Rescue ($299), Opportunity Dossier ($499), or Workflow Sprint ($1250). Each checkout is a live cashier.',
+    'Three fixed-scope ways to put Neuruh to work: Data Rescue, Opportunity Dossier, and Workflow Sprint.',
 }
 
 export default function OffersPage() {
@@ -14,17 +13,14 @@ export default function OffersPage() {
     <main id="main">
       <section className="sec" aria-labelledby="offers-h">
         <div className="sec-inner">
-          <p className="sec-eyebrow">Offers</p>
+          <p className="sec-eyebrow">Start here</p>
           <h1 className="sec-h" id="offers-h" style={{ fontSize: 'clamp(2rem, 3.6vw, 3rem)' }}>
-            Three ways to start. Pay and we work.
+            Three ways to put Neuruh to work.
           </h1>
           <p className="sec-sub">
-            Each card is a live checkout. Pick the offer that matches the work you need done.
+            Each offer is fixed in scope: what you send, what you receive, and what happens after checkout.
           </p>
           <OffersGrid />
-          <p className="sec-sub" data-testid="offers-next">
-            <strong>What happens next:</strong> {OFFERS_WHAT_HAPPENS_NEXT}
-          </p>
         </div>
       </section>
     </main>
