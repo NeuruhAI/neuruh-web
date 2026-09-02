@@ -36,7 +36,7 @@ export function SiteFooter() {
           <p className="wordmark">Neuruh</p>
           <p className="site-footer__line">Governed AI systems that leave receipts.</p>
           <p className="site-footer__line">
-            <a href="mailto:jeramie@neuruh.com">jeramie@neuruh.com</a>
+            <Link href="/security">neuruh.com/security</Link>
             {' · '}
             <a href="https://github.com/NeuruhAI" rel="noopener noreferrer">github.com/NeuruhAI</a>
           </p>
