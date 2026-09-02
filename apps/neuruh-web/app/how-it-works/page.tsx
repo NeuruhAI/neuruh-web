@@ -1,12 +1,12 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PipelineTrace } from '../../components/PipelineTrace'
+import { pageMeta } from '../../lib/publicSeo'
 
-export const metadata: Metadata = {
-  alternates: { canonical: '/how-it-works' },
+export const metadata = pageMeta({
+  path: '/how-it-works',
   title: 'How it works',
   description: 'The Neuruh pipeline in plain language: signal → evidence → decision → authority → action → receipt → outcome, and what each stage refuses to skip.',
-}
+})
 
 const STAGES = [
   ['Signal', 'Messy real-world inputs arrive: county records, parcel geometry, photos, listings, field reports.', 'DeedSonar ingests county evidence; FindSellProfit reads photos and listings; the Liquidity Engine reads field signals.'],

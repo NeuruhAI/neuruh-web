@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { getPublicObject, getPublicObjects, getPublicSnapshot } from '../../../packages/public-truth/client'
+import { PUBLIC_HARD_ZEROS } from '../lib/publicHardZeros'
 import { PUBLIC_OFFERS } from '../lib/publicOffers'
 import { PipelineTrace } from './PipelineTrace'
 
@@ -69,9 +70,9 @@ export function HomeV2() {
           </div>
           <p className="hero-proofline">
             <b>{strip.inProduction}</b> product in production · <b>{strip.sealed}</b> sealed candidates ·{' '}
-            <b>{strip.liveServices?.value}</b> live services · <b>{strip.ossRepos?.value}</b> open-source repos
+            <b>{strip.liveServices?.value}</b> operating-estate services · <b>{strip.ossRepos?.value}</b> open-source repos
             <br />
-            <span className="dim">receipts on /proof · as of {strip.asOf}</span>
+            <span className="dim">dated snapshot on /proof · as of {strip.asOf} · not live organ products</span>
           </p>
         </div>
         <div className="foundry" aria-hidden="true">
@@ -148,7 +149,7 @@ export function HomeV2() {
           <div><p className="pv">{strip.inProduction}</p><p className="pk">product in production</p><p className="pm">app.deedsonar.com · attested</p></div>
           <div><p className="pv">{strip.sealed}</p><p className="pk">sealed release candidates</p><p className="pm">custody + court receipts</p></div>
           <div><p className="pv">{strip.dsCourt?.value.toLocaleString('en-US')}</p><p className="pk">tests green at production SHA</p><p className="pm">deedsonar court · {strip.dsCourt?.as_of.slice(0, 10)}</p></div>
-          <div><p className="pv">{strip.liveServices?.value}</p><p className="pk">live services in the operating estate</p><p className="pm">census · {strip.liveServices?.as_of.slice(0, 10)}</p></div>
+          <div><p className="pv">{strip.liveServices?.value}</p><p className="pk">operating-estate services (census snapshot)</p><p className="pm">census · {strip.liveServices?.as_of.slice(0, 10)} · not live organ products</p></div>
           <div><p className="pv">{strip.ossRepos?.value}</p><p className="pk">public open-source repositories</p><p className="pm">audited · 0 secret-scan hits</p></div>
         </div>
       </section>
@@ -325,7 +326,7 @@ export function HomeV2() {
               <p className="ev-k">Claim</p>
               <p className="claim">The operating estate is counted under published rules.</p>
               <p className="ev-k">Evidence</p>
-              <p className="ev-line"><b>{census.metrics?.find((m) => m.name === 'canonical_active_runtimes')?.value}</b> live services · <b>{census.metrics?.find((m) => m.name === 'git_worktrees')?.value}</b> worktrees · census {census.metrics?.[0]?.as_of.slice(0, 10)}</p>
+              <p className="ev-line"><b>{census.metrics?.find((m) => m.name === 'canonical_active_runtimes')?.value}</b> operating-estate services · <b>{census.metrics?.find((m) => m.name === 'git_worktrees')?.value}</b> worktrees · census {census.metrics?.[0]?.as_of.slice(0, 10)} · not live organ products</p>
             </div>
           </div>
           <div className="row" style={{ marginTop: 26 }}>
@@ -342,7 +343,7 @@ export function HomeV2() {
           <div className="law-list">
             <div className="law"><span className="ln">01</span><div><h3>No fake live status.</h3><p>If a number is a dated snapshot, it says so. Nothing on this site pretends to be a live feed.</p></div></div>
             <div className="law"><span className="ln">02</span><div><h3>No AI output becomes authority by itself.</h3><p>A model can propose. Only a checked authority gate can permit — and refusals are receipted like actions.</p></div></div>
-            <div className="law"><span className="ln">03</span><div><h3>No real-money claim without a real transaction.</h3><p>Demo economics are labeled synthetic in the product and on this site. Revenue to date: $0 — stated plainly.</p></div></div>
+            <div className="law"><span className="ln">03</span><div><h3>No real-money claim without a real transaction.</h3><p>Demo economics are labeled synthetic in the product and on this site. Revenue to date: {PUBLIC_HARD_ZEROS.revenue} as of {PUBLIC_HARD_ZEROS.asOf} ({PUBLIC_HARD_ZEROS.source}) — not a live Stripe readout. A live cashier is not a customer.</p></div></div>
           </div>
           <div className="row" style={{ marginTop: 26 }}>
             <Link className="v2-btn v2-btn-secondary" href="/refusals">Read all the boundaries</Link>

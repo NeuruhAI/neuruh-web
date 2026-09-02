@@ -1,10 +1,10 @@
-import type { Metadata } from 'next'
+import { pageMeta } from '../../lib/publicSeo'
 
-export const metadata: Metadata = {
-  alternates: { canonical: '/legal' },
+export const metadata = pageMeta({
+  path: '/legal',
   title: 'Legal',
   description: 'Privacy and terms for Neuruh.com: a static, read-only site with no accounts, no cookies, and no analytics.',
-}
+})
 
 export default function LegalPage() {
   return (
@@ -22,6 +22,7 @@ export default function LegalPage() {
           <li>We set no cookies and run no analytics or third-party trackers.</li>
           <li>Our hosting provider processes standard server logs (IP address, user agent, request path) to serve and secure the site.</li>
           <li>If you email us, we receive what you send and use it only to reply and work with you. Ask and we will delete the thread.</li>
+          <li>Security contact: <a className="text-link" href="mailto:jeramie@neuruh.com">jeramie@neuruh.com</a> · public disclosure path <a className="text-link" href="/.well-known/security.txt">/.well-known/security.txt</a>.</li>
         </ul>
       </section>
 

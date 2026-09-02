@@ -1,14 +1,14 @@
-import type { Metadata } from 'next'
 import { getPublicObject } from '../../../../packages/public-truth/client'
 import { AccessibleGalaxy } from '../../components/AccessibleGalaxy'
 import { ContradictionObject, LastVerified, TruthModeBadge } from '../../components/TruthPrimitives'
 import { GalaxyImmersive } from '../../components/GalaxyImmersive'
+import { pageMeta } from '../../lib/publicSeo'
 
-export const metadata: Metadata = {
-  alternates: { canonical: '/galaxy' },
+export const metadata = pageMeta({
+  path: '/galaxy',
   title: 'Galaxy',
-  description: 'The portfolio self-model: products, organs, evidence, dependencies, state, and decision boundaries — with its one unresolved contradiction preserved in view.',
-}
+  description: 'The public curated map of Neuruh — products, organs, evidence, and decision boundaries — with its one unresolved contradiction preserved in view. Not a live operator console.',
+})
 
 export default function GalaxyPage() {
   const galaxy = getPublicObject('galaxy')!

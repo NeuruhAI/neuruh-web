@@ -1,0 +1,8 @@
+@media (max-width: 430px) {
+  .cta {
+    flex-basis: 100%;
+    margin-left: 0 !important;
+    justify-content: center;
+    text-align: center;
+  }
+}

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import styles from './SiteNav.module.css'
 
 const primary = [
   ['Offers', '/offers'],
@@ -34,7 +35,7 @@ export function SiteNav() {
             {explore.map(([label, href]) => <Link key={href} href={href}>{label}</Link>)}
           </div>
         </details>
-        <Link className="work-cta" href="/work-with-neuruh">Work with us</Link>
+        <Link className={`work-cta ${styles.cta}`} href="/work-with-neuruh">Work with us</Link>
       </nav>
     </header>
   )

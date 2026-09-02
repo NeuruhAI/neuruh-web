@@ -1,12 +1,12 @@
-import type { Metadata } from 'next'
 import { OffersGrid } from '../../components/OffersGrid'
+import { pageMeta } from '../../lib/publicSeo'
 
-export const metadata: Metadata = {
-  alternates: { canonical: '/offers' },
+export const metadata = pageMeta({
+  path: '/offers',
   title: 'Offers',
   description:
     'Three fixed-scope ways to put Neuruh to work: Data Rescue, Opportunity Dossier, and Workflow Sprint.',
-}
+})
 
 export default function OffersPage() {
   return (

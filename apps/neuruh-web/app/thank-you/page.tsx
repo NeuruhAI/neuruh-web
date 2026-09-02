@@ -1,12 +1,12 @@
-import type { Metadata } from 'next'
 import { ThankYouHandoff } from '../../components/ThankYouHandoff'
+import { pageMeta } from '../../lib/publicSeo'
 
-export const metadata: Metadata = {
-  alternates: { canonical: '/thank-you' },
+export const metadata = pageMeta({
+  path: '/thank-you',
   title: 'Thank you',
   description:
     'Post-checkout handoff for Neuruh offers. This static site does not receive Stripe webhooks — we email the checkout address within one business day.',
-}
+})
 
 export default function ThankYouPage() {
   return (

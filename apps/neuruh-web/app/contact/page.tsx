@@ -1,12 +1,12 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
+import { pageMeta } from '../../lib/publicSeo'
 
-export const metadata: Metadata = {
-  alternates: { canonical: '/contact' },
+export const metadata = pageMeta({
+  path: '/contact',
   title: 'Contact',
   description:
     'Route the work: pick a scoped offer, ask Neuruh which public path fits, or email the founder for custom engagements.',
-}
+})
 
 const ROUTES = [
   {

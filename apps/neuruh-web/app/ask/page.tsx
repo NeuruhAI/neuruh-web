@@ -1,12 +1,12 @@
-import type { Metadata } from 'next'
 import { AskNeuruh } from '../../components/AskNeuruh'
+import { pageMeta } from '../../lib/publicSeo'
 
-export const metadata: Metadata = {
-  alternates: { canonical: '/ask' },
+export const metadata = pageMeta({
+  path: '/ask',
   title: 'Ask Neuruh',
   description:
     'Ask Neuruh returns three public paths — FASTEST, BEST VALUE, and CUSTOM — with what you provide, what you receive, turnaround, price, proof, and a checkout or founder CTA.',
-}
+})
 
 export default function AskPage() {
   return (

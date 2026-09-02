@@ -9,7 +9,7 @@ const routes = [
   'index', 'accessible', 'no-webgl', 'reduced-motion', 'organism', 'galaxy', 'worlds',
   'worlds/deedsonar', 'worlds/liquidity-engine', 'research/adaptive-intelligence',
   'research/case-zero', 'founder', 'proof', 'products', 'how-it-works', 'refusals', 'offers',
-  'ask', 'work-with-neuruh', 'thank-you', 'cases', 'contact',
+  'ask', 'work-with-neuruh', 'work-with-us', 'thank-you', 'cases', 'contact',
 ]
 
 async function html(route) {
@@ -70,6 +70,34 @@ test('homepage transfer stays within budget and loads zero scene implementation 
   }
   console.log(`homepage artifact transfer estimate: ${(transferBytes / 1024).toFixed(1)} KB gzip`)
   assert.ok(transferBytes <= 180 * 1024, `${transferBytes} exceeds homepage budget`)
+})
+
+test('commercial routes emit per-page Open Graph, JSON-LD, and the work-with-us alias', async () => {
+  const home = await html('index')
+  assert.match(home, /application\/ld\+json/)
+  assert.match(home, /"@type":"Organization"/)
+  assert.match(home, /"@type":"WebSite"/)
+  assert.match(home, /"@type":"Service"/)
+  assert.doesNotMatch(home, /Mother|\bAXON\b|scoring weights/)
+
+  const pairs = [
+    ['offers', 'https://neuruh.com/offers', 'Offers'],
+    ['ask', 'https://neuruh.com/ask', 'Ask Neuruh'],
+    ['work-with-neuruh', 'https://neuruh.com/work-with-neuruh', 'Work with Neuruh'],
+    ['thank-you', 'https://neuruh.com/thank-you', 'Thank you'],
+    ['cases', 'https://neuruh.com/cases', 'Cases'],
+    ['proof', 'https://neuruh.com/proof', 'Proof'],
+    ['contact', 'https://neuruh.com/contact', 'Contact'],
+  ]
+  for (const [route, url, title] of pairs) {
+    const document = await html(route)
+    assert.match(document, new RegExp(`property="og:url" content="${url}"`))
+    assert.match(document, new RegExp(`property="og:title" content="${title}`))
+  }
+
+  const alias = await html('work-with-us')
+  assert.match(alias, /Buy a scoped piece of work/)
+  assert.match(alias, /rel="canonical" href="https:\/\/neuruh.com\/work-with-neuruh"/)
 })
 
 test('Galaxy production DOM exposes contradiction and sourced relationship ledger', async () => {

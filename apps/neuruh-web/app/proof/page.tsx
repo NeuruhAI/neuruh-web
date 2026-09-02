@@ -1,15 +1,16 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
 import signature from '../../../../public/truth/signature.json'
 import { getPublicObject, getPublicSnapshot } from '../../../../packages/public-truth/client'
 import { ProofCardGrid } from '../../components/ProofCardGrid'
 import { ContradictionObject } from '../../components/TruthPrimitives'
+import { PUBLIC_HARD_ZEROS } from '../../lib/publicHardZeros'
+import { pageMeta } from '../../lib/publicSeo'
 
-export const metadata: Metadata = {
-  alternates: { canonical: '/proof' },
+export const metadata = pageMeta({
+  path: '/proof',
   title: 'Proof',
   description: 'Claim–evidence pairs for everything Neuruh asserts: production identity, dated courts, the audited commons, the operating census — and what is deliberately not claimed.',
-}
+})
 
 function EvidenceCard({ claim, k, lines, refLink }: { claim: string; k?: string; lines: string[]; refLink?: [string, string] }) {
   return (
@@ -68,7 +69,7 @@ export default function ProofPage() {
             />
             <EvidenceCard
               claim="The operating estate is counted under published rules."
-              lines={[`<b>${n(census, 'canonical_active_runtimes')}</b> live services · <b>${n(census, 'repositories_under_custody')}</b> repositories · <b>${n(census, 'git_worktrees')}</b> worktrees · census ${d(census)}`]}
+              lines={[`<b>${n(census, 'canonical_active_runtimes')}</b> operating-estate services · <b>${n(census, 'repositories_under_custody')}</b> repositories · <b>${n(census, 'git_worktrees')}</b> worktrees · census ${d(census)} · not live organ products`]}
             />
             <EvidenceCard
               claim="This snapshot itself is verifiable."
@@ -96,8 +97,11 @@ export default function ProofPage() {
         <div className="sec-inner">
           <h2 className="sec-h" id="not-h">What is not claimed</h2>
           <p className="sec-sub">
-            Revenue: $0. Customers: 0. Outreach performed by anything we built: 0. External security reviews: 0.
-            These are stated unprompted, because a site whose numbers you must double-check is worthless.
+            Revenue: {PUBLIC_HARD_ZEROS.revenue}. Customers: {PUBLIC_HARD_ZEROS.customers}. Outreach performed by
+            anything we built: {PUBLIC_HARD_ZEROS.outreach}. External security reviews:{' '}
+            {PUBLIC_HARD_ZEROS.securityReviews}. As of {PUBLIC_HARD_ZEROS.asOf} — {PUBLIC_HARD_ZEROS.source}. Not a
+            live Stripe readout. These are stated unprompted, because a site whose numbers you must double-check is
+            worthless.
           </p>
           <ContradictionObject contradiction={galaxy.contradictions![0]} />
           <div className="row" style={{ marginTop: 22 }}>

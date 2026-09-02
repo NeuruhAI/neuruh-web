@@ -1,11 +1,11 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
+import { pageMeta } from '../../lib/publicSeo'
 
-export const metadata: Metadata = {
-  alternates: { canonical: '/founder' },
+export const metadata = pageMeta({
+  path: '/founder',
   title: 'Founder',
   description: 'Jeramie Hicks built Neuruh by asking the operator’s question — how would I know if this were wrong? — until it became infrastructure. The work is the evidence.',
-}
+})
 
 const TIMELINE: ReadonlyArray<readonly [string, string, string, boolean]> = [
   ['TWO DECADES', 'Operations, not engineering', 'Roughly twenty-five years operating real businesses. No CS degree claimed, no prior exits claimed — an operator’s habit of asking what a number actually means before acting on it.', false],

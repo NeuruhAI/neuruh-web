@@ -31,6 +31,8 @@ test('Ask Neuruh hard-caps public output at FASTEST, BEST VALUE, and CUSTOM', as
 test('commercial surfaces keep the three live cashiers and add handoff, work, cases, proof cards', async () => {
   const offers = await source('apps/neuruh-web/lib/publicOffers.ts')
   const work = await source('apps/neuruh-web/app/work-with-neuruh/page.tsx')
+  const workAlias = await source('apps/neuruh-web/app/work-with-us/page.tsx')
+  const hub = await source('apps/neuruh-web/components/WorkWithHub.tsx')
   const thanks = await source('apps/neuruh-web/app/thank-you/page.tsx')
   const handoff = await source('apps/neuruh-web/components/ThankYouHandoff.tsx')
   const cases = await source('apps/neuruh-web/lib/publicCaseStudies.ts')
@@ -45,8 +47,9 @@ test('commercial surfaces keep the three live cashiers and add handoff, work, ca
   }
 
   assert.match(offers, /turnaround:/)
-  assert.match(work, /\/offers/)
-  assert.match(work, /\/ask/)
+  assert.match(hub, /\/offers/)
+  assert.match(hub, /\/ask/)
+  assert.match(workAlias, /canonical: '\/work-with-neuruh'/)
   assert.match(thanks, /does not receive Stripe webhooks/)
   assert.match(handoff, /does not receive Stripe webhooks/)
   assert.match(cases, /deedsonar-production/)
@@ -60,10 +63,11 @@ test('commercial surfaces keep the three live cashiers and add handoff, work, ca
   assert.match(contact, /\/thank-you/)
   assert.match(sitemap, /\/ask/)
   assert.match(sitemap, /\/work-with-neuruh/)
+  assert.match(sitemap, /\/work-with-us/)
   assert.match(sitemap, /\/thank-you/)
   assert.match(sitemap, /\/cases/)
 
-  for (const text of [offers, work, thanks, handoff, cases, proof, contact]) {
+  for (const text of [offers, work, workAlias, hub, thanks, handoff, cases, proof, contact]) {
     assert.doesNotMatch(text, FACTORY)
   }
 })

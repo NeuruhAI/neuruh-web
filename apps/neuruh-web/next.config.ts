@@ -10,6 +10,9 @@ const nextConfig: NextConfig = {
   images: { unoptimized: true },
   outputFileTracingRoot: path.join(process.cwd(), '../..'),
   turbopack: { root: path.join(process.cwd(), '../..') },
+  // CSP note only: do not invent a Content-Security-Policy here. Cashiers
+  // are hosted Stripe Payment Links (book.stripe.com). A guessed CSP would
+  // break checkout without proving a security property this static export owns.
   async headers() {
     return [
       {

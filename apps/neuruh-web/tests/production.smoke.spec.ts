@@ -47,7 +47,7 @@ test('the governed trace runs and resets from the keyboard', async ({ page }) =>
 test('primary routes render truthfully without fake LIVE state', async ({ page }) => {
   const routes = [
     '/products', '/how-it-works', '/proof', '/refusals', '/founder', '/contact',
-    '/offers', '/ask', '/work-with-neuruh', '/thank-you', '/cases',
+    '/offers', '/ask', '/work-with-neuruh', '/work-with-us', '/thank-you', '/cases',
     '/organism', '/worlds', '/worlds/deedsonar', '/worlds/liquidity-engine',
     '/research/adaptive-intelligence', '/research/case-zero',
   ]
@@ -103,6 +103,9 @@ test('work-with, thank-you, cases, and contact route without leaking a factory t
   await page.goto('/work-with-neuruh')
   await expect(page.getByRole('heading', { level: 1 })).toContainText('Buy a scoped piece of work')
   await expect(page.locator('a[href="https://book.stripe.com/bJe5kDagndYugJlaow2cg04"]')).toBeVisible()
+
+  await page.goto('/work-with-us')
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Buy a scoped piece of work')
 
   await page.goto('/thank-you')
   await expect(page.getByTestId('thank-you-handoff')).toContainText('does not receive Stripe webhooks')
