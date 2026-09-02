@@ -59,6 +59,40 @@ test('primary routes render truthfully without fake LIVE state', async ({ page }
   }
 })
 
+test('390px homepage keeps hero CTAs and header Work with us inside the viewport', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 })
+  await page.goto('/')
+
+  const headerCta = page.locator('header.hdr a.work-cta')
+  await expect(headerCta).toHaveText('Work with us')
+  const headerBox = await headerCta.boundingBox()
+  expect(headerBox, 'header Work with us must render').toBeTruthy()
+  expect(headerBox!.x).toBeGreaterThanOrEqual(0)
+  expect(headerBox!.x + headerBox!.width).toBeLessThanOrEqual(391)
+
+  const heroButtons = page.locator('.hero-v2 .hero-ctas .v2-btn')
+  await expect(heroButtons).toHaveCount(3)
+  const tops = new Set<number>()
+  for (const button of await heroButtons.all()) {
+    const box = await button.boundingBox()
+    expect(box, 'hero CTA must render').toBeTruthy()
+    expect(box!.x).toBeGreaterThanOrEqual(0)
+    expect(box!.x + box!.width).toBeLessThanOrEqual(391)
+    tops.add(Math.round(box!.y))
+  }
+  expect(tops.size).toBe(3)
+
+  await expect(page.locator('footer.site-footer a[href^="mailto:"]')).toHaveCount(0)
+  await expect(page.locator('footer.site-footer a[href="/security"]')).toBeVisible()
+
+  await page.goto('/offers')
+  const offersCta = page.locator('header.hdr a.work-cta')
+  const offersBox = await offersCta.boundingBox()
+  expect(offersBox, 'offers header Work with us must render').toBeTruthy()
+  expect(offersBox!.x).toBeGreaterThanOrEqual(0)
+  expect(offersBox!.x + offersBox!.width).toBeLessThanOrEqual(391)
+})
+
 test('keyboard navigation reaches Products from the header', async ({ page }) => {
   await page.goto('/')
   const link = page.locator('header.hdr nav.primary > a', { hasText: 'Products' })

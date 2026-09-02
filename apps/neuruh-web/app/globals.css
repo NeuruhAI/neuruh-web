@@ -675,6 +675,22 @@ body { background: var(--v2-bg-0); }
   .hdr nav.primary > a, .hdr .explore, .hdr .explore > summary, .hdr .work-cta { flex: none; white-space: nowrap; }
   .hdr .work-cta { margin-left: auto; }
 }
+/* 390px phones: keep the outlined Work-with-us CTA on its own full row so
+   it cannot sit half-off the first nav line or clip under page overflow. */
+@media (max-width: 430px) {
+  .hdr { padding-inline: 16px; gap: 12px; }
+  .hdr nav.primary { column-gap: 12px; min-width: 0; }
+  .hdr .work-cta {
+    flex: 1 1 100%;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    display: inline-flex;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+  }
+}
 
 /* ── Section system ───────────────────────────────────────────────────── */
 .sec { position: relative; padding: clamp(3.6rem, 8vh, 6.5rem) clamp(20px, 4.5vw, 56px); }
@@ -709,6 +725,20 @@ body { background: var(--v2-bg-0); }
 .hero-h1 { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.018em; line-height: 1.03; color: var(--v2-text); font-size: clamp(2.5rem, 4.4vw, 4.1rem); margin: 20px 0 18px; }
 .hero-sub { color: var(--v2-muted); font-size: 1.12rem; line-height: 1.6; max-width: 30rem; margin-bottom: 28px; }
 .hero-ctas { display: flex; flex-wrap: wrap; gap: 13px; margin-bottom: 24px; }
+@media (max-width: 430px) {
+  .hero-copy { padding-right: clamp(16px, 4.5vw, 56px); max-width: 100%; }
+  .hero-v2 .hero-ctas {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .hero-v2 .hero-ctas .v2-btn {
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+}
 .hero-proofline { font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.05em; color: var(--v2-steel-ink); line-height: 1.8; border-top: 1px solid var(--v2-line-1); padding-top: 15px; max-width: 30rem; }
 .hero-proofline b { color: var(--v2-ice); font-weight: 500; }
 .hero-proofline .dim { color: #5d6d7e; }

@@ -62,6 +62,16 @@ test('robots, sitemap, and security.txt stay public-safe', async () => {
   assert.match(vercel, /"destination": "\/work-with-neuruh"/)
 })
 
+test('global footer uses the public-safe /security path and does not invent a mailbox', async () => {
+  const footer = await source('apps/neuruh-web/components/SiteFooter.tsx')
+  assert.match(footer, /href="\/security"/)
+  assert.doesNotMatch(footer, /mailto:/i)
+  assert.doesNotMatch(footer, /@[a-z0-9.-]+/i)
+  const security = await source('apps/neuruh-web/public/.well-known/security.txt')
+  assert.match(security, /Contact: https:\/\/neuruh.com\/security/)
+  assert.doesNotMatch(security, /mailto:/)
+})
+
 test('hard zeros stay dated to the public snapshot and are not sold as live Stripe truth', async () => {
   const zeros = await source('apps/neuruh-web/lib/publicHardZeros.ts')
   const home = await source('apps/neuruh-web/components/HomeV2.tsx')

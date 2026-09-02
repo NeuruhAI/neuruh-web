@@ -56,6 +56,8 @@ must('JSON-LD no factory', !FACTORY.test(home.match(/application\/ld\+json[\s\S]
 const security = await readFile(path.join(out, '.well-known/security.txt'), 'utf8')
 must('security.txt Contact is /security', security.includes('Contact: https://neuruh.com/security'))
 must('security.txt no mailto', !/mailto:/i.test(security))
+must('home footer no mailto', !/<footer[\s\S]*?mailto:/i.test(home))
+must('home footer links /security', /<footer[\s\S]*?href="\/security"/.test(home))
 
 const robots = await readFile(path.join(out, 'robots.txt'), 'utf8')
 must('robots sitemap', robots.includes('https://neuruh.com/sitemap.xml'))

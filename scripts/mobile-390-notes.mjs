@@ -14,7 +14,7 @@ for (const route of routes) {
   await page.goto(`${base}${route}`, { waitUntil: 'networkidle', timeout: 30000 })
   const cta = page.locator('header.hdr a.work-cta')
   const box = await cta.boundingBox()
-  const clip = box ? box.x + box.width > 390 + 1 || box.y < 0 : true
+  const clip = box ? box.x < 0 || box.x + box.width > 390 + 1 || box.y < 0 : true
   const wrap = box ? box.height > 48 : false
   const shot = `${dir}${route === '/' ? '/home' : route.replaceAll('/', '-')}.png`
   await page.screenshot({ path: shot, fullPage: false })
