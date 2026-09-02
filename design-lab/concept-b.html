@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
+<style>
+  .stage { position: relative; width: 100vw; height: 100vh; overflow: hidden;
+    background: radial-gradient(1100px 640px at 70% 20%, rgba(110,159,197,0.06), transparent 60%),
+    linear-gradient(180deg, #080b10, var(--bg-0) 60%, #05070a); }
+  .nav { position:absolute; top:0; left:0; right:0; display:flex; gap:30px; align-items:center; padding:22px 54px; z-index:40; }
+  .brand { font-family: var(--font-display); font-weight:700; font-size:21px; }
+  .nav-links { margin-left:auto; display:flex; gap:28px; font-size:15px; color:var(--silver); }
+  .copy { position:absolute; left:54px; top:14%; width:540px; z-index:30; }
+  .copy .headline { font-size:62px; margin:20px 0 18px; }
+  .copy .support { font-size:17.5px; margin-bottom:26px; max-width:29rem; }
+  /* the twin field */
+  .twin { position:absolute; right:-140px; bottom:-260px; width:1400px; height:1000px; transform: rotateX(55deg) rotateZ(-28deg); transform-style:preserve-3d; z-index:8; }
+  .parcels { position:absolute; inset:0; }
+  .parcels svg { width:100%; height:100%; }
+  .parcel { fill:#0d141d; stroke:#243549; stroke-width:1.1; }
+  .parcel.lit { fill:rgba(110,159,197,0.16); stroke:var(--blue); }
+  .parcel.hot { fill:rgba(169,211,232,0.2); stroke:var(--ice); stroke-width:1.6; }
+  .roads { stroke:#1a2634; stroke-width:5; fill:none; }
+  .panel-float { position:absolute; right:330px; top:120px; width:600px; transform: rotateZ(28deg) rotateX(-55deg) translateZ(150px); z-index:20; }
+  .pin { position:absolute; z-index:16; transform: rotateZ(28deg) rotateX(-55deg); }
+  .pin .chip { box-shadow: 0 18px 40px rgba(2,6,12,0.6); }
+  .leader { position:absolute; inset:0; z-index:12; pointer-events:none; }
+  .leader line { stroke: var(--steel); stroke-width:1; opacity:0.6; }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="nav"><div class="brand">Neuruh</div><div class="nav-links"><span>Products</span><span>How it works</span><span>Proof</span><span>Founder</span><span>Contact</span></div></div>
+  <div class="copy">
+    <div class="eyebrow">Neuruh</div>
+    <h1 class="headline">The real world, understood — parcel by parcel.</h1>
+    <p class="support">Neuruh assembles public records, geometry, and signals into a governed digital twin — then works it from evidence to outcome, with receipts.</p>
+    <div class="cta-row"><a class="cta cta-primary">Explore the systems</a><a class="cta cta-secondary">See the proof</a></div>
+  </div>
+  <div class="twin">
+    <div class="parcels">
+      <svg viewBox="0 0 1400 1000">
+        <g>
+          <path class="roads" d="M0 320 H1400 M0 660 H1400 M380 0 V1000 M840 0 V1000 M1140 0 V1000"/>
+          <rect class="parcel" x="30" y="30" width="330" height="270"/><rect class="parcel" x="30" y="350" width="150" height="290"/>
+          <rect class="parcel lit" x="200" y="350" width="160" height="290"/><rect class="parcel" x="30" y="690" width="330" height="280"/>
+          <rect class="parcel" x="410" y="30" width="200" height="270"/><rect class="parcel hot" x="630" y="30" width="190" height="270"/>
+          <rect class="parcel" x="410" y="350" width="410" height="290"/><rect class="parcel lit" x="410" y="690" width="200" height="280"/>
+          <rect class="parcel" x="630" y="690" width="190" height="280"/><rect class="parcel" x="870" y="30" width="250" height="270"/>
+          <rect class="parcel lit" x="870" y="350" width="250" height="290"/><rect class="parcel" x="870" y="690" width="250" height="280"/>
+          <rect class="parcel" x="1170" y="30" width="200" height="270"/><rect class="parcel" x="1170" y="350" width="200" height="290"/>
+          <rect class="parcel hot" x="1170" y="690" width="200" height="280"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+  <div class="panel-float panel"><div class="panel-bar"><span class="dot"></span><span class="name">DeedSonar · Acquisition desk</span><span class="tag tag-live">IN PRODUCTION</span></div><img src="../apps/neuruh-web/public/media/products/deedsonar-dashboard.png"></div>
+  <div class="pin" style="right:690px; bottom:300px;"><div class="chip"><span class="k">EVID</span> Deed · tax · access</div></div>
+  <div class="pin" style="right:420px; bottom:210px;"><div class="chip"><span class="k">RCPT</span> offer.prepared · verified</div></div>
+</div>
+</body>
+</html>

@@ -1,13 +1,14 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
 import { getPublicObject } from '../../../../packages/public-truth/client'
 import { SemanticPage } from '../../components/SemanticPage'
+import { pageMeta } from '../../lib/publicSeo'
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
+  path: '/open-source',
   title: 'Open source',
   description:
     'The Neuruh public commons: governance primitives, receipts, connectors, and sovereign-agent infrastructure published under Apache-2.0 with per-repository test evidence.',
-}
+})
 
 const COMMONS_AREAS = [
   ['Governance primitives', 'Policy gates, promotion gates, canonical-state revision contracts, and reversibility scaffolding.'],

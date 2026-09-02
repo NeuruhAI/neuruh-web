@@ -1,15 +1,15 @@
 {
   "schema_version": "1.0",
   "dataset": {
-    "id": "neuruh-public-snapshot-2026-08-23",
+    "id": "neuruh-public-snapshot-2026-08-24",
     "label": "Public launch snapshot — founder-authorized go-live",
     "truth_mode": "VERIFIED_SNAPSHOT",
-    "generated_at": "2026-08-23T17:30:00.000Z",
-    "last_verified_at": "2026-08-23T17:30:00.000Z",
+    "generated_at": "2026-08-24T15:00:00.000Z",
+    "last_verified_at": "2026-08-24T15:00:00.000Z",
     "stale_after": "2026-09-30T22:00:00.000Z",
     "source_ref": "src-alive-ruling",
     "live_connectivity": false,
-    "limitation": "Dated local snapshot compiled from canon and repository receipts; no private or production connector is attached."
+    "limitation": "Dated 2026-08-24 local snapshot compiled from canon and repository receipts; no private or production connector is attached. Unresolved contradictions are preserved. Not a live feed."
   },
   "sources": [
     {
@@ -157,6 +157,20 @@
       "class": "signed_manifest",
       "title": "Neuruh World Manifest",
       "path_or_uri": "docs/canon/WORLD_MANIFEST.yaml",
+      "public_safe": true
+    },
+    {
+      "ref": "src-deedsonar-court",
+      "class": "decision_receipt",
+      "title": "DeedSonar production court — 1,510 green at e2b71fa (2026-08-23)",
+      "path_or_uri": "docs/receipts-external/deedsonar-court-20260823.attestation.md",
+      "public_safe": true
+    },
+    {
+      "ref": "src-liquidity-receipt",
+      "class": "decision_receipt",
+      "title": "Neuruh Liquidity Engine custody + courts (NeuruhAI/neuruh-liquidity-engine@7f2af00, 2026-08-24)",
+      "path_or_uri": "docs/receipts-external/liquidity-engine/HANDOFF_ATTESTATION.md",
       "public_safe": true
     }
   ],
@@ -340,19 +354,30 @@
       "claim_class": "OBSERVED",
       "maturity": "OPERATING_PRODUCT",
       "status": "INTEGRATING",
-      "last_verified_at": "2026-08-23T17:30:00.000Z",
+      "last_verified_at": "2026-08-24T15:00:00.000Z",
       "source_ref": "src-estate-canon",
       "evidence_summary": {
-        "status": "PARTIAL",
-        "statement": "Multiple observed surfaces exist and a production surface serves at app.deedsonar.com (observed 2026-08-23); this snapshot does not attest the running build's identity.",
+        "status": "SUFFICIENT",
+        "statement": "A production surface serves at app.deedsonar.com whose health endpoint attests its own SHA (e2b71fa, observed 2026-08-24), and a dated court receipt records 1,510 tests green at that SHA.",
         "source_refs": [
           "src-estate-canon",
-          "src-deedsonar-surface"
+          "src-deedsonar-surface",
+          "src-deedsonar-court"
         ]
       },
       "public_route": "/worlds/deedsonar",
       "limitations": [
-        "Observed surface evidence does not attest the production build identity or a public test count."
+        "Court receipt and health attestation are dated observations, not a standing service guarantee."
+      ],
+      "metrics": [
+        {
+          "name": "tests_green_at_production_sha",
+          "value": 1510,
+          "classification": "MEASURED",
+          "unit": "tests",
+          "as_of": "2026-08-23T00:00:00.000Z",
+          "source_ref": "src-deedsonar-court"
+        }
       ]
     },
     {
@@ -835,6 +860,56 @@
         "Control-plane binding is a local deterministic adapter; no isolated external preview exists.",
         "Pricing is a hypothesis."
       ]
+    },
+    {
+      "id": "liquidity-engine",
+      "kind": "world",
+      "name": "Neuruh Liquidity Engine",
+      "summary": "Turns field signals into verified, underwritten, governed liquidity options — ranked least-destructive first, through authorization to a synthetic close with receipts.",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "claim_class": "OBSERVED",
+      "maturity": "SHIP_CANDIDATE",
+      "status": "STABLE",
+      "last_verified_at": "2026-08-24T15:00:00.000Z",
+      "source_ref": "src-liquidity-receipt",
+      "evidence_summary": {
+        "status": "SUFFICIENT",
+        "statement": "Custody and court receipts from 2026-08-24 attest 112 tests, an 18/18 operating court, four closed vertical slices, 100/100 browser checks, and zero serious accessibility violations.",
+        "source_refs": [
+          "src-liquidity-receipt"
+        ]
+      },
+      "public_route": "/worlds/liquidity-engine",
+      "metrics": [
+        {
+          "name": "tests",
+          "value": 112,
+          "classification": "MEASURED",
+          "unit": "tests",
+          "as_of": "2026-08-24T00:00:00.000Z",
+          "source_ref": "src-liquidity-receipt"
+        },
+        {
+          "name": "operating_court_cases",
+          "value": 18,
+          "classification": "MEASURED",
+          "unit": "cases",
+          "as_of": "2026-08-24T00:00:00.000Z",
+          "source_ref": "src-liquidity-receipt"
+        },
+        {
+          "name": "browser_page_checks",
+          "value": 100,
+          "classification": "MEASURED",
+          "unit": "checks",
+          "as_of": "2026-08-24T00:00:00.000Z",
+          "source_ref": "src-liquidity-receipt"
+        }
+      ],
+      "limitations": [
+        "All data, transactions, and authorization are synthetic by contract (AUTH=OFF); no real money moves.",
+        "Owner contact, negotiation, legal review, execution, and payouts are manual."
+      ]
     }
   ],
   "relationships": [
@@ -1058,6 +1133,19 @@
       "limitations": [
         "Local deterministic adapter only; no live control-plane binding is claimed."
       ]
+    },
+    {
+      "id": "rel-liquidity-platform",
+      "type": "dependency",
+      "source_id": "liquidity-engine",
+      "target_id": "execution-platform",
+      "direction": "OUTBOUND",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "observed_at": "2026-08-24T00:00:00.000Z",
+      "source_ref": "src-liquidity-receipt",
+      "limitations": [
+        "Architecture relationship; the shared platform contract is inherited, not a live integration claim."
+      ]
     }
   ],
   "events": [
@@ -1115,6 +1203,20 @@
       "reversibility": "REVERSIBLE",
       "limitations": [
         "Authorization covers this public site only; no product production system was modified."
+      ]
+    },
+    {
+      "event_id": "evt-deedsonar-court-attested",
+      "event_type": "source.registered",
+      "occurred_at": "2026-08-24T11:40:00.000Z",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "subject_id": "deedsonar",
+      "public_summary": "A dated DeedSonar court receipt (1,510 tests green at production SHA e2b71fa) and a health-endpoint SHA match were registered, superseding the prior no-receipt ruling.",
+      "source_ref": "src-deedsonar-court",
+      "authority": "NOT_APPLICABLE",
+      "reversibility": "NOT_APPLICABLE",
+      "limitations": [
+        "Dated observation, not a standing guarantee."
       ]
     }
   ]

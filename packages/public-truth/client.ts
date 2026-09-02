@@ -20,7 +20,7 @@ const snapshot = snapshotJson as unknown as {
   relationships: PublicRelationship[]
 }
 
-export const WORLD_IDS = ['bookeit', 'curbclaim', 'datum', 'deedsonar', 'factory-visual-cortex', 'find-sell-profit', 'lead-recipe-os', 'proof-os'] as const
+export const WORLD_IDS = ['bookeit', 'curbclaim', 'datum', 'deedsonar', 'factory-visual-cortex', 'find-sell-profit', 'lead-recipe-os', 'liquidity-engine', 'proof-os'] as const
 
 export function getPublicSnapshot() {
   return snapshot
@@ -33,6 +33,7 @@ export function getTruthSummary() {
     limitation: snapshot.dataset.limitation,
     livingState: snapshot.living_state,
     liveConnectivity: snapshot.dataset.live_connectivity,
+    stale: snapshot.dataset.stale,
     sourceRef: snapshot.dataset.id,
   }
 }

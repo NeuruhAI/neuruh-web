@@ -7,7 +7,9 @@ import { gzipSync } from 'node:zlib'
 const appRoot = 'apps/neuruh-web/.next/server/app'
 const routes = [
   'index', 'accessible', 'no-webgl', 'reduced-motion', 'organism', 'galaxy', 'worlds',
-  'worlds/deedsonar', 'research/adaptive-intelligence', 'research/case-zero', 'founder', 'proof',
+  'worlds/deedsonar', 'worlds/liquidity-engine', 'research/adaptive-intelligence',
+  'research/case-zero', 'founder', 'proof', 'products', 'how-it-works', 'refusals', 'offers',
+  'ask', 'work-with-neuruh', 'work-with-us', 'thank-you', 'cases', 'contact', 'security',
 ]
 
 async function html(route) {
@@ -18,12 +20,11 @@ function mainMarkup(document) {
   return document.match(/<main\b[\s\S]*?<\/main>/)?.[0] ?? ''
 }
 
-function truthTuples(document) {
-  return [...document.matchAll(/<section[^>]+data-chapter-id="([^"]+)"[^>]+data-state="([^"]+)"[^>]+data-truth-mode="([^"]+)"/g)]
-    .map((match) => match.slice(1))
+function sectionIds(document) {
+  return [...document.matchAll(/data-section="([^"]+)"/g)].map((match) => match[1])
 }
 
-test('all semantic production routes prerender main DOM without canvas or fake LIVE mode', async () => {
+test('all production routes prerender main DOM without canvas or fake LIVE mode', async () => {
   for (const route of routes) {
     const document = await html(route)
     assert.match(document, /<main[^>]+id="main"/i, route)
@@ -32,28 +33,31 @@ test('all semantic production routes prerender main DOM without canvas or fake L
   }
 })
 
-test('accessible, no-WebGL, reduced-motion, and tier-zero truth tuples are identical', async () => {
+test('accessible, no-WebGL, reduced-motion, and primary homepage carry identical story DOM', async () => {
   const accessible = await html('accessible')
   const noWebgl = await html('no-webgl')
   const reduced = await html('reduced-motion')
-  const tierZero = await html('index')
+  const home = await html('index')
   assert.equal(mainMarkup(accessible), mainMarkup(noWebgl))
-  assert.equal(truthTuples(accessible).length, 11)
-  assert.deepEqual(truthTuples(noWebgl), truthTuples(accessible))
-  assert.deepEqual(truthTuples(reduced), truthTuples(accessible))
-  assert.deepEqual(truthTuples(tierZero), truthTuples(accessible))
+  assert.equal(mainMarkup(home), mainMarkup(accessible))
+  assert.equal(mainMarkup(reduced), mainMarkup(accessible))
+  const ids = sectionIds(home)
+  assert.ok(ids.length >= 10, `homepage story has ${ids.length} sections`)
+  for (const required of ['hero', 'offers', 'proof-strip', 'how-it-works', 'flagship', 'products', 'engine', 'proof', 'boundaries', 'founder', 'cta']) {
+    assert.ok(ids.includes(required), `missing section ${required}`)
+  }
 })
 
-test('native keyboard route and trace controls are present in semantic production DOM', async () => {
+test('keyboard route, skip link, and trace controls are present in production DOM', async () => {
   const document = await html('index')
   assert.match(document, /<a[^>]+href="\/organism"[^>]*>Organism<\/a>/)
   assert.match(document, /<a[^>]+href="#main"[^>]*>Skip to content<\/a>/)
   assert.match(document, /<button[^>]+data-testid="trace-start"/)
-  const clientSource = await readFile('apps/neuruh-web/components/NeuruhExperience.tsx', 'utf8')
-  for (const key of ['ArrowDown', 'ArrowUp', "event.key === 't'", "event.key === 'r'"]) assert.match(clientSource, new RegExp(key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')))
+  const clientSource = await readFile('apps/neuruh-web/components/PipelineTrace.tsx', 'utf8')
+  assert.match(clientSource, /event\.key === 'r'/)
 })
 
-test('tier-zero modern-browser transfer stays within budget and loads zero scene implementation bytes', async () => {
+test('homepage transfer stays within budget and loads zero scene implementation bytes', async () => {
   const document = await html('index')
   const tags = [...document.matchAll(/<(?:link|script)\b[^>]+(?:href|src)="(\/_next\/static\/[^"]+\.(?:js|css))"[^>]*>/g)]
   const refs = new Set(tags.filter((match) => !/\bnoModule\b/.test(match[0])).map((match) => match[1]))
@@ -64,8 +68,36 @@ test('tier-zero modern-browser transfer stays within budget and loads zero scene
     transferBytes += gzipSync(body).byteLength
     assert.doesNotMatch(body.toString('utf8'), /neuruh-tissue-instanced-state|renderTransmissionPass|MeshTransmissionMaterial/, ref)
   }
-  console.log(`tier0 artifact transfer estimate: ${(transferBytes / 1024).toFixed(1)} KB gzip`)
-  assert.ok(transferBytes <= 180 * 1024, `${transferBytes} exceeds tier-zero budget`)
+  console.log(`homepage artifact transfer estimate: ${(transferBytes / 1024).toFixed(1)} KB gzip`)
+  assert.ok(transferBytes <= 180 * 1024, `${transferBytes} exceeds homepage budget`)
+})
+
+test('commercial routes emit per-page Open Graph, JSON-LD, and the work-with-us alias', async () => {
+  const home = await html('index')
+  assert.match(home, /application\/ld\+json/)
+  assert.match(home, /"@type":"Organization"/)
+  assert.match(home, /"@type":"WebSite"/)
+  assert.match(home, /"@type":"Service"/)
+  assert.doesNotMatch(home, /Mother|\bAXON\b|scoring weights/)
+
+  const pairs = [
+    ['offers', 'https://neuruh.com/offers', 'Offers'],
+    ['ask', 'https://neuruh.com/ask', 'Ask Neuruh'],
+    ['work-with-neuruh', 'https://neuruh.com/work-with-neuruh', 'Work with Neuruh'],
+    ['thank-you', 'https://neuruh.com/thank-you', 'Thank you'],
+    ['cases', 'https://neuruh.com/cases', 'Cases'],
+    ['proof', 'https://neuruh.com/proof', 'Proof'],
+    ['contact', 'https://neuruh.com/contact', 'Contact'],
+  ]
+  for (const [route, url, title] of pairs) {
+    const document = await html(route)
+    assert.match(document, new RegExp(`property="og:url" content="${url}"`))
+    assert.match(document, new RegExp(`property="og:title" content="${title}`))
+  }
+
+  const alias = await html('work-with-us')
+  assert.match(alias, /Buy a scoped piece of work/)
+  assert.match(alias, /rel="canonical" href="https:\/\/neuruh.com\/work-with-neuruh"/)
 })
 
 test('Galaxy production DOM exposes contradiction and sourced relationship ledger', async () => {

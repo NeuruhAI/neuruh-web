@@ -14,7 +14,7 @@ export default function NotFound() {
       <section className="semantic-section">
         <div className="row">
           <Link className="n-btn n-btn--primary" href="/">Back to the organism</Link>
-          <Link className="n-btn n-btn--secondary" href="/products">See the products</Link>
+          <Link className="n-btn n-btn--secondary" href="/offers">See offers</Link>
           <Link className="n-btn n-btn--ghost" href="/proof">Inspect proof</Link>
         </div>
       </section>

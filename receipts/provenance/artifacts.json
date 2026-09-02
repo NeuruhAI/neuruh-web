@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-24T12:11:42.172Z",
+  "generatedAt": "2026-08-24T13:09:43.999Z",
   "upstreamDesignStudio": {
     "repository": "/Users/jeramiehicks/neuruh-worktrees/neuruh-design-studio",
     "revision": "708a99680e07b86f20d5d2405c6e8594689ce245"
@@ -674,7 +674,7 @@
       "destination": "apps/neuruh-web/app/globals.css",
       "mode": "ported",
       "sourceSha256": "e4a38d8cf635679a5f01ba7781312629a08412ec778e08529d8147a99f527528",
-      "destinationSha256": "ee7c5c81e3390fb4314ba28cbbf36ceee746c5b0701e46fa8d0eff6518b507be",
+      "destinationSha256": "407c2650a22f0e42bdb32bc977a619b4e8cfb854eb5653e2a565ea4e78ceacc9",
       "adaptation": "Production path/import adaptation or locked trs=0.75 policy; source remains unchanged."
     },
     {

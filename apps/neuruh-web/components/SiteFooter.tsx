@@ -6,9 +6,13 @@ const columns: ReadonlyArray<readonly [string, ReadonlyArray<readonly [string, s
     ['Organism', '/organism'],
     ['Galaxy', '/galaxy'],
     ['Worlds', '/worlds'],
+    ['How it works', '/how-it-works'],
     ['Research', '/research/adaptive-intelligence'],
   ]],
   ['Company', [
+    ['Offers', '/offers'],
+    ['Ask Neuruh', '/ask'],
+    ['Work with Neuruh', '/work-with-neuruh'],
     ['Products', '/products'],
     ['Founder', '/founder'],
     ['Contact', '/contact'],
@@ -16,7 +20,8 @@ const columns: ReadonlyArray<readonly [string, ReadonlyArray<readonly [string, s
   ]],
   ['Truth', [
     ['Proof', '/proof'],
-    ['Refusals', '/refusals'],
+    ['Cases', '/cases'],
+    ['Boundaries', '/refusals'],
     ['Open source', '/open-source'],
     ['Accessible route', '/accessible'],
   ]],
@@ -31,7 +36,7 @@ export function SiteFooter() {
           <p className="wordmark">Neuruh</p>
           <p className="site-footer__line">Governed AI systems that leave receipts.</p>
           <p className="site-footer__line">
-            <a href="mailto:jeramie@neuruh.com">jeramie@neuruh.com</a>
+            <Link href="/security">neuruh.com/security</Link>
             {' · '}
             <a href="https://github.com/NeuruhAI" rel="noopener noreferrer">github.com/NeuruhAI</a>
           </p>
@@ -51,7 +56,8 @@ export function SiteFooter() {
         <p>© 2026 Neuruh. Built and operated by its founder.</p>
         <p>
           Truth mode {truth.truthMode.replaceAll('_', ' ')} · snapshot verified{' '}
-          <time dateTime={truth.lastVerifiedAt}>{truth.lastVerifiedAt.slice(0, 10)}</time> · live connectivity NONE
+          <time dateTime={truth.lastVerifiedAt}>{truth.lastVerifiedAt.slice(0, 10)}</time>
+          {truth.stale ? ' · STALE' : ''} · living state {truth.livingState.replaceAll('_', ' ')} · live connectivity NONE
         </p>
       </div>
     </footer>
