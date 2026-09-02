@@ -56,7 +56,8 @@ export function SiteFooter() {
         <p>© 2026 Neuruh. Built and operated by its founder.</p>
         <p>
           Truth mode {truth.truthMode.replaceAll('_', ' ')} · snapshot verified{' '}
-          <time dateTime={truth.lastVerifiedAt}>{truth.lastVerifiedAt.slice(0, 10)}</time> · live connectivity NONE
+          <time dateTime={truth.lastVerifiedAt}>{truth.lastVerifiedAt.slice(0, 10)}</time>
+          {truth.stale ? ' · STALE' : ''} · living state {truth.livingState.replaceAll('_', ' ')} · live connectivity NONE
         </p>
       </div>
     </footer>

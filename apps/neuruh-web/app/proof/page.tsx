@@ -73,7 +73,7 @@ export default function ProofPage() {
             />
             <EvidenceCard
               claim="This snapshot itself is verifiable."
-              lines={[`truth mode <b>${snapshot.dataset.truth_mode}</b> · verified <b>${snapshot.dataset.last_verified_at.slice(0, 10)}</b> · live connectivity <b>NONE</b>`, `snapshot sha256 <b>${signature.snapshot_sha256.slice(0, 16)}…</b>`]}
+              lines={[`truth mode <b>${snapshot.dataset.truth_mode}</b> · verified <b>${snapshot.dataset.last_verified_at.slice(0, 10)}</b> · stale <b>${snapshot.dataset.stale ? 'TRUE' : 'FALSE'}</b> · living state <b>${snapshot.living_state}</b> · live connectivity <b>NONE</b>`, `snapshot sha256 <b>${signature.snapshot_sha256.slice(0, 16)}…</b> · ${snapshot.dataset.limitation}`]}
               k={signature.signature_kind}
             />
           </div>

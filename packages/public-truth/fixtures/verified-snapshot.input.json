@@ -9,7 +9,7 @@
     "stale_after": "2026-09-30T22:00:00.000Z",
     "source_ref": "src-alive-ruling",
     "live_connectivity": false,
-    "limitation": "Dated local snapshot compiled from canon and repository receipts; no private or production connector is attached."
+    "limitation": "Dated 2026-08-24 local snapshot compiled from canon and repository receipts; no private or production connector is attached. Unresolved contradictions are preserved. Not a live feed."
   },
   "sources": [
     {
