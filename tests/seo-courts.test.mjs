@@ -25,6 +25,7 @@ test('pageMeta writes per-route Open Graph url, title, and description', async (
     ['app/cases/page.tsx', "path: '/cases'"],
     ['app/proof/page.tsx', "path: '/proof'"],
     ['app/contact/page.tsx', "path: '/contact'"],
+    ['app/security/page.tsx', "path: '/security'"],
   ]
   for (const [file, needle] of routes) {
     const text = await source(`apps/neuruh-web/${file}`)
@@ -54,7 +55,8 @@ test('robots, sitemap, and security.txt stay public-safe', async () => {
   assert.match(robots, /sitemap: 'https:\/\/neuruh.com\/sitemap.xml'/)
   assert.match(sitemap, /\/work-with-us/)
   assert.match(sitemap, /2026-09-02T00:00:00.000Z/)
-  assert.match(security, /mailto:jeramie@neuruh.com/)
+  assert.match(security, /Contact: https:\/\/neuruh.com\/security/)
+  assert.doesNotMatch(security, /mailto:/)
   assert.doesNotMatch(security, FACTORY)
   assert.match(vercel, /"source": "\/work-with-us"/)
   assert.match(vercel, /"destination": "\/work-with-neuruh"/)

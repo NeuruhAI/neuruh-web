@@ -9,7 +9,7 @@ const routes = [
   'index', 'accessible', 'no-webgl', 'reduced-motion', 'organism', 'galaxy', 'worlds',
   'worlds/deedsonar', 'worlds/liquidity-engine', 'research/adaptive-intelligence',
   'research/case-zero', 'founder', 'proof', 'products', 'how-it-works', 'refusals', 'offers',
-  'ask', 'work-with-neuruh', 'work-with-us', 'thank-you', 'cases', 'contact',
+  'ask', 'work-with-neuruh', 'work-with-us', 'thank-you', 'cases', 'contact', 'security',
 ]
 
 async function html(route) {

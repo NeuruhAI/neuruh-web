@@ -21,8 +21,8 @@ export default function LegalPage() {
           <li>Neuruh.com is a static, read-only site. It has no accounts, no login, and no forms that transmit answers. Ask Neuruh is a local chooser — it does not send what you click.</li>
           <li>We set no cookies and run no analytics or third-party trackers.</li>
           <li>Our hosting provider processes standard server logs (IP address, user agent, request path) to serve and secure the site.</li>
-          <li>If you email us, we receive what you send and use it only to reply and work with you. Ask and we will delete the thread.</li>
-          <li>Security contact: <a className="text-link" href="mailto:jeramie@neuruh.com">jeramie@neuruh.com</a> · public disclosure path <a className="text-link" href="/.well-known/security.txt">/.well-known/security.txt</a>.</li>
+          <li>If you send mail to an address published on this site, treat receipt as unproven until a reply exists. Ask and we will delete the thread if one exists.</li>
+          <li>Security disclosure: the public-safe path is <a className="text-link" href="/security">/security</a> and <a className="text-link" href="/.well-known/security.txt">/.well-known/security.txt</a>. This site does not prove that any mailbox receives mail.</li>
         </ul>
       </section>
 

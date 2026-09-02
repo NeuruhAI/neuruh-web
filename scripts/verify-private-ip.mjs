@@ -22,6 +22,7 @@ const HTML_ROUTES = [
   'thank-you',
   'cases',
   'contact',
+  'security',
   'proof',
 ]
 

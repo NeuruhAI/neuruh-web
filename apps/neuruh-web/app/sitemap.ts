@@ -13,6 +13,7 @@ const COMMERCIAL = new Set([
   '/thank-you',
   '/cases',
   '/contact',
+  '/security',
 ])
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -38,6 +39,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/founder',
     '/contact',
     '/legal',
+    '/security',
     '/accessible',
     ...WORLD_IDS.map((slug) => `/worlds/${slug}`),
   ]
