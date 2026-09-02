@@ -68,7 +68,7 @@ const publicFiles = new Set()
 for (const root of PUBLIC_ROOTS) {
   for (const file of await walk(root, [], () => true)) {
     const rel = file.slice(root.length).replace(/\\/g, '/')
-    if (rel.startsWith('/.') || rel.endsWith('.tsx') || rel.endsWith('.ts')) continue
+    if ((rel.startsWith('/.') && !rel.startsWith('/.well-known/')) || rel.endsWith('.tsx') || rel.endsWith('.ts')) continue
     publicFiles.add(rel)
   }
 }
