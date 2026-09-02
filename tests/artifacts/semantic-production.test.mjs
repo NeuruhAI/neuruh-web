@@ -9,6 +9,7 @@ const routes = [
   'index', 'accessible', 'no-webgl', 'reduced-motion', 'organism', 'galaxy', 'worlds',
   'worlds/deedsonar', 'worlds/liquidity-engine', 'research/adaptive-intelligence',
   'research/case-zero', 'founder', 'proof', 'products', 'how-it-works', 'refusals', 'offers',
+  'ask', 'work-with-neuruh', 'thank-you', 'cases', 'contact',
 ]
 
 async function html(route) {
@@ -42,7 +43,7 @@ test('accessible, no-WebGL, reduced-motion, and primary homepage carry identical
   assert.equal(mainMarkup(reduced), mainMarkup(accessible))
   const ids = sectionIds(home)
   assert.ok(ids.length >= 10, `homepage story has ${ids.length} sections`)
-  for (const required of ['hero', 'proof-strip', 'how-it-works', 'flagship', 'products', 'engine', 'proof', 'boundaries', 'founder', 'cta']) {
+  for (const required of ['hero', 'offers', 'proof-strip', 'how-it-works', 'flagship', 'products', 'engine', 'proof', 'boundaries', 'founder', 'cta']) {
     assert.ok(ids.includes(required), `missing section ${required}`)
   }
 })

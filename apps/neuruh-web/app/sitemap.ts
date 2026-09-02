@@ -8,6 +8,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     '/',
     '/offers',
+    '/ask',
+    '/work-with-neuruh',
+    '/thank-you',
+    '/cases',
     '/products',
     '/how-it-works',
     '/proof',
@@ -28,6 +32,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `https://neuruh.com${route}`,
     lastModified,
     changeFrequency: route === '/' ? 'weekly' : 'monthly',
-    priority: route === '/' ? 1 : route === '/offers' || route === '/products' || route === '/proof' || route === '/refusals' ? 0.8 : 0.6,
+    priority: route === '/' ? 1 : route === '/offers' || route === '/ask' || route === '/work-with-neuruh' || route === '/products' || route === '/proof' || route === '/cases' || route === '/refusals' ? 0.8 : 0.6,
   }))
 }

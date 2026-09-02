@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import signature from '../../../../public/truth/signature.json'
 import { getPublicObject, getPublicSnapshot } from '../../../../packages/public-truth/client'
+import { ProofCardGrid } from '../../components/ProofCardGrid'
 import { ContradictionObject } from '../../components/TruthPrimitives'
 
 export const metadata: Metadata = {
@@ -78,7 +79,19 @@ export default function ProofPage() {
         </div>
       </section>
 
-      <section className="sec sec-alt" aria-labelledby="not-h">
+      <section className="sec sec-alt" aria-labelledby="proof-cards-h">
+        <div className="sec-inner">
+          <p className="sec-eyebrow">Public-safe cards</p>
+          <h2 className="sec-h" id="proof-cards-h">Show the magic. Never ship the factory.</h2>
+          <p className="sec-sub">
+            Seven public-safe projections — including IN_REVIEW items named so they are not mistaken for live
+            products. No private organ SHAs as marketing copy. No customer data.
+          </p>
+          <ProofCardGrid />
+        </div>
+      </section>
+
+      <section className="sec" aria-labelledby="not-h">
         <div className="sec-inner">
           <h2 className="sec-h" id="not-h">What is not claimed</h2>
           <p className="sec-sub">

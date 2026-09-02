@@ -7,6 +7,9 @@ const primary = [
 ] as const
 
 const explore = [
+  ['Ask Neuruh', '/ask'],
+  ['Work with Neuruh', '/work-with-neuruh'],
+  ['Cases', '/cases'],
   ['How it works', '/how-it-works'],
   ['Founder', '/founder'],
   ['Contact', '/contact'],
@@ -31,7 +34,7 @@ export function SiteNav() {
             {explore.map(([label, href]) => <Link key={href} href={href}>{label}</Link>)}
           </div>
         </details>
-        <Link className="work-cta" href="/contact">Work with us</Link>
+        <Link className="work-cta" href="/work-with-neuruh">Work with us</Link>
       </nav>
     </header>
   )

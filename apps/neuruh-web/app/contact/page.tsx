@@ -5,20 +5,56 @@ export const metadata: Metadata = {
   alternates: { canonical: '/contact' },
   title: 'Contact',
   description:
-    'Work with Neuruh: pilots on governed execution and evidence systems, real-estate intelligence, and custom domain engines. Direct line to the founder.',
+    'Route the work: pick a scoped offer, ask Neuruh which public path fits, or email the founder for custom engagements.',
 }
+
+const ROUTES = [
+  {
+    title: 'A scoped offer',
+    body: 'Data Rescue, Opportunity Dossier, or Workflow Sprint — fixed scope, live checkout.',
+    href: '/offers',
+    cta: 'See offers',
+  },
+  {
+    title: 'Not sure which',
+    body: 'Ask Neuruh returns three public cards: FASTEST, BEST VALUE, CUSTOM.',
+    href: '/ask',
+    cta: 'Ask Neuruh',
+  },
+  {
+    title: 'Already checked out',
+    body: 'This static site has no payment webhook. The handoff page tells you what happens next.',
+    href: '/thank-you',
+    cta: 'Open the handoff',
+  },
+] as const
 
 export default function ContactPage() {
   return (
     <main className="semantic-page" id="main">
       <header className="semantic-hero">
         <p className="n-label">Contact</p>
-        <h1>Talk to the founder.</h1>
+        <h1>Start with the right path.</h1>
         <p className="t-lede">
-          Neuruh is founder-operated. There is no sales team, no form that feeds a CRM, and no autoresponder — mail
-          goes to the person who built the systems on this site.
+          Most work should go through a scoped offer. If it does not fit a card, mail goes to the founder — there is
+          no sales team, no CRM form, and no autoresponder.
         </p>
       </header>
+
+      <section className="semantic-section" aria-labelledby="contact-routes">
+        <h2 id="contact-routes">Route the work</h2>
+        <dl className="zeros-ledger">
+          {ROUTES.map((route) => (
+            <div key={route.href}>
+              <dt>{route.title}</dt>
+              <dd>
+                {route.body}{' '}
+                <Link className="text-link" href={route.href}>{route.cta} →</Link>
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </section>
 
       <section className="semantic-section" aria-labelledby="contact-path">
         <h2 id="contact-path">The direct path</h2>

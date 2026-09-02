@@ -31,6 +31,14 @@ export function OffersGrid() {
                 <dt>You receive:</dt>
                 <dd>{offer.receive}</dd>
               </div>
+              <div>
+                <dt>Turnaround:</dt>
+                <dd>{offer.turnaround}</dd>
+              </div>
+              <div>
+                <dt>Proof:</dt>
+                <dd>{offer.proof}</dd>
+              </div>
             </dl>
 
             <a
@@ -62,6 +70,12 @@ export function OffersGrid() {
           ))}
         </ol>
       </section>
+      <p className={styles.scope} style={{ marginTop: '1.35rem' }}>
+        Not sure which path? <a className="v2-link" href="/ask">Ask Neuruh</a>
+        {' · '}
+        After checkout, the handoff is <a className="v2-link" href="/thank-you">/thank-you</a>
+        {' — this site does not receive payment webhooks.'}
+      </p>
     </div>
   )
 }

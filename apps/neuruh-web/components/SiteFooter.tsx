@@ -11,6 +11,8 @@ const columns: ReadonlyArray<readonly [string, ReadonlyArray<readonly [string, s
   ]],
   ['Company', [
     ['Offers', '/offers'],
+    ['Ask Neuruh', '/ask'],
+    ['Work with Neuruh', '/work-with-neuruh'],
     ['Products', '/products'],
     ['Founder', '/founder'],
     ['Contact', '/contact'],
@@ -18,6 +20,7 @@ const columns: ReadonlyArray<readonly [string, ReadonlyArray<readonly [string, s
   ]],
   ['Truth', [
     ['Proof', '/proof'],
+    ['Cases', '/cases'],
     ['Boundaries', '/refusals'],
     ['Open source', '/open-source'],
     ['Accessible route', '/accessible'],

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { getPublicObject, getPublicObjects, getPublicSnapshot } from '../../../packages/public-truth/client'
+import { PUBLIC_OFFERS } from '../lib/publicOffers'
 import { PipelineTrace } from './PipelineTrace'
 
 /**
@@ -111,6 +112,32 @@ export function HomeV2() {
             <div className="rl"><span>authority</span><b>granted · scoped</b></div>
             <div className="rl"><span>outcome</span><b>recorded</b></div>
             <div className="sha">sha e2b71fa · court {strip.dsCourt?.value.toLocaleString('en-US')} green</div>
+          </div>
+        </div>
+      </section>
+
+      {/* 01b · OFFERS STRIP — commercial path without redesigning the foundry */}
+      <section className="sec" data-section="offers" aria-labelledby="home-offers-h">
+        <div className="sec-inner">
+          <p className="sec-eyebrow">Start here</p>
+          <h2 className="sec-h" id="home-offers-h">Three fixed-scope ways to start.</h2>
+          <p className="sec-sub">
+            Buy a scoped piece of work, or ask which public path fits. The cashiers are the live ones already on
+            neuruh.com.
+          </p>
+          <div className="ev-grid">
+            {PUBLIC_OFFERS.map((offer) => (
+              <article className="ev-card" key={offer.id}>
+                <p className="ev-k">{offer.id} · {offer.price}</p>
+                <p className="claim">{offer.name}</p>
+                <p className="ev-line">{offer.promise}</p>
+                <a className="v2-link" href={offer.href} rel="noopener noreferrer">{offer.cta} →</a>
+              </article>
+            ))}
+          </div>
+          <div className="row" style={{ marginTop: 26 }}>
+            <Link className="v2-btn v2-btn-primary" href="/offers">Compare the offers</Link>
+            <Link className="v2-btn v2-btn-secondary" href="/ask">Ask Neuruh</Link>
           </div>
         </div>
       </section>
@@ -346,7 +373,7 @@ export function HomeV2() {
             and receipted.
           </p>
           <div className="hero-ctas" style={{ justifyContent: 'center' }}>
-            <Link className="v2-btn v2-btn-primary" href="/contact">Work with Neuruh</Link>
+            <Link className="v2-btn v2-btn-primary" href="/work-with-neuruh">Work with Neuruh</Link>
             <Link className="v2-btn v2-btn-secondary" href="/products">Explore the systems</Link>
           </div>
         </div>

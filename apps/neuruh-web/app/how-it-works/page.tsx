@@ -42,8 +42,9 @@ export default function HowItWorksPage() {
         </div>
         <PipelineTrace />
         <div className="row" style={{ marginTop: 28 }}>
-          <Link className="v2-btn v2-btn-primary" href="/products">Explore the systems</Link>
-          <Link className="v2-btn v2-btn-secondary" href="/organism">See the architecture</Link>
+          <Link className="v2-btn v2-btn-primary" href="/offers">See the offers</Link>
+          <Link className="v2-btn v2-btn-secondary" href="/products">Explore the systems</Link>
+          <Link className="v2-btn v2-btn-ghost" href="/organism">See the architecture</Link>
         </div>
       </div>
     </main>

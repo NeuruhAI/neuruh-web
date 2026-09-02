@@ -18,7 +18,7 @@ export default function LegalPage() {
       <section className="semantic-section" aria-labelledby="privacy">
         <h2 id="privacy">Privacy</h2>
         <ul>
-          <li>Neuruh.com is a static, read-only site. It has no accounts, no login, and no forms.</li>
+          <li>Neuruh.com is a static, read-only site. It has no accounts, no login, and no forms that transmit answers. Ask Neuruh is a local chooser — it does not send what you click.</li>
           <li>We set no cookies and run no analytics or third-party trackers.</li>
           <li>Our hosting provider processes standard server logs (IP address, user agent, request path) to serve and secure the site.</li>
           <li>If you email us, we receive what you send and use it only to reply and work with you. Ask and we will delete the thread.</li>
