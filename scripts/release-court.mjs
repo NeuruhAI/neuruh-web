@@ -53,6 +53,23 @@ must('JSON-LD WebSite', home.includes('"@type":"WebSite"'))
 must('JSON-LD Service', home.includes('"@type":"Service"'))
 must('JSON-LD no factory', !FACTORY.test(home.match(/application\/ld\+json[\s\S]{0,4000}/)?.[0] ?? ''))
 
+// Quoted engagements: built products, no price, no cashier. The $799 per-market
+// figure is an internal recommendation only and must never reach a public page.
+const hub = pages['/work-with-neuruh']
+must('hub lists Property Scan', hub.includes('Property Scan'))
+must('hub lists Lead Rescue', hub.includes('Lead Rescue'))
+must('hub quoted CTA routes to /contact', /Request a quote/.test(hub) && /href="\/contact"/.test(hub))
+// Order-independent: Next embeds the whole RSC payload at the end of the document,
+// so splitting the HTML on a section heading proves nothing about which section a
+// link sits in. Assert the page total instead — the quoted section must not have
+// added a fourth cashier, and its CTAs must route to the contact surface.
+const hubCashiers = [...new Set(hub.match(/https:\/\/(?:book|buy|checkout)\.stripe\.com\/[A-Za-z0-9]+/g) ?? [])]
+must('hub carries only the three canonical cashiers', hubCashiers.length === 3 && hubCashiers.every((href) => CASHIERS.includes(href)), hubCashiers.join(' '))
+must('quoted CTAs route to the contact surface', (hub.match(/Request a quote/g) ?? []).length >= 2)
+for (const [route, document] of Object.entries(pages)) {
+  must(`${route} no recommended price leak`, !/\$\s?799\b/.test(document))
+}
+
 const security = await readFile(path.join(out, '.well-known/security.txt'), 'utf8')
 must('security.txt Contact is /security', security.includes('Contact: https://neuruh.com/security'))
 must('security.txt no mailto', !/mailto:/i.test(security))
@@ -77,4 +94,4 @@ must('snapshot live_connectivity false', snapshot.dataset.live_connectivity === 
 if (failures.length) {
   throw new Error(`RELEASE COURT FAILED\n${failures.join('\n')}`)
 }
-console.log('RELEASE COURT: PASS — export routes, OG, JSON-LD, cashiers, security.txt, robots, sitemap, private-IP, snapshot honesty')
+console.log('RELEASE COURT: PASS — export routes, OG, JSON-LD, cashiers, quoted engagements (no price/cashier), security.txt, robots, sitemap, private-IP, snapshot honesty')

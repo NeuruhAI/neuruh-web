@@ -85,3 +85,21 @@ test('hard zeros stay dated to the public snapshot and are not sold as live Stri
   assert.match(proof, /PUBLIC_HARD_ZEROS/)
   assert.match(refusals, /PUBLIC_HARD_ZEROS/)
 })
+
+test('quoted engagements are built products with no price and no cashier', async () => {
+  const catalog = await readFile('apps/neuruh-web/lib/publicOffers.ts', 'utf8')
+  const quoted = catalog.slice(catalog.indexOf('QUOTED_ENGAGEMENTS'))
+  assert.match(quoted, /id: 'Q-PROPERTY-SCAN'/)
+  assert.match(quoted, /id: 'Q-LEAD-RESCUE'/)
+  // No price, no dollar figure, no cashier: pricing is an unmade founder decision.
+  assert.doesNotMatch(quoted, /\bprice:/)
+  assert.doesNotMatch(quoted, /\$\s?\d/)
+  assert.doesNotMatch(quoted, /stripe\.com/)
+  // The $799 per-market recommendation is internal and must not appear anywhere public.
+  const hub = await readFile('apps/neuruh-web/components/WorkWithHub.tsx', 'utf8')
+  assert.doesNotMatch(hub, /\$\s?799\b/)
+  assert.doesNotMatch(catalog, /\$\s?799\b/)
+  // The quote path must route to the existing contact surface, not a new mailbox.
+  assert.match(quoted, /href: '\/contact'/)
+  assert.doesNotMatch(quoted, /mailto:/)
+})

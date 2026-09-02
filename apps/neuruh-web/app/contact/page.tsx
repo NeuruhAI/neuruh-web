@@ -22,6 +22,12 @@ const ROUTES = [
     cta: 'Ask Neuruh',
   },
   {
+    title: 'A quoted product',
+    body: 'Property Scan (one market) or Lead Rescue (one list). Built, courted, and priced by quote — no checkout.',
+    href: '/work-with-neuruh',
+    cta: 'See quoted work',
+  },
+  {
     title: 'Already checked out',
     body: 'This static site has no payment webhook. The handoff page tells you what happens next.',
     href: '/thank-you',

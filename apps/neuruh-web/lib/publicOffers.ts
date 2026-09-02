@@ -40,6 +40,49 @@ export const PUBLIC_OFFERS = [
   },
 ] as const
 
+/**
+ * Quoted engagements — canonical products with NO cashier.
+ *
+ * These are real, courted products (their packs are canonical on main in their own
+ * private repos) that fulfil today through a manual quote. They deliberately carry
+ * no price and no Stripe href: pricing is a founder decision that has not been made,
+ * and this site does not invent one. The checkout-link court asserts these never
+ * acquire a cashier, and the SEO court asserts no internal price recommendation
+ * reaches a public page.
+ */
+export const QUOTED_ENGAGEMENTS = [
+  {
+    id: 'Q-PROPERTY-SCAN',
+    scope: 'One market',
+    name: 'Property Scan',
+    promise:
+      'A ranked property list for exactly one county or equivalent market, with evidence and provenance — not contacts.',
+    provide: 'The market you want ranked, and the kind of asset you buy.',
+    receive:
+      'Ranked opportunities with parcel identity, the evidence and signal families behind each one, the risks and unknowns, and a next action for an operator.',
+    excludes: 'No owner contact data, no skip-trace, and no attorney phones. You receive the ranked result and its evidence, never the internals behind it.',
+    pricing: 'Quoted per market.',
+    href: '/contact',
+    cta: 'Request a quote',
+  },
+  {
+    id: 'Q-LEAD-RESCUE',
+    scope: 'One list',
+    name: 'Lead Rescue',
+    promise:
+      'Send the list you already have. Get back a cleaned, classified, DNC-aware, prioritized report and a receipt.',
+    provide: 'The list you already own, as a CSV or JSON export.',
+    receive:
+      'Normalized and deduplicated rows, a rescue classification per row, phone provenance, explicit DNC state, and priority bands — plus a receipt for the run.',
+    excludes: 'We do not call anyone. A phone present is never treated as callable, and an unknown DNC state is never recorded as clear.',
+    pricing: 'Quoted by list size.',
+    href: '/contact',
+    cta: 'Request a quote',
+  },
+] as const
+
+export type QuotedEngagementId = (typeof QUOTED_ENGAGEMENTS)[number]['id']
+
 export type PublicOfferId = (typeof PUBLIC_OFFERS)[number]['id']
 
 export const OFFER_NEXT_STEPS = [
