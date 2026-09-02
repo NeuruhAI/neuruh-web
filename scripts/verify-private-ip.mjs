@@ -36,6 +36,7 @@ const FORBIDDEN = [
   { id: 'customer-data', re: /customer PII|tenant dump|customer_data/i },
   { id: 'local-path', re: /(?:^|[\s"'`])\/(?:Users|home)\// },
   { id: 'secret-token', re: /(?:sk|ghp|github_pat)_[A-Za-z0-9_-]{12,}/ },
+  { id: 'private-github', re: /github\.com\/[^/\s"'`]+\/(?:neuruh-workers|cockpit|data-rescue)\b/i },
 ]
 
 const failures = []

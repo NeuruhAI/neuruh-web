@@ -54,6 +54,8 @@ test('commercial surfaces keep the three live cashiers and add handoff, work, ca
   assert.match(proof, /IN_REVIEW/)
   assert.match(proof, /xai-marketplace/)
   assert.match(proof, /jgi-dispatch-bridge/)
+  assert.match(proof, /MERGED \/ COURTED/)
+  assert.match(proof, /SHIPPED_LIVE/)
   assert.doesNotMatch(proof, /live listing/i)
   assert.match(contact, /\/thank-you/)
   assert.match(sitemap, /\/ask/)

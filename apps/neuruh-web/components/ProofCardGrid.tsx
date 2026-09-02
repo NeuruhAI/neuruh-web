@@ -9,7 +9,7 @@ export function ProofCardGrid() {
         <article key={card.id} className={styles.card} data-testid={`proof-card-${card.id}`}>
           <div className={styles.head}>
             <p className={styles.kicker}>{card.subject}</p>
-            <p className={`${styles.kicker} ${card.status === 'IN_REVIEW' ? styles.kickerWarn : styles.kickerIce}`}>
+            <p className={`${styles.kicker} ${card.status === 'IN_REVIEW' || card.status === 'MERGED / COURTED' ? styles.kickerWarn : styles.kickerIce}`}>
               {card.status}
             </p>
           </div>

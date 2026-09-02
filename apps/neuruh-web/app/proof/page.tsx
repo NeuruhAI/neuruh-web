@@ -84,8 +84,9 @@ export default function ProofPage() {
           <p className="sec-eyebrow">Public-safe cards</p>
           <h2 className="sec-h" id="proof-cards-h">Show the magic. Never ship the factory.</h2>
           <p className="sec-sub">
-            Seven public-safe projections — including IN_REVIEW items named so they are not mistaken for live
-            products. No private organ SHAs as marketing copy. No customer data.
+            Merged is not live. IN_REVIEW is not listed. A live cashier is not automated fulfillment. SHIP-001 on
+            neuruh.com is SHIPPED_LIVE. JGI, Switchboard, Honey Pot, and Cockpit are merged/courted — not live
+            products. No private-repo links. No factory internals.
           </p>
           <ProofCardGrid />
         </div>

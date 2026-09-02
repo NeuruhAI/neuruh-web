@@ -18,7 +18,7 @@ export default function GalaxyPage() {
       <header className="semantic-hero">
         <p className="n-label">Cockpit / Galaxy</p>
         <h1>Everything that exists, and how it relates.</h1>
-        <p className="t-lede">The live system map of Neuruh — products, organs, evidence, and decision boundaries — including the one relationship it refuses to overstate.</p>
+        <p className="t-lede">The public, curated map of Neuruh — products, organs, evidence, and decision boundaries — including the one relationship it refuses to overstate. Merged is not live. This page is not a live operator console.</p>
         <TruthModeBadge mode={galaxy.truth_mode} />
         <LastVerified at={galaxy.last_verified_at} />
       </header>

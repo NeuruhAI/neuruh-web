@@ -19,8 +19,9 @@ export default function CasesPage() {
             What ran. What the receipt shows.
           </h1>
           <p className="sec-sub">
-            These are not customer testimonials. Revenue is $0 and customers are 0 until receipts change that. Each
-            case is a public-safe projection from dated evidence already on this site.
+            These are not customer testimonials. Revenue is $0 and customers are 0. Merged is not live. A live
+            cashier is not automated fulfillment. SHIP-001 on neuruh.com is SHIPPED_LIVE; ORDER→FR remains draft.
+            Each case is a public-safe projection from dated evidence already on this site.
           </p>
           <CaseStudyGrid />
           <div className="row" style={{ marginTop: 28 }}>

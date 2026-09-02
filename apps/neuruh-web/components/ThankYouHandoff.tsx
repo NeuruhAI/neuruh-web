@@ -23,7 +23,8 @@ export function ThankYouHandoff() {
     <div data-testid="thank-you-handoff">
       <p className={styles.note}>
         This site is a static export. It does not receive Stripe webhooks and cannot confirm a payment from here.
-        If you checked out, the receipt went to the address you used at checkout — we follow up from that address.
+        A live cashier is not automated fulfillment. If you checked out, the receipt went to the address you used
+        at checkout — a founder follows up from that address.
       </p>
 
       {offer ? (

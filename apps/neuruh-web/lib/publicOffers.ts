@@ -7,7 +7,7 @@ export const PUBLIC_OFFERS = [
     provide: 'The files, export, or records — plus what is wrong with them.',
     receive: 'A usable recovered or normalized output, plus a concise note on what changed and anything still missing.',
     turnaround: 'Typically 2–5 business days after we have your inputs.',
-    proof: 'Live public offer on neuruh.com with a fixed checkout. Founder-operated delivery — we do not claim a customer-result library.',
+    proof: 'Live cashier on neuruh.com. Founder-operated delivery after intake — a live cashier is not automated fulfillment.',
     price: '$299',
     href: 'https://book.stripe.com/bJe5kDagndYugJlaow2cg04',
     cta: 'Start Data Rescue',
@@ -20,7 +20,7 @@ export const PUBLIC_OFFERS = [
     provide: 'The target and the decision or question you need answered.',
     receive: 'The evidence, key upside and risks, and a clear recommended next move in one concise dossier.',
     turnaround: 'Typically 5–10 business days after we have the target and the question.',
-    proof: 'Same public evidence discipline as DeedSonar: sources kept, recommendation explicit, no invented confidence.',
+    proof: 'Same public evidence discipline as DeedSonar: sources kept, recommendation explicit. A live cashier is not automated fulfillment.',
     price: '$499',
     href: 'https://book.stripe.com/8x2cN574b1bIakXgMU2cg05',
     cta: 'Order the Dossier',
@@ -33,7 +33,7 @@ export const PUBLIC_OFFERS = [
     provide: 'The current process, the tools involved, and the result you want.',
     receive: 'A scoped working workflow and the handoff needed to run it.',
     turnaround: 'Typically 2–3 weeks after we have the current process and the desired result.',
-    proof: 'Same public pipeline as How it works: scoped action, documented handoff, a record of what ran.',
+    proof: 'Same public pipeline as How it works: scoped action, documented handoff. A live cashier is not automated fulfillment.',
     price: '$1250',
     href: 'https://book.stripe.com/7sY00j1JRf2y2Sv4082cg06',
     cta: 'Start the Sprint',
@@ -53,7 +53,7 @@ export const OFFER_NEXT_STEPS = [
   },
   {
     title: 'Delivery',
-    body: 'We complete the scoped work and deliver the result back to that address.',
+    body: 'A founder completes the scoped work and delivers the result back to that address. A live cashier is not automated fulfillment.',
   },
 ] as const
 

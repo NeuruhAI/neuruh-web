@@ -1,3 +1,5 @@
+import { TRUTH_RULES } from './publicTruthRules'
+
 /**
  * Case studies compiled only from public-safe receipts already on this site.
  * No customer stories (customers: 0). No private organ SHAs as marketing copy.
@@ -18,14 +20,14 @@ export const PUBLIC_CASE_STUDIES = [
   {
     id: 'neuruh-com-launch',
     title: 'neuruh.com commercial launch',
-    status: 'LIVE',
+    status: 'SHIPPED_LIVE',
     asOf: '2026-09-01',
     problem: 'The organism site was visually complete and still commercially mute — a visitor could not buy a scoped piece of work.',
     whatRan: 'SHIP-001 put three fixed-scope offers on the existing art-direction surface, using the live Stripe payment links already in the catalog.',
-    receipt: 'Public merge 30947182 on NeuruhAI/neuruh-web · live cashiers O01 $299, O02 $499, O05 $1250 · this site.',
-    limitation: 'Launch is not revenue. Checkout exists; completed-customer results are not claimed.',
+    receipt: 'Public merge 30947182 on NeuruhAI/neuruh-web · SHIPPED_LIVE cashiers O01 $299, O02 $499, O05 $1250 · neuruh.com.',
+    limitation: `${TRUTH_RULES.ship001} ${TRUTH_RULES.liveCashierIsNotFulfillment} ${TRUTH_RULES.cashiersLiveOrderDraft}`,
     href: '/offers',
-    hrefLabel: 'See the live offers',
+    hrefLabel: 'See the live cashiers',
   },
   {
     id: 'liquidity-engine-synthetic',
@@ -34,8 +36,8 @@ export const PUBLIC_CASE_STUDIES = [
     asOf: '2026-08-24',
     problem: 'Field signals need a least-destructive next option, with authorization and a close — without pretending real money moved.',
     whatRan: 'The sealed candidate walks field signal → underwritten options → authorization → synthetic close, with every close labeled synthetic.',
-    receipt: '112 tests · 18/18 operating court · 100/100 browser checks · custody NeuruhAI/neuruh-liquidity-engine @ 7f2af00 (already public).',
-    limitation: 'AUTH=OFF. No real money. Owner contact and payouts remain manual.',
+    receipt: '112 tests · 18/18 operating court · 100/100 browser checks · public custody receipt already on this site (no private-repo link).',
+    limitation: `${TRUTH_RULES.mergedIsNotLive} AUTH=OFF. No real money. Owner contact and payouts remain manual.`,
     href: '/worlds/liquidity-engine',
     hrefLabel: 'Liquidity record',
   },
@@ -47,7 +49,7 @@ export const PUBLIC_CASE_STUDIES = [
     problem: 'Release candidates need dated courts before anyone is invited to treat them as live products.',
     whatRan: 'FindSellProfit, Bookeit, CurbClaim, and ProofOS carry vendored court receipts and truthful status labels on /products.',
     receipt: 'FindSellProfit tests on the public object · Bookeit 161 unit + 133 E2E · CurbClaim 202 · ProofOS 14 courts · receipts vendored in-repo.',
-    limitation: 'Sealed is not production. Fixture-backed surfaces stay labeled.',
+    limitation: `${TRUTH_RULES.mergedIsNotLive} Sealed is not production. Fixture-backed surfaces stay labeled.`,
     href: '/products',
     hrefLabel: 'All products',
   },
@@ -59,7 +61,7 @@ export const PUBLIC_CASE_STUDIES = [
     problem: 'Open work has to be countable and secret-scanned, or “open source” is a vibe.',
     whatRan: 'The public-commons object publishes a dated census of public repositories, passing tests, and a zero-hit secret scan.',
     receipt: 'Compiled public-truth snapshot · public_code_repositories, passing_tests, secret_scan_hits=0 · /open-source.',
-    limitation: 'A commons census is not a claim about private estate inventory.',
+    limitation: 'A commons census is not a claim about private estate inventory. The public org page is not a private-repo index.',
     href: '/open-source',
     hrefLabel: 'Open source',
   },
