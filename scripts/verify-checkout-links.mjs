@@ -48,6 +48,20 @@ for (const offer of CANONICAL_CASHIERS) {
   }
 }
 
+// Quoted engagements are canonical products with NO cashier and NO price.
+// If either ever acquires one it must come through a founder pricing decision,
+// not a quiet edit, so the court fails closed here.
+const QUOTED_IDS = ['Q-PROPERTY-SCAN', 'Q-LEAD-RESCUE']
+const quotedBlock = catalog.slice(catalog.indexOf('QUOTED_ENGAGEMENTS'))
+for (const id of QUOTED_IDS) {
+  if (!quotedBlock.includes(`id: '${id}'`)) failures.push(`quoted catalog missing ${id}`)
+}
+if (STRIPE_RE.test(quotedBlock)) failures.push('quoted engagement carries a Stripe cashier')
+STRIPE_RE.lastIndex = 0
+if (/\bprice:/.test(quotedBlock)) failures.push('quoted engagement carries a price field')
+if (/\$\s?\d/.test(quotedBlock)) failures.push('quoted engagement carries a dollar amount')
+if ((catalog.match(/id: 'O0/g) ?? []).length !== 3) failures.push('cashier catalog must stay exactly 3 offers')
+
 if ((ask.match(/lane: '/g) ?? []).length !== 3) failures.push('Ask Neuruh must emit exactly 3 lanes')
 if (!ask.includes("ASK_LANES = ['FASTEST', 'BEST VALUE', 'CUSTOM']")) {
   failures.push('Ask Neuruh lanes must remain FASTEST / BEST VALUE / CUSTOM')
@@ -98,4 +112,5 @@ if (!skipLive) {
 if (failures.length) {
   throw new Error(`checkout-link court FAILED\n${failures.join('\n')}`)
 }
-console.log(`checkout-link: PASS — ${CANONICAL_CASHIERS.length} existing cashiers only, Ask output max 3`)
+const htmlMode = htmlHits.length ? `built HTML (${htmlHits.length} refs)` : 'source + live only (no build output present)'
+console.log(`checkout-link: PASS — ${CANONICAL_CASHIERS.length} existing cashiers only, ${QUOTED_IDS.length} quoted engagements with no cashier, Ask output max 3 [${htmlMode}]`)
