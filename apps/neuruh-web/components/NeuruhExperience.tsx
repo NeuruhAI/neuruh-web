@@ -163,8 +163,8 @@ export function NeuruhExperience({
                       <Link className="n-btn n-btn--secondary" href="/proof">See the proof</Link>
                     </div>
                     <p className="hero-signal">
-                      1 product in production · 4 sealed candidates · 18 operating-estate services · 36 open-source repos
-                      <span className="hero-signal__meta">dated snapshot on /proof · as of 2026-08-23 · not live organ products</span>
+                      1 product in production · 4 sealed candidates · 18 live services · 36 open-source repos
+                      <span className="hero-signal__meta">receipts on /proof · as of 2026-08-23</span>
                     </p>
                     <p className="hero-domains" aria-label="Domains Neuruh operates in">
                       Real estate · Commerce · Local services · Asset recovery · Venture systems · Proof
