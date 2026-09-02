@@ -1,11 +1,12 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
+import { PUBLIC_HARD_ZEROS } from '../../lib/publicHardZeros'
+import { pageMeta } from '../../lib/publicSeo'
 
-export const metadata: Metadata = {
-  alternates: { canonical: '/refusals' },
+export const metadata = pageMeta({
+  path: '/refusals',
   title: 'Boundaries',
   description: 'What Neuruh refuses to fake — the operating laws that keep every other number on this site worth believing, plus the hard zeros stated unprompted.',
-}
+})
 
 const LAWS = [
   ['No fake live status.', 'If a number is a dated snapshot, it says so on the surface that shows it. Nothing on this site pretends to be a live feed — live connectivity is NONE and labeled.'],
@@ -48,8 +49,8 @@ export default function BoundariesPage() {
       </section>
       <section className="sec sec-alt" aria-labelledby="zeros-h">
         <div className="sec-inner" style={{ maxWidth: '56rem' }}>
-          <h2 className="sec-h" id="zeros-h">The hard zeros — as of 2026-08-24</h2>
-          <p className="sec-sub">Simply where we are. They change on this page when receipts change them.</p>
+          <h2 className="sec-h" id="zeros-h">The hard zeros — as of {PUBLIC_HARD_ZEROS.asOf}</h2>
+          <p className="sec-sub">Dated public snapshot, not a live Stripe readout. They change on this page when receipts change them.</p>
           <dl className="zeros-ledger">
             {ZEROS.map(([label, value]) => (
               <div key={label}><dt>{label}</dt><dd>{value}</dd></div>

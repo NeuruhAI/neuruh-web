@@ -3,8 +3,8 @@
   "events_sha256": "5878da8a9dc0a49af08f955e255fb1c1407ebeacc844ad9fafde370343a77708",
   "generated_at": "2026-08-24T15:00:00.000Z",
   "limitation": "No signing key or production connector is present in P1.",
-  "manifest_sha256": "fdd43510537ad51a5b7ce17632a4ddc8323d0ecf88a86e52771d1f375b6d3c25",
+  "manifest_sha256": "1b62b0e27f337457640859808ceafa7558087f283d7b7de94f42fdd774a66e04",
   "schema_version": "1.0",
   "signature_kind": "CHECKSUM_ONLY_NOT_IDENTITY_SIGNATURE",
-  "snapshot_sha256": "2b184723f7168bcace42591da394a457a0b5a485abed8ccfd7d34c830e29b798"
+  "snapshot_sha256": "5bc3a676f329bd5c5c61e35d068189ce3a62cefeaca703e983559170a7ef4532"
 }

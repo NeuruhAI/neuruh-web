@@ -47,6 +47,7 @@ test('the governed trace runs and resets from the keyboard', async ({ page }) =>
 test('primary routes render truthfully without fake LIVE state', async ({ page }) => {
   const routes = [
     '/products', '/how-it-works', '/proof', '/refusals', '/founder', '/contact',
+    '/offers', '/ask', '/work-with-neuruh', '/work-with-us', '/thank-you', '/cases',
     '/organism', '/worlds', '/worlds/deedsonar', '/worlds/liquidity-engine',
     '/research/adaptive-intelligence', '/research/case-zero',
   ]
@@ -81,8 +82,45 @@ test('offers page shows three live cashier prices and exact Stripe hrefs', async
     await expect(card).toContainText(offer.price)
     await expect(card).toContainText('You provide:')
     await expect(card).toContainText('You receive:')
+    await expect(card).toContainText('Turnaround:')
+    await expect(card).toContainText('Proof:')
     await expect(page.getByTestId(`offer-cta-${offer.id}`)).toHaveAttribute('href', offer.href)
   }
+})
+
+test('Ask Neuruh returns exactly three public cards and never a fourth', async ({ page }) => {
+  await page.goto('/ask')
+  await expect(page.getByTestId('ask-output').locator('[data-lane]')).toHaveCount(3)
+  await expect(page.getByTestId('ask-card-fastest')).toContainText('Data Rescue')
+  await expect(page.getByTestId('ask-card-best-value')).toContainText('Opportunity Dossier')
+  await expect(page.getByTestId('ask-card-custom')).toContainText('Workflow Sprint')
+  await page.getByTestId('ask-intent-data').click()
+  await expect(page.getByTestId('ask-card-fastest')).toHaveAttribute('data-highlight', 'true')
+  await expect(page.getByTestId('ask-output').locator('[data-lane]')).toHaveCount(3)
+})
+
+test('work-with, thank-you, cases, and contact route without leaking a factory tour', async ({ page }) => {
+  await page.goto('/work-with-neuruh')
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Buy a scoped piece of work')
+  await expect(page.locator('a[href="https://book.stripe.com/bJe5kDagndYugJlaow2cg04"]')).toBeVisible()
+
+  await page.goto('/work-with-us')
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Buy a scoped piece of work')
+
+  await page.goto('/thank-you')
+  await expect(page.getByTestId('thank-you-handoff')).toContainText('does not receive Stripe webhooks')
+  await expect(page.getByTestId('thank-you-next')).toContainText('one business day')
+
+  await page.goto('/cases')
+  await expect(page.getByTestId('case-studies').locator('article')).toHaveCount(5)
+  await expect(page.getByTestId('case-neuruh-com-launch')).toContainText('30947182')
+
+  await page.goto('/proof')
+  await expect(page.getByTestId('proof-card-xai-marketplace')).toContainText('IN_REVIEW')
+  await expect(page.getByTestId('proof-card-xai-marketplace')).not.toContainText('book.stripe.com')
+
+  await page.goto('/contact')
+  await expect(page.getByRole('link', { name: /See offers/i })).toHaveAttribute('href', '/offers')
 })
 
 test('Galaxy exposes sourced relationships, preserves contradiction, and hosts the only scene', async ({ page }) => {

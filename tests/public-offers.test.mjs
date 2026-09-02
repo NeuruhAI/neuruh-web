@@ -18,6 +18,8 @@ test('public offers keep exact cashiers, explicit buyer inputs/outputs, and a bo
 
   assert.match(grid, /You provide:/)
   assert.match(grid, /You receive:/)
+  assert.match(grid, /Turnaround:/)
+  assert.match(grid, /Proof:/)
   assert.match(grid, /What happens next/)
 
   assert.match(catalog, /scope: 'One data problem'/)

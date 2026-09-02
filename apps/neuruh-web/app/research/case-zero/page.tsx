@@ -1,9 +1,13 @@
-import type { Metadata } from 'next'
 import { getPublicObject } from '../../../../../packages/public-truth/client'
 import { TruthModeBadge } from '../../../components/TruthPrimitives'
 import { SemanticPage } from '../../../components/SemanticPage'
+import { pageMeta } from '../../../lib/publicSeo'
 
-export const metadata: Metadata = { alternates: { canonical: '/research/case-zero' } }
+export const metadata = pageMeta({
+  path: '/research/case-zero',
+  title: 'Case Zero',
+  description: 'Latent Cross-Domain Emergence is a hypothesis, not a conclusion. Case Zero tests temporal precedence and predictive usefulness through sealed predictions and controls.',
+})
 
 export default function CaseZeroPage() {
   const object = getPublicObject('lcde-case-zero')!

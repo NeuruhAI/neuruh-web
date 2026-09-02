@@ -33,6 +33,7 @@ export function getTruthSummary() {
     limitation: snapshot.dataset.limitation,
     livingState: snapshot.living_state,
     liveConnectivity: snapshot.dataset.live_connectivity,
+    stale: snapshot.dataset.stale,
     sourceRef: snapshot.dataset.id,
   }
 }

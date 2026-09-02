@@ -1,10 +1,14 @@
-import type { Metadata } from 'next'
 import { getPublicObject } from '../../../../../packages/public-truth/client'
 import { SemanticPage } from '../../../components/SemanticPage'
+import { pageMeta } from '../../../lib/publicSeo'
 
 const lifecycle = ['raw', 'extracted', 'candidate', 'hypothesis', 'tested', 'canonical / rejected / superseded / quarantined']
 
-export const metadata: Metadata = { alternates: { canonical: '/research/adaptive-intelligence' } }
+export const metadata = pageMeta({
+  path: '/research/adaptive-intelligence',
+  title: 'Adaptive Intelligence',
+  description: 'A claim changes state only when evidence earns it. Contradiction, review, promotion, quarantine, rollback, and receipts are parts of learning.',
+})
 
 export default function AdaptiveIntelligencePage() {
   const object = getPublicObject('adaptive-intelligence')!

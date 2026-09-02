@@ -11,6 +11,8 @@ const columns: ReadonlyArray<readonly [string, ReadonlyArray<readonly [string, s
   ]],
   ['Company', [
     ['Offers', '/offers'],
+    ['Ask Neuruh', '/ask'],
+    ['Work with Neuruh', '/work-with-neuruh'],
     ['Products', '/products'],
     ['Founder', '/founder'],
     ['Contact', '/contact'],
@@ -18,6 +20,7 @@ const columns: ReadonlyArray<readonly [string, ReadonlyArray<readonly [string, s
   ]],
   ['Truth', [
     ['Proof', '/proof'],
+    ['Cases', '/cases'],
     ['Boundaries', '/refusals'],
     ['Open source', '/open-source'],
     ['Accessible route', '/accessible'],
@@ -53,7 +56,8 @@ export function SiteFooter() {
         <p>© 2026 Neuruh. Built and operated by its founder.</p>
         <p>
           Truth mode {truth.truthMode.replaceAll('_', ' ')} · snapshot verified{' '}
-          <time dateTime={truth.lastVerifiedAt}>{truth.lastVerifiedAt.slice(0, 10)}</time> · live connectivity NONE
+          <time dateTime={truth.lastVerifiedAt}>{truth.lastVerifiedAt.slice(0, 10)}</time>
+          {truth.stale ? ' · STALE' : ''} · living state {truth.livingState.replaceAll('_', ' ')} · live connectivity NONE
         </p>
       </div>
     </footer>

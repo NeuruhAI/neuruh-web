@@ -4,6 +4,13 @@
   "outputDirectory": "apps/neuruh-web/out",
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/work-with-us",
+      "destination": "/work-with-neuruh",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",

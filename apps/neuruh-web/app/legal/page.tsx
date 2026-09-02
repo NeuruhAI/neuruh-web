@@ -1,10 +1,10 @@
-import type { Metadata } from 'next'
+import { pageMeta } from '../../lib/publicSeo'
 
-export const metadata: Metadata = {
-  alternates: { canonical: '/legal' },
+export const metadata = pageMeta({
+  path: '/legal',
   title: 'Legal',
   description: 'Privacy and terms for Neuruh.com: a static, read-only site with no accounts, no cookies, and no analytics.',
-}
+})
 
 export default function LegalPage() {
   return (
@@ -18,10 +18,11 @@ export default function LegalPage() {
       <section className="semantic-section" aria-labelledby="privacy">
         <h2 id="privacy">Privacy</h2>
         <ul>
-          <li>Neuruh.com is a static, read-only site. It has no accounts, no login, and no forms.</li>
+          <li>Neuruh.com is a static, read-only site. It has no accounts, no login, and no forms that transmit answers. Ask Neuruh is a local chooser — it does not send what you click.</li>
           <li>We set no cookies and run no analytics or third-party trackers.</li>
           <li>Our hosting provider processes standard server logs (IP address, user agent, request path) to serve and secure the site.</li>
-          <li>If you email us, we receive what you send and use it only to reply and work with you. Ask and we will delete the thread.</li>
+          <li>If you send mail to an address published on this site, treat receipt as unproven until a reply exists. Ask and we will delete the thread if one exists.</li>
+          <li>Security disclosure: the public-safe path is <a className="text-link" href="/security">/security</a> and <a className="text-link" href="/.well-known/security.txt">/.well-known/security.txt</a>. This site does not prove that any mailbox receives mail.</li>
         </ul>
       </section>
 

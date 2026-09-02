@@ -1,14 +1,14 @@
-import type { Metadata } from 'next'
 import { getPublicObject } from '../../../../packages/public-truth/client'
 import { AccessibleGalaxy } from '../../components/AccessibleGalaxy'
 import { ContradictionObject, LastVerified, TruthModeBadge } from '../../components/TruthPrimitives'
 import { GalaxyImmersive } from '../../components/GalaxyImmersive'
+import { pageMeta } from '../../lib/publicSeo'
 
-export const metadata: Metadata = {
-  alternates: { canonical: '/galaxy' },
+export const metadata = pageMeta({
+  path: '/galaxy',
   title: 'Galaxy',
-  description: 'The portfolio self-model: products, organs, evidence, dependencies, state, and decision boundaries — with its one unresolved contradiction preserved in view.',
-}
+  description: 'The public curated map of Neuruh — products, organs, evidence, and decision boundaries — with its one unresolved contradiction preserved in view. Not a live operator console.',
+})
 
 export default function GalaxyPage() {
   const galaxy = getPublicObject('galaxy')!
@@ -18,7 +18,7 @@ export default function GalaxyPage() {
       <header className="semantic-hero">
         <p className="n-label">Cockpit / Galaxy</p>
         <h1>Everything that exists, and how it relates.</h1>
-        <p className="t-lede">The live system map of Neuruh — products, organs, evidence, and decision boundaries — including the one relationship it refuses to overstate.</p>
+        <p className="t-lede">The public, curated map of Neuruh — products, organs, evidence, and decision boundaries — including the one relationship it refuses to overstate. Merged is not live. This page is not a live operator console.</p>
         <TruthModeBadge mode={galaxy.truth_mode} />
         <LastVerified at={galaxy.last_verified_at} />
       </header>

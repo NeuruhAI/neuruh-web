@@ -1,12 +1,12 @@
-import type { Metadata } from 'next'
 import { OffersGrid } from '../../components/OffersGrid'
+import { pageMeta } from '../../lib/publicSeo'
 
-export const metadata: Metadata = {
-  alternates: { canonical: '/offers' },
+export const metadata = pageMeta({
+  path: '/offers',
   title: 'Offers',
   description:
     'Three fixed-scope ways to put Neuruh to work: Data Rescue, Opportunity Dossier, and Workflow Sprint.',
-}
+})
 
 export default function OffersPage() {
   return (
@@ -18,7 +18,8 @@ export default function OffersPage() {
             Three ways to put Neuruh to work.
           </h1>
           <p className="sec-sub">
-            Each offer is fixed in scope: what you send, what you receive, and what happens after checkout.
+            Each offer is fixed in scope: what you send, what you receive, typical turnaround, and what happens after
+            checkout. The cashiers below are the live payment links — not new ones.
           </p>
           <OffersGrid />
         </div>

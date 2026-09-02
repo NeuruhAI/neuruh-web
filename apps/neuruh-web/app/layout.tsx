@@ -1,36 +1,32 @@
 import type { Metadata } from 'next'
 import { Archivo, Inter, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
+import { JsonLd } from '../components/JsonLd'
 import { SiteNav } from '../components/SiteNav'
 import { SiteFooter } from '../components/SiteFooter'
+import { DEFAULT_DESCRIPTION, DEFAULT_TITLE, SITE_ORIGIN, pageMeta } from '../lib/publicSeo'
 
 const display = Archivo({ subsets: ['latin'], weight: ['600', '700'], variable: '--nf-display', display: 'swap' })
 const sans = Inter({ subsets: ['latin'], weight: ['400', '600'], variable: '--nf-sans', display: 'swap' })
 const mono = JetBrains_Mono({ subsets: ['latin'], weight: ['400'], variable: '--nf-mono', display: 'swap' })
 
+const home = pageMeta({
+  path: '/',
+  title: DEFAULT_TITLE,
+  description: DEFAULT_DESCRIPTION,
+  absoluteTitle: true,
+})
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://neuruh.com'),
+  metadataBase: new URL(SITE_ORIGIN),
   title: {
-    default: 'Neuruh — Governed AI systems that leave receipts',
+    default: DEFAULT_TITLE,
     template: '%s — Neuruh',
   },
-  description:
-    'Neuruh builds governed execution infrastructure for AI systems: nothing acts without checked authority, everything leaves a verifiable receipt, and what the system refuses is recorded as carefully as what it does.',
+  description: DEFAULT_DESCRIPTION,
   robots: { index: true, follow: true },
-  openGraph: {
-    type: 'website',
-    url: 'https://neuruh.com',
-    siteName: 'Neuruh',
-    title: 'Neuruh — Governed AI systems that leave receipts',
-    description:
-      'Nothing acts without checked authority. Everything leaves a verifiable receipt. What the system refuses is recorded as carefully as what it does.',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Neuruh — Governed AI systems that leave receipts',
-    description:
-      'Nothing acts without checked authority. Everything leaves a verifiable receipt. What the system refuses is recorded as carefully as what it does.',
-  },
+  openGraph: home.openGraph,
+  twitter: home.twitter,
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -42,6 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${display.variable} ${sans.variable} ${mono.variable}`}
     >
       <body>
+        <JsonLd />
         <a className="skip-link global-skip" href="#main">Skip to content</a>
         <SiteNav />
         {children}

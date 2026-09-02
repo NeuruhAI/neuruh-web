@@ -4,7 +4,7 @@
     "id": "neuruh-public-snapshot-2026-08-24",
     "label": "Public launch snapshot — founder-authorized go-live",
     "last_verified_at": "2026-08-24T15:00:00.000Z",
-    "limitation": "Dated local snapshot compiled from canon and repository receipts; no private or production connector is attached.",
+    "limitation": "Dated 2026-08-24 local snapshot compiled from canon and repository receipts; no private or production connector is attached. Unresolved contradictions are preserved. Not a live feed.",
     "live_connectivity": false,
     "source": {
       "class": "canonical_document",
@@ -13,7 +13,7 @@
       "ref": "src-alive-ruling",
       "title": "Neuruh Alive Canonical Product Ruling"
     },
-    "stale": false,
+    "stale": true,
     "stale_after": "2026-09-30T22:00:00.000Z",
     "truth_mode": "VERIFIED_SNAPSHOT"
   },

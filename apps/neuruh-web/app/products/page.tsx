@@ -1,13 +1,13 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
 import { getPublicObject } from '../../../../packages/public-truth/client'
 import { EvidenceDisclosure, MetricStrip } from '../../components/TruthPrimitives'
+import { pageMeta } from '../../lib/publicSeo'
 
-export const metadata: Metadata = {
-  alternates: { canonical: '/products' },
+export const metadata = pageMeta({
+  path: '/products',
   title: 'Products',
   description: 'The Neuruh systems: DeedSonar in production, plus the Liquidity Engine, FindSellProfit, Bookeit, CurbClaim, ProofOS, and the Venture Factory — each with real visuals and truthful status.',
-}
+})
 
 function ProductBlock({
   id, name, status, statusClass, line, media, alt, span = 'pc-span-6',

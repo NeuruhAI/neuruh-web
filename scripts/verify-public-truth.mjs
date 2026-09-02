@@ -9,7 +9,7 @@ try {
   const compiled = await compileTruthFile(
     'packages/public-truth/fixtures/verified-snapshot.input.json',
     temporary,
-    { evaluationTime: '2026-08-01T22:00:00.000Z' },
+    { evaluationTime: '2026-09-02T13:00:00.000Z' },
   )
   for (const file of ['snapshot.json', 'events.jsonl', 'signature.json']) {
     const [expected, actual] = await Promise.all([
