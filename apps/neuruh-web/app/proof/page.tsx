@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import signature from '../../../../public/truth/signature.json'
-import { getPublicObject, getPublicSnapshot } from '../../../../packages/public-truth/client'
+import { getPublicObject, getPublicObjects, getPublicSnapshot } from '../../../../packages/public-truth/client'
 import { ProofCardGrid } from '../../components/ProofCardGrid'
 import { ContradictionObject } from '../../components/TruthPrimitives'
 import { PUBLIC_HARD_ZEROS } from '../../lib/publicHardZeros'
@@ -33,6 +33,8 @@ export default function ProofPage() {
   const liquidity = getPublicObject('liquidity-engine')!
   const fsp = getPublicObject('find-sell-profit')!
   const galaxy = getPublicObject('galaxy')!
+  const court = getPublicObject('release-court')!
+  const claude = getPublicObject('dist-claude-code')!
   const n = (o: typeof ds, name: string) => o.metrics?.find((m) => m.name === name)?.value
   const d = (o: typeof ds) => o.metrics?.[0]?.as_of.slice(0, 10)
   return (
@@ -70,6 +72,11 @@ export default function ProofPage() {
             <EvidenceCard
               claim="The operating estate is counted under published rules."
               lines={[`<b>${n(census, 'canonical_active_runtimes')}</b> operating-estate services · <b>${n(census, 'repositories_under_custody')}</b> repositories · <b>${n(census, 'git_worktrees')}</b> worktrees · census ${d(census)} · not live organ products`]}
+            />
+            <EvidenceCard
+              claim="Every public distribution surface is named with its real state."
+              lines={[`<b>${getPublicObjects('system').length}</b> surfaces · release court <b>${n(court, 'broken_links')}</b> broken links · <b>${n(court, 'serious_accessibility_violations')}</b> serious and <b>${n(court, 'critical_accessibility_violations')}</b> critical accessibility violations · ${d(court)}`, `submitted is not accepted · installing the plugin registers <b>${n(claude, 'plugin_skills')}</b> skills but does not install the Python package`]}
+              refLink={['Distribution proof →', '/proof/distribution']}
             />
             <EvidenceCard
               claim="This snapshot itself is verifiable."

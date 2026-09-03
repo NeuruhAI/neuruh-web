@@ -1,0 +1,42 @@
+/* Scoped to /proof/distribution. globals.css is a provenance-tracked ported artifact and is
+   deliberately not edited; these rules extend the shared truth primitives for this page only. */
+
+.ledger {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.surface {
+  border-left: 2px solid var(--border-strong);
+}
+
+/* A blocked or unverified surface must never read as an achievement. */
+.surface[data-distribution-state='LIVE_PROVEN'],
+.surface[data-distribution-state='CANONICAL'] {
+  border-left-color: var(--status-verified);
+}
+
+.surface[data-distribution-state='BLOCKED'],
+.surface[data-distribution-state='UNVERIFIED'] {
+  border-left-color: var(--text-faint);
+}
+
+.title {
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.ledger :global(.truth-badge[data-truth-mode='BLOCKED']) {
+  color: var(--text-muted);
+  border-style: dashed;
+}
+
+.ledger :global(.truth-badge[data-truth-mode='UNKNOWN']) {
+  color: var(--text-faint);
+  border-style: dotted;
+}
+
+/* Metric classification and date sit inline beside a gate value. */
+.inlineMeta {
+  display: inline;
+}

@@ -388,6 +388,261 @@
       ]
     },
     {
+      "id": "dist-claude-code",
+      "kind": "system",
+      "name": "Claude Code plugin",
+      "summary": "The repository is a Claude Code marketplace, installable with the plugin commands.",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "claim_class": "OBSERVED",
+      "maturity": "INSTALLABLE",
+      "status": "STABLE",
+      "last_verified_at": "2026-09-03T18:00:00.000Z",
+      "source_ref": "src-commons-distribution-20260903",
+      "evidence_summary": {
+        "status": "SUFFICIENT",
+        "statement": "Adding the marketplace from the public repository and installing the plugin registered four skills and one MCP server, and the manifest validates with no warnings.",
+        "source_refs": [
+          "src-commons-distribution-20260903"
+        ]
+      },
+      "public_route": "/proof/distribution",
+      "metrics": [
+        {
+          "name": "plugin_skills",
+          "value": 4,
+          "classification": "OBSERVED",
+          "unit": "skills",
+          "as_of": "2026-09-03T00:00:00.000Z",
+          "source_ref": "src-commons-distribution-20260903"
+        },
+        {
+          "name": "plugin_mcp_servers",
+          "value": 1,
+          "classification": "OBSERVED",
+          "unit": "servers",
+          "as_of": "2026-09-03T00:00:00.000Z",
+          "source_ref": "src-commons-distribution-20260903"
+        }
+      ],
+      "limitations": [
+        "Installing the plugin does not install the Python package. Without a prior package install the MCP server exits at import and the plugin lists no tools. The skills work immediately."
+      ]
+    },
+    {
+      "id": "dist-copilot-cli",
+      "kind": "system",
+      "name": "GitHub Copilot CLI",
+      "summary": "Installing through the Copilot command line.",
+      "truth_mode": "UNKNOWN",
+      "claim_class": "UNVALIDATED_CLAIM",
+      "maturity": "UNVERIFIED",
+      "status": "PLANNED",
+      "last_verified_at": "2026-09-03T18:00:00.000Z",
+      "source_ref": "src-commons-distribution-20260903",
+      "evidence_summary": {
+        "status": "SUFFICIENT",
+        "statement": "The plugin manifest this consumer reads is present in the repository.",
+        "source_refs": [
+          "src-commons-distribution-20260903"
+        ]
+      },
+      "public_route": "/proof/distribution",
+      "limitations": [
+        "The install command has never been run: the CLI is absent from the build host. This is not claimed to work."
+      ]
+    },
+    {
+      "id": "dist-cursor",
+      "kind": "system",
+      "name": "Cursor",
+      "summary": "Listing in the Cursor marketplace.",
+      "truth_mode": "BLOCKED",
+      "claim_class": "OBSERVED",
+      "maturity": "BLOCKED",
+      "status": "BLOCKED",
+      "last_verified_at": "2026-09-03T18:00:00.000Z",
+      "source_ref": "src-commons-distribution-20260903",
+      "evidence_summary": {
+        "status": "SUFFICIENT",
+        "statement": "The repository carries the manifests this consumer reads, and the plugin runs from a local source copy.",
+        "source_refs": [
+          "src-commons-distribution-20260903"
+        ]
+      },
+      "public_route": "/proof/distribution",
+      "limitations": [
+        "Submission is a web form completed under an account holder's identity. Nothing in the repository can complete it."
+      ]
+    },
+    {
+      "id": "dist-mcp-registry",
+      "kind": "system",
+      "name": "Official MCP Registry",
+      "summary": "Registering the server in the official registry.",
+      "truth_mode": "BLOCKED",
+      "claim_class": "OBSERVED",
+      "maturity": "BLOCKED",
+      "status": "BLOCKED",
+      "last_verified_at": "2026-09-03T18:00:00.000Z",
+      "source_ref": "src-commons-distribution-20260903",
+      "evidence_summary": {
+        "status": "SUFFICIENT",
+        "statement": "The registry expects a registry-verifiable package or a remote server, which depends on package publication.",
+        "source_refs": [
+          "src-commons-distribution-20260903"
+        ]
+      },
+      "public_route": "/proof/distribution",
+      "limitations": [
+        "Downstream of the packaging blocker. Nothing here can proceed until the package is published."
+      ]
+    },
+    {
+      "id": "dist-neuruh-com",
+      "kind": "system",
+      "name": "neuruh.com",
+      "summary": "The public site itself: one deployment serving the apex and www, built from the canonical source branch.",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "claim_class": "OBSERVED",
+      "maturity": "LIVE_PROVEN",
+      "status": "STABLE",
+      "last_verified_at": "2026-09-03T18:00:00.000Z",
+      "source_ref": "src-commons-distribution-20260903",
+      "evidence_summary": {
+        "status": "SUFFICIENT",
+        "statement": "The apex and www resolve to a single production deployment, and the release court for that source is green.",
+        "source_refs": [
+          "src-commons-distribution-20260903"
+        ]
+      },
+      "public_route": "/proof/distribution",
+      "limitations": [
+        "Verified by request and by deployment identity on the stated date; this snapshot holds no live connection to the host."
+      ]
+    },
+    {
+      "id": "dist-public-commons",
+      "kind": "system",
+      "name": "Public Commons",
+      "summary": "The published library catalogue and its index, verified against live GitHub.",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "claim_class": "OBSERVED",
+      "maturity": "CANONICAL",
+      "status": "STABLE",
+      "last_verified_at": "2026-09-03T18:00:00.000Z",
+      "source_ref": "src-commons-distribution-20260903",
+      "evidence_summary": {
+        "status": "SUFFICIENT",
+        "statement": "Every advertised repository, tag and package version was verified against GitHub, and every Python suite was re-run at the tag the index advertises.",
+        "source_refs": [
+          "src-commons-distribution-20260903"
+        ]
+      },
+      "public_route": "/proof/distribution",
+      "limitations": [
+        "The index court verifies advertised releases against the newest published release; it does not audit the contents of a release."
+      ]
+    },
+    {
+      "id": "dist-pypi",
+      "kind": "system",
+      "name": "PyPI",
+      "summary": "Publishing the package to the Python Package Index.",
+      "truth_mode": "BLOCKED",
+      "claim_class": "OBSERVED",
+      "maturity": "BLOCKED",
+      "status": "BLOCKED",
+      "last_verified_at": "2026-09-03T18:00:00.000Z",
+      "source_ref": "src-commons-distribution-20260903",
+      "evidence_summary": {
+        "status": "SUFFICIENT",
+        "statement": "The package declares its six dependencies as direct Git URLs, which the index rejects in distribution metadata. The blocker is package structure, not credentials.",
+        "source_refs": [
+          "src-commons-distribution-20260903"
+        ]
+      },
+      "public_route": "/proof/distribution",
+      "metrics": [
+        {
+          "name": "unclaimed_package_names",
+          "value": 7,
+          "classification": "OBSERVED",
+          "unit": "names",
+          "as_of": "2026-09-03T00:00:00.000Z",
+          "source_ref": "src-commons-distribution-20260903"
+        }
+      ],
+      "limitations": [
+        "Unblocking requires publishing the dependencies first and replacing direct-URL pins with version specifiers. Credentials alone would buy one rejected upload."
+      ]
+    },
+    {
+      "id": "dist-stdio-mcp",
+      "kind": "system",
+      "name": "Generic stdio MCP clients",
+      "summary": "Any MCP client can run the published server over stdio after the package is installed.",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "claim_class": "OBSERVED",
+      "maturity": "LIVE_PROVEN",
+      "status": "STABLE",
+      "last_verified_at": "2026-09-03T18:00:00.000Z",
+      "source_ref": "src-commons-distribution-20260903",
+      "evidence_summary": {
+        "status": "SUFFICIENT",
+        "statement": "From a fresh clone of the published tag, a clean-room install resolved every pinned dependency and the server completed initialize, tools/list and tools/call over MCP's newline-delimited framing.",
+        "source_refs": [
+          "src-commons-distribution-20260903"
+        ]
+      },
+      "public_route": "/proof/distribution",
+      "metrics": [
+        {
+          "name": "mcp_tools_exposed",
+          "value": 3,
+          "classification": "OBSERVED",
+          "unit": "tools",
+          "as_of": "2026-09-03T00:00:00.000Z",
+          "source_ref": "src-commons-distribution-20260903"
+        }
+      ],
+      "limitations": [
+        "The server requires the package to be installed first; it is not a zero-install binary."
+      ]
+    },
+    {
+      "id": "dist-xai-grok",
+      "kind": "system",
+      "name": "xAI / Grok marketplace",
+      "summary": "A submission to the official third-party marketplace, pinned to the current release.",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "claim_class": "OBSERVED",
+      "maturity": "EXTERNAL_REVIEW",
+      "status": "INTEGRATING",
+      "last_verified_at": "2026-09-03T18:00:00.000Z",
+      "source_ref": "src-commons-distribution-20260903",
+      "evidence_summary": {
+        "status": "SUFFICIENT",
+        "statement": "The submission is open with all automated checks passing and is pinned to the current published release.",
+        "source_refs": [
+          "src-commons-distribution-20260903"
+        ]
+      },
+      "public_route": "/proof/distribution",
+      "metrics": [
+        {
+          "name": "automated_checks_passing",
+          "value": 3,
+          "classification": "OBSERVED",
+          "unit": "checks",
+          "as_of": "2026-09-03T00:00:00.000Z",
+          "source_ref": "src-commons-distribution-20260903"
+        }
+      ],
+      "limitations": [
+        "Submitted is not accepted. The entry is not live, and no action on this side advances it: it waits on external maintainer review."
+      ]
+    },
+    {
       "id": "execution-platform",
       "kind": "organ",
       "name": "Execution Platform",
@@ -573,6 +828,56 @@
       "public_route": "/worlds/lead-recipe-os",
       "limitations": [
         "The unresolved historical ingredient list is not reconstructed or claimed."
+      ]
+    },
+    {
+      "id": "liquidity-engine",
+      "kind": "world",
+      "name": "Neuruh Liquidity Engine",
+      "summary": "Turns field signals into verified, underwritten, governed liquidity options — ranked least-destructive first, through authorization to a synthetic close with receipts.",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "claim_class": "OBSERVED",
+      "maturity": "SHIP_CANDIDATE",
+      "status": "STABLE",
+      "last_verified_at": "2026-08-24T15:00:00.000Z",
+      "source_ref": "src-liquidity-receipt",
+      "evidence_summary": {
+        "status": "SUFFICIENT",
+        "statement": "Custody and court receipts from 2026-08-24 attest 112 tests, an 18/18 operating court, four closed vertical slices, 100/100 browser checks, and zero serious accessibility violations.",
+        "source_refs": [
+          "src-liquidity-receipt"
+        ]
+      },
+      "public_route": "/worlds/liquidity-engine",
+      "metrics": [
+        {
+          "name": "tests",
+          "value": 112,
+          "classification": "MEASURED",
+          "unit": "tests",
+          "as_of": "2026-08-24T00:00:00.000Z",
+          "source_ref": "src-liquidity-receipt"
+        },
+        {
+          "name": "operating_court_cases",
+          "value": 18,
+          "classification": "MEASURED",
+          "unit": "cases",
+          "as_of": "2026-08-24T00:00:00.000Z",
+          "source_ref": "src-liquidity-receipt"
+        },
+        {
+          "name": "browser_page_checks",
+          "value": 100,
+          "classification": "MEASURED",
+          "unit": "checks",
+          "as_of": "2026-08-24T00:00:00.000Z",
+          "source_ref": "src-liquidity-receipt"
+        }
+      ],
+      "limitations": [
+        "All data, transactions, and authorization are synthetic by contract (AUTH=OFF); no real money moves.",
+        "Owner contact, negotiation, legal review, execution, and payouts are manual."
       ]
     },
     {
@@ -828,11 +1133,132 @@
           "unit": "hits",
           "as_of": "2026-08-20T00:00:00.000Z",
           "source_ref": "src-commons-audit"
+        },
+        {
+          "name": "python_packages_tested",
+          "value": 33,
+          "classification": "OBSERVED",
+          "unit": "packages",
+          "as_of": "2026-09-03T00:00:00.000Z",
+          "source_ref": "src-commons-distribution-20260903"
+        },
+        {
+          "name": "python_tests_at_advertised_tags",
+          "value": 1336,
+          "classification": "MEASURED",
+          "unit": "tests",
+          "as_of": "2026-09-03T00:00:00.000Z",
+          "source_ref": "src-commons-distribution-20260903"
+        },
+        {
+          "name": "packages_matching_advertised_count",
+          "value": 32,
+          "classification": "MEASURED",
+          "unit": "packages",
+          "as_of": "2026-09-03T00:00:00.000Z",
+          "source_ref": "src-commons-distribution-20260903"
         }
       ],
       "limitations": [
         "One published repository (nimdp-validator) has a known-broken README, left pending founder-gated republication.",
         "Repository and secret-scan counts are from the dated 2026-08-20 audit and were not re-run on 2026-09-03; the test totals and the starter's install and MCP handshake were."
+      ]
+    },
+    {
+      "id": "release-court",
+      "kind": "proof",
+      "name": "Public release court",
+      "summary": "The gates every public release candidate must clear before it may be deployed: links, accessibility, secrets, private paths, and false live claims.",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "claim_class": "OBSERVED",
+      "maturity": "SYSTEM_COMPONENT",
+      "status": "STABLE",
+      "last_verified_at": "2026-09-03T18:00:00.000Z",
+      "source_ref": "src-commons-distribution-20260903",
+      "evidence_summary": {
+        "status": "SUFFICIENT",
+        "statement": "Each gate was run against the built release candidate. Accessibility used axe-core at desktop and mobile widths; links were resolved against real routes and files; secret and private-path scans ran over the working tree.",
+        "source_refs": [
+          "src-commons-distribution-20260903"
+        ]
+      },
+      "public_route": "/proof/distribution",
+      "metrics": [
+        {
+          "name": "broken_links",
+          "value": 0,
+          "classification": "MEASURED",
+          "unit": "links",
+          "as_of": "2026-09-03T00:00:00.000Z",
+          "source_ref": "src-commons-distribution-20260903"
+        },
+        {
+          "name": "serious_accessibility_violations",
+          "value": 0,
+          "classification": "MEASURED",
+          "unit": "violations",
+          "as_of": "2026-09-03T00:00:00.000Z",
+          "source_ref": "src-commons-distribution-20260903"
+        },
+        {
+          "name": "critical_accessibility_violations",
+          "value": 0,
+          "classification": "MEASURED",
+          "unit": "violations",
+          "as_of": "2026-09-03T00:00:00.000Z",
+          "source_ref": "src-commons-distribution-20260903"
+        },
+        {
+          "name": "secret_scan_hits",
+          "value": 0,
+          "classification": "MEASURED",
+          "unit": "hits",
+          "as_of": "2026-09-03T00:00:00.000Z",
+          "source_ref": "src-commons-distribution-20260903"
+        },
+        {
+          "name": "private_path_leaks",
+          "value": 0,
+          "classification": "MEASURED",
+          "unit": "leaks",
+          "as_of": "2026-09-03T00:00:00.000Z",
+          "source_ref": "src-commons-distribution-20260903"
+        },
+        {
+          "name": "false_live_claims",
+          "value": 0,
+          "classification": "MEASURED",
+          "unit": "claims",
+          "as_of": "2026-09-03T00:00:00.000Z",
+          "source_ref": "src-commons-distribution-20260903"
+        },
+        {
+          "name": "pages_checked",
+          "value": 35,
+          "classification": "MEASURED",
+          "unit": "pages",
+          "as_of": "2026-09-03T00:00:00.000Z",
+          "source_ref": "src-commons-distribution-20260903"
+        },
+        {
+          "name": "internal_references_checked",
+          "value": 1580,
+          "classification": "MEASURED",
+          "unit": "references",
+          "as_of": "2026-09-03T00:00:00.000Z",
+          "source_ref": "src-commons-distribution-20260903"
+        },
+        {
+          "name": "accessibility_viewports",
+          "value": 2,
+          "classification": "MEASURED",
+          "unit": "viewports",
+          "as_of": "2026-09-03T00:00:00.000Z",
+          "source_ref": "src-commons-distribution-20260903"
+        }
+      ],
+      "limitations": [
+        "Gates are measured against a built candidate on the stated date. A later source change requires re-running them; rendering this page does not re-verify anything."
       ]
     },
     {
@@ -867,56 +1293,6 @@
       "limitations": [
         "Control-plane binding is a local deterministic adapter; no isolated external preview exists.",
         "Pricing is a hypothesis."
-      ]
-    },
-    {
-      "id": "liquidity-engine",
-      "kind": "world",
-      "name": "Neuruh Liquidity Engine",
-      "summary": "Turns field signals into verified, underwritten, governed liquidity options — ranked least-destructive first, through authorization to a synthetic close with receipts.",
-      "truth_mode": "VERIFIED_SNAPSHOT",
-      "claim_class": "OBSERVED",
-      "maturity": "SHIP_CANDIDATE",
-      "status": "STABLE",
-      "last_verified_at": "2026-08-24T15:00:00.000Z",
-      "source_ref": "src-liquidity-receipt",
-      "evidence_summary": {
-        "status": "SUFFICIENT",
-        "statement": "Custody and court receipts from 2026-08-24 attest 112 tests, an 18/18 operating court, four closed vertical slices, 100/100 browser checks, and zero serious accessibility violations.",
-        "source_refs": [
-          "src-liquidity-receipt"
-        ]
-      },
-      "public_route": "/worlds/liquidity-engine",
-      "metrics": [
-        {
-          "name": "tests",
-          "value": 112,
-          "classification": "MEASURED",
-          "unit": "tests",
-          "as_of": "2026-08-24T00:00:00.000Z",
-          "source_ref": "src-liquidity-receipt"
-        },
-        {
-          "name": "operating_court_cases",
-          "value": 18,
-          "classification": "MEASURED",
-          "unit": "cases",
-          "as_of": "2026-08-24T00:00:00.000Z",
-          "source_ref": "src-liquidity-receipt"
-        },
-        {
-          "name": "browser_page_checks",
-          "value": 100,
-          "classification": "MEASURED",
-          "unit": "checks",
-          "as_of": "2026-08-24T00:00:00.000Z",
-          "source_ref": "src-liquidity-receipt"
-        }
-      ],
-      "limitations": [
-        "All data, transactions, and authorization are synthetic by contract (AUTH=OFF); no real money moves.",
-        "Owner contact, negotiation, legal review, execution, and payouts are manual."
       ]
     }
   ],
