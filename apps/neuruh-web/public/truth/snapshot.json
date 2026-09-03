@@ -781,17 +781,18 @@
       "evidence_summary": {
         "source_refs": [
           "src-commons-audit",
-          "src-commons-org"
+          "src-commons-org",
+          "src-commons-distribution-20260903"
         ],
-        "statement": "The 2026-08-20 audit receipt carries a per-repository test table, license census, secret scan, and a live index verification against GitHub.",
+        "statement": "The 2026-08-20 audit receipt carries a per-repository test table, license census, secret scan, and a live index verification against GitHub. On 2026-09-03 the test totals were re-derived by re-running all 33 Python suites at the tags the index advertises, and the starter's clean-room install and stdio MCP handshake were re-proved from a fresh clone.",
         "status": "SUFFICIENT"
       },
       "id": "public-commons",
       "kind": "proof",
-      "last_verified_at": "2026-08-23T17:30:00.000Z",
+      "last_verified_at": "2026-09-03T18:00:00.000Z",
       "limitations": [
         "One published repository (nimdp-validator) has a known-broken README, left pending founder-gated republication.",
-        "Counts are from the dated 2026-08-20 audit; the live organization may have moved since."
+        "Repository and secret-scan counts are from the dated 2026-08-20 audit and were not re-run on 2026-09-03; the test totals and the starter's install and MCP handshake were."
       ],
       "maturity": "SHIP_CANDIDATE",
       "metrics": [
@@ -804,18 +805,18 @@
           "value": 36
         },
         {
-          "as_of": "2026-08-20T00:00:00.000Z",
+          "as_of": "2026-09-03T00:00:00.000Z",
           "classification": "MEASURED",
           "name": "passing_tests",
-          "source_ref": "src-commons-audit",
+          "source_ref": "src-commons-distribution-20260903",
           "unit": "tests",
-          "value": 1285
+          "value": 1352
         },
         {
-          "as_of": "2026-08-20T00:00:00.000Z",
+          "as_of": "2026-09-03T00:00:00.000Z",
           "classification": "OBSERVED",
           "name": "zero_dependency_packages",
-          "source_ref": "src-commons-audit",
+          "source_ref": "src-commons-distribution-20260903",
           "unit": "packages",
           "value": 32
         },
@@ -1147,6 +1148,13 @@
       "public_safe": true,
       "ref": "src-commons-audit",
       "title": "Public commons audit T40 receipt (2026-08-20)"
+    },
+    {
+      "class": "curated_snapshot",
+      "path_or_uri": "docs/receipts-external/commons-distribution-20260903.attestation.md",
+      "public_safe": true,
+      "ref": "src-commons-distribution-20260903",
+      "title": "Public commons and distribution re-verification (2026-09-03)"
     },
     {
       "class": "git_release",

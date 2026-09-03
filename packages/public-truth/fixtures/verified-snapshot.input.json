@@ -41,6 +41,13 @@
       "public_safe": true
     },
     {
+      "ref": "src-commons-distribution-20260903",
+      "class": "curated_snapshot",
+      "title": "Public commons and distribution re-verification (2026-09-03)",
+      "path_or_uri": "docs/receipts-external/commons-distribution-20260903.attestation.md",
+      "public_safe": true
+    },
+    {
       "ref": "src-commons-org",
       "class": "git_release",
       "title": "NeuruhAI public GitHub organization",
@@ -52,6 +59,13 @@
       "class": "decision_receipt",
       "title": "CurbClaim recovery courts and custody receipts (NeuruhAI/curbclaim@c73d5aca)",
       "path_or_uri": "docs/receipts-external/curbclaim/GITHUB_CUSTODY_RECEIPT.json",
+      "public_safe": true
+    },
+    {
+      "ref": "src-deedsonar-court",
+      "class": "decision_receipt",
+      "title": "DeedSonar production court — 1,510 green at e2b71fa (2026-08-23)",
+      "path_or_uri": "docs/receipts-external/deedsonar-court-20260823.attestation.md",
       "public_safe": true
     },
     {
@@ -118,6 +132,13 @@
       "public_safe": true
     },
     {
+      "ref": "src-liquidity-receipt",
+      "class": "decision_receipt",
+      "title": "Neuruh Liquidity Engine custody + courts (NeuruhAI/neuruh-liquidity-engine@7f2af00, 2026-08-24)",
+      "path_or_uri": "docs/receipts-external/liquidity-engine/HANDOFF_ATTESTATION.md",
+      "public_safe": true
+    },
+    {
       "ref": "src-neural-core",
       "class": "canonical_document",
       "title": "Jeramie Neural Core Architecture v1.0",
@@ -157,20 +178,6 @@
       "class": "signed_manifest",
       "title": "Neuruh World Manifest",
       "path_or_uri": "docs/canon/WORLD_MANIFEST.yaml",
-      "public_safe": true
-    },
-    {
-      "ref": "src-deedsonar-court",
-      "class": "decision_receipt",
-      "title": "DeedSonar production court — 1,510 green at e2b71fa (2026-08-23)",
-      "path_or_uri": "docs/receipts-external/deedsonar-court-20260823.attestation.md",
-      "public_safe": true
-    },
-    {
-      "ref": "src-liquidity-receipt",
-      "class": "decision_receipt",
-      "title": "Neuruh Liquidity Engine custody + courts (NeuruhAI/neuruh-liquidity-engine@7f2af00, 2026-08-24)",
-      "path_or_uri": "docs/receipts-external/liquidity-engine/HANDOFF_ATTESTATION.md",
       "public_safe": true
     }
   ],
@@ -777,14 +784,15 @@
       "claim_class": "OBSERVED",
       "maturity": "SHIP_CANDIDATE",
       "status": "STABLE",
-      "last_verified_at": "2026-08-23T17:30:00.000Z",
+      "last_verified_at": "2026-09-03T18:00:00.000Z",
       "source_ref": "src-commons-audit",
       "evidence_summary": {
         "status": "SUFFICIENT",
-        "statement": "The 2026-08-20 audit receipt carries a per-repository test table, license census, secret scan, and a live index verification against GitHub.",
+        "statement": "The 2026-08-20 audit receipt carries a per-repository test table, license census, secret scan, and a live index verification against GitHub. On 2026-09-03 the test totals were re-derived by re-running all 33 Python suites at the tags the index advertises, and the starter's clean-room install and stdio MCP handshake were re-proved from a fresh clone.",
         "source_refs": [
           "src-commons-audit",
-          "src-commons-org"
+          "src-commons-org",
+          "src-commons-distribution-20260903"
         ]
       },
       "public_route": "/open-source",
@@ -799,19 +807,19 @@
         },
         {
           "name": "passing_tests",
-          "value": 1285,
+          "value": 1352,
           "classification": "MEASURED",
           "unit": "tests",
-          "as_of": "2026-08-20T00:00:00.000Z",
-          "source_ref": "src-commons-audit"
+          "as_of": "2026-09-03T00:00:00.000Z",
+          "source_ref": "src-commons-distribution-20260903"
         },
         {
           "name": "zero_dependency_packages",
           "value": 32,
           "classification": "OBSERVED",
           "unit": "packages",
-          "as_of": "2026-08-20T00:00:00.000Z",
-          "source_ref": "src-commons-audit"
+          "as_of": "2026-09-03T00:00:00.000Z",
+          "source_ref": "src-commons-distribution-20260903"
         },
         {
           "name": "secret_scan_hits",
@@ -824,7 +832,7 @@
       ],
       "limitations": [
         "One published repository (nimdp-validator) has a known-broken README, left pending founder-gated republication.",
-        "Counts are from the dated 2026-08-20 audit; the live organization may have moved since."
+        "Repository and secret-scan counts are from the dated 2026-08-20 audit and were not re-run on 2026-09-03; the test totals and the starter's install and MCP handshake were."
       ]
     },
     {
