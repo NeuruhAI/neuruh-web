@@ -37,6 +37,27 @@ Verified from a fresh `git clone` of the public repository on a clean interprete
 | xAI / Grok marketplace | SUBMITTED, AWAITING EXTERNAL REVIEW | `xai-org/plugin-marketplace#503`, open, 3/3 checks pass, not accepted and not live |
 | PyPI | BLOCKED ON PACKAGE STRUCTURE | The six dependencies are `git+https` direct URLs, which PyPI rejects in distribution metadata |
 
+## Release court gates
+
+Measured against the built release candidate on 2026-09-03. Accessibility used axe-core at
+desktop (1440x900) and mobile (390x844) widths; links were resolved against real routes and
+public files; secret and private-path scans ran over the working tree.
+
+| Gate | Value |
+|---|---|
+| Broken links | 0 |
+| Serious accessibility violations | 0 |
+| Critical accessibility violations | 0 |
+| Secret-scan hits | 0 |
+| Private-path leaks | 0 |
+| False live claims | 0 |
+| Accessibility viewport widths audited | 2 |
+| Prerendered pages checked for links | 35 |
+| Internal references resolved | 1,580 |
+
+Gates are measured against a candidate at a point in time. A later source change requires
+re-running them; rendering a page does not re-verify anything.
+
 ## Release pointer
 
 Every published release of `neuruh-sovereign-agent-starter` is an alpha. `v0.1.1-alpha` alone had

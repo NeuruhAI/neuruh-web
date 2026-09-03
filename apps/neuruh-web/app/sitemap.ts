@@ -29,6 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/products',
     '/how-it-works',
     '/proof',
+    '/proof/distribution',
     '/refusals',
     '/open-source',
     '/organism',

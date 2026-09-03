@@ -5,7 +5,7 @@ import { AxeBuilder } from '@axe-core/playwright'
 
 const base = process.argv[2] ?? 'http://127.0.0.1:4311'
 const routes = [
-  '/', '/accessible', '/no-webgl', '/reduced-motion', '/how-it-works', '/worlds/liquidity-engine', '/proof', '/refusals', '/products',
+  '/', '/accessible', '/no-webgl', '/reduced-motion', '/how-it-works', '/worlds/liquidity-engine', '/proof', '/proof/distribution', '/refusals', '/products',
   '/offers', '/ask', '/work-with-neuruh', '/work-with-us', '/thank-you', '/cases', '/security',
   '/open-source', '/worlds', '/worlds/deedsonar', '/worlds/bookeit', '/organism', '/galaxy',
   '/research/adaptive-intelligence', '/research/case-zero', '/founder', '/contact', '/legal',

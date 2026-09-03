@@ -261,6 +261,315 @@
       "truth_mode": "VERIFIED_SNAPSHOT"
     },
     {
+      "claim_class": "OBSERVED",
+      "evidence_summary": {
+        "source_refs": [
+          "src-commons-distribution-20260903"
+        ],
+        "statement": "Adding the marketplace from the public repository and installing the plugin registered four skills and one MCP server, and the manifest validates with no warnings.",
+        "status": "SUFFICIENT"
+      },
+      "id": "dist-claude-code",
+      "kind": "system",
+      "last_verified_at": "2026-09-03T18:00:00.000Z",
+      "limitations": [
+        "Installing the plugin does not install the Python package. Without a prior package install the MCP server exits at import and the plugin lists no tools. The skills work immediately."
+      ],
+      "maturity": "INSTALLABLE",
+      "metrics": [
+        {
+          "as_of": "2026-09-03T00:00:00.000Z",
+          "classification": "OBSERVED",
+          "name": "plugin_skills",
+          "source_ref": "src-commons-distribution-20260903",
+          "unit": "skills",
+          "value": 4
+        },
+        {
+          "as_of": "2026-09-03T00:00:00.000Z",
+          "classification": "OBSERVED",
+          "name": "plugin_mcp_servers",
+          "source_ref": "src-commons-distribution-20260903",
+          "unit": "servers",
+          "value": 1
+        }
+      ],
+      "name": "Claude Code plugin",
+      "public_route": "/proof/distribution",
+      "source": {
+        "class": "curated_snapshot",
+        "path_or_uri": "docs/receipts-external/commons-distribution-20260903.attestation.md",
+        "public_safe": true,
+        "ref": "src-commons-distribution-20260903",
+        "title": "Public commons and distribution re-verification (2026-09-03)"
+      },
+      "status": "STABLE",
+      "summary": "The repository is a Claude Code marketplace, installable with the plugin commands.",
+      "truth_mode": "VERIFIED_SNAPSHOT"
+    },
+    {
+      "claim_class": "UNVALIDATED_CLAIM",
+      "evidence_summary": {
+        "source_refs": [
+          "src-commons-distribution-20260903"
+        ],
+        "statement": "The plugin manifest this consumer reads is present in the repository.",
+        "status": "SUFFICIENT"
+      },
+      "id": "dist-copilot-cli",
+      "kind": "system",
+      "last_verified_at": "2026-09-03T18:00:00.000Z",
+      "limitations": [
+        "The install command has never been run: the CLI is absent from the build host. This is not claimed to work."
+      ],
+      "maturity": "UNVERIFIED",
+      "name": "GitHub Copilot CLI",
+      "public_route": "/proof/distribution",
+      "source": {
+        "class": "curated_snapshot",
+        "path_or_uri": "docs/receipts-external/commons-distribution-20260903.attestation.md",
+        "public_safe": true,
+        "ref": "src-commons-distribution-20260903",
+        "title": "Public commons and distribution re-verification (2026-09-03)"
+      },
+      "status": "PLANNED",
+      "summary": "Installing through the Copilot command line.",
+      "truth_mode": "UNKNOWN"
+    },
+    {
+      "claim_class": "OBSERVED",
+      "evidence_summary": {
+        "source_refs": [
+          "src-commons-distribution-20260903"
+        ],
+        "statement": "The repository carries the manifests this consumer reads, and the plugin runs from a local source copy.",
+        "status": "SUFFICIENT"
+      },
+      "id": "dist-cursor",
+      "kind": "system",
+      "last_verified_at": "2026-09-03T18:00:00.000Z",
+      "limitations": [
+        "Submission is a web form completed under an account holder's identity. Nothing in the repository can complete it."
+      ],
+      "maturity": "BLOCKED",
+      "name": "Cursor",
+      "public_route": "/proof/distribution",
+      "source": {
+        "class": "curated_snapshot",
+        "path_or_uri": "docs/receipts-external/commons-distribution-20260903.attestation.md",
+        "public_safe": true,
+        "ref": "src-commons-distribution-20260903",
+        "title": "Public commons and distribution re-verification (2026-09-03)"
+      },
+      "status": "BLOCKED",
+      "summary": "Listing in the Cursor marketplace.",
+      "truth_mode": "BLOCKED"
+    },
+    {
+      "claim_class": "OBSERVED",
+      "evidence_summary": {
+        "source_refs": [
+          "src-commons-distribution-20260903"
+        ],
+        "statement": "The registry expects a registry-verifiable package or a remote server, which depends on package publication.",
+        "status": "SUFFICIENT"
+      },
+      "id": "dist-mcp-registry",
+      "kind": "system",
+      "last_verified_at": "2026-09-03T18:00:00.000Z",
+      "limitations": [
+        "Downstream of the packaging blocker. Nothing here can proceed until the package is published."
+      ],
+      "maturity": "BLOCKED",
+      "name": "Official MCP Registry",
+      "public_route": "/proof/distribution",
+      "source": {
+        "class": "curated_snapshot",
+        "path_or_uri": "docs/receipts-external/commons-distribution-20260903.attestation.md",
+        "public_safe": true,
+        "ref": "src-commons-distribution-20260903",
+        "title": "Public commons and distribution re-verification (2026-09-03)"
+      },
+      "status": "BLOCKED",
+      "summary": "Registering the server in the official registry.",
+      "truth_mode": "BLOCKED"
+    },
+    {
+      "claim_class": "OBSERVED",
+      "evidence_summary": {
+        "source_refs": [
+          "src-commons-distribution-20260903"
+        ],
+        "statement": "The apex and www resolve to a single production deployment, and the release court for that source is green.",
+        "status": "SUFFICIENT"
+      },
+      "id": "dist-neuruh-com",
+      "kind": "system",
+      "last_verified_at": "2026-09-03T18:00:00.000Z",
+      "limitations": [
+        "Verified by request and by deployment identity on the stated date; this snapshot holds no live connection to the host."
+      ],
+      "maturity": "LIVE_PROVEN",
+      "name": "neuruh.com",
+      "public_route": "/proof/distribution",
+      "source": {
+        "class": "curated_snapshot",
+        "path_or_uri": "docs/receipts-external/commons-distribution-20260903.attestation.md",
+        "public_safe": true,
+        "ref": "src-commons-distribution-20260903",
+        "title": "Public commons and distribution re-verification (2026-09-03)"
+      },
+      "status": "STABLE",
+      "summary": "The public site itself: one deployment serving the apex and www, built from the canonical source branch.",
+      "truth_mode": "VERIFIED_SNAPSHOT"
+    },
+    {
+      "claim_class": "OBSERVED",
+      "evidence_summary": {
+        "source_refs": [
+          "src-commons-distribution-20260903"
+        ],
+        "statement": "Every advertised repository, tag and package version was verified against GitHub, and every Python suite was re-run at the tag the index advertises.",
+        "status": "SUFFICIENT"
+      },
+      "id": "dist-public-commons",
+      "kind": "system",
+      "last_verified_at": "2026-09-03T18:00:00.000Z",
+      "limitations": [
+        "The index court verifies advertised releases against the newest published release; it does not audit the contents of a release."
+      ],
+      "maturity": "CANONICAL",
+      "name": "Public Commons",
+      "public_route": "/proof/distribution",
+      "source": {
+        "class": "curated_snapshot",
+        "path_or_uri": "docs/receipts-external/commons-distribution-20260903.attestation.md",
+        "public_safe": true,
+        "ref": "src-commons-distribution-20260903",
+        "title": "Public commons and distribution re-verification (2026-09-03)"
+      },
+      "status": "STABLE",
+      "summary": "The published library catalogue and its index, verified against live GitHub.",
+      "truth_mode": "VERIFIED_SNAPSHOT"
+    },
+    {
+      "claim_class": "OBSERVED",
+      "evidence_summary": {
+        "source_refs": [
+          "src-commons-distribution-20260903"
+        ],
+        "statement": "The package declares its six dependencies as direct Git URLs, which the index rejects in distribution metadata. The blocker is package structure, not credentials.",
+        "status": "SUFFICIENT"
+      },
+      "id": "dist-pypi",
+      "kind": "system",
+      "last_verified_at": "2026-09-03T18:00:00.000Z",
+      "limitations": [
+        "Unblocking requires publishing the dependencies first and replacing direct-URL pins with version specifiers. Credentials alone would buy one rejected upload."
+      ],
+      "maturity": "BLOCKED",
+      "metrics": [
+        {
+          "as_of": "2026-09-03T00:00:00.000Z",
+          "classification": "OBSERVED",
+          "name": "unclaimed_package_names",
+          "source_ref": "src-commons-distribution-20260903",
+          "unit": "names",
+          "value": 7
+        }
+      ],
+      "name": "PyPI",
+      "public_route": "/proof/distribution",
+      "source": {
+        "class": "curated_snapshot",
+        "path_or_uri": "docs/receipts-external/commons-distribution-20260903.attestation.md",
+        "public_safe": true,
+        "ref": "src-commons-distribution-20260903",
+        "title": "Public commons and distribution re-verification (2026-09-03)"
+      },
+      "status": "BLOCKED",
+      "summary": "Publishing the package to the Python Package Index.",
+      "truth_mode": "BLOCKED"
+    },
+    {
+      "claim_class": "OBSERVED",
+      "evidence_summary": {
+        "source_refs": [
+          "src-commons-distribution-20260903"
+        ],
+        "statement": "From a fresh clone of the published tag, a clean-room install resolved every pinned dependency and the server completed initialize, tools/list and tools/call over MCP's newline-delimited framing.",
+        "status": "SUFFICIENT"
+      },
+      "id": "dist-stdio-mcp",
+      "kind": "system",
+      "last_verified_at": "2026-09-03T18:00:00.000Z",
+      "limitations": [
+        "The server requires the package to be installed first; it is not a zero-install binary."
+      ],
+      "maturity": "LIVE_PROVEN",
+      "metrics": [
+        {
+          "as_of": "2026-09-03T00:00:00.000Z",
+          "classification": "OBSERVED",
+          "name": "mcp_tools_exposed",
+          "source_ref": "src-commons-distribution-20260903",
+          "unit": "tools",
+          "value": 3
+        }
+      ],
+      "name": "Generic stdio MCP clients",
+      "public_route": "/proof/distribution",
+      "source": {
+        "class": "curated_snapshot",
+        "path_or_uri": "docs/receipts-external/commons-distribution-20260903.attestation.md",
+        "public_safe": true,
+        "ref": "src-commons-distribution-20260903",
+        "title": "Public commons and distribution re-verification (2026-09-03)"
+      },
+      "status": "STABLE",
+      "summary": "Any MCP client can run the published server over stdio after the package is installed.",
+      "truth_mode": "VERIFIED_SNAPSHOT"
+    },
+    {
+      "claim_class": "OBSERVED",
+      "evidence_summary": {
+        "source_refs": [
+          "src-commons-distribution-20260903"
+        ],
+        "statement": "The submission is open with all automated checks passing and is pinned to the current published release.",
+        "status": "SUFFICIENT"
+      },
+      "id": "dist-xai-grok",
+      "kind": "system",
+      "last_verified_at": "2026-09-03T18:00:00.000Z",
+      "limitations": [
+        "Submitted is not accepted. The entry is not live, and no action on this side advances it: it waits on external maintainer review."
+      ],
+      "maturity": "EXTERNAL_REVIEW",
+      "metrics": [
+        {
+          "as_of": "2026-09-03T00:00:00.000Z",
+          "classification": "OBSERVED",
+          "name": "automated_checks_passing",
+          "source_ref": "src-commons-distribution-20260903",
+          "unit": "checks",
+          "value": 3
+        }
+      ],
+      "name": "xAI / Grok marketplace",
+      "public_route": "/proof/distribution",
+      "source": {
+        "class": "curated_snapshot",
+        "path_or_uri": "docs/receipts-external/commons-distribution-20260903.attestation.md",
+        "public_safe": true,
+        "ref": "src-commons-distribution-20260903",
+        "title": "Public commons and distribution re-verification (2026-09-03)"
+      },
+      "status": "INTEGRATING",
+      "summary": "A submission to the official third-party marketplace, pinned to the current release.",
+      "truth_mode": "VERIFIED_SNAPSHOT"
+    },
+    {
       "claim_class": "ARCHITECTURE",
       "evidence_summary": {
         "source_refs": [
@@ -827,6 +1136,30 @@
           "source_ref": "src-commons-audit",
           "unit": "hits",
           "value": 0
+        },
+        {
+          "as_of": "2026-09-03T00:00:00.000Z",
+          "classification": "OBSERVED",
+          "name": "python_packages_tested",
+          "source_ref": "src-commons-distribution-20260903",
+          "unit": "packages",
+          "value": 33
+        },
+        {
+          "as_of": "2026-09-03T00:00:00.000Z",
+          "classification": "MEASURED",
+          "name": "python_tests_at_advertised_tags",
+          "source_ref": "src-commons-distribution-20260903",
+          "unit": "tests",
+          "value": 1336
+        },
+        {
+          "as_of": "2026-09-03T00:00:00.000Z",
+          "classification": "MEASURED",
+          "name": "packages_matching_advertised_count",
+          "source_ref": "src-commons-distribution-20260903",
+          "unit": "packages",
+          "value": 32
         }
       ],
       "name": "Public open-source commons",
@@ -840,6 +1173,109 @@
       },
       "status": "STABLE",
       "summary": "Governance primitives, receipts, connectors, and sovereign-agent infrastructure published under Apache-2.0 with per-repository test evidence.",
+      "truth_mode": "VERIFIED_SNAPSHOT"
+    },
+    {
+      "claim_class": "OBSERVED",
+      "evidence_summary": {
+        "source_refs": [
+          "src-commons-distribution-20260903"
+        ],
+        "statement": "Each gate was run against the built release candidate. Accessibility used axe-core at desktop and mobile widths; links were resolved against real routes and files; secret and private-path scans ran over the working tree.",
+        "status": "SUFFICIENT"
+      },
+      "id": "release-court",
+      "kind": "proof",
+      "last_verified_at": "2026-09-03T18:00:00.000Z",
+      "limitations": [
+        "Gates are measured against a built candidate on the stated date. A later source change requires re-running them; rendering this page does not re-verify anything."
+      ],
+      "maturity": "SYSTEM_COMPONENT",
+      "metrics": [
+        {
+          "as_of": "2026-09-03T00:00:00.000Z",
+          "classification": "MEASURED",
+          "name": "broken_links",
+          "source_ref": "src-commons-distribution-20260903",
+          "unit": "links",
+          "value": 0
+        },
+        {
+          "as_of": "2026-09-03T00:00:00.000Z",
+          "classification": "MEASURED",
+          "name": "serious_accessibility_violations",
+          "source_ref": "src-commons-distribution-20260903",
+          "unit": "violations",
+          "value": 0
+        },
+        {
+          "as_of": "2026-09-03T00:00:00.000Z",
+          "classification": "MEASURED",
+          "name": "critical_accessibility_violations",
+          "source_ref": "src-commons-distribution-20260903",
+          "unit": "violations",
+          "value": 0
+        },
+        {
+          "as_of": "2026-09-03T00:00:00.000Z",
+          "classification": "MEASURED",
+          "name": "secret_scan_hits",
+          "source_ref": "src-commons-distribution-20260903",
+          "unit": "hits",
+          "value": 0
+        },
+        {
+          "as_of": "2026-09-03T00:00:00.000Z",
+          "classification": "MEASURED",
+          "name": "private_path_leaks",
+          "source_ref": "src-commons-distribution-20260903",
+          "unit": "leaks",
+          "value": 0
+        },
+        {
+          "as_of": "2026-09-03T00:00:00.000Z",
+          "classification": "MEASURED",
+          "name": "false_live_claims",
+          "source_ref": "src-commons-distribution-20260903",
+          "unit": "claims",
+          "value": 0
+        },
+        {
+          "as_of": "2026-09-03T00:00:00.000Z",
+          "classification": "MEASURED",
+          "name": "pages_checked",
+          "source_ref": "src-commons-distribution-20260903",
+          "unit": "pages",
+          "value": 35
+        },
+        {
+          "as_of": "2026-09-03T00:00:00.000Z",
+          "classification": "MEASURED",
+          "name": "internal_references_checked",
+          "source_ref": "src-commons-distribution-20260903",
+          "unit": "references",
+          "value": 1580
+        },
+        {
+          "as_of": "2026-09-03T00:00:00.000Z",
+          "classification": "MEASURED",
+          "name": "accessibility_viewports",
+          "source_ref": "src-commons-distribution-20260903",
+          "unit": "viewports",
+          "value": 2
+        }
+      ],
+      "name": "Public release court",
+      "public_route": "/proof/distribution",
+      "source": {
+        "class": "curated_snapshot",
+        "path_or_uri": "docs/receipts-external/commons-distribution-20260903.attestation.md",
+        "public_safe": true,
+        "ref": "src-commons-distribution-20260903",
+        "title": "Public commons and distribution re-verification (2026-09-03)"
+      },
+      "status": "STABLE",
+      "summary": "The gates every public release candidate must clear before it may be deployed: links, accessibility, secrets, private paths, and false live claims.",
       "truth_mode": "VERIFIED_SNAPSHOT"
     },
     {
