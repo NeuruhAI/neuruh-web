@@ -26,7 +26,8 @@
     "bench:spike1": "bash packages/testing/run-resumable.sh",
     "aggregate:spike1": "node packages/testing/aggregate.mjs",
     "prebuild": "node scripts/sync-truth-public.mjs",
-    "verify:truth-served": "node scripts/sync-truth-public.mjs --check"
+    "verify:truth-served": "node scripts/sync-truth-public.mjs --check",
+    "verify:cashier-prices": "node scripts/verify-cashier-prices.mjs"
   },
   "dependencies": {
     "@react-three/drei": "10.7.7",
