@@ -4,7 +4,7 @@
  * receipt is published. What can be said truthfully is what Neuruh does not claim.
  */
 export const NOT_CLAIMED = [
-  'Revenue or paying customers. A live cashier is not a customer, and no delivered engagement is published as a result.',
+  'Client names, engagement figures, or case studies. Work has been delivered and paid for; none of it is published here, because those are the clients\' facts to disclose, not Neuruh\'s.',
   'Outreach performed by anything Neuruh built. Contact action authority stays at zero eligible rows on the dated production tape.',
   'Outside capital, employees, or a team. Neuruh is built and operated by its founder.',
   'External security reviews, certifications, or SOC 2. The security page is a public-safe disclosure path, not an attestation.',
