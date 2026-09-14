@@ -35,7 +35,7 @@ test('pageMeta writes per-route Open Graph url, title, and description', async (
   }
 })
 
-test('JSON-LD is Organization, WebSite, and the three public Services only', async () => {
+test('JSON-LD is Organization, WebSite, and the four public Services only', async () => {
   const jsonLd = await source('apps/neuruh-web/lib/publicJsonLd.ts')
   const layout = await source('apps/neuruh-web/app/layout.tsx')
   assert.match(jsonLd, /'@type': 'Organization'/)
@@ -44,7 +44,8 @@ test('JSON-LD is Organization, WebSite, and the three public Services only', asy
   assert.match(jsonLd, /PUBLIC_OFFERS/)
   assert.doesNotMatch(jsonLd, FACTORY)
   assert.match(layout, /<JsonLd/)
-  assert.match(jsonLd, /offer\.href/)
+  assert.match(jsonLd, /offerHref\(offer\)/)
+  assert.match(jsonLd, /offer\.kind === 'cashier'/)
 })
 
 test('robots, sitemap, and security.txt stay public-safe', async () => {
