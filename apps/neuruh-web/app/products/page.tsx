@@ -42,6 +42,10 @@ export default function ProductsPage() {
             One product operates in production today. Five more are sealed, court-tested release candidates in private
             custody — labeled exactly as what they are.
           </p>
+          <div className="hero-ctas" style={{ marginTop: 18 }}>
+            <Link className="v2-btn v2-btn-primary" href="/products/top10">Explore the Top 10 commercial products</Link>
+            <Link className="v2-btn v2-btn-ghost" href="/harnesses">Open the harness catalog →</Link>
+          </div>
         </div>
       </section>
 
