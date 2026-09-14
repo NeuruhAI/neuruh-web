@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Archivo, Inter, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
+import './polish.css'
 import { JsonLd } from '../components/JsonLd'
 import { SiteNav } from '../components/SiteNav'
 import { SiteFooter } from '../components/SiteFooter'

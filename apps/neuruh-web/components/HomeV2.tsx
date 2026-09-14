@@ -294,7 +294,7 @@ export function HomeV2() {
           <div className="law-list">
             <div className="law"><span className="ln">01</span><div><h3>No fake live status.</h3><p>If a number is a dated snapshot, it says so where it is shown. Nothing on this site pretends to be a live feed.</p></div></div>
             <div className="law"><span className="ln">02</span><div><h3>No AI output becomes authority by itself.</h3><p>A model can propose. Only a checked authority gate can permit — and refusals are receipted like actions.</p></div></div>
-            <div className="law"><span className="ln">03</span><div><h3>No real-money claim without a real transaction.</h3><p>Demo economics are labeled synthetic in the product and on this site. We claim no revenue and no customers we cannot receipt — a live cashier is not a customer.</p></div></div>
+            <div className="law"><span className="ln">03</span><div><h3>No real-money claim without a real transaction.</h3><p>Demo economics are labeled synthetic in the product and on this site. No figure on this site is presented as revenue unless a receipt backs it, and a live cashier is not a customer.</p></div></div>
           </div>
           <div className="row" style={{ marginTop: 26 }}>
             <Link className="v2-btn v2-btn-secondary" href="/refusals">Read all the boundaries</Link>
