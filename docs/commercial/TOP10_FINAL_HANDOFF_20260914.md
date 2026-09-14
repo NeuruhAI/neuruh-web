@@ -3,11 +3,12 @@
 Classifications used: PROVEN_LIVE · PROVEN_LOCAL · IMPLEMENTED_NOT_LIVE · IMPLEMENTED_INCOMPLETE · BLOCKED · HISTORICAL · UNKNOWN. Nothing below was upgraded without the evidence cited next to it.
 
 ## 1. Current git branch
-`w4/public-truth-organism-20260914` (pushed to `origin`; PR #11 open against the GitHub default branch `fable/neuruh-public-launch-20260823`).
+`fable/neuruh-public-launch-20260823` — the GitHub default branch. PR #11 (`w4/public-truth-organism-20260914`) was merged by the founder as merge commit `51feef98` (parents `d101b0ee`, `9128f0ae`); its tree is byte-identical to the handoff commit `9128f0ae`.
 
 ## 2. Final commit SHA
-- **Deployed to production:** `ca20caba2405d6f415b591aa024776da159b85c5` — "top10: recover, repair, and court the Top 10 commercial layer and /harnesses".
-- This handoff document is committed on top of it (docs only; production content unchanged).
+- **FINAL production deployment:** `51feef989c633b346150c0425824f7b3b0e59f0c` — "Merge w4/public-truth-organism-20260914 into fable/neuruh-public-launch-20260823". Deployment `dpl_Hp8bC9KtsqBhZbzK3BWe1fro4hRS` (2026-09-14 17:02:28Z, READY, target production), Vercel meta `githubCommitSha = 51feef98…`, `githubCommitRef = fable/neuruh-public-launch-20260823`, aliases `neuruh.com`, `www.neuruh.com`.
+- Previous deployment `ca20cab` / `dpl_CFuMj42cp5YP5tWVmGrK6My38jff` is superseded (HISTORICAL).
+- This document's final-evidence update is committed on top of `51feef98` (docs only; production content unchanged).
 
 ## 3. Exact commits integrated (all reachable from HEAD, none force-pushed)
 | SHA | What | How |
@@ -71,10 +72,13 @@ Every page states: buyer, problem, what it does, what you provide, what Neuruh d
 | `NEXT_OUTPUT_EXPORT=1 npm run build` (Vercel's build command) | exit 0, `out/products/top10/*.html`, `out/harnesses.html` present |
 | `scripts/release-court.mjs` (historical 09-02 court, not in verify chain) | FAILS on `snapshot last_verified 2026-08-24` pin — **PRE-EXISTING** since `e085aa1` moved the snapshot to 2026-09-14 |
 
-## 8. Production verification (PROVEN_LIVE)
-- Deployment `dpl_CFuMj42cp5YP5tWVmGrK6My38jff` · `https://neuruh-17jrjutwg-anchorpointpg.vercel.app` · target production · READY · created 2026-09-14 14:15:24Z · aliases `neuruh.com`, `www.neuruh.com`, `neuruh-web.vercel.app`, `neuruh-web-anchorpointpg.vercel.app`. Project `prj_KPREbSQrX9JKq8ZOTdgGjwvW45HN` / `team_CgohYot6QdrG9HrRSj4zEqhw` (existing; no new project).
-- Deploy method: CLI upload of the committed tree at `ca20cab` (the project has no Git integration; every prior production deploy was CLI too). Pre-deploy `git status`: clean except the generated `receipts/playwright-report.json`.
-- Identity: `https://neuruh.com/truth/signature.json` `snapshot_sha256 = 3ad7704ede3c59f3db934f1b1209ced24539d87371ce57016e8e31be35922c8f` == committed `public/truth/signature.json` → production serves the artifact compiled at this commit.
+## 8. Production verification (PROVEN_LIVE) — FINAL, merged commit
+- Deployment `dpl_Hp8bC9KtsqBhZbzK3BWe1fro4hRS` · `https://neuruh-tcq64l84l-anchorpointpg.vercel.app` · target production · READY · created 2026-09-14 17:02:28Z · aliases `neuruh.com`, `www.neuruh.com`, `neuruh-web.vercel.app`, `neuruh-web-anchorpointpg.vercel.app`. Project `prj_KPREbSQrX9JKq8ZOTdgGjwvW45HN` / `team_CgohYot6QdrG9HrRSj4zEqhw` (existing; no new project).
+- Deploy method: `vercel deploy --prod` from the clean checkout of `fable/neuruh-public-launch-20260823` @ `51feef98` (pre-deploy `git status` clean). Vercel deployment meta records `githubCommitSha 51feef989c633b346150c0425824f7b3b0e59f0c`, `githubCommitRef fable/neuruh-public-launch-20260823`, repo `NeuruhAI/neuruh-web`.
+- Pre-deploy court on `51feef98`: `npm run verify` exit 0 (46/46 unit, 20/20 artifact, dead-link 47 pages / 2,118 refs / 0 broken, private-IP PASS, checkout-links PASS live), Playwright smoke 13/13.
+- Identity: `https://neuruh.com/truth/signature.json` `snapshot_sha256 = 3ad7704ede3c59f3db934f1b1209ced24539d87371ce57016e8e31be35922c8f` == committed `public/truth/signature.json` at `51feef98` → production serves the artifact compiled at the merged commit.
+- Live routes 12/12 (table below, re-probed after this deployment); unknown slug 404. CTA court: 3 Stripe cashiers HTTP 200, 8 contact intakes HTTP 200. Headless Chromium on production (1440 and 390): demo banner present, harness demo 13 stages → REJECT, 64-hex digest, scan CTA → `/contact?product=property-opportunity-scan` → prefilled mailto, 0 console errors, 0 horizontal overflow.
+- Vercel runtime errors for the project since deploy: 0 (static export; no functions).
 
 | URL | HTTP | Title | Banner | CTA |
 |---|---|---|---|---|
@@ -115,12 +119,12 @@ Sitemap on production lists all 12 new routes. `/products` on production links t
 1. No $100 cashier for Property Opportunity Scan (founder pricing/Stripe decision; the court allowlist would then need the new link added deliberately).
 2. No webhook, order, or job system — static export by design; fulfillment is manual.
 3. Zero customer engagements; hard zeros (revenue $0, customers 0, as of 2026-08-24) stand.
-4. GitHub default branch (`fable/…` @ `d101b0ee`) still carries the unrepaired Top 10 (broken imports, forbidden organ name, wrong slugs). Production is served from `w4/…` @ `ca20cab` via CLI. Until PR #11 merges, default ≠ production.
+4. ~~Default ≠ production~~ — RESOLVED: PR #11 merged as `51feef98`; default branch == production deployment.
 5. Vercel project has no Git integration; deploys are CLI-only (unchanged from before).
 6. Historical `scripts/release-court.mjs` pins the snapshot date to 2026-08-24 (pre-existing; not in the verify chain).
 
 ## 14. First founder action
-Merge PR #11 (`w4/public-truth-organism-20260914` → `fable/neuruh-public-launch-20260823`) as a merge commit at exact head so the default branch equals what production serves. Then decide whether to create a $100 Stripe payment link for the Property Opportunity Scan.
+Commercial, not technical: sell one Opportunity Intelligence Dossier at $499 through the live cashier on `/products/top10/opportunity-intelligence-dossier` (or take one $100 Property Opportunity Scan order by email), fulfil it, and capture the checkout → intake → delivery → JSON-receipt tape. That tape is the only thing that moves Fulfillment/Delivery/Receipt off IMPLEMENTED_INCOMPLETE. Decide the $100 scan cashier alongside it.
 
 ## 15. What is actually sellable today
 Data Rescue $299, Opportunity Dossier $499, Workflow Sprint $1,250 (live checkout, founder-fulfilled). Property Opportunity Scan $100 by email order and invoice.
@@ -132,7 +136,7 @@ Every browser calculator on the ten product pages and the harness demonstration 
 Agent Integrity pilots, AI Estate Forensic audits, Business Acquisition screens, ProofOS diagnostics, Managed Opportunity Desk, FindSellProfit operator engagements (quote-only); Property Scan checkout; any automated intake, order tracking, fulfillment, or delivery receipt.
 
 ## 18. Exact next technical actions
-1. `gh pr merge 11 --merge --match-head-commit <handoff SHA>` (founder identity) — default branch converges on production.
+1. ~~Merge PR #11~~ — DONE (`51feef98`).
 2. If a $100 scan cashier is created: add it to `PUBLIC_OFFERS` in `apps/neuruh-web/lib/publicOffers.ts`, to `CANONICAL_CASHIERS` in `scripts/verify-checkout-links.mjs` and the two cashier tests, set `offerId` on `property-opportunity-scan` in `apps/neuruh-web/lib/top10.ts`, flip its ladder rung, re-run `npm run verify`, redeploy.
 3. First paid engagement: capture the checkout → email intake → delivery → JSON receipt tape and vendor it under `docs/receipts-external/`, then move that product's Fulfillment/Delivery/Receipt rungs to PROVEN_LIVE with the dated source.
 4. Optional: `vercel git connect` so pushes to the default branch deploy automatically instead of CLI uploads.
