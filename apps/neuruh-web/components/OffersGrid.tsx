@@ -32,10 +32,6 @@ export function OffersGrid() {
                 <dd>{offer.receive}</dd>
               </div>
               <div>
-                <dt>Turnaround:</dt>
-                <dd>{offer.turnaround}</dd>
-              </div>
-              <div>
                 <dt>Proof:</dt>
                 <dd>{offer.proof}</dd>
               </div>

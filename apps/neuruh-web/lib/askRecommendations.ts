@@ -32,7 +32,7 @@ export const ASK_CARDS = [
   {
     lane: 'FASTEST' as const,
     offer: PUBLIC_OFFERS[0],
-    why: 'Smallest scope. Shortest typical turnaround. Live checkout today.',
+    why: 'Smallest scope. Live checkout today.',
     priceRange: PUBLIC_OFFERS[0].price,
     ctaHref: PUBLIC_OFFERS[0].href,
     ctaLabel: PUBLIC_OFFERS[0].cta,

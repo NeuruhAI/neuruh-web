@@ -159,22 +159,6 @@
           "source_ref": "src-curbclaim-receipt",
           "unit": "tests",
           "value": 202
-        },
-        {
-          "as_of": "2026-08-22T00:00:00.000Z",
-          "classification": "MEASURED",
-          "name": "real_browser_axe_audits",
-          "source_ref": "src-curbclaim-receipt",
-          "unit": "audits",
-          "value": 40
-        },
-        {
-          "as_of": "2026-08-22T00:00:00.000Z",
-          "classification": "MEASURED",
-          "name": "contrast_assertions",
-          "source_ref": "src-curbclaim-receipt",
-          "unit": "assertions",
-          "value": 47
         }
       ],
       "name": "CurbClaim",
@@ -1096,22 +1080,6 @@
           "source_ref": "src-proofos-receipt",
           "unit": "courts",
           "value": 14
-        },
-        {
-          "as_of": "2026-08-22T00:00:00.000Z",
-          "classification": "MEASURED",
-          "name": "e2e_scenarios",
-          "source_ref": "src-proofos-receipt",
-          "unit": "scenarios",
-          "value": 10
-        },
-        {
-          "as_of": "2026-08-22T00:00:00.000Z",
-          "classification": "MEASURED",
-          "name": "differentiation_dimensions",
-          "source_ref": "src-proofos-receipt",
-          "unit": "dimensions",
-          "value": 15
         }
       ],
       "name": "ProofOS",

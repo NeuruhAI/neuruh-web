@@ -72,18 +72,31 @@ test('global footer uses the public-safe /security path and does not invent a ma
   assert.doesNotMatch(security, /mailto:/)
 })
 
-test('hard zeros stay dated to the public snapshot and are not sold as live Stripe truth', async () => {
-  const zeros = await source('apps/neuruh-web/lib/publicHardZeros.ts')
+test('refusals are stated as refusals, never as unreceipted counts, and the homepage carries no machine state', async () => {
+  const notClaimed = await source('apps/neuruh-web/lib/publicNotClaimed.ts')
   const home = await source('apps/neuruh-web/components/HomeV2.tsx')
   const proof = await source('apps/neuruh-web/app/proof/page.tsx')
   const refusals = await source('apps/neuruh-web/app/refusals/page.tsx')
-  assert.match(zeros, /asOf: '2026-08-24'/)
-  assert.match(zeros, /revenue: '\$0'/)
-  assert.match(home, /PUBLIC_HARD_ZEROS/)
-  assert.match(home, /not a live Stripe readout/)
-  assert.match(home, /not live organ products/)
-  assert.match(proof, /PUBLIC_HARD_ZEROS/)
-  assert.match(refusals, /PUBLIC_HARD_ZEROS/)
+  const footer = await source('apps/neuruh-web/components/SiteFooter.tsx')
+  assert.match(notClaimed, /A live cashier is not a customer/)
+  assert.match(proof, /NOT_CLAIMED/)
+  assert.match(refusals, /NOT_CLAIMED/)
+  // No dated zero counts anywhere: a counted zero needs a receipt like any other number.
+  for (const text of [notClaimed, home, proof, refusals]) {
+    assert.doesNotMatch(text, /Revenue[^.]{0,40}\$0/)
+    assert.doesNotMatch(text, /Customers:? 0\b/)
+  }
+  // Layer separation: the homepage (Layer 2) carries no snapshot date, count, status pill or simulated receipt.
+  assert.doesNotMatch(home, /getPublicObject|getPublicSnapshot|getPublicObjects/)
+  assert.doesNotMatch(home, /2026-0\d-\d\d/)
+  assert.doesNotMatch(home, /sha e2b71fa|offer\.prepared|RECEIPT · VERIFIED|proofstrip|hero-proofline/)
+  assert.doesNotMatch(home, /Benton Harbor/)
+  // The machine-state banner is gone from the shared footer; the ledger lives on /proof.
+  assert.doesNotMatch(footer, /Truth mode|living state|live connectivity|getTruthSummary/)
+  assert.match(footer, /href="\/proof"/)
+  // /proof carries the single "Verified as of" line and a plain-language method.
+  assert.match(proof, /Verified as of/)
+  assert.match(proof, /data-testid="proof-method"/)
 })
 
 test('quoted engagements are built products with no price and no cashier', async () => {

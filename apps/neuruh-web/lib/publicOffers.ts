@@ -6,7 +6,6 @@ export const PUBLIC_OFFERS = [
     promise: 'Turn a broken, buried, or unusable set of files or records into something you can actually work with.',
     provide: 'The files, export, or records — plus what is wrong with them.',
     receive: 'A usable recovered or normalized output, plus a concise note on what changed and anything still missing.',
-    turnaround: 'Typically 2–5 business days after we have your inputs.',
     proof: 'Live cashier on neuruh.com. Founder-operated delivery after intake — a live cashier is not automated fulfillment.',
     price: '$299',
     href: 'https://book.stripe.com/bJe5kDagndYugJlaow2cg04',
@@ -19,7 +18,6 @@ export const PUBLIC_OFFERS = [
     promise: 'A source-backed brief on one property, company, market, or opportunity — focused on what matters next.',
     provide: 'The target and the decision or question you need answered.',
     receive: 'The evidence, key upside and risks, and a clear recommended next move in one concise dossier.',
-    turnaround: 'Typically 5–10 business days after we have the target and the question.',
     proof: 'Same public evidence discipline as DeedSonar: sources kept, recommendation explicit. A live cashier is not automated fulfillment.',
     price: '$499',
     href: 'https://book.stripe.com/8x2cN574b1bIakXgMU2cg05',
@@ -32,7 +30,6 @@ export const PUBLIC_OFFERS = [
     promise: 'Turn one repetitive or chaotic process into a working, documented workflow.',
     provide: 'The current process, the tools involved, and the result you want.',
     receive: 'A scoped working workflow and the handoff needed to run it.',
-    turnaround: 'Typically 2–3 weeks after we have the current process and the desired result.',
     proof: 'Same public pipeline as How it works: scoped action, documented handoff. A live cashier is not automated fulfillment.',
     price: '$1250',
     href: 'https://book.stripe.com/7sY00j1JRf2y2Sv4082cg06',
@@ -92,7 +89,7 @@ export const OFFER_NEXT_STEPS = [
   },
   {
     title: 'Inputs',
-    body: 'We email the checkout address within one business day to collect the inputs listed above.',
+    body: 'A founder replies from jeramie@neuruh.com to the address you used at checkout to collect the inputs listed above. Scope and timing are agreed in that reply — nothing is automated.',
   },
   {
     title: 'Delivery',

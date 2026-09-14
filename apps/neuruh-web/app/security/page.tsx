@@ -5,7 +5,7 @@ export const metadata = pageMeta({
   path: '/security',
   title: 'Security disclosure',
   description:
-    'Public-safe disclosure path for neuruh.com. This static site does not prove that any mailbox receives mail.',
+    'Public-safe disclosure path for neuruh.com: this page, the contact page, and jeramie@neuruh.com. No autoresponder, no secrets by mail.',
 })
 
 export default function SecurityPage() {
@@ -18,9 +18,9 @@ export default function SecurityPage() {
             Public-safe disclosure.
           </h1>
           <p className="sec-sub">
-            This website is a static export. <strong>Mailbox receipt is not proven.</strong> This page does not claim
-            that jeramie@neuruh.com, or any other address, receives mail. Do not send secrets, tokens, credentials, or
-            exploit details to an unproven inbox.
+            This website is a static export. Mail to <strong>jeramie@neuruh.com</strong> is forwarded to the founder&apos;s
+            inbox; there is no autoresponder and no automated reply. Do not send secrets, tokens, credentials, or
+            exploit details by email — state that a disclosure exists and a person will arrange a channel.
           </p>
           <p className="sec-sub">
             The public disclosure path is this page and{' '}

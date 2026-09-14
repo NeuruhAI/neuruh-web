@@ -55,10 +55,6 @@ export function AskNeuruh() {
                 <dd>{card.offer.receive}</dd>
               </div>
               <div>
-                <dt>Turnaround:</dt>
-                <dd>{card.offer.turnaround}</dd>
-              </div>
-              <div>
                 <dt>Proof:</dt>
                 <dd>{card.offer.proof}</dd>
               </div>

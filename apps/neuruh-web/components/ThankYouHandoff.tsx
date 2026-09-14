@@ -23,8 +23,8 @@ export function ThankYouHandoff() {
     <div data-testid="thank-you-handoff">
       <p className={styles.note}>
         This site is a static export. It does not receive Stripe webhooks and cannot confirm a payment from here.
-        A live cashier is not automated fulfillment. If you checked out, the receipt went to the address you used
-        at checkout — a founder follows up from that address.
+        A live cashier is not automated fulfillment. If you checked out, Stripe sent its receipt to the address you
+        used at checkout — a founder replies to that address from jeramie@neuruh.com.
       </p>
 
       {offer ? (
@@ -40,10 +40,6 @@ export function ThankYouHandoff() {
             <div>
               <dt>You will receive</dt>
               <dd>{offer.receive}</dd>
-            </div>
-            <div>
-              <dt>Typical turnaround</dt>
-              <dd>{offer.turnaround}</dd>
             </div>
           </dl>
         </article>

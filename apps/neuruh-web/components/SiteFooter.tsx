@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { getTruthSummary } from '../../../packages/public-truth/client'
 
 const columns: ReadonlyArray<readonly [string, ReadonlyArray<readonly [string, string]>]> = [
   ['System', [
@@ -28,7 +27,6 @@ const columns: ReadonlyArray<readonly [string, ReadonlyArray<readonly [string, s
 ]
 
 export function SiteFooter() {
-  const truth = getTruthSummary()
   return (
     <footer className="site-footer">
       <div className="site-footer__grid">
@@ -54,11 +52,7 @@ export function SiteFooter() {
       </div>
       <div className="site-footer__meta">
         <p>© 2026 Neuruh. Built and operated by its founder.</p>
-        <p>
-          Truth mode {truth.truthMode.replaceAll('_', ' ')} · snapshot verified{' '}
-          <time dateTime={truth.lastVerifiedAt}>{truth.lastVerifiedAt.slice(0, 10)}</time>
-          {truth.stale ? ' · STALE' : ''} · living state {truth.livingState.replaceAll('_', ' ')} · live connectivity NONE
-        </p>
+        <p>Every figure on this site is dated and sourced on <Link href="/proof">the proof ledger</Link>. Nothing here is a live feed.</p>
       </div>
     </footer>
   )

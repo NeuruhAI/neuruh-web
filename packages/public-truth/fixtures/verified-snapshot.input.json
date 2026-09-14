@@ -320,22 +320,6 @@
           "unit": "tests",
           "as_of": "2026-08-22T00:00:00.000Z",
           "source_ref": "src-curbclaim-receipt"
-        },
-        {
-          "name": "real_browser_axe_audits",
-          "value": 40,
-          "classification": "MEASURED",
-          "unit": "audits",
-          "as_of": "2026-08-22T00:00:00.000Z",
-          "source_ref": "src-curbclaim-receipt"
-        },
-        {
-          "name": "contrast_assertions",
-          "value": 47,
-          "classification": "MEASURED",
-          "unit": "assertions",
-          "as_of": "2026-08-22T00:00:00.000Z",
-          "source_ref": "src-curbclaim-receipt"
         }
       ],
       "limitations": [
@@ -1080,22 +1064,6 @@
           "value": 14,
           "classification": "MEASURED",
           "unit": "courts",
-          "as_of": "2026-08-22T00:00:00.000Z",
-          "source_ref": "src-proofos-receipt"
-        },
-        {
-          "name": "e2e_scenarios",
-          "value": 10,
-          "classification": "MEASURED",
-          "unit": "scenarios",
-          "as_of": "2026-08-22T00:00:00.000Z",
-          "source_ref": "src-proofos-receipt"
-        },
-        {
-          "name": "differentiation_dimensions",
-          "value": 15,
-          "classification": "MEASURED",
-          "unit": "dimensions",
           "as_of": "2026-08-22T00:00:00.000Z",
           "source_ref": "src-proofos-receipt"
         }

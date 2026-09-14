@@ -8,10 +8,7 @@ export const metadata = pageMeta({
 })
 
 const TIMELINE: ReadonlyArray<readonly [string, string, string, boolean]> = [
-  ['TWO DECADES', 'Operations, not engineering', 'Roughly twenty-five years operating real businesses. No CS degree claimed, no prior exits claimed — an operator’s habit of asking what a number actually means before acting on it.', false],
-  ['2025', 'The land business meets software', 'A vacant-land investment operation needs deal flow, evidence, and discipline. The first CRM and county-data pipelines get built — AI-assisted from day one, stated plainly.', false],
-  ['EARLY 2026', 'The discovery that set the direction', 'In its own code, an agent is found minting approvals and consuming them. Closing that — then finding three more fail-opens in the layer meant to prevent it — becomes the company thesis: authority must be checked, and everything must leave a receipt.', true],
-  ['MID 2026', 'The machine grows a spine', 'Governance gates, receipts, provenance chains, and courts spread across the estate: DeedSonar reaches production with an attested SHA; the open-source commons is published and audited.', false],
+  ['MID 2026', 'The machine grows a spine', 'Governance gates, receipts, provenance chains, and courts spread across the estate: DeedSonar reaches production with an attested release identity; the open-source commons is published and audited.', true],
   ['AUG 2026', 'The product wave', 'In one month: FindSellProfit, Bookeit, CurbClaim, ProofOS, and the Liquidity Engine are sealed as court-tested candidates — every claim receipted, every fixture labeled.', false],
   ['NOW', 'The front door opens', 'Neuruh.com goes public: the machine, the products, and the proof — with the boundaries stated as carefully as the claims.', false],
 ]
@@ -24,9 +21,9 @@ export default function FounderPage() {
           <p className="sec-eyebrow">Founder</p>
           <h1 className="sec-h" style={{ fontSize: 'clamp(2rem, 3.8vw, 3.2rem)' }}>The pieces were never the problem. Coherence was.</h1>
           <p className="sec-sub" style={{ fontSize: '1.15rem' }}>
-            <strong style={{ color: 'var(--v2-text)' }}>Jeramie Hicks.</strong> Benton Harbor, Michigan. Founder of
-            Neuruh LLC. An operator who came to autonomous systems from business operations and kept asking the
-            question engineering convention skips: <em>how would I know if this were wrong?</em>
+            <strong style={{ color: 'var(--v2-text)' }}>Jeramie Hicks.</strong> Founder of Neuruh LLC. An operator who
+            came to autonomous systems from business operations and kept asking the question engineering convention
+            skips: <em>how would I know if this were wrong?</em>
           </p>
           <p className="sec-sub">
             The engineering is AI-assisted and always has been — that is a fact of the record, stated up front. What

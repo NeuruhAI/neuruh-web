@@ -18,8 +18,8 @@ export default function OffersPage() {
             Three ways to put Neuruh to work.
           </h1>
           <p className="sec-sub">
-            Each offer is fixed in scope: what you send, what you receive, typical turnaround, and what happens after
-            checkout. The cashiers below are the live payment links — not new ones.
+            Each offer is fixed in scope: what you send, what you receive, and what happens after checkout. Timing is
+            agreed at intake, not promised on a page. The cashiers below are the live payment links — not new ones.
           </p>
           <OffersGrid />
         </div>

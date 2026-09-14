@@ -22,7 +22,6 @@ test('Ask Neuruh hard-caps public output at FASTEST, BEST VALUE, and CUSTOM', as
   assert.match(ask, /ASK_CARDS\.map/)
   assert.match(ask, /You provide:/)
   assert.match(ask, /You receive:/)
-  assert.match(ask, /Turnaround:/)
   assert.match(ask, /Proof:/)
   assert.doesNotMatch(recs, FACTORY)
   assert.doesNotMatch(ask, FACTORY)
@@ -46,7 +45,7 @@ test('commercial surfaces keep the three live cashiers and add handoff, work, ca
     assert.equal([...offers.matchAll(new RegExp(href.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'))].length, 1)
   }
 
-  assert.match(offers, /turnaround:/)
+  assert.doesNotMatch(offers, /turnaround:/)
   assert.match(hub, /\/offers/)
   assert.match(hub, /\/ask/)
   assert.match(workAlias, /canonical: '\/work-with-neuruh'/)
