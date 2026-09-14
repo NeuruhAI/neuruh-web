@@ -32,7 +32,7 @@ smoke court asserting zero `data-truth-mode="LIVE"` nodes on every route includi
 | Accessibility viewport widths audited | 2 |
 | Routes audited for accessibility | 41 |
 | Prerendered pages checked for links | 47 |
-| Internal references resolved | 2,118 |
+| Internal references resolved | 2,308 (re-measured after the Level 2 pass added Top 10 and harness links to the header and footer; 2,118 before) |
 
 The first accessibility run on the recovered pages recorded 24 serious color-contrast failures
 (12 routes × 2 viewports). The muted palette was lifted to ≥ 4.5:1 and the court re-run to the values

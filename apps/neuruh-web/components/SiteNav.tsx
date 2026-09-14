@@ -8,6 +8,8 @@ const primary = [
 ] as const
 
 const explore = [
+  ['Top 10 products', '/products/top10'],
+  ['Harnesses', '/harnesses'],
   ['Ask Neuruh', '/ask'],
   ['Work with Neuruh', '/work-with-neuruh'],
   ['Cases', '/cases'],

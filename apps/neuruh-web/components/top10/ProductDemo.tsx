@@ -83,6 +83,8 @@ export function HarnessDemo() {
   useEffect(() => {
     if (!running) return
     if (stage >= HARNESS_STAGES.length - 1) { setRunning(false); return }
+    const reduced = typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (reduced) { setStage(HARNESS_STAGES.length - 1); return }
     const t = setTimeout(() => setStage((v) => v + 1), 220)
     return () => clearTimeout(t)
   }, [running, stage])
@@ -100,9 +102,9 @@ export function HarnessDemo() {
   return (
     <div className={s.demoGrid} data-testid="harness-demo">
       <div>
-        <label className={s.label} htmlFor="demo-baseline">Baseline artifact (optional JSON)</label>
+        <label className={s.label} htmlFor="demo-baseline">Baseline: what the current version produced (optional JSON)</label>
         <textarea id="demo-baseline" className={s.textarea} value={baseline} onChange={(e) => setBaseline(e.target.value)} placeholder={SAMPLE_BASELINE} rows={4} />
-        <label className={s.label} htmlFor="demo-candidate">Candidate artifact (JSON or text)</label>
+        <label className={s.label} htmlFor="demo-candidate">Candidate: what the new version produced (JSON or text)</label>
         <textarea id="demo-candidate" className={s.textarea} value={candidate} onChange={(e) => setCandidate(e.target.value)} placeholder={SAMPLE_CANDIDATE} rows={5} />
         <label className={s.fileLabel}>Or choose a local JSON or text file (stays in your browser)
           <input type="file" accept="application/json,.json,text/plain" onChange={(e: ChangeEvent<HTMLInputElement>) => e.target.files?.[0]?.text().then(setCandidate)} />
@@ -112,7 +114,7 @@ export function HarnessDemo() {
           <button type="button" className={s.button} onClick={start} disabled={running} data-testid="harness-run">Run demonstration</button>
           <button type="button" className={s.buttonGhost} onClick={reset}>Reset</button>
         </div>
-        <ol className={s.stages} aria-label="Execution stages">
+        <ol className={s.stages} aria-label="Execution stages" aria-live="polite">
           {HARNESS_STAGES.map((name, i) => (
             <li key={name} className={s.stage} data-state={i < stage ? 'done' : i === stage ? 'active' : 'idle'} data-testid={`harness-stage-${i}`}>
               <span>{String(i + 1).padStart(2, '0')}</span>{name}
@@ -124,7 +126,7 @@ export function HarnessDemo() {
         {!result ? (
           <>
             <strong>{running ? `Running: ${HARNESS_STAGES[stage]}` : 'Ready.'}</strong>
-            <p>Supply a candidate artifact (and optionally a baseline), then run. Every stage is a browser-side illustration.</p>
+            <p>Load the sample pair or paste your own, then press run. Each stage lights up as the browser walks the sequence; the result shows the checks, the delta against the baseline, the decision, and an unsigned digest.</p>
           </>
         ) : (
           <>

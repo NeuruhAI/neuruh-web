@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return pageMeta({
     path: `/products/top10/${slug}`,
     title: product ? `${product.name} — ${product.price}` : 'Neuruh product',
-    description: product?.promise ?? 'A Neuruh commercial product with a truthful status, evidence, and a next action.',
+    description: product?.outcome ?? 'A Neuruh commercial product with a truthful status, evidence, and a next action.',
   })
 }
 
@@ -35,105 +35,113 @@ export default async function Top10ProductPage({ params }: { params: Promise<{ s
   const { slug } = await params
   const p = getTop10(slug)
   if (!p) notFound()
-  const cta = p.offerId ? { href: OFFER_BY_ID[p.offerId].href, external: true, label: p.ctaLabel } : { href: contactHref(p), external: false, label: p.ctaLabel }
-  const next = TOP10.find((item) => item.rank === p.rank + 1)
+  const cashier = p.offerId ? OFFER_BY_ID[p.offerId] : null
+  const cta = cashier ? { href: cashier.href, external: true, label: p.ctaLabel } : { href: contactHref(p), external: false, label: p.ctaLabel }
+  const related = getTop10(p.related.slug)
+  const buyStep = cashier
+    ? `Pay ${cashier.price} on the hosted Stripe checkout. Your receipt arrives from Stripe.`
+    : p.priceStatus === 'FOUNDER_SET_NO_CASHIER'
+      ? `Email your order. You get a scope confirmation and a ${p.price.split(' ')[0]} invoice before any work starts.`
+      : 'Email your request. You get a written scope and quote before any work starts.'
+  const Cta = ({ testId }: { testId?: string }) => cta.external
+    ? <a className={s.ctaButton} href={cta.href} rel="noopener noreferrer" data-testid={testId}>{cta.label} →</a>
+    : <Link className={s.ctaButton} href={cta.href} data-testid={testId}>{cta.label} →</Link>
+
   return <main className={s.page} id="main" data-product={p.slug}>
+    {/* 1 title · 2 outcome · 3 buyer · 10 price · 11 turnaround · 12 status · 13 CTA */}
     <header className={s.hero}>
       <div className={s.wrap}>
-        <Link href="/products/top10" className={s.back}>← All 10 products</Link>
+        <Link href="/products/top10" className={s.back}>← All ten products</Link>
         <div className={s.eyebrow}>{String(p.rank).padStart(2, '0')} · {p.category}</div>
         <div className={s.badge} data-testid="product-status">{p.status}</div>
         <h1>{p.name}</h1>
-        <p className={s.promise}>{p.promise}</p>
+        <p className={s.promise}>{p.outcome}</p>
         <div className={s.heroGrid}>
-          <div><span className={s.label}>WHO IT IS FOR</span><strong>{p.audience}</strong></div>
-          <div><span className={s.label}>WHAT IT COSTS</span><strong data-testid="product-price">{p.price}</strong><small className={s.disclaimer}>{PRICE_STATUS_LABEL[p.priceStatus]}</small></div>
-          <div><span className={s.label}>NEXT ACTION</span><strong>{p.nextStep}</strong></div>
+          <div><span className={s.label}>Who it is for</span><strong>{p.audience}</strong></div>
+          <div><span className={s.label}>What it costs</span><strong className={s.price} data-testid="product-price">{p.price}</strong><small className={s.disclaimer} style={{ marginTop: 6 }}>{PRICE_STATUS_LABEL[p.priceStatus]}</small></div>
+          <div><span className={s.label}>Turnaround</span><strong>{p.turnaround}</strong></div>
         </div>
         <div className={s.ctaPair} style={{ marginTop: 22 }}>
-          {cta.external
-            ? <a className={s.ctaButton} href={cta.href} rel="noopener noreferrer" data-testid="product-cta">{cta.label} →</a>
-            : <Link className={s.ctaButton} href={cta.href} data-testid="product-cta">{cta.label} →</Link>}
+          <Cta testId="product-cta" />
           {p.mode === 'harness' && <Link className={s.ctaSecondary} href="/harnesses">How the harness works</Link>}
-          {p.offerId && <Link className={s.ctaSecondary} href="/offers">See it on /offers</Link>}
+          {cashier && <Link className={s.ctaSecondary} href="/offers">See it on the offers page</Link>}
         </div>
       </div>
     </header>
 
+    {/* journey */}
     <section className={s.sectionAlt}><div className={s.wrap}>
       <div className={s.sectionHead}><span>→</span><h2>How buying this works</h2></div>
       <ol className={s.journey} data-testid="buyer-journey">
-        <li><span>1 · {p.offerId ? 'BUY' : 'REQUEST'}</span><b>{p.offerId ? `Pay ${OFFER_BY_ID[p.offerId].price} on the hosted Stripe checkout.` : p.priceStatus === 'FOUNDER_SET_NO_CASHIER' ? `Email your order. You get a scope confirmation and a ${p.price.split(' ')[0]} invoice before work starts.` : 'Email your request. You get a written scope and quote before work starts.'}</b></li>
+        <li><span>1 · {cashier ? 'BUY' : 'REQUEST'}</span><b>{buyStep}</b></li>
         <li><span>2 · PROVIDE</span><b>{p.inputs[0]}</b></li>
         <li><span>3 · WE ANALYZE</span><b>{p.workflow.slice(1, -1).join(' → ')}</b></li>
-        <li><span>4 · RECEIVE</span><b>{p.deliverables[0]} and the rest of the deliverable by email. {p.turnaround.split('.')[0]}.</b></li>
+        <li><span>4 · RECEIVE</span><b>{p.deliverables[0]} and the rest of the deliverable by email.</b></li>
       </ol>
-      <p className={s.disclaimer}>{p.offerId ? 'Checkout is a hosted Stripe payment link. This site has no payment webhook: a founder emails the checkout address within one business day to collect inputs, then delivers by email.' : 'There is no checkout for this product. Intake is by email and payment is collected from you by invoice when the deliverable is scoped.'}</p>
+      <p className={s.disclaimer}>{cashier ? 'This site has no payment webhook: a founder emails your checkout address within one business day to collect the inputs, then delivers by email.' : 'There is no checkout for this product. Intake is by email and payment is collected from you by invoice once the work is scoped.'}</p>
     </div></section>
 
+    {/* 4 problem · 5 what happens */}
     <section className={s.section}><div className={s.wrap}>
-      <div className={s.sectionHead}><span>01</span><h2>What it is and what problem it solves</h2></div>
-      <dl className={s.facts}>
-        <div><dt>The problem</dt><dd>{p.problem}</dd></div>
-        <div><dt>What it does</dt><dd><ul style={{ margin: 0, paddingLeft: 18 }}>{p.whatItDoes.map((x) => <li key={x}>{x}</li>)}</ul></dd></div>
-      </dl>
+      <div className={s.sectionHead}><span>01</span><h2>The problem it solves</h2></div>
+      <p className={s.lede}>{p.problem}</p>
+      <div className={s.sectionHead} style={{ marginTop: 28 }}><span>02</span><h2>What happens</h2></div>
+      <div className={s.timeline}>{p.workflow.map((x, i) => <div className={s.step} key={x}><span>{String(i + 1).padStart(2, '0')}</span><b>{x}</b></div>)}</div>
     </div></section>
 
+    {/* 6 provide · 7 receive */}
     <section className={s.sectionAlt}><div className={s.wrap}>
       <div className={s.split}>
-        <div><div className={s.sectionHead}><span>02</span><h2>What you provide</h2></div><ul>{p.inputs.map((x) => <li key={x}>{x}</li>)}</ul></div>
-        <div><div className={s.sectionHead}><span>03</span><h2>What Neuruh does</h2></div><ul>{p.workflow.map((x, i) => <li key={x}><b style={{ marginRight: 10, color: '#98a2a9' }}>{String(i + 1).padStart(2, '0')}</b>{x}</li>)}</ul></div>
+        <div><div className={s.sectionHead}><span>03</span><h2>What you provide</h2></div><ul>{p.inputs.map((x) => <li key={x}>{x}</li>)}</ul></div>
+        <div><div className={s.sectionHead}><span>04</span><h2>What you receive</h2></div><ul>{p.deliverables.map((x) => <li key={x}>{x}</li>)}</ul><p className={s.disclaimer}><b>Delivery format.</b> {p.delivery}</p></div>
       </div>
     </div></section>
 
+    {/* 8 example + use cases */}
     <section className={s.section}><div className={s.wrap}>
-      <div className={s.split}>
-        <div><div className={s.sectionHead}><span>04</span><h2>What you receive</h2></div><ul>{p.deliverables.map((x) => <li key={x}>{x}</li>)}</ul></div>
-        <div>
-          <div className={s.sectionHead}><span>05</span><h2>Delivery and turnaround</h2></div>
-          <dl className={s.facts} style={{ gridTemplateColumns: '1fr' }}>
-            <div><dt>Delivery format</dt><dd>{p.delivery}</dd></div>
-            <div><dt>Expected turnaround</dt><dd>{p.turnaround}</dd></div>
-          </dl>
-        </div>
+      <div className={s.sectionHead}><span>05</span><h2>What an engagement looks like</h2></div>
+      <div className={s.example} data-testid="product-example">
+        <p>{p.example}</p>
+        <small>Illustrative scenario written to show the shape of the work. It is not a customer result; no customer has bought this product yet.</small>
       </div>
+      <ul className={s.chips} aria-label="Typical use cases">{p.useCases.map((x) => <li key={x}>{x}</li>)}</ul>
     </div></section>
 
+    {/* 9 proof · 12 truth boundary */}
     <section className={s.sectionAlt}><div className={s.wrap}>
-      <div className={s.sectionHead}><span>06</span><h2>What is real, what is demonstration</h2></div>
+      <div className={s.sectionHead}><span>06</span><h2>Why you can trust it</h2></div>
       <div className={s.realDemo}>
-        <div data-testid="product-real"><h3>Production / real today</h3><ul>{p.real.map((x) => <li key={x}>{x}</li>)}</ul></div>
+        <div data-testid="product-real"><h3>Real today</h3><ul>{p.real.map((x) => <li key={x}>{x}</li>)}</ul></div>
         <div data-testid="product-demo-note"><h3>Demonstration only</h3><p>{p.demo}</p></div>
       </div>
+      <div className={s.evidence} style={{ marginTop: 14 }}>{p.proof.map((x) => <div className={s.evidenceItem} key={x}><span className={s.dot} /><p>{x}</p></div>)}</div>
+      <p className={s.disclaimer}>Every receipt cited here is dated and vendored in the public repository or compiled on <Link href="/proof">/proof</Link>. The hard zeros on <Link href="/refusals">/refusals</Link> apply: no revenue, no customers, no outreach as of the dated snapshot.</p>
     </div></section>
 
+    {/* demonstration */}
     <section className={s.section}><div className={s.wrap}>
-      <div className={s.sectionHead}><span>07</span><h2>Browser demonstration</h2></div>
+      <div className={s.sectionHead}><span>07</span><h2>Try the idea in your browser</h2></div>
+      <p className={s.lede}>A small, inspectable illustration of the reasoning. It runs on numbers or text you type and proves nothing about production.</p>
       <ProductDemo mode={p.mode} />
     </div></section>
 
+    {/* 13 CTA · 14 related · deep detail */}
     <section className={s.sectionAlt}><div className={s.wrap}>
-      <div className={s.split}>
-        <div><div className={s.sectionHead}><span>08</span><h2>Use cases</h2></div><ul>{p.useCases.map((x) => <li key={x}>{x}</li>)}</ul></div>
-        <div><div className={s.sectionHead}><span>09</span><h2>Evidence</h2></div><div className={s.evidence}>{p.proof.map((x) => <div className={s.evidenceItem} key={x}><span className={s.dot} /><p>{x}</p></div>)}</div><p className={s.disclaimer}>Every receipt cited here is dated and vendored in the public repository or compiled on <Link className={s.back} href="/proof">/proof</Link>. Hard zeros on <Link className={s.back} href="/refusals">/refusals</Link> apply.</p></div>
-      </div>
-    </div></section>
-
-    <section className={s.section}><div className={s.wrap}>
-      <div className={s.sectionHead}><span>10</span><h2>Where this product stands on the commercial ladder</h2></div>
-      <div className={s.ladder} data-testid="product-ladder">{LADDER.map((rung) => <div className={s.rung} key={rung} data-status={p.ladder[rung]}><span>{rung}</span><b>{RUNG_LABEL[p.ladder[rung]]}</b></div>)}</div>
-      <p className={s.disclaimer}>Product → Offer → Checkout or quote → Intake → Fulfillment → Delivery → Receipt → Outcome. A rung is PROVEN LIVE only when it has been exercised on the public site and courted. Fulfillment, delivery, and receipt are founder-operated and become PROVEN LIVE only with a delivered, receipted engagement.</p>
       <div className={s.cta}>
         <h2>{p.nextStep}</h2>
-        <p>{p.offerId ? 'Checkout is a hosted Stripe payment link. The receipt goes to your checkout address; a founder emails within one business day to collect the inputs listed above. This site has no payment webhook.' : 'There is no checkout for this product. The contact page carries your product selection into the email; scope and a written quote come back before any work starts.'}</p>
+        <p>{cashier ? `${cashier.price} on the hosted Stripe checkout. This site has no payment webhook; a founder follows up from the receipt address within one business day.` : 'No checkout exists for this product. The contact page carries your selection into the email; scope and a written quote come back before any work starts.'}</p>
         <div className={s.ctaPair}>
-          {cta.external
-            ? <a className={s.ctaButton} href={cta.href} rel="noopener noreferrer">{cta.label} →</a>
-            : <Link className={s.ctaButton} href={cta.href}>{cta.label} →</Link>}
-          {next && <Link className={s.ctaSecondary} href={`/products/top10/${next.slug}`}>Next: {next.name}</Link>}
+          <Cta />
+          {related && <Link className={s.ctaSecondary} href={`/products/top10/${related.slug}`} data-testid="product-related">{related.name} →</Link>}
         </div>
+        {related && <p className={s.disclaimer} style={{ marginTop: 12 }}><b>Related.</b> {p.related.why}</p>}
       </div>
-      <p className={s.disclaimer}>Status labels distinguish live cashiers, founder-set prices without checkout, and test pricing. The browser demonstration above is labeled and is not a production underwriting or assurance result. No customer results, counts, or automation are claimed.</p>
+      <details className={s.details} style={{ marginTop: 22 }}>
+        <summary className={s.summary}>Where this product stands on the commercial ladder</summary>
+        <div className={s.ladder} data-testid="product-ladder">{LADDER.map((rung) => <div className={s.rung} key={rung} data-status={p.ladder[rung]}><span>{rung}</span><b>{RUNG_LABEL[p.ladder[rung]]}</b></div>)}</div>
+        <p className={s.disclaimer} style={{ marginTop: 0, paddingBottom: 16 }}>Product → Offer → Checkout or quote → Intake → Fulfillment → Delivery → Receipt → Outcome. A rung is PROVEN LIVE only when it has been exercised on the public site and courted. Fulfillment, delivery, and receipt are founder-operated and become PROVEN LIVE only with a delivered, receipted engagement. The test-mode tape for the four priority offers is in the public repository under docs/receipts-external.</p>
+      </details>
+      <p className={s.disclaimer}>Status labels distinguish live cashiers, founder-set prices without checkout, and test pricing. No customer results, counts, or automation are claimed.</p>
     </div></section>
   </main>
 }

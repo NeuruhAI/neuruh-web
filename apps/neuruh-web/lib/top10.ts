@@ -25,6 +25,16 @@ export type Category =
   | 'Executive / Transformation'
   | 'Operator / Ongoing Intelligence'
 
+/** Plain-language descriptor per category, for buyers who do not know Neuruh. */
+export const CATEGORY_BLURB: Record<Category, string> = {
+  'AI / System Integrity': 'For teams that run AI agents or inherited automation and need proof of what it does.',
+  'Real Estate Intelligence': 'For land and property buyers who need evidence on one parcel or one deal.',
+  'Business Acquisition': 'For searchers and investors looking for businesses worth buying.',
+  'Data / Workflow': 'For operations teams with messy files or one process that eats the week.',
+  'Executive / Transformation': 'For leaders deciding where AI actually changes the business.',
+  'Operator / Ongoing Intelligence': 'For operators who need opportunities found and priced continuously.',
+}
+
 export const CATEGORIES: Category[] = [
   'AI / System Integrity',
   'Real Estate Intelligence',
@@ -43,6 +53,8 @@ export type Top10Product = {
   name: string
   category: Category
   status: string
+  /** One-sentence outcome in buyer language. */
+  outcome: string
   price: string
   priceStatus: PriceStatus
   offerId?: PublicOfferId
@@ -60,6 +72,9 @@ export type Top10Product = {
   demo: string
   proof: string[]
   ladder: Record<LadderRung, RungStatus>
+  /** Illustrative scenario. Never a customer result; labeled as such on the page. */
+  example: string
+  related: { slug: string; why: string }
   nextStep: string
   ctaLabel: string
   mode: ProductMode
@@ -97,6 +112,7 @@ export const TOP10: Top10Product[] = [
     name: 'Agent Integrity Suite',
     category: 'AI / System Integrity',
     status: 'SERVICE-FIRST · QUOTE',
+    outcome: 'Know, with evidence, whether the agent you are about to ship still does only what you authorized.',
     price: '$2,500 pilot · $1,500–$5,000/mo after proof',
     priceStatus: 'TEST_PRICING',
     audience: 'AI startups, agencies, internal AI teams, and operating partners shipping agents into real workflows.',
@@ -113,6 +129,8 @@ export const TOP10: Top10Product[] = [
     demo: 'The browser demonstration on this page runs a small set of structural checks on text you paste. It illustrates the stages and the shape of a receipt. It is not a production assurance result and it does not touch your systems.',
     proof: ['Release court for neuruh.com — see /proof (broken links, accessibility, dated).', 'DeedSonar production court — 1,510 green at e2b71fa (2026-08-23), receipt vendored in-repo.', 'No external customer pilot has been run yet. Public hard zeros apply (see /refusals).'],
     ladder: QUOTE_LADDER,
+    example: 'A team ships a support agent allowed to issue refunds up to $50. The pilot baselines twelve real tickets, adds six held-out and five adversarial cases (a $500 request, an “ignore your limits” injection), runs the new build, and reports one regression: it issued a $75 refund. Decision: REJECT, with the failing case and the diff in the receipt.',
+    related: { slug: 'ai-estate-forensic', why: 'If you do not yet know which of your agents is canonical, start with the estate audit.' },
     nextStep: 'Request a 7-day assurance pilot against one real workflow. Scope and quote come back by email.',
     ctaLabel: 'Request a harness pilot',
     mode: 'harness',
@@ -123,6 +141,7 @@ export const TOP10: Top10Product[] = [
     name: 'AI Estate Forensic',
     category: 'AI / System Integrity',
     status: 'PRODUCTIZED SERVICE · QUOTE',
+    outcome: 'Know what you already own, what actually works, and what to ship next before spending another dollar on AI.',
     price: '$2,500–$7,500 per estate audit',
     priceStatus: 'TEST_PRICING',
     audience: 'Founders with agent sprawl, teams with inherited automation, operating partners doing technical diligence.',
@@ -139,6 +158,8 @@ export const TOP10: Top10Product[] = [
     demo: 'The browser demonstration runs structural checks on a pasted artifact to show what an evidence check looks like. It does not inspect any repository.',
     proof: ['Neuruh public-truth compiler and courts — see /proof and /proof/distribution.', 'Organism activation court attestation (2026-09-14): what is merged, pinned, and what is explicitly not proven.', 'No external estate audit has been sold yet. Public hard zeros apply.'],
     ladder: QUOTE_LADDER,
+    example: 'A founder has three agencies’ worth of automation across fourteen repositories. The audit finds five canonical systems, six stale forks of the same idea, two with passing tests, and one quietly writing to production. The recovery map ships two, freezes three, and kills nine, with the evidence for each call.',
+    related: { slug: 'agent-integrity', why: 'Once the canonical systems are named, put a harness on the one that matters most.' },
     nextStep: 'Request a fixed-scope estate audit. Neuruh’s own estate is the reference case.',
     ctaLabel: 'Request an estate audit',
     mode: 'harness',
@@ -149,6 +170,7 @@ export const TOP10: Top10Product[] = [
     name: 'Property Opportunity Scan',
     category: 'Real Estate Intelligence',
     status: 'PRICED · INTAKE BY EMAIL · NO CHECKOUT YET',
+    outcome: 'Know whether one parcel deserves your next hour and your next dollar.',
     price: '$100 per property',
     priceStatus: 'FOUNDER_SET_NO_CASHIER',
     audience: 'Land investors, wholesalers, small developers, brokers, and lenders with one parcel in front of them.',
@@ -174,6 +196,8 @@ export const TOP10: Top10Product[] = [
       Receipt: 'IMPLEMENTED_INCOMPLETE',
       Outcome: 'UNKNOWN',
     },
+    example: 'A twelve-acre rural parcel with an out-of-state owner. The scan confirms parcel identity in county records, flags a floodway crossing the road frontage, finds no probate or tax-sale signal, and recommends HOLD: cheap to watch, expensive to develop, with the two missing documents named.',
+    related: { slug: 'opportunity-intelligence-dossier', why: 'When a scan says ADVANCE, the dossier is the decision package for the offer.' },
     nextStep: 'Send one parcel by email. You get a scope confirmation and a payment request back before any work starts.',
     ctaLabel: 'Order a $100 scan by email',
     mode: 'scan',
@@ -184,6 +208,7 @@ export const TOP10: Top10Product[] = [
     name: 'Opportunity Intelligence Dossier',
     category: 'Real Estate Intelligence',
     status: 'LIVE CASHIER · FOUNDER-FULFILLED',
+    outcome: 'One decision-grade brief on the property, company, or market you are about to commit to.',
     price: '$499',
     priceStatus: 'LIVE_CASHIER',
     offerId: 'O02',
@@ -201,6 +226,8 @@ export const TOP10: Top10Product[] = [
     demo: 'The browser calculator illustrates evidence-readiness triage. The real dossier is researched and written by a founder against sources.',
     proof: ['Live cashier verified by the checkout-link court on every build.', 'DeedSonar production court — 1,510 green at e2b71fa (2026-08-23).', 'No dossier has been delivered to a paying customer yet. Public hard zeros apply.'],
     ladder: CASHIER_LADDER,
+    example: 'A disused feed mill on six acres. The dossier resolves the owning entity and its two related companies, confirms the rail siding is inactive from the carrier’s public abandonment filing, prices the conversion risk, and recommends an offer range with the single biggest risk named.',
+    related: { slug: 'property-opportunity-scan', why: 'Not sure the target is worth a dossier yet? A $100 scan answers that first.' },
     nextStep: 'Order the dossier. The receipt goes to your checkout address and a founder follows up for inputs.',
     ctaLabel: 'Order the Dossier — $499',
     mode: 'dossier',
@@ -211,6 +238,7 @@ export const TOP10: Top10Product[] = [
     name: 'Business Acquisition Intelligence',
     category: 'Business Acquisition',
     status: 'PRODUCTIZATION TARGET · QUOTE',
+    outcome: 'A short list of businesses worth investigating, with the owner, property, and risk angles exposed before you commit capital.',
     price: '$750 screen · $2,500 dossier · custom buy-side mandate',
     priceStatus: 'TEST_PRICING',
     audience: 'Searchers, independent sponsors, family offices, and private buyers of small businesses.',
@@ -227,6 +255,8 @@ export const TOP10: Top10Product[] = [
     demo: 'The browser calculator is a screening toy, not a valuation. Paid work uses public evidence, entity and property linkage, and explicit unknowns.',
     proof: ['Method lineage: DeedSonar production court (2026-08-23).', 'No customer engagement yet. Public hard zeros apply.'],
     ladder: QUOTE_LADDER,
+    example: 'Ten HVAC contractors across two counties. The screen links six to owner-occupied commercial property, flags two owners past retirement age with no visible successor, and ranks a shortlist of three with the diligence questions for each.',
+    related: { slug: 'opportunity-intelligence-dossier', why: 'Take the top target from the screen into a full dossier.' },
     nextStep: 'Request a ten-target screen in one vertical and one geography.',
     ctaLabel: 'Request a buyability screen',
     mode: 'acquisition',
@@ -237,6 +267,7 @@ export const TOP10: Top10Product[] = [
     name: 'Data Rescue',
     category: 'Data / Workflow',
     status: 'LIVE CASHIER · FOUNDER-FULFILLED',
+    outcome: 'A clean, usable dataset from the files your team keeps fighting, with exceptions and provenance made explicit.',
     price: '$299 starter · custom for volume',
     priceStatus: 'LIVE_CASHIER',
     offerId: 'O01',
@@ -254,6 +285,8 @@ export const TOP10: Top10Product[] = [
     demo: 'The browser calculator shows the arithmetic of cleanable rows. The delivered product is the normalized dataset, exception report, provenance, and receipt.',
     proof: ['Live cashier verified by the checkout-link court on every build; listed as LIVE CASHIER on /proof.', 'No paid rescue has been delivered yet. Public hard zeros apply.'],
     ladder: CASHIER_LADDER,
+    example: 'Three CRM exports and a spreadsheet: nine thousand rows, four phone formats. The rescue returns the normalized records, the duplicate groups, the exceptions with reasons, a field dictionary, and a receipt naming every source file by digest.',
+    related: { slug: 'workflow-replacement', why: 'If the same mess comes back every month, replace the workflow that produces it.' },
     nextStep: 'Start Data Rescue. Inputs are collected by email after checkout.',
     ctaLabel: 'Start Data Rescue — $299',
     mode: 'rescue',
@@ -264,6 +297,7 @@ export const TOP10: Top10Product[] = [
     name: 'Workflow Replacement Sprint',
     category: 'Data / Workflow',
     status: 'LIVE CASHIER · FOUNDER-FULFILLED',
+    outcome: 'One painful manual workflow replaced with a bounded, measured, documented process.',
     price: '$1,250 starter · $3,500+ complex',
     priceStatus: 'LIVE_CASHIER',
     offerId: 'O05',
@@ -281,6 +315,8 @@ export const TOP10: Top10Product[] = [
     demo: 'The browser calculator establishes a labor-exposure baseline from your own numbers. The sprint is sold against one measurable replacement outcome.',
     proof: ['Live cashier verified by the checkout-link court on every build.', 'No sprint has been delivered to a paying customer yet. Public hard zeros apply.'],
     ladder: CASHIER_LADDER,
+    example: 'Lead intake by phone and sticky notes. The sprint maps the eleven steps, baselines the weekly hours, installs a structured intake with validation and a daily digest, and hands over the checks that show whether the new process is holding.',
+    related: { slug: 'data-rescue', why: 'Start smaller: rescue the data the workflow produces before replacing the workflow.' },
     nextStep: 'Start the sprint at the $1,250 starter scope, or request a quote for a complex workflow.',
     ctaLabel: 'Start the Sprint — $1,250',
     mode: 'workflow',
@@ -291,6 +327,7 @@ export const TOP10: Top10Product[] = [
     name: 'ProofOS / Future-State Twin',
     category: 'Executive / Transformation',
     status: 'SEALED CANDIDATE · QUOTE',
+    outcome: 'A current-state model and a future-state twin of your company, with every claim labeled by how well it is known.',
     price: '$2,500 diagnostic · $7,500+ transformation plan',
     priceStatus: 'TEST_PRICING',
     audience: 'Executives, operating partners, consultancies, and buyers of AI transformation work.',
@@ -307,6 +344,8 @@ export const TOP10: Top10Product[] = [
     demo: 'The browser calculator shows the arithmetic of decision-ready evidence units. The real twin classifies each claim by evidence class.',
     proof: ['ProofOS court receipts, 14 courts — vendored in-repo (docs/receipts-external/proofos-courts).', 'Listed as SEALED CANDIDATE on /products.', 'No diagnostic has been sold yet. Public hard zeros apply.'],
     ladder: QUOTE_LADDER,
+    example: 'A regional distributor weighing AI in order entry. The diagnostic separates fourteen facts from their own data, nine derived estimates, four hypotheses, and three unknowns, builds the future-state twin, and shows which two unknowns decide whether the value case holds.',
+    related: { slug: 'ai-estate-forensic', why: 'If the question is about an AI estate you already run, the forensic audit comes first.' },
     nextStep: 'Request a diagnostic. ProofOS is used to close an estate audit or workflow sprint before it is sold standalone.',
     ctaLabel: 'Request a ProofOS diagnostic',
     mode: 'proof',
@@ -317,6 +356,7 @@ export const TOP10: Top10Product[] = [
     name: 'Managed Opportunity Desk',
     category: 'Operator / Ongoing Intelligence',
     status: 'MANUAL-FIRST RECURRING · QUOTE',
+    outcome: 'A standing desk that keeps finding, scoring, and explaining opportunities against your buy box every week.',
     price: '$1,500–$5,000 per month',
     priceStatus: 'TEST_PRICING',
     audience: 'Investors and operators who need opportunities found, scored, explained, and routed against a real buy box every week.',
@@ -333,6 +373,8 @@ export const TOP10: Top10Product[] = [
     demo: 'The browser calculator shows recurring-revenue arithmetic for the desk itself. It is not a forecast of your outcomes.',
     proof: ['DeedSonar production court — 1,510 green at e2b71fa (2026-08-23).', 'No desk customer exists. Public hard zeros apply.'],
     ladder: { ...QUOTE_LADDER, Offer: 'BLOCKED', 'Checkout / quote': 'BLOCKED' },
+    example: 'A land buyer with a two-county box. Each week: forty candidates reviewed, five escalated with evidence, one recommended for an offer, and a decision record for all forty so nothing is re-reviewed.',
+    related: { slug: 'property-opportunity-scan', why: 'The desk follows a real outcome. Begin with one scan or one dossier.' },
     nextStep: 'Start with a $499 dossier or a $100 scan. The desk follows a real outcome.',
     ctaLabel: 'Start with a dossier or scan',
     mode: 'managed',
@@ -343,6 +385,7 @@ export const TOP10: Top10Product[] = [
     name: 'FindSellProfit',
     category: 'Operator / Ongoing Intelligence',
     status: 'SEALED CANDIDATE · QUOTE',
+    outcome: 'Know what an item or lot is worth, what to pay, and how to exit before cash is trapped.',
     price: '$299–$1,000+ operator stack',
     priceStatus: 'TEST_PRICING',
     audience: 'Resellers, flippers, liquidation buyers, and marketplace operators.',
@@ -359,6 +402,8 @@ export const TOP10: Top10Product[] = [
     demo: 'The browser calculator computes a buy ceiling from your own numbers. The real product binds valuation evidence, buy ceiling, disposition, and receipt.',
     proof: ['FindSellProfit custody and court receipts, 229/229 tests — vendored in-repo (docs/receipts-external/findsellprofit).', 'Listed as SEALED CANDIDATE on /products.', 'No operator engagement has been sold yet. Public hard zeros apply.'],
     ladder: QUOTE_LADDER,
+    example: 'A forty-item estate lot. The engagement identifies thirty-four items with comparables, sets a buy ceiling per item and for the lot, flags six with no reliable comparables, and recommends the exit channel per item.',
+    related: { slug: 'opportunity-intelligence-dossier', why: 'Same evidence discipline, applied to property instead of inventory.' },
     nextStep: 'Request an operator engagement for one narrow category.',
     ctaLabel: 'Request an operator engagement',
     mode: 'resale',

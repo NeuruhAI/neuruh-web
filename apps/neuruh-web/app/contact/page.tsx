@@ -58,7 +58,7 @@ export default function ContactPage() {
 
       <section className="semantic-section" aria-labelledby="contact-routes">
         <h2 id="contact-routes">Route the work</h2>
-        <dl className="zeros-ledger">
+        <dl className="zeros-ledger zeros-ledger--prose">
           {ROUTES.map((route) => (
             <div key={route.href}>
               <dt>{route.title}</dt>
@@ -86,7 +86,7 @@ export default function ContactPage() {
 
       <section className="semantic-section" aria-labelledby="engagements">
         <h2 id="engagements">What an engagement can be</h2>
-        <dl className="zeros-ledger">
+        <dl className="zeros-ledger zeros-ledger--prose">
           <div>
             <dt>Governed execution and evidence systems</dt>
             <dd>Authority gates, receipts, and claim discipline applied to an AI system you already run — or one designed from zero.</dd>

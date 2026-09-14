@@ -1229,7 +1229,7 @@
       },
       "id": "release-court",
       "kind": "proof",
-      "last_verified_at": "2026-09-14T14:30:00.000Z",
+      "last_verified_at": "2026-09-14T18:30:00.000Z",
       "limitations": [
         "Gates are measured against a built candidate on the stated date. A later source change requires re-running them; rendering this page does not re-verify anything."
       ],
@@ -1297,7 +1297,7 @@
           "name": "internal_references_checked",
           "source_ref": "src-top10-commercial-court-20260914",
           "unit": "references",
-          "value": 2118
+          "value": 2308
         },
         {
           "as_of": "2026-09-14T00:00:00.000Z",

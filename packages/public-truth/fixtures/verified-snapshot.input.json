@@ -1205,7 +1205,7 @@
       "claim_class": "OBSERVED",
       "maturity": "SYSTEM_COMPONENT",
       "status": "STABLE",
-      "last_verified_at": "2026-09-14T14:30:00.000Z",
+      "last_verified_at": "2026-09-14T18:30:00.000Z",
       "source_ref": "src-commons-distribution-20260903",
       "evidence_summary": {
         "status": "SUFFICIENT",
@@ -1275,7 +1275,7 @@
         },
         {
           "name": "internal_references_checked",
-          "value": 2118,
+          "value": 2308,
           "classification": "MEASURED",
           "unit": "references",
           "as_of": "2026-09-14T00:00:00.000Z",

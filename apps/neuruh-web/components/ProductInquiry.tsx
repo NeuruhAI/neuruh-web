@@ -10,12 +10,25 @@ import { PRICE_STATUS_LABEL, getTop10, type Top10Product } from '../lib/top10'
  */
 export function ProductInquiry() {
   const [product, setProduct] = useState<Top10Product | null>(null)
+  const [unknown, setUnknown] = useState<string | null>(null)
 
   useEffect(() => {
     const slug = new URLSearchParams(window.location.search).get('product')
-    setProduct(slug ? getTop10(slug) ?? null : null)
+    if (!slug) return
+    const found = getTop10(slug) ?? null
+    setProduct(found)
+    setUnknown(found ? null : slug.slice(0, 64))
   }, [])
 
+  if (unknown) {
+    return (
+      <section className="semantic-section" aria-labelledby="product-inquiry" data-testid="product-inquiry-unknown">
+        <h2 id="product-inquiry">That product reference is not one we sell</h2>
+        <p className="t-lede">The link you followed named a product this site does not list. Nothing was sent. Pick one of the ten below, or write to the founder directly.</p>
+        <p><Link className="n-btn n-btn--secondary" href="/products/top10">See the Top 10 products</Link></p>
+      </section>
+    )
+  }
   if (!product) return null
   const subject = encodeURIComponent(`${product.name} — ${product.price}`)
   const body = encodeURIComponent(

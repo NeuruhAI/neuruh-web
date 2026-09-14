@@ -29,7 +29,7 @@
 .kicker {
   margin: 0;
   font-family: var(--font-mono);
-  font-size: 0.66rem;
+  font-size: 0.6875rem;
   line-height: 1.4;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -83,7 +83,7 @@
 .facts dt {
   margin: 0 0 0.28rem;
   font-family: var(--font-mono);
-  font-size: 0.67rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--v2-steel-ink);
