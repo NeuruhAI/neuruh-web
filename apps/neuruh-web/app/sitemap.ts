@@ -3,7 +3,7 @@ import { WORLD_IDS, getPublicSnapshot } from '../../../packages/public-truth/cli
 
 export const dynamic = 'force-static'
 
-const COMMERCIAL_LASTMOD = new Date('2026-09-02T00:00:00.000Z')
+const COMMERCIAL_LASTMOD = new Date('2026-09-14T00:00:00.000Z')
 const COMMERCIAL = new Set([
   '/',
   '/offers',

@@ -193,6 +193,13 @@
       "title": "DeedSonar production customer tape, 2026-09-14 (read-only, efxo)",
       "path_or_uri": "docs/receipts-external/deedsonar-tape-20260914.attestation.md",
       "public_safe": true
+    },
+    {
+      "class": "decision_receipt",
+      "path_or_uri": "docs/receipts-external/site-release-court-20260914.attestation.md",
+      "public_safe": true,
+      "ref": "src-site-release-court-20260914",
+      "title": "neuruh.com site release court (2026-09-14)"
     }
   ],
   "objects": [
@@ -1166,13 +1173,13 @@
       "claim_class": "OBSERVED",
       "maturity": "SYSTEM_COMPONENT",
       "status": "STABLE",
-      "last_verified_at": "2026-09-03T18:00:00.000Z",
+      "last_verified_at": "2026-09-14T12:00:00.000Z",
       "source_ref": "src-commons-distribution-20260903",
       "evidence_summary": {
         "status": "SUFFICIENT",
-        "statement": "Each gate was run against the built release candidate. Accessibility used axe-core at desktop and mobile widths; links were resolved against real routes and files; secret and private-path scans ran over the working tree.",
+        "statement": "Each gate was run against the built release candidate of 2026-09-14. Accessibility used axe-core at desktop and mobile widths on both colour spines; links were resolved against real routes and files; secret and private-path scans ran over the working tree.",
         "source_refs": [
-          "src-commons-distribution-20260903"
+          "src-site-release-court-20260914"
         ]
       },
       "public_route": "/proof/distribution",
@@ -1182,72 +1189,72 @@
           "value": 0,
           "classification": "MEASURED",
           "unit": "links",
-          "as_of": "2026-09-03T00:00:00.000Z",
-          "source_ref": "src-commons-distribution-20260903"
+          "as_of": "2026-09-14T12:00:00.000Z",
+          "source_ref": "src-site-release-court-20260914"
         },
         {
           "name": "serious_accessibility_violations",
           "value": 0,
           "classification": "MEASURED",
           "unit": "violations",
-          "as_of": "2026-09-03T00:00:00.000Z",
-          "source_ref": "src-commons-distribution-20260903"
+          "as_of": "2026-09-14T12:00:00.000Z",
+          "source_ref": "src-site-release-court-20260914"
         },
         {
           "name": "critical_accessibility_violations",
           "value": 0,
           "classification": "MEASURED",
           "unit": "violations",
-          "as_of": "2026-09-03T00:00:00.000Z",
-          "source_ref": "src-commons-distribution-20260903"
+          "as_of": "2026-09-14T12:00:00.000Z",
+          "source_ref": "src-site-release-court-20260914"
         },
         {
           "name": "secret_scan_hits",
           "value": 0,
           "classification": "MEASURED",
           "unit": "hits",
-          "as_of": "2026-09-03T00:00:00.000Z",
-          "source_ref": "src-commons-distribution-20260903"
+          "as_of": "2026-09-14T12:00:00.000Z",
+          "source_ref": "src-site-release-court-20260914"
         },
         {
           "name": "private_path_leaks",
           "value": 0,
           "classification": "MEASURED",
           "unit": "leaks",
-          "as_of": "2026-09-03T00:00:00.000Z",
-          "source_ref": "src-commons-distribution-20260903"
+          "as_of": "2026-09-14T12:00:00.000Z",
+          "source_ref": "src-site-release-court-20260914"
         },
         {
           "name": "false_live_claims",
           "value": 0,
           "classification": "MEASURED",
           "unit": "claims",
-          "as_of": "2026-09-03T00:00:00.000Z",
-          "source_ref": "src-commons-distribution-20260903"
+          "as_of": "2026-09-14T12:00:00.000Z",
+          "source_ref": "src-site-release-court-20260914"
         },
         {
           "name": "pages_checked",
           "value": 35,
           "classification": "MEASURED",
           "unit": "pages",
-          "as_of": "2026-09-03T00:00:00.000Z",
-          "source_ref": "src-commons-distribution-20260903"
+          "as_of": "2026-09-14T12:00:00.000Z",
+          "source_ref": "src-site-release-court-20260914"
         },
         {
           "name": "internal_references_checked",
-          "value": 1580,
+          "value": 1617,
           "classification": "MEASURED",
           "unit": "references",
-          "as_of": "2026-09-03T00:00:00.000Z",
-          "source_ref": "src-commons-distribution-20260903"
+          "as_of": "2026-09-14T12:00:00.000Z",
+          "source_ref": "src-site-release-court-20260914"
         },
         {
           "name": "accessibility_viewports",
           "value": 2,
           "classification": "MEASURED",
           "unit": "viewports",
-          "as_of": "2026-09-03T00:00:00.000Z",
-          "source_ref": "src-commons-distribution-20260903"
+          "as_of": "2026-09-14T12:00:00.000Z",
+          "source_ref": "src-site-release-court-20260914"
         }
       ],
       "limitations": [

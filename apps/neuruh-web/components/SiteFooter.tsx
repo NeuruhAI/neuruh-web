@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { estateHref } from '../lib/attribution'
 
 const columns: ReadonlyArray<readonly [string, ReadonlyArray<readonly [string, string]>]> = [
   ['System', [
@@ -29,6 +30,11 @@ const columns: ReadonlyArray<readonly [string, ReadonlyArray<readonly [string, s
 export function SiteFooter() {
   return (
     <footer className="site-footer">
+      <p className="site-footer__estate" data-testid="estate-nav">
+        <span>Neuruh estate:</span>
+        <a href={estateHref('re', 'footer-re')} rel="noopener noreferrer">re.neuruh.com — real-estate front door</a>
+        <a href={estateHref('guide', 'footer-guide')} rel="noopener noreferrer">guide.neuruh.com — free ChatGPT field guide</a>
+      </p>
       <div className="site-footer__grid">
         <div className="site-footer__brand">
           <p className="wordmark">Neuruh</p>

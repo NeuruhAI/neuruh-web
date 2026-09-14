@@ -1189,88 +1189,88 @@
       "claim_class": "OBSERVED",
       "evidence_summary": {
         "source_refs": [
-          "src-commons-distribution-20260903"
+          "src-site-release-court-20260914"
         ],
-        "statement": "Each gate was run against the built release candidate. Accessibility used axe-core at desktop and mobile widths; links were resolved against real routes and files; secret and private-path scans ran over the working tree.",
+        "statement": "Each gate was run against the built release candidate of 2026-09-14. Accessibility used axe-core at desktop and mobile widths on both colour spines; links were resolved against real routes and files; secret and private-path scans ran over the working tree.",
         "status": "SUFFICIENT"
       },
       "id": "release-court",
       "kind": "proof",
-      "last_verified_at": "2026-09-03T18:00:00.000Z",
+      "last_verified_at": "2026-09-14T12:00:00.000Z",
       "limitations": [
         "Gates are measured against a built candidate on the stated date. A later source change requires re-running them; rendering this page does not re-verify anything."
       ],
       "maturity": "SYSTEM_COMPONENT",
       "metrics": [
         {
-          "as_of": "2026-09-03T00:00:00.000Z",
+          "as_of": "2026-09-14T12:00:00.000Z",
           "classification": "MEASURED",
           "name": "broken_links",
-          "source_ref": "src-commons-distribution-20260903",
+          "source_ref": "src-site-release-court-20260914",
           "unit": "links",
           "value": 0
         },
         {
-          "as_of": "2026-09-03T00:00:00.000Z",
+          "as_of": "2026-09-14T12:00:00.000Z",
           "classification": "MEASURED",
           "name": "serious_accessibility_violations",
-          "source_ref": "src-commons-distribution-20260903",
+          "source_ref": "src-site-release-court-20260914",
           "unit": "violations",
           "value": 0
         },
         {
-          "as_of": "2026-09-03T00:00:00.000Z",
+          "as_of": "2026-09-14T12:00:00.000Z",
           "classification": "MEASURED",
           "name": "critical_accessibility_violations",
-          "source_ref": "src-commons-distribution-20260903",
+          "source_ref": "src-site-release-court-20260914",
           "unit": "violations",
           "value": 0
         },
         {
-          "as_of": "2026-09-03T00:00:00.000Z",
+          "as_of": "2026-09-14T12:00:00.000Z",
           "classification": "MEASURED",
           "name": "secret_scan_hits",
-          "source_ref": "src-commons-distribution-20260903",
+          "source_ref": "src-site-release-court-20260914",
           "unit": "hits",
           "value": 0
         },
         {
-          "as_of": "2026-09-03T00:00:00.000Z",
+          "as_of": "2026-09-14T12:00:00.000Z",
           "classification": "MEASURED",
           "name": "private_path_leaks",
-          "source_ref": "src-commons-distribution-20260903",
+          "source_ref": "src-site-release-court-20260914",
           "unit": "leaks",
           "value": 0
         },
         {
-          "as_of": "2026-09-03T00:00:00.000Z",
+          "as_of": "2026-09-14T12:00:00.000Z",
           "classification": "MEASURED",
           "name": "false_live_claims",
-          "source_ref": "src-commons-distribution-20260903",
+          "source_ref": "src-site-release-court-20260914",
           "unit": "claims",
           "value": 0
         },
         {
-          "as_of": "2026-09-03T00:00:00.000Z",
+          "as_of": "2026-09-14T12:00:00.000Z",
           "classification": "MEASURED",
           "name": "pages_checked",
-          "source_ref": "src-commons-distribution-20260903",
+          "source_ref": "src-site-release-court-20260914",
           "unit": "pages",
           "value": 35
         },
         {
-          "as_of": "2026-09-03T00:00:00.000Z",
+          "as_of": "2026-09-14T12:00:00.000Z",
           "classification": "MEASURED",
           "name": "internal_references_checked",
-          "source_ref": "src-commons-distribution-20260903",
+          "source_ref": "src-site-release-court-20260914",
           "unit": "references",
-          "value": 1580
+          "value": 1617
         },
         {
-          "as_of": "2026-09-03T00:00:00.000Z",
+          "as_of": "2026-09-14T12:00:00.000Z",
           "classification": "MEASURED",
           "name": "accessibility_viewports",
-          "source_ref": "src-commons-distribution-20260903",
+          "source_ref": "src-site-release-court-20260914",
           "unit": "viewports",
           "value": 2
         }
@@ -1747,6 +1747,13 @@
       "public_safe": true,
       "ref": "src-proofos-receipt",
       "title": "ProofOS court receipts, 14 courts (NeuruhAI/neuruh-proof-os@c53cc3fc)"
+    },
+    {
+      "class": "decision_receipt",
+      "path_or_uri": "docs/receipts-external/site-release-court-20260914.attestation.md",
+      "public_safe": true,
+      "ref": "src-site-release-court-20260914",
+      "title": "neuruh.com site release court (2026-09-14)"
     },
     {
       "class": "decision_receipt",

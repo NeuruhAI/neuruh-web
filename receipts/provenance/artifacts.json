@@ -674,7 +674,7 @@
       "destination": "apps/neuruh-web/app/globals.css",
       "mode": "ported",
       "sourceSha256": "e4a38d8cf635679a5f01ba7781312629a08412ec778e08529d8147a99f527528",
-      "destinationSha256": "2efb44a052567744edfcff249e119bbc6a184c29c05a317fd3982028474a4421",
+      "destinationSha256": "35c0394f284d42046f5f688c5875bac70110b2609a655fed6eee4365ff15ee50",
       "adaptation": "Production path/import adaptation or locked trs=0.75 policy; source remains unchanged.",
       "note": "Digest refreshed 2026-09-14 (truth/estate-repair: semantic tokens on both spines, mono reserved for machine evidence)."
     },

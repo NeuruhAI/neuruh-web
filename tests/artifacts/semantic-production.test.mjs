@@ -45,7 +45,7 @@ test('accessible, no-WebGL, reduced-motion, and primary homepage carry identical
   assert.equal(mainMarkup(reduced), mainMarkup(accessible))
   const ids = sectionIds(home)
   assert.ok(ids.length >= 9, `homepage story has ${ids.length} sections`)
-  for (const required of ['hero', 'offers', 'how-it-works', 'flagship', 'products', 'engine', 'proof', 'boundaries', 'founder', 'cta']) {
+  for (const required of ['hero', 'offers', 'estate', 'how-it-works', 'flagship', 'products', 'engine', 'proof', 'boundaries', 'founder', 'cta']) {
     assert.ok(ids.includes(required), `missing section ${required}`)
   }
 })

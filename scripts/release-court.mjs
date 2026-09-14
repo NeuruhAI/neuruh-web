@@ -82,7 +82,9 @@ const sitemap = await readFile(path.join(out, 'sitemap.xml'), 'utf8')
 for (const loc of ['/offers', '/proof', '/thank-you', '/work-with-neuruh', '/work-with-us', '/security']) {
   must(`sitemap ${loc}`, sitemap.includes(`https://neuruh.com${loc}`))
 }
-must('sitemap commercial lastmod 2026-09-02', sitemap.includes('2026-09-02T00:00:00.000Z'))
+must('sitemap commercial lastmod 2026-09-14', sitemap.includes('2026-09-14T00:00:00.000Z'))
+must('home footer links the estate', /<footer[\s\S]*?re\.neuruh\.com[\s\S]*?guide\.neuruh\.com/.test(home))
+must('JSON-LD legal name', home.includes('"legalName":"Neuruh LLC"'))
 
 const snapshot = JSON.parse(await readFile(path.join(out, 'truth/snapshot.json'), 'utf8'))
 must('snapshot stale true', snapshot.dataset.stale === true)

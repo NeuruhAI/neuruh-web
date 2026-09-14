@@ -659,7 +659,8 @@ html[data-scene-tier='0'] .tier0-note {
   --v2-steel: var(--border-strong); --v2-blue: var(--illum-solid); --v2-ice: var(--text-illuminated);
   --v2-steel-ink: var(--text-muted);
   --v2-silver: var(--text-body); --v2-text: var(--text-primary); --v2-muted: var(--text-body);
-  --v2-brass: var(--illum-solid); --v2-brass-hi: var(--illum-solid-hover);
+  /* brass text on bone must clear AA on white and on the brass wash: use the active step (brass-700) */
+  --v2-brass: var(--illum-solid); --v2-brass-hi: var(--illum-solid-active);
   --v2-ok: var(--status-verified); --v2-ok-hi: var(--status-verified);
   --v2-shadow-panel: 0 18px 50px rgba(11, 13, 18, 0.12), 0 3px 12px rgba(11, 13, 18, 0.08);
   --v2-shadow-soft: 0 8px 26px rgba(11, 13, 18, 0.08);
@@ -945,3 +946,9 @@ body { background: var(--v2-bg-0); color: var(--v2-text); }
 .site-footer__estate { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 0 0 var(--space-3); }
 .site-footer__estate a { color: var(--text-illuminated); text-decoration: none; }
 .site-footer__estate a:hover { text-decoration: underline; }
+
+/* Scripted-trace block: the legacy scrim material assumes a dark scene behind it.
+   On the bone spine it renders as a mid-grey slab, so it takes the plain evidence surface. */
+[data-spine="bone"] .trace { background: var(--bg-surface); backdrop-filter: none; -webkit-backdrop-filter: none; }
+/* Status tags are 9–10px text: on bone the demo tag needs the darker brass step to clear AA. */
+[data-spine="bone"] .ptag-demo { color: var(--illum-solid-active); border-color: var(--illum-edge); }

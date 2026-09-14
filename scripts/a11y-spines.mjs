@@ -23,7 +23,14 @@ async function resolve(urlPath) {
 }
 const server = http.createServer(async (req, res) => {
   const f = await resolve(req.url)
-  if (!f) { res.writeHead(404, { 'content-type': 'text/html' }); res.end('<!doctype html><html><body><main id="main"><h1>404</h1></main></body></html>'); return }
+  if (!f) {
+    // Serve the export's own not-found document, as the host would.
+    try {
+      const nf = path.join(dir, '404.html'); await stat(nf)
+      res.writeHead(404, { 'content-type': 'text/html; charset=utf-8' }); res.end(await readFile(nf)); return
+    } catch {}
+    res.writeHead(404, { 'content-type': 'text/html' }); res.end('<!doctype html><html lang="en"><head><title>Not found</title></head><body><main id="main"><h1>404</h1></main></body></html>'); return
+  }
   res.writeHead(200, { 'content-type': MIME[path.extname(f)] ?? 'application/octet-stream' })
   res.end(await readFile(f))
 })

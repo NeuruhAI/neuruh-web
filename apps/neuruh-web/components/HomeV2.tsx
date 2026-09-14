@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { offerHref } from '../lib/attribution'
+import { estateHref, offerHref } from '../lib/attribution'
 import { PUBLIC_OFFERS } from '../lib/publicOffers'
 
 /**
@@ -98,6 +98,28 @@ export function HomeV2() {
           <div className="row" style={{ marginTop: 26 }}>
             <Link className="v2-btn v2-btn-primary" href="/offers">Compare the offers</Link>
             <Link className="v2-btn v2-btn-secondary" href="/ask">Ask Neuruh</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 01c · THE ESTATE — the vertical front door and the free entry point */}
+      <section className="sec sec-alt" data-section="estate" aria-labelledby="estate-h">
+        <div className="sec-inner">
+          <p className="sec-eyebrow">The estate</p>
+          <h2 className="sec-h" id="estate-h">Two more doors, each for a specific job.</h2>
+          <div className="ev-grid">
+            <article className="ev-card">
+              <p className="ev-k">Real estate · vertical front door</p>
+              <p className="claim">Bring one property, parcel, market, portfolio, or dataset.</p>
+              <p className="ev-line ev-prose">re.neuruh.com is where real-estate intent starts: a free call, a $100 Opportunity Scan, a $499 Dossier, then custom scope. It is the vertical, not a second homepage.</p>
+              <a className="v2-link" href={estateHref('re', 'home-re')} rel="noopener noreferrer">Open re.neuruh.com →</a>
+            </article>
+            <article className="ev-card">
+              <p className="ev-k">Free · no gate</p>
+              <p className="claim">What ChatGPT can actually do — a field guide for business owners.</p>
+              <p className="ev-line ev-prose">Free, ungated, no email capture. The easiest way in if you are still copy-pasting into a chat box.</p>
+              <a className="v2-link" href={estateHref('guide', 'home-guide')} rel="noopener noreferrer">Read the guide →</a>
+            </article>
           </div>
         </div>
       </section>
