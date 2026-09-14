@@ -61,7 +61,7 @@ test('stale snapshot fails closed using injected evaluation time', () => {
 })
 
 test('evaluation after last_verified marks the snapshot stale without hiding CONTRADICTING', () => {
-  const compiled = compileTruth(clone(), { evaluationTime: '2026-09-02T13:00:00.000Z' })
+  const compiled = compileTruth(clone(), { evaluationTime: '2026-09-14T12:00:01.000Z' })
   assert.equal(compiled.snapshot.dataset.stale, true)
   assert.equal(compiled.snapshot.living_state, 'CONTRADICTING')
   assert.equal(compiled.snapshot.dataset.live_connectivity, false)
@@ -69,7 +69,7 @@ test('evaluation after last_verified marks the snapshot stale without hiding CON
 })
 
 test('evaluation at last_verified does not mark the snapshot stale', () => {
-  const compiled = compileTruth(clone(), { evaluationTime: '2026-08-24T15:00:00.000Z' })
+  const compiled = compileTruth(clone(), { evaluationTime: '2026-09-14T12:00:00.000Z' })
   assert.equal(compiled.snapshot.dataset.stale, false)
   assert.equal(compiled.snapshot.living_state, 'CONTRADICTING')
 })
@@ -103,7 +103,7 @@ test('served public snapshot admits it is stale and CONTRADICTING', async () => 
   assert.equal(served.dataset.stale, true)
   assert.equal(served.living_state, 'CONTRADICTING')
   assert.equal(served.dataset.live_connectivity, false)
-  assert.equal(served.dataset.last_verified_at.slice(0, 10), '2026-08-24')
+  assert.equal(served.dataset.last_verified_at.slice(0, 10), '2026-09-14')
   assert.notEqual(served.dataset.truth_mode, 'LIVE')
 })
 

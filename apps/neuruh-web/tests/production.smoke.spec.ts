@@ -50,6 +50,10 @@ test('primary routes render truthfully without fake LIVE state', async ({ page }
     '/offers', '/ask', '/work-with-neuruh', '/work-with-us', '/thank-you', '/cases',
     '/organism', '/worlds', '/worlds/deedsonar', '/worlds/liquidity-engine',
     '/research/adaptive-intelligence', '/research/case-zero',
+    '/products/top10', '/harnesses',
+    '/products/top10/agent-integrity', '/products/top10/ai-estate-forensic', '/products/top10/property-opportunity-scan',
+    '/products/top10/opportunity-intelligence-dossier', '/products/top10/business-acquisition-intelligence', '/products/top10/data-rescue',
+    '/products/top10/workflow-replacement', '/products/top10/proofos', '/products/top10/managed-opportunity-desk', '/products/top10/findsellprofit',
   ]
   for (const route of routes) {
     await page.goto(route)
@@ -162,4 +166,36 @@ test('Galaxy exposes sourced relationships, preserves contradiction, and hosts t
   await expect(page.locator('main#main > [data-contradiction-id="galaxy-connectivity-boundary"]')).toBeVisible()
   await expect(page.locator('.relationship-list li').first()).toContainText('Source src-')
   await expect(page.getByText('No canvas, orbit, or illustrative edge.')).toBeVisible()
+})
+
+test('Top 10 product pages carry a labeled browser demonstration and a resolving primary CTA', async ({ page }) => {
+  await page.goto('/products/top10')
+  await expect(page.locator('[data-testid^="top10-item-"]')).toHaveCount(10)
+  for (const slug of ['property-opportunity-scan', 'opportunity-intelligence-dossier', 'data-rescue', 'agent-integrity']) {
+    await page.goto(`/products/top10/${slug}`)
+    await expect(page.getByTestId('demo-banner').first()).toHaveText('BROWSER DEMONSTRATION — NOT A PRODUCTION ASSURANCE RESULT')
+    const href = await page.getByTestId('product-cta').getAttribute('href')
+    expect(href, `${slug} CTA href`).toBeTruthy()
+    if (href!.startsWith('/')) {
+      const response = await page.goto(href!)
+      expect(response?.status(), `${slug} CTA target ${href}`).toBe(200)
+    } else {
+      expect(href).toMatch(/^https:\/\/book\.stripe\.com\//)
+    }
+  }
+})
+
+test('harness demonstration runs all thirteen stages and reaches a decision with an unsigned digest', async ({ page }) => {
+  await page.goto('/harnesses')
+  await expect(page.getByTestId('demo-banner')).toHaveText('BROWSER DEMONSTRATION — NOT A PRODUCTION ASSURANCE RESULT')
+  await expect(page.getByTestId('harness-sequence').locator('b')).toHaveCount(13)
+  await page.getByRole('button', { name: 'Load sample pair' }).click()
+  await page.getByTestId('harness-run').click()
+  await expect(page.getByTestId('harness-stage-12')).toHaveAttribute('data-state', 'active', { timeout: 15_000 })
+  // The sample candidate drops the evidence the baseline carried: a regression against baseline is a REJECT, never averaged away.
+  await expect(page.getByTestId('harness-decision')).toHaveText('REJECT')
+  await expect(page.getByTestId('harness-demo')).toContainText('1 regressed')
+  await expect(page.getByTestId('harness-demo')).toContainText('Evidence non-empty')
+  await expect(page.getByTestId('harness-receipt').locator('code')).toHaveText(/^[0-9a-f]{64}$/, { timeout: 5_000 })
+  await expect(page.locator('[data-truth-mode="LIVE"]')).toHaveCount(0)
 })

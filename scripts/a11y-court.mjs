@@ -9,6 +9,10 @@ const routes = [
   '/offers', '/ask', '/work-with-neuruh', '/work-with-us', '/thank-you', '/cases', '/security',
   '/open-source', '/worlds', '/worlds/deedsonar', '/worlds/bookeit', '/organism', '/galaxy',
   '/research/adaptive-intelligence', '/research/case-zero', '/founder', '/contact', '/legal',
+  '/products/top10', '/harnesses',
+  '/products/top10/agent-integrity', '/products/top10/ai-estate-forensic', '/products/top10/property-opportunity-scan',
+  '/products/top10/opportunity-intelligence-dossier', '/products/top10/business-acquisition-intelligence', '/products/top10/data-rescue',
+  '/products/top10/workflow-replacement', '/products/top10/proofos', '/products/top10/managed-opportunity-desk', '/products/top10/findsellprofit',
   '/definitely-missing-route-404',
 ]
 const viewports = [

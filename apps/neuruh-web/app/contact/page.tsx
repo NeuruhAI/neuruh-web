@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { pageMeta } from '../../lib/publicSeo'
+import { ProductInquiry } from '../../components/ProductInquiry'
 
 export const metadata = pageMeta({
   path: '/contact',
@@ -20,6 +21,12 @@ const ROUTES = [
     body: 'Ask Neuruh returns three public cards: FASTEST, BEST VALUE, CUSTOM.',
     href: '/ask',
     cta: 'Ask Neuruh',
+  },
+  {
+    title: 'A Top 10 product',
+    body: 'Ten products with truthful status: three with live checkout, the rest quoted by email.',
+    href: '/products/top10',
+    cta: 'See the Top 10',
   },
   {
     title: 'A quoted product',
@@ -46,6 +53,8 @@ export default function ContactPage() {
           no sales team, no CRM form, and no autoresponder.
         </p>
       </header>
+
+      <ProductInquiry />
 
       <section className="semantic-section" aria-labelledby="contact-routes">
         <h2 id="contact-routes">Route the work</h2>

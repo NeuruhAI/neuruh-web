@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0",
   "dataset": {
-    "id": "neuruh-public-snapshot-2026-08-24",
-    "label": "Public launch snapshot — founder-authorized go-live",
+    "id": "neuruh-public-snapshot-2026-09-14",
+    "label": "Public snapshot — organism activation court, 2026-09-14",
     "truth_mode": "VERIFIED_SNAPSHOT",
-    "generated_at": "2026-08-24T15:00:00.000Z",
-    "last_verified_at": "2026-08-24T15:00:00.000Z",
+    "generated_at": "2026-09-14T12:00:00.000Z",
+    "last_verified_at": "2026-09-14T12:00:00.000Z",
     "stale_after": "2026-09-30T22:00:00.000Z",
     "source_ref": "src-alive-ruling",
     "live_connectivity": false,
@@ -178,6 +178,27 @@
       "class": "signed_manifest",
       "title": "Neuruh World Manifest",
       "path_or_uri": "docs/canon/WORLD_MANIFEST.yaml",
+      "public_safe": true
+    },
+    {
+      "ref": "src-w4-final-morning-receipt",
+      "class": "decision_receipt",
+      "title": "W4 final morning execution receipt (organism activation court, 2026-09-14)",
+      "path_or_uri": "docs/receipts-external/organism-activation-court-20260914.attestation.md",
+      "public_safe": true
+    },
+    {
+      "ref": "src-deedsonar-tape-20260914",
+      "class": "decision_receipt",
+      "title": "DeedSonar production customer tape, 2026-09-14 (read-only, efxo)",
+      "path_or_uri": "docs/receipts-external/deedsonar-tape-20260914.attestation.md",
+      "public_safe": true
+    },
+    {
+      "ref": "src-top10-commercial-court-20260914",
+      "class": "decision_receipt",
+      "title": "Top 10 commercial layer and harness surface court, 2026-09-14",
+      "path_or_uri": "docs/receipts-external/top10-commercial-court-20260914.attestation.md",
       "public_safe": true
     }
   ],
@@ -361,20 +382,22 @@
       "claim_class": "OBSERVED",
       "maturity": "OPERATING_PRODUCT",
       "status": "INTEGRATING",
-      "last_verified_at": "2026-08-24T15:00:00.000Z",
+      "last_verified_at": "2026-09-14T12:00:00.000Z",
       "source_ref": "src-estate-canon",
       "evidence_summary": {
         "status": "SUFFICIENT",
-        "statement": "A production surface serves at app.deedsonar.com whose health endpoint attests its own SHA (e2b71fa, observed 2026-08-24), and a dated court receipt records 1,510 tests green at that SHA.",
+        "statement": "A production surface serves at app.deedsonar.com whose health endpoint attests its own SHA (06cbb841 = repository main, observed 2026-09-14); the production migration ledger tops at 20260913150000; the read-only customer tape of 2026-09-14 reaches ten of fifteen steps and blocks at the contact ladder because the top-ranked owner is deceased and no public estate case is found (a human courthouse research step, not a software gap).",
         "source_refs": [
           "src-estate-canon",
           "src-deedsonar-surface",
-          "src-deedsonar-court"
+          "src-deedsonar-court",
+          "src-deedsonar-tape-20260914"
         ]
       },
       "public_route": "/worlds/deedsonar",
       "limitations": [
-        "Court receipt and health attestation are dated observations, not a standing service guarantee."
+        "Court receipt and health attestation are dated observations, not a standing service guarantee.",
+        "Outreach is not enabled: no SMS, no dialing, no consent or DNC weakening; contact authority stays at zero eligible rows."
       ],
       "metrics": [
         {
@@ -384,6 +407,14 @@
           "unit": "tests",
           "as_of": "2026-08-23T00:00:00.000Z",
           "source_ref": "src-deedsonar-court"
+        },
+        {
+          "name": "customer_tape_steps_reachable",
+          "value": 10,
+          "classification": "MEASURED",
+          "unit": "steps of 15",
+          "as_of": "2026-09-14T12:00:00.000Z",
+          "source_ref": "src-deedsonar-tape-20260914"
         }
       ]
     },
@@ -912,15 +943,16 @@
       "claim_class": "ARCHITECTURE",
       "maturity": "SYSTEM_COMPONENT",
       "status": "CONTRADICTING",
-      "last_verified_at": "2026-08-23T17:30:00.000Z",
+      "last_verified_at": "2026-09-14T12:00:00.000Z",
       "source_ref": "src-alive-ruling",
       "evidence_summary": {
         "status": "PARTIAL",
-        "statement": "The public self-model is data-defined and inspectable; the snapshot is not a live operating feed. Public launch and indexing were authorized by the founder constitution on 2026-08-23.",
+        "statement": "The public self-model is data-defined and inspectable; the snapshot is not a live operating feed. Public launch and indexing were authorized by the founder constitution on 2026-08-23. On 2026-09-14 an organism activation court converged the governed execution loop's code and supervision pins onto their founder-merged mains; autonomous execution remains unproven and is disclosed as such.",
         "source_refs": [
           "src-alive-ruling",
           "src-p0-commit",
-          "src-launch-constitution"
+          "src-launch-constitution",
+          "src-w4-final-morning-receipt"
         ]
       },
       "public_route": "/",
@@ -1173,13 +1205,14 @@
       "claim_class": "OBSERVED",
       "maturity": "SYSTEM_COMPONENT",
       "status": "STABLE",
-      "last_verified_at": "2026-09-03T18:00:00.000Z",
+      "last_verified_at": "2026-09-14T14:30:00.000Z",
       "source_ref": "src-commons-distribution-20260903",
       "evidence_summary": {
         "status": "SUFFICIENT",
-        "statement": "Each gate was run against the built release candidate. Accessibility used axe-core at desktop and mobile widths; links were resolved against real routes and files; secret and private-path scans ran over the working tree.",
+        "statement": "Each gate was run against the built release candidate. Accessibility used axe-core at desktop and mobile widths over every public route including the Top 10 commercial pages and the harness page; links were resolved against real routes and files; private-path and factory-name scans ran over the working tree and the prerendered commercial HTML. Secret-scan hits carry the 2026-09-03 measurement.",
         "source_refs": [
-          "src-commons-distribution-20260903"
+          "src-commons-distribution-20260903",
+          "src-top10-commercial-court-20260914"
         ]
       },
       "public_route": "/proof/distribution",
@@ -1189,24 +1222,24 @@
           "value": 0,
           "classification": "MEASURED",
           "unit": "links",
-          "as_of": "2026-09-03T00:00:00.000Z",
-          "source_ref": "src-commons-distribution-20260903"
+          "as_of": "2026-09-14T00:00:00.000Z",
+          "source_ref": "src-top10-commercial-court-20260914"
         },
         {
           "name": "serious_accessibility_violations",
           "value": 0,
           "classification": "MEASURED",
           "unit": "violations",
-          "as_of": "2026-09-03T00:00:00.000Z",
-          "source_ref": "src-commons-distribution-20260903"
+          "as_of": "2026-09-14T00:00:00.000Z",
+          "source_ref": "src-top10-commercial-court-20260914"
         },
         {
           "name": "critical_accessibility_violations",
           "value": 0,
           "classification": "MEASURED",
           "unit": "violations",
-          "as_of": "2026-09-03T00:00:00.000Z",
-          "source_ref": "src-commons-distribution-20260903"
+          "as_of": "2026-09-14T00:00:00.000Z",
+          "source_ref": "src-top10-commercial-court-20260914"
         },
         {
           "name": "secret_scan_hits",
@@ -1221,40 +1254,40 @@
           "value": 0,
           "classification": "MEASURED",
           "unit": "leaks",
-          "as_of": "2026-09-03T00:00:00.000Z",
-          "source_ref": "src-commons-distribution-20260903"
+          "as_of": "2026-09-14T00:00:00.000Z",
+          "source_ref": "src-top10-commercial-court-20260914"
         },
         {
           "name": "false_live_claims",
           "value": 0,
           "classification": "MEASURED",
           "unit": "claims",
-          "as_of": "2026-09-03T00:00:00.000Z",
-          "source_ref": "src-commons-distribution-20260903"
+          "as_of": "2026-09-14T00:00:00.000Z",
+          "source_ref": "src-top10-commercial-court-20260914"
         },
         {
           "name": "pages_checked",
-          "value": 35,
+          "value": 47,
           "classification": "MEASURED",
           "unit": "pages",
-          "as_of": "2026-09-03T00:00:00.000Z",
-          "source_ref": "src-commons-distribution-20260903"
+          "as_of": "2026-09-14T00:00:00.000Z",
+          "source_ref": "src-top10-commercial-court-20260914"
         },
         {
           "name": "internal_references_checked",
-          "value": 1580,
+          "value": 2118,
           "classification": "MEASURED",
           "unit": "references",
-          "as_of": "2026-09-03T00:00:00.000Z",
-          "source_ref": "src-commons-distribution-20260903"
+          "as_of": "2026-09-14T00:00:00.000Z",
+          "source_ref": "src-top10-commercial-court-20260914"
         },
         {
           "name": "accessibility_viewports",
           "value": 2,
           "classification": "MEASURED",
           "unit": "viewports",
-          "as_of": "2026-09-03T00:00:00.000Z",
-          "source_ref": "src-commons-distribution-20260903"
+          "as_of": "2026-09-14T00:00:00.000Z",
+          "source_ref": "src-top10-commercial-court-20260914"
         }
       ],
       "limitations": [
@@ -1293,6 +1326,31 @@
       "limitations": [
         "Control-plane binding is a local deterministic adapter; no isolated external preview exists.",
         "Pricing is a hypothesis."
+      ]
+    },
+    {
+      "id": "governed-execution-loop",
+      "kind": "organ",
+      "name": "Governed Execution Loop",
+      "summary": "Founder Runtime → scheduled dispatch → Workers → sealed receipt → Switchboard → independent Sentinel court → Governance-gated custody and promotion: one owner per organ, supervised on loopback, fail-closed.",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "claim_class": "OBSERVED",
+      "maturity": "SYSTEM_COMPONENT",
+      "status": "INTEGRATING",
+      "last_verified_at": "2026-09-14T12:00:00.000Z",
+      "source_ref": "src-w4-final-morning-receipt",
+      "evidence_summary": {
+        "status": "PARTIAL",
+        "statement": "On 2026-09-14 the already-courted organs were merged onto their mains at exact heads (sentinel-court, three Workers pull requests, two supervision pin releases), the supervision pins converged onto those mains, the supervised organs were restarted at the pinned SHAs, and Governance carried a renewed bounded ratification (merge and artifact-write at R3, seven days) with the git custodian registered. Autonomous execution was NOT proven: the live mission stayed parked at the Governance gate because the Founder Runtime attests a source SHA the live trust lineage does not yet qualify; that qualification is a founder act still open.",
+        "source_refs": [
+          "src-w4-final-morning-receipt"
+        ]
+      },
+      "public_route": "/",
+      "limitations": [
+        "Topology converged; autonomous end-to-end execution not yet proven.",
+        "Dated observation of a loopback-only supervised runtime; no live feed.",
+        "Custody and promotion consumers remain unbound in production until the founder binds them."
       ]
     }
   ],
@@ -1530,6 +1588,19 @@
       "limitations": [
         "Architecture relationship; the shared platform contract is inherited, not a live integration claim."
       ]
+    },
+    {
+      "id": "rel-loop-part-of-neuruh",
+      "type": "part_of",
+      "source_id": "governed-execution-loop",
+      "target_id": "neuruh",
+      "direction": "source_to_target",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "observed_at": "2026-09-14T12:00:00.000Z",
+      "source_ref": "src-w4-final-morning-receipt",
+      "limitations": [
+        "Dated observation."
+      ]
     }
   ],
   "events": [
@@ -1601,6 +1672,34 @@
       "reversibility": "NOT_APPLICABLE",
       "limitations": [
         "Dated observation, not a standing guarantee."
+      ]
+    },
+    {
+      "event_id": "evt-organism-activation-merged-20260914",
+      "event_type": "release.published",
+      "occurred_at": "2026-09-14T11:26:00.000Z",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "subject_id": "governed-execution-loop",
+      "public_summary": "Six already-courted pull requests were merged at their exact heads as merge commits and the supervision pins were advanced onto the resulting mains; supervised organs restarted at the pinned SHAs.",
+      "source_ref": "src-w4-final-morning-receipt",
+      "authority": "FOUNDER",
+      "reversibility": "REVERSIBLE",
+      "limitations": [
+        "Merges and pin releases only; no production data system was modified."
+      ]
+    },
+    {
+      "event_id": "evt-autonomy-court-not-proven-20260914",
+      "event_type": "decision.gated",
+      "occurred_at": "2026-09-14T11:50:00.000Z",
+      "truth_mode": "VERIFIED_SNAPSHOT",
+      "subject_id": "governed-execution-loop",
+      "public_summary": "The autonomy court recorded AUTONOMOUS_EXECUTION_NOT_PROVEN: the live mission remained parked at the Governance gate pending a founder-only source-lineage qualification; no machine transport of work was claimed.",
+      "source_ref": "src-w4-final-morning-receipt",
+      "authority": "NOT_APPLICABLE",
+      "reversibility": "NOT_EXECUTED",
+      "limitations": [
+        "A gate decision, not an execution."
       ]
     }
   ]

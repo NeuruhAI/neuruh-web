@@ -24,6 +24,18 @@ const HTML_ROUTES = [
   'contact',
   'security',
   'proof',
+  'harnesses',
+  'products/top10',
+  'products/top10/agent-integrity',
+  'products/top10/ai-estate-forensic',
+  'products/top10/property-opportunity-scan',
+  'products/top10/opportunity-intelligence-dossier',
+  'products/top10/business-acquisition-intelligence',
+  'products/top10/data-rescue',
+  'products/top10/workflow-replacement',
+  'products/top10/proofos',
+  'products/top10/managed-opportunity-desk',
+  'products/top10/findsellprofit',
 ]
 
 const FORBIDDEN = [
