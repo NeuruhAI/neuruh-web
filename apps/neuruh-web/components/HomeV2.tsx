@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { offerHref } from '../lib/attribution'
 import { PUBLIC_OFFERS } from '../lib/publicOffers'
 
 /**
@@ -90,7 +91,7 @@ export function HomeV2() {
                 <p className="ev-k">{offer.id} · {offer.price}</p>
                 <p className="claim">{offer.name}</p>
                 <p className="ev-line ev-prose">{offer.promise}</p>
-                <a className="v2-link" href={offer.href} rel="noopener noreferrer">{offer.cta} →</a>
+                <a className="v2-link" href={offerHref(offer)} rel="noopener noreferrer">{offer.cta} →</a>
               </article>
             ))}
           </div>

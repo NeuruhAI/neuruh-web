@@ -1,3 +1,4 @@
+import { offerHref } from './attribution'
 import { PUBLIC_OFFERS } from './publicOffers'
 
 /**
@@ -34,7 +35,7 @@ export const ASK_CARDS = [
     offer: PUBLIC_OFFERS[0],
     why: 'Smallest scope. Live checkout today.',
     priceRange: PUBLIC_OFFERS[0].price,
-    ctaHref: PUBLIC_OFFERS[0].href,
+    ctaHref: offerHref(PUBLIC_OFFERS[0]),
     ctaLabel: PUBLIC_OFFERS[0].cta,
     secondaryHref: '/thank-you?offer=O01',
     secondaryLabel: 'See the handoff',
@@ -44,7 +45,7 @@ export const ASK_CARDS = [
     offer: PUBLIC_OFFERS[1],
     why: 'One decision, source-backed, priced for a brief rather than a build.',
     priceRange: PUBLIC_OFFERS[1].price,
-    ctaHref: PUBLIC_OFFERS[1].href,
+    ctaHref: offerHref(PUBLIC_OFFERS[1]),
     ctaLabel: PUBLIC_OFFERS[1].cta,
     secondaryHref: '/thank-you?offer=O02',
     secondaryLabel: 'See the handoff',
@@ -54,7 +55,7 @@ export const ASK_CARDS = [
     offer: PUBLIC_OFFERS[2],
     why: 'A scoped sprint when the work is a process — or a founder conversation when it is not.',
     priceRange: `${PUBLIC_OFFERS[2].price} sprint · custom work quoted`,
-    ctaHref: PUBLIC_OFFERS[2].href,
+    ctaHref: offerHref(PUBLIC_OFFERS[2]),
     ctaLabel: PUBLIC_OFFERS[2].cta,
     secondaryHref: '/contact',
     secondaryLabel: 'Talk to the founder',

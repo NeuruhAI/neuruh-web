@@ -1,3 +1,4 @@
+import { offerHref } from '../lib/attribution'
 import { OFFER_NEXT_STEPS, PUBLIC_OFFERS } from '../lib/publicOffers'
 import { CallLadder } from './CallLadder'
 import styles from './OffersGrid.module.css'
@@ -40,7 +41,7 @@ export function OffersGrid() {
 
             <a
               className={`v2-btn v2-btn-primary ${styles.cta}`}
-              href={offer.href}
+              href={offerHref(offer)}
               rel="noopener noreferrer"
               data-testid={`offer-cta-${offer.id}`}
               data-offer-kind={offer.kind}

@@ -1,3 +1,4 @@
+import { calHref } from '../lib/attribution'
 import { PUBLIC_CALLS } from '../lib/publicOffers'
 import styles from './Commercial.module.css'
 
@@ -13,7 +14,7 @@ export function CallLadder({ surface }: { surface: 'root' }) {
           <p className={styles.kicker}>{call.length} · {call.rate}</p>
           <h3>{call.name}</h3>
           <p>{call.note}</p>
-          <a className="v2-link" href={`https://cal.com/neuruh/${call.slug}`} rel="noopener noreferrer" data-surface={surface}>Book on Cal.com →</a>
+          <a className="v2-link" href={calHref(call.slug, `${surface}-${call.id}`)} rel="noopener noreferrer" data-surface={surface}>Book on Cal.com →</a>
         </article>
       ))}
     </div>

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { offerHref } from '../lib/attribution'
 import { PUBLIC_OFFERS } from '../lib/publicOffers'
 import styles from './Commercial.module.css'
 
@@ -64,7 +65,7 @@ export function WorkWithHub() {
                 <p className={styles.kicker}>{offer.id} · {offer.price}</p>
                 <h3>{offer.name}</h3>
                 <p>{offer.promise}</p>
-                <a className="v2-link" href={offer.href} rel="noopener noreferrer">{offer.cta} →</a>
+                <a className="v2-link" href={offerHref(offer)} rel="noopener noreferrer">{offer.cta} →</a>
               </article>
             ))}
           </div>

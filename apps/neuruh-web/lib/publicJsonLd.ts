@@ -1,3 +1,4 @@
+import { offerHref } from './attribution'
 import { SITE_ORIGIN } from './publicSeo'
 import { PUBLIC_OFFERS } from './publicOffers'
 
@@ -35,7 +36,7 @@ export const PUBLIC_JSON_LD = {
               '@type': 'Offer',
               price: offer.price.replace('$', ''),
               priceCurrency: 'USD',
-              url: offer.href,
+              url: offerHref(offer),
               availability: 'https://schema.org/InStock',
             },
           }

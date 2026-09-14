@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { CallLadder } from '../../components/CallLadder'
+import { estateHref } from '../../lib/attribution'
 import { pageMeta } from '../../lib/publicSeo'
 
 export const metadata = pageMeta({
@@ -25,7 +26,7 @@ const ROUTES = [
   {
     title: 'Real estate',
     body: 'One property, parcel, market, portfolio, or dataset. The real-estate front door is re.neuruh.com: a free call, a $100 scan, a $499 dossier, then custom.',
-    href: 'https://re.neuruh.com/?utm_source=neuruh&utm_medium=site&utm_campaign=root&utm_content=contact-re',
+    href: estateHref('re', 'contact-re'),
     cta: 'Open re.neuruh.com',
   },
   {
