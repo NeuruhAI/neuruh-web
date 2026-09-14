@@ -2,10 +2,10 @@
 
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import { OFFER_BY_ID, OFFER_NEXT_STEPS, PUBLIC_OFFERS, type PublicOfferId } from '../lib/publicOffers'
+import { CASHIER_OFFERS, OFFER_BY_ID, OFFER_NEXT_STEPS, type CashierOfferId } from '../lib/publicOffers'
 import styles from './Commercial.module.css'
 
-function isOfferId(value: string | null): value is PublicOfferId {
+function isOfferId(value: string | null): value is CashierOfferId {
   return value === 'O01' || value === 'O02' || value === 'O05'
 }
 
@@ -45,7 +45,7 @@ export function ThankYouHandoff() {
         </article>
       ) : (
         <div className={styles.grid} data-testid="thank-you-all-offers">
-          {PUBLIC_OFFERS.map((item) => (
+          {CASHIER_OFFERS.map((item) => (
             <article key={item.id} className={styles.card}>
               <p className={styles.kicker}>{item.id}</p>
               <h2 className={styles.title}>{item.name}</h2>

@@ -63,7 +63,7 @@ export function AskNeuruh() {
               <a className="v2-btn v2-btn-primary" href={card.ctaHref} rel="noopener noreferrer">
                 {card.ctaLabel}
               </a>
-              <a className="v2-btn v2-btn-secondary" href={card.secondaryHref}>
+              <a className="v2-link" href={card.secondaryHref}>
                 {card.secondaryLabel}
               </a>
             </div>

@@ -5,7 +5,7 @@ export const metadata = pageMeta({
   path: '/offers',
   title: 'Offers',
   description:
-    'Three fixed-scope ways to put Neuruh to work: Data Rescue, Opportunity Dossier, and Workflow Sprint.',
+    'Four founder-delivered offers: Data Rescue, Opportunity Intelligence Dossier, Workflow Replacement Sprint, and the Forensic System Audit — plus a free qualifying call.',
 })
 
 export default function OffersPage() {
@@ -15,11 +15,12 @@ export default function OffersPage() {
         <div className="sec-inner">
           <p className="sec-eyebrow">Start here</p>
           <h1 className="sec-h" id="offers-h" style={{ fontSize: 'clamp(2rem, 3.6vw, 3rem)' }}>
-            Three ways to put Neuruh to work.
+            Four ways to put Neuruh to work.
           </h1>
           <p className="sec-sub">
-            Each offer is fixed in scope: what you send, what you receive, and what happens after checkout. Timing is
-            agreed at intake, not promised on a page. The cashiers below are the live payment links — not new ones.
+            Each offer is fixed in scope: what you send, what you receive, and what happens next. Timing is agreed
+            at intake, not promised on a page. The three cashiers are the live payment links — not new ones; the
+            Forensic audit is scoped in a booked session and has no cashier.
           </p>
           <OffersGrid />
         </div>

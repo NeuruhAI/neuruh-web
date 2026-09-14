@@ -99,20 +99,30 @@ test('refusals are stated as refusals, never as unreceipted counts, and the home
   assert.match(proof, /data-testid="proof-method"/)
 })
 
-test('quoted engagements are built products with no price and no cashier', async () => {
+test('the four canon offers are present, the Forensic audit books on Cal.com with no cashier, and no retired product remains', async () => {
   const catalog = await readFile('apps/neuruh-web/lib/publicOffers.ts', 'utf8')
-  const quoted = catalog.slice(catalog.indexOf('QUOTED_ENGAGEMENTS'))
-  assert.match(quoted, /id: 'Q-PROPERTY-SCAN'/)
-  assert.match(quoted, /id: 'Q-LEAD-RESCUE'/)
-  // No price, no dollar figure, no cashier: pricing is an unmade founder decision.
-  assert.doesNotMatch(quoted, /\bprice:/)
-  assert.doesNotMatch(quoted, /\$\s?\d/)
-  assert.doesNotMatch(quoted, /stripe\.com/)
-  // The $799 per-market recommendation is internal and must not appear anywhere public.
+  for (const id of ['O01', 'O02', 'O05', 'FSA']) assert.match(catalog, new RegExp(`id: '${id}'`))
+  assert.match(catalog, /Forensic System Audit/)
+  const forensic = catalog.slice(catalog.indexOf("id: 'FSA'"), catalog.indexOf('export type PublicOffer'))
+  assert.match(forensic, /kind: 'booking'/)
+  assert.match(forensic, /cal\.com\/neuruh\/forensic-scope-session-90/)
+  assert.doesNotMatch(forensic, /stripe\.com|\$\s?\d|books free|invoiced/)
+  // Boundaries from canon, in substance.
+  assert.match(catalog, /Messy data → recovered package/)
+  assert.match(catalog, /Question → source-backed dossier/)
+  assert.match(catalog, /Manual workflow → AI-assisted replaced flow/)
+  assert.match(catalog, /Existing system → evidence-backed truth, state, gap, and recovery report/)
+  // The Cal.com ladder never prints a paid rate (not in canon); the qualifying call is free.
+  const ladder = catalog.slice(catalog.indexOf('PUBLIC_CALLS'), catalog.indexOf('OFFER_NEXT_STEPS'))
+  assert.doesNotMatch(ladder, /\$\s?\d/)
+  assert.match(ladder, /rate: 'Free'/)
+  // Retired quoted products and the internal $799 recommendation must not appear anywhere public.
   const hub = await readFile('apps/neuruh-web/components/WorkWithHub.tsx', 'utf8')
-  assert.doesNotMatch(hub, /\$\s?799\b/)
-  assert.doesNotMatch(catalog, /\$\s?799\b/)
-  // The quote path must route to the existing contact surface, not a new mailbox.
-  assert.match(quoted, /href: '\/contact'/)
-  assert.doesNotMatch(quoted, /mailto:/)
+  const contact = await readFile('apps/neuruh-web/app/contact/page.tsx', 'utf8')
+  for (const text of [catalog, hub, contact]) {
+    assert.doesNotMatch(text, /QUOTED_ENGAGEMENTS|Lead Rescue|Request a quote|\$\s?799\b/)
+  }
+  // One primary action per offer card.
+  const grid = await readFile('apps/neuruh-web/components/OffersGrid.tsx', 'utf8')
+  assert.equal((grid.match(/v2-btn-primary/g) ?? []).length, 1)
 })

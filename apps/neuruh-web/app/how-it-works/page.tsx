@@ -33,7 +33,7 @@ export default function HowItWorksPage() {
             <div className="law" key={name}>
               <span className="ln">{String(i + 1).padStart(2, '0')}</span>
               <div>
-                <h3>{name}</h3>
+                <h2>{name}</h2>
                 <p>{plain}</p>
                 <p style={{ marginTop: 8, fontSize: '0.9rem', color: 'var(--v2-steel-ink)' }}>{products}</p>
               </div>

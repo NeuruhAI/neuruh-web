@@ -21,9 +21,10 @@ test('public offers keep exact cashiers, explicit buyer inputs/outputs, and a bo
   assert.match(grid, /Proof:/)
   assert.match(grid, /What happens next/)
 
-  assert.match(catalog, /scope: 'One data problem'/)
-  assert.match(catalog, /scope: 'One decision'/)
-  assert.match(catalog, /scope: 'One workflow'/)
+  assert.match(catalog, /scope: 'Messy data → recovered package'/)
+  assert.match(catalog, /scope: 'Question → source-backed dossier'/)
+  assert.match(catalog, /scope: 'Manual workflow → AI-assisted replaced flow'/)
+  assert.match(catalog, /scope: 'Existing system → evidence-backed truth, state, gap, and recovery report'/)
   // No delivery-time promise and no automated outbound mail: a founder replies from the public mailbox.
   assert.doesNotMatch(catalog, /business day|Typically \d/)
   assert.match(catalog, /replies from jeramie@neuruh\.com/)

@@ -902,7 +902,7 @@ body { background: var(--v2-bg-0); color: var(--v2-text); }
 .law-list { display: grid; gap: 0; border-top: 1px solid var(--v2-line-1); max-width: 56rem; }
 .law { display: grid; grid-template-columns: 3.4rem 1fr; gap: 18px; padding: 26px 0; border-bottom: 1px solid var(--v2-line-1); }
 .law .ln { font-family: var(--font-sans); font-weight: 600; color: var(--v2-steel-ink); font-size: 0.9rem; padding-top: 0.45rem; }
-.law h3 { font-family: var(--font-display); font-size: clamp(1.25rem, 2vw, 1.7rem); color: var(--v2-text); margin: 0 0 6px; letter-spacing: -0.01em; }
+.law h3, .law h2 { font-family: var(--font-display); font-size: clamp(1.25rem, 2vw, 1.7rem); color: var(--v2-text); margin: 0 0 6px; letter-spacing: -0.01em; }
 .law p { color: var(--v2-muted); line-height: 1.6; margin: 0; max-width: 60ch; }
 .timeline { border-left: 1px solid var(--v2-line-2); margin-left: 6px; padding-left: 26px; display: grid; gap: 26px; max-width: 46rem; }
 .tl-item { position: relative; }

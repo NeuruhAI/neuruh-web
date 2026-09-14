@@ -32,7 +32,7 @@ export default function BoundariesPage() {
             {LAWS.map(([h, p], i) => (
               <div className="law" key={h}>
                 <span className="ln">{String(i + 1).padStart(2, '0')}</span>
-                <div><h3>{h}</h3><p>{p}</p></div>
+                <div><h2>{h}</h2><p>{p}</p></div>
               </div>
             ))}
           </div>

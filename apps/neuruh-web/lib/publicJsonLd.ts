@@ -29,13 +29,17 @@ export const PUBLIC_JSON_LD = {
       description: offer.promise,
       provider: { '@id': `${SITE_ORIGIN}/#organization` },
       url: `${SITE_ORIGIN}/offers`,
-      offers: {
-        '@type': 'Offer',
-        price: offer.price.replace('$', ''),
-        priceCurrency: 'USD',
-        url: offer.href,
-        availability: 'https://schema.org/InStock',
-      },
+      ...(offer.kind === 'cashier'
+        ? {
+            offers: {
+              '@type': 'Offer',
+              price: offer.price.replace('$', ''),
+              priceCurrency: 'USD',
+              url: offer.href,
+              availability: 'https://schema.org/InStock',
+            },
+          }
+        : {}),
     })),
   ],
 } as const

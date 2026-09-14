@@ -47,6 +47,7 @@ test('commercial surfaces keep the three live cashiers and add handoff, work, ca
 
   assert.doesNotMatch(offers, /turnaround:/)
   assert.match(hub, /\/offers/)
+  assert.match(hub, /four fixed-scope offers/)
   assert.match(hub, /\/ask/)
   assert.match(workAlias, /canonical: '\/work-with-neuruh'/)
   assert.match(thanks, /does not receive Stripe webhooks/)
