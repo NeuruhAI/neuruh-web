@@ -12,3 +12,5 @@
 .realDemo{display:grid;grid-template-columns:1fr 1fr;gap:14px}.realDemo>div{padding:20px;border:1px solid #2b3035;background:#0d1012}.realDemo h3{margin:0 0 10px;font-size:15px;letter-spacing:.06em;text-transform:uppercase}.realDemo ul{margin:0;padding-left:18px;color:#ced2d5;line-height:1.55}.realDemo p{margin:0;color:#ced2d5;line-height:1.55}
 .hero h1{overflow-wrap:anywhere}
 @media (max-width:800px){.ladder{grid-template-columns:repeat(2,1fr)}.deltaRow,.facts,.realDemo{grid-template-columns:1fr}.stages{grid-template-columns:1fr}}
+
+.journey{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#2a2e32}.journey li{background:#0d1012;padding:18px;min-height:120px}.journey span{display:block;font:700 11px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.12em;color:#98a2a9;margin-bottom:10px}.journey b{font-weight:600;font-size:14px;line-height:1.45;color:#e7e5de}@media (max-width:800px){.journey{grid-template-columns:1fr}}

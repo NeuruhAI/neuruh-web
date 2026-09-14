@@ -1,0 +1,249 @@
+{
+  "designation": "TEST / SANDBOX — NOT A REAL CUSTOMER — NO MONEY CHARGED",
+  "offer": {
+    "id": "O-PROPERTY-SCAN",
+    "name": "Property Opportunity Scan",
+    "public_price_usd": 100,
+    "price_status": "FOUNDER_SET_NO_CASHIER",
+    "cashier": null,
+    "cashier_touched": false,
+    "top10_slug": "property-opportunity-scan",
+    "scope_note": "the pack fulfils one market as a ranked list; the $100 Top 10 scan is one parcel from the same LandOS/DeedSonar capability"
+  },
+  "test_id": "zdc-20260914172646-85baa8",
+  "timestamp": "2026-09-14T17:26:48.385Z",
+  "executed_against": "neuruh-property-scan o_property_scan.cli (court, quote, fulfil) at fulfillment pin 1779abf2; synthetic intake + frozen LandOS result fixture; no network",
+  "input_provenance": [
+    {
+      "path": "neuruh-property-scan/samples/buyer_intake.synthetic.json",
+      "sha256": "eeab34cdc3a8b0eb06feab7b437ecc4615ff7c006ca597f429d51dca71f00970",
+      "bytes": 522,
+      "synthetic": true
+    },
+    {
+      "path": "neuruh-property-scan/samples/landos_result_v1.synthetic.json",
+      "sha256": "e15894df0b7c0b543a121b842228d38946622acbe3ae2c3b0b99e5f381e6fbfc",
+      "bytes": 62062,
+      "synthetic": true
+    }
+  ],
+  "stages": {
+    "checkout": {
+      "status": "NO_CASHIER_QUOTE_PATH",
+      "quote_cli_exit": 0,
+      "note": "no Stripe object exists; /contact?product=property-opportunity-scan → email → written quote → invoice; CASHIER_ONLY=BLOCKED_EXTERNAL_FOUNDER_DECISION"
+    },
+    "payment_event": {
+      "status": "NOT_APPLICABLE",
+      "note": "no cashier; payment is collected from the customer by invoice when the buyer is ready"
+    },
+    "webhook": {
+      "status": "NOT_APPLICABLE",
+      "note": "no cashier, no webhook"
+    },
+    "intake": {
+      "status": "PASS",
+      "validated_by": "o_property_scan.intake.validate_intake",
+      "intake_id": "SYN-OPS-EX-00000-001"
+    },
+    "order_job": {
+      "status": "PASS",
+      "mission_request": "MISSION_REQUEST.json (fr_create pointer, mission_id null, post false)",
+      "idempotency": "redacted:sha256:dca3858c27f1583bd9602c0c"
+    },
+    "fulfillment": {
+      "status": "PASS",
+      "surface": "result_v1_list",
+      "rows": "3",
+      "executed": "buyer-safe projection of the frozen LandOS result fixture (redaction court enforced)"
+    },
+    "delivery": {
+      "status": "PASS",
+      "artifacts": [
+        {
+          "name": "BUYER_REPORT.json",
+          "sha256": "ef4a0d07c1966ab6f1cb7b51b4677a920d4718db24e346b8cff00ec270cca449",
+          "bytes": 3929,
+          "customer_facing": true
+        },
+        {
+          "name": "DELIVERY_RECEIPT.json",
+          "sha256": "68c10ffb9a35ce0939ffa4fa19773a354f15f5f4a768df9921513d95c9be6a5a",
+          "bytes": 1398,
+          "customer_facing": true
+        },
+        {
+          "name": "MISSION_REQUEST.json",
+          "sha256": "2c485125d6968434f36ba68027085b502eac36671572d0862a67403aaff0bd93",
+          "bytes": 2984,
+          "customer_facing": false
+        }
+      ],
+      "report_sha256": "52d2b37e235f6195e6d745e9ec33dce469626399551398ae12d8ebc9d51fd57a",
+      "note": "BUYER_REPORT.json is the deliverable; production delivery is founder email"
+    },
+    "receipt": {
+      "status": "PASS",
+      "schema_version": "neuruh.o-property-scan.delivery-receipt.v1",
+      "receipt_sha256": "8f934987dd65eb0102e3de24f00ada84cd102e95e23c8018cae567ae09345357",
+      "generated_at": "2026-09-02T00:00:00Z",
+      "fulfillment_pin": "1779abf265814f5595e1153a531c4a0ee09a0faa",
+      "gate": "CANONICAL_PROVEN / CASHIER_ONLY=BLOCKED_EXTERNAL_FOUNDER_DECISION"
+    }
+  },
+  "execution_status": "PASS",
+  "delivery_artifact": [
+    {
+      "name": "BUYER_REPORT.json",
+      "sha256": "ef4a0d07c1966ab6f1cb7b51b4677a920d4718db24e346b8cff00ec270cca449",
+      "bytes": 3929,
+      "customer_facing": true
+    },
+    {
+      "name": "DELIVERY_RECEIPT.json",
+      "sha256": "68c10ffb9a35ce0939ffa4fa19773a354f15f5f4a768df9921513d95c9be6a5a",
+      "bytes": 1398,
+      "customer_facing": true
+    },
+    {
+      "name": "MISSION_REQUEST.json",
+      "sha256": "2c485125d6968434f36ba68027085b502eac36671572d0862a67403aaff0bd93",
+      "bytes": 2984,
+      "customer_facing": false
+    }
+  ],
+  "product_receipt": {
+    "attorney_phones_accepted": false,
+    "buyer_surface": [
+      "ranked_opportunities",
+      "evidence",
+      "signal_families",
+      "risks_unknowns",
+      "next_action"
+    ],
+    "cap": 25,
+    "cashier_classification": "CASHIER_ONLY=BLOCKED_EXTERNAL_FOUNDER_DECISION",
+    "fr_create_idempotency_key": "redacted:sha256:dca3858c27f1583bd9602c0c",
+    "fulfillment_pin": "1779abf265814f5595e1153a531c4a0ee09a0faa",
+    "gate": "CANONICAL_PROVEN / CASHIER_ONLY=BLOCKED_EXTERNAL_FOUNDER_DECISION",
+    "generated_at": "2026-09-02T00:00:00Z",
+    "intake_id": "SYN-OPS-EX-00000-001",
+    "landos_surface": "result_v1_list",
+    "market": {
+      "county_fips": "00000",
+      "label": "Example County, XX",
+      "state": "XX",
+      "synthetic": true
+    },
+    "mission_id": null,
+    "mission_posted": false,
+    "mission_request_sha256": "eea93e86249076f165e90aac3af0ae154f6c16c9880b091c3a98ee65640c6b20",
+    "opportunity_count": 3,
+    "outreach": "DENIED",
+    "pack_version": "0.4.0",
+    "product": "One-Market Ranked Property List",
+    "receipt_sha256": "8f934987dd65eb0102e3de24f00ada84cd102e95e23c8018cae567ae09345357",
+    "report_sha256": "52d2b37e235f6195e6d745e9ec33dce469626399551398ae12d8ebc9d51fd57a",
+    "schema_version": "neuruh.o-property-scan.delivery-receipt.v1",
+    "skip_trace": false,
+    "sku": "O-PROPERTY-SCAN",
+    "stripe": false,
+    "stripe_gate": "BLOCKED_EXTERNAL_STRIPE",
+    "synthetic": true
+  },
+  "evidence_refs": [
+    "neuruh-property-scan/contracts/delivery_receipt.v1.json",
+    "neuruh-property-scan/court/PACK_COURT.json",
+    "neuruh-property-scan/court/LANDOS_RECOURT.json (pin 1779abf2 == landos-engine main module)",
+    "neuruh-web/docs/receipts-external/deedsonar-tape-20260914.attestation.md (production capability, 10/15 steps, read-only)"
+  ],
+  "checks": [
+    {
+      "offer": "O-PROPERTY-SCAN",
+      "name": "pack_court_pass",
+      "ok": true,
+      "detail": "ct_cashier_refused\n  ok  mission_request_null_unposted\n  ok  fr_create_body_keys_canonical\n  ok  fr_create_has_idempotency_key\n  ok  live_post_refused\n  ok  secret_scan_clean\n  ok  skip_trace_off_on_report\n  ok  attorney_phones_never_accepted\nCASHIER   CASHIER_ONLY=BLOCKED_EXTERNAL_FOUNDER_DECISION\n"
+    },
+    {
+      "offer": "O-PROPERTY-SCAN",
+      "name": "quote_request_ok_no_cashier",
+      "ok": true,
+      "detail": " \"One-Market Ranked Property List\",\n  \"quote_sha256\": \"75f1fb5cf9e4de044828b77be10b1ecd00ad242fde71eb9adad3a7ad19032eff\",\n  \"schema_version\": \"neuruh.o-property-scan.quote-request.v1\",\n  \"skip_trace\": false,\n  \"sku\": \"O-PROPERTY-SCAN\",\n  \"stripe\": false,\n  \"stripe_gate\": \"BLOCKED_EXTERNAL_STRIPE\"\n}\n"
+    },
+    {
+      "offer": "O-PROPERTY-SCAN",
+      "name": "fulfil_exit_0",
+      "ok": true,
+      "detail": "69626399551398ae12d8ebc9d51fd57a\nRECEIPT   8f934987dd65eb0102e3de24f00ada84cd102e95e23c8018cae567ae09345357\nMISSION   mission_id=null post=false idem=neuruh.fulfillment.O-PROPERTY-SCAN.fa69cbd238f42260613dc6fb2d727773\nCASHIER   CASHIER_ONLY=BLOCKED_EXTERNAL_FOUNDER_DECISION\nWRITTEN   /private/tmp/claude-501/-Users-jeramiehicks/7d0b476c-2622-4e87-a407-7b048f58ac69/scratchpad/zdc-work/property-scan\n"
+    },
+    {
+      "offer": "O-PROPERTY-SCAN",
+      "name": "buyer_report_written",
+      "ok": true,
+      "detail": [
+        "attorney_phones_accepted",
+        "coverage",
+        "crm_sync",
+        "fulfillment_pin",
+        "generated_as_of",
+        "intake_id",
+        "market",
+        "owner_contact_included",
+        "pack_version",
+        "product",
+        "ranked_opportunities",
+        "report_sha256"
+      ]
+    },
+    {
+      "offer": "O-PROPERTY-SCAN",
+      "name": "delivery_receipt_written",
+      "ok": true,
+      "detail": "neuruh.o-property-scan.delivery-receipt.v1"
+    },
+    {
+      "offer": "O-PROPERTY-SCAN",
+      "name": "mission_request_never_posted",
+      "ok": true,
+      "detail": {
+        "mission_id": null,
+        "post": false
+      }
+    },
+    {
+      "offer": "O-PROPERTY-SCAN",
+      "name": "no_cashier_no_stripe_object",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "offer": "O-PROPERTY-SCAN",
+      "name": "delivered_artifacts_no_factory_or_private_path",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "offer": "O-PROPERTY-SCAN",
+      "name": "delivered_artifacts_no_real_email",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "offer": "O-PROPERTY-SCAN",
+      "name": "mission_request_bound_in_receipt",
+      "ok": true,
+      "detail": {
+        "mission_request_sha256": "eea93e86249076f165e90aac3af0ae154f6c16c9880b091c3a98ee65640c6b20",
+        "mission_posted": false
+      }
+    }
+  ],
+  "redactions": {
+    "note": "token-shaped values replaced by sha256 digests before vendoring; originals live only in the scratch work dir",
+    "paths": [
+      ".stages.order_job.idempotency",
+      ".product_receipt.fr_create_idempotency_key"
+    ]
+  },
+  "court_digest_sha256": "7b2ac01ca07ffc7ffe2ddae370332126e938c5de69c76f2c513567f1a853a27b"
+}

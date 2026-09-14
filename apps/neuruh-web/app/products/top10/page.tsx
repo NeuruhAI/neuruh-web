@@ -25,6 +25,16 @@ export default function Top10Index() {
       </div>
     </div></section>
 
+    <section className={s.sectionAlt}><div className={s.wrap}>
+      <div className={s.sectionHead}><span>→</span><h2>How buying works</h2></div>
+      <ol className={s.journey} data-testid="buyer-journey">
+        <li><span>1 · BUY OR REQUEST</span><b>Three products have a hosted Stripe checkout. The rest are ordered or requested by email; you pay by invoice once the scope is confirmed.</b></li>
+        <li><span>2 · PROVIDE</span><b>You send the property, files, target, or workflow named on the product page.</b></li>
+        <li><span>3 · WE ANALYZE</span><b>A founder runs the existing Neuruh capability against your inputs. Nothing is automated end to end today.</b></li>
+        <li><span>4 · RECEIVE</span><b>You get the deliverable by email with a machine-readable receipt naming inputs, sources, and unknowns.</b></li>
+      </ol>
+    </div></section>
+
     <section className={s.section}><div className={s.wrap}>
       <div className={s.sectionHead}><span>10</span><h2>All ten, by category</h2></div>
       {CATEGORIES.map((category) => {

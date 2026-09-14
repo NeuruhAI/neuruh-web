@@ -1,0 +1,84 @@
+{
+  "court": "zero-dollar-commercial-court",
+  "designation": "TEST / SANDBOX — NOT A REAL CUSTOMER — NO MONEY CHARGED",
+  "test_id": "zdc-20260914172646-85baa8",
+  "started_at": "2026-09-14T17:26:46.973Z",
+  "finished_at": "2026-09-14T17:26:48.602Z",
+  "offers": {
+    "O01": {
+      "execution_status": "PASS",
+      "stages": {
+        "intake": "PASS",
+        "checkout": "PASS",
+        "payment_event": "PASS",
+        "webhook": "PASS",
+        "order_job": "PASS",
+        "fulfillment": "PASS",
+        "delivery": "PASS",
+        "receipt": "PASS"
+      }
+    },
+    "O02": {
+      "execution_status": "PASS",
+      "stages": {
+        "checkout": "PASS",
+        "payment_event": "RECORDED_NOT_CONSUMED",
+        "webhook": "NOT_APPLICABLE",
+        "intake": "PASS",
+        "order_job": "PASS",
+        "fulfillment": "PASS",
+        "delivery": "PASS",
+        "receipt": "PASS"
+      }
+    },
+    "O05": {
+      "execution_status": "PASS",
+      "stages": {
+        "checkout": "PASS",
+        "payment_event": "RECORDED_NOT_CONSUMED",
+        "webhook": "NOT_APPLICABLE",
+        "intake": "PASS",
+        "order_job": "PASS",
+        "fulfillment": "PASS",
+        "delivery": "PASS",
+        "receipt": "PASS"
+      }
+    },
+    "O-PROPERTY-SCAN": {
+      "execution_status": "PASS",
+      "stages": {
+        "checkout": "NO_CASHIER_QUOTE_PATH",
+        "payment_event": "NOT_APPLICABLE",
+        "webhook": "NOT_APPLICABLE",
+        "intake": "PASS",
+        "order_job": "PASS",
+        "fulfillment": "PASS",
+        "delivery": "PASS",
+        "receipt": "PASS"
+      }
+    }
+  },
+  "checks_total": 57,
+  "checks_failed": [],
+  "production_untouched": {
+    "data_rescue_repo_ledger_unchanged": true,
+    "data_rescue_ledger_sha256": "b74afd85644c459b385b2c85fcae2a87b1b9fdc66c90d5e8beb4f195d9c1a240",
+    "test_data_dir": "/private/tmp/claude-501/-Users-jeramiehicks/7d0b476c-2622-4e87-a407-7b048f58ac69/scratchpad/zdc-work",
+    "sibling_repos_clean": true,
+    "porcelain": {
+      "data-rescue": "",
+      "neuruh-fulfillment-contracts": "",
+      "neuruh-property-scan": ""
+    },
+    "production_truth_signature_unchanged": true,
+    "production_truth_signature": "3ad7704ede3c59f3db934f1b1209ced24539d87371ce57016e8e31be35922c8f",
+    "stripe_network": "never called (STRIPE_MODE=fixture; hosted payment links only HEAD-probed)",
+    "founder_runtime_live_organ": "never called (O01 LOCAL authority with FR_API_URL=127.0.0.1:1; O02/O05 in-memory fixture client; property-scan pointer never posted)",
+    "cards_charged": 0,
+    "real_customer_records_created": 0,
+    "founder_payment_method_used": false
+  },
+  "pass": true,
+  "paid_customer_proof": "NONE — this court proves the technical tape in test mode; the first real customer transaction remains outstanding",
+  "court_digest_sha256": "9e7ae28a7eba226d9d882df170e5d50f848da9522a1c09f72f8fd72180d846e6"
+}

@@ -1,0 +1,338 @@
+{
+  "designation": "TEST / SANDBOX — NOT A REAL CUSTOMER — NO MONEY CHARGED",
+  "offer": {
+    "id": "O05",
+    "name": "Workflow Replacement Sprint",
+    "public_price_usd": 1250,
+    "cashier": "https://book.stripe.com/7sY00j1JRf2y2Sv4082cg06",
+    "cashier_touched": false,
+    "top10_slug": "workflow-replacement"
+  },
+  "test_id": "zdc-20260914172646-85baa8",
+  "timestamp": "2026-09-14T17:26:48.145Z",
+  "executed_against": "neuruh-fulfillment-contracts src/e2e/pipeline.ts (fixture Founder Runtime client, fixture worker receipt)",
+  "input_provenance": [
+    {
+      "path": "neuruh-fulfillment-contracts/contracts/o05-workflow-sprint/fixtures/e2e/buyer-intake.e2e.json",
+      "sha256": "ad8f7b2c68a7095762452ee06544b9e987fa9f9ca32791dfa0af683ce864e2cf",
+      "bytes": 1093,
+      "synthetic": true
+    },
+    {
+      "path": "neuruh-fulfillment-contracts/contracts/o05-workflow-sprint/artifacts/delivery-artifact.sample.md",
+      "sha256": "f4f483f771f429e68b2c167c2e9b9fe0566b1f6c7878c1aec17d2902e837289a",
+      "bytes": 3294,
+      "synthetic": true
+    }
+  ],
+  "stages": {
+    "checkout": {
+      "status": "PASS",
+      "cashier": "https://book.stripe.com/7sY00j1JRf2y2Sv4082cg06",
+      "live_http": 200,
+      "opened": false,
+      "charged": false,
+      "note": "hosted Stripe payment link served by neuruh.com; reachable, not exercised"
+    },
+    "payment_event": {
+      "status": "RECORDED_NOT_CONSUMED",
+      "event": {
+        "id": "evt_zdc-20260914172646-85baa8_o05",
+        "type": "checkout.session.completed",
+        "data": {
+          "object": {
+            "id": "cs_zdc-20260914172646-85baa8_o05",
+            "amount_total": 125000,
+            "metadata": {
+              "offer_id": "O05",
+              "test_designation": "TEST / SANDBOX — NOT A REAL CUSTOMER — NO MONEY CHARGED"
+            }
+          }
+        }
+      },
+      "real_charge": false,
+      "note": "synthesized fixture event; no code path on neuruh.com consumes Stripe events for this cashier"
+    },
+    "webhook": {
+      "status": "NOT_APPLICABLE",
+      "note": "neuruh.com is a static export with no Stripe webhook receiver; the founder receives the Stripe payment email and starts intake by email within one business day (stated on /offers, /thank-you, product page)"
+    },
+    "intake": {
+      "status": "PASS",
+      "intake_ref": "in_0eef810aabd546ac",
+      "schema": "contracts/o05-workflow-sprint/intake.schema.json",
+      "validated_by": "src/intake.ts validateIntake"
+    },
+    "order_job": {
+      "status": "PASS",
+      "founder_runtime_mission_id": "msn_fefc0851968489772bed6f07c0ff225c",
+      "founder_runtime_state": "AWAITING_APPROVAL",
+      "mission_source": "FIXTURE Founder Runtime client (in-memory); live organ not called",
+      "idempotency_key": "redacted:sha256:3324e6665ea60c711a274899",
+      "worker_job_id": "job-zdc-20260914172646-85baa8-o05"
+    },
+    "fulfillment": {
+      "status": "PASS",
+      "worker_receipt": "FIXTURE worker receipt over the sample artifact",
+      "stages_completed": [
+        "workflow_census",
+        "bottleneck",
+        "architecture",
+        "bounded_execution",
+        "tests"
+      ],
+      "acceptance": {
+        "passed": true,
+        "criteria_count": 6,
+        "results": [
+          {
+            "id": "o05-sections",
+            "passed": true,
+            "detail": "all sections present"
+          },
+          {
+            "id": "o05-mode-named",
+            "passed": true,
+            "detail": "1 matching line(s), need 1"
+          },
+          {
+            "id": "o05-tests-table",
+            "passed": true,
+            "detail": "5 matching line(s), need 3"
+          },
+          {
+            "id": "no-internals",
+            "passed": true,
+            "detail": "no forbidden terms"
+          },
+          {
+            "id": "no-placeholders",
+            "passed": true,
+            "detail": "no placeholders"
+          },
+          {
+            "id": "size-bound",
+            "passed": true,
+            "detail": "3294 bytes"
+          }
+        ]
+      },
+      "internal_mode": "BUILD"
+    },
+    "delivery": {
+      "status": "PASS",
+      "channel": "handoff_packet",
+      "performed_in_test": true,
+      "authority_label": "FIXTURE-GRANT:zdc-20260914172646-85baa8:NOT-A-FOUNDER-GRANT",
+      "artifact": {
+        "path": "contracts/o05-workflow-sprint/artifacts/e2e/delivery-artifact.md",
+        "sha256": "f4f483f771f429e68b2c167c2e9b9fe0566b1f6c7878c1aec17d2902e837289a",
+        "bytes": 3294,
+        "channel": "handoff_packet"
+      },
+      "note": "nothing was emailed; production delivery is founder email"
+    },
+    "receipt": {
+      "status": "PASS",
+      "schema_version": "neuruh.fulfillment.delivery_receipt.v1",
+      "receipt_hash": "ca427d828f66b4f1f053144b06759dfb9b767f57319bec3491d0625894af6e0e",
+      "verify": true,
+      "replay_stable": true
+    }
+  },
+  "execution_status": "PASS",
+  "delivery_artifact": [
+    {
+      "name": "DELIVERY_ARTIFACT.md",
+      "sha256": "f4f483f771f429e68b2c167c2e9b9fe0566b1f6c7878c1aec17d2902e837289a",
+      "bytes": 3294
+    }
+  ],
+  "product_receipt": {
+    "schema_version": "neuruh.fulfillment.delivery_receipt.v1",
+    "contract_id": "neuruh.fulfillment.contract.o05.workflow-sprint.v1",
+    "sku": "O05",
+    "mission": "NEURUH-O02-O05-FORENSIC-FULFILLMENT-CLOSE-20260902",
+    "fixture": true,
+    "intake_ref": "in_0eef810aabd546ac",
+    "delivered_to_hash": "em_ea07fd6e05a1261d",
+    "founder_runtime_mission_id": "msn_fefc0851968489772bed6f07c0ff225c",
+    "founder_runtime_state": "AWAITING_APPROVAL",
+    "cashier": {
+      "status": "LIVE_EXTERNAL",
+      "href": "https://book.stripe.com/7sY00j1JRf2y2Sv4082cg06",
+      "public_price_usd": 1250,
+      "charged_via_this_repo": false
+    },
+    "artifact": {
+      "path": "contracts/o05-workflow-sprint/artifacts/e2e/delivery-artifact.md",
+      "sha256": "f4f483f771f429e68b2c167c2e9b9fe0566b1f6c7878c1aec17d2902e837289a",
+      "bytes": 3294,
+      "channel": "handoff_packet"
+    },
+    "acceptance": {
+      "passed": true,
+      "criteria_count": 6,
+      "failed_ids": []
+    },
+    "internal_mode": "BUILD",
+    "fulfillment_state": "RECEIPTED",
+    "refund_state": "NONE",
+    "delivered_at": "2026-09-14T17:26:48.145Z",
+    "never_sent": [
+      "source",
+      "recipes",
+      "weights",
+      "factory",
+      "recipe-engine",
+      "founder_runtime",
+      "neuruh-workers"
+    ],
+    "receipt_hash": "ca427d828f66b4f1f053144b06759dfb9b767f57319bec3491d0625894af6e0e"
+  },
+  "evidence_refs": [
+    "neuruh-fulfillment-contracts/contracts/o05-workflow-sprint/input-contract.json",
+    "neuruh-fulfillment-contracts/contracts/o05-workflow-sprint/acceptance-criteria.json",
+    "neuruh-fulfillment-contracts/src/e2e/pipeline.ts",
+    "neuruh-fulfillment-contracts/tests/e2e.test.ts (55 node:test)",
+    "neuruh-web/apps/neuruh-web/lib/publicOffers.ts (cashier, unchanged)"
+  ],
+  "checks": [
+    {
+      "offer": "O05",
+      "name": "cashier_live_reachable",
+      "ok": true,
+      "detail": 200
+    },
+    {
+      "offer": "O05",
+      "name": "stops_at_founder_approval_without_worker_receipt",
+      "ok": true,
+      "detail": "FOUNDER_REQUIRED_MISSION_APPROVAL"
+    },
+    {
+      "offer": "O05",
+      "name": "pipeline_complete_receipted",
+      "ok": true,
+      "detail": "COMPLETE: Delivered and receipted from worker job job-zdc-20260914172646-85baa8-o05 sealed at workers://ledger/seal/zdc-20260914172646-85baa8-fixture."
+    },
+    {
+      "offer": "O05",
+      "name": "acceptance_passed",
+      "ok": true,
+      "detail": {
+        "passed": true,
+        "criteria_count": 6,
+        "results": [
+          {
+            "id": "o05-sections",
+            "passed": true,
+            "detail": "all sections present"
+          },
+          {
+            "id": "o05-mode-named",
+            "passed": true,
+            "detail": "1 matching line(s), need 1"
+          },
+          {
+            "id": "o05-tests-table",
+            "passed": true,
+            "detail": "5 matching line(s), need 3"
+          },
+          {
+            "id": "no-internals",
+            "passed": true,
+            "detail": "no forbidden terms"
+          },
+          {
+            "id": "no-placeholders",
+            "passed": true,
+            "detail": "no placeholders"
+          },
+          {
+            "id": "size-bound",
+            "passed": true,
+            "detail": "3294 bytes"
+          }
+        ]
+      }
+    },
+    {
+      "offer": "O05",
+      "name": "delivery_receipt_verifies",
+      "ok": true,
+      "detail": "ca427d828f66b4f1f053144b06759dfb9b767f57319bec3491d0625894af6e0e"
+    },
+    {
+      "offer": "O05",
+      "name": "receipt_artifact_sha_matches_fixture",
+      "ok": true,
+      "detail": {
+        "path": "contracts/o05-workflow-sprint/artifacts/e2e/delivery-artifact.md",
+        "sha256": "f4f483f771f429e68b2c167c2e9b9fe0566b1f6c7878c1aec17d2902e837289a",
+        "bytes": 3294,
+        "channel": "handoff_packet"
+      }
+    },
+    {
+      "offer": "O05",
+      "name": "receipt_not_charged_via_repo",
+      "ok": true,
+      "detail": {
+        "status": "LIVE_EXTERNAL",
+        "href": "https://book.stripe.com/7sY00j1JRf2y2Sv4082cg06",
+        "public_price_usd": 1250,
+        "charged_via_this_repo": false
+      }
+    },
+    {
+      "offer": "O05",
+      "name": "receipt_marked_fixture",
+      "ok": true,
+      "detail": true
+    },
+    {
+      "offer": "O05",
+      "name": "mission_minted_by_fixture_fr_only",
+      "ok": true,
+      "detail": {
+        "frPosts": 5,
+        "MISSION": "msn_fefc0851968489772bed6f07c0ff225c"
+      }
+    },
+    {
+      "offer": "O05",
+      "name": "idempotency_key_stable",
+      "ok": true,
+      "detail": {
+        "Idempotency-Key": "redacted:sha256:3324e6665ea60c711a274899"
+      }
+    },
+    {
+      "offer": "O05",
+      "name": "replay_same_receipt_hash",
+      "ok": true,
+      "detail": "ca427d828f66b4f1f053144b06759dfb9b767f57319bec3491d0625894af6e0e"
+    },
+    {
+      "offer": "O05",
+      "name": "delivered_artifact_no_factory_or_private_path",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "offer": "O05",
+      "name": "delivered_artifact_no_real_email",
+      "ok": true,
+      "detail": null
+    }
+  ],
+  "redactions": {
+    "note": "token-shaped values replaced by sha256 digests before vendoring; originals live only in the scratch work dir",
+    "paths": [
+      ".stages.order_job.idempotency_key",
+      ".checks[9].detail.Idempotency-Key"
+    ]
+  },
+  "court_digest_sha256": "a55bd1e6fd84cbd57cc2aa1ecfdbeb0bbacd25149f5718131cd8e6654340275a"
+}

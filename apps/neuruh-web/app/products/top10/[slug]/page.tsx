@@ -60,6 +60,17 @@ export default async function Top10ProductPage({ params }: { params: Promise<{ s
       </div>
     </header>
 
+    <section className={s.sectionAlt}><div className={s.wrap}>
+      <div className={s.sectionHead}><span>→</span><h2>How buying this works</h2></div>
+      <ol className={s.journey} data-testid="buyer-journey">
+        <li><span>1 · {p.offerId ? 'BUY' : 'REQUEST'}</span><b>{p.offerId ? `Pay ${OFFER_BY_ID[p.offerId].price} on the hosted Stripe checkout.` : p.priceStatus === 'FOUNDER_SET_NO_CASHIER' ? `Email your order. You get a scope confirmation and a ${p.price.split(' ')[0]} invoice before work starts.` : 'Email your request. You get a written scope and quote before work starts.'}</b></li>
+        <li><span>2 · PROVIDE</span><b>{p.inputs[0]}</b></li>
+        <li><span>3 · WE ANALYZE</span><b>{p.workflow.slice(1, -1).join(' → ')}</b></li>
+        <li><span>4 · RECEIVE</span><b>{p.deliverables[0]} and the rest of the deliverable by email. {p.turnaround.split('.')[0]}.</b></li>
+      </ol>
+      <p className={s.disclaimer}>{p.offerId ? 'Checkout is a hosted Stripe payment link. This site has no payment webhook: a founder emails the checkout address within one business day to collect inputs, then delivers by email.' : 'There is no checkout for this product. Intake is by email and payment is collected from you by invoice when the deliverable is scoped.'}</p>
+    </div></section>
+
     <section className={s.section}><div className={s.wrap}>
       <div className={s.sectionHead}><span>01</span><h2>What it is and what problem it solves</h2></div>
       <dl className={s.facts}>
