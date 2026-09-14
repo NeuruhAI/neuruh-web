@@ -193,6 +193,13 @@
       "title": "DeedSonar production customer tape, 2026-09-14 (read-only, efxo)",
       "path_or_uri": "docs/receipts-external/deedsonar-tape-20260914.attestation.md",
       "public_safe": true
+    },
+    {
+      "ref": "src-top10-commercial-court-20260914",
+      "class": "decision_receipt",
+      "title": "Top 10 commercial layer and harness surface court, 2026-09-14",
+      "path_or_uri": "docs/receipts-external/top10-commercial-court-20260914.attestation.md",
+      "public_safe": true
     }
   ],
   "objects": [
@@ -1198,13 +1205,14 @@
       "claim_class": "OBSERVED",
       "maturity": "SYSTEM_COMPONENT",
       "status": "STABLE",
-      "last_verified_at": "2026-09-03T18:00:00.000Z",
+      "last_verified_at": "2026-09-14T14:30:00.000Z",
       "source_ref": "src-commons-distribution-20260903",
       "evidence_summary": {
         "status": "SUFFICIENT",
-        "statement": "Each gate was run against the built release candidate. Accessibility used axe-core at desktop and mobile widths; links were resolved against real routes and files; secret and private-path scans ran over the working tree.",
+        "statement": "Each gate was run against the built release candidate. Accessibility used axe-core at desktop and mobile widths over every public route including the Top 10 commercial pages and the harness page; links were resolved against real routes and files; private-path and factory-name scans ran over the working tree and the prerendered commercial HTML. Secret-scan hits carry the 2026-09-03 measurement.",
         "source_refs": [
-          "src-commons-distribution-20260903"
+          "src-commons-distribution-20260903",
+          "src-top10-commercial-court-20260914"
         ]
       },
       "public_route": "/proof/distribution",
@@ -1214,24 +1222,24 @@
           "value": 0,
           "classification": "MEASURED",
           "unit": "links",
-          "as_of": "2026-09-03T00:00:00.000Z",
-          "source_ref": "src-commons-distribution-20260903"
+          "as_of": "2026-09-14T00:00:00.000Z",
+          "source_ref": "src-top10-commercial-court-20260914"
         },
         {
           "name": "serious_accessibility_violations",
           "value": 0,
           "classification": "MEASURED",
           "unit": "violations",
-          "as_of": "2026-09-03T00:00:00.000Z",
-          "source_ref": "src-commons-distribution-20260903"
+          "as_of": "2026-09-14T00:00:00.000Z",
+          "source_ref": "src-top10-commercial-court-20260914"
         },
         {
           "name": "critical_accessibility_violations",
           "value": 0,
           "classification": "MEASURED",
           "unit": "violations",
-          "as_of": "2026-09-03T00:00:00.000Z",
-          "source_ref": "src-commons-distribution-20260903"
+          "as_of": "2026-09-14T00:00:00.000Z",
+          "source_ref": "src-top10-commercial-court-20260914"
         },
         {
           "name": "secret_scan_hits",
@@ -1246,40 +1254,40 @@
           "value": 0,
           "classification": "MEASURED",
           "unit": "leaks",
-          "as_of": "2026-09-03T00:00:00.000Z",
-          "source_ref": "src-commons-distribution-20260903"
+          "as_of": "2026-09-14T00:00:00.000Z",
+          "source_ref": "src-top10-commercial-court-20260914"
         },
         {
           "name": "false_live_claims",
           "value": 0,
           "classification": "MEASURED",
           "unit": "claims",
-          "as_of": "2026-09-03T00:00:00.000Z",
-          "source_ref": "src-commons-distribution-20260903"
+          "as_of": "2026-09-14T00:00:00.000Z",
+          "source_ref": "src-top10-commercial-court-20260914"
         },
         {
           "name": "pages_checked",
-          "value": 35,
+          "value": 47,
           "classification": "MEASURED",
           "unit": "pages",
-          "as_of": "2026-09-03T00:00:00.000Z",
-          "source_ref": "src-commons-distribution-20260903"
+          "as_of": "2026-09-14T00:00:00.000Z",
+          "source_ref": "src-top10-commercial-court-20260914"
         },
         {
           "name": "internal_references_checked",
-          "value": 1580,
+          "value": 2118,
           "classification": "MEASURED",
           "unit": "references",
-          "as_of": "2026-09-03T00:00:00.000Z",
-          "source_ref": "src-commons-distribution-20260903"
+          "as_of": "2026-09-14T00:00:00.000Z",
+          "source_ref": "src-top10-commercial-court-20260914"
         },
         {
           "name": "accessibility_viewports",
           "value": 2,
           "classification": "MEASURED",
           "unit": "viewports",
-          "as_of": "2026-09-03T00:00:00.000Z",
-          "source_ref": "src-commons-distribution-20260903"
+          "as_of": "2026-09-14T00:00:00.000Z",
+          "source_ref": "src-top10-commercial-court-20260914"
         }
       ],
       "limitations": [

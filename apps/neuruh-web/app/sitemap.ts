@@ -1,9 +1,12 @@
 import type { MetadataRoute } from 'next'
 import { WORLD_IDS, getPublicSnapshot } from '../../../packages/public-truth/client'
+import { TOP10_SLUGS } from '../lib/top10'
 
 export const dynamic = 'force-static'
 
 const COMMERCIAL_LASTMOD = new Date('2026-09-02T00:00:00.000Z')
+const TOP10_LASTMOD = new Date('2026-09-14T00:00:00.000Z')
+const TOP10_ROUTES = ['/products/top10', ...TOP10_SLUGS.map((slug) => `/products/top10/${slug}`), '/harnesses']
 const COMMERCIAL = new Set([
   '/',
   '/offers',
@@ -27,6 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/thank-you',
     '/cases',
     '/products',
+    ...TOP10_ROUTES,
     '/how-it-works',
     '/proof',
     '/proof/distribution',
@@ -46,8 +50,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ]
   return routes.map((route) => ({
     url: `https://neuruh.com${route}`,
-    lastModified: COMMERCIAL.has(route) ? COMMERCIAL_LASTMOD : snapshotModified,
+    lastModified: TOP10_ROUTES.includes(route) ? TOP10_LASTMOD : COMMERCIAL.has(route) ? COMMERCIAL_LASTMOD : snapshotModified,
     changeFrequency: route === '/' ? 'weekly' : 'monthly',
-    priority: route === '/' ? 1 : route === '/offers' || route === '/ask' || route === '/work-with-neuruh' || route === '/products' || route === '/proof' || route === '/cases' || route === '/refusals' ? 0.8 : 0.6,
+    priority: route === '/' ? 1 : route === '/offers' || route === '/products/top10' || route === '/harnesses' || route === '/ask' || route === '/work-with-neuruh' || route === '/products' || route === '/proof' || route === '/cases' || route === '/refusals' ? 0.8 : 0.6,
   }))
 }
