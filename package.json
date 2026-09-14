@@ -15,7 +15,7 @@
     "test:smoke": "playwright test apps/neuruh-web/tests/production.smoke.spec.ts",
     "test:artifacts": "node --test tests/artifacts/*.test.mjs",
     "test:canary": "node --test tests/budget-canary.test.mjs",
-    "compile:truth": "node packages/public-truth/src/cli.mjs --as-of=2026-09-02T13:00:00.000Z",
+    "compile:truth": "node packages/public-truth/src/cli.mjs --as-of=2026-09-14T12:00:01.000Z",
     "verify:truth": "node scripts/verify-public-truth.mjs",
     "verify:provenance": "node scripts/verify-provenance.mjs",
     "verify:boundaries": "node scripts/verify-boundaries.mjs",
