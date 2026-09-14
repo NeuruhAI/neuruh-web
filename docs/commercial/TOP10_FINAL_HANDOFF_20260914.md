@@ -6,6 +6,8 @@ Classifications used: PROVEN_LIVE · PROVEN_LOCAL · IMPLEMENTED_NOT_LIVE · IMP
 `fable/neuruh-public-launch-20260823` — the GitHub default branch. PR #11 (`w4/public-truth-organism-20260914`) was merged by the founder as merge commit `51feef98` (parents `d101b0ee`, `9128f0ae`); its tree is byte-identical to the handoff commit `9128f0ae`.
 
 ## 2. Final commit SHA
+- **LEVEL 2 (design + hardening) production deployment:** `6afea08933cbbbae5423a694d5c538307bbca9a4` → `dpl_5z3syMArbWnm4EcPQdGHwwXPBJ1d` (2026-09-14 ~18:07Z, READY, meta githubCommitSha = 6afea08, truth signature 4d8033b1… matches). Supersedes `5ab3690`/`dpl_EXvs8D2Ao4jGi158vhTdRwU3Tf8h` (zero-dollar court + journey strip) and `51feef98`/`dpl_Hp8bC9KtsqBhZbzK3BWe1fro4hRS`. See `LEVEL2_DESIGN_AND_HARDENING_20260914.md`.
+- **Zero-dollar commercial court:** PROVEN in TEST mode for O01/O02/O05/Property Scan at `5ab3690` (57/57 checks, receipts under `docs/receipts-external/zero-dollar-court-20260914/`, courted by `tests/zero-dollar-court.test.mjs`). See `FIRST_SALE_READINESS_20260914.md`. PAID_CUSTOMER_PROOF remains NONE.
 - **FINAL production deployment:** `51feef989c633b346150c0425824f7b3b0e59f0c` — "Merge w4/public-truth-organism-20260914 into fable/neuruh-public-launch-20260823". Deployment `dpl_Hp8bC9KtsqBhZbzK3BWe1fro4hRS` (2026-09-14 17:02:28Z, READY, target production), Vercel meta `githubCommitSha = 51feef98…`, `githubCommitRef = fable/neuruh-public-launch-20260823`, aliases `neuruh.com`, `www.neuruh.com`.
 - Previous deployment `ca20cab` / `dpl_CFuMj42cp5YP5tWVmGrK6My38jff` is superseded (HISTORICAL).
 - This document's final-evidence update is committed on top of `51feef98` (docs only; production content unchanged).
@@ -123,8 +125,8 @@ Sitemap on production lists all 12 new routes. `/products` on production links t
 5. Vercel project has no Git integration; deploys are CLI-only (unchanged from before).
 6. Historical `scripts/release-court.mjs` pins the snapshot date to 2026-08-24 (pre-existing; not in the verify chain).
 
-## 14. First founder action
-Commercial, not technical: sell one Opportunity Intelligence Dossier at $499 through the live cashier on `/products/top10/opportunity-intelligence-dossier` (or take one $100 Property Opportunity Scan order by email), fulfil it, and capture the checkout → intake → delivery → JSON-receipt tape. That tape is the only thing that moves Fulfillment/Delivery/Receipt off IMPLEMENTED_INCOMPLETE. Decide the $100 scan cashier alongside it.
+## 14. First founder action ($0 founder spend; never buy your own product)
+Put `neuruh.com/products/top10/property-opportunity-scan` in front of one land buyer who already has a parcel in hand (a broker, a wholesaler, an investor group you are already in) and ask them to email one parcel. Fulfil it with the existing scan pack, deliver by email, record the receipt, invoice $100. That first receipted delivery is what moves Fulfillment/Delivery/Receipt off IMPLEMENTED_INCOMPLETE. The zero-dollar court already proves the technical tape; only a customer is missing.
 
 ## 15. What is actually sellable today
 Data Rescue $299, Opportunity Dossier $499, Workflow Sprint $1,250 (live checkout, founder-fulfilled). Property Opportunity Scan $100 by email order and invoice.
