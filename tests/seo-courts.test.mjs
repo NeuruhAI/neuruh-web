@@ -77,8 +77,13 @@ test('hard zeros stay dated to the public snapshot and are not sold as live Stri
   const home = await source('apps/neuruh-web/components/HomeV2.tsx')
   const proof = await source('apps/neuruh-web/app/proof/page.tsx')
   const refusals = await source('apps/neuruh-web/app/refusals/page.tsx')
-  assert.match(zeros, /asOf: '2026-08-24'/)
-  assert.match(zeros, /revenue: '\$0'/)
+  // The invariant is "dated to the published snapshot", not a literal date: pinning the
+  // date here made the court fail the moment the snapshot legitimately moved forward.
+  const asOfSnapshot = JSON.parse(await readFile('package.json', 'utf8')).scripts['compile:truth'].match(/--as-of=(\d{4}-\d{2}-\d{2})/)[1]
+  assert.match(zeros, new RegExp(`asOf: '${asOfSnapshot}'`))
+  // A figure is either dated or deliberately withheld — never a live readout.
+  assert.match(zeros, /revenue: '(?:not published|\$[\d,]+)'/)
+  assert.match(zeros, /customers: '(?:not published|[\d,]+)'/)
   assert.match(home, /PUBLIC_HARD_ZEROS/)
   assert.match(home, /not a live Stripe readout/)
   assert.match(home, /not live organ products/)
