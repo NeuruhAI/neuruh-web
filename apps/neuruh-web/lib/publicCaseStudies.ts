@@ -2,17 +2,17 @@ import { TRUTH_RULES } from './publicTruthRules'
 
 /**
  * Case studies compiled only from public-safe receipts already on this site.
- * No customer stories (customers: 0). No private organ SHAs as marketing copy.
+ * No customer stories: client engagements are the clients' to disclose. No private organ SHAs as marketing copy.
  */
 export const PUBLIC_CASE_STUDIES = [
   {
     id: 'deedsonar-production',
     title: 'DeedSonar in production',
     status: 'IN PRODUCTION',
-    asOf: '2026-09-14',
+    asOf: '2026-09-16',
     problem: 'County records, parcel geometry, and distress signals need to become ranked opportunities with evidence attached — without the trail being lost.',
-    whatRan: 'DeedSonar operates as the public flagship: find, evidence, rank, and qualify. A read-only production tape on 2026-09-14 walked the product’s own top opportunity through ten of fifteen steps and stopped at the contact ladder — a human courthouse research step.',
-    receipt: 'Production attests its own release (06cbb841, repository main identical to production, observed 2026-09-14). The earlier dated court — tests green at release e2b71fa — is compiled on the public-truth object, not hand-typed here.',
+    whatRan: 'DeedSonar operates as the public flagship: find, evidence, rank, and qualify. A read-only production tape on 2026-09-16 walked the product’s own top opportunity through ten of fifteen steps and stopped at the contact ladder — a human courthouse research step. The 2026-09-14 tape, at an earlier release, stopped at the same step.',
+    receipt: 'On 2026-09-16 the canonical current-truth pointer validated read-only with every production alias serving the same commit as repository main, and the same morning’s tape was recomputed from its content hash. Current estate, qualification and contact-authority figures are compiled on the public-truth object and shown on /proof, not hand-typed here.',
     limitation: 'Sample screens on this site are labeled sample data. Outreach, deal execution, and receipts at every step are not claimed: the tape did not reach them. Production identity is not a customer-count claim.',
     href: '/worlds/deedsonar',
     hrefLabel: 'DeedSonar record',

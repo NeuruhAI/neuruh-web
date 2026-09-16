@@ -87,12 +87,30 @@ must('home footer links the estate', /<footer[\s\S]*?re\.neuruh\.com[\s\S]*?guid
 must('JSON-LD legal name', home.includes('"legalName":"Neuruh LLC"'))
 
 const snapshot = JSON.parse(await readFile(path.join(out, 'truth/snapshot.json'), 'utf8'))
-must('snapshot stale true', snapshot.dataset.stale === true)
-must('snapshot CONTRADICTING', snapshot.living_state === 'CONTRADICTING')
-must('snapshot last_verified 2026-09-14', snapshot.dataset.last_verified_at.startsWith('2026-09-14'))
+// 2026-09-16 recourt: the snapshot is compiled at the instant it was re-verified (package.json compile:truth
+// --as-of == dataset.last_verified_at), so it is not stale when served; the preserved contradiction and the
+// absent live connector remain, and nothing is ever LIVE.
+const compileAsOf = JSON.parse(await readFile('package.json', 'utf8')).scripts['compile:truth'].match(/--as-of=(\S+)/)?.[1]
+must('snapshot compiled at its verification instant', snapshot.dataset.last_verified_at === compileAsOf, `${snapshot.dataset.last_verified_at} vs ${compileAsOf}`)
+must('snapshot not stale when served', snapshot.dataset.stale === false)
+must('snapshot CONTRADICTING preserved', snapshot.living_state === 'CONTRADICTING')
 must('snapshot live_connectivity false', snapshot.dataset.live_connectivity === false)
+must('snapshot never LIVE', snapshot.dataset.truth_mode !== 'LIVE' && !snapshot.objects.some((o) => o.truth_mode === 'LIVE'))
+
+// Issue #10 convergence surfaces: the front door, the discovery cluster, and the answer surface ship and are indexed.
+for (const route of ['/solve', '/problems', '/problems/data-you-cannot-use', '/problems/ai-you-cannot-verify', '/problems/workflows-that-break',
+  '/problems/property-data-without-opportunity', '/problems/automation-without-authority', '/problems/systems-nobody-can-explain', '/faq']) {
+  const document = await html(route)
+  must(`${route} has main`, /<main[^>]+id="main"/.test(document))
+  must(`${route} og:url`, document.includes(`property="og:url" content="https://neuruh.com${route}"`))
+  must(`${route} no factory`, !FACTORY.test(document) && !PRIVATE_GH.test(document))
+  must(`${route} no machine-state banner`, !/living state|live connectivity NONE/.test(document))
+  must(`sitemap ${route}`, sitemap.includes(`https://neuruh.com${route}<`))
+}
+must('faq FAQPage JSON-LD', (await html('/faq')).includes('"@type":"FAQPage"'))
+must('home primary CTA is the target front door', /class="v2-btn v2-btn-primary" href="\/solve"/.test(home))
 
 if (failures.length) {
   throw new Error(`RELEASE COURT FAILED\n${failures.join('\n')}`)
 }
-console.log('RELEASE COURT: PASS — export routes, OG, JSON-LD, three cashiers + Forensic booking, no REI-X residue, no machine-state banner, security.txt, robots, sitemap, private-IP, snapshot honesty')
+console.log('RELEASE COURT: PASS — export routes, OG, JSON-LD, three cashiers + Forensic booking, no REI-X residue, no machine-state banner, security.txt, robots, sitemap, private-IP, snapshot honesty, convergence surfaces')

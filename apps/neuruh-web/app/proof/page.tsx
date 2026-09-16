@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import signature from '../../../../public/truth/signature.json'
-import { getPublicObject, getPublicObjects, getPublicSnapshot } from '../../../../packages/public-truth/client'
+import { EVIDENCE_MODES, evidenceMode, getPublicObject, getPublicObjects, getPublicSnapshot } from '../../../../packages/public-truth/client'
 import { ProofCardGrid } from '../../components/ProofCardGrid'
 import { ContradictionObject } from '../../components/TruthPrimitives'
 import { NOT_CLAIMED } from '../../lib/publicNotClaimed'
@@ -54,6 +54,12 @@ export default function ProofPage() {
   const n = (o: typeof ds, name: string) => m(o, name)?.value
   const d = (o: typeof ds, name: string) => { const x = m(o, name); return x ? day(x.as_of) : '' }
   const fmt = (v?: number) => v?.toLocaleString('en-US') ?? ''
+  // Every evidence line opens with the mode of the figure it cites (VERIFIED SNAPSHOT · ATTESTED · HISTORICAL).
+  const mode = (o: typeof ds, name: string) => {
+    const x = m(o, name)
+    const label = x ? evidenceMode(x) : 'ATTESTED'
+    return `<span class="ev-mode" data-evidence-mode="${label}">${label}</span> · `
+  }
   const verifiedAsOf = day(snapshot.dataset.last_verified_at)
   return (
     <main id="main">
@@ -75,58 +81,66 @@ export default function ProofPage() {
               own date. When a newer receipt exists, the older figure is kept with its date rather than silently
               replaced.
             </p>
+            <p className="sec-sub" data-testid="evidence-modes">
+              Every evidence line is labelled with its mode. <b>VERIFIED SNAPSHOT</b>: re-read within a day of the
+              verification date above. <b>ATTESTED</b>: an earlier dated receipt that is still the newest for that
+              figure. <b>HISTORICAL</b>: superseded by a newer receipt and kept with its date — never the current state.
+              No figure on this site is live.
+            </p>
           </div>
           <div className="ev-grid">
             <EvidenceCard
-              claim="DeedSonar runs in production and attests its own release identity."
+              claim="DeedSonar runs in production, and its current state was re-read end to end."
               lines={[
-                `production tree <b>06cbb841</b> · repository main identical to production · read-only customer tape <b>${d(ds, 'customer_tape_steps_reachable')}</b>`,
-                `tape reached <b>${n(ds, 'customer_tape_steps_reachable')} of 15</b> steps and stopped at the contact ladder — a human courthouse research step`,
-                `earlier court: <b>${fmt(n(ds, 'tests_green_at_production_sha'))}</b> tests green at release <b>e2b71fa</b> · court ${d(ds, 'tests_green_at_production_sha')}`,
+                `${mode(ds, 'current_estate_properties')}current estate <b>${fmt(n(ds, 'current_estate_properties'))}</b> properties · <b>${fmt(n(ds, 'qualified_properties'))}</b> qualified · contact authority on <b>${n(ds, 'contact_authorized_rows')}</b> rows — production cannot record contact permission · ${d(ds, 'current_estate_properties')}`,
+                `${mode(ds, 'customer_tape_steps_reachable')}read-only customer tape: the product&apos;s own top opportunity reached <b>${n(ds, 'customer_tape_steps_reachable')} of 15</b> steps and stopped at the contact ladder — a human courthouse research step · ${d(ds, 'customer_tape_steps_reachable')}`,
+                `${mode(ds, 'customer_tape_steps_reachable_20260914')}the same tape on ${d(ds, 'customer_tape_steps_reachable_20260914')} reached <b>${n(ds, 'customer_tape_steps_reachable_20260914')} of 15</b> at an earlier production release`,
+                `${mode(ds, 'tests_green_at_production_sha')}court <b>${fmt(n(ds, 'tests_green_at_production_sha'))}</b> tests green at release <b>e2b71fa</b> · ${d(ds, 'tests_green_at_production_sha')} · no longer the production release`,
               ]}
               refLink={['DeedSonar record →', '/worlds/deedsonar']}
             />
             <EvidenceCard
-              claim="The governed execution loop is converged and supervised — autonomous execution is not yet proven."
+              claim="One bounded mission chain completed end to end — general autonomous execution is not claimed."
               lines={[
-                `organism activation court <b>${day(loop.last_verified_at)}</b> · organs merged at exact heads · supervision pins converged · bounded ratification renewed`,
-                `verdict recorded as <b>AUTONOMOUS_EXECUTION_NOT_PROVEN</b>: the live mission stayed parked at the Governance gate pending a founder-only qualification`,
+                `${mode(loop, 'missions_completed_end_to_end')}<b>${n(loop, 'missions_completed_end_to_end')}</b> missions (a parent and its follow-on) each passed their own approval, scheduled dispatch, an independent court and a verified receipt · ${d(loop, 'missions_completed_end_to_end')} · re-derived by the convergence registrar ${day(loop.last_verified_at)}`,
+                `${mode(loop, 'open_review_gates')}an independent post-hoc review left <b>${n(loop, 'open_review_gates')}</b> founder gates open on how completion evidence is trusted · ${d(loop, 'open_review_gates')}`,
+                `<span class="ev-mode" data-evidence-mode="HISTORICAL">HISTORICAL</span> · the 2026-09-14 activation court recorded <b>AUTONOMOUS_EXECUTION_NOT_PROVEN</b> with the mission parked at the governance gate`,
               ]}
               refLink={['Read the boundary →', '/refusals']}
             />
             <EvidenceCard
               claim="The Liquidity Engine is a sealed, court-tested candidate — synthetic by contract."
-              lines={[`<b>${n(liquidity, 'tests')}</b> tests · <b>${n(liquidity, 'operating_court_cases')}/18</b> operating court · <b>${n(liquidity, 'browser_page_checks')}/100</b> browser checks`, `custody NeuruhAI/neuruh-liquidity-engine @ <b>7f2af00</b> · ${d(liquidity, 'tests')}`]}
+              lines={[`${mode(liquidity, 'tests')}<b>${n(liquidity, 'tests')}</b> tests · <b>${n(liquidity, 'operating_court_cases')}/18</b> operating court · <b>${n(liquidity, 'browser_page_checks')}/100</b> browser checks`, `custody NeuruhAI/neuruh-liquidity-engine @ <b>7f2af00</b> · ${d(liquidity, 'tests')}`]}
               refLink={['Liquidity record →', '/worlds/liquidity-engine']}
             />
             <EvidenceCard
               claim="Four more products are sealed with dated courts."
               lines={[
-                `FindSellProfit <b>${n(fsp, 'tests')}</b> tests · Bookeit <b>${n(bookeit, 'unit_and_integration_tests')}</b> unit and integration + <b>${n(bookeit, 'e2e_assertions')}</b> E2E · CurbClaim <b>${n(curbclaim, 'tests')}</b> tests · ProofOS <b>${n(proofOs, 'courts')}</b> courts`,
-                `Venture Factory <b>${n(factory, 'tests')}</b> tests · receipts vendored in this site&apos;s source · ${d(fsp, 'tests')}`,
+                `${mode(fsp, 'tests')}FindSellProfit <b>${n(fsp, 'tests')}</b> tests · Bookeit <b>${n(bookeit, 'unit_and_integration_tests')}</b> unit and integration + <b>${n(bookeit, 'e2e_assertions')}</b> E2E · CurbClaim <b>${n(curbclaim, 'tests')}</b> tests · ProofOS <b>${n(proofOs, 'courts')}</b> courts`,
+                `${mode(factory, 'tests')}Venture Factory <b>${n(factory, 'tests')}</b> tests · receipts vendored in this site&apos;s source · ${d(fsp, 'tests')}`,
               ]}
               refLink={['All products →', '/products']}
             />
             <EvidenceCard
               claim="The open-source commons is real and audited."
               lines={[
-                `<b>${n(commons, 'public_code_repositories')}</b> public code repositories · <b>${n(commons, 'secret_scan_hits')}</b> secret-scan hits · audit ${d(commons, 'public_code_repositories')}`,
-                `<b>${fmt(n(commons, 'passing_tests'))}</b> passing tests re-run across <b>${n(commons, 'python_packages_tested')}</b> Python packages at their advertised tags · <b>${n(commons, 'zero_dependency_packages')}</b> zero-dependency packages · re-verified ${d(commons, 'passing_tests')}`,
+                `${mode(commons, 'public_code_repositories')}<b>${n(commons, 'public_code_repositories')}</b> public code repositories · <b>${n(commons, 'secret_scan_hits')}</b> secret-scan hits · audit ${d(commons, 'public_code_repositories')}`,
+                `${mode(commons, 'passing_tests')}<b>${fmt(n(commons, 'passing_tests'))}</b> passing tests re-run across <b>${n(commons, 'python_packages_tested')}</b> Python packages at their advertised tags · <b>${n(commons, 'zero_dependency_packages')}</b> zero-dependency packages · re-verified ${d(commons, 'passing_tests')}`,
               ]}
               refLink={['Open source →', '/open-source']}
             />
             <EvidenceCard
               claim="The operating estate is counted under published rules."
-              lines={[`<b>${n(census, 'canonical_active_runtimes')}</b> operating-estate services · <b>${n(census, 'repositories_under_custody')}</b> repositories · <b>${n(census, 'git_worktrees')}</b> worktrees · census ${d(census, 'canonical_active_runtimes')} · a point-in-time count of one host, not live organ products`]}
+              lines={[`${mode(census, 'canonical_active_runtimes')}<b>${n(census, 'canonical_active_runtimes')}</b> operating-estate services · <b>${n(census, 'repositories_under_custody')}</b> repositories · <b>${n(census, 'git_worktrees')}</b> worktrees · census ${d(census, 'canonical_active_runtimes')} · a point-in-time count of one host, not live organ products`]}
             />
             <EvidenceCard
               claim="Every public distribution surface is named with its real state."
-              lines={[`<b>${getPublicObjects('system').length}</b> surfaces · release court <b>${n(court, 'broken_links')}</b> broken links · <b>${n(court, 'serious_accessibility_violations')}</b> serious and <b>${n(court, 'critical_accessibility_violations')}</b> critical accessibility violations · ${d(court, 'broken_links')}`, `submitted is not accepted · installing the plugin registers <b>${n(claude, 'plugin_skills')}</b> skills but does not install the Python package`]}
+              lines={[`${mode(court, 'broken_links')}<b>${getPublicObjects('system').length}</b> surfaces · release court <b>${n(court, 'broken_links')}</b> broken links · <b>${n(court, 'serious_accessibility_violations')}</b> serious and <b>${n(court, 'critical_accessibility_violations')}</b> critical accessibility violations · ${d(court, 'broken_links')}`, `${mode(claude, 'plugin_skills')}submitted is not accepted · installing the plugin registers <b>${n(claude, 'plugin_skills')}</b> skills but does not install the Python package`]}
               refLink={['Distribution proof →', '/proof/distribution']}
             />
             <EvidenceCard
               claim="This snapshot itself is verifiable."
-              lines={[`truth mode <b>${snapshot.dataset.truth_mode}</b> · last re-read <b>${verifiedAsOf}</b> · live connectivity <b>NONE</b>`, `snapshot sha256 <b>${signature.snapshot_sha256.slice(0, 16)}…</b> · ${snapshot.dataset.limitation}`]}
+              lines={[`truth mode <b>${snapshot.dataset.truth_mode}</b> · last re-read <b>${verifiedAsOf}</b> · not connected to a live system · modes in use: ${EVIDENCE_MODES.join(' / ')}`, `snapshot sha256 <b>${signature.snapshot_sha256.slice(0, 16)}…</b> · ${snapshot.dataset.limitation}`]}
               k={signature.signature_kind}
             />
           </div>

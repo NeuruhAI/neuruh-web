@@ -51,6 +51,8 @@ test('primary routes render truthfully without fake LIVE state', async ({ page }
     '/organism', '/worlds', '/worlds/deedsonar', '/worlds/liquidity-engine',
     '/research/adaptive-intelligence', '/research/case-zero',
     '/products/top10', '/harnesses',
+    '/solve', '/problems', '/problems/data-you-cannot-use', '/problems/ai-you-cannot-verify', '/problems/workflows-that-break',
+    '/problems/property-data-without-opportunity', '/problems/automation-without-authority', '/problems/systems-nobody-can-explain', '/faq',
     '/products/top10/agent-integrity', '/products/top10/ai-estate-forensic', '/products/top10/property-opportunity-scan',
     '/products/top10/opportunity-intelligence-dossier', '/products/top10/business-acquisition-intelligence', '/products/top10/data-rescue',
     '/products/top10/workflow-replacement', '/products/top10/proofos', '/products/top10/managed-opportunity-desk', '/products/top10/findsellprofit',
@@ -106,32 +108,36 @@ test('keyboard navigation reaches Products from the header', async ({ page }) =>
   await expect(page.getByRole('heading', { level: 1 })).toContainText('Real systems')
 })
 
-test('offers page shows three live cashier prices and exact Stripe hrefs', async ({ page }) => {
+test('offers page shows three live cashier prices, attributed Stripe hrefs, and the Forensic booking path', async ({ page }) => {
+  // Canon 2026-09-14: four offers — three cashiers plus the Forensic System Audit, which books on Cal.com with no
+  // cashier. Cashier links leave the site attributed (client_reference_id=root-<offer>); no delivery time is promised.
   const expected = [
-    { id: 'O01', price: '$299', href: 'https://book.stripe.com/bJe5kDagndYugJlaow2cg04' },
-    { id: 'O02', price: '$499', href: 'https://book.stripe.com/8x2cN574b1bIakXgMU2cg05' },
-    { id: 'O05', price: '$1250', href: 'https://book.stripe.com/7sY00j1JRf2y2Sv4082cg06' },
+    { id: 'O01', price: '$299', href: 'https://book.stripe.com/bJe5kDagndYugJlaow2cg04?client_reference_id=root-o01' },
+    { id: 'O02', price: '$499', href: 'https://book.stripe.com/8x2cN574b1bIakXgMU2cg05?client_reference_id=root-o02' },
+    { id: 'O05', price: '$1250', href: 'https://book.stripe.com/7sY00j1JRf2y2Sv4082cg06?client_reference_id=root-o05' },
   ] as const
   await page.goto('/offers')
-  await expect(page.locator('[data-testid="offers-grid"] [data-offer-id]')).toHaveCount(3)
+  await expect(page.locator('[data-testid="offers-grid"] [data-offer-id]')).toHaveCount(4)
   await expect(page.getByTestId('offers-next')).toContainText('replies from jeramie@neuruh.com')
   for (const offer of expected) {
     const card = page.getByTestId(`offer-${offer.id}`)
     await expect(card).toContainText(offer.price)
     await expect(card).toContainText('You provide:')
     await expect(card).toContainText('You receive:')
-    await expect(card).toContainText('Turnaround:')
     await expect(card).toContainText('Proof:')
+    await expect(card).not.toContainText('Turnaround:')
     await expect(page.getByTestId(`offer-cta-${offer.id}`)).toHaveAttribute('href', offer.href)
   }
+  await expect(page.getByTestId('offer-FSA')).toContainText('Forensic System Audit')
+  await expect(page.getByTestId('offer-cta-FSA')).toHaveAttribute('href', /^https:\/\/cal\.com\/neuruh\/forensic-scope-session-90\?utm_source=neuruh/)
 })
 
 test('Ask Neuruh returns exactly three public cards and never a fourth', async ({ page }) => {
   await page.goto('/ask')
   await expect(page.getByTestId('ask-output').locator('[data-lane]')).toHaveCount(3)
   await expect(page.getByTestId('ask-card-fastest')).toContainText('Data Rescue')
-  await expect(page.getByTestId('ask-card-best-value')).toContainText('Opportunity Dossier')
-  await expect(page.getByTestId('ask-card-custom')).toContainText('Workflow Sprint')
+  await expect(page.getByTestId('ask-card-best-value')).toContainText('Opportunity Intelligence Dossier')
+  await expect(page.getByTestId('ask-card-custom')).toContainText('Workflow Replacement Sprint')
   await page.getByTestId('ask-intent-data').click()
   await expect(page.getByTestId('ask-card-fastest')).toHaveAttribute('data-highlight', 'true')
   await expect(page.getByTestId('ask-output').locator('[data-lane]')).toHaveCount(3)
@@ -140,7 +146,7 @@ test('Ask Neuruh returns exactly three public cards and never a fourth', async (
 test('work-with, thank-you, cases, and contact route without leaking a factory tour', async ({ page }) => {
   await page.goto('/work-with-neuruh')
   await expect(page.getByRole('heading', { level: 1 })).toContainText('Buy a scoped piece of work')
-  await expect(page.locator('a[href="https://book.stripe.com/bJe5kDagndYugJlaow2cg04"]')).toBeVisible()
+  await expect(page.locator('a[href^="https://book.stripe.com/bJe5kDagndYugJlaow2cg04"]').first()).toBeVisible()
 
   await page.goto('/work-with-us')
   await expect(page.getByRole('heading', { level: 1 })).toContainText('Buy a scoped piece of work')

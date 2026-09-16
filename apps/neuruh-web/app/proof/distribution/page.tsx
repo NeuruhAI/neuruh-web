@@ -114,8 +114,8 @@ export default function DistributionProofPage() {
           <p className="source-line">
             Snapshot <b>{snapshot.dataset.truth_mode}</b> · dataset verified{' '}
             <time dateTime={snapshot.dataset.last_verified_at}>{datasetVerified}</time> · stale{' '}
-            <b>{snapshot.dataset.stale ? 'TRUE' : 'FALSE'}</b> · living state <b>{snapshot.living_state}</b> ·
-            live connectivity <b>NONE</b> · sha256 <b>{signature.snapshot_sha256.slice(0, 16)}…</b>
+            <b>{snapshot.dataset.stale ? 'TRUE' : 'FALSE'}</b> · living state <b>{snapshot.living_state}</b>{' '}
+            (an unresolved contradiction is preserved, not hidden) · not connected to a live system · sha256 <b>{signature.snapshot_sha256.slice(0, 16)}…</b>
           </p>
           {snapshot.dataset.stale && (
             <p className="claim-boundary">

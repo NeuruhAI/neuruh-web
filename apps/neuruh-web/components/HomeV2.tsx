@@ -34,8 +34,8 @@ export function HomeV2() {
             outcomes. Actions pass a checked authority gate and leave a receipt.
           </p>
           <div className="hero-ctas">
-            <Link className="v2-btn v2-btn-primary" href="/offers">See offers</Link>
-            <Link className="v2-btn v2-btn-secondary" href="/products">Explore the systems</Link>
+            <Link className="v2-btn v2-btn-primary" href="/solve">Give Neuruh a target</Link>
+            <Link className="v2-btn v2-btn-secondary" href="/offers">See offers</Link>
             <Link className="v2-btn v2-btn-secondary" href="/proof">See the proof</Link>
           </div>
           <p className="hero-sub" style={{ marginBottom: 0 }}>

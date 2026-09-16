@@ -9,6 +9,9 @@ const primary = [
 ] as const
 
 const explore = [
+  ['Give Neuruh a target', '/solve'],
+  ['Problems', '/problems'],
+  ['Questions', '/faq'],
   ['Top 10 products', '/products/top10'],
   ['Harnesses', '/harnesses'],
   ['Ask Neuruh', '/ask'],

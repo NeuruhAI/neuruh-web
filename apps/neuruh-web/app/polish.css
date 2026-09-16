@@ -1,6 +1,8 @@
 /* Polish layer. Loaded after globals.css — never edit globals.css (provenance-tracked). */
-:where(header){
-  background:color-mix(in srgb, var(--bg, #0b0d12) 88%, transparent);
+/* Scoped to the site header: an unscoped `header` rule also painted every page's semantic <header> hero dark,
+   which failed contrast on the bone spine (2026-09-16 a11y spines court). The background follows the spine token. */
+:where(header.hdr){
+  background:var(--v2-hdr-bg, color-mix(in srgb, #0b0d12 88%, transparent));
   backdrop-filter:saturate(1.4) blur(14px);
   -webkit-backdrop-filter:saturate(1.4) blur(14px);
   border-bottom:1px solid var(--line, rgba(128,128,128,.18));

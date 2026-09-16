@@ -8,6 +8,6 @@ export const NOT_CLAIMED = [
   'Outreach performed by anything Neuruh built. Contact action authority stays at zero eligible rows on the dated production tape.',
   'Outside capital, employees, or a team. Neuruh is built and operated by its founder.',
   'External security reviews, certifications, or SOC 2. The security page is a public-safe disclosure path, not an attestation.',
-  'Autonomous end-to-end execution. The 2026-09-14 court recorded it as not proven, and the site says so.',
+  'General autonomous execution. One bounded mission chain completed end to end on 2026-09-15 under its own approvals and an independent court; a 2026-09-16 review left two gates open on how that evidence is trusted, so nothing broader is claimed.',
   'Live status of any kind. Every figure on this site is a dated re-read of a receipt, never a feed.',
 ] as const

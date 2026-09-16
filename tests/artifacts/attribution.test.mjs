@@ -9,7 +9,9 @@ import path from 'node:path'
  * links carry the UTM quartet with utm_campaign=root. Runs against the prerendered HTML.
  */
 const APP = 'apps/neuruh-web/.next/server/app'
-const ROUTES = ['index', 'offers', 'ask', 'work-with-neuruh', 'work-with-us', 'contact', 'thank-you', 'cases', 'proof', 'founder', 'products']
+const ROUTES = ['index', 'offers', 'ask', 'work-with-neuruh', 'work-with-us', 'contact', 'thank-you', 'cases', 'proof', 'founder', 'products',
+  'problems/data-you-cannot-use', 'problems/ai-you-cannot-verify', 'problems/workflows-that-break',
+  'problems/property-data-without-opportunity', 'problems/automation-without-authority', 'problems/systems-nobody-can-explain']
 const UTM = /utm_source=neuruh(?:&amp;|&)utm_medium=site(?:&amp;|&)utm_campaign=root(?:&amp;|&)utm_content=[a-z0-9-]+/
 const unescape = (s) => s.replace(/&amp;/g, '&')
 

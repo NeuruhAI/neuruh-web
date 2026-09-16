@@ -1,10 +1,10 @@
 {
   "dataset": {
-    "generated_at": "2026-09-14T12:00:00.000Z",
-    "id": "neuruh-public-snapshot-2026-09-14",
-    "label": "Public snapshot — organism activation court, 2026-09-14",
-    "last_verified_at": "2026-09-14T12:00:00.000Z",
-    "limitation": "Dated 2026-08-24 local snapshot compiled from canon and repository receipts; no private or production connector is attached. Unresolved contradictions are preserved. Not a live feed.",
+    "generated_at": "2026-09-16T12:45:00.000Z",
+    "id": "neuruh-public-snapshot-2026-09-16",
+    "label": "Public snapshot — production truth recourt, 2026-09-16",
+    "last_verified_at": "2026-09-16T12:45:00.000Z",
+    "limitation": "Dated 2026-09-16 snapshot compiled from canon and vendored receipts; each figure keeps its own date. No production connector is attached. Not a live feed. Unresolved contradictions are preserved; superseded figures stay as HISTORICAL with their dates.",
     "live_connectivity": false,
     "source": {
       "class": "canonical_document",
@@ -13,8 +13,8 @@
       "ref": "src-alive-ruling",
       "title": "Neuruh Alive Canonical Product Ruling"
     },
-    "stale": true,
-    "stale_after": "2026-09-30T22:00:00.000Z",
+    "stale": false,
+    "stale_after": "2026-10-16T12:00:00.000Z",
     "truth_mode": "VERIFIED_SNAPSHOT"
   },
   "living_state": "CONTRADICTING",
@@ -207,38 +207,72 @@
       "claim_class": "OBSERVED",
       "evidence_summary": {
         "source_refs": [
-          "src-estate-canon",
+          "src-deedsonar-production-truth-20260916",
           "src-deedsonar-surface",
+          "src-deedsonar-tape-20260914",
           "src-deedsonar-court",
-          "src-deedsonar-tape-20260914"
+          "src-estate-canon"
         ],
-        "statement": "A production surface serves at app.deedsonar.com whose health endpoint attests its own SHA (06cbb841 = repository main, observed 2026-09-14); the production migration ledger tops at 20260913150000; the read-only customer tape of 2026-09-14 reaches ten of fifteen steps and blocks at the contact ladder because the top-ranked owner is deceased and no public estate case is found (a human courthouse research step, not a software gap).",
+        "statement": "On 2026-09-16 the canonical current-truth pointer, regenerated after that morning's production release, validated (96 checks, 0 failures, read-only): one production deployment READY behind every alias serving the same commit as repository main; one current estate batch of 22,584 properties, identical through the UI read path; 435 qualified; migration ledger head 20260916121647. The same morning's read-only customer tape, at the release just before, ran the product's own top opportunity through 10 of 15 steps and blocked at the contact ladder (deceased owner, no public estate case — a courthouse research step); production cannot record contact permission on any path, so contact authority holds at zero rows. The 2026-08-23 court (1,510 tests at release e2b71fa) and the 2026-09-14 tape are kept as HISTORICAL.",
         "status": "SUFFICIENT"
       },
       "id": "deedsonar",
       "kind": "world",
-      "last_verified_at": "2026-09-14T12:00:00.000Z",
+      "last_verified_at": "2026-09-16T12:30:36.000Z",
       "limitations": [
-        "Court receipt and health attestation are dated observations, not a standing service guarantee.",
-        "Outreach is not enabled: no SMS, no dialing, no consent or DNC weakening; contact authority stays at zero eligible rows."
+        "Dated read-only observations of 2026-09-16, not a standing service guarantee; production may have moved since.",
+        "Freshness on 2026-09-16 was STALE_COMPONENTS: the contact projection predates the last estate revision and public facts coverage is partial.",
+        "Outreach is not enabled: no SMS, no dialing, no consent or DNC weakening; contact authority stays at zero rows."
       ],
       "maturity": "OPERATING_PRODUCT",
       "metrics": [
         {
-          "as_of": "2026-08-23T00:00:00.000Z",
+          "as_of": "2026-09-16T12:30:36.000Z",
           "classification": "MEASURED",
+          "name": "current_estate_properties",
+          "source_ref": "src-deedsonar-production-truth-20260916",
+          "unit": "properties",
+          "value": 22584
+        },
+        {
+          "as_of": "2026-09-16T12:30:36.000Z",
+          "classification": "MEASURED",
+          "name": "qualified_properties",
+          "source_ref": "src-deedsonar-production-truth-20260916",
+          "unit": "properties",
+          "value": 435
+        },
+        {
+          "as_of": "2026-09-16T11:54:58.000Z",
+          "classification": "MEASURED",
+          "name": "contact_authorized_rows",
+          "source_ref": "src-deedsonar-production-truth-20260916",
+          "unit": "rows",
+          "value": 0
+        },
+        {
+          "as_of": "2026-09-16T11:54:58.000Z",
+          "classification": "MEASURED",
+          "name": "customer_tape_steps_reachable",
+          "source_ref": "src-deedsonar-production-truth-20260916",
+          "unit": "steps of 15",
+          "value": 10
+        },
+        {
+          "as_of": "2026-09-14T12:00:00.000Z",
+          "classification": "HISTORICAL",
+          "name": "customer_tape_steps_reachable_20260914",
+          "source_ref": "src-deedsonar-tape-20260914",
+          "unit": "steps of 15",
+          "value": 10
+        },
+        {
+          "as_of": "2026-08-23T00:00:00.000Z",
+          "classification": "HISTORICAL",
           "name": "tests_green_at_production_sha",
           "source_ref": "src-deedsonar-court",
           "unit": "tests",
           "value": 1510
-        },
-        {
-          "as_of": "2026-09-14T12:00:00.000Z",
-          "classification": "MEASURED",
-          "name": "customer_tape_steps_reachable",
-          "source_ref": "src-deedsonar-tape-20260914",
-          "unit": "steps of 15",
-          "value": 10
         }
       ],
       "name": "DeedSonar",
@@ -739,28 +773,47 @@
       "claim_class": "OBSERVED",
       "evidence_summary": {
         "source_refs": [
+          "src-organism-convergence-20260916",
           "src-w4-final-morning-receipt"
         ],
-        "statement": "On 2026-09-14 the already-courted organs were merged onto their mains at exact heads (sentinel-court, three Workers pull requests, two supervision pin releases), the supervision pins converged onto those mains, the supervised organs were restarted at the pinned SHAs, and Governance carried a renewed bounded ratification (merge and artifact-write at R3, seven days) with the git custodian registered. Autonomous execution was NOT proven: the live mission stayed parked at the Governance gate because the Founder Runtime attests a source SHA the live trust lineage does not yet qualify; that qualification is a founder act still open.",
+        "statement": "On 2026-09-15 one bounded mission and its follow-on each completed end to end — authority classification, their own consumed approvals, scheduled dispatch, an independent court, a validated receipt and a verified outcome — and the 2026-09-16 convergence registrar re-derived that chain (court hashes recomputed, chain read read-only, live adjudication controls) and recorded AUTONOMOUS_EXECUTION_PROVEN for it. An independent post-hoc review the same day opened two founder gates on how completion evidence is trusted; it does not invalidate the chain. General autonomous execution is not claimed. The 2026-09-14 NOT_PROVEN record is kept as HISTORICAL.",
         "status": "PARTIAL"
       },
       "id": "governed-execution-loop",
       "kind": "organ",
-      "last_verified_at": "2026-09-14T12:00:00.000Z",
+      "last_verified_at": "2026-09-16T00:45:00.000Z",
       "limitations": [
-        "Topology converged; autonomous end-to-end execution not yet proven.",
-        "Dated observation of a loopback-only supervised runtime; no live feed.",
-        "Custody and promotion consumers remain unbound in production until the founder binds them."
+        "One bounded mission chain on a loopback-only supervised runtime; not a general autonomous capability.",
+        "Two founder gates from the 2026-09-16 post-hoc review remain open (court-evidence trust, continuation-key denial).",
+        "Dated observation; no live feed."
       ],
       "maturity": "SYSTEM_COMPONENT",
+      "metrics": [
+        {
+          "as_of": "2026-09-15T23:32:20.000Z",
+          "classification": "MEASURED",
+          "name": "missions_completed_end_to_end",
+          "source_ref": "src-organism-convergence-20260916",
+          "unit": "missions (one parent, one follow-on)",
+          "value": 2
+        },
+        {
+          "as_of": "2026-09-16T00:45:00.000Z",
+          "classification": "MEASURED",
+          "name": "open_review_gates",
+          "source_ref": "src-organism-convergence-20260916",
+          "unit": "founder gates",
+          "value": 2
+        }
+      ],
       "name": "Governed Execution Loop",
       "public_route": "/",
       "source": {
         "class": "decision_receipt",
-        "path_or_uri": "docs/receipts-external/organism-activation-court-20260914.attestation.md",
+        "path_or_uri": "docs/receipts-external/organism-convergence-20260916.attestation.md",
         "public_safe": true,
-        "ref": "src-w4-final-morning-receipt",
-        "title": "W4 final morning execution receipt (organism activation court, 2026-09-14)"
+        "ref": "src-organism-convergence-20260916",
+        "title": "Organism convergence registrar receipt and post-hoc review, 2026-09-16"
       },
       "status": "INTEGRATING",
       "summary": "Founder Runtime → scheduled dispatch → Workers → sealed receipt → Switchboard → independent Sentinel court → Governance-gated custody and promotion: one owner per organ, supervised on loopback, fail-closed.",
@@ -1189,89 +1242,90 @@
       "claim_class": "OBSERVED",
       "evidence_summary": {
         "source_refs": [
-          "src-commons-distribution-20260903",
+          "src-site-release-court-20260916",
+          "src-site-release-court-20260914",
           "src-top10-commercial-court-20260914"
         ],
-        "statement": "Each gate was run against the built release candidate. Accessibility used axe-core at desktop and mobile widths over every public route including the Top 10 commercial pages and the harness page; links were resolved against real routes and files; private-path and factory-name scans ran over the working tree and the prerendered commercial HTML. Secret-scan hits carry the 2026-09-03 measurement.",
+        "statement": "Each gate was run against the built release candidate of 2026-09-16. Accessibility used axe-core at desktop and mobile widths on both colour spines over every sitemap route plus the not-found page; links were resolved against real routes and files; secret, private-path and factory-name scans ran over the source and the prerendered HTML, including the new front door, failure-mode and answer pages.",
         "status": "SUFFICIENT"
       },
       "id": "release-court",
       "kind": "proof",
-      "last_verified_at": "2026-09-14T18:30:00.000Z",
+      "last_verified_at": "2026-09-16T12:45:00.000Z",
       "limitations": [
         "Gates are measured against a built candidate on the stated date. A later source change requires re-running them; rendering this page does not re-verify anything."
       ],
       "maturity": "SYSTEM_COMPONENT",
       "metrics": [
         {
-          "as_of": "2026-09-14T00:00:00.000Z",
+          "as_of": "2026-09-16T12:45:00.000Z",
           "classification": "MEASURED",
           "name": "broken_links",
-          "source_ref": "src-top10-commercial-court-20260914",
+          "source_ref": "src-site-release-court-20260916",
           "unit": "links",
           "value": 0
         },
         {
-          "as_of": "2026-09-14T00:00:00.000Z",
+          "as_of": "2026-09-16T12:45:00.000Z",
           "classification": "MEASURED",
           "name": "serious_accessibility_violations",
-          "source_ref": "src-top10-commercial-court-20260914",
+          "source_ref": "src-site-release-court-20260916",
           "unit": "violations",
           "value": 0
         },
         {
-          "as_of": "2026-09-14T00:00:00.000Z",
+          "as_of": "2026-09-16T12:45:00.000Z",
           "classification": "MEASURED",
           "name": "critical_accessibility_violations",
-          "source_ref": "src-top10-commercial-court-20260914",
+          "source_ref": "src-site-release-court-20260916",
           "unit": "violations",
           "value": 0
         },
         {
-          "as_of": "2026-09-03T00:00:00.000Z",
+          "as_of": "2026-09-16T12:45:00.000Z",
           "classification": "MEASURED",
           "name": "secret_scan_hits",
-          "source_ref": "src-commons-distribution-20260903",
+          "source_ref": "src-site-release-court-20260916",
           "unit": "hits",
           "value": 0
         },
         {
-          "as_of": "2026-09-14T00:00:00.000Z",
+          "as_of": "2026-09-16T12:45:00.000Z",
           "classification": "MEASURED",
           "name": "private_path_leaks",
-          "source_ref": "src-top10-commercial-court-20260914",
+          "source_ref": "src-site-release-court-20260916",
           "unit": "leaks",
           "value": 0
         },
         {
-          "as_of": "2026-09-14T00:00:00.000Z",
+          "as_of": "2026-09-16T12:45:00.000Z",
           "classification": "MEASURED",
           "name": "false_live_claims",
-          "source_ref": "src-top10-commercial-court-20260914",
+          "source_ref": "src-site-release-court-20260916",
           "unit": "claims",
           "value": 0
         },
         {
-          "as_of": "2026-09-14T00:00:00.000Z",
+          "as_of": "2026-09-16T12:45:00.000Z",
           "classification": "MEASURED",
           "name": "pages_checked",
-          "source_ref": "src-top10-commercial-court-20260914",
+          "source_ref": "src-site-release-court-20260916",
           "unit": "pages",
-          "value": 47
+          "value": 56
         },
         {
-          "as_of": "2026-09-14T00:00:00.000Z",
+          "as_of": "2026-09-16T12:45:00.000Z",
           "classification": "MEASURED",
           "name": "internal_references_checked",
-          "source_ref": "src-top10-commercial-court-20260914",
+          "source_ref": "src-site-release-court-20260916",
           "unit": "references",
-          "value": 2308
+          "value": 3117
         },
         {
-          "as_of": "2026-09-14T00:00:00.000Z",
+          "as_of": "2026-09-16T12:45:00.000Z",
           "classification": "MEASURED",
           "name": "accessibility_viewports",
-          "source_ref": "src-top10-commercial-court-20260914",
+          "source_ref": "src-site-release-court-20260916",
           "unit": "viewports",
           "value": 2
         }
@@ -1279,11 +1333,11 @@
       "name": "Public release court",
       "public_route": "/proof/distribution",
       "source": {
-        "class": "curated_snapshot",
-        "path_or_uri": "docs/receipts-external/commons-distribution-20260903.attestation.md",
+        "class": "decision_receipt",
+        "path_or_uri": "docs/receipts-external/site-release-court-20260916.attestation.md",
         "public_safe": true,
-        "ref": "src-commons-distribution-20260903",
-        "title": "Public commons and distribution re-verification (2026-09-03)"
+        "ref": "src-site-release-court-20260916",
+        "title": "neuruh.com site release court (2026-09-16)"
       },
       "status": "STABLE",
       "summary": "The gates every public release candidate must clear before it may be deployed: links, accessibility, secrets, private paths, and false live claims.",
@@ -1638,6 +1692,13 @@
       "title": "DeedSonar production court — 1,510 green at e2b71fa (2026-08-23)"
     },
     {
+      "class": "decision_receipt",
+      "path_or_uri": "docs/receipts-external/deedsonar-production-truth-20260916.attestation.md",
+      "public_safe": true,
+      "ref": "src-deedsonar-production-truth-20260916",
+      "title": "DeedSonar production truth, 2026-09-16 (canonical pointer + customer tape, read-only)"
+    },
+    {
       "class": "health_endpoint",
       "path_or_uri": "https://app.deedsonar.com",
       "public_safe": true,
@@ -1729,6 +1790,13 @@
       "title": "Neuruh organism census (2026-08-23)"
     },
     {
+      "class": "decision_receipt",
+      "path_or_uri": "docs/receipts-external/organism-convergence-20260916.attestation.md",
+      "public_safe": true,
+      "ref": "src-organism-convergence-20260916",
+      "title": "Organism convergence registrar receipt and post-hoc review, 2026-09-16"
+    },
+    {
       "class": "benchmark",
       "path_or_uri": "benchmarks/P0_RESULTS.json",
       "public_safe": true,
@@ -1755,6 +1823,13 @@
       "public_safe": true,
       "ref": "src-site-release-court-20260914",
       "title": "neuruh.com site release court (2026-09-14)"
+    },
+    {
+      "class": "decision_receipt",
+      "path_or_uri": "docs/receipts-external/site-release-court-20260916.attestation.md",
+      "public_safe": true,
+      "ref": "src-site-release-court-20260916",
+      "title": "neuruh.com site release court (2026-09-16)"
     },
     {
       "class": "decision_receipt",

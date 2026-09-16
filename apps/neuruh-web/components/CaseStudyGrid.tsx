@@ -4,9 +4,13 @@ import { PUBLIC_CASE_STUDIES } from '../lib/publicCaseStudies'
 import styles from './Commercial.module.css'
 
 function deedsonarCourtLine() {
-  const tests = getPublicObject('deedsonar')?.metrics?.find((metric) => metric.name === 'tests_green_at_production_sha')
-  if (!tests) return null
-  return `${tests.value.toLocaleString('en-US')} tests green at the already-public production SHA · court ${tests.as_of.slice(0, 10)}`
+  const metrics = getPublicObject('deedsonar')?.metrics ?? []
+  const estate = metrics.find((metric) => metric.name === 'current_estate_properties')
+  const tests = metrics.find((metric) => metric.name === 'tests_green_at_production_sha')
+  const current = estate ? `Current estate ${estate.value.toLocaleString('en-US')} properties · re-read ${estate.as_of.slice(0, 10)}` : null
+  // The 2026-08-23 court is superseded: kept with its date and labeled, never presented as the production release.
+  const historical = tests ? `${tests.classification} · ${tests.value.toLocaleString('en-US')} tests green at an earlier release · court ${tests.as_of.slice(0, 10)}` : null
+  return [current, historical].filter(Boolean).join(' · ') || null
 }
 
 export function CaseStudyGrid() {
