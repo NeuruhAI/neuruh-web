@@ -36,8 +36,8 @@ test('reduced-motion route preserves the identical story and marks the route', a
   expect(actual).toEqual(expected)
 })
 
-test('the governed trace runs and resets from the keyboard', async ({ page }) => {
-  await page.goto('/')
+test('the scripted trace illustration runs and resets from the keyboard', async ({ page }) => {
+  await page.goto('/how-it-works')
   await page.getByTestId('trace-start').click()
   await expect(page.getByTestId('trace-step-S6')).toHaveAttribute('data-on', 'true')
   await page.keyboard.press('R')
@@ -114,7 +114,7 @@ test('offers page shows three live cashier prices and exact Stripe hrefs', async
   ] as const
   await page.goto('/offers')
   await expect(page.locator('[data-testid="offers-grid"] [data-offer-id]')).toHaveCount(3)
-  await expect(page.getByTestId('offers-next')).toContainText('one business day')
+  await expect(page.getByTestId('offers-next')).toContainText('replies from jeramie@neuruh.com')
   for (const offer of expected) {
     const card = page.getByTestId(`offer-${offer.id}`)
     await expect(card).toContainText(offer.price)
@@ -147,7 +147,7 @@ test('work-with, thank-you, cases, and contact route without leaking a factory t
 
   await page.goto('/thank-you')
   await expect(page.getByTestId('thank-you-handoff')).toContainText('does not receive Stripe webhooks')
-  await expect(page.getByTestId('thank-you-next')).toContainText('one business day')
+  await expect(page.getByTestId('thank-you-next')).toContainText('replies from jeramie@neuruh.com')
 
   await page.goto('/cases')
   await expect(page.getByTestId('case-studies').locator('article')).toHaveCount(5)

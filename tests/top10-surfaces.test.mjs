@@ -35,7 +35,9 @@ test('every product answers the buyer questions and carries a full ladder', () =
     const text = JSON.stringify(p)
     assert.doesNotMatch(text, FACTORY, `${p.slug} leaks an internal name`)
     assert.doesNotMatch(text, FAKE, `${p.slug} carries a manufactured claim`)
-    assert.ok(p.proof.some((line) => /hard zeros/i.test(line)), `${p.slug} must state public hard zeros`)
+    // A counted zero needs a receipt like any other number (c003a8f): refusals point to /refusals instead.
+    assert.ok(p.proof.some((line) => /\/refusals/.test(line)), `${p.slug} must point its unpublished client facts at /refusals`)
+    assert.doesNotMatch(text, /hard zeros|(sold|delivered|run)( or delivered)? yet|No [a-z -]*customer exists|one business day/i, `${p.slug} carries an unreceipted zero or promise`)
   }
 })
 

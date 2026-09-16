@@ -4,7 +4,7 @@ import { TOP10_SLUGS } from '../lib/top10'
 
 export const dynamic = 'force-static'
 
-const COMMERCIAL_LASTMOD = new Date('2026-09-02T00:00:00.000Z')
+const COMMERCIAL_LASTMOD = new Date('2026-09-14T00:00:00.000Z')
 const TOP10_LASTMOD = new Date('2026-09-14T00:00:00.000Z')
 const TOP10_ROUTES = ['/products/top10', ...TOP10_SLUGS.map((slug) => `/products/top10/${slug}`), '/harnesses']
 const COMMERCIAL = new Set([

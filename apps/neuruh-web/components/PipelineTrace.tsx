@@ -24,13 +24,13 @@ export function PipelineTrace({ reduced = false }: { reduced?: boolean }) {
     <div className="trace" data-testid="trace">
       <div className="trace__head">
         <div>
-          <p className="n-label">Run it yourself — sandboxed</p>
-          <p className="sec-sub" style={{ margin: 0 }}>Six real steps, no external write. The gate refuses, and even the refusal gets a receipt.</p>
+          <p className="n-label">Illustrative trace — scripted in your browser</p>
+          <p className="sec-sub" style={{ margin: 0 }}>Six scripted steps that show the shape of a governed run. Nothing here touches a Neuruh system: no signal is registered, no gate is consulted, no receipt is written.</p>
         </div>
         <button className="v2-btn v2-btn-secondary t-ui-sm" onClick={trace.reset} data-testid="trace-reset">Reset</button>
       </div>
       <div className="row">
-        <button className="v2-btn v2-btn-primary t-ui-sm" onClick={trace.start} data-testid="trace-start">Run the sandbox trace</button>
+        <button className="v2-btn v2-btn-primary t-ui-sm" onClick={trace.start} data-testid="trace-start">Play the illustration</button>
       </div>
       <div className="trace__steps">
         {ALIVE_TRACE_STEPS.map((step, stepIndex) => (

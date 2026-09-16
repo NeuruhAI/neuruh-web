@@ -55,10 +55,6 @@ export function AskNeuruh() {
                 <dd>{card.offer.receive}</dd>
               </div>
               <div>
-                <dt>Turnaround:</dt>
-                <dd>{card.offer.turnaround}</dd>
-              </div>
-              <div>
                 <dt>Proof:</dt>
                 <dd>{card.offer.proof}</dd>
               </div>
@@ -67,7 +63,7 @@ export function AskNeuruh() {
               <a className="v2-btn v2-btn-primary" href={card.ctaHref} rel="noopener noreferrer">
                 {card.ctaLabel}
               </a>
-              <a className="v2-btn v2-btn-secondary" href={card.secondaryHref}>
+              <a className="v2-link" href={card.secondaryHref}>
                 {card.secondaryLabel}
               </a>
             </div>

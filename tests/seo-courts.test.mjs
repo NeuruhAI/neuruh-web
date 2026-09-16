@@ -35,16 +35,19 @@ test('pageMeta writes per-route Open Graph url, title, and description', async (
   }
 })
 
-test('JSON-LD is Organization, WebSite, and the three public Services only', async () => {
+test('JSON-LD is Organization, WebSite, and the four public Services only', async () => {
   const jsonLd = await source('apps/neuruh-web/lib/publicJsonLd.ts')
   const layout = await source('apps/neuruh-web/app/layout.tsx')
   assert.match(jsonLd, /'@type': 'Organization'/)
+  assert.match(jsonLd, /legalName: 'Neuruh LLC'/)
+  assert.match(jsonLd, /telephone: '\+1-269-500-1768'/)
   assert.match(jsonLd, /'@type': 'WebSite'/)
   assert.match(jsonLd, /'@type': 'Service'/)
   assert.match(jsonLd, /PUBLIC_OFFERS/)
   assert.doesNotMatch(jsonLd, FACTORY)
   assert.match(layout, /<JsonLd/)
-  assert.match(jsonLd, /offer\.href/)
+  assert.match(jsonLd, /offerHref\(offer\)/)
+  assert.match(jsonLd, /offer\.kind === 'cashier'/)
 })
 
 test('robots, sitemap, and security.txt stay public-safe', async () => {
@@ -54,7 +57,7 @@ test('robots, sitemap, and security.txt stay public-safe', async () => {
   const vercel = await source('vercel.json')
   assert.match(robots, /sitemap: 'https:\/\/neuruh.com\/sitemap.xml'/)
   assert.match(sitemap, /\/work-with-us/)
-  assert.match(sitemap, /2026-09-02T00:00:00.000Z/)
+  assert.match(sitemap, /2026-09-14T00:00:00.000Z/)
   assert.match(security, /Contact: https:\/\/neuruh.com\/security/)
   assert.doesNotMatch(security, /mailto:/)
   assert.doesNotMatch(security, FACTORY)
@@ -72,39 +75,58 @@ test('global footer uses the public-safe /security path and does not invent a ma
   assert.doesNotMatch(security, /mailto:/)
 })
 
-test('hard zeros stay dated to the public snapshot and are not sold as live Stripe truth', async () => {
-  const zeros = await source('apps/neuruh-web/lib/publicHardZeros.ts')
+test('refusals are stated as refusals, never as unreceipted counts, and the homepage carries no machine state', async () => {
+  const notClaimed = await source('apps/neuruh-web/lib/publicNotClaimed.ts')
   const home = await source('apps/neuruh-web/components/HomeV2.tsx')
   const proof = await source('apps/neuruh-web/app/proof/page.tsx')
   const refusals = await source('apps/neuruh-web/app/refusals/page.tsx')
-  // The invariant is "dated to the published snapshot", not a literal date: pinning the
-  // date here made the court fail the moment the snapshot legitimately moved forward.
-  const asOfSnapshot = JSON.parse(await readFile('package.json', 'utf8')).scripts['compile:truth'].match(/--as-of=(\d{4}-\d{2}-\d{2})/)[1]
-  assert.match(zeros, new RegExp(`asOf: '${asOfSnapshot}'`))
-  // A figure is either dated or deliberately withheld — never a live readout.
-  assert.match(zeros, /revenue: '(?:not published|\$[\d,]+)'/)
-  assert.match(zeros, /customers: '(?:not published|[\d,]+)'/)
-  assert.match(home, /PUBLIC_HARD_ZEROS/)
-  assert.match(home, /not a live Stripe readout/)
-  assert.match(home, /not live organ products/)
-  assert.match(proof, /PUBLIC_HARD_ZEROS/)
-  assert.match(refusals, /PUBLIC_HARD_ZEROS/)
+  const footer = await source('apps/neuruh-web/components/SiteFooter.tsx')
+  // 7f6cb97: client confidentiality is a boundary, not an absence (a withheld figure, never a zero).
+  assert.match(notClaimed, /clients\\' facts to disclose/)
+  assert.match(proof, /NOT_CLAIMED/)
+  assert.match(refusals, /NOT_CLAIMED/)
+  // No dated zero counts anywhere: a counted zero needs a receipt like any other number.
+  for (const text of [notClaimed, home, proof, refusals]) {
+    assert.doesNotMatch(text, /Revenue[^.]{0,40}\$0/)
+    assert.doesNotMatch(text, /Customers:? 0\b/)
+  }
+  // Layer separation: the homepage (Layer 2) carries no snapshot date, count, status pill or simulated receipt.
+  assert.doesNotMatch(home, /getPublicObject|getPublicSnapshot|getPublicObjects/)
+  assert.doesNotMatch(home, /2026-0\d-\d\d/)
+  assert.doesNotMatch(home, /sha e2b71fa|offer\.prepared|RECEIPT · VERIFIED|proofstrip|hero-proofline/)
+  assert.doesNotMatch(home, /Benton Harbor/)
+  // The machine-state banner is gone from the shared footer; the ledger lives on /proof.
+  assert.doesNotMatch(footer, /Truth mode|living state|live connectivity|getTruthSummary/)
+  assert.match(footer, /href="\/proof"/)
+  // /proof carries the single "Verified as of" line and a plain-language method.
+  assert.match(proof, /Verified as of/)
+  assert.match(proof, /data-testid="proof-method"/)
 })
 
-test('quoted engagements are built products with no price and no cashier', async () => {
+test('the four canon offers are present, the Forensic audit books on Cal.com with no cashier, and no retired product remains', async () => {
   const catalog = await readFile('apps/neuruh-web/lib/publicOffers.ts', 'utf8')
-  const quoted = catalog.slice(catalog.indexOf('QUOTED_ENGAGEMENTS'))
-  assert.match(quoted, /id: 'Q-PROPERTY-SCAN'/)
-  assert.match(quoted, /id: 'Q-LEAD-RESCUE'/)
-  // No price, no dollar figure, no cashier: pricing is an unmade founder decision.
-  assert.doesNotMatch(quoted, /\bprice:/)
-  assert.doesNotMatch(quoted, /\$\s?\d/)
-  assert.doesNotMatch(quoted, /stripe\.com/)
-  // The $799 per-market recommendation is internal and must not appear anywhere public.
+  for (const id of ['O01', 'O02', 'O05', 'FSA']) assert.match(catalog, new RegExp(`id: '${id}'`))
+  assert.match(catalog, /Forensic System Audit/)
+  const forensic = catalog.slice(catalog.indexOf("id: 'FSA'"), catalog.indexOf('export type PublicOffer'))
+  assert.match(forensic, /kind: 'booking'/)
+  assert.match(forensic, /cal\.com\/neuruh\/forensic-scope-session-90/)
+  assert.doesNotMatch(forensic, /stripe\.com|\$\s?\d|books free|invoiced/)
+  // Boundaries from canon, in substance.
+  assert.match(catalog, /Messy data → recovered package/)
+  assert.match(catalog, /Question → source-backed dossier/)
+  assert.match(catalog, /Manual workflow → AI-assisted replaced flow/)
+  assert.match(catalog, /Existing system → evidence-backed truth, state, gap, and recovery report/)
+  // The Cal.com ladder never prints a paid rate (not in canon); the qualifying call is free.
+  const ladder = catalog.slice(catalog.indexOf('PUBLIC_CALLS'), catalog.indexOf('OFFER_NEXT_STEPS'))
+  assert.doesNotMatch(ladder, /\$\s?\d/)
+  assert.match(ladder, /rate: 'Free'/)
+  // Retired quoted products and the internal $799 recommendation must not appear anywhere public.
   const hub = await readFile('apps/neuruh-web/components/WorkWithHub.tsx', 'utf8')
-  assert.doesNotMatch(hub, /\$\s?799\b/)
-  assert.doesNotMatch(catalog, /\$\s?799\b/)
-  // The quote path must route to the existing contact surface, not a new mailbox.
-  assert.match(quoted, /href: '\/contact'/)
-  assert.doesNotMatch(quoted, /mailto:/)
+  const contact = await readFile('apps/neuruh-web/app/contact/page.tsx', 'utf8')
+  for (const text of [catalog, hub, contact]) {
+    assert.doesNotMatch(text, /QUOTED_ENGAGEMENTS|Lead Rescue|Request a quote|\$\s?799\b/)
+  }
+  // One primary action per offer card.
+  const grid = await readFile('apps/neuruh-web/components/OffersGrid.tsx', 'utf8')
+  assert.equal((grid.match(/v2-btn-primary/g) ?? []).length, 1)
 })

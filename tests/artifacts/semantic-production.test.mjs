@@ -30,6 +30,8 @@ test('all production routes prerender main DOM without canvas or fake LIVE mode'
     assert.match(document, /<main[^>]+id="main"/i, route)
     assert.doesNotMatch(document, /<canvas\b/i, route)
     assert.doesNotMatch(document, /data-truth-mode="LIVE"/, route)
+    // Layer separation: the machine-state banner never renders on any route's footer.
+    assert.doesNotMatch(document, /living state|live connectivity NONE/, route)
   }
 })
 
@@ -42,8 +44,8 @@ test('accessible, no-WebGL, reduced-motion, and primary homepage carry identical
   assert.equal(mainMarkup(home), mainMarkup(accessible))
   assert.equal(mainMarkup(reduced), mainMarkup(accessible))
   const ids = sectionIds(home)
-  assert.ok(ids.length >= 10, `homepage story has ${ids.length} sections`)
-  for (const required of ['hero', 'offers', 'proof-strip', 'how-it-works', 'flagship', 'products', 'engine', 'proof', 'boundaries', 'founder', 'cta']) {
+  assert.ok(ids.length >= 9, `homepage story has ${ids.length} sections`)
+  for (const required of ['hero', 'offers', 'estate', 'how-it-works', 'flagship', 'products', 'engine', 'proof', 'boundaries', 'founder', 'cta']) {
     assert.ok(ids.includes(required), `missing section ${required}`)
   }
 })
@@ -52,7 +54,11 @@ test('keyboard route, skip link, and trace controls are present in production DO
   const document = await html('index')
   assert.match(document, /<a[^>]+href="\/organism"[^>]*>Organism<\/a>/)
   assert.match(document, /<a[^>]+href="#main"[^>]*>Skip to content<\/a>/)
-  assert.match(document, /<button[^>]+data-testid="trace-start"/)
+  // The scripted trace is an illustration and lives on /how-it-works, labelled as scripted; the homepage carries no simulated activity.
+  assert.doesNotMatch(document, /data-testid="trace-start"/)
+  const howItWorks = await html('how-it-works')
+  assert.match(howItWorks, /<button[^>]+data-testid="trace-start"/)
+  assert.match(howItWorks, /scripted in your browser/)
   const clientSource = await readFile('apps/neuruh-web/components/PipelineTrace.tsx', 'utf8')
   assert.match(clientSource, /event\.key === 'r'/)
 })

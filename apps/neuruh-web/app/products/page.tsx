@@ -60,9 +60,9 @@ export default function ProductsPage() {
               <span className="pc-status ptag-live">IN PRODUCTION</span>
               <h2 className="sec-h" id="ds-h" style={{ marginTop: 10 }}>DeedSonar</h2>
               <p className="sec-sub">
-                Real-estate opportunity intelligence from public evidence through CRM and deal execution: find it,
-                understand why it matters, and work it — offers, contracts, dispositions — with evidence attached the
-                whole way.
+                Real-estate opportunity intelligence from public evidence: find it, understand why it matters, and rank
+                it with the evidence attached. Outreach and deal execution stay behind a human decision and are not
+                claimed here — the dated production tape below says how far the system reaches today.
               </p>
               {ds.metrics?.length ? <MetricStrip metrics={ds.metrics} /> : null}
               <div style={{ marginTop: 14 }}><EvidenceDisclosure object={ds} /></div>

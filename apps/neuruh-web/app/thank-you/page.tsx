@@ -5,7 +5,7 @@ export const metadata = pageMeta({
   path: '/thank-you',
   title: 'Thank you',
   description:
-    'Post-checkout handoff for Neuruh offers. This static site does not receive Stripe webhooks — we email the checkout address within one business day.',
+    'Post-checkout handoff for Neuruh offers. This static site does not receive Stripe webhooks — a founder replies to the checkout address from jeramie@neuruh.com.',
 })
 
 export default function ThankYouPage() {
@@ -18,8 +18,8 @@ export default function ThankYouPage() {
             Checkout is done. Intake is next.
           </h1>
           <p className="sec-sub">
-            No webhook lands here. If you paid, keep the checkout email handy. We write that address within one
-            business day to collect inputs and start the scoped work.
+            No webhook lands here. If you paid, keep the checkout email handy. A founder replies to that address from
+            jeramie@neuruh.com to collect inputs and agree scope and timing before the work starts.
           </p>
           <ThankYouHandoff />
         </div>

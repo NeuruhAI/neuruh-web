@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { CaseStudyGrid } from '../../components/CaseStudyGrid'
-import { PUBLIC_HARD_ZEROS } from '../../lib/publicHardZeros'
 import { pageMeta } from '../../lib/publicSeo'
 
 export const metadata = pageMeta({
@@ -20,8 +19,7 @@ export default function CasesPage() {
             What ran. What the receipt shows.
           </h1>
           <p className="sec-sub">
-            These are not customer testimonials. Revenue is {PUBLIC_HARD_ZEROS.revenue} and customers are{' '}
-            {PUBLIC_HARD_ZEROS.customers} as of {PUBLIC_HARD_ZEROS.asOf} ({PUBLIC_HARD_ZEROS.source}). Merged is not
+            These are not customer testimonials — Neuruh claims no revenue and no customers it cannot receipt. Merged is not
             live. A live cashier is not automated fulfillment. SHIP-001 on neuruh.com is SHIPPED_LIVE; ORDER→FR remains draft.
             Each case is a public-safe projection from dated evidence already on this site.
           </p>

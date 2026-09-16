@@ -1,4 +1,6 @@
+import { offerHref } from '../lib/attribution'
 import { OFFER_NEXT_STEPS, PUBLIC_OFFERS } from '../lib/publicOffers'
+import { CallLadder } from './CallLadder'
 import styles from './OffersGrid.module.css'
 
 export function OffersGrid() {
@@ -32,10 +34,6 @@ export function OffersGrid() {
                 <dd>{offer.receive}</dd>
               </div>
               <div>
-                <dt>Turnaround:</dt>
-                <dd>{offer.turnaround}</dd>
-              </div>
-              <div>
                 <dt>Proof:</dt>
                 <dd>{offer.proof}</dd>
               </div>
@@ -43,9 +41,10 @@ export function OffersGrid() {
 
             <a
               className={`v2-btn v2-btn-primary ${styles.cta}`}
-              href={offer.href}
+              href={offerHref(offer)}
               rel="noopener noreferrer"
               data-testid={`offer-cta-${offer.id}`}
+              data-offer-kind={offer.kind}
             >
               {offer.cta}
             </a>
@@ -69,6 +68,14 @@ export function OffersGrid() {
             </li>
           ))}
         </ol>
+      </section>
+      <section className={styles.next} data-testid="offers-calls" aria-labelledby="offers-calls-h">
+        <div className={styles.nextIntro}>
+          <p className={styles.scope}>Talk first</p>
+          <h2 id="offers-calls-h">Book a call.</h2>
+          <p className={styles.promise} style={{ marginTop: '0.6rem' }}>A free ten-minute qualifying call, or a paid working session. Cal.com shows the rate before any paid booking is confirmed.</p>
+        </div>
+        <CallLadder surface="root" />
       </section>
       <p className={styles.scope} style={{ marginTop: '1.35rem' }}>
         Not sure which path? <a className="v2-link" href="/ask">Ask Neuruh</a>

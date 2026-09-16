@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import styles from './SiteNav.module.css'
+import { SpineToggle } from './SpineToggle'
 
 const primary = [
   ['Offers', '/offers'],
@@ -38,6 +39,7 @@ export function SiteNav() {
           </div>
         </details>
         <Link className={`work-cta ${styles.cta}`} href="/work-with-neuruh">Work with us</Link>
+        <SpineToggle />
       </nav>
     </header>
   )
