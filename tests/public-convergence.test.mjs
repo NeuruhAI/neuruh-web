@@ -51,6 +51,7 @@ test('negative control — no hardcoded public numbers: every figure on the new 
     for (const key of ['mission', 'receive', 'proofClaim']) assert.doesNotMatch(route[key], /\d/, `${name}.${key} carries a literal number`)
     assert.ok(metric(route.proof.object, route.proof.metric), `${name} proof must exist in the compiled snapshot`)
     assert.ok(PROBLEM_SLUGS.includes(route.problemSlug), `${name} routes to a real failure mode`)
+    assert.doesNotMatch(route.proofClaim, /end to end/, `${name} proof must not call a partial tape end to end`)
   }
   const faq = await source('apps/neuruh-web/lib/publicFaq.ts')
   const answers = faq.slice(faq.indexOf('PUBLIC_FAQ = ['), faq.indexOf('] as const'))
