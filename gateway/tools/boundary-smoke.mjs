@@ -195,10 +195,13 @@ if (cookie) {
 
   await check('live', 'durable event stream delivers and carries a resume cursor', async () => {
     const ctrl = new AbortController()
-    const timer = setTimeout(() => ctrl.abort(), 30000)
+    const timer = setTimeout(() => ctrl.abort(), 45000)
     const r = await req('/api/live/stream', { headers: { accept: 'text/event-stream' }, signal: ctrl.signal })
     if (r.status !== 200) throw new Error('HTTP ' + r.status)
     if (!/text\/event-stream/.test(r.headers.get('content-type') || '')) throw new Error('not an event stream')
+    // Relayed from Command, or carried by the gateway when a hop buffers the stream: same frames either way.
+    const carriedBy = r.headers.get('x-neuruh-stream') || 'unknown'
+    const carryReason = r.headers.get('x-neuruh-stream-reason')
     const reader = r.body.getReader()
     const decoder = new TextDecoder()
     let buf = ''
@@ -221,7 +224,7 @@ if (cookie) {
     ctrl.abort()
     if (!seen.has('ready')) throw new Error('no ready frame')
     if (!cursor) throw new Error('no resume cursor')
-    return `frames ${[...seen].join(',')} · cursor ${cursor}`
+    return `carried by ${carriedBy}${carryReason ? ' (' + carryReason + ')' : ''} · frames ${[...seen].join(',')} · cursor ${cursor}`
   })
 }
 

@@ -25,6 +25,12 @@ import {
 export const GATEWAY_VERSION = 'neuruh-gateway/1'
 const ORIGIN_TIMEOUT_MS = 20_000
 const CHAT_TIMEOUT_MS = 185_000
+/* How long the relayed stream has to produce its first frame before the gateway carries the
+   feed itself, and the cadence it uses when it does. */
+const STREAM_FIRST_BYTE_MS = 6_000
+const STREAM_POLL_MS = 3_000
+const STREAM_HEARTBEAT_MS = 15_000
+const STREAM_ROTATE_MS = 240_000
 
 /* The Command page runs inline script and style (its own), loads its assets from
    this origin and the Draco decoder from gstatic (3D view), and talks to nothing
@@ -127,6 +133,10 @@ export function createGateway(env = process.env, deps = {}) {
   const doFetch = deps.fetch || globalThis.fetch
   const now = deps.now || (() => Date.now())
   const failDelay = deps.failDelayMs ?? 400
+  const timing = {
+    firstByteMs: STREAM_FIRST_BYTE_MS, pollMs: STREAM_POLL_MS,
+    heartbeatMs: STREAM_HEARTBEAT_MS, rotateMs: STREAM_ROTATE_MS, ...(deps.streamTiming || {}),
+  }
 
   function currentSession(request) {
     const token = parseCookies(request.headers.get('cookie'))[SESSION_COOKIE]
@@ -184,6 +194,99 @@ export function createGateway(env = process.env, deps = {}) {
       })
     }
     return new Response(upstream.body, { status: upstream.status, headers })
+  }
+
+  /**
+   * The durable event path, end to end, on any transport.
+   *
+   * Command serves the feed as SSE and the gateway relays it. Some hops between
+   * the two (a tunnel, a CDN, a middlebox) buffer a streaming body instead of
+   * passing it through, which would leave the browser holding an open, silent
+   * connection. So the first frame is raced against a deadline: if the relayed
+   * stream does not produce one, the gateway builds the identical frames itself
+   * from the same cursor-based read model and streams those. The browser cannot
+   * tell the difference — same events, same ids, same resume — and the response
+   * says which path served it.
+   */
+  function eventStream({ sub, target, cursor, signal }) {
+    const enc = new TextEncoder()
+    const frame = (o) => enc.encode(`${o.id ? `id: ${o.id}\n` : ''}event: ${o.event}\ndata: ${JSON.stringify(o.data)}\n\n`)
+    const headers = withHeaders({
+      'Content-Type': 'text/event-stream; charset=utf-8',
+      'Cache-Control': 'no-store, no-transform',
+      'X-Accel-Buffering': 'no',
+    })
+
+    const polled = (reason) => {
+      let at = cursor
+      let closed = false
+      const stream = new ReadableStream({
+        async start(controller) {
+          controller.enqueue(enc.encode(': ' + '-'.repeat(8 * 1024) + '\n\nretry: 3000\n\n'))
+          controller.enqueue(frame({ event: 'ready', data: { schema: 'neuruh.command.organism-stream.v1', authority: 'READ_ONLY', since: cursor, carried_by: 'gateway', reason } }))
+          const started = now()
+          let beat = now()
+          while (!closed && !signal?.aborted && now() - started < timing.rotateMs) {
+            try {
+              const q = new URLSearchParams({ limit: '200' })
+              if (at) q.set('since', at)
+              const r = await toOrigin({ method: 'GET', target: `/api/live/events?${q}`, sub, timeoutMs: ORIGIN_TIMEOUT_MS })
+              if (r.ok) {
+                const body = scrubText(await r.text()).text
+                const d = JSON.parse(body)
+                if ((d.events || []).length || (d.cursor && d.cursor !== at)) {
+                  controller.enqueue(frame({ id: d.cursor || at, event: 'organism', data: { ...d, resumed_from: at } }))
+                  at = d.cursor || at
+                  beat = now()
+                }
+              }
+            } catch { /* the next tick reports; the browser keeps its cursor */ }
+            if (now() - beat >= timing.heartbeatMs) {
+              controller.enqueue(frame({ event: 'heartbeat', data: { ts: new Date(now()).toISOString(), cursor: at, carried_by: 'gateway' } }))
+              beat = now()
+            }
+            await new Promise((r) => setTimeout(r, timing.pollMs))
+          }
+          if (!closed) {
+            controller.enqueue(frame({ id: at, event: 'rotate', data: { reason: 'connection lifetime reached; reconnect resumes from the cursor', cursor: at } }))
+            controller.close()
+          }
+        },
+        cancel() { closed = true },
+      })
+      return new Response(stream, { status: 200, headers: { ...headers, 'X-Neuruh-Stream': 'gateway-poll', 'X-Neuruh-Stream-Reason': reason } })
+    }
+
+    return (async () => {
+      let upstream
+      try {
+        upstream = await toOrigin({ method: 'GET', target, sub, accept: 'text/event-stream', timeoutMs: 0, signal })
+      } catch (err) {
+        return polled('origin_stream_unreachable')
+      }
+      if (upstream.status === 401) return json(502, { error: 'origin_refused_gateway' })
+      if (!upstream.ok || !upstream.body) return polled('origin_stream_status_' + upstream.status)
+      const reader = upstream.body.getReader()
+      const first = await Promise.race([
+        reader.read().then((r) => ({ read: r })),
+        new Promise((resolve) => setTimeout(() => resolve({ stalled: true }), timing.firstByteMs)),
+      ])
+      if (first.stalled || first.read?.done) {
+        reader.cancel().catch(() => {})
+        return polled(first.stalled ? 'origin_stream_buffered_by_transport' : 'origin_stream_ended')
+      }
+      const relayed = new ReadableStream({
+        start(controller) { controller.enqueue(first.read.value) },
+        async pull(controller) {
+          const { value, done } = await reader.read()
+          if (done) return controller.close()
+          controller.enqueue(value)
+        },
+        cancel(reason) { reader.cancel(reason).catch(() => {}) },
+      })
+      let scrubbed = 0
+      return new Response(relayed.pipeThrough(sseScrubber((n) => { scrubbed += n })), { status: 200, headers: { ...headers, 'X-Neuruh-Stream': 'origin' } })
+    })()
   }
 
   return async function handle(request) {
@@ -268,10 +371,12 @@ export function createGateway(env = process.env, deps = {}) {
         const params = new URLSearchParams(url.search)
         const lastId = request.headers.get('last-event-id')
         if (lastId) params.set('since', lastId)
-        const streamTarget = route.target + (params.size ? '?' + params : '')
-        const upstream = await toOrigin({ method: 'GET', target: streamTarget, sub: session.sub, accept: 'text/event-stream', timeoutMs: 0, signal: request.signal })
-        if (upstream.status === 401) return json(502, { error: 'origin_refused_gateway' })
-        return relay(upstream)
+        return await eventStream({
+          sub: session.sub,
+          target: route.target + (params.size ? '?' + params : ''),
+          cursor: params.get('since'),
+          signal: request.signal,
+        })
       }
       const upstream = await toOrigin({ method: 'GET', target, sub: session.sub })
       if (upstream.status === 401) return json(502, { error: 'origin_refused_gateway', detail: 'the origin rejected the gateway signature' })

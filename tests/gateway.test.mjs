@@ -198,10 +198,43 @@ test('event stream: Last-Event-ID travels in the signed target; frames are scrub
   const r = await get(gw, '/api/live/stream?since=2026-09-15T19:00:00Z', { cookie, 'last-event-id': '2026-09-15T20:00:00Z' })
   assert.equal(r.status, 200)
   assert.equal(r.headers.get('content-type'), 'text/event-stream; charset=utf-8')
+  assert.equal(r.headers.get('x-neuruh-stream'), 'origin')
   const text = await r.text()
   assert.match(text, /neuruh-private:\/\/loopback-8520\/x/)
   assert.doesNotMatch(text, /127\.0\.0\.1/)
   assert.equal(origin.calls.at(-1).verified.target, '/api/live/stream?since=2026-09-15T20%3A00%3A00Z')
+})
+
+test('a hop that buffers the stream does not cost Command its live feed', async () => {
+  // The origin accepts the stream and then sends nothing (what a buffering tunnel or CDN looks like).
+  let served = 0
+  const origin = fakeOrigin({
+    '/api/live/stream': () => new Response(new ReadableStream({ start() { /* deliberately silent */ } }), { headers: { 'content-type': 'text/event-stream' } }),
+    '/api/live/events': () => {
+      served += 1
+      return jsonRes({ schema: 'neuruh.command.organism-events.v1', cursor: `2026-09-15T20:00:0${served}Z`, sources: [],
+        events: [{ id: 'e' + served, ts: `2026-09-15T20:00:0${served}Z`, source: 'supervision', title: 'probe http://127.0.0.1:8090/health' }] })
+    },
+  })
+  const gw = createGateway(env(), { fetch: origin.fetch, failDelayMs: 0, streamTiming: { firstByteMs: 150, pollMs: 50, heartbeatMs: 10_000, rotateMs: 1_200 } })
+  const { cookie } = await login(gw)
+  const r = await get(gw, '/api/live/stream', { cookie, 'last-event-id': '2026-09-15T19:59:00Z' })
+  assert.equal(r.status, 200)
+  assert.equal(r.headers.get('content-type'), 'text/event-stream; charset=utf-8')
+  assert.equal(r.headers.get('x-neuruh-stream'), 'gateway-poll')
+  assert.equal(r.headers.get('x-neuruh-stream-reason'), 'origin_stream_buffered_by_transport')
+  const text = await r.text()
+  const frames = text.split('\n\n').filter((f) => f.includes('event:'))
+  const kinds = frames.map((f) => f.match(/event: (\S+)/)[1])
+  assert.ok(kinds.includes('ready'), 'ready frame')
+  assert.ok(kinds.includes('organism'), 'events are delivered')
+  assert.ok(kinds.includes('rotate'), 'the connection rotates so the browser reconnects')
+  assert.match(text, /^id: 2026-09-15T20:00:0\d+Z$/m, 'every batch carries a resume cursor')
+  assert.doesNotMatch(text, /127\.0\.0\.1/, 'the carried frames are scrubbed too')
+  assert.match(text, /neuruh-private:\/\/loopback-8090\/health/)
+  const first = JSON.parse(frames.find((f) => f.includes('event: organism')).match(/data: (.*)/)[1])
+  assert.equal(first.resumed_from, '2026-09-15T19:59:00Z', 'it resumes from the browser\'s cursor')
+  assert.ok(origin.calls.some((c) => c.verified.target?.startsWith('/api/live/events?')), 'carried from the same cursor-based read model')
 })
 
 test('origin down or refusing: honest 503 / 502, never a fabricated answer', async () => {

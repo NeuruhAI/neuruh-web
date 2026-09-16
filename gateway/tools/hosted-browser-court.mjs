@@ -39,7 +39,14 @@ const consoleErrors = []
 const writes = []
 try {
   // Certificate errors are only tolerated when a local run explicitly asks (self-signed dev TLS).
-  const ctx = await browser.newContext({ viewport: { width: 1600, height: 1000 }, ignoreHTTPSErrors: process.env.NEURUH_COURT_INSECURE_TLS === '1' })
+  // A protected preview deployment needs Vercel's automation bypass to be reachable at all.
+  const ctx = await browser.newContext({
+    viewport: { width: 1600, height: 1000 },
+    ignoreHTTPSErrors: process.env.NEURUH_COURT_INSECURE_TLS === '1',
+    extraHTTPHeaders: process.env.VERCEL_AUTOMATION_BYPASS_SECRET
+      ? { 'x-vercel-protection-bypass': process.env.VERCEL_AUTOMATION_BYPASS_SECRET, 'x-vercel-set-bypass-cookie': 'true' }
+      : {},
+  })
   const page = await ctx.newPage()
   const pageOrigin = new URL(base).origin
   page.on('request', (r) => {
