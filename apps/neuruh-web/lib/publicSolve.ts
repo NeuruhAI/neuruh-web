@@ -29,7 +29,7 @@ export const SOLVE_ROUTES: Record<SolveClass, SolveRoute> = {
     frontDoor: 're',
     problemSlug: 'property-data-without-opportunity',
     proof: { object: 'deedsonar', metric: 'customer_tape_steps_reachable' },
-    proofClaim: 'steps of the product’s own top opportunity reached end to end on a read-only production tape',
+    proofClaim: 'of fifteen steps reached by the product’s own top opportunity on a read-only production tape, stopping at a human research step',
   },
   Business: {
     mission: 'Resolve one company or acquisition target: who owns it, what is linked to it, and what is risky.',
