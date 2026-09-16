@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Archivo, Inter, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
+import './polish.css'
 import { JsonLd } from '../components/JsonLd'
 import { SiteNav } from '../components/SiteNav'
 import { SiteFooter } from '../components/SiteFooter'
@@ -29,6 +30,13 @@ export const metadata: Metadata = {
   twitter: home.twitter,
 }
 
+/**
+ * Spine selection before first paint: a stored choice on this device, else the
+ * reader's system colour preference. Obsidian and bone are co-equal; neither is
+ * privileged, and no page works on only one of them.
+ */
+const SPINE_BOOT = `(function(){try{var s=localStorage.getItem('neuruh-spine');if(s!=='bone'&&s!=='obsidian'){s=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches)?'bone':'obsidian'}document.documentElement.setAttribute('data-spine',s)}catch(e){}})()`
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
@@ -36,7 +44,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       data-spine="obsidian"
       data-scene-tier="0"
       className={`${display.variable} ${sans.variable} ${mono.variable}`}
+      suppressHydrationWarning
     >
+      <head>
+        <meta name="color-scheme" content="dark light" />
+        <script dangerouslySetInnerHTML={{ __html: SPINE_BOOT }} />
+      </head>
       <body>
         <JsonLd />
         <a className="skip-link global-skip" href="#main">Skip to content</a>

@@ -16,9 +16,10 @@ test('checkout-link court allows only the three existing SHIP-001 cashiers', asy
   assert.deepEqual([...new Set(found)].sort(), [...CASHIERS].sort())
   assert.match(ask, /ASK_LANES = \['FASTEST', 'BEST VALUE', 'CUSTOM'\]/)
   assert.equal([...ask.matchAll(/lane: '/g)].length, 3)
-  assert.match(ask, /ctaHref: PUBLIC_OFFERS\[0\]\.href/)
-  assert.match(ask, /ctaHref: PUBLIC_OFFERS\[1\]\.href/)
-  assert.match(ask, /ctaHref: PUBLIC_OFFERS\[2\]\.href/)
+  // Attribution is applied at render time; the lanes still point at the catalog cashiers, in order.
+  assert.match(ask, /ctaHref: offerHref\(PUBLIC_OFFERS\[0\]\)/)
+  assert.match(ask, /ctaHref: offerHref\(PUBLIC_OFFERS\[1\]\)/)
+  assert.match(ask, /ctaHref: offerHref\(PUBLIC_OFFERS\[2\]\)/)
 
   const result = spawnSync(process.execPath, ['scripts/verify-checkout-links.mjs'], {
     encoding: 'utf8',

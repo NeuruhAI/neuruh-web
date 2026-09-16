@@ -53,21 +53,20 @@ must('JSON-LD WebSite', home.includes('"@type":"WebSite"'))
 must('JSON-LD Service', home.includes('"@type":"Service"'))
 must('JSON-LD no factory', !FACTORY.test(home.match(/application\/ld\+json[\s\S]{0,4000}/)?.[0] ?? ''))
 
-// Quoted engagements: built products, no price, no cashier. The $799 per-market
-// figure is an internal recommendation only and must never reach a public page.
+// Four canon offers: three cashiers plus the Forensic System Audit, which books on
+// Cal.com and never carries a cashier. Quoted products were retired 2026-09-14.
 const hub = pages['/work-with-neuruh']
-must('hub lists Property Scan', hub.includes('Property Scan'))
-must('hub lists Lead Rescue', hub.includes('Lead Rescue'))
-must('hub quoted CTA routes to /contact', /Request a quote/.test(hub) && /href="\/contact"/.test(hub))
-// Order-independent: Next embeds the whole RSC payload at the end of the document,
-// so splitting the HTML on a section heading proves nothing about which section a
-// link sits in. Assert the page total instead — the quoted section must not have
-// added a fourth cashier, and its CTAs must route to the contact surface.
+must('hub lists Forensic System Audit', hub.includes('Forensic System Audit'))
+must('offers lists Forensic System Audit', pages['/offers'].includes('Forensic System Audit'))
+must('offers books the forensic scoping session', pages['/offers'].includes('cal.com/neuruh/forensic-scope-session-90'))
+must('offers carries the free qualifying call', pages['/offers'].includes('cal.com/neuruh/quick-chat-10-mins'))
 const hubCashiers = [...new Set(hub.match(/https:\/\/(?:book|buy|checkout)\.stripe\.com\/[A-Za-z0-9]+/g) ?? [])]
 must('hub carries only the three canonical cashiers', hubCashiers.length === 3 && hubCashiers.every((href) => CASHIERS.includes(href)), hubCashiers.join(' '))
-must('quoted CTAs route to the contact surface', (hub.match(/Request a quote/g) ?? []).length >= 2)
+must('no quoted-product residue', !/Request a quote|Lead Rescue|Quoted per market/.test(hub))
 for (const [route, document] of Object.entries(pages)) {
   must(`${route} no recommended price leak`, !/\$\s?799\b/.test(document))
+  must(`${route} no retired REI-X ladder`, !/\$\s?(79|249|2,?490)\b/.test(document))
+  must(`${route} no machine-state banner`, !/living state|live connectivity NONE/.test(document))
 }
 
 const security = await readFile(path.join(out, '.well-known/security.txt'), 'utf8')
@@ -83,15 +82,35 @@ const sitemap = await readFile(path.join(out, 'sitemap.xml'), 'utf8')
 for (const loc of ['/offers', '/proof', '/thank-you', '/work-with-neuruh', '/work-with-us', '/security']) {
   must(`sitemap ${loc}`, sitemap.includes(`https://neuruh.com${loc}`))
 }
-must('sitemap commercial lastmod 2026-09-02', sitemap.includes('2026-09-02T00:00:00.000Z'))
+must('sitemap commercial lastmod 2026-09-14', sitemap.includes('2026-09-14T00:00:00.000Z'))
+must('home footer links the estate', /<footer[\s\S]*?re\.neuruh\.com[\s\S]*?guide\.neuruh\.com/.test(home))
+must('JSON-LD legal name', home.includes('"legalName":"Neuruh LLC"'))
 
 const snapshot = JSON.parse(await readFile(path.join(out, 'truth/snapshot.json'), 'utf8'))
-must('snapshot stale true', snapshot.dataset.stale === true)
-must('snapshot CONTRADICTING', snapshot.living_state === 'CONTRADICTING')
-must('snapshot last_verified 2026-08-24', snapshot.dataset.last_verified_at.startsWith('2026-08-24'))
+// 2026-09-16 recourt: the snapshot is compiled at the instant it was re-verified (package.json compile:truth
+// --as-of == dataset.last_verified_at), so it is not stale when served; the preserved contradiction and the
+// absent live connector remain, and nothing is ever LIVE.
+const compileAsOf = JSON.parse(await readFile('package.json', 'utf8')).scripts['compile:truth'].match(/--as-of=(\S+)/)?.[1]
+must('snapshot compiled at its verification instant', snapshot.dataset.last_verified_at === compileAsOf, `${snapshot.dataset.last_verified_at} vs ${compileAsOf}`)
+must('snapshot not stale when served', snapshot.dataset.stale === false)
+must('snapshot CONTRADICTING preserved', snapshot.living_state === 'CONTRADICTING')
 must('snapshot live_connectivity false', snapshot.dataset.live_connectivity === false)
+must('snapshot never LIVE', snapshot.dataset.truth_mode !== 'LIVE' && !snapshot.objects.some((o) => o.truth_mode === 'LIVE'))
+
+// Issue #10 convergence surfaces: the front door, the discovery cluster, and the answer surface ship and are indexed.
+for (const route of ['/solve', '/problems', '/problems/data-you-cannot-use', '/problems/ai-you-cannot-verify', '/problems/workflows-that-break',
+  '/problems/property-data-without-opportunity', '/problems/automation-without-authority', '/problems/systems-nobody-can-explain', '/faq']) {
+  const document = await html(route)
+  must(`${route} has main`, /<main[^>]+id="main"/.test(document))
+  must(`${route} og:url`, document.includes(`property="og:url" content="https://neuruh.com${route}"`))
+  must(`${route} no factory`, !FACTORY.test(document) && !PRIVATE_GH.test(document))
+  must(`${route} no machine-state banner`, !/living state|live connectivity NONE/.test(document))
+  must(`sitemap ${route}`, sitemap.includes(`https://neuruh.com${route}<`))
+}
+must('faq FAQPage JSON-LD', (await html('/faq')).includes('"@type":"FAQPage"'))
+must('home primary CTA is the target front door', /class="v2-btn v2-btn-primary" href="\/solve"/.test(home))
 
 if (failures.length) {
   throw new Error(`RELEASE COURT FAILED\n${failures.join('\n')}`)
 }
-console.log('RELEASE COURT: PASS — export routes, OG, JSON-LD, cashiers, quoted engagements (no price/cashier), security.txt, robots, sitemap, private-IP, snapshot honesty')
+console.log('RELEASE COURT: PASS — export routes, OG, JSON-LD, three cashiers + Forensic booking, no REI-X residue, no machine-state banner, security.txt, robots, sitemap, private-IP, snapshot honesty, convergence surfaces')

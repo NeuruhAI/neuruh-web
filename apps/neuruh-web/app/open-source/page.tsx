@@ -42,8 +42,9 @@ export default function OpenSourcePage() {
           </a>
         </p>
         <p className="source-line">
-          Counts on this page come from the dated 2026-08-20 commons audit, including its known blemish — one
-          repository with a broken README, disclosed rather than hidden. See{' '}
+          Repository and secret-scan counts come from the dated 2026-08-20 commons audit; the test totals were re-derived
+          on 2026-09-03 by re-running every suite at its advertised tag. The audit&apos;s known blemish — one repository
+          with a broken README — is disclosed rather than hidden. See{' '}
           <Link className="text-link" href="/refusals">/refusals</Link> for the discipline behind that choice.
         </p>
       </section>

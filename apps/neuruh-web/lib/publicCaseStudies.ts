@@ -2,18 +2,18 @@ import { TRUTH_RULES } from './publicTruthRules'
 
 /**
  * Case studies compiled only from public-safe receipts already on this site.
- * No customer stories (customers: 0). No private organ SHAs as marketing copy.
+ * No customer stories: client engagements are the clients' to disclose. No private organ SHAs as marketing copy.
  */
 export const PUBLIC_CASE_STUDIES = [
   {
     id: 'deedsonar-production',
     title: 'DeedSonar in production',
     status: 'IN PRODUCTION',
-    asOf: '2026-08-24',
-    problem: 'County records, parcel geometry, and distress signals need to become ranked opportunities with evidence attached — then get worked without losing the trail.',
-    whatRan: 'DeedSonar operates as the public flagship: find, understand, and work a deal with evidence attached the whole way.',
-    receipt: 'Production health attests sha e2b71fa (already public on this site). The dated DeedSonar court — tests green at that SHA — is compiled on the public-truth object, not hand-typed here.',
-    limitation: 'Sample screens on this site are labeled sample data. Production identity is not a customer-count claim.',
+    asOf: '2026-09-16',
+    problem: 'County records, parcel geometry, and distress signals need to become ranked opportunities with evidence attached — without the trail being lost.',
+    whatRan: 'DeedSonar operates as the public flagship: find, evidence, rank, and qualify. A read-only production tape on 2026-09-16 walked the product’s own top opportunity through ten of fifteen steps and stopped at the contact ladder — a human courthouse research step. The 2026-09-14 tape, at an earlier release, stopped at the same step.',
+    receipt: 'On 2026-09-16 the canonical current-truth pointer validated read-only with every production alias serving the same commit as repository main, and the same morning’s tape was recomputed from its content hash. Current estate, qualification and contact-authority figures are compiled on the public-truth object and shown on /proof, not hand-typed here.',
+    limitation: 'Sample screens on this site are labeled sample data. Outreach, deal execution, and receipts at every step are not claimed: the tape did not reach them. Production identity is not a customer-count claim.',
     href: '/worlds/deedsonar',
     hrefLabel: 'DeedSonar record',
   },
@@ -57,9 +57,9 @@ export const PUBLIC_CASE_STUDIES = [
     id: 'public-commons-audit',
     title: 'Public commons audit',
     status: 'AUDITED',
-    asOf: '2026-08-23',
+    asOf: '2026-09-03',
     problem: 'Open work has to be countable and secret-scanned, or “open source” is a vibe.',
-    whatRan: 'The public-commons object publishes a dated census of public repositories, passing tests, and a zero-hit secret scan.',
+    whatRan: 'The public-commons object publishes a dated census of public repositories and a zero-hit secret scan (2026-08-20), and the test totals were re-derived on 2026-09-03 by re-running every Python suite at its advertised tag.',
     receipt: 'Compiled public-truth snapshot · public_code_repositories, passing_tests, secret_scan_hits=0 · /open-source.',
     limitation: 'A commons census is not a claim about private estate inventory. The public org page is not a private-repo index.',
     href: '/open-source',

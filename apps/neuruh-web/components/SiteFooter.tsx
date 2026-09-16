@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { getTruthSummary } from '../../../packages/public-truth/client'
+import { estateHref } from '../lib/attribution'
 
 const columns: ReadonlyArray<readonly [string, ReadonlyArray<readonly [string, string]>]> = [
   ['System', [
@@ -10,6 +10,7 @@ const columns: ReadonlyArray<readonly [string, ReadonlyArray<readonly [string, s
     ['Research', '/research/adaptive-intelligence'],
   ]],
   ['Company', [
+    ['Give Neuruh a target', '/solve'],
     ['Offers', '/offers'],
     ['Ask Neuruh', '/ask'],
     ['Work with Neuruh', '/work-with-neuruh'],
@@ -24,15 +25,21 @@ const columns: ReadonlyArray<readonly [string, ReadonlyArray<readonly [string, s
     ['Proof', '/proof'],
     ['Cases', '/cases'],
     ['Boundaries', '/refusals'],
+    ['Problems', '/problems'],
+    ['Questions', '/faq'],
     ['Open source', '/open-source'],
     ['Accessible route', '/accessible'],
   ]],
 ]
 
 export function SiteFooter() {
-  const truth = getTruthSummary()
   return (
     <footer className="site-footer">
+      <p className="site-footer__estate" data-testid="estate-nav">
+        <span>Neuruh estate:</span>
+        <a href={estateHref('re', 'footer-re')} rel="noopener noreferrer">re.neuruh.com — real-estate front door</a>
+        <a href={estateHref('guide', 'footer-guide')} rel="noopener noreferrer">guide.neuruh.com — free ChatGPT field guide</a>
+      </p>
       <div className="site-footer__grid">
         <div className="site-footer__brand">
           <p className="wordmark">Neuruh</p>
@@ -56,11 +63,7 @@ export function SiteFooter() {
       </div>
       <div className="site-footer__meta">
         <p>© 2026 Neuruh. Built and operated by its founder.</p>
-        <p>
-          Truth mode {truth.truthMode.replaceAll('_', ' ')} · snapshot verified{' '}
-          <time dateTime={truth.lastVerifiedAt}>{truth.lastVerifiedAt.slice(0, 10)}</time>
-          {truth.stale ? ' · STALE' : ''} · living state {truth.livingState.replaceAll('_', ' ')} · live connectivity NONE
-        </p>
+        <p>Every figure on this site is dated and sourced on <Link href="/proof">the proof ledger</Link>. Nothing here is a live feed.</p>
       </div>
     </footer>
   )

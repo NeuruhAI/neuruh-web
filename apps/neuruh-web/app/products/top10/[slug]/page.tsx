@@ -78,7 +78,7 @@ export default async function Top10ProductPage({ params }: { params: Promise<{ s
         <li><span>3 · WE ANALYZE</span><b>{p.workflow.slice(1, -1).join(' → ')}</b></li>
         <li><span>4 · RECEIVE</span><b>{p.deliverables[0]} and the rest of the deliverable by email.</b></li>
       </ol>
-      <p className={s.disclaimer}>{cashier ? 'This site has no payment webhook: a founder emails your checkout address within one business day to collect the inputs, then delivers by email.' : 'There is no checkout for this product. Intake is by email and payment is collected from you by invoice once the work is scoped.'}</p>
+      <p className={s.disclaimer}>{cashier ? 'This site has no payment webhook: a founder emails your checkout address to collect the inputs, then delivers by email.' : 'There is no checkout for this product. Intake is by email and payment is collected from you by invoice once the work is scoped.'}</p>
     </div></section>
 
     {/* 4 problem · 5 what happens */}
@@ -115,7 +115,7 @@ export default async function Top10ProductPage({ params }: { params: Promise<{ s
         <div data-testid="product-demo-note"><h3>Demonstration only</h3><p>{p.demo}</p></div>
       </div>
       <div className={s.evidence} style={{ marginTop: 14 }}>{p.proof.map((x) => <div className={s.evidenceItem} key={x}><span className={s.dot} /><p>{x}</p></div>)}</div>
-      <p className={s.disclaimer}>Every receipt cited here is dated and vendored in the public repository or compiled on <Link href="/proof">/proof</Link>. The hard zeros on <Link href="/refusals">/refusals</Link> apply: no revenue, no customers, no outreach as of the dated snapshot.</p>
+      <p className={s.disclaimer}>Every receipt cited here is dated and vendored in the public repository or compiled on <Link href="/proof">/proof</Link>. What Neuruh does not claim — client results, engagement figures, outreach — is listed on <Link href="/refusals">/refusals</Link>.</p>
     </div></section>
 
     {/* demonstration */}
@@ -129,7 +129,7 @@ export default async function Top10ProductPage({ params }: { params: Promise<{ s
     <section className={s.sectionAlt}><div className={s.wrap}>
       <div className={s.cta}>
         <h2>{p.nextStep}</h2>
-        <p>{cashier ? `${cashier.price} on the hosted Stripe checkout. This site has no payment webhook; a founder follows up from the receipt address within one business day.` : 'No checkout exists for this product. The contact page carries your selection into the email; scope and a written quote come back before any work starts.'}</p>
+        <p>{cashier ? `${cashier.price} on the hosted Stripe checkout. This site has no payment webhook; a founder follows up at the checkout address.` : 'No checkout exists for this product. The contact page carries your selection into the email; scope and a written quote come back before any work starts.'}</p>
         <div className={s.ctaPair}>
           <Cta />
           {related && <Link className={s.ctaSecondary} href={`/products/top10/${related.slug}`} data-testid="product-related">{related.name} →</Link>}

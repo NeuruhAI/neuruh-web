@@ -2,10 +2,10 @@
 
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import { OFFER_BY_ID, OFFER_NEXT_STEPS, PUBLIC_OFFERS, type PublicOfferId } from '../lib/publicOffers'
+import { CASHIER_OFFERS, OFFER_BY_ID, OFFER_NEXT_STEPS, type CashierOfferId } from '../lib/publicOffers'
 import styles from './Commercial.module.css'
 
-function isOfferId(value: string | null): value is PublicOfferId {
+function isOfferId(value: string | null): value is CashierOfferId {
   return value === 'O01' || value === 'O02' || value === 'O05'
 }
 
@@ -23,8 +23,8 @@ export function ThankYouHandoff() {
     <div data-testid="thank-you-handoff">
       <p className={styles.note}>
         This site is a static export. It does not receive Stripe webhooks and cannot confirm a payment from here.
-        A live cashier is not automated fulfillment. If you checked out, the receipt went to the address you used
-        at checkout — a founder follows up from that address.
+        A live cashier is not automated fulfillment. If you checked out, Stripe sent its receipt to the address you
+        used at checkout — a founder replies to that address from jeramie@neuruh.com.
       </p>
 
       {offer ? (
@@ -41,15 +41,11 @@ export function ThankYouHandoff() {
               <dt>You will receive</dt>
               <dd>{offer.receive}</dd>
             </div>
-            <div>
-              <dt>Typical turnaround</dt>
-              <dd>{offer.turnaround}</dd>
-            </div>
           </dl>
         </article>
       ) : (
         <div className={styles.grid} data-testid="thank-you-all-offers">
-          {PUBLIC_OFFERS.map((item) => (
+          {CASHIER_OFFERS.map((item) => (
             <article key={item.id} className={styles.card}>
               <p className={styles.kicker}>{item.id}</p>
               <h2 className={styles.title}>{item.name}</h2>

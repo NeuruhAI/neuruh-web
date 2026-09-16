@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { CATEGORIES, CATEGORY_BLURB, PRICE_STATUS_LABEL, TOP10, productsIn } from '../../../lib/top10'
-import { PUBLIC_HARD_ZEROS } from '../../../lib/publicHardZeros'
 import s from '../../../components/top10/Top10Product.module.css'
 import { pageMeta } from '../../../lib/publicSeo'
 
@@ -26,8 +25,8 @@ export default function Top10Index() {
       <p className={s.promise}>Evidence-backed intelligence for property buyers, AI teams, acquirers, and operators. Every page says who it is for, what you provide, what you receive, what it costs, and what is proven versus demonstrated.</p>
       <div className={s.heroGrid}>
         <div><span className={s.label}>Live checkout today</span><strong>{live.map((p) => `${p.name} ${p.price.split(' ')[0]}`).join(' · ')}. Founder-fulfilled after checkout.</strong></div>
-        <div><span className={s.label}>Priced, ordered by email</span><strong>Property Opportunity Scan $100 per parcel. Paid on invoice once scoped.</strong></div>
-        <div><span className={s.label}>Public hard zeros · {PUBLIC_HARD_ZEROS.asOf}</span><strong>Revenue {PUBLIC_HARD_ZEROS.revenue} · customers {PUBLIC_HARD_ZEROS.customers}. No page on this site claims a customer result.</strong></div>
+        <div><span className={s.label}>Priced, ordered by email</span><strong>Property Opportunity Scan $100 per parcel, invoiced once scoped. Real-estate buyers can also start on re.neuruh.com.</strong></div>
+        <div><span className={s.label}>What this site does not claim</span><strong>Client names, engagement figures, and customer results are the clients’ to disclose and are not published. See <Link href="/refusals">/refusals</Link>.</strong></div>
       </div>
     </div></section>
 

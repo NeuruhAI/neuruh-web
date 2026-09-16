@@ -48,19 +48,22 @@ for (const offer of CANONICAL_CASHIERS) {
   }
 }
 
-// Quoted engagements are canonical products with NO cashier and NO price.
-// If either ever acquires one it must come through a founder pricing decision,
-// not a quiet edit, so the court fails closed here.
-const QUOTED_IDS = ['Q-PROPERTY-SCAN', 'Q-LEAD-RESCUE']
-const quotedBlock = catalog.slice(catalog.indexOf('QUOTED_ENGAGEMENTS'))
-for (const id of QUOTED_IDS) {
-  if (!quotedBlock.includes(`id: '${id}'`)) failures.push(`quoted catalog missing ${id}`)
-}
-if (STRIPE_RE.test(quotedBlock)) failures.push('quoted engagement carries a Stripe cashier')
+// The Forensic System Audit is the fourth canon offer. It has NO cashier: it books a
+// 90-minute scoping session on Cal.com. If it ever acquires a Stripe link or a dollar
+// figure that must come through a founder pricing decision, so the court fails closed.
+const forensicBlock = catalog.slice(catalog.indexOf("id: 'FSA'"), catalog.indexOf('export type PublicOffer'))
+if (!forensicBlock.includes("kind: 'booking'")) failures.push('Forensic System Audit must be a booking, not a cashier')
+if (!forensicBlock.includes('https://cal.com/neuruh/forensic-scope-session-90')) failures.push('Forensic System Audit must book cal.com/neuruh/forensic-scope-session-90')
+if (STRIPE_RE.test(forensicBlock)) failures.push('Forensic System Audit carries a Stripe cashier')
 STRIPE_RE.lastIndex = 0
-if (/\bprice:/.test(quotedBlock)) failures.push('quoted engagement carries a price field')
-if (/\$\s?\d/.test(quotedBlock)) failures.push('quoted engagement carries a dollar amount')
-if ((catalog.match(/id: 'O0/g) ?? []).length !== 3) failures.push('cashier catalog must stay exactly 3 offers')
+if (/\$\s?\d/.test(forensicBlock)) failures.push('Forensic System Audit carries a dollar amount')
+if ((catalog.match(/id: 'O0/g) ?? []).length !== 3) failures.push('cashier catalog must stay exactly 3 cashiers')
+if ((catalog.match(/^\s*kind: 'cashier',$/gm) ?? []).length !== 3) failures.push('exactly three offers may carry a cashier')
+// The Cal.com ladder prints no paid rate: rates are not in canon and Cal.com shows them at booking.
+const ladder = catalog.slice(catalog.indexOf('PUBLIC_CALLS'), catalog.indexOf('OFFER_NEXT_STEPS'))
+if (/\$\s?\d/.test(ladder)) failures.push('Cal.com ladder prints a rate that is not in canon')
+if (!ladder.includes("rate: 'Free'")) failures.push('Cal.com ladder must carry the free qualifying call')
+if (!/quick-chat-10-mins|15min|30-min-paid-consulting|1-hr-paid-consulting/.test(ladder)) failures.push('Cal.com ladder slugs missing')
 
 if ((ask.match(/lane: '/g) ?? []).length !== 3) failures.push('Ask Neuruh must emit exactly 3 lanes')
 if (!ask.includes("ASK_LANES = ['FASTEST', 'BEST VALUE', 'CUSTOM']")) {
@@ -113,4 +116,4 @@ if (failures.length) {
   throw new Error(`checkout-link court FAILED\n${failures.join('\n')}`)
 }
 const htmlMode = htmlHits.length ? `built HTML (${htmlHits.length} refs)` : 'source + live only (no build output present)'
-console.log(`checkout-link: PASS — ${CANONICAL_CASHIERS.length} existing cashiers only, ${QUOTED_IDS.length} quoted engagements with no cashier, Ask output max 3 [${htmlMode}]`)
+console.log(`checkout-link: PASS — ${CANONICAL_CASHIERS.length} existing cashiers only, Forensic System Audit books on Cal.com with no cashier, Ask output max 3 [${htmlMode}]`)

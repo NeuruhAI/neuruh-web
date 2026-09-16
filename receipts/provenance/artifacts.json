@@ -674,8 +674,9 @@
       "destination": "apps/neuruh-web/app/globals.css",
       "mode": "ported",
       "sourceSha256": "e4a38d8cf635679a5f01ba7781312629a08412ec778e08529d8147a99f527528",
-      "destinationSha256": "0d55d5f0f3dbe577eeab5b35f477c0b7f14b9ddaf48ddecb42c27d6df0d522e4",
-      "adaptation": "Production path/import adaptation or locked trs=0.75 policy; source remains unchanged."
+      "destinationSha256": "23ec6e84cd40fafa062bbb4e618a220ab5c4d88c13a089e35b473c53e31f84d5",
+      "adaptation": "Production path/import adaptation or locked trs=0.75 policy; source remains unchanged.",
+      "note": "Digest refreshed 2026-09-16 (merge of truth/estate-repair layer separation with the Level 2 touch/target hardening; evidence-mode tags on /proof)."
     },
     {
       "source": {
