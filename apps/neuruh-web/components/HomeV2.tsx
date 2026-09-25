@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import { estateHref, offerHref } from '../lib/attribution'
-import { PUBLIC_OFFERS } from '../lib/publicOffers'
+import { calHref, estateHref, offerHref } from '../lib/attribution'
+import { OFFER_BY_ID, PUBLIC_CALLS, PUBLIC_OFFERS } from '../lib/publicOffers'
 
 /**
  * Homepage — Layer 2 (Flagship World).
@@ -17,6 +17,17 @@ const STATUS_STYLE: Record<string, string> = {
   'IN DEVELOPMENT': 'ptag-dev',
 }
 
+const FREE_CALL = PUBLIC_CALLS.find((call) => call.id === 'call-10')!
+
+// The three cashiers plus the free qualifying call, straight from the offer catalog.
+const HERO_LADDER = [
+  ...(['O01', 'O02', 'O05'] as const).map((id) => {
+    const offer = OFFER_BY_ID[id]
+    return { key: id, price: offer.price, name: offer.name, href: offerHref(offer) }
+  }),
+  { key: FREE_CALL.id, price: FREE_CALL.rate, name: `${FREE_CALL.name}, ${FREE_CALL.length}`, href: calHref(FREE_CALL.slug, 'home-hero-call-10') },
+]
+
 function Status({ label }: { label: string }) {
   return <span className={`pc-status ${STATUS_STYLE[label] ?? 'ptag-dev'}`}>{label}</span>
 }
@@ -25,17 +36,27 @@ export function HomeV2() {
   return (
     <main id="main">
       {/* 01 · HERO — Decision Foundry */}
-      <section className="hero-v2" data-section="hero" aria-label="Neuruh — AI systems that do real work and prove it">
+      <section className="hero-v2" data-section="hero" aria-label="Neuruh: bring one problem, get back a decision with the evidence attached">
         <div className="hero-copy">
           <p className="hero-eyebrow">Neuruh</p>
-          <h1 className="hero-h1">AI systems that do real work — and prove it.</h1>
+          <h1 className="hero-h1">Bring one messy problem. Get back a decision you can check.</h1>
           <p className="hero-sub">
-            Neuruh turns messy real-world information into evidence, governed decisions, workflows, and measurable
-            outcomes. Actions pass a checked authority gate and leave a receipt.
+            A property, a dataset nobody trusts, or a workflow that eats your week. The founder scopes it, does the
+            work, and delivers the evidence behind every conclusion.
           </p>
+          <ul className="hero-ladder" data-testid="hero-offer-ladder" aria-label="Ways to start">
+            {HERO_LADDER.map((rung) => (
+              <li key={rung.key}>
+                <a href={rung.href} rel="noopener noreferrer">
+                  <span className="hl-price">{rung.price}</span>
+                  <span className="hl-name">{rung.name}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
           <div className="hero-ctas">
-            <Link className="v2-btn v2-btn-primary" href="/solve">Give Neuruh a target</Link>
-            <Link className="v2-btn v2-btn-secondary" href="/offers">See offers</Link>
+            <Link className="v2-btn v2-btn-primary" href="/offers">Compare the offers</Link>
+            <Link className="v2-btn v2-btn-secondary" href="/solve">Give Neuruh a target</Link>
             <Link className="v2-btn v2-btn-secondary" href="/proof">See the proof</Link>
           </div>
           <p className="hero-sub" style={{ marginBottom: 0 }}>
@@ -102,11 +123,11 @@ export function HomeV2() {
         </div>
       </section>
 
-      {/* 01c · THE ESTATE — the vertical front door and the free entry point */}
-      <section className="sec sec-alt" data-section="estate" aria-labelledby="estate-h">
+      {/* 01c · TWO MORE DOORS: the real-estate front door and the free field guide */}
+      <section className="sec sec-alt" data-section="estate" aria-labelledby="doors-h">
         <div className="sec-inner">
-          <p className="sec-eyebrow">The estate</p>
-          <h2 className="sec-h" id="estate-h">Two more doors, each for a specific job.</h2>
+          <p className="sec-eyebrow">Two more doors</p>
+          <h2 className="sec-h" id="doors-h">Real estate, and a free field guide.</h2>
           <div className="ev-grid">
             <article className="ev-card">
               <p className="ev-k">Real estate · vertical front door</p>
@@ -115,7 +136,7 @@ export function HomeV2() {
               <a className="v2-link" href={estateHref('re', 'home-re')} rel="noopener noreferrer">Open re.neuruh.com →</a>
             </article>
             <article className="ev-card">
-              <p className="ev-k">Free · no gate</p>
+              <p className="ev-k">Field guide · free, no gate</p>
               <p className="claim">What ChatGPT can actually do — a field guide for business owners.</p>
               <p className="ev-line ev-prose">Free, ungated, no email capture. The easiest way in if you are still copy-pasting into a chat box.</p>
               <a className="v2-link" href={estateHref('guide', 'home-guide')} rel="noopener noreferrer">Read the guide →</a>

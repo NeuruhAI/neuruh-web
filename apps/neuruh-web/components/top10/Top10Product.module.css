@@ -181,3 +181,6 @@
   .timeline { grid-template-columns: 1fr; }
   .ctaPair > * { flex: 1 1 100%; }
 }
+.heroGet { margin-top: 22px; max-width: 64ch; }
+.heroGet ul { margin: 8px 0 0; padding-left: 1.2em; color: var(--v2-text); line-height: 1.6; }
+.heroGet .disclaimer { margin-top: 10px; }

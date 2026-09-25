@@ -1,7 +1,9 @@
 import Link from 'next/link'
-import { offerHref } from '../lib/attribution'
-import { PUBLIC_OFFERS } from '../lib/publicOffers'
+import { calHref } from '../lib/attribution'
+import { PUBLIC_CALLS } from '../lib/publicOffers'
 import styles from './Commercial.module.css'
+
+const FREE_CALL = PUBLIC_CALLS.find((call) => call.id === 'call-10')!
 
 const PATHS = [
   {
@@ -55,22 +57,17 @@ export function WorkWithHub() {
         </div>
       </section>
 
-      <section className="sec sec-alt" aria-labelledby="work-offers-h">
+      <section className="sec sec-alt" aria-labelledby="work-founder-h">
         <div className="sec-inner">
-          <p className="sec-eyebrow">Live offers</p>
-          <h2 className="sec-h" id="work-offers-h">The four offers — three cashiers and one booked audit.</h2>
-          <div className={styles.strip}>
-            {PUBLIC_OFFERS.map((offer) => (
-              <article key={offer.id}>
-                <p className={styles.kicker}>{offer.id} · {offer.price}</p>
-                <h3>{offer.name}</h3>
-                <p>{offer.promise}</p>
-                <a className="v2-link" href={offerHref(offer)} rel="noopener noreferrer">{offer.cta} →</a>
-              </article>
-            ))}
-          </div>
+          <p className="sec-eyebrow">Talk to the founder</p>
+          <h2 className="sec-h" id="work-founder-h">One conversation before any money moves.</h2>
+          <p className="sec-sub">
+            The free ten-minute call decides whether the work fits a fixed-scope offer, a custom engagement, or
+            nothing at all. Prices and scope for each offer are on <Link className="v2-link" href="/offers">/offers</Link>.
+          </p>
           <div className="row" style={{ marginTop: 26 }}>
-            <Link className="v2-btn v2-btn-secondary" href="/cases">Read public-safe cases</Link>
+            <a className="v2-btn v2-btn-primary" href={calHref(FREE_CALL.slug, 'work-with-call-10')} rel="noopener noreferrer">Book the free qualifying call</a>
+            <a className="v2-btn v2-btn-secondary" href="mailto:jeramie@neuruh.com">jeramie@neuruh.com</a>
             <Link className="v2-btn v2-btn-ghost" href="/proof">Inspect proof →</Link>
           </div>
         </div>

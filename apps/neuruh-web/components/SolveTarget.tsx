@@ -22,13 +22,16 @@ export type SolveCard = {
 
 /**
  * The target text stays in this browser: it shapes nothing but the visitor's own view and is never
- * sent anywhere. Routing is a labeled path per target class — not a score and not a hidden ranking.
+ * sent anywhere by the site. The email action hands it to the visitor's own mail client. Routing is a labeled path per target class — not a score and not a hidden ranking.
  */
 export function SolveTarget({ cards }: { cards: SolveCard[] }) {
   const [target, setTarget] = useState('')
   const [targetClass, setTargetClass] = useState<SolveClass | null>(null)
   const [submitted, setSubmitted] = useState(false)
   const inputId = useId()
+  const trimmed = target.trim()
+  // Opens the visitor's own mail client; the site itself still sends nothing.
+  const mailto = `mailto:jeramie@neuruh.com?subject=${encodeURIComponent(`Solve intake: ${trimmed.replace(/\s+/g, ' ').slice(0, 60) || 'new target'}`)}&body=${encodeURIComponent(`${trimmed}${targetClass ? `\n\nTarget kind: ${targetClass}` : ''}`)}`
   const card = cards.find((candidate) => candidate.targetClass === (targetClass ?? 'Other'))!
 
   return (
@@ -41,8 +44,8 @@ export function SolveTarget({ cards }: { cards: SolveCard[] }) {
       >
         <label className="method-h" htmlFor={inputId}>What should Neuruh investigate?</label>
         <p className={styles.note}>
-          Describe the target in your own words. It stays in this browser — nothing you type is sent, stored, or read
-          by Neuruh.
+          Describe the target in your own words. Routing happens in this browser: nothing you type is sent, stored, or read
+          by Neuruh unless you choose to email it to the founder.
         </p>
         <textarea
           id={inputId}
@@ -73,6 +76,7 @@ export function SolveTarget({ cards }: { cards: SolveCard[] }) {
         </fieldset>
         <div className="row" style={{ marginTop: 18 }}>
           <button type="submit" className="v2-btn v2-btn-primary" data-testid="solve-submit">Route this target</button>
+          <a className="v2-btn v2-btn-secondary" href={mailto} data-testid="solve-email">Email this target to the founder</a>
         </div>
       </form>
 
@@ -102,7 +106,7 @@ export function SolveTarget({ cards }: { cards: SolveCard[] }) {
             <div className={styles.actions}>
               <a className="v2-btn v2-btn-primary" href={card.ctaHref} rel="noopener noreferrer" data-testid="solve-cta">{card.ctaLabel}</a>
               {card.frontDoorHref && <a className="v2-link" href={card.frontDoorHref} rel="noopener noreferrer">Or start on re.neuruh.com →</a>}
-              <Link className="v2-link" href="/contact">Not a fit? Talk to the founder →</Link>
+              <a className="v2-link" href={mailto}>Not a fit? Email this target to the founder →</a>
             </div>
           </article>
         )}

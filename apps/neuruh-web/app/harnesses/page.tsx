@@ -85,7 +85,7 @@ export default function HarnessCatalogPage() {
       </div>
       <div className={s.cta}>
         <h2>Evidence that this is how Neuruh already works</h2>
-        <p>This site’s own release court records 0 broken links and 0 serious or critical accessibility violations at the shipped version. The DeedSonar production court of 2026-08-23 recorded 1,510 tests green at the version production attested that day. Both are dated and compiled on <Link href="/proof">/proof</Link>. Client engagements are not published; what Neuruh does not claim is listed on <Link href="/refusals">/refusals</Link>.</p>
+        <p>This site’s own release court records 0 broken links and 0 serious or critical accessibility violations at the shipped version. The DeedSonar production court of 2026-08-23 recorded 1,510 tests green at the version production attested that day (HISTORICAL: a superseded court, kept with its date). Both are dated and compiled on <Link href="/proof">/proof</Link>. Client engagements are not published; what Neuruh does not claim is listed on <Link href="/refusals">/refusals</Link>.</p>
         <div className={s.ctaPair}>
           <Link className={s.ctaButton} href="/contact?product=agent-integrity">Request a harness pilot →</Link>
           <Link className={s.ctaSecondary} href="/products/top10/ai-estate-forensic">Or start with an estate audit</Link>
