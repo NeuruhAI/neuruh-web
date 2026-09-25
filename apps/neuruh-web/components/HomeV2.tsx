@@ -55,8 +55,8 @@ export function HomeV2() {
             ))}
           </ul>
           <div className="hero-ctas">
-            <Link className="v2-btn v2-btn-primary" href="/offers">Compare the offers</Link>
-            <Link className="v2-btn v2-btn-secondary" href="/solve">Give Neuruh a target</Link>
+            <Link className="v2-btn v2-btn-primary" href="/solve">Give Neuruh a target</Link>
+            <Link className="v2-btn v2-btn-secondary" href="/offers">Compare the offers</Link>
             <Link className="v2-btn v2-btn-secondary" href="/proof">See the proof</Link>
           </div>
           <p className="hero-sub" style={{ marginBottom: 0 }}>

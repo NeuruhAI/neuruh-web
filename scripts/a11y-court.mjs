@@ -13,7 +13,7 @@ const routes = [
   '/solve', '/problems', '/problems/data-you-cannot-use', '/problems/ai-you-cannot-verify', '/problems/workflows-that-break',
   '/problems/property-data-without-opportunity', '/problems/automation-without-authority', '/problems/systems-nobody-can-explain', '/faq',
   '/products/top10/agent-integrity', '/products/top10/ai-estate-forensic', '/products/top10/property-opportunity-scan',
-  '/products/top10/opportunity-intelligence-dossier', '/products/top10/business-acquisition-intelligence', '/products/top10/data-rescue',
+  '/products/top10/property-intelligence-dossier', '/products/top10/business-acquisition-intelligence', '/products/top10/data-rescue',
   '/products/top10/workflow-replacement', '/products/top10/proofos', '/products/top10/managed-opportunity-desk', '/products/top10/findsellprofit',
   '/definitely-missing-route-404',
 ]

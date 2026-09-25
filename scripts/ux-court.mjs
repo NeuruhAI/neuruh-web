@@ -17,7 +17,7 @@ const base = (args.find((a) => a.startsWith('http')) ?? 'http://127.0.0.1:4311')
 const arg = (k, d) => { const i = args.indexOf(k); return i > -1 ? args[i + 1] : d }
 const OUT = arg('--out', 'receipts/ux-court')
 const ROUTES = (arg('--routes', '') || [
-  '/', '/products', '/products/top10', '/products/top10/property-opportunity-scan', '/products/top10/opportunity-intelligence-dossier',
+  '/', '/products', '/products/top10', '/products/top10/property-opportunity-scan', '/products/top10/property-intelligence-dossier',
   '/products/top10/agent-integrity', '/products/top10/ai-estate-forensic', '/products/top10/business-acquisition-intelligence',
   '/products/top10/data-rescue', '/products/top10/workflow-replacement', '/products/top10/proofos', '/products/top10/managed-opportunity-desk',
   '/products/top10/findsellprofit', '/harnesses', '/offers', '/contact', '/contact?product=property-opportunity-scan', '/contact?product=not-a-product', '/definitely-missing-route-404',

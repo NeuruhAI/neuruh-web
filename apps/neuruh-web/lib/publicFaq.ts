@@ -12,7 +12,7 @@ export const PUBLIC_FAQ = [
   },
   {
     q: 'What can I buy today?',
-    a: 'Three fixed-scope offers with live checkout — Data Rescue, the Opportunity Intelligence Dossier, and the Workflow Replacement Sprint — and a Forensic System Audit that is scoped in a booked session first. Prices and terms are on the offers page.',
+    a: 'Three fixed-scope offers with live checkout — Data Rescue, the Property Intelligence Dossier, and the Workflow Replacement Sprint — and a Forensic System Audit that is scoped in a booked session first. Prices and terms are on the offers page.',
   },
   {
     q: 'Where do real-estate buyers start?',
@@ -24,7 +24,7 @@ export const PUBLIC_FAQ = [
   },
   {
     q: 'Is delivery automated?',
-    a: 'No. A live cashier is not automated fulfillment: a founder collects the inputs after checkout and delivers the scoped work by email.',
+    a: 'No. Checkout does not trigger automated delivery: a founder collects the inputs after checkout and delivers the scoped work by email.',
   },
   {
     q: 'Does Neuruh contact property owners or anyone else?',

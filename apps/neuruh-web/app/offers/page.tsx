@@ -5,7 +5,7 @@ export const metadata = pageMeta({
   path: '/offers',
   title: 'Offers',
   description:
-    'Four founder-delivered offers: Data Rescue, Opportunity Intelligence Dossier, Workflow Replacement Sprint, and the Forensic System Audit — plus a free qualifying call.',
+    'Four founder-delivered offers: Data Rescue, Property Intelligence Dossier, Workflow Replacement Sprint, and the Forensic System Audit — plus a free qualifying call.',
 })
 
 export default function OffersPage() {

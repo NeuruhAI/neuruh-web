@@ -40,7 +40,8 @@ test('JSON-LD is Organization, WebSite, and the four public Services only', asyn
   const layout = await source('apps/neuruh-web/app/layout.tsx')
   assert.match(jsonLd, /'@type': 'Organization'/)
   assert.match(jsonLd, /legalName: 'Neuruh LLC'/)
-  assert.match(jsonLd, /telephone: '\+1-269-500-1768'/)
+  // Founder ruling 2026-09-25: no public phone number, in JSON-LD or on /contact.
+  assert.doesNotMatch(jsonLd, /telephone|269-500-1768/)
   assert.match(jsonLd, /'@type': 'WebSite'/)
   assert.match(jsonLd, /'@type': 'Service'/)
   assert.match(jsonLd, /PUBLIC_OFFERS/)

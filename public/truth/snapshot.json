@@ -1242,90 +1242,91 @@
       "claim_class": "OBSERVED",
       "evidence_summary": {
         "source_refs": [
+          "src-site-release-court-20260925",
           "src-site-release-court-20260916",
           "src-site-release-court-20260914",
           "src-top10-commercial-court-20260914"
         ],
-        "statement": "Each gate was run against the built release candidate of 2026-09-16. Accessibility used axe-core at desktop and mobile widths on both colour spines over every sitemap route plus the not-found page; links were resolved against real routes and files; secret, private-path and factory-name scans ran over the source and the prerendered HTML, including the new front door, failure-mode and answer pages.",
+        "statement": "Each gate was run against the built release candidate of 2026-09-25 (buyer-experience pass: offer ladder in the homepage hero, the Property Intelligence Dossier rename, the commercial ladder moved to /proof, the /solve intake handoff). Accessibility used axe-core at desktop and mobile widths on both colour spines over every sitemap route plus the not-found page; links were resolved against real routes and files; secret, private-path and factory-name scans ran over the source and the prerendered HTML.",
         "status": "SUFFICIENT"
       },
       "id": "release-court",
       "kind": "proof",
-      "last_verified_at": "2026-09-16T12:45:00.000Z",
+      "last_verified_at": "2026-09-25T22:30:00.000Z",
       "limitations": [
         "Gates are measured against a built candidate on the stated date. A later source change requires re-running them; rendering this page does not re-verify anything."
       ],
       "maturity": "SYSTEM_COMPONENT",
       "metrics": [
         {
-          "as_of": "2026-09-16T12:45:00.000Z",
+          "as_of": "2026-09-25T22:30:00.000Z",
           "classification": "MEASURED",
           "name": "broken_links",
-          "source_ref": "src-site-release-court-20260916",
+          "source_ref": "src-site-release-court-20260925",
           "unit": "links",
           "value": 0
         },
         {
-          "as_of": "2026-09-16T12:45:00.000Z",
+          "as_of": "2026-09-25T22:30:00.000Z",
           "classification": "MEASURED",
           "name": "serious_accessibility_violations",
-          "source_ref": "src-site-release-court-20260916",
+          "source_ref": "src-site-release-court-20260925",
           "unit": "violations",
           "value": 0
         },
         {
-          "as_of": "2026-09-16T12:45:00.000Z",
+          "as_of": "2026-09-25T22:30:00.000Z",
           "classification": "MEASURED",
           "name": "critical_accessibility_violations",
-          "source_ref": "src-site-release-court-20260916",
+          "source_ref": "src-site-release-court-20260925",
           "unit": "violations",
           "value": 0
         },
         {
-          "as_of": "2026-09-16T12:45:00.000Z",
+          "as_of": "2026-09-25T22:30:00.000Z",
           "classification": "MEASURED",
           "name": "secret_scan_hits",
-          "source_ref": "src-site-release-court-20260916",
+          "source_ref": "src-site-release-court-20260925",
           "unit": "hits",
           "value": 0
         },
         {
-          "as_of": "2026-09-16T12:45:00.000Z",
+          "as_of": "2026-09-25T22:30:00.000Z",
           "classification": "MEASURED",
           "name": "private_path_leaks",
-          "source_ref": "src-site-release-court-20260916",
+          "source_ref": "src-site-release-court-20260925",
           "unit": "leaks",
           "value": 0
         },
         {
-          "as_of": "2026-09-16T12:45:00.000Z",
+          "as_of": "2026-09-25T22:30:00.000Z",
           "classification": "MEASURED",
           "name": "false_live_claims",
-          "source_ref": "src-site-release-court-20260916",
+          "source_ref": "src-site-release-court-20260925",
           "unit": "claims",
           "value": 0
         },
         {
-          "as_of": "2026-09-16T12:45:00.000Z",
+          "as_of": "2026-09-25T22:30:00.000Z",
           "classification": "MEASURED",
           "name": "pages_checked",
-          "source_ref": "src-site-release-court-20260916",
+          "source_ref": "src-site-release-court-20260925",
           "unit": "pages",
           "value": 56
         },
         {
-          "as_of": "2026-09-16T12:45:00.000Z",
+          "as_of": "2026-09-25T22:30:00.000Z",
           "classification": "MEASURED",
           "name": "internal_references_checked",
-          "source_ref": "src-site-release-court-20260916",
+          "source_ref": "src-site-release-court-20260925",
           "unit": "references",
-          "value": 3117
+          "value": 3138
         },
         {
-          "as_of": "2026-09-16T12:45:00.000Z",
+          "as_of": "2026-09-25T22:30:00.000Z",
           "classification": "MEASURED",
           "name": "accessibility_viewports",
-          "source_ref": "src-site-release-court-20260916",
+          "source_ref": "src-site-release-court-20260925",
           "unit": "viewports",
           "value": 2
         }
@@ -1334,10 +1335,10 @@
       "public_route": "/proof/distribution",
       "source": {
         "class": "decision_receipt",
-        "path_or_uri": "docs/receipts-external/site-release-court-20260916.attestation.md",
+        "path_or_uri": "docs/receipts-external/site-release-court-20260925.attestation.md",
         "public_safe": true,
-        "ref": "src-site-release-court-20260916",
-        "title": "neuruh.com site release court (2026-09-16)"
+        "ref": "src-site-release-court-20260925",
+        "title": "neuruh.com site release court (2026-09-25)"
       },
       "status": "STABLE",
       "summary": "The gates every public release candidate must clear before it may be deployed: links, accessibility, secrets, private paths, and false live claims.",
@@ -1830,6 +1831,13 @@
       "public_safe": true,
       "ref": "src-site-release-court-20260916",
       "title": "neuruh.com site release court (2026-09-16)"
+    },
+    {
+      "class": "decision_receipt",
+      "path_or_uri": "docs/receipts-external/site-release-court-20260925.attestation.md",
+      "public_safe": true,
+      "ref": "src-site-release-court-20260925",
+      "title": "neuruh.com site release court (2026-09-25)"
     },
     {
       "class": "decision_receipt",

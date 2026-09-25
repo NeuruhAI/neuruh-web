@@ -24,7 +24,7 @@ export default function Top10Index() {
       <h1>Ten things you can buy from Neuruh, each labeled by what is real.</h1>
       <p className={s.promise}>Evidence-backed intelligence for property buyers, AI teams, acquirers, and operators. Every page says who it is for, what you provide, what you receive, what it costs, and what is proven versus demonstrated.</p>
       <div className={s.heroGrid}>
-        <div><span className={s.label}>Live checkout today</span><strong>{live.map((p) => `${p.name} ${p.price.split(' ')[0]}`).join(' · ')}. Founder-fulfilled after checkout.</strong></div>
+        <div><span className={s.label}>Live checkout today</span><strong>{live.map((p) => `${p.name} ${p.price.split(' ')[0]}`).join(' · ')}. Delivered by the founder after checkout.</strong></div>
         <div><span className={s.label}>Priced, ordered by email</span><strong>Property Opportunity Scan $100 per parcel, invoiced once scoped. Real-estate buyers can also start on re.neuruh.com.</strong></div>
         <div><span className={s.label}>What this site does not claim</span><strong>Client names, engagement figures, and customer results are the clients’ to disclose and are not published. See <Link href="/refusals">/refusals</Link>.</strong></div>
       </div>
@@ -74,7 +74,7 @@ export default function Top10Index() {
           <Link className={s.ctaSecondary} href="/proof">Inspect the evidence</Link>
         </div>
       </div>
-      <p className={s.disclaimer}>Prices marked test pricing are Neuruh’s positioning decisions, not market-verified rates. A live cashier is not automated fulfillment. Browser demonstrations on product pages are labeled and are not production results.</p>
+      <p className={s.disclaimer}>Prices marked test pricing are Neuruh’s positioning decisions, not market-verified rates. Checkout does not trigger automated delivery; the founder delivers every order by hand. Browser demonstrations on product pages are labeled and are not production results.</p>
     </div></section>
   </main>
 }

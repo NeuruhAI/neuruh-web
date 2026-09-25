@@ -63,12 +63,12 @@ test('/faq publishes FAQPage structured data that matches the visible answers', 
   }
 })
 
-test('/proof labels VERIFIED SNAPSHOT, ATTESTED and HISTORICAL figures and keeps the superseded court historical', async () => {
+test('/proof labels VERIFIED SNAPSHOT, ATTESTED and HISTORICAL figures and keeps the superseded court count off the page', async () => {
   const document = await html('proof')
   for (const mode of ['VERIFIED SNAPSHOT', 'ATTESTED', 'HISTORICAL']) assert.ok(document.includes(`data-evidence-mode="${mode}"`), mode)
   assert.ok(document.includes(snapshot.dataset.last_verified_at.slice(0, 10)), 'verification date rendered')
-  const court = document.match(/data-evidence-mode="([A-Z ]+)"[^<]*<\/span> · court <b>/)
-  assert.equal(court?.[1], 'HISTORICAL', 'the 2026-08-23 court must render as HISTORICAL')
+  // Founder ruling 2026-09-25: the superseded 2026-08-23 test-count court is not shown on /proof at all.
+  assert.doesNotMatch(document, /1,510 tests|tests green at release/, 'the 2026-08-23 court count must not render on /proof')
   assert.doesNotMatch(document, /06cbb841/, 'the 2026-09-14 production tree is not presented as current')
   const estate = snapshot.objects.find((o) => o.id === 'deedsonar').metrics.find((m) => m.name === 'current_estate_properties')
   assert.ok(document.includes(estate.value.toLocaleString('en-US')), 'current estate figure rendered from the snapshot')

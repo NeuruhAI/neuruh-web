@@ -9,7 +9,7 @@ const PATHS = [
   {
     kicker: 'Scoped',
     title: 'Pick an offer',
-    body: 'Data Rescue, Opportunity Intelligence Dossier, Workflow Replacement Sprint, or a Forensic System Audit. Fixed scope, founder-operated delivery.',
+    body: 'Data Rescue, Property Intelligence Dossier, Workflow Replacement Sprint, or a Forensic System Audit. Fixed scope, founder-operated delivery.',
     href: '/offers',
     cta: 'See offers',
   },

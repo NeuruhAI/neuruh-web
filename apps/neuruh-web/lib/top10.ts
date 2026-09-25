@@ -80,7 +80,7 @@ export type Top10Product = {
   mode: ProductMode
 }
 
-const FOUNDER_DELIVERY = 'Email to the address you check out or write in from. Human-readable report (PDF or Markdown) plus a machine-readable receipt (JSON) naming inputs, sources, and unknowns. Founder-operated: a live cashier is not automated fulfillment.'
+const FOUNDER_DELIVERY = 'Email to the address you check out or write in from. Human-readable report (PDF or Markdown) plus a machine-readable receipt (JSON) naming inputs, sources, and unknowns. Checkout does not trigger automated delivery; the founder delivers every order by hand.'
 const QUOTE_DELIVERY = 'Scoped by written quote first. Delivered by email as a human-readable report plus a machine-readable receipt naming inputs, sources, and unknowns. Founder-operated.'
 
 const QUOTE_LADDER: Record<LadderRung, RungStatus> = {
@@ -197,15 +197,15 @@ export const TOP10: Top10Product[] = [
       Outcome: 'UNKNOWN',
     },
     example: 'A twelve-acre rural parcel with an out-of-state owner. The scan confirms parcel identity in county records, flags a floodway crossing the road frontage, finds no probate or tax-sale signal, and recommends HOLD: cheap to watch, expensive to develop, with the two missing documents named.',
-    related: { slug: 'opportunity-intelligence-dossier', why: 'When a scan says ADVANCE, the dossier is the decision package for the offer.' },
+    related: { slug: 'property-intelligence-dossier', why: 'When a scan says ADVANCE, the dossier is the decision package for the offer.' },
     nextStep: 'Send one parcel by email. You get a scope confirmation and a payment request back before any work starts.',
     ctaLabel: 'Order a $100 scan by email',
     mode: 'scan',
   },
   {
     rank: 4,
-    slug: 'opportunity-intelligence-dossier',
-    name: 'Opportunity Intelligence Dossier',
+    slug: 'property-intelligence-dossier',
+    name: 'Property Intelligence Dossier',
     category: 'Real Estate Intelligence',
     status: 'LIVE CASHIER · FOUNDER-FULFILLED',
     outcome: 'One decision-grade brief on the property, company, or market you are about to commit to.',
@@ -222,7 +222,7 @@ export const TOP10: Top10Product[] = [
     delivery: FOUNDER_DELIVERY,
     turnaround: 'Typically 5–10 business days after we have the target and the question.',
     useCases: ['Acquisition target under contract', 'Farm or rural land', 'Estate property with unclear ownership', 'High-friction parcel', 'Investor diligence'],
-    real: ['This is the existing Opportunity Dossier offer (O02) on /offers with a live Stripe checkout.', 'Fulfillment is founder-operated: this site has no payment webhook. After checkout, a founder collects the inputs by email.', 'The research method is the same evidence discipline DeedSonar runs in production.'],
+    real: ['This is the existing Property Intelligence Dossier offer (O02) on /offers with a live Stripe checkout.', 'Delivery is by the founder: this site has no payment webhook. After checkout, a founder collects the inputs by email.', 'The research method is the same evidence discipline DeedSonar runs in production.'],
     demo: 'The browser calculator illustrates evidence-readiness triage. The real dossier is researched and written by a founder against sources.',
     proof: ['Live cashier verified by the checkout-link court on every build.', 'DeedSonar production truth re-read 2026-09-16 (on /proof); the 2026-08-23 court at e2b71fa is HISTORICAL.', 'Client engagements are not published here; what Neuruh does not claim is listed on /refusals.'],
     ladder: CASHIER_LADDER,
@@ -256,7 +256,7 @@ export const TOP10: Top10Product[] = [
     proof: ['Method lineage: DeedSonar, production truth re-read 2026-09-16 (on /proof).', 'Client engagements are not published here; what Neuruh does not claim is listed on /refusals.'],
     ladder: QUOTE_LADDER,
     example: 'Ten HVAC contractors across two counties. The screen links six to owner-occupied commercial property, flags two owners past retirement age with no visible successor, and ranks a shortlist of three with the diligence questions for each.',
-    related: { slug: 'opportunity-intelligence-dossier', why: 'Take the top target from the screen into a full dossier.' },
+    related: { slug: 'property-intelligence-dossier', why: 'Take the top target from the screen into a full dossier.' },
     nextStep: 'Request a ten-target screen in one vertical and one geography.',
     ctaLabel: 'Request a buyability screen',
     mode: 'acquisition',
@@ -281,7 +281,7 @@ export const TOP10: Top10Product[] = [
     delivery: FOUNDER_DELIVERY,
     turnaround: 'Typically 2–5 business days after we have your inputs.',
     useCases: ['CRM cleanup', 'Acquisition data room', 'County or public data', 'Legacy migration', 'Spreadsheet consolidation'],
-    real: ['This is the existing Data Rescue offer (O01) on /offers with a live Stripe checkout.', 'Fulfillment is founder-operated: this site has no payment webhook. A founder collects the inputs by email after checkout.'],
+    real: ['This is the existing Data Rescue offer (O01) on /offers with a live Stripe checkout.', 'Delivery is by the founder: this site has no payment webhook. A founder collects the inputs by email after checkout.'],
     demo: 'The browser calculator shows the arithmetic of cleanable rows. The delivered product is the normalized dataset, exception report, provenance, and receipt.',
     proof: ['Live cashier verified by the checkout-link court on every build; listed as LIVE CASHIER on /proof.', 'Client engagements are not published here; what Neuruh does not claim is listed on /refusals.'],
     ladder: CASHIER_LADDER,
@@ -311,7 +311,7 @@ export const TOP10: Top10Product[] = [
     delivery: FOUNDER_DELIVERY,
     turnaround: 'Typically 2–3 weeks after we have the current process and the desired result.',
     useCases: ['Lead intake', 'Scheduling', 'CRM updates', 'Estimating', 'Document processing', 'Dispatch coordination'],
-    real: ['This is the existing Workflow Sprint offer (O05) on /offers with a live Stripe checkout at the $1,250 starter price. Complex scopes are quoted.', 'Fulfillment is founder-operated: this site has no payment webhook.'],
+    real: ['This is the existing Workflow Sprint offer (O05) on /offers with a live Stripe checkout at the $1,250 starter price. Complex scopes are quoted.', 'Delivery is by the founder: this site has no payment webhook.'],
     demo: 'The browser calculator establishes a labor-exposure baseline from your own numbers. The sprint is sold against one measurable replacement outcome.',
     proof: ['Live cashier verified by the checkout-link court on every build.', 'Client engagements are not published here; what Neuruh does not claim is listed on /refusals.'],
     ladder: CASHIER_LADDER,
@@ -403,7 +403,7 @@ export const TOP10: Top10Product[] = [
     proof: ['FindSellProfit custody and court receipts, 229/229 tests — vendored in-repo (docs/receipts-external/findsellprofit).', 'Listed as SEALED CANDIDATE on /products.', 'Client engagements are not published here; what Neuruh does not claim is listed on /refusals.'],
     ladder: QUOTE_LADDER,
     example: 'A forty-item estate lot. The engagement identifies thirty-four items with comparables, sets a buy ceiling per item and for the lot, flags six with no reliable comparables, and recommends the exit channel per item.',
-    related: { slug: 'opportunity-intelligence-dossier', why: 'Same evidence discipline, applied to property instead of inventory.' },
+    related: { slug: 'property-intelligence-dossier', why: 'Same evidence discipline, applied to property instead of inventory.' },
     nextStep: 'Request an operator engagement for one narrow category.',
     ctaLabel: 'Request an operator engagement',
     mode: 'resale',
@@ -425,8 +425,23 @@ export function contactHref(p: Top10Product) {
   return `/contact?product=${p.slug}`
 }
 
+export const RUNG_LABEL: Record<RungStatus, string> = {
+  PROVEN_LIVE: 'PROVEN LIVE',
+  IMPLEMENTED_NOT_LIVE: 'IMPLEMENTED · NOT LIVE',
+  IMPLEMENTED_INCOMPLETE: 'INCOMPLETE',
+  BLOCKED: 'BLOCKED',
+  HISTORICAL: 'HISTORICAL',
+  UNKNOWN: 'UNKNOWN',
+}
+
+/** Date and receipt of the court that last set every product's ladder (shown on /proof, never on buyer pages). */
+export const LADDER_RECORD = {
+  asOf: '2026-09-14',
+  receipt: 'docs/receipts-external/top10-commercial-court-20260914.attestation.md',
+} as const
+
 export const PRICE_STATUS_LABEL: Record<PriceStatus, string> = {
-  LIVE_CASHIER: 'Live checkout · founder-fulfilled',
-  FOUNDER_SET_NO_CASHIER: 'Founder-set price · no checkout yet · order by email',
-  TEST_PRICING: 'Test commercial pricing · quoted · not market-verified',
+  LIVE_CASHIER: 'Pay online · delivered by the founder',
+  FOUNDER_SET_NO_CASHIER: 'Order by email · invoiced once scoped',
+  TEST_PRICING: 'Quoted per engagement · list price not market-verified',
 }

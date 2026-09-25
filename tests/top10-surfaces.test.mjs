@@ -6,7 +6,7 @@ import { OFFER_BY_ID, PUBLIC_OFFERS } from '../apps/neuruh-web/lib/publicOffers.
 import { HARNESS_STAGES, DEMO_BANNER } from '../apps/neuruh-web/lib/harnessStages.ts'
 
 const REQUIRED_SLUGS = [
-  'agent-integrity', 'ai-estate-forensic', 'property-opportunity-scan', 'opportunity-intelligence-dossier',
+  'agent-integrity', 'ai-estate-forensic', 'property-opportunity-scan', 'property-intelligence-dossier',
   'business-acquisition-intelligence', 'data-rescue', 'workflow-replacement', 'proofos', 'managed-opportunity-desk', 'findsellprofit',
 ]
 const FACTORY = /Mother|\bAXON\b|\bAegis\b|\bIAR\b|REI-X|recipe[- ]engine|scoring weights|secret topology|system prompt|customer PII|Founder Runtime|Switchboard|Honey Pot|Sentinel\b|\bSOPS\b/
@@ -57,7 +57,7 @@ test('checkout exists only through the three existing cashiers; everything else 
     assert.equal(p.ladder.Outcome, 'UNKNOWN', p.slug)
   }
   const mapping = Object.fromEntries(TOP10.filter((p) => p.offerId).map((p) => [p.slug, p.offerId]))
-  assert.deepEqual(mapping, { 'opportunity-intelligence-dossier': 'O02', 'data-rescue': 'O01', 'workflow-replacement': 'O05' })
+  assert.deepEqual(mapping, { 'property-intelligence-dossier': 'O02', 'data-rescue': 'O01', 'workflow-replacement': 'O05' })
   const scan = TOP10.find((p) => p.slug === 'property-opportunity-scan')
   assert.equal(scan.priceStatus, 'FOUNDER_SET_NO_CASHIER')
   assert.equal(scan.ladder['Checkout / quote'], 'BLOCKED')

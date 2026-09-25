@@ -16,6 +16,11 @@
       "permanent": true
     },
     {
+      "source": "/products/top10/opportunity-intelligence-dossier",
+      "destination": "/products/top10/property-intelligence-dossier",
+      "permanent": true
+    },
+    {
       "source": "/deedsonar",
       "destination": "https://app.deedsonar.com/",
       "permanent": false
