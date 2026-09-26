@@ -37,6 +37,10 @@ export const metadata: Metadata = {
  */
 const SPINE_BOOT = `(function(){try{var s=localStorage.getItem('neuruh-spine');if(s!=='bone'&&s!=='obsidian'){s=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches)?'bone':'obsidian'}document.documentElement.setAttribute('data-spine',s)}catch(e){}})()`
 
+/** Google Analytics 4 (standard gtag.js snippet). Disclosed on /legal. */
+const GA_ID = 'G-SM8HKMT3HH'
+const GA_BOOT = `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}');`
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
@@ -49,6 +53,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <meta name="color-scheme" content="dark light" />
         <script dangerouslySetInnerHTML={{ __html: SPINE_BOOT }} />
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
+        <script dangerouslySetInnerHTML={{ __html: GA_BOOT }} />
       </head>
       <body>
         <JsonLd />

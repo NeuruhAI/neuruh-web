@@ -7,11 +7,12 @@ import { NOT_CLAIMED } from '../../lib/publicNotClaimed'
 import { LADDER, LADDER_RECORD, RUNG_LABEL, TOP10 } from '../../lib/top10'
 import t10 from '../../components/top10/Top10Product.module.css'
 import { pageMeta } from '../../lib/publicSeo'
+import { ProofReceipts } from '../../components/ProofReceipts'
 
 export const metadata = pageMeta({
   path: '/proof',
   title: 'Proof',
-  description: 'The Neuruh proof ledger: every published figure with the date it was verified, the receipt it came from, and the method that produced it — plus what is deliberately not claimed.',
+  description: 'Every claim I make in public, traced to a dated receipt. If the link dies, the claim goes with it.',
 })
 
 /**
@@ -65,10 +66,11 @@ export default function ProofPage() {
   const verifiedAsOf = day(snapshot.dataset.last_verified_at)
   return (
     <main id="main">
-      <section className="sec">
+      <ProofReceipts />
+      <section className="sec" id="ledger">
         <div className="sec-inner">
           <p className="sec-eyebrow">Proof</p>
-          <h1 className="sec-h" style={{ fontSize: 'clamp(2rem, 3.6vw, 3rem)' }}>Here is the claim. Here is the evidence.</h1>
+          <h2 className="sec-h" style={{ fontSize: 'clamp(2rem, 3.6vw, 3rem)' }}>Here is the claim. Here is the evidence.</h2>
           <p className="ev-line verified-line" data-testid="verified-as-of">
             Verified as of <time dateTime={snapshot.dataset.last_verified_at}>{verifiedAsOf}</time> · snapshot {snapshot.dataset.id} · checksum {signature.snapshot_sha256.slice(0, 16)}…
           </p>

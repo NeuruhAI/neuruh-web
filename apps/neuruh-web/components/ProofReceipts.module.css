@@ -1,0 +1,57 @@
+/* Scoped to the /proof receipts ledger. globals.css is a provenance-tracked ported artifact and is
+   deliberately not edited; these rules sit on the shared spine tokens so both spines render it. */
+
+.receipts { border-bottom: 1px solid var(--v2-line-1); }
+
+.col { max-width: 760px; }
+
+.accent { color: var(--v2-steel-ink); }
+
+.lede { color: var(--v2-muted); font-size: 1.15rem; line-height: 1.65; max-width: 62ch; margin: 0; }
+
+.part, .cta, .colophon {
+  max-width: 760px;
+  margin-inline: auto;
+  padding: 48px clamp(20px, 4.5vw, 56px);
+  border-top: 1px solid var(--v2-line-1);
+  box-sizing: content-box;
+}
+
+.h2 { font-family: var(--font-display); font-weight: 700; font-size: 1.6rem; letter-spacing: -0.01em; color: var(--v2-text); margin: 0 0 8px; }
+
+.receipt {
+  background: var(--v2-surf-1);
+  border: 1px solid var(--v2-line-1);
+  border-left: 3px solid var(--v2-steel-ink);
+  border-radius: 10px;
+  padding: 22px 24px;
+  font-family: var(--font-mono);
+  font-size: 0.84rem;
+  line-height: 1.8;
+  color: var(--v2-muted);
+  overflow-wrap: anywhere;
+  margin-bottom: 20px;
+}
+.receipt:last-child { margin-bottom: 0; }
+
+.label { display: block; font-family: var(--font-sans); font-weight: 600; font-size: 0.6875rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--v2-steel-ink); margin-bottom: 10px; }
+
+.val { color: var(--v2-text); }
+
+.call { margin-bottom: 28px; }
+.call:last-child { margin-bottom: 0; }
+.callText { font-size: 1.1rem; font-weight: 600; color: var(--v2-text); line-height: 1.45; margin: 0 0 6px; }
+.meta { font-family: var(--font-mono); font-size: 0.8rem; color: var(--v2-muted); margin: 0; }
+
+.list { list-style: none; margin: 8px 0 0; padding: 0; }
+.list li { padding: 14px 0; border-bottom: 1px solid var(--v2-line-1); overflow-wrap: anywhere; }
+.list li:last-child { border-bottom: none; }
+.tag { display: block; margin-top: 4px; font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.06em; color: var(--v2-steel-ink); }
+
+.cta { text-align: center; padding-block: 64px; }
+.cta p { color: var(--v2-muted); line-height: 1.65; max-width: 520px; margin: 0 auto 28px; }
+.note { display: block; margin-top: 12px; font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.04em; color: var(--v2-steel-ink); }
+
+.colophon { font-family: var(--font-mono); font-size: 0.78rem; line-height: 2; color: var(--v2-steel-ink); padding-block: 32px 48px; }
+.colophon a { color: var(--v2-muted); }
+.colophon a:hover { color: var(--v2-text); }
