@@ -228,6 +228,13 @@
       "title": "neuruh.com site release court (2026-09-16)",
       "path_or_uri": "docs/receipts-external/site-release-court-20260916.attestation.md",
       "public_safe": true
+    },
+    {
+      "ref": "src-site-release-court-20260925",
+      "class": "decision_receipt",
+      "title": "neuruh.com site release court (2026-09-25)",
+      "path_or_uri": "docs/receipts-external/site-release-court-20260925.attestation.md",
+      "public_safe": true
     }
   ],
   "objects": [
@@ -1235,12 +1242,13 @@
       "claim_class": "OBSERVED",
       "maturity": "SYSTEM_COMPONENT",
       "status": "STABLE",
-      "last_verified_at": "2026-09-16T12:45:00.000Z",
-      "source_ref": "src-site-release-court-20260916",
+      "last_verified_at": "2026-09-25T22:30:00.000Z",
+      "source_ref": "src-site-release-court-20260925",
       "evidence_summary": {
         "status": "SUFFICIENT",
-        "statement": "Each gate was run against the built release candidate of 2026-09-16. Accessibility used axe-core at desktop and mobile widths on both colour spines over every sitemap route plus the not-found page; links were resolved against real routes and files; secret, private-path and factory-name scans ran over the source and the prerendered HTML, including the new front door, failure-mode and answer pages.",
+        "statement": "Each gate was run against the built release candidate of 2026-09-25 (buyer-experience pass: offer ladder in the homepage hero, the Property Intelligence Dossier rename, the commercial ladder moved to /proof, the /solve intake handoff). Accessibility used axe-core at desktop and mobile widths on both colour spines over every sitemap route plus the not-found page; links were resolved against real routes and files; secret, private-path and factory-name scans ran over the source and the prerendered HTML.",
         "source_refs": [
+          "src-site-release-court-20260925",
           "src-site-release-court-20260916",
           "src-site-release-court-20260914",
           "src-top10-commercial-court-20260914"
@@ -1253,72 +1261,72 @@
           "value": 0,
           "classification": "MEASURED",
           "unit": "links",
-          "as_of": "2026-09-16T12:45:00.000Z",
-          "source_ref": "src-site-release-court-20260916"
+          "as_of": "2026-09-25T22:30:00.000Z",
+          "source_ref": "src-site-release-court-20260925"
         },
         {
           "name": "serious_accessibility_violations",
           "value": 0,
           "classification": "MEASURED",
           "unit": "violations",
-          "as_of": "2026-09-16T12:45:00.000Z",
-          "source_ref": "src-site-release-court-20260916"
+          "as_of": "2026-09-25T22:30:00.000Z",
+          "source_ref": "src-site-release-court-20260925"
         },
         {
           "name": "critical_accessibility_violations",
           "value": 0,
           "classification": "MEASURED",
           "unit": "violations",
-          "as_of": "2026-09-16T12:45:00.000Z",
-          "source_ref": "src-site-release-court-20260916"
+          "as_of": "2026-09-25T22:30:00.000Z",
+          "source_ref": "src-site-release-court-20260925"
         },
         {
           "name": "secret_scan_hits",
           "value": 0,
           "classification": "MEASURED",
           "unit": "hits",
-          "as_of": "2026-09-16T12:45:00.000Z",
-          "source_ref": "src-site-release-court-20260916"
+          "as_of": "2026-09-25T22:30:00.000Z",
+          "source_ref": "src-site-release-court-20260925"
         },
         {
           "name": "private_path_leaks",
           "value": 0,
           "classification": "MEASURED",
           "unit": "leaks",
-          "as_of": "2026-09-16T12:45:00.000Z",
-          "source_ref": "src-site-release-court-20260916"
+          "as_of": "2026-09-25T22:30:00.000Z",
+          "source_ref": "src-site-release-court-20260925"
         },
         {
           "name": "false_live_claims",
           "value": 0,
           "classification": "MEASURED",
           "unit": "claims",
-          "as_of": "2026-09-16T12:45:00.000Z",
-          "source_ref": "src-site-release-court-20260916"
+          "as_of": "2026-09-25T22:30:00.000Z",
+          "source_ref": "src-site-release-court-20260925"
         },
         {
           "name": "pages_checked",
           "value": 56,
           "classification": "MEASURED",
           "unit": "pages",
-          "as_of": "2026-09-16T12:45:00.000Z",
-          "source_ref": "src-site-release-court-20260916"
+          "as_of": "2026-09-25T22:30:00.000Z",
+          "source_ref": "src-site-release-court-20260925"
         },
         {
           "name": "internal_references_checked",
-          "value": 3117,
+          "value": 3138,
           "classification": "MEASURED",
           "unit": "references",
-          "as_of": "2026-09-16T12:45:00.000Z",
-          "source_ref": "src-site-release-court-20260916"
+          "as_of": "2026-09-25T22:30:00.000Z",
+          "source_ref": "src-site-release-court-20260925"
         },
         {
           "name": "accessibility_viewports",
           "value": 2,
           "classification": "MEASURED",
           "unit": "viewports",
-          "as_of": "2026-09-16T12:45:00.000Z",
-          "source_ref": "src-site-release-court-20260916"
+          "as_of": "2026-09-25T22:30:00.000Z",
+          "source_ref": "src-site-release-court-20260925"
         }
       ],
       "limitations": [

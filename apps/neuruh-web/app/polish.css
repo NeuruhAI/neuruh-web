@@ -11,3 +11,13 @@
 .hero .row .v2-btn,.row .v2-btn{flex:0 1 auto;min-height:48px}
 :where(h1,h2,h3,h4){scroll-margin-top:96px}
 @media(max-width:620px){ .hero .row .v2-btn,.row .v2-btn{flex:1 1 100%} }
+
+/* Homepage hero offer ladder: price-first, one tap per rung (44px minimum). */
+.hero-ladder { list-style: none; margin: 0 0 24px; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; max-width: 34rem; }
+.hero-ladder li { display: flex; }
+.hero-ladder a { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 2px; min-height: 56px; padding: 10px 14px; border: 1px solid var(--v2-line-2); border-radius: 10px; background: var(--v2-surf-1); color: var(--v2-text); text-decoration: none; }
+.hero-ladder a:hover { border-color: var(--v2-ice); }
+.hero-ladder a:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+.hero-ladder .hl-price { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; }
+.hero-ladder .hl-name { color: var(--v2-muted); font-size: 0.9rem; line-height: 1.35; }
+@media (max-width: 380px) { .hero-ladder { grid-template-columns: 1fr; } }

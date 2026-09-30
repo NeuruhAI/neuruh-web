@@ -3,7 +3,7 @@ import { pageMeta } from '../../lib/publicSeo'
 export const metadata = pageMeta({
   path: '/legal',
   title: 'Legal',
-  description: 'Privacy and terms for Neuruh.com: a static, read-only site with no accounts, no cookies, and no analytics.',
+  description: 'Privacy and terms for Neuruh.com: a static, read-only site with no accounts. It uses Google Analytics 4, which sets cookies.',
 })
 
 export default function LegalPage() {
@@ -19,7 +19,7 @@ export default function LegalPage() {
         <h2 id="privacy">Privacy</h2>
         <ul>
           <li>Neuruh.com is a static, read-only site. It has no accounts, no login, and no forms that transmit answers. Ask Neuruh is a local chooser — it does not send what you click.</li>
-          <li>We set no cookies and run no analytics or third-party trackers.</li>
+          <li>We use Google Analytics 4 to measure visits. It sets first-party cookies and sends page-view and device data to Google. We run no other analytics or third-party trackers.</li>
           <li>Our hosting provider processes standard server logs (IP address, user agent, request path) to serve and secure the site.</li>
           <li>Mail sent to jeramie@neuruh.com is forwarded to the founder&apos;s inbox. There is no autoresponder. Ask and we will delete the thread if one exists.</li>
           <li>Security disclosure: the public-safe path is <a className="text-link" href="/security">/security</a> and <a className="text-link" href="/.well-known/security.txt">/.well-known/security.txt</a>.</li>
@@ -34,7 +34,7 @@ export default function LegalPage() {
           <li>The site is provided as-is, without warranties. Product names and marks belong to their owners.</li>
           <li>Open-source components referenced here are governed by their own licenses in their repositories.</li>
         </ul>
-        <p className="source-line">Questions: jeramie@neuruh.com · Effective 2026-08-23.</p>
+        <p className="source-line">Questions: jeramie@neuruh.com · Effective 2026-09-26.</p>
       </section>
     </main>
   )

@@ -12,7 +12,6 @@ export const PUBLIC_JSON_LD = {
       legalName: 'Neuruh LLC',
       url: SITE_ORIGIN,
       email: 'jeramie@neuruh.com',
-      telephone: '+1-269-500-1768',
       founder: {
         '@type': 'Person',
         name: 'Jeramie Hicks',
@@ -21,8 +20,7 @@ export const PUBLIC_JSON_LD = {
         '@type': 'ContactPoint',
         contactType: 'sales',
         email: 'jeramie@neuruh.com',
-        telephone: '+1-269-500-1768',
-        availableLanguage: 'en',
+          availableLanguage: 'en',
       },
       sameAs: ['https://github.com/NeuruhAI', 'https://re.neuruh.com', 'https://guide.neuruh.com'],
     },

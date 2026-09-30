@@ -4,12 +4,15 @@ import { EVIDENCE_MODES, evidenceMode, getPublicObject, getPublicObjects, getPub
 import { ProofCardGrid } from '../../components/ProofCardGrid'
 import { ContradictionObject } from '../../components/TruthPrimitives'
 import { NOT_CLAIMED } from '../../lib/publicNotClaimed'
+import { LADDER, LADDER_RECORD, RUNG_LABEL, TOP10 } from '../../lib/top10'
+import t10 from '../../components/top10/Top10Product.module.css'
 import { pageMeta } from '../../lib/publicSeo'
+import { ProofReceipts } from '../../components/ProofReceipts'
 
 export const metadata = pageMeta({
   path: '/proof',
   title: 'Proof',
-  description: 'The Neuruh proof ledger: every published figure with the date it was verified, the receipt it came from, and the method that produced it — plus what is deliberately not claimed.',
+  description: 'Every claim I make in public, traced to a dated receipt. If the link dies, the claim goes with it.',
 })
 
 /**
@@ -63,10 +66,11 @@ export default function ProofPage() {
   const verifiedAsOf = day(snapshot.dataset.last_verified_at)
   return (
     <main id="main">
-      <section className="sec">
+      <ProofReceipts />
+      <section className="sec" id="ledger">
         <div className="sec-inner">
           <p className="sec-eyebrow">Proof</p>
-          <h1 className="sec-h" style={{ fontSize: 'clamp(2rem, 3.6vw, 3rem)' }}>Here is the claim. Here is the evidence.</h1>
+          <h2 className="sec-h" style={{ fontSize: 'clamp(2rem, 3.6vw, 3rem)' }}>Here is the claim. Here is the evidence.</h2>
           <p className="ev-line verified-line" data-testid="verified-as-of">
             Verified as of <time dateTime={snapshot.dataset.last_verified_at}>{verifiedAsOf}</time> · snapshot {snapshot.dataset.id} · checksum {signature.snapshot_sha256.slice(0, 16)}…
           </p>
@@ -95,7 +99,6 @@ export default function ProofPage() {
                 `${mode(ds, 'current_estate_properties')}current estate <b>${fmt(n(ds, 'current_estate_properties'))}</b> properties · <b>${fmt(n(ds, 'qualified_properties'))}</b> qualified · contact authority on <b>${n(ds, 'contact_authorized_rows')}</b> rows — production cannot record contact permission · ${d(ds, 'current_estate_properties')}`,
                 `${mode(ds, 'customer_tape_steps_reachable')}read-only customer tape: the product&apos;s own top opportunity reached <b>${n(ds, 'customer_tape_steps_reachable')} of 15</b> steps and stopped at the contact ladder — a human courthouse research step · ${d(ds, 'customer_tape_steps_reachable')}`,
                 `${mode(ds, 'customer_tape_steps_reachable_20260914')}the same tape on ${d(ds, 'customer_tape_steps_reachable_20260914')} reached <b>${n(ds, 'customer_tape_steps_reachable_20260914')} of 15</b> at an earlier production release`,
-                `${mode(ds, 'tests_green_at_production_sha')}court <b>${fmt(n(ds, 'tests_green_at_production_sha'))}</b> tests green at release <b>e2b71fa</b> · ${d(ds, 'tests_green_at_production_sha')} · no longer the production release`,
               ]}
               refLink={['DeedSonar record →', '/worlds/deedsonar']}
             />
@@ -157,6 +160,27 @@ export default function ProofPage() {
             products. No private-repo links. No factory internals.
           </p>
           <ProofCardGrid />
+        </div>
+      </section>
+
+      <section className="sec" id="commercial-ladder" aria-labelledby="ladder-h">
+        <div className="sec-inner">
+          <p className="sec-eyebrow">Commercial ladder</p>
+          <h2 className="sec-h" id="ladder-h">Where each product stands, rung by rung.</h2>
+          <p className="sec-sub">
+            Product → Offer → Checkout or quote → Intake → Fulfillment → Delivery → Receipt → Outcome. A rung is
+            PROVEN LIVE only when it has been exercised on the public site and courted. Fulfillment, delivery, and
+            receipt are founder-operated and become PROVEN LIVE only with a delivered, receipted engagement.
+          </p>
+          <p className="ev-line" data-testid="ladder-record">
+            Recorded {LADDER_RECORD.asOf} · Top 10 commercial court · receipt {LADDER_RECORD.receipt} · not a live feed
+          </p>
+          {TOP10.map((p) => (
+            <div key={p.slug} style={{ marginTop: 18 }} data-testid={`ladder-${p.slug}`}>
+              <p className="ev-k"><Link className="v2-link" href={`/products/top10/${p.slug}`}>{p.name}</Link> · {p.status}</p>
+              <div className={t10.ladder}>{LADDER.map((rung) => <div className={t10.rung} key={rung} data-status={p.ladder[rung]}><span>{rung}</span><b>{RUNG_LABEL[p.ladder[rung]]}</b></div>)}</div>
+            </div>
+          ))}
         </div>
       </section>
 

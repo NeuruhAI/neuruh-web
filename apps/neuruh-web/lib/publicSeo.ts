@@ -4,7 +4,10 @@ export const SITE_ORIGIN = 'https://neuruh.com'
 
 export const DEFAULT_TITLE = 'Neuruh — Governed AI systems that leave receipts'
 export const DEFAULT_DESCRIPTION =
-  'Neuruh builds governed execution infrastructure for AI systems: nothing acts without checked authority, everything leaves a verifiable receipt, and what the system refuses is recorded as carefully as what it does.'
+  'Neuruh builds governed execution for AI systems: nothing acts without checked authority, and every action or refusal leaves a verifiable receipt.'
+
+// A plain public file, so the og/twitter image URL stays stable across deployments.
+export const OG_IMAGE = { url: '/og.png', width: 1200, height: 630, alt: 'Neuruh' }
 
 export function absoluteUrl(path: string) {
   if (path === '/') return SITE_ORIGIN
@@ -36,11 +39,13 @@ export function pageMeta({
       siteName: 'Neuruh',
       title: ogTitle,
       description,
+      images: [OG_IMAGE],
     },
     twitter: {
       card: 'summary_large_image',
       title: ogTitle,
       description,
+      images: [OG_IMAGE.url],
     },
   }
 }

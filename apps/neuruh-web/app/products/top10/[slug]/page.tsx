@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { LADDER, PRICE_STATUS_LABEL, TOP10, contactHref, getTop10 } from '../../../../lib/top10'
+import { PRICE_STATUS_LABEL, TOP10, contactHref, getTop10 } from '../../../../lib/top10'
 import { OFFER_BY_ID } from '../../../../lib/publicOffers'
 import { ProductDemo } from '../../../../components/top10/ProductDemo'
 import s from '../../../../components/top10/Top10Product.module.css'
@@ -20,15 +20,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: product ? `${product.name} — ${product.price}` : 'Neuruh product',
     description: product?.outcome ?? 'A Neuruh commercial product with a truthful status, evidence, and a next action.',
   })
-}
-
-const RUNG_LABEL: Record<string, string> = {
-  PROVEN_LIVE: 'PROVEN LIVE',
-  IMPLEMENTED_NOT_LIVE: 'IMPLEMENTED · NOT LIVE',
-  IMPLEMENTED_INCOMPLETE: 'INCOMPLETE',
-  BLOCKED: 'BLOCKED',
-  HISTORICAL: 'HISTORICAL',
-  UNKNOWN: 'UNKNOWN',
 }
 
 export default async function Top10ProductPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -53,9 +44,13 @@ export default async function Top10ProductPage({ params }: { params: Promise<{ s
       <div className={s.wrap}>
         <Link href="/products/top10" className={s.back}>← All ten products</Link>
         <div className={s.eyebrow}>{String(p.rank).padStart(2, '0')} · {p.category}</div>
-        <div className={s.badge} data-testid="product-status">{p.status}</div>
         <h1>{p.name}</h1>
         <p className={s.promise}>{p.outcome}</p>
+        <div className={s.heroGet} data-testid="product-get">
+          <span className={s.label}>What you get</span>
+          <ul>{p.deliverables.map((x) => <li key={x}>{x}</li>)}</ul>
+          <p className={s.disclaimer}>{cashier ? 'Founder-operated delivery by email. After checkout the founder writes to your checkout address to collect the inputs.' : 'Founder-operated delivery by email. You get a written scope before any work starts.'}</p>
+        </div>
         <div className={s.heroGrid}>
           <div><span className={s.label}>Who it is for</span><strong>{p.audience}</strong></div>
           <div><span className={s.label}>What it costs</span><strong className={s.price} data-testid="product-price">{p.price}</strong><small className={s.disclaimer} style={{ marginTop: 6 }}>{PRICE_STATUS_LABEL[p.priceStatus]}</small></div>
@@ -136,12 +131,7 @@ export default async function Top10ProductPage({ params }: { params: Promise<{ s
         </div>
         {related && <p className={s.disclaimer} style={{ marginTop: 12 }}><b>Related.</b> {p.related.why}</p>}
       </div>
-      <details className={s.details} style={{ marginTop: 22 }}>
-        <summary className={s.summary}>Where this product stands on the commercial ladder</summary>
-        <div className={s.ladder} data-testid="product-ladder">{LADDER.map((rung) => <div className={s.rung} key={rung} data-status={p.ladder[rung]}><span>{rung}</span><b>{RUNG_LABEL[p.ladder[rung]]}</b></div>)}</div>
-        <p className={s.disclaimer} style={{ marginTop: 0, paddingBottom: 16 }}>Product → Offer → Checkout or quote → Intake → Fulfillment → Delivery → Receipt → Outcome. A rung is PROVEN LIVE only when it has been exercised on the public site and courted. Fulfillment, delivery, and receipt are founder-operated and become PROVEN LIVE only with a delivered, receipted engagement. The test-mode tape for the four priority offers is in the public repository under docs/receipts-external.</p>
-      </details>
-      <p className={s.disclaimer}>Status labels distinguish live cashiers, founder-set prices without checkout, and test pricing. No customer results, counts, or automation are claimed.</p>
+      <p className={s.disclaimer}>Price labels distinguish online checkout, email orders, and quoted work. No customer results, counts, or automation are claimed. Dated build records for every product are on <Link href="/proof#commercial-ladder">/proof</Link>.</p>
     </div></section>
   </main>
 }

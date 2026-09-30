@@ -155,6 +155,7 @@
 .rung[data-status="IMPLEMENTED_NOT_LIVE"] b { color: var(--v2-ice); }
 .rung[data-status="IMPLEMENTED_INCOMPLETE"] b { color: var(--v2-silver); }
 .rung[data-status="BLOCKED"] b { color: #f0a3a3; }
+:global(html[data-spine="bone"]) .rung[data-status="BLOCKED"] b { color: #a13b3b; }
 .rung[data-status="UNKNOWN"] b, .rung[data-status="HISTORICAL"] b { color: var(--v2-muted); }
 .rung[data-status="BLOCKED"] { border-style: dashed; }
 .rung[data-status="PROVEN_LIVE"] { border-color: var(--v2-ok); }
@@ -181,3 +182,6 @@
   .timeline { grid-template-columns: 1fr; }
   .ctaPair > * { flex: 1 1 100%; }
 }
+.heroGet { margin-top: 22px; max-width: 64ch; }
+.heroGet ul { margin: 8px 0 0; padding-left: 1.2em; color: var(--v2-text); line-height: 1.6; }
+.heroGet .disclaimer { margin-top: 10px; }

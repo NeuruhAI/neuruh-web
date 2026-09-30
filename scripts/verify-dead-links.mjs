@@ -9,7 +9,7 @@ import path from 'node:path'
 
 const HTML_ROOT = 'apps/neuruh-web/.next/server/app'
 const PUBLIC_ROOTS = ['apps/neuruh-web/public', 'apps/neuruh-web/app']
-const APP_STATIC = new Set(['/icon.svg', '/apple-icon.png', '/opengraph-image.png'])
+const APP_STATIC = new Set(['/icon.svg', '/apple-icon.png', '/og.png'])
 const SKIP_HOSTS = /book\.stripe\.com|buy\.stripe\.com|checkout\.stripe\.com/
 const failures = []
 

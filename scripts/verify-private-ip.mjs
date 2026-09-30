@@ -38,7 +38,7 @@ const HTML_ROUTES = [
   'products/top10/agent-integrity',
   'products/top10/ai-estate-forensic',
   'products/top10/property-opportunity-scan',
-  'products/top10/opportunity-intelligence-dossier',
+  'products/top10/property-intelligence-dossier',
   'products/top10/business-acquisition-intelligence',
   'products/top10/data-rescue',
   'products/top10/workflow-replacement',

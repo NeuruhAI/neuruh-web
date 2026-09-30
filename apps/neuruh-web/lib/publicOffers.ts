@@ -3,7 +3,7 @@
  *
  * Boundaries, in substance, from canon:
  *   O01  Data Rescue                    messy data → recovered package
- *   O02  Opportunity Intelligence       question → source-backed dossier
+ *   O02  Property Intelligence          question → source-backed dossier
  *   O05  Workflow Replacement           manual workflow → AI-assisted replaced flow
  *   FSA  Forensic System Audit          existing system → evidence-backed truth / state / gap / recovery report
  *
@@ -22,7 +22,7 @@ export const PUBLIC_OFFERS = [
     promise: 'Turn a broken, buried, or unusable set of files or records into something you can actually work with.',
     provide: 'The files, export, or records — plus what is wrong with them.',
     receive: 'A usable recovered or normalized package, plus a concise note on what changed and anything still missing.',
-    proof: 'Live cashier on neuruh.com. Founder-operated delivery after intake — a live cashier is not automated fulfillment.',
+    proof: 'Pay online on neuruh.com. The founder delivers after intake. Checkout does not trigger automated delivery.',
     price: '$299',
     href: 'https://book.stripe.com/bJe5kDagndYugJlaow2cg04',
     cta: 'Start Data Rescue',
@@ -31,11 +31,11 @@ export const PUBLIC_OFFERS = [
     id: 'O02',
     kind: 'cashier',
     scope: 'Question → source-backed dossier',
-    name: 'Opportunity Intelligence Dossier',
+    name: 'Property Intelligence Dossier',
     promise: 'A source-backed brief on one property, company, market, or opportunity — focused on what matters next.',
     provide: 'The target and the decision or question you need answered.',
     receive: 'The evidence, key upside and risks, and a clear recommended next move in one concise dossier.',
-    proof: 'Same public evidence discipline as DeedSonar: sources kept, recommendation explicit. A live cashier is not automated fulfillment.',
+    proof: 'Same public evidence discipline as DeedSonar: sources kept, recommendation explicit. Checkout does not trigger automated delivery; the founder delivers every order by hand.',
     price: '$499',
     href: 'https://book.stripe.com/8x2cN574b1bIakXgMU2cg05',
     cta: 'Order the Dossier',
@@ -48,7 +48,7 @@ export const PUBLIC_OFFERS = [
     promise: 'Replace one repetitive or chaotic manual process with a working, documented, AI-assisted flow.',
     provide: 'The current process, the tools involved, and the result you want.',
     receive: 'A scoped working workflow and the handoff needed to run it.',
-    proof: 'Same public pipeline as How it works: scoped action, documented handoff. A live cashier is not automated fulfillment.',
+    proof: 'Same public pipeline as How it works: scoped action, documented handoff. Checkout does not trigger automated delivery; the founder delivers every order by hand.',
     price: '$1250',
     href: 'https://book.stripe.com/7sY00j1JRf2y2Sv4082cg06',
     cta: 'Start the Sprint',
@@ -98,7 +98,7 @@ export const OFFER_NEXT_STEPS = [
   },
   {
     title: 'Delivery',
-    body: 'A founder completes the scoped work and delivers the result back to that address. A live cashier is not automated fulfillment.',
+    body: 'A founder completes the scoped work and delivers the result back to that address. Checkout does not trigger automated delivery; the founder delivers every order by hand.',
   },
 ] as const
 

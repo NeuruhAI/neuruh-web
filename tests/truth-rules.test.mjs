@@ -40,7 +40,7 @@ test('proof and case surfaces consume the public-safe truth rules', async () => 
   assert.match(cases, /status: 'SHIPPED_LIVE'/)
   assert.match(proof, /liveCashierIsNotFulfillment/)
   assert.match(cases, /cashiersLiveOrderDraft/)
-  assert.match(offers, /A live cashier is not automated fulfillment/)
+  assert.match(offers, /Checkout does not trigger automated delivery/)
   assert.match(proofPage, /Merged is not live/)
   assert.match(casesPage, /ORDER→FR remains draft/)
 

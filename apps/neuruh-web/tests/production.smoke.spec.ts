@@ -54,7 +54,7 @@ test('primary routes render truthfully without fake LIVE state', async ({ page }
     '/solve', '/problems', '/problems/data-you-cannot-use', '/problems/ai-you-cannot-verify', '/problems/workflows-that-break',
     '/problems/property-data-without-opportunity', '/problems/automation-without-authority', '/problems/systems-nobody-can-explain', '/faq',
     '/products/top10/agent-integrity', '/products/top10/ai-estate-forensic', '/products/top10/property-opportunity-scan',
-    '/products/top10/opportunity-intelligence-dossier', '/products/top10/business-acquisition-intelligence', '/products/top10/data-rescue',
+    '/products/top10/property-intelligence-dossier', '/products/top10/business-acquisition-intelligence', '/products/top10/data-rescue',
     '/products/top10/workflow-replacement', '/products/top10/proofos', '/products/top10/managed-opportunity-desk', '/products/top10/findsellprofit',
   ]
   for (const route of routes) {
@@ -136,7 +136,7 @@ test('Ask Neuruh returns exactly three public cards and never a fourth', async (
   await page.goto('/ask')
   await expect(page.getByTestId('ask-output').locator('[data-lane]')).toHaveCount(3)
   await expect(page.getByTestId('ask-card-fastest')).toContainText('Data Rescue')
-  await expect(page.getByTestId('ask-card-best-value')).toContainText('Opportunity Intelligence Dossier')
+  await expect(page.getByTestId('ask-card-best-value')).toContainText('Property Intelligence Dossier')
   await expect(page.getByTestId('ask-card-custom')).toContainText('Workflow Replacement Sprint')
   await page.getByTestId('ask-intent-data').click()
   await expect(page.getByTestId('ask-card-fastest')).toHaveAttribute('data-highlight', 'true')
@@ -177,7 +177,7 @@ test('Galaxy exposes sourced relationships, preserves contradiction, and hosts t
 test('Top 10 product pages carry a labeled browser demonstration and a resolving primary CTA', async ({ page }) => {
   await page.goto('/products/top10')
   await expect(page.locator('[data-testid^="top10-item-"]')).toHaveCount(10)
-  for (const slug of ['property-opportunity-scan', 'opportunity-intelligence-dossier', 'data-rescue', 'agent-integrity']) {
+  for (const slug of ['property-opportunity-scan', 'property-intelligence-dossier', 'data-rescue', 'agent-integrity']) {
     await page.goto(`/products/top10/${slug}`)
     await expect(page.getByTestId('demo-banner').first()).toHaveText('BROWSER DEMONSTRATION — NOT A PRODUCTION ASSURANCE RESULT')
     const href = await page.getByTestId('product-cta').getAttribute('href')

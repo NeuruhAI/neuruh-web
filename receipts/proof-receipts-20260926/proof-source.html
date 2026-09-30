@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proof | Neuruh LLC</title>
+<meta name="description" content="Every claim I make in public, traced to a dated receipt. If the link dies, the claim goes with it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f7f9fa; --surface:#ffffff; --wash:#eef2f4;
+  --ink:#17222c; --body:#3d4e5e; --muted:#687e8f; --faint:#9dabb7;
+  --sea:#1c5d76; --sea-dark:#14485c;
+  --slate:#5a7d99; --line:#d9e0e6;
+  --coast:#4e7d64; --coast-dark:#3c6350; --coast-line:#b7cbbf;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--body);font-family:'Inter',system-ui,sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+header{border-bottom:1px solid var(--line);background:var(--surface)}
+.header-inner{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+.brand{font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);text-decoration:none}
+.brand span{color:var(--slate)}
+.header-cta{font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.08em;color:var(--coast);text-decoration:none;border:1px solid var(--coast-line);padding:10px 18px;border-radius:3px;background:var(--surface)}
+.header-cta:hover{border-color:var(--coast);color:var(--coast-dark)}
+.hero{padding:72px 0 56px}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--slate);margin-bottom:20px}
+h1{font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(34px,6vw,52px);line-height:1.12;letter-spacing:-.01em;margin-bottom:20px;color:var(--ink)}
+h1 .accent{color:var(--slate)}
+.lede{font-size:19px;color:var(--muted);max-width:620px;margin-bottom:32px}
+section{padding:48px 0;border-top:1px solid var(--line)}
+h2{font-family:'Archivo',sans-serif;font-weight:700;font-size:26px;margin-bottom:8px;letter-spacing:-.01em;color:var(--ink)}
+.section-sub{color:var(--muted);margin-bottom:28px;max-width:640px}
+p{margin-bottom:16px;color:var(--body)}
+p strong{color:var(--ink);font-weight:600}
+.receipt{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--slate);padding:24px;font-family:'JetBrains Mono',monospace;font-size:13.5px;line-height:1.8;color:var(--body);margin-bottom:20px}
+.receipt:last-child{margin-bottom:0}
+.receipt .r-label{color:var(--faint);font-size:11px;letter-spacing:.18em;text-transform:uppercase;display:block;margin-bottom:10px}
+.receipt .r-val{color:var(--ink)}
+.receipt a{color:var(--sea);text-decoration:none;border-bottom:1px solid var(--coast-line)}
+.receipt a:hover{color:var(--sea-dark);border-bottom-color:var(--sea)}
+.call{margin-bottom:28px}
+.call .call-text{font-size:18px;color:var(--ink);font-weight:500;margin-bottom:6px}
+.call .call-meta{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--muted)}
+.call .call-meta a{color:var(--sea);text-decoration:none;border-bottom:1px solid var(--coast-line)}
+.call .call-meta a:hover{color:var(--sea-dark)}
+ul.clean{list-style:none;margin-top:8px}
+ul.clean li{padding:14px 0;border-bottom:1px solid var(--line);font-size:16px}
+ul.clean li:last-child{border-bottom:none}
+ul.clean a{color:var(--sea);text-decoration:none;border-bottom:1px solid var(--coast-line)}
+ul.clean a:hover{color:var(--sea-dark)}
+ul.clean .tag{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--faint);letter-spacing:.06em;display:block;margin-top:4px}
+.cta-block{text-align:center;padding:64px 0}
+.cta-block h2{font-size:30px;margin-bottom:12px}
+.cta-block p{max-width:520px;margin:0 auto 28px}
+.btn{display:inline-block;background:var(--sea);color:#ffffff;font-family:'Archivo',sans-serif;font-weight:700;font-size:16px;padding:16px 32px;border-radius:3px;text-decoration:none;letter-spacing:.01em}
+.btn:hover{background:var(--sea-dark)}
+.btn-note{display:block;margin-top:12px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--faint);letter-spacing:.04em}
+footer{border-top:1px solid var(--line);background:var(--surface);padding:32px 0 48px;font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--faint);line-height:2}
+footer a{color:var(--muted);text-decoration:none}
+footer a:hover{color:var(--slate)}
+@media(max-width:560px){
+  .hero{padding:52px 0 40px}
+  .header-cta{padding:8px 12px;font-size:12px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-inner">
+    <a class="brand" href="https://neuruh.com">NEURUH <span>LLC</span></a>
+    <a class="header-cta" href="https://cal.com/neuruh" target="_blank" rel="noopener">Book a call</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="kicker">Proof / Receipts</div>
+    <h1>Receipts, <span class="accent">or it did not happen.</span></h1>
+    <p class="lede">Every claim I make in public traces to something dated and clickable below. If a link dies, the claim goes with it. That is the whole rule.</p>
+  </div>
+
+  <section>
+    <h2>The deletion</h2>
+    <p class="section-sub">September 25, 2026. The standard I hold myself to, demonstrated on myself first.</p>
+    <div class="receipt">
+      <span class="r-label">Receipt</span>
+      <span class="r-val">2026-09-25</span> — I posted a claim about AI on Facebook that I could not verify.<br>
+      <span class="r-val">Same day</span> — I deleted the post. No edit, no quiet rewrite. Deleted.<br>
+      <span class="r-val">Same day</span> — I posted a correction saying the claim was unverified and should not have gone up.<br>
+      <span class="r-val">Rule going forward</span> — a claim goes public only with a receipt attached. This page is where the receipts live.
+    </div>
+  </section>
+
+  <section>
+    <h2>The 2025 calls</h2>
+    <p class="section-sub">Dated Facebook posts from spring 2025, in a public AI entrepreneurs group. Each one called a shift before it became the consensus. The originals are linked.</p>
+
+    <div class="call">
+      <div class="call-text">Chain-of-agent protocols are coming fast, and the prompt engineering era is over.</div>
+      <div class="call-meta">Called April 2025 — <a href="https://www.facebook.com/groups/aipromptsforentrepreneurs/posts/1181379693270253" target="_blank" rel="noopener">original post, April 16 2025</a></div>
+    </div>
+
+    <div class="call">
+      <div class="call-text">Agent workflows beat prompt tricks. The edge moved from what you type to what you orchestrate.</div>
+      <div class="call-meta">Called May 2025 — <a href="https://www.facebook.com/groups/aipromptsforentrepreneurs/posts/1200849627989926" target="_blank" rel="noopener">original post, May 15 2025</a></div>
+    </div>
+
+    <div class="call">
+      <div class="call-text">Stop automating broken systems. Automation multiplies whatever process you feed it, waste included.</div>
+      <div class="call-meta">Called May 2025 — <a href="https://www.facebook.com/groups/aipromptsforentrepreneurs/posts/1199688671439355" target="_blank" rel="noopener">original post, May 13 2025</a></div>
+    </div>
+
+    <div class="call">
+      <div class="call-text">Replace the waste, not the worker. The first automation target is the work nobody should be doing by hand.</div>
+      <div class="call-meta">Called April 2025 — <a href="https://www.facebook.com/groups/aipromptsforentrepreneurs/posts/1175659467175609" target="_blank" rel="noopener">original post, April 8 2025</a></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>The camper op</h2>
+    <p class="section-sub">September 26, 2026. One morning, one machine, one asset listed and pushed.</p>
+    <div class="receipt">
+      <span class="r-label">Receipt</span>
+      <span class="r-val">Asset</span> — 2021 Dutchmen Kodiak 332BHSL, Benton Harbor MI, listed at <span class="r-val">$25,000</span><br>
+      <span class="r-val">Morning output</span> — photo sales page built, price comps run against dealer listings, 13-number dealer call sheet with a call script, posts pushed to RV buy/sell groups across four states (MI, IN, IL, OH)<br>
+      <span class="r-val">Live listing</span> — <a href="https://www.facebook.com/marketplace/item/27944663891896736/" target="_blank" rel="noopener">Facebook Marketplace, 2021 Dutchmen Kodiak 332BHSL</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Published video</h2>
+    <p class="section-sub">Short-form runs on the @neuruhai TikTok account. Watch them, then check the claims against this page.</p>
+    <ul class="clean">
+      <li><a href="https://www.tiktok.com/@neuruhai/video/7689598249614740749" target="_blank" rel="noopener">tiktok.com/@neuruhai/video/7689598249614740749</a><span class="tag">Published — @neuruhai</span></li>
+      <li><a href="https://www.tiktok.com/@neuruhai/video/7689598381341166861" target="_blank" rel="noopener">tiktok.com/@neuruhai/video/7689598381341166861</a><span class="tag">Published — @neuruhai</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>The 2025 calls, threaded</h2>
+    <p class="section-sub">September 26, 2026. The prediction receipts above, posted as one dated thread.</p>
+    <div class="receipt">
+      <span class="r-label">Receipt</span>
+      <span class="r-val">2026-09-26</span> — 6-post thread on <span class="r-val">@JeramieHicks</span> (X), each call with its original link, signed - NeurOt<br>
+      <a href="https://x.com/JeramieHicks/status/2103830947267314140" target="_blank" rel="noopener">x.com/JeramieHicks/status/2103830947267314140</a>
+    </div>
+    <div class="receipt">
+      <span class="r-label">Receipt</span>
+      <span class="r-val">2026-09-26</span> — the day's work posted to the personal Facebook profile: the thread, the camper op, the build index<br>
+      <a href="https://www.facebook.com/jeramie.hicks/posts/pfbid02k8Rf4wzJAxodfpdE8pK1vKBY4Y4oqDBeDcsSELLsrxR19bTB8R4vD3VCRU5nWhaNl" target="_blank" rel="noopener">facebook.com/jeramie.hicks — Receipt day post</a>
+    </div>
+  </section>
+
+  <div class="cta-block">
+    <h2>Want the same treatment on your problem?</h2>
+    <p>A Property Opportunity Scan pulls county records, tax and ownership signals, then ranks the targets with owner names attached. One hour of my time, receipts included.</p>
+    <a class="btn" href="https://cal.com/neuruh" target="_blank" rel="noopener">Book a free 10-minute call</a>
+    <span class="btn-note">Scan: $350. Dossier: $1,500. jeramie@neuruh.com</span>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    NEURUH LLC — AI That Executes<br>
+    <a href="https://cal.com/neuruh" target="_blank" rel="noopener">cal.com/neuruh</a> · <a href="mailto:jeramie@neuruh.com">jeramie@neuruh.com</a><br>
+    Page last updated 2026-09-26. Every claim above traces to a link on this page.
+  </div>
+</footer>
+
+</body>
+</html>

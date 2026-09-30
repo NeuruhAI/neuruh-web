@@ -14,7 +14,7 @@ export const metadata = pageMeta({
 const ROUTES = [
   {
     title: 'A scoped offer',
-    body: 'Data Rescue, Opportunity Intelligence Dossier, Workflow Replacement Sprint, or a Forensic System Audit — fixed scope, founder-delivered.',
+    body: 'Data Rescue, Property Intelligence Dossier, Workflow Replacement Sprint, or a Forensic System Audit — fixed scope, founder-delivered.',
     href: '/offers',
     cta: 'See offers',
   },
@@ -84,8 +84,7 @@ export default function ContactPage() {
       <section className="semantic-section" aria-labelledby="contact-path">
         <h2 id="contact-path">The direct path</h2>
         <p className="contact-address">
-          <a className="n-btn n-btn--primary" href="mailto:jeramie@neuruh.com">jeramie@neuruh.com</a>{' '}
-          <a className="n-btn n-btn--secondary" href="tel:+12695001768">269-500-1768</a>
+          <a className="n-btn n-btn--primary" href="mailto:jeramie@neuruh.com">jeramie@neuruh.com</a>
         </p>
         <p>Mail is forwarded to the founder&apos;s inbox and answered by a person. No autoresponder.</p>
         <p>Useful things to include, so the first reply is substantive:</p>
