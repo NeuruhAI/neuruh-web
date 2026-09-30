@@ -74,6 +74,13 @@ test('/proof labels VERIFIED SNAPSHOT, ATTESTED and HISTORICAL figures and keeps
   assert.ok(document.includes(estate.value.toLocaleString('en-US')), 'current estate figure rendered from the snapshot')
 })
 
+test('/proof quotes the Scan and Dossier at the site price', async () => {
+  const document = await html('proof')
+  // Founder pricing 2026-09-30: Scan $100 / Dossier $499, matching the offers and the Stripe cashiers.
+  assert.ok(document.includes('Scan: $100. Dossier: $499.'), 'receipts CTA quotes $100 / $499')
+  assert.doesNotMatch(document, /\$350|\$1,500\b/, 'no stale $350 / $1,500 price on /proof')
+})
+
 test('sitemap lists the convergence routes', async () => {
   const sitemap = await readFile(path.join(APP, 'sitemap.xml.body'), 'utf8').catch(() => readFile(path.join(APP, 'sitemap.xml'), 'utf8'))
   for (const route of ['/solve', '/problems', '/faq', ...PROBLEMS.map((slug) => `/problems/${slug}`)]) {

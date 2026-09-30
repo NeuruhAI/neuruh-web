@@ -95,7 +95,7 @@ export function ProofReceipts() {
         <h2 className={s.h2}>Want the same treatment on your problem?</h2>
         <p>A Property Opportunity Scan pulls county records, tax and ownership signals, then ranks the targets with owner names attached. One hour of my time, receipts included.</p>
         <a className="v2-btn v2-btn-primary" href="https://cal.com/neuruh" {...ext}>Book a free 10-minute call</a>
-        <span className={s.note}>Scan: $350. Dossier: $1,500. jeramie@neuruh.com</span>
+        <span className={s.note}>Scan: $100. Dossier: $499. jeramie@neuruh.com</span>
       </section>
 
       <div className={s.colophon} data-testid="receipts-colophon">
