@@ -1,3 +1,4 @@
+import { utm } from '../lib/attribution'
 import s from './ProofReceipts.module.css'
 
 /**
@@ -8,6 +9,8 @@ import s from './ProofReceipts.module.css'
  */
 
 const ext = { target: '_blank', rel: 'noopener' } as const
+// Same destination as the source; only the site's attribution spine is added.
+const CAL = 'https://cal.com/neuruh'
 
 const CALLS: ReadonlyArray<readonly [string, string, string, string]> = [
   ['Chain-of-agent protocols are coming fast, and the prompt engineering era is over.', 'April 2025', 'https://www.facebook.com/groups/aipromptsforentrepreneurs/posts/1181379693270253', 'original post, April 16 2025'],
@@ -94,13 +97,13 @@ export function ProofReceipts() {
       <section className={s.cta} data-testid="receipts-cta">
         <h2 className={s.h2}>Want the same treatment on your problem?</h2>
         <p>A Property Opportunity Scan pulls county records, tax and ownership signals, then ranks the targets with owner names attached. One hour of my time, receipts included.</p>
-        <a className="v2-btn v2-btn-primary" href="https://cal.com/neuruh" {...ext}>Book a free 10-minute call</a>
+        <a className="v2-btn v2-btn-primary" href={utm(CAL, 'proof-cta-call')} {...ext}>Book a free 10-minute call</a>
         <span className={s.note}>Scan: $100. Dossier: $499. jeramie@neuruh.com</span>
       </section>
 
       <div className={s.colophon} data-testid="receipts-colophon">
         NEURUH LLC — AI That Executes<br />
-        <a href="https://cal.com/neuruh" {...ext}>cal.com/neuruh</a> · <a href="mailto:jeramie@neuruh.com">jeramie@neuruh.com</a><br />
+        <a href={utm(CAL, 'proof-colophon')} {...ext}>cal.com/neuruh</a> · <a href="mailto:jeramie@neuruh.com">jeramie@neuruh.com</a><br />
         Page last updated 2026-09-26. Every claim above traces to a link on this page.
       </div>
     </div>
