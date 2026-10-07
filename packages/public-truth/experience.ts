@@ -1,6 +1,39 @@
 import type { CameraName, SceneStateName } from '../spatial-runtime/contract/sceneStates'
 import type { LivingState, TruthMode } from './types'
 
+export function livingStatePlain(state: LivingState): string {
+  switch (state) {
+    case 'DORMANT':
+      return 'No fresh public state has been loaded'
+    case 'SENSING':
+      return 'Reading the public snapshot'
+    case 'INTEGRATING':
+      return 'Assembling verified sources'
+    case 'CONTRADICTING':
+      return 'Sources disagree'
+    case 'GOVERNING':
+      return 'Authority is being checked'
+    case 'EXECUTING':
+      return 'An authorized sandbox action is running'
+    case 'RECEIVING':
+      return 'A receipt has returned'
+    case 'LEARNING':
+      return 'A reviewed result is updating the public record'
+    case 'STABLE':
+      return 'Current verified public state'
+    case 'BLOCKED':
+      return 'A gate is holding the next action'
+    case 'QUARANTINED':
+      return 'Held out of canonical public operation'
+    case 'DEGRADED':
+      return 'The public snapshot or scene is incomplete'
+    default: {
+      const exhaustive: never = state
+      return exhaustive
+    }
+  }
+}
+
 export interface AliveChapter {
   id: string
   label: string

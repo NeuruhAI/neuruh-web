@@ -1,0 +1,1428 @@
+{
+  "protocol": "NEURUH_VISITOR_WALK_AUDIT_20260825",
+  "base": "http://127.0.0.1:4311",
+  "startedAt": "2026-08-25T12:40:19.625Z",
+  "sections": {
+    "coldArrival": {
+      "loadMs": 8855,
+      "hero": {
+        "title": "Neuruh — Governed AI systems that leave receipts",
+        "h1": "AI systems that do real work — and prove it.",
+        "support": "Neuruh builds governed infrastructure and products that turn messy real-world information into evidence, decisions, authorized action, and outcomes you can verify. Nothing acts without checked authority. Everything leaves a receipt.",
+        "ctas": [
+          "Explore the systems",
+          "See the proof"
+        ],
+        "signal": "1 product in production · 4 sealed candidates · 18 live services · 36 open-source repos\nreceipts on /proof · as of 2026-08-23",
+        "domains": "REAL ESTATE · COMMERCE · LOCAL SERVICES · ASSET RECOVERY · VENTURE SYSTEMS · PROOF",
+        "nav": [
+          "Neuruh",
+          "Organism",
+          "Galaxy",
+          "Worlds",
+          "Products",
+          "Proof",
+          "Refusals",
+          "Founder",
+          "Contact"
+        ],
+        "wordmark": "Neuruh",
+        "overflowX": 0,
+        "aboveFold": {
+          "h1": true,
+          "ctas": true,
+          "signal": true
+        },
+        "claimBoundary": "Claim boundary: No private or production connector is attached."
+      },
+      "controls": {
+        "buttons": [
+          {
+            "tag": "A",
+            "text": "Explore the systems",
+            "testid": null
+          },
+          {
+            "tag": "A",
+            "text": "See the proof",
+            "testid": null
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Reset",
+            "testid": "trace-reset"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Run sandbox trace",
+            "testid": "trace-start"
+          },
+          {
+            "tag": "A",
+            "text": "See the products",
+            "testid": null
+          },
+          {
+            "tag": "A",
+            "text": "Inspect proof",
+            "testid": null
+          },
+          {
+            "tag": "A",
+            "text": "Read the refusals",
+            "testid": null
+          },
+          {
+            "tag": "A",
+            "text": "Work with Neuruh",
+            "testid": null
+          }
+        ],
+        "links": [
+          {
+            "text": "Skip to content",
+            "href": "#main"
+          },
+          {
+            "text": "Neuruh",
+            "href": "/"
+          },
+          {
+            "text": "Organism",
+            "href": "/organism"
+          },
+          {
+            "text": "Galaxy",
+            "href": "/galaxy"
+          },
+          {
+            "text": "Worlds",
+            "href": "/worlds"
+          },
+          {
+            "text": "Products",
+            "href": "/products"
+          },
+          {
+            "text": "Proof",
+            "href": "/proof"
+          },
+          {
+            "text": "Refusals",
+            "href": "/refusals"
+          },
+          {
+            "text": "Founder",
+            "href": "/founder"
+          },
+          {
+            "text": "Contact",
+            "href": "/contact"
+          },
+          {
+            "text": "Explore the systems",
+            "href": "/products"
+          },
+          {
+            "text": "See the proof",
+            "href": "/proof"
+          },
+          {
+            "text": "Open Presence →",
+            "href": "/"
+          },
+          {
+            "text": "Open The Estate →",
+            "href": "/organism#archive-refinery"
+          },
+          {
+            "text": "Open Neural Core →",
+            "href": "/organism#neural-core"
+          },
+          {
+            "text": "Open Organism →",
+            "href": "/organism"
+          },
+          {
+            "text": "Open Galaxy →",
+            "href": "/galaxy"
+          },
+          {
+            "text": "Open Adaptive Intelligence →",
+            "href": "/research/adaptive-intelligence"
+          },
+          {
+            "text": "Open World Emitter →",
+            "href": "/products"
+          },
+          {
+            "text": "Open Governed Execution →",
+            "href": "/proof#sandbox-trace"
+          },
+          {
+            "text": "Open Case Zero →",
+            "href": "/research/case-zero"
+          },
+          {
+            "text": "Open Founder →",
+            "href": "/founder"
+          },
+          {
+            "text": "See the products",
+            "href": "/products"
+          },
+          {
+            "text": "Inspect proof",
+            "href": "/proof"
+          },
+          {
+            "text": "Read the refusals",
+            "href": "/refusals"
+          },
+          {
+            "text": "Work with Neuruh",
+            "href": "/contact"
+          },
+          {
+            "text": "jeramie@neuruh.com",
+            "href": "mailto:jeramie@neuruh.com"
+          },
+          {
+            "text": "github.com/NeuruhAI",
+            "href": "https://github.com/NeuruhAI"
+          },
+          {
+            "text": "Organism",
+            "href": "/organism"
+          },
+          {
+            "text": "Galaxy",
+            "href": "/galaxy"
+          },
+          {
+            "text": "Worlds",
+            "href": "/worlds"
+          },
+          {
+            "text": "Research",
+            "href": "/research/adaptive-intelligence"
+          },
+          {
+            "text": "Products",
+            "href": "/products"
+          },
+          {
+            "text": "Founder",
+            "href": "/founder"
+          },
+          {
+            "text": "Contact",
+            "href": "/contact"
+          },
+          {
+            "text": "Legal",
+            "href": "/legal"
+          },
+          {
+            "text": "Proof",
+            "href": "/proof"
+          },
+          {
+            "text": "Refusals",
+            "href": "/refusals"
+          },
+          {
+            "text": "Open source",
+            "href": "/open-source"
+          },
+          {
+            "text": "Accessible route",
+            "href": "/accessible"
+          }
+        ],
+        "inputs": [],
+        "canvasCount": 1,
+        "chapterCount": 11,
+        "chapterIds": [
+          "presence",
+          "estate",
+          "neural-core",
+          "organism",
+          "galaxy",
+          "adaptive-intelligence",
+          "world-emitter",
+          "governed-execution",
+          "case-zero",
+          "founder",
+          "entry"
+        ],
+        "hasPlayPause": false,
+        "hasStoryReality": false,
+        "hasChapterNav": false,
+        "hiddenKeyHint": false,
+        "skipLink": true,
+        "headings": [
+          "AI systems that do real work — and prove it.",
+          "Identity and custody before automation.",
+          "Context is compiled, not dumped.",
+          "Independent worlds become one system without becoming one app.",
+          "The map must preserve disagreement.",
+          "Claims earn promotion—or remain unresolved.",
+          "Shared substrate. Distinct commercial worlds.",
+          "Authority is a boundary, not a flourish.",
+          "A hypothesis becomes useful by risking rejection.",
+          "The pieces were never the problem. Coherence was.",
+          "Inspect the evidence. Follow the relationship. Keep the boundary visible."
+        ]
+      },
+      "meta": {
+        "tier": "3",
+        "motion": "full",
+        "canvas": 1,
+        "canvasBox": {
+          "w": 1440,
+          "h": 900
+        },
+        "harness": null
+      },
+      "consoleErrors": []
+    },
+    "autoplay": {
+      "pixelsDiffer": true,
+      "hasPause": 0,
+      "autoTraceDefault": false,
+      "note": "Scene frameloop is always-on; beads/rotation imply activity without a visitor control."
+    },
+    "visibleControls": {
+      "buttons": [
+        {
+          "tag": "A",
+          "text": "Explore the systems",
+          "testid": null
+        },
+        {
+          "tag": "A",
+          "text": "See the proof",
+          "testid": null
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Reset",
+          "testid": "trace-reset"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Run sandbox trace",
+          "testid": "trace-start"
+        },
+        {
+          "tag": "A",
+          "text": "See the products",
+          "testid": null
+        },
+        {
+          "tag": "A",
+          "text": "Inspect proof",
+          "testid": null
+        },
+        {
+          "tag": "A",
+          "text": "Read the refusals",
+          "testid": null
+        },
+        {
+          "tag": "A",
+          "text": "Work with Neuruh",
+          "testid": null
+        }
+      ],
+      "hasPlayPause": false,
+      "hasStoryReality": false,
+      "hasChapterNav": false,
+      "hiddenKeyHint": false,
+      "visibleActionNames": [
+        "Explore the systems",
+        "See the proof",
+        "Reset",
+        "Run sandbox trace",
+        "See the products",
+        "Inspect proof",
+        "Read the refusals",
+        "Work with Neuruh"
+      ],
+      "keyboardMapUndiscoverable": true
+    },
+    "stages": {
+      "chapterCount": 11,
+      "chapters": [
+        {
+          "n": "1",
+          "id": "presence",
+          "state": "CONTRADICTING",
+          "renderer": "metabolism",
+          "cam": "wide",
+          "truth": "VERIFIED_SNAPSHOT",
+          "heading": "AI systems that do real work — and prove it.",
+          "visibleNow": true,
+          "file": "04-stage-01-presence"
+        },
+        {
+          "n": "2",
+          "id": "estate",
+          "state": "SENSING",
+          "renderer": "fragmented",
+          "cam": "wide",
+          "truth": "VERIFIED_SNAPSHOT",
+          "heading": "Identity and custody before automation.",
+          "visibleNow": false,
+          "file": "04-stage-02-estate"
+        },
+        {
+          "n": "3",
+          "id": "neural-core",
+          "state": "INTEGRATING",
+          "renderer": "awakening",
+          "cam": "mid",
+          "truth": "VERIFIED_SNAPSHOT",
+          "heading": "Context is compiled, not dumped.",
+          "visibleNow": false,
+          "file": "04-stage-03-neural-core"
+        },
+        {
+          "n": "4",
+          "id": "organism",
+          "state": "INTEGRATING",
+          "renderer": "vertical",
+          "cam": "vertical",
+          "truth": "VERIFIED_SNAPSHOT",
+          "heading": "Independent worlds become one system without becoming one app.",
+          "visibleNow": false,
+          "file": "04-stage-04-organism"
+        },
+        {
+          "n": "5",
+          "id": "galaxy",
+          "state": "CONTRADICTING",
+          "renderer": "metabolism",
+          "cam": "close",
+          "truth": "VERIFIED_SNAPSHOT",
+          "heading": "The map must preserve disagreement.",
+          "visibleNow": false,
+          "file": "04-stage-05-galaxy"
+        },
+        {
+          "n": "6",
+          "id": "adaptive-intelligence",
+          "state": "LEARNING",
+          "renderer": "receipt",
+          "cam": "mid",
+          "truth": "VERIFIED_SNAPSHOT",
+          "heading": "Claims earn promotion—or remain unresolved.",
+          "visibleNow": false,
+          "file": "04-stage-06-adaptive-intelligence"
+        },
+        {
+          "n": "7",
+          "id": "world-emitter",
+          "state": "GOVERNING",
+          "renderer": "vertical",
+          "cam": "vertical",
+          "truth": "VERIFIED_SNAPSHOT",
+          "heading": "Shared substrate. Distinct commercial worlds.",
+          "visibleNow": false,
+          "file": "04-stage-07-world-emitter"
+        },
+        {
+          "n": "8",
+          "id": "governed-execution",
+          "state": "GOVERNING",
+          "renderer": "gating",
+          "cam": "core",
+          "truth": "SANDBOX",
+          "heading": "Authority is a boundary, not a flourish.",
+          "visibleNow": false,
+          "file": "04-stage-08-governed-execution"
+        },
+        {
+          "n": "9",
+          "id": "case-zero",
+          "state": "QUARANTINED",
+          "renderer": "fragmented",
+          "cam": "close",
+          "truth": "CONCEPTUAL",
+          "heading": "A hypothesis becomes useful by risking rejection.",
+          "visibleNow": false,
+          "file": "04-stage-09-case-zero"
+        },
+        {
+          "n": "10",
+          "id": "founder",
+          "state": "RECEIVING",
+          "renderer": "receipt",
+          "cam": "mid",
+          "truth": "VERIFIED_SNAPSHOT",
+          "heading": "The pieces were never the problem. Coherence was.",
+          "visibleNow": false,
+          "file": "04-stage-10-founder"
+        },
+        {
+          "n": "11",
+          "id": "entry",
+          "state": "CONTRADICTING",
+          "renderer": "entry",
+          "cam": "wide",
+          "truth": "VERIFIED_SNAPSHOT",
+          "heading": "Inspect the evidence. Follow the relationship. Keep the boundary visible.",
+          "visibleNow": false,
+          "file": "04-stage-11-entry"
+        }
+      ],
+      "pinnedCount": 13,
+      "expectedVisitorStages": 13
+    },
+    "physicalityScaleCameraAnnotations": {
+      "canvasCount": 1,
+      "canvasAriaHidden": true,
+      "strataWordsInDom": true,
+      "sceneTextNodes": 0
+    },
+    "storyReality": {
+      "hasToggle": false,
+      "mentionsStory": false,
+      "mentionsReality": false,
+      "truthBadges": [
+        "VERIFIED_SNAPSHOT",
+        "VERIFIED_SNAPSHOT",
+        "VERIFIED_SNAPSHOT",
+        "VERIFIED_SNAPSHOT",
+        "VERIFIED_SNAPSHOT",
+        "VERIFIED_SNAPSHOT",
+        "VERIFIED_SNAPSHOT",
+        "VERIFIED_SNAPSHOT",
+        "VERIFIED_SNAPSHOT",
+        "VERIFIED_SNAPSHOT",
+        "VERIFIED_SNAPSHOT",
+        "VERIFIED_SNAPSHOT",
+        "VERIFIED_SNAPSHOT",
+        "VERIFIED_SNAPSHOT",
+        "SANDBOX",
+        "SANDBOX",
+        "CONCEPTUAL",
+        "CONCEPTUAL",
+        "VERIFIED_SNAPSHOT",
+        "VERIFIED_SNAPSHOT",
+        "VERIFIED_SNAPSHOT",
+        "VERIFIED_SNAPSHOT"
+      ],
+      "livingStates": [
+        "CONTRADICTING",
+        "SENSING",
+        "INTEGRATING",
+        "INTEGRATING",
+        "CONTRADICTING",
+        "LEARNING",
+        "GOVERNING",
+        "GOVERNING",
+        "QUARANTINED",
+        "RECEIVING",
+        "CONTRADICTING"
+      ]
+    },
+    "actionReceipt": {
+      "s6On": "true",
+      "receiptClass": "trace__step is-on is-receipt",
+      "claim": "A sandbox receipt records the refusal",
+      "provenance": "SANDBOX · receipt.recorded · outcome: NOT_EXECUTED",
+      "canvasStillPresent": 1
+    },
+    "abuse": {
+      "stillAlive": true,
+      "chapterCount": 11,
+      "pageErrors": []
+    },
+    "webglRecovery": {
+      "before": {
+        "tier": "3",
+        "motion": "full",
+        "canvas": 1,
+        "canvasBox": {
+          "w": 1440,
+          "h": 900
+        },
+        "harness": null
+      },
+      "lost": {
+        "ok": true
+      },
+      "after": {
+        "tier": "0",
+        "motion": "full",
+        "canvas": 0,
+        "canvasBox": null,
+        "harness": null
+      },
+      "copyIntact": true,
+      "tier0": 1
+    },
+    "threeLoops": {
+      "loops": [
+        {
+          "loop": 1,
+          "endHeading": "Inspect the evidence. Follow the relationship. Keep the boundary visible.",
+          "ok": true
+        },
+        {
+          "loop": 2,
+          "endHeading": "Inspect the evidence. Follow the relationship. Keep the boundary visible.",
+          "ok": true
+        },
+        {
+          "loop": 3,
+          "endHeading": "Inspect the evidence. Follow the relationship. Keep the boundary visible.",
+          "ok": true
+        }
+      ]
+    },
+    "viewports": {
+      "vpResults": [
+        {
+          "vpName": "desktop-1440",
+          "name": "home",
+          "overflow": 0,
+          "h1": "AI systems that do real work — and prove it."
+        },
+        {
+          "vpName": "desktop-1440",
+          "name": "products",
+          "overflow": 0,
+          "h1": "One product in production. Four sealed candidates. One factory."
+        },
+        {
+          "vpName": "desktop-1440",
+          "name": "proof",
+          "overflow": 0,
+          "h1": "Evidence first. Certification only where earned."
+        },
+        {
+          "vpName": "desktop-1440",
+          "name": "galaxy",
+          "overflow": 0,
+          "h1": "The portfolio can show what it knows—and what it cannot prove."
+        },
+        {
+          "vpName": "desktop-1440",
+          "name": "accessible",
+          "overflow": 0,
+          "h1": "AI systems that do real work — and prove it."
+        },
+        {
+          "vpName": "tablet-1024",
+          "name": "home",
+          "overflow": 0,
+          "h1": "AI systems that do real work — and prove it."
+        },
+        {
+          "vpName": "tablet-1024",
+          "name": "products",
+          "overflow": 0,
+          "h1": "One product in production. Four sealed candidates. One factory."
+        },
+        {
+          "vpName": "tablet-1024",
+          "name": "proof",
+          "overflow": 0,
+          "h1": "Evidence first. Certification only where earned."
+        },
+        {
+          "vpName": "tablet-1024",
+          "name": "galaxy",
+          "overflow": 0,
+          "h1": "The portfolio can show what it knows—and what it cannot prove."
+        },
+        {
+          "vpName": "tablet-1024",
+          "name": "accessible",
+          "overflow": 0,
+          "h1": "AI systems that do real work — and prove it."
+        },
+        {
+          "vpName": "mobile-390",
+          "name": "home",
+          "overflow": 0,
+          "h1": "AI systems that do real work — and prove it."
+        },
+        {
+          "vpName": "mobile-390",
+          "name": "products",
+          "overflow": 0,
+          "h1": "One product in production. Four sealed candidates. One factory."
+        },
+        {
+          "vpName": "mobile-390",
+          "name": "proof",
+          "overflow": 0,
+          "h1": "Evidence first. Certification only where earned."
+        },
+        {
+          "vpName": "mobile-390",
+          "name": "galaxy",
+          "overflow": 0,
+          "h1": "The portfolio can show what it knows—and what it cannot prove."
+        },
+        {
+          "vpName": "mobile-390",
+          "name": "accessible",
+          "overflow": 0,
+          "h1": "AI systems that do real work — and prove it."
+        }
+      ],
+      "mobileHero": {
+        "navHeight": 84.46875,
+        "h1Top": 198.75,
+        "h1CoveredByNav": false,
+        "ctas": [
+          {
+            "text": "Explore the systems",
+            "top": 472.0625,
+            "bottom": 512.0625,
+            "inFold": true
+          },
+          {
+            "text": "See the proof",
+            "top": 472.0625,
+            "bottom": 512.0625,
+            "inFold": true
+          }
+        ],
+        "overflowX": 0
+      }
+    },
+    "a11y": {
+      "reduced": {
+        "motion": "reduced",
+        "chapters": 11,
+        "h1": "AI systems that do real work — and prove it."
+      },
+      "accessibleCanvas": 0,
+      "noWebglCanvas": 0,
+      "skipFocused": true,
+      "axeViolations": [],
+      "contrastViolations": []
+    },
+    "comprehension": {
+      "whatIsNeuruh": "AI systems that do real work — and prove it.",
+      "howItWorks": "NEURUH — GOVERNED AI SYSTEMS",
+      "whatCanIDo": [
+        "Explore the systems",
+        "See the proof"
+      ],
+      "isItLive": true,
+      "productsH1": "One product in production. Four sealed candidates. One factory.",
+      "proofH1": "Evidence first. Certification only where earned.",
+      "foldCopy": [
+        {
+          "tag": "P",
+          "text": "NEURUH — GOVERNED AI SYSTEMS"
+        },
+        {
+          "tag": "H1",
+          "text": "AI systems that do real work — and prove it."
+        },
+        {
+          "tag": "P",
+          "text": "Neuruh builds governed infrastructure and products that turn messy real-world information into evidence, decisions, authorized action, and outcomes you can verify. Nothing acts without checked authority. Everything leaves a receipt."
+        },
+        {
+          "tag": "A",
+          "text": "Explore the systems"
+        },
+        {
+          "tag": "A",
+          "text": "See the proof"
+        },
+        {
+          "tag": "P",
+          "text": "1 product in production · 4 sealed candidates · 18 live services · 36 open-source repos\nreceipts on /proof · as of 2026-08-23"
+        },
+        {
+          "tag": "P",
+          "text": "REAL ESTATE · COMMERCE · LOCAL SERVICES · ASSET RECOVERY · VENTURE SYSTEMS · PROOF"
+        },
+        {
+          "tag": "P",
+          "text": "Claim boundary: No private or production connector is attached."
+        },
+        {
+          "tag": "P",
+          "text": "Living state — CONTRADICTING · deterministic scene binding — metabolism"
+        }
+      ]
+    }
+  },
+  "finishedAt": "2026-08-25T12:43:17.178Z",
+  "findings": [
+    {
+      "severity": "P1",
+      "id": "AUTO-01",
+      "title": "Scene autoplays with no visible play/pause control",
+      "evidence": {
+        "pixelsDiffer": true,
+        "hasPause": 0
+      }
+    },
+    {
+      "severity": "P1",
+      "id": "CTRL-01",
+      "title": "No visible next/previous/stage control; chapter advance is scroll or hidden keys only",
+      "evidence": {
+        "buttons": [
+          {
+            "tag": "A",
+            "text": "Explore the systems",
+            "testid": null
+          },
+          {
+            "tag": "A",
+            "text": "See the proof",
+            "testid": null
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Reset",
+            "testid": "trace-reset"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Run sandbox trace",
+            "testid": "trace-start"
+          },
+          {
+            "tag": "A",
+            "text": "See the products",
+            "testid": null
+          },
+          {
+            "tag": "A",
+            "text": "Inspect proof",
+            "testid": null
+          },
+          {
+            "tag": "A",
+            "text": "Read the refusals",
+            "testid": null
+          },
+          {
+            "tag": "A",
+            "text": "Work with Neuruh",
+            "testid": null
+          }
+        ],
+        "links": [
+          {
+            "text": "Skip to content",
+            "href": "#main"
+          },
+          {
+            "text": "Neuruh",
+            "href": "/"
+          },
+          {
+            "text": "Organism",
+            "href": "/organism"
+          },
+          {
+            "text": "Galaxy",
+            "href": "/galaxy"
+          },
+          {
+            "text": "Worlds",
+            "href": "/worlds"
+          },
+          {
+            "text": "Products",
+            "href": "/products"
+          },
+          {
+            "text": "Proof",
+            "href": "/proof"
+          },
+          {
+            "text": "Refusals",
+            "href": "/refusals"
+          },
+          {
+            "text": "Founder",
+            "href": "/founder"
+          },
+          {
+            "text": "Contact",
+            "href": "/contact"
+          },
+          {
+            "text": "Explore the systems",
+            "href": "/products"
+          },
+          {
+            "text": "See the proof",
+            "href": "/proof"
+          },
+          {
+            "text": "Open Presence →",
+            "href": "/"
+          },
+          {
+            "text": "Open The Estate →",
+            "href": "/organism#archive-refinery"
+          },
+          {
+            "text": "Open Neural Core →",
+            "href": "/organism#neural-core"
+          },
+          {
+            "text": "Open Organism →",
+            "href": "/organism"
+          },
+          {
+            "text": "Open Galaxy →",
+            "href": "/galaxy"
+          },
+          {
+            "text": "Open Adaptive Intelligence →",
+            "href": "/research/adaptive-intelligence"
+          },
+          {
+            "text": "Open World Emitter →",
+            "href": "/products"
+          },
+          {
+            "text": "Open Governed Execution →",
+            "href": "/proof#sandbox-trace"
+          },
+          {
+            "text": "Open Case Zero →",
+            "href": "/research/case-zero"
+          },
+          {
+            "text": "Open Founder →",
+            "href": "/founder"
+          },
+          {
+            "text": "See the products",
+            "href": "/products"
+          },
+          {
+            "text": "Inspect proof",
+            "href": "/proof"
+          },
+          {
+            "text": "Read the refusals",
+            "href": "/refusals"
+          },
+          {
+            "text": "Work with Neuruh",
+            "href": "/contact"
+          },
+          {
+            "text": "jeramie@neuruh.com",
+            "href": "mailto:jeramie@neuruh.com"
+          },
+          {
+            "text": "github.com/NeuruhAI",
+            "href": "https://github.com/NeuruhAI"
+          },
+          {
+            "text": "Organism",
+            "href": "/organism"
+          },
+          {
+            "text": "Galaxy",
+            "href": "/galaxy"
+          },
+          {
+            "text": "Worlds",
+            "href": "/worlds"
+          },
+          {
+            "text": "Research",
+            "href": "/research/adaptive-intelligence"
+          },
+          {
+            "text": "Products",
+            "href": "/products"
+          },
+          {
+            "text": "Founder",
+            "href": "/founder"
+          },
+          {
+            "text": "Contact",
+            "href": "/contact"
+          },
+          {
+            "text": "Legal",
+            "href": "/legal"
+          },
+          {
+            "text": "Proof",
+            "href": "/proof"
+          },
+          {
+            "text": "Refusals",
+            "href": "/refusals"
+          },
+          {
+            "text": "Open source",
+            "href": "/open-source"
+          },
+          {
+            "text": "Accessible route",
+            "href": "/accessible"
+          }
+        ],
+        "inputs": [],
+        "canvasCount": 1,
+        "chapterCount": 11,
+        "chapterIds": [
+          "presence",
+          "estate",
+          "neural-core",
+          "organism",
+          "galaxy",
+          "adaptive-intelligence",
+          "world-emitter",
+          "governed-execution",
+          "case-zero",
+          "founder",
+          "entry"
+        ],
+        "hasPlayPause": false,
+        "hasStoryReality": false,
+        "hasChapterNav": false,
+        "hiddenKeyHint": false,
+        "skipLink": true,
+        "headings": [
+          "AI systems that do real work — and prove it.",
+          "Identity and custody before automation.",
+          "Context is compiled, not dumped.",
+          "Independent worlds become one system without becoming one app.",
+          "The map must preserve disagreement.",
+          "Claims earn promotion—or remain unresolved.",
+          "Shared substrate. Distinct commercial worlds.",
+          "Authority is a boundary, not a flourish.",
+          "A hypothesis becomes useful by risking rejection.",
+          "The pieces were never the problem. Coherence was.",
+          "Inspect the evidence. Follow the relationship. Keep the boundary visible."
+        ]
+      }
+    },
+    {
+      "severity": "P1",
+      "id": "CTRL-02",
+      "title": "No visible Story/Reality control",
+      "evidence": {
+        "hasStoryReality": false
+      }
+    },
+    {
+      "severity": "P1",
+      "id": "STAGE-01",
+      "title": "Visitor can reach 11 narrative stages, not 13",
+      "evidence": {
+        "count": 11,
+        "ids": [
+          "presence",
+          "estate",
+          "neural-core",
+          "organism",
+          "galaxy",
+          "adaptive-intelligence",
+          "world-emitter",
+          "governed-execution",
+          "case-zero",
+          "founder",
+          "entry"
+        ]
+      }
+    },
+    {
+      "severity": "P1",
+      "id": "SR-01",
+      "title": "No Story/Reality mode control exists for a first-time visitor",
+      "evidence": {
+        "hasToggle": false,
+        "mentionsStory": false,
+        "mentionsReality": false,
+        "truthBadges": [
+          "VERIFIED_SNAPSHOT",
+          "VERIFIED_SNAPSHOT",
+          "VERIFIED_SNAPSHOT",
+          "VERIFIED_SNAPSHOT",
+          "VERIFIED_SNAPSHOT",
+          "VERIFIED_SNAPSHOT",
+          "VERIFIED_SNAPSHOT",
+          "VERIFIED_SNAPSHOT",
+          "VERIFIED_SNAPSHOT",
+          "VERIFIED_SNAPSHOT",
+          "VERIFIED_SNAPSHOT",
+          "VERIFIED_SNAPSHOT",
+          "VERIFIED_SNAPSHOT",
+          "VERIFIED_SNAPSHOT",
+          "SANDBOX",
+          "SANDBOX",
+          "CONCEPTUAL",
+          "CONCEPTUAL",
+          "VERIFIED_SNAPSHOT",
+          "VERIFIED_SNAPSHOT",
+          "VERIFIED_SNAPSHOT",
+          "VERIFIED_SNAPSHOT"
+        ],
+        "livingStates": [
+          "CONTRADICTING",
+          "SENSING",
+          "INTEGRATING",
+          "INTEGRATING",
+          "CONTRADICTING",
+          "LEARNING",
+          "GOVERNING",
+          "GOVERNING",
+          "QUARANTINED",
+          "RECEIVING",
+          "CONTRADICTING"
+        ]
+      }
+    }
+  ],
+  "p0": [],
+  "p1": [
+    {
+      "severity": "P1",
+      "id": "AUTO-01",
+      "title": "Scene autoplays with no visible play/pause control",
+      "evidence": {
+        "pixelsDiffer": true,
+        "hasPause": 0
+      }
+    },
+    {
+      "severity": "P1",
+      "id": "CTRL-01",
+      "title": "No visible next/previous/stage control; chapter advance is scroll or hidden keys only",
+      "evidence": {
+        "buttons": [
+          {
+            "tag": "A",
+            "text": "Explore the systems",
+            "testid": null
+          },
+          {
+            "tag": "A",
+            "text": "See the proof",
+            "testid": null
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Reset",
+            "testid": "trace-reset"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Run sandbox trace",
+            "testid": "trace-start"
+          },
+          {
+            "tag": "A",
+            "text": "See the products",
+            "testid": null
+          },
+          {
+            "tag": "A",
+            "text": "Inspect proof",
+            "testid": null
+          },
+          {
+            "tag": "A",
+            "text": "Read the refusals",
+            "testid": null
+          },
+          {
+            "tag": "A",
+            "text": "Work with Neuruh",
+            "testid": null
+          }
+        ],
+        "links": [
+          {
+            "text": "Skip to content",
+            "href": "#main"
+          },
+          {
+            "text": "Neuruh",
+            "href": "/"
+          },
+          {
+            "text": "Organism",
+            "href": "/organism"
+          },
+          {
+            "text": "Galaxy",
+            "href": "/galaxy"
+          },
+          {
+            "text": "Worlds",
+            "href": "/worlds"
+          },
+          {
+            "text": "Products",
+            "href": "/products"
+          },
+          {
+            "text": "Proof",
+            "href": "/proof"
+          },
+          {
+            "text": "Refusals",
+            "href": "/refusals"
+          },
+          {
+            "text": "Founder",
+            "href": "/founder"
+          },
+          {
+            "text": "Contact",
+            "href": "/contact"
+          },
+          {
+            "text": "Explore the systems",
+            "href": "/products"
+          },
+          {
+            "text": "See the proof",
+            "href": "/proof"
+          },
+          {
+            "text": "Open Presence →",
+            "href": "/"
+          },
+          {
+            "text": "Open The Estate →",
+            "href": "/organism#archive-refinery"
+          },
+          {
+            "text": "Open Neural Core →",
+            "href": "/organism#neural-core"
+          },
+          {
+            "text": "Open Organism →",
+            "href": "/organism"
+          },
+          {
+            "text": "Open Galaxy →",
+            "href": "/galaxy"
+          },
+          {
+            "text": "Open Adaptive Intelligence →",
+            "href": "/research/adaptive-intelligence"
+          },
+          {
+            "text": "Open World Emitter →",
+            "href": "/products"
+          },
+          {
+            "text": "Open Governed Execution →",
+            "href": "/proof#sandbox-trace"
+          },
+          {
+            "text": "Open Case Zero →",
+            "href": "/research/case-zero"
+          },
+          {
+            "text": "Open Founder →",
+            "href": "/founder"
+          },
+          {
+            "text": "See the products",
+            "href": "/products"
+          },
+          {
+            "text": "Inspect proof",
+            "href": "/proof"
+          },
+          {
+            "text": "Read the refusals",
+            "href": "/refusals"
+          },
+          {
+            "text": "Work with Neuruh",
+            "href": "/contact"
+          },
+          {
+            "text": "jeramie@neuruh.com",
+            "href": "mailto:jeramie@neuruh.com"
+          },
+          {
+            "text": "github.com/NeuruhAI",
+            "href": "https://github.com/NeuruhAI"
+          },
+          {
+            "text": "Organism",
+            "href": "/organism"
+          },
+          {
+            "text": "Galaxy",
+            "href": "/galaxy"
+          },
+          {
+            "text": "Worlds",
+            "href": "/worlds"
+          },
+          {
+            "text": "Research",
+            "href": "/research/adaptive-intelligence"
+          },
+          {
+            "text": "Products",
+            "href": "/products"
+          },
+          {
+            "text": "Founder",
+            "href": "/founder"
+          },
+          {
+            "text": "Contact",
+            "href": "/contact"
+          },
+          {
+            "text": "Legal",
+            "href": "/legal"
+          },
+          {
+            "text": "Proof",
+            "href": "/proof"
+          },
+          {
+            "text": "Refusals",
+            "href": "/refusals"
+          },
+          {
+            "text": "Open source",
+            "href": "/open-source"
+          },
+          {
+            "text": "Accessible route",
+            "href": "/accessible"
+          }
+        ],
+        "inputs": [],
+        "canvasCount": 1,
+        "chapterCount": 11,
+        "chapterIds": [
+          "presence",
+          "estate",
+          "neural-core",
+          "organism",
+          "galaxy",
+          "adaptive-intelligence",
+          "world-emitter",
+          "governed-execution",
+          "case-zero",
+          "founder",
+          "entry"
+        ],
+        "hasPlayPause": false,
+        "hasStoryReality": false,
+        "hasChapterNav": false,
+        "hiddenKeyHint": false,
+        "skipLink": true,
+        "headings": [
+          "AI systems that do real work — and prove it.",
+          "Identity and custody before automation.",
+          "Context is compiled, not dumped.",
+          "Independent worlds become one system without becoming one app.",
+          "The map must preserve disagreement.",
+          "Claims earn promotion—or remain unresolved.",
+          "Shared substrate. Distinct commercial worlds.",
+          "Authority is a boundary, not a flourish.",
+          "A hypothesis becomes useful by risking rejection.",
+          "The pieces were never the problem. Coherence was.",
+          "Inspect the evidence. Follow the relationship. Keep the boundary visible."
+        ]
+      }
+    },
+    {
+      "severity": "P1",
+      "id": "CTRL-02",
+      "title": "No visible Story/Reality control",
+      "evidence": {
+        "hasStoryReality": false
+      }
+    },
+    {
+      "severity": "P1",
+      "id": "STAGE-01",
+      "title": "Visitor can reach 11 narrative stages, not 13",
+      "evidence": {
+        "count": 11,
+        "ids": [
+          "presence",
+          "estate",
+          "neural-core",
+          "organism",
+          "galaxy",
+          "adaptive-intelligence",
+          "world-emitter",
+          "governed-execution",
+          "case-zero",
+          "founder",
+          "entry"
+        ]
+      }
+    },
+    {
+      "severity": "P1",
+      "id": "SR-01",
+      "title": "No Story/Reality mode control exists for a first-time visitor",
+      "evidence": {
+        "hasToggle": false,
+        "mentionsStory": false,
+        "mentionsReality": false,
+        "truthBadges": [
+          "VERIFIED_SNAPSHOT",
+          "VERIFIED_SNAPSHOT",
+          "VERIFIED_SNAPSHOT",
+          "VERIFIED_SNAPSHOT",
+          "VERIFIED_SNAPSHOT",
+          "VERIFIED_SNAPSHOT",
+          "VERIFIED_SNAPSHOT",
+          "VERIFIED_SNAPSHOT",
+          "VERIFIED_SNAPSHOT",
+          "VERIFIED_SNAPSHOT",
+          "VERIFIED_SNAPSHOT",
+          "VERIFIED_SNAPSHOT",
+          "VERIFIED_SNAPSHOT",
+          "VERIFIED_SNAPSHOT",
+          "SANDBOX",
+          "SANDBOX",
+          "CONCEPTUAL",
+          "CONCEPTUAL",
+          "VERIFIED_SNAPSHOT",
+          "VERIFIED_SNAPSHOT",
+          "VERIFIED_SNAPSHOT",
+          "VERIFIED_SNAPSHOT"
+        ],
+        "livingStates": [
+          "CONTRADICTING",
+          "SENSING",
+          "INTEGRATING",
+          "INTEGRATING",
+          "CONTRADICTING",
+          "LEARNING",
+          "GOVERNING",
+          "GOVERNING",
+          "QUARANTINED",
+          "RECEIVING",
+          "CONTRADICTING"
+        ]
+      }
+    }
+  ]
+}

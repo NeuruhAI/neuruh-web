@@ -18,6 +18,9 @@ export default function ResetSceneEntry({
   state,
   camera,
   seed,
+  paused = false,
+  traceProgress = 0,
+  traceComplete = false,
   capability,
   onFailure,
   onMembraneReport,
@@ -26,6 +29,7 @@ export default function ResetSceneEntry({
   state: SceneStateName
   camera: CameraName
   seed: number
+  paused?: boolean
   traceProgress?: number
   traceComplete?: boolean
   capability: Capability
@@ -42,6 +46,9 @@ export default function ResetSceneEntry({
           state={state}
           camera={camera}
           seed={seed}
+          paused={paused}
+          traceProgress={traceProgress}
+          traceComplete={traceComplete}
           onMembraneReport={onMembraneReport}
         />
       )}

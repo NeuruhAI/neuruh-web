@@ -3,8 +3,10 @@
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { ALIVE_CHAPTERS, ALIVE_TRACE_STEPS } from '../../../packages/public-truth/experience'
+import { ALIVE_CHAPTERS, livingStatePlain } from '../../../packages/public-truth/experience'
 import type { LivingState, TruthMode } from '../../../packages/public-truth/types'
+import { SandboxTrace } from './SandboxTrace'
+import { TwinControls, type ReadingMode } from './TwinControls'
 import { TruthModeBadge } from './TruthPrimitives'
 import type { MembraneReport } from '@/components/scene/Membranes'
 import { SceneBoundary } from '@/components/dom/SceneBoundary'
@@ -16,6 +18,8 @@ import { useTrace } from '@/lib/useTrace'
 import { getHarness } from '@/lib/metrics'
 
 const Spike1Scene = dynamic(() => import('@/components/scene/ResetSceneEntry'), { ssr: false })
+
+const STRATA_LEGEND = ['Signal', 'Evidence', 'Decision', 'Authority', 'Receipt'] as const
 
 export interface TruthSummary {
   truthMode: TruthMode
@@ -38,6 +42,8 @@ export function NeuruhExperience({
   const [capability, setCapability] = useState<Capability | null>(null)
   const [membrane, setMembrane] = useState<MembraneReport | null>(null)
   const [chapter, setChapter] = useState(1)
+  const [paused, setPaused] = useState(false)
+  const [readingMode, setReadingMode] = useState<ReadingMode>('story')
   const config = useMemo(() => readSpike1Config(), [])
   const seed = readSeed()
 
@@ -46,10 +52,16 @@ export function NeuruhExperience({
   const camera: CameraName = config.pinnedCamera ?? bound.camera
   const reduced = capability?.motion === 'reduced'
   const trace = useTrace(reduced, config.autoTrace)
+  const canPause = (capability?.tier ?? 0) > 0 && !reduced
 
   const onCapability = useCallback((next: Capability) => setCapability(next), [])
   const onMembraneReport = useCallback((report: MembraneReport) => setMembrane(report), [])
   const chapterRefs = useRef<Array<HTMLElement | null>>([])
+
+  const goToChapter = useCallback((next: number) => {
+    const clamped = Math.min(ALIVE_CHAPTERS.length, Math.max(1, next))
+    document.getElementById(`ch${clamped}`)?.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' })
+  }, [reduced])
 
   useEffect(() => {
     if (config.pinnedState) return
@@ -71,21 +83,24 @@ export function NeuruhExperience({
       if (event.key === 't' || event.key === 'T') {
         const traceChapter = ALIVE_CHAPTERS.findIndex((item) => item.feature === 'trace') + 1
         setChapter(traceChapter)
-        document.getElementById(`ch${traceChapter}`)?.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' })
+        goToChapter(traceChapter)
         trace.start()
       } else if (event.key === 'r' || event.key === 'R') {
         trace.reset()
       } else if (event.key === 'ArrowDown') {
-        const next = Math.min(ALIVE_CHAPTERS.length, chapter + 1)
-        document.getElementById(`ch${next}`)?.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' })
+        goToChapter(chapter + 1)
       } else if (event.key === 'ArrowUp') {
-        const previous = Math.max(1, chapter - 1)
-        document.getElementById(`ch${previous}`)?.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' })
+        goToChapter(chapter - 1)
       }
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [chapter, reduced, trace])
+  }, [chapter, goToChapter, trace])
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-scene-paused', paused ? 'true' : 'false')
+    document.documentElement.setAttribute('data-reading-mode', readingMode)
+  }, [paused, readingMode])
 
   useEffect(() => {
     if (!capability) return
@@ -103,8 +118,10 @@ export function NeuruhExperience({
       truthMode: truth.truthMode,
       camera,
       seed,
+      paused,
+      readingMode,
     }
-  }, [bound.semanticState, camera, capability, config, membrane, seed, state, truth.livingState, truth.truthMode])
+  }, [bound.semanticState, camera, capability, config, membrane, paused, readingMode, seed, state, truth.livingState, truth.truthMode])
 
   const setRef = (index: number) => (element: HTMLElement | null) => {
     chapterRefs.current[index] = element
@@ -124,6 +141,7 @@ export function NeuruhExperience({
             state={state}
             camera={camera}
             seed={seed}
+            paused={paused}
             traceProgress={trace.progress}
             traceComplete={trace.complete}
             capability={cap}
@@ -134,7 +152,7 @@ export function NeuruhExperience({
         )}
       </SceneBoundary>
 
-      <main className="dom" id="main" data-public-living-state={truth.livingState}>
+      <main className="dom" id="main" data-public-living-state={truth.livingState} data-reading-mode={readingMode}>
         <div className="container container--editorial">
           {ALIVE_CHAPTERS.map((item, index) => (
             <section
@@ -172,13 +190,22 @@ export function NeuruhExperience({
                   </>
                 )}
                 <p className="claim-boundary"><strong>Claim boundary:</strong> {item.claimBoundary}</p>
-                <p className="verb">Living state — {item.semanticState} · deterministic scene binding — {item.rendererState}</p>
+                <p className="verb">{livingStatePlain(item.semanticState)}</p>
+
+                {readingMode === 'reality' && (
+                  <aside className="strata-legend" aria-label="Proof strata">
+                    <p className="n-label">Proof strata</p>
+                    <ol>
+                      {STRATA_LEGEND.map((name) => <li key={name}>{name}</li>)}
+                    </ol>
+                  </aside>
+                )}
 
                 {item.feature === 'truth' && (
                   <aside className="truth-panel" aria-label="Current public truth snapshot">
                     <dl>
                       <dt>Truth mode</dt><dd>{truth.truthMode}</dd>
-                      <dt>Current living state</dt><dd>{truth.livingState}</dd>
+                      <dt>Current living state</dt><dd>{livingStatePlain(truth.livingState)}</dd>
                       <dt>Live connectivity</dt><dd>NONE</dd>
                       <dt>Last verified</dt><dd><time dateTime={truth.lastVerifiedAt}>{truth.lastVerifiedAt}</time></dd>
                       <dt>Source</dt><dd>{truth.sourceRef}</dd>
@@ -197,28 +224,7 @@ export function NeuruhExperience({
                 )}
 
                 {item.feature === 'trace' && (
-                  <div className="trace" data-testid="trace">
-                    <div className="trace__head">
-                      <div><p className="n-label">SANDBOX decision / receipt trace</p><p>No external write occurs.</p></div>
-                      <button className="n-btn n-btn--ghost t-ui-sm" onClick={trace.reset} data-testid="trace-reset">Reset</button>
-                    </div>
-                    <div className="row">
-                      <button className="n-btn n-btn--primary t-ui-sm" onClick={trace.start} data-testid="trace-start">Run sandbox trace</button>
-                    </div>
-                    <div className="trace__steps">
-                      {ALIVE_TRACE_STEPS.map((step, stepIndex) => (
-                        <div
-                          key={step.id}
-                          className={`trace__step${trace.step > stepIndex ? ' is-on' : ''}${stepIndex === ALIVE_TRACE_STEPS.length - 1 && trace.complete ? ' is-receipt' : ''}`}
-                          data-testid={`trace-step-${step.id}`}
-                          data-on={trace.step > stepIndex ? 'true' : 'false'}
-                        >
-                          <span className="trace__s">{step.id}</span>
-                          <div><p className="trace__claim">{step.claim}</p><p className="trace__prov">{step.provenance}</p></div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                  <SandboxTrace step={trace.step} complete={trace.complete} onStart={trace.start} onReset={trace.reset} />
                 )}
 
                 {item.feature === 'entry' && (
@@ -236,6 +242,18 @@ export function NeuruhExperience({
           ))}
         </div>
       </main>
+
+      <TwinControls
+        chapter={chapter}
+        chapterCount={ALIVE_CHAPTERS.length}
+        paused={paused || reduced}
+        canPause={canPause}
+        readingMode={readingMode}
+        onPauseToggle={() => setPaused((value) => !value)}
+        onPrev={() => goToChapter(chapter - 1)}
+        onNext={() => goToChapter(chapter + 1)}
+        onReadingMode={setReadingMode}
+      />
     </>
   )
 }
