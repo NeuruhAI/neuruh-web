@@ -1,0 +1,5 @@
+Contact: https://neuruh.com/security
+Policy: https://neuruh.com/security
+Preferred-Languages: en
+Canonical: https://neuruh.com/.well-known/security.txt
+Expires: 2027-09-02T00:00:00.000Z

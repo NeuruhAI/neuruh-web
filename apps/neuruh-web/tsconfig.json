@@ -1,5 +1,5 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": { "baseUrl": "../.." },
-  "include": ["next-env.d.ts", "app/**/*.ts", "app/**/*.tsx", "components/**/*.ts", "components/**/*.tsx", "../../packages/**/*.ts", "../../packages/**/*.tsx", ".next/types/**/*.ts"]
+  "include": ["next-env.d.ts", "app/**/*.ts", "app/**/*.tsx", "components/**/*.ts", "components/**/*.tsx", "lib/**/*.ts", "../../packages/**/*.ts", "../../packages/**/*.tsx", ".next/types/**/*.ts"]
 }

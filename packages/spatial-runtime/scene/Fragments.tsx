@@ -39,12 +39,14 @@ export function Fragments({
       transparent: true,
       opacity: 0,
     })
+    // Founder visual acceptance 2026-08-24: tighter orbit and lower band so
+    // debris reads as material shed by the organism, not random scatter.
     const p = Array.from({ length: count }, () => {
       const a = rand() * Math.PI * 2
-      const r = 2.9 + rand() * 2.2
+      const r = 2.3 + rand() * 1.3
       return {
         x: Math.cos(a) * r,
-        y: 0.3 + rand() * 2.4,
+        y: 0.15 + rand() * 1.5,
         z: Math.sin(a) * r,
         rx: rand() * Math.PI,
         ry: rand() * Math.PI,
@@ -70,7 +72,9 @@ export function Fragments({
   }, [placements])
 
   useEffect(() => {
-    material.opacity = presence
+    // Half weight per fragment (2026-08-24): presence still drives the state
+    // machine's intent; the individual shards stay quiet at hero distance.
+    material.opacity = presence * 0.55
   }, [material, presence])
 
   useFrame((state) => {

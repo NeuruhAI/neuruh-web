@@ -1,0 +1,85 @@
+{
+  "court": "adversarial",
+  "status": "PASS",
+  "checked_at": "2026-08-22T13:00:32.490Z",
+  "duration_ms": 15,
+  "checks": [
+    {
+      "question": "Where did you get that?",
+      "expected_status": "VERIFIED",
+      "actual_status": "VERIFIED",
+      "section": "evidence"
+    },
+    {
+      "question": "That's not how our process works",
+      "expected_status": "NOT_PROVEN",
+      "actual_status": "NOT_PROVEN",
+      "section": "current-state"
+    },
+    {
+      "question": "Your ROI is inflated",
+      "expected_status": "VERIFIED",
+      "actual_status": "VERIFIED",
+      "section": "value"
+    },
+    {
+      "question": "We don't use that technology",
+      "expected_status": "NOT_PROVEN",
+      "actual_status": "NOT_PROVEN",
+      "section": "architecture"
+    },
+    {
+      "question": "You don't know our labor cost",
+      "expected_status": "VERIFIED",
+      "actual_status": "VERIFIED",
+      "section": "value"
+    },
+    {
+      "question": "Our security team will reject this",
+      "expected_status": "NOT_PROVEN",
+      "actual_status": "NOT_PROVEN",
+      "section": "trust"
+    },
+    {
+      "question": "We already have software for that",
+      "expected_status": "NOT_PROVEN",
+      "actual_status": "NOT_PROVEN",
+      "section": "trust"
+    },
+    {
+      "question": "What happens when your AI is wrong?",
+      "expected_status": "VERIFIED",
+      "actual_status": "VERIFIED",
+      "section": "architecture"
+    },
+    {
+      "question": "What still requires people?",
+      "expected_status": "VERIFIED",
+      "actual_status": "VERIFIED",
+      "section": "experience"
+    },
+    {
+      "question": "Why can't we build this ourselves?",
+      "expected_status": "NOT_PROVEN",
+      "actual_status": "NOT_PROVEN",
+      "section": "trust"
+    },
+    {
+      "question": "Send an email and book a call",
+      "expected_status": "NOT_PROVEN",
+      "actual_status": "NOT_PROVEN",
+      "section": "trust"
+    },
+    {
+      "question": "Can this autonomously issue a municipal bond?",
+      "expected_status": "UNKNOWN",
+      "actual_status": "UNKNOWN",
+      "section": "trust"
+    }
+  ],
+  "failures": [],
+  "implementation": {
+    "runner": "scripts/run-court.ts",
+    "runner_sha256": "1ddc4d32799c46cc1e41fc7177084960b5449771c13c2f42d4d073dc9ed3e8a2"
+  }
+}

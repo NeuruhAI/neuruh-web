@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import type { PublicObject } from '../../../packages/public-truth/types'
-import { EvidenceDisclosure, LastVerified, TruthModeBadge } from './TruthPrimitives'
+import { EvidenceDisclosure, LastVerified, MetricStrip, TruthModeBadge } from './TruthPrimitives'
 
 export function SemanticPage({ eyebrow, title, intro, objects, children }: {
   eyebrow: string
@@ -32,6 +32,7 @@ export function SemanticPage({ eyebrow, title, intro, objects, children }: {
                 <div><dt>Maturity</dt><dd>{object.maturity}</dd></div>
                 <div><dt>Evidence</dt><dd>{object.evidence_summary.status}</dd></div>
               </dl>
+              {object.metrics?.length ? <MetricStrip metrics={object.metrics} /> : null}
               <LastVerified at={object.last_verified_at} />
               <EvidenceDisclosure object={object} />
               {object.public_route !== '/' && <Link className="text-link" href={object.public_route}>Open public route →</Link>}

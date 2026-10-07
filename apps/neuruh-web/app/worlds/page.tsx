@@ -1,6 +1,13 @@
 import Link from 'next/link'
 import { getPublicObjects } from '../../../../packages/public-truth/client'
 import { EvidenceDisclosure, TruthModeBadge } from '../../components/TruthPrimitives'
+import { pageMeta } from '../../lib/publicSeo'
+
+export const metadata = pageMeta({
+  path: '/worlds',
+  title: 'Worlds',
+  description: 'Bounded commercial worlds on one evidence and governance law: DeedSonar, Find Sell Profit, Bookeit, CurbClaim, ProofOS, DATUM, and more.',
+})
 
 export default function WorldsPage() {
   const worlds = getPublicObjects('world')

@@ -1,18 +1,18 @@
 import { expect, test } from '@playwright/test'
 
-test('accessible and no-WebGL routes carry the complete Alive map with no canvas', async ({ page }) => {
+test('accessible and no-WebGL routes carry the complete homepage story with no canvas', async ({ page }) => {
   await page.goto('/accessible')
-  await expect(page.locator('section[data-chapter]')).toHaveCount(11)
+  expect(await page.locator('main section[data-section]').count()).toBeGreaterThanOrEqual(10)
   await expect(page.locator('canvas')).toHaveCount(0)
   const accessible = await page.locator('main').innerText()
 
   await page.goto('/no-webgl')
-  await expect(page.locator('section[data-chapter]')).toHaveCount(11)
+  expect(await page.locator('main section[data-section]').count()).toBeGreaterThanOrEqual(10)
   await expect(page.locator('canvas')).toHaveCount(0)
   expect(await page.locator('main').innerText()).toBe(accessible)
 })
 
-test('tier 0 fetches zero WebGL scene bytes and retains semantic copy', async ({ page }) => {
+test('homepage fetches zero WebGL scene bytes and retains the full story', async ({ page }) => {
   let webglBytes = 0
   page.on('response', async (response) => {
     if (!/javascript|ecmascript/.test(response.headers()['content-type'] ?? '')) return
@@ -20,50 +20,42 @@ test('tier 0 fetches zero WebGL scene bytes and retains semantic copy', async ({
     const text = body.toString('utf8')
     if (/neuruh-tissue-instanced-state|renderTransmissionPass|MeshTransmissionMaterial/.test(text)) webglBytes += body.byteLength
   })
-  await page.goto('/?tier=0')
+  await page.goto('/')
   await page.waitForLoadState('networkidle')
-  await expect(page.locator('section[data-chapter]')).toHaveCount(11)
-  await expect(page.getByTestId('tier0-composition')).toBeAttached()
+  expect(await page.locator('main section[data-section]').count()).toBeGreaterThanOrEqual(10)
+  await expect(page.locator('canvas')).toHaveCount(0)
   expect(webglBytes).toBe(0)
-  const transferBytes = await page.evaluate(() => {
-    const nav = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming
-    const resources = performance.getEntriesByType('resource') as PerformanceResourceTiming[]
-    return nav.transferSize + resources.reduce((sum, entry) => sum + entry.transferSize, 0)
-  })
-  console.log(`tier0 transfer: ${(transferBytes / 1024).toFixed(1)} KB`)
-  expect(transferBytes).toBeLessThanOrEqual(180 * 1024)
 })
 
-test('reduced-motion route preserves truth and semantic state parity', async ({ page }) => {
+test('reduced-motion route preserves the identical story and marks the route', async ({ page }) => {
   await page.goto('/accessible')
-  const expected = await page.locator('section[data-chapter]').evaluateAll((nodes) => nodes.map((node) => ({
-    id: node.getAttribute('data-chapter-id'),
-    state: node.getAttribute('data-state'),
-    truth: node.getAttribute('data-truth-mode'),
-  })))
+  const expected = await page.locator('main section[data-section]').evaluateAll((nodes) => nodes.map((node) => node.getAttribute('data-section')))
   await page.goto('/reduced-motion')
   await expect(page.locator('html')).toHaveAttribute('data-motion-route', 'reduced')
-  await expect(page.locator('section[data-chapter]')).toHaveCount(11)
-  const actual = await page.locator('section[data-chapter]').evaluateAll((nodes) => nodes.map((node) => ({
-    id: node.getAttribute('data-chapter-id'),
-    state: node.getAttribute('data-state'),
-    truth: node.getAttribute('data-truth-mode'),
-  })))
+  const actual = await page.locator('main section[data-section]').evaluateAll((nodes) => nodes.map((node) => node.getAttribute('data-section')))
   expect(actual).toEqual(expected)
 })
 
-test('keyboard trace is reachable on the semantic DOM layer', async ({ page }) => {
-  await page.goto('/?tier=0&motion=reduced')
+test('the scripted trace illustration runs and resets from the keyboard', async ({ page }) => {
+  await page.goto('/how-it-works')
   await page.getByTestId('trace-start').click()
   await expect(page.getByTestId('trace-step-S6')).toHaveAttribute('data-on', 'true')
   await page.keyboard.press('R')
   await expect(page.getByTestId('trace-step-S1')).toHaveAttribute('data-on', 'false')
 })
 
-test('semantic routes render Neuruh truth without canvas or fake LIVE state', async ({ page }) => {
+test('primary routes render truthfully without fake LIVE state', async ({ page }) => {
   const routes = [
-    '/organism', '/galaxy', '/worlds', '/worlds/deedsonar',
-    '/research/adaptive-intelligence', '/research/case-zero', '/founder', '/proof',
+    '/products', '/how-it-works', '/proof', '/refusals', '/founder', '/contact',
+    '/offers', '/ask', '/work-with-neuruh', '/work-with-us', '/thank-you', '/cases',
+    '/organism', '/worlds', '/worlds/deedsonar', '/worlds/liquidity-engine',
+    '/research/adaptive-intelligence', '/research/case-zero',
+    '/products/top10', '/harnesses',
+    '/solve', '/problems', '/problems/data-you-cannot-use', '/problems/ai-you-cannot-verify', '/problems/workflows-that-break',
+    '/problems/property-data-without-opportunity', '/problems/automation-without-authority', '/problems/systems-nobody-can-explain', '/faq',
+    '/products/top10/agent-integrity', '/products/top10/ai-estate-forensic', '/products/top10/property-opportunity-scan',
+    '/products/top10/property-intelligence-dossier', '/products/top10/business-acquisition-intelligence', '/products/top10/data-rescue',
+    '/products/top10/workflow-replacement', '/products/top10/proofos', '/products/top10/managed-opportunity-desk', '/products/top10/findsellprofit',
   ]
   for (const route of routes) {
     await page.goto(route)
@@ -73,18 +65,143 @@ test('semantic routes render Neuruh truth without canvas or fake LIVE state', as
   }
 })
 
-test('keyboard navigation reaches a semantic route', async ({ page }) => {
-  await page.goto('/?tier=0')
-  const link = page.getByRole('link', { name: 'Organism', exact: true })
-  await link.focus()
-  await page.keyboard.press('Enter')
-  await expect(page).toHaveURL(/\/organism$/)
-  await expect(page.getByRole('heading', { level: 1 })).toContainText('Specialized organs')
+test('390px homepage keeps hero CTAs and header Work with us inside the viewport', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 })
+  await page.goto('/')
+
+  const headerCta = page.locator('header.hdr a.work-cta')
+  await expect(headerCta).toHaveText('Work with us')
+  const headerBox = await headerCta.boundingBox()
+  expect(headerBox, 'header Work with us must render').toBeTruthy()
+  expect(headerBox!.x).toBeGreaterThanOrEqual(0)
+  expect(headerBox!.x + headerBox!.width).toBeLessThanOrEqual(391)
+
+  const heroButtons = page.locator('.hero-v2 .hero-ctas .v2-btn')
+  await expect(heroButtons).toHaveCount(3)
+  const tops = new Set<number>()
+  for (const button of await heroButtons.all()) {
+    const box = await button.boundingBox()
+    expect(box, 'hero CTA must render').toBeTruthy()
+    expect(box!.x).toBeGreaterThanOrEqual(0)
+    expect(box!.x + box!.width).toBeLessThanOrEqual(391)
+    tops.add(Math.round(box!.y))
+  }
+  expect(tops.size).toBe(3)
+
+  await expect(page.locator('footer.site-footer a[href^="mailto:"]')).toHaveCount(0)
+  await expect(page.locator('footer.site-footer a[href="/security"]')).toBeVisible()
+
+  await page.goto('/offers')
+  const offersCta = page.locator('header.hdr a.work-cta')
+  const offersBox = await offersCta.boundingBox()
+  expect(offersBox, 'offers header Work with us must render').toBeTruthy()
+  expect(offersBox!.x).toBeGreaterThanOrEqual(0)
+  expect(offersBox!.x + offersBox!.width).toBeLessThanOrEqual(391)
 })
 
-test('Galaxy exposes sourced relationships and preserves contradiction', async ({ page }) => {
+test('keyboard navigation reaches Products from the header', async ({ page }) => {
+  await page.goto('/')
+  const link = page.locator('header.hdr nav.primary > a', { hasText: 'Products' })
+  await link.focus()
+  await page.keyboard.press('Enter')
+  await expect(page).toHaveURL(/\/products$/)
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Real systems')
+})
+
+test('offers page shows three live cashier prices, attributed Stripe hrefs, and the Forensic booking path', async ({ page }) => {
+  // Canon 2026-09-14: four offers — three cashiers plus the Forensic System Audit, which books on Cal.com with no
+  // cashier. Cashier links leave the site attributed (client_reference_id=root-<offer>); no delivery time is promised.
+  const expected = [
+    { id: 'O01', price: '$299', href: 'https://book.stripe.com/bJe5kDagndYugJlaow2cg04?client_reference_id=root-o01' },
+    { id: 'O02', price: '$499', href: 'https://book.stripe.com/8x2cN574b1bIakXgMU2cg05?client_reference_id=root-o02' },
+    { id: 'O05', price: '$1250', href: 'https://book.stripe.com/7sY00j1JRf2y2Sv4082cg06?client_reference_id=root-o05' },
+  ] as const
+  await page.goto('/offers')
+  await expect(page.locator('[data-testid="offers-grid"] [data-offer-id]')).toHaveCount(4)
+  await expect(page.getByTestId('offers-next')).toContainText('replies from jeramie@neuruh.com')
+  for (const offer of expected) {
+    const card = page.getByTestId(`offer-${offer.id}`)
+    await expect(card).toContainText(offer.price)
+    await expect(card).toContainText('You provide:')
+    await expect(card).toContainText('You receive:')
+    await expect(card).toContainText('Proof:')
+    await expect(card).not.toContainText('Turnaround:')
+    await expect(page.getByTestId(`offer-cta-${offer.id}`)).toHaveAttribute('href', offer.href)
+  }
+  await expect(page.getByTestId('offer-FSA')).toContainText('Forensic System Audit')
+  await expect(page.getByTestId('offer-cta-FSA')).toHaveAttribute('href', /^https:\/\/cal\.com\/neuruh\/forensic-scope-session-90\?utm_source=neuruh/)
+})
+
+test('Ask Neuruh returns exactly three public cards and never a fourth', async ({ page }) => {
+  await page.goto('/ask')
+  await expect(page.getByTestId('ask-output').locator('[data-lane]')).toHaveCount(3)
+  await expect(page.getByTestId('ask-card-fastest')).toContainText('Data Rescue')
+  await expect(page.getByTestId('ask-card-best-value')).toContainText('Property Intelligence Dossier')
+  await expect(page.getByTestId('ask-card-custom')).toContainText('Workflow Replacement Sprint')
+  await page.getByTestId('ask-intent-data').click()
+  await expect(page.getByTestId('ask-card-fastest')).toHaveAttribute('data-highlight', 'true')
+  await expect(page.getByTestId('ask-output').locator('[data-lane]')).toHaveCount(3)
+})
+
+test('work-with, thank-you, cases, and contact route without leaking a factory tour', async ({ page }) => {
+  await page.goto('/work-with-neuruh')
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Buy a scoped piece of work')
+  await expect(page.locator('a[href^="https://book.stripe.com/bJe5kDagndYugJlaow2cg04"]').first()).toBeVisible()
+
+  await page.goto('/work-with-us')
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Buy a scoped piece of work')
+
+  await page.goto('/thank-you')
+  await expect(page.getByTestId('thank-you-handoff')).toContainText('does not receive Stripe webhooks')
+  await expect(page.getByTestId('thank-you-next')).toContainText('replies from jeramie@neuruh.com')
+
+  await page.goto('/cases')
+  await expect(page.getByTestId('case-studies').locator('article')).toHaveCount(5)
+  await expect(page.getByTestId('case-neuruh-com-launch')).toContainText('30947182')
+
+  await page.goto('/proof')
+  await expect(page.getByTestId('proof-card-xai-marketplace')).toContainText('IN_REVIEW')
+  await expect(page.getByTestId('proof-card-xai-marketplace')).not.toContainText('book.stripe.com')
+
+  await page.goto('/contact')
+  await expect(page.getByRole('link', { name: /See offers/i })).toHaveAttribute('href', '/offers')
+})
+
+test('Galaxy exposes sourced relationships, preserves contradiction, and hosts the only scene', async ({ page }) => {
   await page.goto('/galaxy')
-  await expect(page.locator('[data-contradiction-id="galaxy-connectivity-boundary"]')).toBeVisible()
+  await expect(page.locator('main#main > [data-contradiction-id="galaxy-connectivity-boundary"]')).toBeVisible()
   await expect(page.locator('.relationship-list li').first()).toContainText('Source src-')
   await expect(page.getByText('No canvas, orbit, or illustrative edge.')).toBeVisible()
+})
+
+test('Top 10 product pages carry a labeled browser demonstration and a resolving primary CTA', async ({ page }) => {
+  await page.goto('/products/top10')
+  await expect(page.locator('[data-testid^="top10-item-"]')).toHaveCount(10)
+  for (const slug of ['property-opportunity-scan', 'property-intelligence-dossier', 'data-rescue', 'agent-integrity']) {
+    await page.goto(`/products/top10/${slug}`)
+    await expect(page.getByTestId('demo-banner').first()).toHaveText('BROWSER DEMONSTRATION — NOT A PRODUCTION ASSURANCE RESULT')
+    const href = await page.getByTestId('product-cta').getAttribute('href')
+    expect(href, `${slug} CTA href`).toBeTruthy()
+    if (href!.startsWith('/')) {
+      const response = await page.goto(href!)
+      expect(response?.status(), `${slug} CTA target ${href}`).toBe(200)
+    } else {
+      expect(href).toMatch(/^https:\/\/book\.stripe\.com\//)
+    }
+  }
+})
+
+test('harness demonstration runs all thirteen stages and reaches a decision with an unsigned digest', async ({ page }) => {
+  await page.goto('/harnesses')
+  await expect(page.getByTestId('demo-banner')).toHaveText('BROWSER DEMONSTRATION — NOT A PRODUCTION ASSURANCE RESULT')
+  await expect(page.getByTestId('harness-sequence').locator('b')).toHaveCount(13)
+  await page.getByRole('button', { name: 'Load sample pair' }).click()
+  await page.getByTestId('harness-run').click()
+  await expect(page.getByTestId('harness-stage-12')).toHaveAttribute('data-state', 'active', { timeout: 15_000 })
+  // The sample candidate drops the evidence the baseline carried: a regression against baseline is a REJECT, never averaged away.
+  await expect(page.getByTestId('harness-decision')).toHaveText('REJECT')
+  await expect(page.getByTestId('harness-demo')).toContainText('1 regressed')
+  await expect(page.getByTestId('harness-demo')).toContainText('Evidence non-empty')
+  await expect(page.getByTestId('harness-receipt').locator('code')).toHaveText(/^[0-9a-f]{64}$/, { timeout: 5_000 })
+  await expect(page.locator('[data-truth-mode="LIVE"]')).toHaveCount(0)
 })

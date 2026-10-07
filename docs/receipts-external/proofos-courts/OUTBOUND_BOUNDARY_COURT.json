@@ -1,0 +1,31 @@
+{
+  "court": "outbound-boundary",
+  "status": "PASS",
+  "checked_at": "2026-08-22T13:00:32.784Z",
+  "duration_ms": 6,
+  "checks": [
+    {
+      "boundary": "NO_OUTBOUND_OR_PRODUCTION_WRITE_SURFACE"
+    },
+    {
+      "exact_write_root": "/Users/jeramiehicks/neuruh-workspaces/neuruh-proof-os-20260821",
+      "source_files_scanned": 36,
+      "static_violations": 0
+    },
+    {
+      "compiled_accounts": 3,
+      "outbound_authorized": false,
+      "production_write_authorized": false
+    },
+    {
+      "aegis_handoff": "DISABLED_NO_OUTBOUND",
+      "executed": false,
+      "outbound_sent": false
+    }
+  ],
+  "failures": [],
+  "implementation": {
+    "runner": "scripts/run-court.ts",
+    "runner_sha256": "1ddc4d32799c46cc1e41fc7177084960b5449771c13c2f42d4d073dc9ed3e8a2"
+  }
+}

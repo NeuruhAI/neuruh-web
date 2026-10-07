@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "license": "UNLICENSED",
-  "engines": { "node": ">=20.9.0" },
+  "engines": {
+    "node": ">=20.9.0"
+  },
   "scripts": {
     "dev": "next dev apps/neuruh-web -p 4311",
     "build": "next build apps/neuruh-web",
@@ -13,13 +15,19 @@
     "test:smoke": "playwright test apps/neuruh-web/tests/production.smoke.spec.ts",
     "test:artifacts": "node --test tests/artifacts/*.test.mjs",
     "test:canary": "node --test tests/budget-canary.test.mjs",
-    "compile:truth": "node packages/public-truth/src/cli.mjs --as-of=2026-08-01T22:00:00.000Z",
+    "compile:truth": "node packages/public-truth/src/cli.mjs --as-of=2026-09-16T12:45:00.000Z",
     "verify:truth": "node scripts/verify-public-truth.mjs",
     "verify:provenance": "node scripts/verify-provenance.mjs",
     "verify:boundaries": "node scripts/verify-boundaries.mjs",
-    "verify": "npm run verify:truth && npm run typecheck && npm test && npm run verify:provenance && npm run verify:boundaries && npm run build && npm run test:artifacts",
+    "verify:private-ip": "node scripts/verify-private-ip.mjs",
+    "verify:dead-links": "node scripts/verify-dead-links.mjs",
+    "verify:checkout-links": "node scripts/verify-checkout-links.mjs",
+    "verify": "npm run verify:truth && npm run verify:truth-served && npm run typecheck && npm test && npm run verify:provenance && npm run verify:boundaries && npm run verify:private-ip && npm run verify:checkout-links && npm run build && npm run verify:private-ip && npm run verify:dead-links && npm run verify:checkout-links && npm run test:artifacts",
     "bench:spike1": "bash packages/testing/run-resumable.sh",
-    "aggregate:spike1": "node packages/testing/aggregate.mjs"
+    "aggregate:spike1": "node packages/testing/aggregate.mjs",
+    "prebuild": "node scripts/sync-truth-public.mjs",
+    "verify:truth-served": "node scripts/sync-truth-public.mjs --check",
+    "verify:cashier-prices": "node scripts/verify-cashier-prices.mjs"
   },
   "dependencies": {
     "@react-three/drei": "10.7.7",
@@ -30,6 +38,7 @@
     "three": "0.185.1"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
     "@gltf-transform/cli": "4.4.2",
     "@gltf-transform/core": "4.4.2",
     "@gltf-transform/extensions": "4.4.2",

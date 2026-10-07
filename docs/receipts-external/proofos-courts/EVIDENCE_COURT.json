@@ -1,0 +1,36 @@
+{
+  "court": "evidence",
+  "status": "PASS",
+  "checked_at": "2026-08-22T13:00:30.820Z",
+  "duration_ms": 2,
+  "checks": [
+    {
+      "account_id": "forestar",
+      "evidence_records": 5,
+      "account_truth_invariants": "PASS",
+      "transformation_facts_checked": 1
+    },
+    {
+      "account_id": "first-american",
+      "evidence_records": 5,
+      "account_truth_invariants": "PASS",
+      "transformation_facts_checked": 2
+    },
+    {
+      "account_id": "invitation-homes",
+      "evidence_records": 6,
+      "account_truth_invariants": "PASS",
+      "transformation_facts_checked": 2
+    },
+    {
+      "claims_without_source": 0,
+      "unresolved_evidence_refs": 0,
+      "transformation_facts_checked": 5
+    }
+  ],
+  "failures": [],
+  "implementation": {
+    "runner": "scripts/run-court.ts",
+    "runner_sha256": "1ddc4d32799c46cc1e41fc7177084960b5449771c13c2f42d4d073dc9ed3e8a2"
+  }
+}

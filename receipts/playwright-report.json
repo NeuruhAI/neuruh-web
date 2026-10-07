@@ -2,12 +2,12 @@
   "config": {
     "argv": [
       "/opt/homebrew/Cellar/node/26.5.0/bin/node",
-      "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-web/node_modules/.bin/playwright",
+      "/Users/jeramiehicks/Neuruh/Neuruh Builds Canotical/Neuruh/NeuruhAI/neuruh-web/node_modules/.bin/playwright",
       "test",
       "apps/neuruh-web/tests/production.smoke.spec.ts"
     ],
-    "configFile": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-web/playwright.config.ts",
-    "rootDir": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-web/apps/neuruh-web/tests",
+    "configFile": "/Users/jeramiehicks/Neuruh/Neuruh Builds Canotical/Neuruh/NeuruhAI/neuruh-web/playwright.config.ts",
+    "rootDir": "/Users/jeramiehicks/Neuruh/Neuruh Builds Canotical/Neuruh/NeuruhAI/neuruh-web/apps/neuruh-web/tests",
     "failOnFlakyTests": false,
     "forbidOnly": false,
     "fullyParallel": false,
@@ -23,7 +23,7 @@
     "preserveOutput": "always",
     "projects": [
       {
-        "outputDir": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-web/test-results",
+        "outputDir": "/Users/jeramiehicks/Neuruh/Neuruh Builds Canotical/Neuruh/NeuruhAI/neuruh-web/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
@@ -31,7 +31,7 @@
         },
         "id": "",
         "name": "",
-        "testDir": "/Users/jeramiehicks/neuruh-repos/NeuruhAI/neuruh-web/apps/neuruh-web/tests",
+        "testDir": "/Users/jeramiehicks/Neuruh/Neuruh Builds Canotical/Neuruh/NeuruhAI/neuruh-web/apps/neuruh-web/tests",
         "testIgnore": [],
         "testMatch": [
           "production.smoke.spec.ts"
@@ -77,7 +77,7 @@
       "line": 0,
       "specs": [
         {
-          "title": "accessible and no-WebGL routes carry all eight chapters with no canvas",
+          "title": "accessible and no-WebGL routes carry the complete homepage story with no canvas",
           "ok": true,
           "tags": [],
           "tests": [
@@ -92,12 +92,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1434,
+                  "duration": 334,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-08-01T22:44:29.098Z",
+                  "startTime": "2026-09-14T18:05:32.108Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -105,13 +105,13 @@
               "status": "expected"
             }
           ],
-          "id": "0d367ca54919ce748ffe-b80c7e2ebcb55e9d4441",
+          "id": "0d367ca54919ce748ffe-566bbe177f6ce83da33b",
           "file": "production.smoke.spec.ts",
           "line": 3,
           "column": 5
         },
         {
-          "title": "tier 0 fetches zero WebGL scene bytes and retains semantic copy",
+          "title": "homepage fetches zero WebGL scene bytes and retains the full story",
           "ok": true,
           "tags": [],
           "tests": [
@@ -126,16 +126,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 927,
+                  "duration": 687,
                   "errors": [],
-                  "stdout": [
-                    {
-                      "text": "tier0 transfer: 167.3 KB\n"
-                    }
-                  ],
+                  "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-08-01T22:44:34.129Z",
+                  "startTime": "2026-09-14T18:05:32.594Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -143,13 +139,13 @@
               "status": "expected"
             }
           ],
-          "id": "0d367ca54919ce748ffe-13ec21255d632151314b",
+          "id": "0d367ca54919ce748ffe-6b12c62df5c172de5c8d",
           "file": "production.smoke.spec.ts",
           "line": 15,
           "column": 5
         },
         {
-          "title": "reduced-motion route selects reduced route and preserves eight states",
+          "title": "reduced-motion route preserves the identical story and marks the route",
           "ok": true,
           "tags": [],
           "tests": [
@@ -164,12 +160,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 404,
+                  "duration": 192,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-08-01T22:44:35.077Z",
+                  "startTime": "2026-09-14T18:05:33.290Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -177,13 +173,13 @@
               "status": "expected"
             }
           ],
-          "id": "0d367ca54919ce748ffe-838a80ba3074ebdecb15",
+          "id": "0d367ca54919ce748ffe-cce6c0754370670f4544",
           "file": "production.smoke.spec.ts",
-          "line": 37,
+          "line": 30,
           "column": 5
         },
         {
-          "title": "keyboard trace is reachable on the semantic DOM layer",
+          "title": "the governed trace runs and resets from the keyboard",
           "ok": true,
           "tags": [],
           "tests": [
@@ -198,12 +194,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1734,
+                  "duration": 4035,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-08-01T22:44:35.495Z",
+                  "startTime": "2026-09-14T18:05:33.488Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -211,9 +207,315 @@
               "status": "expected"
             }
           ],
-          "id": "0d367ca54919ce748ffe-8c8968bd88182ae3d891",
+          "id": "0d367ca54919ce748ffe-a7d48ab576235fe446e0",
           "file": "production.smoke.spec.ts",
-          "line": 45,
+          "line": 39,
+          "column": 5
+        },
+        {
+          "title": "primary routes render truthfully without fake LIVE state",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1461,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-14T18:05:37.529Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0d367ca54919ce748ffe-fe23d10fc8e0311395cb",
+          "file": "production.smoke.spec.ts",
+          "line": 47,
+          "column": 5
+        },
+        {
+          "title": "390px homepage keeps hero CTAs and header Work with us inside the viewport",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 202,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-14T18:05:38.996Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0d367ca54919ce748ffe-71af97b884404c69a78a",
+          "file": "production.smoke.spec.ts",
+          "line": 66,
+          "column": 5
+        },
+        {
+          "title": "keyboard navigation reaches Products from the header",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 174,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-14T18:05:39.204Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0d367ca54919ce748ffe-acc42fe50a97722706dd",
+          "file": "production.smoke.spec.ts",
+          "line": 100,
+          "column": 5
+        },
+        {
+          "title": "offers page shows three live cashier prices and exact Stripe hrefs",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 131,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-14T18:05:39.384Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0d367ca54919ce748ffe-ccc2830f842c16093f88",
+          "file": "production.smoke.spec.ts",
+          "line": 109,
+          "column": 5
+        },
+        {
+          "title": "Ask Neuruh returns exactly three public cards and never a fourth",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 163,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-14T18:05:39.520Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0d367ca54919ce748ffe-384f3e73ea33b3b7bd4a",
+          "file": "production.smoke.spec.ts",
+          "line": 129,
+          "column": 5
+        },
+        {
+          "title": "work-with, thank-you, cases, and contact route without leaking a factory tour",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 293,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-14T18:05:39.692Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0d367ca54919ce748ffe-b8ffbc17935e61c1a412",
+          "file": "production.smoke.spec.ts",
+          "line": 140,
+          "column": 5
+        },
+        {
+          "title": "Galaxy exposes sourced relationships, preserves contradiction, and hosts the only scene",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 150,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-14T18:05:39.992Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0d367ca54919ce748ffe-7300dd5242a535621b85",
+          "file": "production.smoke.spec.ts",
+          "line": 164,
+          "column": 5
+        },
+        {
+          "title": "Top 10 product pages carry a labeled browser demonstration and a resolving primary CTA",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 325,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-14T18:05:40.148Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0d367ca54919ce748ffe-bddf8a903487ad2fb216",
+          "file": "production.smoke.spec.ts",
+          "line": 171,
+          "column": 5
+        },
+        {
+          "title": "harness demonstration runs all thirteen stages and reaches a decision with an unsigned digest",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3013,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-14T18:05:40.477Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0d367ca54919ce748ffe-2ffabf6d5df6fa528879",
+          "file": "production.smoke.spec.ts",
+          "line": 188,
           "column": 5
         }
       ]
@@ -221,9 +523,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-08-01T22:44:28.163Z",
-    "duration": 9186.518,
-    "expected": 4,
+    "startTime": "2026-09-14T18:05:31.845Z",
+    "duration": 11691.655,
+    "expected": 13,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

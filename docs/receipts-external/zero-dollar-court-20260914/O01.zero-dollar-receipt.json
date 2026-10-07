@@ -1,0 +1,693 @@
+{
+  "designation": "TEST / SANDBOX — NOT A REAL CUSTOMER — NO MONEY CHARGED",
+  "offer": {
+    "id": "O01",
+    "name": "Data Rescue",
+    "public_price_usd": 299,
+    "cashier": "https://book.stripe.com/bJe5kDagndYugJlaow2cg04",
+    "cashier_touched": false,
+    "top10_slug": "data-rescue"
+  },
+  "test_id": "zdc-20260914172646-85baa8",
+  "timestamp": "2026-09-14T17:26:47.593Z",
+  "executed_against": "http://127.0.0.1:3017 (data-rescue app, STRIPE_MODE=fixture, MISSION_AUTHORITY=LOCAL, isolated DATA_RESCUE_DATA_DIR, FR_API_URL dead port)",
+  "input_provenance": [
+    {
+      "path": "data-rescue/fixtures/happy.csv",
+      "sha256": "542f91cbcf8c7c4267ef8a1e024acdf7ba5255fc9b414b6efc7fc79ac6435616",
+      "bytes": 199,
+      "synthetic": true
+    }
+  ],
+  "stages": {
+    "intake": {
+      "status": "PASS",
+      "intake_id": "in_6cbb3045ce883ecf",
+      "path": "POST /api/intake",
+      "email_domain": "example.com"
+    },
+    "checkout": {
+      "status": "PASS",
+      "path": "POST /api/checkout",
+      "order_id": "ord_5cac73d94a2f13d6",
+      "commercial_state": "PAYMENT_PENDING",
+      "pricing_total_cents": 29900,
+      "checkout_url": "http://127.0.0.1:3017/order/ord_5cac73d94a2f13d6?checkout=cs_test_fixture_ec14f04415ee9e95",
+      "note": "fixture mode: no Stripe session is created; the public $299 cashier on neuruh.com is untouched"
+    },
+    "payment_event": {
+      "status": "PASS",
+      "event_id": "evt_zdc-20260914172646-85baa8",
+      "type": "checkout.session.completed",
+      "event_sha256": "dedddfa03a3ceacd1044f7d5af59532cb075631961affdabd1725632643c80d2",
+      "amount_total_cents": 29900,
+      "real_charge": false,
+      "source": "synthesized fixture event, HMAC-signed with the fixture webhook secret"
+    },
+    "webhook": {
+      "status": "PASS",
+      "path": "POST /api/webhooks/stripe",
+      "signature_verified": true,
+      "bad_signature_rejected": true,
+      "replay_duplicate": true,
+      "mission_request_state": null
+    },
+    "order_job": {
+      "status": "PASS",
+      "order_id": "ord_5cac73d94a2f13d6",
+      "payment_state": "succeeded",
+      "commercial_state": "DELIVERED",
+      "mission_authority": "LOCAL (in-process regression path; no Founder Runtime write)",
+      "customer_isolation": true
+    },
+    "fulfillment": {
+      "status": "PASS",
+      "fulfillment_state": "DELIVERED",
+      "recipe": "o01-parse-normalize-v1",
+      "executed": "in-process by the data-rescue app on the fixture upload",
+      "deliverables": null
+    },
+    "delivery": {
+      "status": "PASS",
+      "path": "GET /api/delivery/<token>",
+      "artifacts": [
+        {
+          "name": "MASTER_NORMALIZED.csv",
+          "sha256": "c09622f1739bde504a13f2e50f5b4feb01509bd811214337673e62a373691ae1",
+          "bytes": 751,
+          "http": 200
+        },
+        {
+          "name": "EXCEPTIONS.csv",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0,
+          "http": 200
+        },
+        {
+          "name": "DUPLICATE_GROUPS.csv",
+          "sha256": "d6adc29001eec307871c921d24e97f0c97bd7ade6746958357155f095c7d5e1b",
+          "bytes": 102,
+          "http": 200
+        },
+        {
+          "name": "FIELD_DICTIONARY.md",
+          "sha256": "811e079fb414fbf55bc371a60657415f7942ea9ddc14c6e51105cf300481ed3e",
+          "bytes": 312,
+          "http": 200
+        },
+        {
+          "name": "SOURCE_MANIFEST.csv",
+          "sha256": "9956c515d5a99465d3cbf750d9e74f2d9d89bb87c82f007402b3dad28416b883",
+          "bytes": 134,
+          "http": 200
+        },
+        {
+          "name": "TRANSFORMATION_LOG.json",
+          "sha256": "1e31ec1199b31cc9d01b26a0c32fcdd8a1a64c5877d101c969f3b238fa0b4d65",
+          "bytes": 187,
+          "http": 200
+        },
+        {
+          "name": "PHONES.csv",
+          "sha256": "b48c6cddded46688df43072aab2444baa05c60e85f3f82e0c51bcbadacad2a51",
+          "bytes": 165,
+          "http": 200
+        },
+        {
+          "name": "RECEIPT.json",
+          "sha256": "353c480fbf6510a3ce05b2ee6ca374684108352c3461e9e71eed5b7794e8f6e9",
+          "bytes": 2300,
+          "http": 200
+        }
+      ],
+      "token_present": true,
+      "channel": "tokenized delivery surface (fixture); production delivery is founder email"
+    },
+    "receipt": {
+      "status": "PASS",
+      "receipt_id": "rcpt_3d03851440f9e59e",
+      "input_digest": "e679042262da7ff98d46b73c93e55e2e5c2bbfcd88bea35fd0dde69341674aa1",
+      "deliverable_digests": {
+        "MASTER_NORMALIZED.csv": "c09622f1739bde504a13f2e50f5b4feb01509bd811214337673e62a373691ae1",
+        "EXCEPTIONS.csv": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "DUPLICATE_GROUPS.csv": "d6adc29001eec307871c921d24e97f0c97bd7ade6746958357155f095c7d5e1b",
+        "FIELD_DICTIONARY.md": "811e079fb414fbf55bc371a60657415f7942ea9ddc14c6e51105cf300481ed3e",
+        "SOURCE_MANIFEST.csv": "9956c515d5a99465d3cbf750d9e74f2d9d89bb87c82f007402b3dad28416b883",
+        "TRANSFORMATION_LOG.json": "1e31ec1199b31cc9d01b26a0c32fcdd8a1a64c5877d101c969f3b238fa0b4d65",
+        "PHONES.csv": "b48c6cddded46688df43072aab2444baa05c60e85f3f82e0c51bcbadacad2a51",
+        "RECEIPT.json": "353c480fbf6510a3ce05b2ee6ca374684108352c3461e9e71eed5b7794e8f6e9"
+      },
+      "facts": 5,
+      "unknowns": 1,
+      "qa": {
+        "input_rows": 3,
+        "output_survivors": 2,
+        "explicit_duplicate_collapses": 1,
+        "explicit_rejects": 0,
+        "balanced": true,
+        "identity_conflicts": 0,
+        "null_rate_before": 0,
+        "null_rate_after": 0
+      },
+      "completed_at": "2026-09-14T17:26:47.475Z"
+    }
+  },
+  "execution_status": "PASS",
+  "delivery_artifact": [
+    {
+      "name": "MASTER_NORMALIZED.csv",
+      "sha256": "c09622f1739bde504a13f2e50f5b4feb01509bd811214337673e62a373691ae1",
+      "bytes": 751,
+      "http": 200
+    },
+    {
+      "name": "EXCEPTIONS.csv",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "http": 200
+    },
+    {
+      "name": "DUPLICATE_GROUPS.csv",
+      "sha256": "d6adc29001eec307871c921d24e97f0c97bd7ade6746958357155f095c7d5e1b",
+      "bytes": 102,
+      "http": 200
+    },
+    {
+      "name": "FIELD_DICTIONARY.md",
+      "sha256": "811e079fb414fbf55bc371a60657415f7942ea9ddc14c6e51105cf300481ed3e",
+      "bytes": 312,
+      "http": 200
+    },
+    {
+      "name": "SOURCE_MANIFEST.csv",
+      "sha256": "9956c515d5a99465d3cbf750d9e74f2d9d89bb87c82f007402b3dad28416b883",
+      "bytes": 134,
+      "http": 200
+    },
+    {
+      "name": "TRANSFORMATION_LOG.json",
+      "sha256": "1e31ec1199b31cc9d01b26a0c32fcdd8a1a64c5877d101c969f3b238fa0b4d65",
+      "bytes": 187,
+      "http": 200
+    },
+    {
+      "name": "PHONES.csv",
+      "sha256": "b48c6cddded46688df43072aab2444baa05c60e85f3f82e0c51bcbadacad2a51",
+      "bytes": 165,
+      "http": 200
+    },
+    {
+      "name": "RECEIPT.json",
+      "sha256": "353c480fbf6510a3ce05b2ee6ca374684108352c3461e9e71eed5b7794e8f6e9",
+      "bytes": 2300,
+      "http": 200
+    }
+  ],
+  "product_receipt": {
+    "receipt_id": "rcpt_3d03851440f9e59e",
+    "order_id": "ord_5cac73d94a2f13d6",
+    "offer_id": "O01",
+    "offer_version": "1",
+    "input_digest": "e679042262da7ff98d46b73c93e55e2e5c2bbfcd88bea35fd0dde69341674aa1",
+    "source_manifest": [
+      {
+        "file_id": "file_6925b9251257e236",
+        "name": "happy.csv",
+        "sha256": "542f91cbcf8c7c4267ef8a1e024acdf7ba5255fc9b414b6efc7fc79ac6435616",
+        "bytes": "199"
+      }
+    ],
+    "execution_manifest": {
+      "recipe": "o01-parse-normalize-v1",
+      "complexity": {
+        "hashing": "O(n bytes)",
+        "parsing": "O(n rows)",
+        "exact_key_dedup": "O(n)",
+        "fuzzy_all_pairs": "prohibited"
+      }
+    },
+    "recipe_versions": {
+      "o01-parse-normalize-v1": "1"
+    },
+    "model_tool_versions": {
+      "runtime": "node",
+      "llm": "none"
+    },
+    "facts": [
+      "input_rows=3",
+      "survivors=2",
+      "duplicate_collapses=1",
+      "identity_conflicts=0",
+      "balanced=true"
+    ],
+    "heuristics": [
+      "Identity uses exact normalized email, phone digits, or external id. No fuzzy all-pairs."
+    ],
+    "unknowns": [
+      "PHONE_FOUND != DNC_CLEAR != CALLABLE != CONTACT_AUTHORIZED"
+    ],
+    "warnings": [],
+    "deliverable_digests": {
+      "MASTER_NORMALIZED.csv": "c09622f1739bde504a13f2e50f5b4feb01509bd811214337673e62a373691ae1",
+      "EXCEPTIONS.csv": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "DUPLICATE_GROUPS.csv": "d6adc29001eec307871c921d24e97f0c97bd7ade6746958357155f095c7d5e1b",
+      "FIELD_DICTIONARY.md": "811e079fb414fbf55bc371a60657415f7942ea9ddc14c6e51105cf300481ed3e",
+      "SOURCE_MANIFEST.csv": "9956c515d5a99465d3cbf750d9e74f2d9d89bb87c82f007402b3dad28416b883",
+      "TRANSFORMATION_LOG.json": "1e31ec1199b31cc9d01b26a0c32fcdd8a1a64c5877d101c969f3b238fa0b4d65",
+      "PHONES.csv": "b48c6cddded46688df43072aab2444baa05c60e85f3f82e0c51bcbadacad2a51"
+    },
+    "qa_results": {
+      "input_rows": 3,
+      "output_survivors": 2,
+      "explicit_duplicate_collapses": 1,
+      "explicit_rejects": 0,
+      "balanced": true,
+      "identity_conflicts": 0,
+      "null_rate_before": 0,
+      "null_rate_after": 0
+    },
+    "started_at": "2026-09-14T17:26:47.470Z",
+    "completed_at": "2026-09-14T17:26:47.475Z",
+    "operator": "o01-runtime",
+    "price": 29900,
+    "customer_delivery": "/delivery/ord_5cac73d94a2f13d6",
+    "customer_acceptance": false
+  },
+  "evidence_refs": [
+    "data-rescue/src/lib/commercial/loop.ts (handleStripeWebhook, fulfillPaidOrder)",
+    "data-rescue/src/app/api/webhooks/stripe/route.ts",
+    "data-rescue/src/app/api/delivery/[token]/route.ts",
+    "data-rescue/tests/commercial-loop.test.ts (52 vitest)",
+    "neuruh-web/apps/neuruh-web/lib/publicOffers.ts (O01 cashier, unchanged)"
+  ],
+  "checks": [
+    {
+      "offer": "O01",
+      "name": "catalog_is_O01",
+      "ok": true,
+      "detail": {
+        "offer_id": "O01",
+        "offer_version": "1",
+        "status": "PILOT",
+        "currency": "usd",
+        "promise": "Send us the files your team keeps fighting. We return a clean, structured operating dataset with the exceptions and provenance made explicit.",
+        "exclusions": [
+          "perfect identity resolution",
+          "enrichment from unavailable sources",
+          "legally authoritative ownership or title determinations",
+          "phone outreach permission",
+          "OCR of unreadable scans (separately priced)"
+        ],
+        "tiers": [
+          {
+            "id": "O01-MICRO",
+            "name": "Micro — one bounded source",
+            "status": "PILOT",
+            "pricing_model": "fixed",
+            "currency": "usd",
+            "unit_amount_cents": 29900,
+            "checkout_allowed": true,
+            "description": "One bounded source / small row volume. CSV, XLSX, JSON, TXT, or machine-readable PDF."
+          },
+          {
+            "id": "O01-STANDARD",
+            "name": "Standard — multi-file normalize",
+            "status": "PILOT",
+            "pricing_model": "quote",
+            "currency": "usd",
+            "unit_amount_cents": null,
+            "checkout_allowed": false,
+            "description": "Multi-file standard parse and normalize with exception report. Scoped and quoted; no self-serve checkout."
+          },
+          {
+            "id": "O01-DEEP",
+            "name": "Deep — quoted multi-source",
+            "status": "PILOT",
+            "pricing_model": "quote",
+            "currency": "usd",
+            "unit_amount_cents": null,
+            "checkout_allowed": false,
+            "description": "Multi-source identity resolution / custom schema. Scope first; no auto-quote."
+          }
+        ],
+        "stripe_mode": "fixture"
+      }
+    },
+    {
+      "offer": "O01",
+      "name": "stripe_mode_is_fixture",
+      "ok": true,
+      "detail": {
+        "status": 400,
+        "body": {
+          "error": "ORDER_NOT_FOUND"
+        }
+      }
+    },
+    {
+      "offer": "O01",
+      "name": "intake_200",
+      "ok": true,
+      "detail": {
+        "intake_id": "in_6cbb3045ce883ecf",
+        "resume_token": "redacted:sha256:379940a7073b83a087784791",
+        "tier_id": "O01-MICRO"
+      }
+    },
+    {
+      "offer": "O01",
+      "name": "upload_200_not_rejected",
+      "ok": true,
+      "detail": {
+        "file_id": "file_6925b9251257e236",
+        "sha256": "542f91cbcf8c7c4267ef8a1e024acdf7ba5255fc9b414b6efc7fc79ac6435616",
+        "rejected": false,
+        "reject_reason": null,
+        "reject_message": null,
+        "duplicate_of": null
+      }
+    },
+    {
+      "offer": "O01",
+      "name": "upload_digest_matches_fixture",
+      "ok": true,
+      "detail": {
+        "got": "542f91cbcf8c7c4267ef8a1e024acdf7ba5255fc9b414b6efc7fc79ac6435616",
+        "want": "542f91cbcf8c7c4267ef8a1e024acdf7ba5255fc9b414b6efc7fc79ac6435616"
+      }
+    },
+    {
+      "offer": "O01",
+      "name": "checkout_priced_payment_pending",
+      "ok": true,
+      "detail": {
+        "order_id": "ord_5cac73d94a2f13d6",
+        "commercial_state": "PAYMENT_PENDING",
+        "checkout_url": "http://127.0.0.1:3017/order/ord_5cac73d94a2f13d6?checkout=cs_test_fixture_ec14f04415ee9e95",
+        "delivery_token": "redacted:sha256:a3e2f8a775bf2f3246e9bc81",
+        "pricing": {
+          "pricing_model": "fixed",
+          "currency": "usd",
+          "subtotal": 29900,
+          "discounts": 0,
+          "taxes": 0,
+          "total": 29900,
+          "tier_id": "O01-MICRO"
+        },
+        "scope": "Offer O01 v1 O01-MICRO\nGoal: TEST / SANDBOX — NOT A REAL CUSTOMER — NO MONEY CHARGED — synthetic O01 intake zdc-20260914172646-85baa8\nSources: csv\nTarget: csv\nEstimated volume: 3\nDeadline: 2026-09-30\nCustomer asserts right to provide/process these files.\nNo outreach permission is inferred from discovered phones or emails."
+      }
+    },
+    {
+      "offer": "O01",
+      "name": "webhook_rejects_bad_signature_400",
+      "ok": true,
+      "detail": {
+        "status": 400,
+        "badBody": {
+          "error": "WEBHOOK_SIGNATURE_INVALID"
+        }
+      }
+    },
+    {
+      "offer": "O01",
+      "name": "webhook_200_order_matched_not_duplicate",
+      "ok": true,
+      "detail": {
+        "status": 200,
+        "hookBody": {
+          "duplicate": false,
+          "order_id": "ord_5cac73d94a2f13d6",
+          "type": "checkout.session.completed",
+          "mission_request_state": null,
+          "mission_request_pending": false
+        }
+      }
+    },
+    {
+      "offer": "O01",
+      "name": "webhook_replay_same_event_is_duplicate",
+      "ok": true,
+      "detail": {
+        "duplicate": true,
+        "order_id": "ord_5cac73d94a2f13d6",
+        "type": "checkout.session.completed",
+        "mission_request_state": null,
+        "mission_request_pending": false
+      }
+    },
+    {
+      "offer": "O01",
+      "name": "order_paid",
+      "ok": true,
+      "detail": {
+        "order_id": "ord_5cac73d94a2f13d6",
+        "offer_id": "O01",
+        "offer_version": "1",
+        "scope": "Offer O01 v1 O01-MICRO\nGoal: TEST / SANDBOX — NOT A REAL CUSTOMER — NO MONEY CHARGED — synthetic O01 intake zdc-20260914172646-85baa8\nSources: csv\nTarget: csv\nEstimated volume: 3\nDeadline: 2026-09-30\nCustomer asserts right to provide/process these files.\nNo outreach permission is inferred from discovered phones or emails.",
+        "payment_state": "succeeded",
+        "commercial_state": "DELIVERED",
+        "input_state": "files_received",
+        "fulfillment_state": "DELIVERED",
+        "needed_from_customer": "none",
+        "delivery": [
+          "MASTER_NORMALIZED.csv",
+          "EXCEPTIONS.csv",
+          "DUPLICATE_GROUPS.csv",
+          "FIELD_DICTIONARY.md",
+          "SOURCE_MANIFEST.csv",
+          "TRANSFORMATION_LOG.json",
+          "PHONES.csv",
+          "RECEIPT.json"
+        ],
+        "receipt": [
+          "rcpt_3d03851440f9e59e"
+        ],
+        "support": "jeramie@neuruh.com"
+      }
+    },
+    {
+      "offer": "O01",
+      "name": "order_fulfilled_delivered",
+      "ok": true,
+      "detail": {
+        "commercial_state": "DELIVERED",
+        "fulfillment_state": "DELIVERED"
+      }
+    },
+    {
+      "offer": "O01",
+      "name": "order_has_receipt",
+      "ok": true,
+      "detail": 1
+    },
+    {
+      "offer": "O01",
+      "name": "no_founder_runtime_mission_created",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "offer": "O01",
+      "name": "customer_isolation_403",
+      "ok": true,
+      "detail": 403
+    },
+    {
+      "offer": "O01",
+      "name": "delivery_surface_200_with_files",
+      "ok": true,
+      "detail": {
+        "order_id": "ord_5cac73d94a2f13d6",
+        "commercial_state": "DELIVERED",
+        "files": [
+          "MASTER_NORMALIZED.csv",
+          "EXCEPTIONS.csv",
+          "DUPLICATE_GROUPS.csv",
+          "FIELD_DICTIONARY.md",
+          "SOURCE_MANIFEST.csv",
+          "TRANSFORMATION_LOG.json",
+          "PHONES.csv",
+          "RECEIPT.json"
+        ],
+        "receipt": {
+          "receipt_id": "rcpt_3d03851440f9e59e",
+          "order_id": "ord_5cac73d94a2f13d6",
+          "offer_id": "O01",
+          "offer_version": "1",
+          "input_digest": "e679042262da7ff98d46b73c93e55e2e5c2bbfcd88bea35fd0dde69341674aa1",
+          "source_manifest": [
+            {
+              "file_id": "file_6925b9251257e236",
+              "name": "happy.csv",
+              "sha256": "542f91cbcf8c7c4267ef8a1e024acdf7ba5255fc9b414b6efc7fc79ac6435616",
+              "bytes": "199"
+            }
+          ],
+          "execution_manifest": {
+            "recipe": "o01-parse-normalize-v1",
+            "complexity": {
+              "hashing": "O(n bytes)",
+              "parsing": "O(n rows)",
+              "exact_key_dedup": "O(n)",
+              "fuzzy_all_pairs": "prohibited"
+            }
+          },
+          "recipe_versions": {
+            "o01-parse-normalize-v1": "1"
+          },
+          "model_tool_versions": {
+            "runtime": "node",
+            "llm": "none"
+          },
+          "facts": [
+            "input_rows=3",
+            "survivors=2",
+            "duplicate_collapses=1",
+            "identity_conflicts=0",
+            "balanced=true"
+          ],
+          "heuristics": [
+            "Identity uses exact normalized email, phone digits, or external id. No fuzzy all-pairs."
+          ],
+          "unknowns": [
+            "PHONE_FOUND != DNC_CLEAR != CALLABLE != CONTACT_AUTHORIZED"
+          ],
+          "warnings": [],
+          "deliverable_digests": {
+            "MASTER_NORMALIZED.csv": "c09622f1739bde504a13f2e50f5b4feb01509bd811214337673e62a373691ae1",
+            "EXCEPTIONS.csv": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "DUPLICATE_GROUPS.csv": "d6adc29001eec307871c921d24e97f0c97bd7ade6746958357155f095c7d5e1b",
+            "FIELD_DICTIONARY.md": "811e079fb414fbf55bc371a60657415f7942ea9ddc14c6e51105cf300481ed3e",
+            "SOURCE_MANIFEST.csv": "9956c515d5a99465d3cbf750d9e74f2d9d89bb87c82f007402b3dad28416b883",
+            "TRANSFORMATION_LOG.json": "1e31ec1199b31cc9d01b26a0c32fcdd8a1a64c5877d101c969f3b238fa0b4d65",
+            "PHONES.csv": "b48c6cddded46688df43072aab2444baa05c60e85f3f82e0c51bcbadacad2a51",
+            "RECEIPT.json": "353c480fbf6510a3ce05b2ee6ca374684108352c3461e9e71eed5b7794e8f6e9"
+          },
+          "qa_results": {
+            "input_rows": 3,
+            "output_survivors": 2,
+            "explicit_duplicate_collapses": 1,
+            "explicit_rejects": 0,
+            "balanced": true,
+            "identity_conflicts": 0,
+            "null_rate_before": 0,
+            "null_rate_after": 0
+          },
+          "started_at": "2026-09-14T17:26:47.470Z",
+          "completed_at": "2026-09-14T17:26:47.475Z",
+          "operator": "o01-runtime",
+          "cost_estimate": 0,
+          "price": 29900,
+          "estimated_contribution_margin": 29900,
+          "customer_delivery": "/delivery/ord_5cac73d94a2f13d6",
+          "customer_acceptance": false
+        }
+      }
+    },
+    {
+      "offer": "O01",
+      "name": "delivered_artifact_digests_match_receipt",
+      "ok": true,
+      "detail": {
+        "artifacts": [
+          {
+            "name": "MASTER_NORMALIZED.csv",
+            "sha256": "c09622f1739bde504a13f2e50f5b4feb01509bd811214337673e62a373691ae1",
+            "bytes": 751,
+            "http": 200
+          },
+          {
+            "name": "EXCEPTIONS.csv",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "bytes": 0,
+            "http": 200
+          },
+          {
+            "name": "DUPLICATE_GROUPS.csv",
+            "sha256": "d6adc29001eec307871c921d24e97f0c97bd7ade6746958357155f095c7d5e1b",
+            "bytes": 102,
+            "http": 200
+          },
+          {
+            "name": "FIELD_DICTIONARY.md",
+            "sha256": "811e079fb414fbf55bc371a60657415f7942ea9ddc14c6e51105cf300481ed3e",
+            "bytes": 312,
+            "http": 200
+          },
+          {
+            "name": "SOURCE_MANIFEST.csv",
+            "sha256": "9956c515d5a99465d3cbf750d9e74f2d9d89bb87c82f007402b3dad28416b883",
+            "bytes": 134,
+            "http": 200
+          },
+          {
+            "name": "TRANSFORMATION_LOG.json",
+            "sha256": "1e31ec1199b31cc9d01b26a0c32fcdd8a1a64c5877d101c969f3b238fa0b4d65",
+            "bytes": 187,
+            "http": 200
+          },
+          {
+            "name": "PHONES.csv",
+            "sha256": "b48c6cddded46688df43072aab2444baa05c60e85f3f82e0c51bcbadacad2a51",
+            "bytes": 165,
+            "http": 200
+          },
+          {
+            "name": "RECEIPT.json",
+            "sha256": "353c480fbf6510a3ce05b2ee6ca374684108352c3461e9e71eed5b7794e8f6e9",
+            "bytes": 2300,
+            "http": 200
+          }
+        ],
+        "receipt_digests": {
+          "MASTER_NORMALIZED.csv": "c09622f1739bde504a13f2e50f5b4feb01509bd811214337673e62a373691ae1",
+          "EXCEPTIONS.csv": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "DUPLICATE_GROUPS.csv": "d6adc29001eec307871c921d24e97f0c97bd7ade6746958357155f095c7d5e1b",
+          "FIELD_DICTIONARY.md": "811e079fb414fbf55bc371a60657415f7942ea9ddc14c6e51105cf300481ed3e",
+          "SOURCE_MANIFEST.csv": "9956c515d5a99465d3cbf750d9e74f2d9d89bb87c82f007402b3dad28416b883",
+          "TRANSFORMATION_LOG.json": "1e31ec1199b31cc9d01b26a0c32fcdd8a1a64c5877d101c969f3b238fa0b4d65",
+          "PHONES.csv": "b48c6cddded46688df43072aab2444baa05c60e85f3f82e0c51bcbadacad2a51",
+          "RECEIPT.json": "353c480fbf6510a3ce05b2ee6ca374684108352c3461e9e71eed5b7794e8f6e9"
+        }
+      }
+    },
+    {
+      "offer": "O01",
+      "name": "receipt_input_digest_is_fixture",
+      "ok": true,
+      "detail": {
+        "got": "e679042262da7ff98d46b73c93e55e2e5c2bbfcd88bea35fd0dde69341674aa1",
+        "want": "e679042262da7ff98d46b73c93e55e2e5c2bbfcd88bea35fd0dde69341674aa1"
+      }
+    },
+    {
+      "offer": "O01",
+      "name": "receipt_no_llm_no_cost",
+      "ok": true,
+      "detail": {
+        "runtime": "node",
+        "llm": "none"
+      }
+    },
+    {
+      "offer": "O01",
+      "name": "delivered_artifacts_no_factory_or_private_path",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "offer": "O01",
+      "name": "delivered_artifacts_no_real_email",
+      "ok": true,
+      "detail": null
+    }
+  ],
+  "redactions": {
+    "note": "token-shaped values replaced by sha256 digests before vendoring; originals live only in the scratch work dir",
+    "paths": [
+      ".checks[2].detail.resume_token",
+      ".checks[5].detail.delivery_token"
+    ]
+  },
+  "court_digest_sha256": "5497b82ce99edb67d8fc878a95b4d9f938e4d7aaa2013ab8a954cd8c8751e89d"
+}

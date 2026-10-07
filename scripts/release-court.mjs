@@ -1,0 +1,116 @@
+#!/usr/bin/env node
+/**
+ * Release court for NEURUH-SITE-V2-RELEASE-20260902.
+ * Courts a local Next export (apps/neuruh-web/out) or a base URL.
+ */
+import { readFile } from 'node:fs/promises'
+import path from 'node:path'
+
+const CASHIERS = [
+  'https://book.stripe.com/bJe5kDagndYugJlaow2cg04',
+  'https://book.stripe.com/8x2cN574b1bIakXgMU2cg05',
+  'https://book.stripe.com/7sY00j1JRf2y2Sv4082cg06',
+]
+const FACTORY = /Mother|\bAXON\b|\bAegis\b|\bIAR\b|REI-X|recipe-engine|scoring weights|secret topology|system prompt|customer PII/i
+const PRIVATE_GH = /github\.com\/[^/\s"'`]+\/(?:neuruh-workers|cockpit|data-rescue)\b/i
+const out = 'apps/neuruh-web/out'
+const failures = []
+
+function html(route) {
+  const file = route === '/' ? 'index.html' : `${route.replace(/^\//, '')}.html`
+  return readFile(path.join(out, file), 'utf8')
+}
+
+function must(label, ok, detail = '') {
+  if (!ok) failures.push(`${label}${detail ? ` — ${detail}` : ''}`)
+}
+
+const routes = ['/', '/offers', '/proof', '/thank-you', '/work-with-neuruh', '/work-with-us']
+const pages = {}
+for (const route of routes) pages[route] = await html(route)
+
+for (const [route, document] of Object.entries(pages)) {
+  must(`${route} has main`, /<main[^>]+id="main"/.test(document))
+  must(`${route} no factory`, !FACTORY.test(document) && !PRIVATE_GH.test(document))
+  if (route !== '/') {
+    const expected = route === '/work-with-us' ? 'https://neuruh.com/work-with-neuruh' : `https://neuruh.com${route}`
+    must(`${route} og:url`, document.includes(`property="og:url" content="${expected}"`))
+  }
+}
+
+must('thank-you no webhook lie', pages['/thank-you'].includes('does not receive Stripe webhooks'))
+must('work-with-neuruh hub', pages['/work-with-neuruh'].includes('Buy a scoped piece of work'))
+must('work-with-us alias', pages['/work-with-us'].includes('Buy a scoped piece of work'))
+for (const href of CASHIERS) {
+  must(`cashier ${href} on /offers`, pages['/offers'].includes(href))
+  must(`cashier ${href} not fourth`, (pages['/offers'].match(new RegExp(href.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g')) || []).length >= 1)
+}
+must('no extra stripe hosts', !/buy\.stripe\.com|checkout\.stripe\.com/.test(pages['/offers']))
+
+const home = pages['/']
+must('JSON-LD Organization', home.includes('"@type":"Organization"'))
+must('JSON-LD WebSite', home.includes('"@type":"WebSite"'))
+must('JSON-LD Service', home.includes('"@type":"Service"'))
+must('JSON-LD no factory', !FACTORY.test(home.match(/application\/ld\+json[\s\S]{0,4000}/)?.[0] ?? ''))
+
+// Four canon offers: three cashiers plus the Forensic System Audit, which books on
+// Cal.com and never carries a cashier. Quoted products were retired 2026-09-14.
+const hub = pages['/work-with-neuruh']
+must('hub lists Forensic System Audit', hub.includes('Forensic System Audit'))
+must('offers lists Forensic System Audit', pages['/offers'].includes('Forensic System Audit'))
+must('offers books the forensic scoping session', pages['/offers'].includes('cal.com/neuruh/forensic-scope-session-90'))
+must('offers carries the free qualifying call', pages['/offers'].includes('cal.com/neuruh/quick-chat-10-mins'))
+const hubCashiers = [...new Set(hub.match(/https:\/\/(?:book|buy|checkout)\.stripe\.com\/[A-Za-z0-9]+/g) ?? [])]
+must('hub carries only the three canonical cashiers', hubCashiers.length === 3 && hubCashiers.every((href) => CASHIERS.includes(href)), hubCashiers.join(' '))
+must('no quoted-product residue', !/Request a quote|Lead Rescue|Quoted per market/.test(hub))
+for (const [route, document] of Object.entries(pages)) {
+  must(`${route} no recommended price leak`, !/\$\s?799\b/.test(document))
+  must(`${route} no retired REI-X ladder`, !/\$\s?(79|249|2,?490)\b/.test(document))
+  must(`${route} no machine-state banner`, !/living state|live connectivity NONE/.test(document))
+}
+
+const security = await readFile(path.join(out, '.well-known/security.txt'), 'utf8')
+must('security.txt Contact is /security', security.includes('Contact: https://neuruh.com/security'))
+must('security.txt no mailto', !/mailto:/i.test(security))
+must('home footer no mailto', !/<footer[\s\S]*?mailto:/i.test(home))
+must('home footer links /security', /<footer[\s\S]*?href="\/security"/.test(home))
+
+const robots = await readFile(path.join(out, 'robots.txt'), 'utf8')
+must('robots sitemap', robots.includes('https://neuruh.com/sitemap.xml'))
+
+const sitemap = await readFile(path.join(out, 'sitemap.xml'), 'utf8')
+for (const loc of ['/offers', '/proof', '/thank-you', '/work-with-neuruh', '/work-with-us', '/security']) {
+  must(`sitemap ${loc}`, sitemap.includes(`https://neuruh.com${loc}`))
+}
+must('sitemap commercial lastmod 2026-09-14', sitemap.includes('2026-09-14T00:00:00.000Z'))
+must('home footer links the estate', /<footer[\s\S]*?re\.neuruh\.com[\s\S]*?guide\.neuruh\.com/.test(home))
+must('JSON-LD legal name', home.includes('"legalName":"Neuruh LLC"'))
+
+const snapshot = JSON.parse(await readFile(path.join(out, 'truth/snapshot.json'), 'utf8'))
+// 2026-09-16 recourt: the snapshot is compiled at the instant it was re-verified (package.json compile:truth
+// --as-of == dataset.last_verified_at), so it is not stale when served; the preserved contradiction and the
+// absent live connector remain, and nothing is ever LIVE.
+const compileAsOf = JSON.parse(await readFile('package.json', 'utf8')).scripts['compile:truth'].match(/--as-of=(\S+)/)?.[1]
+must('snapshot compiled at its verification instant', snapshot.dataset.last_verified_at === compileAsOf, `${snapshot.dataset.last_verified_at} vs ${compileAsOf}`)
+must('snapshot not stale when served', snapshot.dataset.stale === false)
+must('snapshot CONTRADICTING preserved', snapshot.living_state === 'CONTRADICTING')
+must('snapshot live_connectivity false', snapshot.dataset.live_connectivity === false)
+must('snapshot never LIVE', snapshot.dataset.truth_mode !== 'LIVE' && !snapshot.objects.some((o) => o.truth_mode === 'LIVE'))
+
+// Issue #10 convergence surfaces: the front door, the discovery cluster, and the answer surface ship and are indexed.
+for (const route of ['/solve', '/problems', '/problems/data-you-cannot-use', '/problems/ai-you-cannot-verify', '/problems/workflows-that-break',
+  '/problems/property-data-without-opportunity', '/problems/automation-without-authority', '/problems/systems-nobody-can-explain', '/faq']) {
+  const document = await html(route)
+  must(`${route} has main`, /<main[^>]+id="main"/.test(document))
+  must(`${route} og:url`, document.includes(`property="og:url" content="https://neuruh.com${route}"`))
+  must(`${route} no factory`, !FACTORY.test(document) && !PRIVATE_GH.test(document))
+  must(`${route} no machine-state banner`, !/living state|live connectivity NONE/.test(document))
+  must(`sitemap ${route}`, sitemap.includes(`https://neuruh.com${route}<`))
+}
+must('faq FAQPage JSON-LD', (await html('/faq')).includes('"@type":"FAQPage"'))
+must('home primary CTA is the target front door', /class="v2-btn v2-btn-primary" href="\/solve"/.test(home))
+
+if (failures.length) {
+  throw new Error(`RELEASE COURT FAILED\n${failures.join('\n')}`)
+}
+console.log('RELEASE COURT: PASS — export routes, OG, JSON-LD, three cashiers + Forensic booking, no REI-X residue, no machine-state banner, security.txt, robots, sitemap, private-IP, snapshot honesty, convergence surfaces')

@@ -2,9 +2,21 @@ import { notFound } from 'next/navigation'
 import { getPublicObject, getRelationshipsFor, getPublicObjects, WORLD_IDS } from '../../../../../packages/public-truth/client'
 import { ContradictionObject, RelationshipList } from '../../../components/TruthPrimitives'
 import { SemanticPage } from '../../../components/SemanticPage'
+import { pageMeta } from '../../../lib/publicSeo'
 
 export function generateStaticParams() {
   return WORLD_IDS.map((slug) => ({ slug }))
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const world = getPublicObject(slug)
+  if (!world) return {}
+  return pageMeta({
+    path: `/worlds/${slug}`,
+    title: world.name,
+    description: world.summary,
+  })
 }
 
 export default async function WorldPage({ params }: { params: Promise<{ slug: string }> }) {

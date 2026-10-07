@@ -40,8 +40,8 @@ export function transition(from, to, context = {}) {
 }
 
 export function deriveLivingState(snapshot) {
-  if (snapshot.dataset.stale) return 'DEGRADED'
   if (snapshot.objects.some((object) => object.contradictions?.length)) return 'CONTRADICTING'
+  if (snapshot.dataset.stale) return 'DEGRADED'
   if (snapshot.objects.some((object) => object.truth_mode === 'BLOCKED')) return 'BLOCKED'
   return 'STABLE'
 }

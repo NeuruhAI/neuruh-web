@@ -5,3 +5,9 @@ test-results/
 playwright-report/
 *.tsbuildinfo
 .DS_Store
+.vercel
+.env*
+apps/neuruh-web/out
+
+# UX court full capture (152 screenshots, ~60MB) stays local; receipts/ux-court/keep/ carries the curated set
+receipts/ux-court/*.png

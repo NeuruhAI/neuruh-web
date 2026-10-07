@@ -32,6 +32,7 @@ export function compileTruth(rawInput, { evaluationTime } = {}) {
   const now = evaluationTime ?? input.dataset.generated_at
   if (Number.isNaN(Date.parse(now))) throw new Error('evaluationTime must be an ISO timestamp')
   if (Date.parse(now) > Date.parse(input.dataset.stale_after)) throw new Error('stale snapshot rejected')
+  const stale = Date.parse(now) > Date.parse(input.dataset.last_verified_at)
   const datasetSource = hydrateSource(input.dataset.source_ref, input.sources, 'dataset')
 
   const objects = input.objects.map((object) => {
@@ -76,7 +77,7 @@ export function compileTruth(rawInput, { evaluationTime } = {}) {
       generated_at: input.dataset.generated_at,
       last_verified_at: input.dataset.last_verified_at,
       stale_after: input.dataset.stale_after,
-      stale: false,
+      stale,
       live_connectivity: false,
       limitation: input.dataset.limitation,
       source: datasetSource,

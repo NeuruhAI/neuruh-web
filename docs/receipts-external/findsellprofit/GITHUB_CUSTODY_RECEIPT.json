@@ -1,0 +1,119 @@
+{
+  "mission": "findsellprofit",
+  "receipt_version": "1.0",
+  "created_at": "2026-08-22",
+  "workspace": "/Users/jeramiehicks/neuruh-workspaces/findsellprofit-autonomous-merchant-os-20260821",
+  "pre_push_state": {
+    "CURRENT_WORKSPACE": "/Users/jeramiehicks/neuruh-workspaces/findsellprofit-autonomous-merchant-os-20260821",
+    "CURRENT_BRANCH": "codex/autonomous-merchant-os-20260821",
+    "CURRENT_HEAD": "d1db1843fb0bac4719f8e2fb326db9436653ed80",
+    "REMOTE": "https://github.com/NeuruhAI/findsellprofit.git",
+    "REMOTE_REPOSITORY": "NeuruhAI/findsellprofit",
+    "REMOTE_VISIBILITY": "private",
+    "LOCAL_DIRTY_STATE": "CLEAN",
+    "SECRETS_SCAN": "PASS",
+    "TEST_STATUS": "PASS (229 tests, 0 failures)",
+    "BUILD_STATUS": "PASS",
+    "EXTERNAL_REPOS_MODIFIED": "NO"
+  },
+  "repository_selection": {
+    "preferred_by_mission": "NeuruhAI/findsellprofit",
+    "decision": "CREATED_PREFERRED_PRIVATE_REPOSITORY",
+    "candidates_inspected": [
+      {
+        "repository": "NeuruhAI/findsellprofit",
+        "existed_before_this_mission": false,
+        "finding": "Did not exist. Confirmed by direct API lookup and by repository search across the NeuruhAI organisation."
+      },
+      {
+        "repository": "NeuruhAI/neuruh-resell-os",
+        "existed_before_this_mission": true,
+        "private": true,
+        "archived": true,
+        "size_kb": 0,
+        "default_branch": "main",
+        "head": "ad240be4b6ddd030d07d148725c33ca9e4aade74",
+        "contents": [
+          ".gitignore",
+          "README.md"
+        ],
+        "recovery_court_classification": "CANONICAL",
+        "finding": "This is the NeuruhAI-owned ResellOS/FSP rebuild identity and was the first-choice existing repository. It is ARCHIVED, which makes it read-only on GitHub: it cannot accept a push without first changing its archived state.",
+        "decision": "NOT_USED",
+        "rationale": "Archiving is a deliberate act by the owner. Un-archiving someone's retired repository in order to push to it is a change to existing Neuruh state that this mission was not asked to make, and the mission's own custody court provides for exactly this case: record the conflict and use the preferred new private repository instead. The repository was inspected read-only and was not modified in any way."
+      }
+    ],
+    "conflict_recorded": "NeuruhAI/neuruh-resell-os is archived and therefore not a compatible custody target. It remains archived and unmodified.",
+    "duplicates_created": "NONE"
+  },
+  "custody": {
+    "remote_name": "origin",
+    "remote_url": "https://github.com/NeuruhAI/findsellprofit.git",
+    "repository": "NeuruhAI/findsellprofit",
+    "visibility": "private",
+    "archived": false,
+    "branch_pushed": "codex/autonomous-merchant-os-20260821",
+    "branches_on_remote": [
+      "codex/autonomous-merchant-os-20260821"
+    ],
+    "push_command": "git push -u origin codex/autonomous-merchant-os-20260821",
+    "verification": {
+      "method": "git rev-parse HEAD compared against GET /repos/NeuruhAI/findsellprofit/git/ref/heads/codex/autonomous-merchant-os-20260821",
+      "LOCAL_HEAD": "d1db1843fb0bac4719f8e2fb326db9436653ed80",
+      "REMOTE_BRANCH_HEAD": "d1db1843fb0bac4719f8e2fb326db9436653ed80",
+      "MATCH": true
+    },
+    "note": "This receipt file is itself committed after the verification above, so the branch tip advances by exactly one commit when the receipt is pushed. That final commit is verified the same way immediately after its push, and the resulting SHA is recorded in CONTINUATION_CHECKPOINT.json.",
+    "final_verification": {
+      "note": "Verified after the receipt commit was pushed. One further commit follows this one to sync the state files with this SHA; it is pushed and verified identically. Re-check with: git rev-parse HEAD against gh api repos/NeuruhAI/findsellprofit/git/ref/heads/codex/autonomous-merchant-os-20260821 --jq .object.sha",
+      "LOCAL_HEAD": "771527a739ef525da1dad7312bf40c57ff4cda9f",
+      "REMOTE_BRANCH_HEAD": "771527a739ef525da1dad7312bf40c57ff4cda9f",
+      "MATCH": true
+    }
+  },
+  "verdict": {
+    "GITHUB_PUSH": "PASS",
+    "REMOTE_HEAD_VERIFIED": "PASS",
+    "MAIN_MODIFIED": "NO",
+    "FORCE_PUSH_USED": "NO",
+    "REMOTE_HISTORY_REWRITTEN": "NO",
+    "MERGED_TO_MAIN": "NO",
+    "PRIVATE_REPOSITORY_MADE_PUBLIC": "NO",
+    "EXTERNAL_REPOS_MODIFIED": "NO"
+  },
+  "main_branch_note": "The custody repository was created empty and only the isolated mission branch was pushed. No 'main' ref exists on the remote, so nothing could be, or was, pushed to or merged into main.",
+  "excluded_from_custody": {
+    "gitignored": [
+      ".env",
+      ".env.*",
+      "node_modules/",
+      "dist/",
+      "coverage/",
+      ".data/",
+      "scratch/",
+      "private/",
+      "secrets/",
+      ".playwright-mcp/"
+    ],
+    "verified_absent_from_tracked_tree": [
+      "environment files",
+      "credentials and private keys",
+      "provider API keys",
+      "database connection strings",
+      "production datasets",
+      "generated local databases",
+      "screenshots containing secrets"
+    ],
+    "scan": "scripts/secret-scan.sh \u2014 gitleaks over the working tree plus a targeted sweep for twelve high-risk literal shapes; SECRET_SCAN=PASS"
+  },
+  "screenshots_reviewed_for_secrets": {
+    "files": [
+      "docs/screenshots/home-desktop.png",
+      "docs/screenshots/source-mode-capital-lens-mobile.png",
+      "docs/screenshots/sell-mode-channel-ladder.png",
+      "docs/screenshots/lot-mode-desktop.png",
+      "docs/screenshots/demo-calibration.png"
+    ],
+    "finding": "All show fixture data on a loopback address. No credential, token, personal datum or production value appears in any of them."
+  }
+}

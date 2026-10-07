@@ -15,7 +15,7 @@ import { readSeed } from '@/lib/rng'
 import { useTrace } from '@/lib/useTrace'
 import { getHarness } from '@/lib/metrics'
 
-const Spike1Scene = dynamic(() => import('@/components/scene/Spike1Scene'), { ssr: false })
+const Spike1Scene = dynamic(() => import('@/components/scene/ResetSceneEntry'), { ssr: false })
 
 export interface TruthSummary {
   truthMode: TruthMode
@@ -149,13 +149,28 @@ export function NeuruhExperience({
               data-cam={item.camera}
               data-truth-mode={item.truthMode}
             >
-              <div className="chapter__inner">
+              <div className={index === 0 ? 'chapter__inner chapter__inner--hero' : 'chapter__inner'}>
                 <div className="chapter-meta">
-                  <p className="chapter__n">{String(index + 1).padStart(2, '0')} — {item.label}</p>
+                  <p className="chapter__n">{index === 0 ? 'Neuruh — Governed AI systems' : `${String(index + 1).padStart(2, '0')} — ${item.label}`}</p>
                   <TruthModeBadge mode={item.truthMode} />
                 </div>
-                <h1 className={index === 0 ? 't-cinema-1' : 't-cinema-3'}>{item.title}</h1>
-                <p className="t-body-lg">{item.body}</p>
+                <h1 className={index === 0 ? 't-hero' : 't-cinema-3'}>{item.title}</h1>
+                <p className={index === 0 ? 't-body-lg hero-support' : 't-body-lg'}>{item.body}</p>
+                {index === 0 && (
+                  <>
+                    <div className="row hero-ctas">
+                      <Link className="n-btn n-btn--primary" href="/products">Explore the systems</Link>
+                      <Link className="n-btn n-btn--secondary" href="/proof">See the proof</Link>
+                    </div>
+                    <p className="hero-signal">
+                      1 product in production · 4 sealed candidates · 18 live services · 36 open-source repos
+                      <span className="hero-signal__meta">receipts on /proof · as of 2026-08-23</span>
+                    </p>
+                    <p className="hero-domains" aria-label="Domains Neuruh operates in">
+                      Real estate · Commerce · Local services · Asset recovery · Venture systems · Proof
+                    </p>
+                  </>
+                )}
                 <p className="claim-boundary"><strong>Claim boundary:</strong> {item.claimBoundary}</p>
                 <p className="verb">Living state — {item.semanticState} · deterministic scene binding — {item.rendererState}</p>
 
@@ -208,9 +223,10 @@ export function NeuruhExperience({
 
                 {item.feature === 'entry' && (
                   <div className="row">
-                    <Link className="n-btn n-btn--primary" href="/galaxy">Explore the Galaxy</Link>
+                    <Link className="n-btn n-btn--primary" href="/products">See the products</Link>
                     <Link className="n-btn n-btn--secondary" href="/proof">Inspect proof</Link>
-                    <Link className="n-btn n-btn--ghost" href="/worlds">See the worlds</Link>
+                    <Link className="n-btn n-btn--secondary" href="/refusals">Read the refusals</Link>
+                    <Link className="n-btn n-btn--ghost" href="/contact">Work with Neuruh</Link>
                   </div>
                 )}
 

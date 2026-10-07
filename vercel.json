@@ -1,0 +1,101 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "NEXT_OUTPUT_EXPORT=1 npm run build",
+  "outputDirectory": "apps/neuruh-web/out",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "functions": {
+    "api/gateway.mjs": {
+      "maxDuration": 300
+    }
+  },
+  "redirects": [
+    {
+      "source": "/work-with-us",
+      "destination": "/work-with-neuruh",
+      "permanent": true
+    },
+    {
+      "source": "/products/top10/opportunity-intelligence-dossier",
+      "destination": "/products/top10/property-intelligence-dossier",
+      "permanent": true
+    },
+    {
+      "source": "/deedsonar",
+      "destination": "https://app.deedsonar.com/",
+      "permanent": false
+    },
+    {
+      "source": "/deedsonar/:path*",
+      "destination": "https://app.deedsonar.com/:path*",
+      "permanent": false
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "/api/gateway?__nrh_path=/api/:path*"
+    },
+    {
+      "source": "/command",
+      "destination": "/api/gateway?__nrh_path=/command"
+    },
+    {
+      "source": "/command/:path*",
+      "destination": "/api/gateway?__nrh_path=/command/:path*"
+    },
+    {
+      "source": "/:asset(command-[a-z0-9-]+\\.js)",
+      "destination": "/api/gateway?__nrh_path=/:asset"
+    },
+    {
+      "source": "/:asset(laric-[a-z0-9-]+\\.js)",
+      "destination": "/api/gateway?__nrh_path=/:asset"
+    },
+    {
+      "source": "/surfaces-menu.js",
+      "destination": "/api/gateway?__nrh_path=/surfaces-menu.js"
+    },
+    {
+      "source": "/spatial-host/:path*",
+      "destination": "/api/gateway?__nrh_path=/spatial-host/:path*"
+    },
+    {
+      "source": "/operating-model/:path*",
+      "destination": "/api/gateway?__nrh_path=/operating-model/:path*"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(), payment=()"
+        }
+      ]
+    },
+    {
+      "source": "/_next/static/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ],
+  "framework": null
+}

@@ -3,7 +3,7 @@ name: P0 green build
 on:
   pull_request:
   push:
-    branches: [main, build/p0-p2-green-foundation]
+    branches: [main, build/p0-p2-green-foundation, "codex/**", "fable/**"]
 
 jobs:
   verify:
