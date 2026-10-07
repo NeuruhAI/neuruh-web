@@ -1,0 +1,13 @@
+0\r  m      p           1/0/http://127.0.0.1:43147/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_1di75ot._.js(globalThis["TURBOPACK"] || (globalThis["TURBOPACK"] = [])).push([typeof document === "object" ? document.currentScript : undefined,
+"[turbopack]/browser/dev/hmr-client/hmr-client.ts [app-client] (ecmascript, async loader)", ((__turbopack_context__) => {
+
+__turbopack_context__.v((parentImport) => {
+    return Promise.all([
+  "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_1mojsay._.js"
+].map((chunk) => __turbopack_context__.l(chunk))).then(() => {
+        return parentImport("[turbopack]/browser/dev/hmr-client/hmr-client.ts [app-client] (ecmascript)");
+    });
+});
+}),
+]); A Eo       wp                         i / 1   i / W   h /     HTTP/1.1 200 OK Cache-Control: no-cache, must-revalidate Accept-Ranges: bytes Last-Modified: Mon, 24 Aug 2026 22:02:41 GMT Date: Mon, 24 Aug 2026 23:53:14 GMT ETag: W/"252-1a035cc1031" Content-Type: application/javascript; charset=UTF-8 Content-Length: 594 Vary: Accept-Encoding        G  P ! _j      5   d    	Xm  	   127.0.0.1                   in:     $ J7 `   8`  ,=  ; kN
+   A Eo      q           

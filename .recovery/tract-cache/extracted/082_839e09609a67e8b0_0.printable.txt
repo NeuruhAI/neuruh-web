@@ -1,0 +1,291 @@
+0\r  m      @           B0D9BBF12AEDE4A54351055B71A5E6D9BA2F8C7FDA3DD3046457C0AF94548268    tF          t   ! z        <   l             0Q  Q    `P           `    ! m ! t   `6        P      	   TURBOPACK             `      JaV        dPw>  #V   [project]/node_modules/@babel/runtime/helpers/esm/extends.js [app-client] (ecmascript)  `     \PuNL  N   [project]/node_modules/@react-three/drei/core/Fbo.js [app-client] (ecmascript)  `     dPw  +%X   [project]/node_modules/@react-three/drei/core/OrbitControls.js [app-client] (ecmascript)`     hPx   +\   [project]/node_modules/@react-three/drei/core/PerspectiveCamera.js [app-client] (ecmascript)`     \Pu    N   [project]/node_modules/@react-three/drei/core/Sky.js [app-client] (ecmascript)  `     \Pu  : N   [project]/node_modules/@react-three/drei/web/Html.js [app-client] (ecmascript)  `     TPsv b G   [project]/node_modules/its-fine/dist/index.js [app-client] (ecmascript) `     \PuV ~ P   [project]/node_modules/react-use-measure/dist/index.js [app-client] (ecmascript)`     dPw  5 W   [project]/node_modules/scheduler/cjs/scheduler.development.js [app-client] (ecmascript) `     PPr   :C   [project]/node_modules/scheduler/index.js [app-client] (ecmascript) `     TPs H PG   [project]/node_modules/suspend-react/index.js [app-client] (ecmascript) `     `Pv    T   [project]/node_modules/three-stdlib/_polyfill/constants.js [app-client] (ecmascript)`     hPx6  UY   [project]/node_modules/three-stdlib/controls/EventDispatcher.js [app-client] (ecmascript)   `     dPw    W   [project]/node_modules/three-stdlib/controls/OrbitControls.js [app-client] (ecmascript) `     XPt  A L   [project]/node_modules/three-stdlib/objects/Sky.js [app-client] (ecmascript)`      P vZ )x   [project]/node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.development.js [app-client] (ecmascript)`      P  :h     [project]/node_modules/use-sync-external-store/cjs/use-sync-external-store-shim/with-selector.development.js [app-client] (ecmascript)  `     dPw    V   [project]/node_modules/use-sync-external-store/shim/index.js [app-client] (ecmascript)  `     lPy" 0K^   [project]/node_modules/use-sync-external-store/shim/with-selector.js [app-client] (ecmascript)  `     XPt    L   [project]/node_modules/zustand/esm/traditional.mjs [app-client] (ecmascript)`     TPs  UXH   [project]/node_modules/zustand/esm/vanilla.mjs [app-client] (ecmascript)`           ?  0Q  P  `N        t`    ! !   `
+    0 = ddp                    PcFA      _extends`    E`    @`     0Q       Ea[       `         L U    PO Lf  1D   http://127.0.0.1:43147/_next/static/chunks/node_modules_0tbjl3c._.jsa        @b            @`     Q W`         p  0Q     Ea9   E   `    E   e        K       om           0Q  Y    `Z           `    ! m ! t   `6    ` = ddp              r<    P  "       __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__     P   ?      __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$three$2f$build$2f$three$2e$core$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__    P  rA      __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$three$2f$fiber$2f$dist$2f$events$2d$156d8d12$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__C__as__useThree$3e$__    Pb  d8    _s    Pbb .N    _s1   Pcr Z     useFBO    Pb Je     Fbo f                            E`    @`     0Q       Ea%       `          e        @       gm              `      J`      `     `     0Q     Ea        `    E  e        K       hm       0Q     Ea        `    E  e        K       im          `Pv  ?2R   [project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)   XPt    J   [project]/node_modules/three/build/three.core.js [app-client] (ecmascript)    P   N v   [project]/node_modules/@react-three/fiber/dist/events-156d8d12.esm.js [app-client] (ecmascript) <export C as useThree>       Pd    	   signature    (Ph   r    xLxa16nRCjSVM5JCC456Zeyx1kw= 0Q       Ea        `    E  e        @       jm        Pd"J('
+   forwardRef   0Q     Ea    <   `    E  e        K       km       (Phzc A    Ybw47x+EA8eIDD/XYsjoT1lJaHE= 0Q     Eam       `    E  e        @       lm       0Q     Ea        `    E  e        @       mm         l	  Pe        Fbo$forwardRef        P   y Q    $RefreshHelpers$  P   6      $RefreshHelpers   Pen  q    registerExports     = P                    '  ' 3       %       =         =   g    3       g   	' 3       g    ' 3     	 g   ' 3 
+  3    f   ' 3 
+  3    f   '                i          3                      i     k              i   !'    3 
+  3  #    h    %3 
+  3  '    h    )# + 3  -"  *# + 3  /  3 
+  3  1 3  3 # + 3  - h    5     `       D  o7                  
+           
+       
+                          e        K        l                   	     @  !   )   0Q  A    `,          I `    ! m ! l   `2    ` = ddp          2=        P  "i :    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$extends$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__      P    ]B    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$three$2f$fiber$2f$dist$2f$events$2d$156d8d12$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__D__as__useFrame$3e$__      P    !     __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$three$2d$stdlib$2f$controls$2f$OrbitControls$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__     Pev ]4   OrbitControls   f                            E`    @`            `      J`     e `     0Q       Ea    	   `    E U   e        K       cm               P  i  v   [project]/node_modules/@react-three/fiber/dist/events-156d8d12.esm.js [app-client] (ecmascript) <export D as useFrame>     P          0Q       EaP&   C  `    E U   e        K       dm       (Phb       0gU+iIOx276MvuAz1NrVkw6g6ms= 0Q     Ea C  0L  `    E  e        @   )   em       0Q     EacL   T  `    E  e        @   *   fm         l	 ,Pi. f     OrbitControls$React.forwardRef   e     5  9  =     % X                 ' 3       %       =   g    3       g   	' 3       g    ' 3       g   ' 3       g    ' 3     	 g    ' 3 
+  3    f   '       3                     i     g               i    '    3 
+  3  !    h    #3 
+  3  %    h    '# ) 3  +"  *# ) 3  -  3 
+  3  / 3  1 # ) 3  + h    3    `      8  l5                                      
+             e        K        l        q   }              0Q  I    `>            `    ! m ! p   `4    h = ddp                   Y      ]   P  ^  X    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$react$2d$three$2f$drei$2f$core$2f$Fbo$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__      Pd*Ko 
+   isFunction    Pf C      PerspectiveCamera   g                                E`    @`            `      J`       `     0Q       Ea V   V  `    E     e        K   ,   ^m                y          0Q            a               Od        .isFunction aL]  n]  `            e        K   -   _m          0Q     Ea_^  ^v  `    E  e        K   .   `m       (Ph (      eJ0qLF5BETBXfwY5YJOICahrYgw= 0Q     Ea v   z  `    E  e        @   :   am       0Q     Ea){      `    E  e        @   ;   bm         l	 0Pj  vI"   PerspectiveCamera$React.forwardRef         5  9  =     - X                 '  '	3       %       =   g    3       g   	' 3       g    ' 3       g   ' 3       g    ' 3     	 g    ' 3 
+  3    f   '     '       3                     i     g               i    '	 	 3 
+  3  !    h    #3 
+  3  %    h    '# ) 3  +"  *# ) 3  -  3 
+  3  / 3  1 # ) 3  + h    3   `        <  m5                                      
+                  e        K   +    l                              0Q  5    `           	 `    ! m ! h   `0    ` = ddp               #   Y     P  *  r    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$three$2d$stdlib$2f$objects$2f$Sky$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__      Pf  @     calcPosFromAngles     Pb a<     Sky f                            E`    @`     0Q       Eau       `            e        @   ?   Zm              `      J`     ! `     `     0Q     Ea        `    E  e        K   =   [m       0Q     Ea        `    E  e        K   >   \m              T            0Q       Ea    2   `    E     e        K   @   ]m       (Ph 8      9TnSEMOcxs9Rxo4daF5xk+lFvDY=   l	  Pf   _    Sky$React.forwardRef !     5  9  =       H                    '  ' 3       %       =         =   g    3       g   	' 3       g    ' 3     	 g   ' 3     
+ g    ' 3    3    f   '       3              l     g        l    '    3    3       h    !3    3  #    h    %# ' 3  )"  *# ' 3  +  3    3  - 3  / # ' 3  ) h    1    `      8  l3                  
+   
+       
+   
+   
+             e        K   <    l        5   =   %   E     0Q       `           ] `    ! m !     `P      = ddp      ,   .$       Y     P    @     __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2d$dom$2f$client$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__        ]     Pb   <    v1    Pb  "     v2    Pb        v3    Pb q      v4   $Pg  	a    defaultCalculatePosition  Pf*       isObjectBehindCamera  Peb3L     isObjectVisible   Pd $}v    objectScale   Pd B C    objectZIndex  Pc>g      epsilon   Pd        getCSSMatrix  Pf h      getCameraCSSMatrix    PfF  1    getObjectCSSMatrix    Pd  }     isRefObject   PbV a     Htmlu                                                                                        E`    @`     0Q       Ea    /   `        i   e    !   @   E   Im       0Q     EaM   z   `         e        @   F   Jm       0Q     Ea        `         e        @   G   Km       0Q     Ea        `         e        @   H   Lm       0Q     Ea
+   6   `         e        @   I   Mm       0Q     Ea    t   `         e        @   K   Nm       0Q       Ea    2   `        i   e        @   Q   Om              `      J`       `     0Q     Eam   u   `    E  e        K   D   Pm              dPwz   W   [project]/node_modules/next/dist/compiled/react-dom/client.js [app-client] (ecmascript)      y         PcR  Z    Vector3   Pc  x     Vector2  0Q         Od        push.epsilonaG   s   `        i   e        K   J   Qm       0Q  8   `             `    ! m !     `     4 = ddpW         "S   S    Pdr [     multipliers `(   E`    @ `     0Q       Ea        `    E     e        K   M   Ym      f                   '        `         b             e        K   L   Rm           `     HKp                                                                     0Q  8   `           = `    ! m !     `     4 = ddpW          T   U    Pe  k     scaleMultipliers`(   E`    @ i `     0Q            a                a              a             a            a              a            a             a            a          2}   Od    	   .children   a        `    E I   e        K   O   Xm      f                   '        `         b             e        K   N   Sm       0Q       Ea        `    E i  e        K   P   Tm        0Q     Ea    R   `    E  e        K   R   Um       (Ph   q    HvhPTxE5UbaiYUe/HcLLKKcx8so= 0Q     Ea    l   `    E  e        @   _   Vm       0Q     Ea        `    E  e        @   `   Wm         l	 $Pg  
+     Html$React.forwardRef          5  9  =       X                 '	 '
+ '  '     '    '     '     '     '  '     '  '  '     '  ' 3     	 %    
+  =   g    3       g   	' 3      g    ' 3       g   ' 3       g    ' 3       g    ' 3       g    ' 3    3    f   '    3    r    '	   3    r    '
+   3    r   !'    3  # r   %'     '   	    '% k  ('   
+       k  *'       3  ,                  i   . g   0           i   2'    3    3  4  ! h    63    3  8  " h    :##< 3 $>"  *##< 3 %@  3    3 &B 3 'D ##< 3 $> h    F    `      \  uH                      
+       
+  I   @   P   @   P   @                                   e        K   C    l                                           %   9   Q                         0Q  U    `V            `    ! m !     `B      = ddp          N   `9                             	             m                                                        E`    @`     0Q       Ea        `            e    
+   @   k   5m       0Q       Ea    V    4 - k(               @        @        @        @    `         e    
+   @   l   6m       0Q     Ea=
+  P   `         e    
+   @   s   7m       0Q     Ea[   ~   `         e    
+   @   v   8m       0Q       Ea        `            e    
+   @   y   9m       0Q     Ea(       `     	   e    
+   @   |   :m       0Q     EaB       `         e    
+   @       ;m       0Q     Ea        `         e    
+   @       <m              `     HJ`      Pe&@ ~   FiberProvider   `      Pe  E    traverseFiber   `      Pd &      useContainer`      Perf$b    useContextBridge`      Pe ? 6   useContextMap   `      Pc r A    useFiber`      PeZ       useNearestChild `      Pe  L     useNearestParent`     0Q         Oc        push.e  a        `    E  e        K   b   =m       0Q      9 a        `    E     e        K   c   >m       0Q      a        `    E  e        K   d   ?m       0Q      a        `    E  e        K   e   @m       0Q      a       `    E  e        K   f   Am       0Q     Ea#   (   `    E  e        K   g   Bm       0Q     EaE   J   `    E  e        K   h   Cm       0Q     Eah   m   `    E  e        K   i   Dm            0Q  `   `p          y `    ! m !     `                       Pc        product   Pd   6    ReactNative p            $  " ^ 1#   3          3     #   3          3  
+   v    `     , = ddpW         D       E`    @   `        c          P   P   e        K   j   Em        Pe ^      useLayoutEffect   Pd [  	   useEffect     Pe  t    createContext        `     \   b            XH`^    i G`^    e F`~    m  A `       ! at   d      a [ , b            X   a          Pc  2     render  a         [  Pd <  	   Component    0Q       Ea:   :   `            e        E   r   Fm       0Q     Ea 	  0
+  `         e            q   Gm       y  b    Pe F     react.context    0Q       Oc        push.b  a    6   `         e        K       Hm       9 0                 '     '     '  '  '     '     '	    '
+    '  '  '    '     ' 3 	   
+ %       =       	 =      
+ =         =   	     =        =        =         =   g    3       g   	'      j       3   	   3   '       3      g     k   '    3                    n.     ' #   3       g    '     '   `      L  q                   
+   
+                                                 e        K   a    l        1   =   E   M   U   ]   e   m   u                                                   @        0Q      `             `    ! m ! <   `     h = ddp           :  jk                 9     5 g                                E`    @`     0Q       Ea        `          e    
+   @       .m       0Q       Ea    0   4 - k&               @        @      *               `         e    
+   @       /m       0Q     Ea 0   1  `         e    
+   @       0m       0Q     Ea 1   3  `         e    
+   @       1m       0Q     Ea 3   5  `     9   e    
+   @       2m              `      J`      
+`     0Q       Eaa   f   `    E     e        K       3m              `     (K`        	   q   P    /     bottom    P  B       left  P   #:h    right     P  r       width     P  B       height   0Q       Oc        push.D  a 5   5  `     5   e        K       4m      z(                    '     '     '     '     '  '  '	3       %       =   g    3 	   
+ g   	'    %'     '	  `      $  g               &                 e        K        l        %                            @  I @  0Q  X   `Z          ] `    ! m !     `     0 = ddp          (l  `       	`(   E`    @`        dPw <+dU   [project]/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)     Pd   ^
+   production    Pd   !    development  0Q       Ea 8  +e     -                   @      
+ @        @        @      
+ @        @        @        @        @        @        @        @        @        @        @        @        @        @        @      
+ @        @        @ 
+           d                @      d                @ 
+ `    E i   e        @       -m      n(                  ' 3       g          v   ^ 
+     j       `         c          @      e        K        l        y      0Q  P   `L            `    ! m !     `
+       m     <    	l(           3       g          3       g    9       `     ( = ddp                  E`    @`        c
+         P  ,    e        K        l        0Q      `             `    ! m ! @   `     h ddp              <     Pd Y~ 	   isPromise     Pd W      globalCache   Pf:'      shallowEqualArrays    Pc        query     P   d      suspend   P          preload   Pb        peek   e	g                                E`    @`     0Q       Eabi  zj  `            e        @       "m       0Q     Ea j  -r  `         e        @       #m              `     (J`       e	`       `       `       `     0Q            a               Od    
+   .isPromise  agh  ph  `    E     e        K       $m       0Q        a h   h  `    E  e        K       %m       0Q      a h   h  `    E  e        K       &m       0Q     Ea h   h  `    E  e        K       'm       0Q      a h  -i  `         e        K       (m       0Q       Od        push.suspenda>r  pr  `       e        K       )m       0Q       Od        push.preloada r   r  `       e        K       *m       0Q       Od    	   push.peek   a r   s  `         e        K       +m       0Q       Od    
+   push.clear  a s   t  `       e	  e        K       ,m        (                 '  '     '     '  '  '  '  '	3       %       =         =         =         =   g     	  '   '  
+  '     '   	 '  
+ '	    `      ,  i            `                            e        K        l                	             @        !   -   9 @  E @  0Q  h   `z          Y `    ! m ! $   `     8 = ddp                      Pc        version a        E`    @`            `      J`     i `     0Q       EaSu  ^u  `    E e   e        K        m            0Q  P   `L            `    ! m !     `
+          Pc>q     REVISION  b    Pb   -    \D+ El(           #      3    3             h      k  	   `     , = ddpW                 E`    @ e `        c          P       e        K       !m      r(                 ' 3       %       =   g    3       g   	'      j  '      `        e                        e        K        l        u   }   0Q      `             `    ! m ! @   `     H = ddp          ^   x     Pd   R	   __defProp     PeF- 7    __defNormalProp   Pe>      __publicField     Pe 
+	     EventDispatcher c                E`    @`            `      J`       `     0Q       Ea x  #x  `    E     e        K        m       M   
+ 0Q          a                a              aex   y  `       e        K        m       0Q        a                a            a&y   y  `       e        K        m           `     \   b            XH`^    i G`^    e F`~    m  A `       ! a6   p      a [ P b            X   a           a          Pef-G     hasEventListenera            a    
+       a         [ 0Q       Ea y   z  `            e                 m       0Q     Ea z  %|  `         e                 m       0Q     Ea }   }  `         e                 m       0Q     Ea ~      `          e                 m       0Q     Ea}   6   `          e                m      {H                 ' 3       %       =   g    #   3  	'     '     '    	       
+                    n.     '   `      $  g                                 e        K        l                    	           !   )   0Q       `           9 `    ! m ! d   `.    x = ddp          6    m               Pb^  .    _ray  Pcr       _plane    Pd*  ,
+   TILT_LIMIT    Pe  Y`    moduloWrapAround e   Pd        MapControls i                                        E`    @`            `      J`     Y `     `     0Q       Ea        `    E E   e        K        m       0Q     Ea"   3   `    E  e        K        m            L M   
+ 0Q          a                a              a    >   `      E   e        K        m       0Q          a                a            aT       `       e        K        m        PbZ %$    Ray   Pc 2      Plane      .	  22	   8	 0Q        a                a          U a        `       e        K        m           `     \   b            XH`^    i G`^    e F`~    m  A `       ! a    Lf     a [   b            X   a         [    0Q            a               Od        .constructora    $3      -                    @        @        @        @        @      
+ @      
+ @      
+ @        @        @        @        @        @        @        @        @        @        @        @        @        @        @        @        @        @        @        @        @        @        @        @        @        @        @        @        @        @        @        @        @        @        @        @        @        @  *                                UP                  `     e  E   e                 m           `     \   b            XH`^    i G`^    e F`~    m  A `       ! aNf   m     a [   b            X   a         [ 0Q       Ea`3   6  `     Y  E   e            %    m        0             
+   '  '  '  '	 '
+ ' 3       %       =         =   g    3       g   	' 3       g     #  3 	 '  
+  '     '    3    r    '    3   r    ' #   3    #   3    P    OF  g   !'     '	3  #            n.     '
+ 
+            n.     '    `      8  l%                  
+           
+                     e        K        l        e   m   u                      0Q      `             `    ! m ! 8   `     X = ddp          Tn          P  ^N =    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$three$2d$stdlib$2f$_polyfill$2f$constants$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__          ! e                        E`    @`            `      J`     `     0Q       Ea 7   7  `    E     e        K   '    m            H M   
+ 0Q          a                a              a 9   :  `          e        K   (   m       0Q          a                a            a :   ;  `       e        K   )    m       0Q  M    `D          9 `    ! m ! x   `8    4 = ddpW         fv        Pc W m    material`    E`    @   `     (   b              PcV >     uniforms    Pd  ge    vertexShader =
+P 9
+fu^ -
+  
+      uniform vec3 sunPosition;
+      uniform float rayleigh;
+      uniform float turbidity;
+      uniform float mieCoefficient;
+      uniform vec3 up;
+
+      varying vec3 vWorldPosition;
+      varying vec3 vSunDirection;
+      varying float vSunfade;
+      varying vec3 vBetaR;
+      varying vec3 vBetaM;
+      varying float vSunE;
+
+      // constants for atmospheric scattering
+      const float e = 2.71828182845904523536028747135266249775724709369995957;
+      const float pi = 3.141592653589793238462643383279502884197169;
+
+      // wavelength of used primaries, according to preetham
+      const vec3 lambda = vec3( 680E-9, 550E-9, 450E-9 );
+      // this pre-calcuation replaces older TotalRayleigh(vec3 lambda) function:
+      // (8.0 * pow(pi, 3.0) * pow(pow(n, 2.0) - 1.0, 2.0) * (6.0 + 3.0 * pn)) / (3.0 * N * pow(lambda, vec3(4.0)) * (6.0 - 7.0 * pn))
+      const vec3 totalRayleigh = vec3( 5.804542996261093E-6, 1.3562911419845635E-5, 3.0265902468824876E-5 );
+
+      // mie stuff
+      // K coefficient for the primaries
+      const float v = 4.0;
+      const vec3 K = vec3( 0.686, 0.678, 0.666 );
+      // MieConst = pi * pow( ( 2.0 * pi ) / lambda, vec3( v - 2.0 ) ) * K
+      const vec3 MieConst = vec3( 1.8399918514433978E14, 2.7798023919660528E14, 4.0790479543861094E14 );
+
+      // earth shadow hack
+      // cutoffAngle = pi / 1.95;
+      const float cutoffAngle = 1.6110731556870734;
+      const float steepness = 1.5;
+      const float EE = 1000.0;
+
+      float sunIntensity( float zenithAngleCos ) {
+        zenithAngleCos = clamp( zenithAngleCos, -1.0, 1.0 );
+        return EE * max( 0.0, 1.0 - pow( e, -( ( cutoffAngle - acos( zenithAngleCos ) ) / steepness ) ) );
+      }
+
+      vec3 totalMie( float T ) {
+        float c = ( 0.2 * T ) * 10E-18;
+        return 0.434 * c * MieConst;
+      }
+
+      void main() {
+
+        vec4 worldPosition = modelMatrix * vec4( position, 1.0 );
+        vWorldPosition = worldPosition.xyz;
+
+        gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+        gl_Position.z = gl_Position.w; // set z to camera.far
+
+        vSunDirection = normalize( sunPosition );
+
+        vSunE = sunIntensity( dot( vSunDirection, up ) );
+
+        vSunfade = 1.0 - clamp( 1.0 - exp( ( sunPosition.y / 450000.0 ) ), 0.0, 1.0 );
+
+        float rayleighCoefficient = rayleigh - ( 1.0 * ( 1.0 - vSunfade ) );
+
+      // extinction (absorbtion + out scattering)
+      // rayleigh coefficients
+        vBetaR = totalRayleigh * rayleighCoefficient;
+
+      // mie coefficients
+        vBetaM = totalMie( turbidity ) * mieCoefficient;
+
+      }
+         Pe        fragmentShader    @ b              P      	   turbidity      b               `      P  &)      rayleigh   b             `      P  v Tw    mieCoefficient     b               Ta{  G zt?  P  *\T-    mieDirectionalG    b               Ta       ?  P    ?     sunPosition    P  " yJ    up      b                        b                  Q  )P % Z`    
+      varying vec3 vWorldPosition;
+      varying vec3 vSunDirection;
+      varying float vSunfade;
+      varying vec3 vBetaR;
+      varying vec3 vBetaM;
+      varying float vSunE;
+
+      uniform float mieDirectionalG;
+      uniform vec3 up;
+
+      const vec3 cameraPos = vec3( 0.0, 0.0, 0.0 );
+
+      // constants for atmospheric scattering
+      const float pi = 3.141592653589793238462643383279502884197169;
+
+      const float n = 1.0003; // refractive index of air
+      const float N = 2.545E25; // number of molecules per unit volume for air at 288.15K and 1013mb (sea level -45 celsius)
+
+      // optical length at zenith for molecules
+      const float rayleighZenithLength = 8.4E3;
+      const float mieZenithLength = 1.25E3;
+      // 66 arc seconds -> degrees, and the cosine of that
+      const float sunAngularDiameterCos = 0.999956676946448443553574619906976478926848692873900859324;
+
+      // 3.0 / ( 16.0 * pi )
+      const float THREE_OVER_SIXTEENPI = 0.05968310365946075;
+      // 1.0 / ( 4.0 * pi )
+      const float ONE_OVER_FOURPI = 0.07957747154594767;
+
+      float rayleighPhase( float cosTheta ) {
+        return THREE_OVER_SIXTEENPI * ( 1.0 + pow( cosTheta, 2.0 ) );
+      }
+
+      float hgPhase( float cosTheta, float g ) {
+        float g2 = pow( g, 2.0 );
+        float inverse = 1.0 / pow( 1.0 - 2.0 * g * cosTheta + g2, 1.5 );
+        return ONE_OVER_FOURPI * ( ( 1.0 - g2 ) * inverse );
+      }
+
+      void main() {
+
+        vec3 direction = normalize( vWorldPosition - cameraPos );
+
+      // optical length
+      // cutoff angle at 90 to avoid singularity in next formula.
+        float zenithAngle = acos( max( 0.0, dot( up, direction ) ) );
+        float inverse = 1.0 / ( cos( zenithAngle ) + 0.15 * pow( 93.885 - ( ( zenithAngle * 180.0 ) / pi ), -1.253 ) );
+        float sR = rayleighZenithLength * inverse;
+        float sM = mieZenithLength * inverse;
+
+      // combined extinction factor
+        vec3 Fex = exp( -( vBetaR * sR + vBetaM * sM ) );
+
+      // in scattering
+        float cosTheta = dot( direction, vSunDirection );
+
+        float rPhase = rayleighPhase( cosTheta * 0.5 + 0.5 );
+        vec3 betaRTheta = vBetaR * rPhase;
+
+        float mPhase = hgPhase( cosTheta, mieDirectionalG );
+        vec3 betaMTheta = vBetaM * mPhase;
+
+        vec3 Lin = pow( vSunE * ( ( betaRTheta + betaMTheta ) / ( vBetaR + vBetaM ) ) * ( 1.0 - Fex ), vec3( 1.5 ) );
+        Lin *= mix( vec3( 1.0 ), pow( vSunE * ( ( betaRTheta + betaMTheta ) / ( vBetaR + vBetaM ) ) * Fex, vec3( 1.0 / 2.0 ) ), clamp( pow( 1.0 - dot( up, vSunDirection ), 5.0 ), 0.0, 1.0 ) );
+
+      // nightsky
+        float theta = acos( direction.y ); // elevation --> y-axis, [-pi/2, pi/2]
+        float phi = atan( direction.z, direction.x ); // azimuth --> x-axis [-pi/2, pi/2]
+        vec2 uv = vec2( phi, theta ) / vec2( 2.0 * pi, pi ) + vec2( 0.5, 0.0 );
+        vec3 L0 = vec3( 0.1 ) * Fex;
+
+      // composition + solar disc
+        float sundisk = smoothstep( sunAngularDiameterCos, sunAngularDiameterCos + 0.00002, cosTheta );
+        L0 += ( vSunE * 19000.0 * Fex ) * sundisk;
+
+        vec3 texColor = ( Lin + L0 ) * 0.04 + vec3( 0.0, 0.0003, 0.00075 );
+
+        vec3 retColor = pow( texColor, vec3( 1.0 / ( 1.2 + ( 1.2 * vSunfade ) ) ) );
+
+        gl_FragColor = vec4( retColor, 1.0 );
+
+      #include <tonemapping_fragment>
+      #include <   i   Pf  G     colorspace_fragment   Pf 6 z    encodings_fragment    Pe   C    >
+
+      }
+      ]   Pe^,      ShaderMaterial   @   b            G  Pd   V	   SkyShader       U      Pb. rV    side   Pd @  
+   depthWrite  D   Pe  x    UniformsUtils     PcBj<     clone     Pc        BackSide        `     \   b            XH`^    i G`^    e F`~    m  A `       ! ad          a [   b            X   a         [  Pb [7W    Mesh 0Q       EauZ  O[  `      Pb  >|    Sky2 E   e            +    m          I  1 P                 '              )      3    r    :     :  	   )      3            r    :     :     : 	  
+      3       z          @     @  :           3       ) 3   :   3  !:  #     3  % 3  ' 3 	) g   +: 	-     3  /:  1  r   3'      3  5            n.                    i   7              i   9     `      8  l;       s      & 0     "  0        
+   
+   
+         e        K   *    m      {(                 ' 3       %       =   g    3       g   	' 3       g    ' #  3   '  	  '  
+  '      j  '     `        $ g                                 e        K   &    l               %   5       0Q  \   `h            `    ! m !     `     8 = ddp              B       	 $Pgr       __turbopack_context__   a(   (   E`    @`        m  q  u  0Q       Ea _   m   < - l)         	  	
+ @  	  	  @  	  	  @  	  	
+ @         ( g          	  	  @  	  	  @ 
+       d          	  	  @   `    E  	  e        @   -    m      o(                  '   '    3       g          v   ^ 
+     j    `         c          @      e        K   ,    l        	    0Q  \   `h          )	`    ! m !     `     8 = ddp          ^           	 		a(   (   E`    @`        m  q  u  0Q       Ea~p  h}   ( - g          	  	
+ @  	  	  @  *    ( g          	  	  @  	  	  @       , i          	  	  @  	  	  @  	  	  @     `    E 5	  e        @   6   
+m      o(                  '   '    3       g          v   ^ 
+     j    `         c          @      e        K   5    l        9	    0Q  P   `L          U	`    ! m !     `
+       m     X    	l(           3       g          3       g    9       `     ( = ddp              d   E`    @`        c
+         P  ,    e        K   >    l        0Q  P   `L          m	`    ! m !     `
+       m     \    	l(           3       g          3       g    9       `     ( = ddp          0       E`    @`        c
+         P  ,    e        K   ?    l        0Q      `            	`    ! m ! D   `     ` ddp              .       P  B&*!    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$zustand$2f$esm$2f$vanilla$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__    ,Pi.|      useSyncExternalStoreWithSelector  P  Rt	g    identity $Pgn Q     useStoreWithEqualityFn   $Pg  O     createWithEqualityFnImpl  Pfn  m    createWithEqualityFnf                            E`    @`     0Q       Ea        `      	  	  e        @   D    m              `      J`      	`     `     0Q     Ea        `    E  e        K   A    m       0Q     Ea        `    E  e        K   B    m            d l  
+  	 0Q            a              Od    	   .identity   a_   i   `      	  	  e        K   C    m       0Q        a                a             	a'       `       e        K   E    m       0Q        a                a           	a        `       e        K   G   	m        0                 '  '     '  '  ' 3       %       =         =   g    3       g   	' 3       g     3     	 g   ' 3 
+  3   '     '    '     '    `      (  h                   
+                 e        K   @    l         	   	   	   	   	@   	  0Q  \   `f           
+`    ! m !     `     8 = ddp               "    Pe        createStoreImpl   Pd        createStore a        E`    @`            `      J`      
+`     0Q       EaD   S   `    E  
+  e        K   I    m       0Q          a                a             
+ap       `       e        K   J    m       0Q        a               Od        .createStorea)   t   `       e        K   Q    m      o(                 '  ' 3       %       =   g        '     '    `         e                         e        K   H    m        %
+  -
+    =
+@`    @ ,Pi   ^    node_modules_0tbjl3c._.js.map   @[@e        @       nm              `      J`      
+`      l(                    ) 3       %       =   g       `          d                      e        K        l         E        Y        Y        U     5        %	 Q	 i	  	  
+ 5 0           #   3     #      9      3      	%   $ 
+"   #   3      =         =         =         =      	  =   
+  
+  =         =         =        =         =       	 =       
+ =         =         =        =         =         =   "     =   $     =   &     =   (     =   *     =   g      `       = d@0              f#  E`     H  p          0   y                                                       e                 l       
+
+
+
+
+
+
+ A Eo      ~           W  Z84: 
+  O   6p@   z     j y   A Eo                  
